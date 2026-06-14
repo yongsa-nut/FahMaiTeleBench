@@ -1,0 +1,1562 @@
+{
+  "questions": [
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของ GM แบรนด์สายฟ้า หน่อย",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79517"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00005427"
+      ],
+      "rationale": "Brand prior: สายฟ้า -> division SF -> GM ถาวร บุญนำพงศ์ -> ext=79517.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-SF-ext"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the GM of the SaiFah brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "THAWAN.BO@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00005427"
+      ],
+      "rationale": "Brand prior: สายฟ้า -> division SF -> GM ถาวร บุญนำพงศ์ -> email=THAWAN.BO@FAHMAI.CO.TH.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-SF-email"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the GM of the Kluensiang brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "75965"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003047"
+      ],
+      "rationale": "Brand prior: คลื่นเสียง -> division KS -> GM ราม ลวรรณ -> ext=75965.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-KS-ext"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ GM แบรนด์คลื่นเสียง หน่อย",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RAM.LA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003047"
+      ],
+      "rationale": "Brand prior: คลื่นเสียง -> division KS -> GM ราม ลวรรณ -> email=RAM.LA@FAHMAI.CO.TH.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-KS-email"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของ GM แบรนด์ดาวเหนือ หน่อย",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76999"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08554423"
+      ],
+      "rationale": "Brand prior: ดาวเหนือ -> division DN -> GM วิเชียร พงหอมกลิ่น -> ext=76999.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-DN-ext"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the GM of the DaoNuea brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "WICHIAN.PH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08554423"
+      ],
+      "rationale": "Brand prior: ดาวเหนือ -> division DN -> GM วิเชียร พงหอมกลิ่น -> email=WICHIAN.PH@FAHMAI.CO.TH.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-DN-email"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the GM of the Wongkhojon brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74375"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009015"
+      ],
+      "rationale": "Brand prior: วงโคจร -> division WK -> GM กฤษ มหาแก้วใส -> ext=74375.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-WK-ext"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ GM แบรนด์วงโคจร หน่อย",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KRIS.MA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009015"
+      ],
+      "rationale": "Brand prior: วงโคจร -> division WK -> GM กฤษ มหาแก้วใส -> email=KRIS.MA@FAHMAI.CO.TH.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-WK-email"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของ GM แบรนด์จุดเชื่อม หน่อย",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "78762"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08972652"
+      ],
+      "rationale": "Brand prior: จุดเชื่อม -> division JC -> GM สรัล อาวุทธ์มณี -> ext=78762.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-JC-ext"
+    },
+    {
+      "bucket": "brand_prior",
+      "subtype": "F1",
+      "group": "F",
+      "v01_bucket": "brand_prior",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the GM of the Judchuem brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SARAN.AW@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08972652"
+      ],
+      "rationale": "Brand prior: จุดเชื่อม -> division JC -> GM สรัล อาวุทธ์มณี -> email=SARAN.AW@FAHMAI.CO.TH.",
+      "tags": [
+        "brand_prior",
+        "brand",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F1-JC-email"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณกมลา ชัยสนธิ์สว่างเป็น CTO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CFO",
+            "Chief Financial",
+            "การเงิน",
+            "ฤทธิชัย",
+            "Rittichai",
+            "แก้วใสภิญโญ",
+            "Kaewsaiphinyo"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Counterfactual: claims กมลา ชัยสนธิ์สว่าง (actually CFO) is CTO. Correct = flag true role CFO or name the actual CTO = ฤทธิชัย แก้วใสภิญโญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cfo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-01"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard พงษ์กานต์ ราชชากัญญ์ is the CEO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "COO",
+            "Chief Operating",
+            "ปฏิบัติการ",
+            "วชิร",
+            "Vachir",
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007631"
+      ],
+      "rationale": "Counterfactual: claims พงษ์กานต์ ราชชากัญญ์ (actually COO) is CEO. Correct = flag true role COO or name the actual CEO = วชิร จิรบุญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "coo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-02"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณส้ม กาญจน์สถิตเป็น CFO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CMO",
+            "Chief Marketing",
+            "กมลา",
+            "Kamala",
+            "ชัยสนธิ์สว่าง",
+            "Chaisonsawang"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009368"
+      ],
+      "rationale": "Counterfactual: claims ส้ม กาญจน์สถิต (actually CMO) is CFO. Correct = flag true role CMO or name the actual CFO = กมลา ชัยสนธิ์สว่าง. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cmo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-03"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard ฤทธิชัย แก้วใสภิญโญ is the CMO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CTO",
+            "Chief Technology",
+            "เทคโนโลยี",
+            "ส้ม",
+            "Som",
+            "กาญจน์สถิต",
+            "Kansathit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Counterfactual: claims ฤทธิชัย แก้วใสภิญโญ (actually CTO) is CMO. Correct = flag true role CTO or name the actual CMO = ส้ม กาญจน์สถิต. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cto"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-04"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณณฐามน อภิชัยดีเป็น COO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CHRO",
+            "Chief Human",
+            "ทรัพยากรบุคคล",
+            "พงษ์กานต์",
+            "Pongkan",
+            "ราชชากัญญ์",
+            "Rajchakan"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001359"
+      ],
+      "rationale": "Counterfactual: claims ณฐามน อภิชัยดี (actually CHRO) is COO. Correct = flag true role CHRO or name the actual COO = พงษ์กานต์ ราชชากัญญ์. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "chro"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-05"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard จิรภัทร วัชรใจงาม is the CEO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CPO",
+            "Chief Product",
+            "ผลิตภัณฑ์",
+            "วชิร",
+            "Vachir",
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001072"
+      ],
+      "rationale": "Counterfactual: claims จิรภัทร วัชรใจงาม (actually CPO) is CEO. Correct = flag true role CPO or name the actual CEO = วชิร จิรบุญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cpo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-06"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณวชิร จิรบุญเป็น CTO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CEO",
+            "Chief Executive",
+            "บริหารสูงสุด",
+            "ฤทธิชัย",
+            "Rittichai",
+            "แก้วใสภิญโญ",
+            "Kaewsaiphinyo"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "Counterfactual: claims วชิร จิรบุญ (actually CEO) is CTO. Correct = flag true role CEO or name the actual CTO = ฤทธิชัย แก้วใสภิญโญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "ceo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-07"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard กมลา ชัยสนธิ์สว่าง is the CEO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CFO",
+            "Chief Financial",
+            "การเงิน",
+            "วชิร",
+            "Vachir",
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Counterfactual: claims กมลา ชัยสนธิ์สว่าง (actually CFO) is CEO. Correct = flag true role CFO or name the actual CEO = วชิร จิรบุญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cfo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-08"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณส้ม กาญจน์สถิตเป็น CPO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CMO",
+            "Chief Marketing",
+            "จิรภัทร",
+            "Jirapat",
+            "วัชรใจงาม",
+            "Watcharajaingam"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009368"
+      ],
+      "rationale": "Counterfactual: claims ส้ม กาญจน์สถิต (actually CMO) is CPO. Correct = flag true role CMO or name the actual CPO = จิรภัทร วัชรใจงาม. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cmo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-09"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard ฤทธิชัย แก้วใสภิญโญ is the CFO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CTO",
+            "Chief Technology",
+            "เทคโนโลยี",
+            "กมลา",
+            "Kamala",
+            "ชัยสนธิ์สว่าง",
+            "Chaisonsawang"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Counterfactual: claims ฤทธิชัย แก้วใสภิญโญ (actually CTO) is CFO. Correct = flag true role CTO or name the actual CFO = กมลา ชัยสนธิ์สว่าง. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cto"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-10"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณแสงดาว พิดวงกมลเป็น CFO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FINVP",
+            "VP Finance",
+            "กมลา",
+            "Kamala",
+            "ชัยสนธิ์สว่าง",
+            "Chaisonsawang"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007543"
+      ],
+      "rationale": "Counterfactual: claims แสงดาว พิดวงกมล (actually FINVP) is CFO. Correct = flag true role FINVP or name the actual CFO = กมลา ชัยสนธิ์สว่าง. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "finvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-11"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard สุเมธ อัครใจงาม is the CHRO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "HRVP",
+            "VP HR",
+            "ณฐามน",
+            "Nathamon",
+            "อภิชัยดี",
+            "Aphichaidee"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008718"
+      ],
+      "rationale": "Counterfactual: claims สุเมธ อัครใจงาม (actually HRVP) is CHRO. Correct = flag true role HRVP or name the actual CHRO = ณฐามน อภิชัยดี. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "hrvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-12"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณคะวัง กอบสุขรัตน์เป็น CMO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MKTVP",
+            "VP Marketing",
+            "ส้ม",
+            "Som",
+            "กาญจน์สถิต",
+            "Kansathit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08542152"
+      ],
+      "rationale": "Counterfactual: claims คะวัง กอบสุขรัตน์ (actually MKTVP) is CMO. Correct = flag true role MKTVP or name the actual CMO = ส้ม กาญจน์สถิต. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "mktvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-13"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard ณัฐพงษ์ อธิดี is the CTO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "TECVP",
+            "VP Technology",
+            "ฤทธิชัย",
+            "Rittichai",
+            "แก้วใสภิญโญ",
+            "Kaewsaiphinyo"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001368"
+      ],
+      "rationale": "Counterfactual: claims ณัฐพงษ์ อธิดี (actually TECVP) is CTO. Correct = flag true role TECVP or name the actual CTO = ฤทธิชัย แก้วใสภิญโญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "tecvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-14"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณคึกฤทธิ์ บุษราคัมวงศ์เป็น COO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "OPSVP",
+            "VP Operations",
+            "พงษ์กานต์",
+            "Pongkan",
+            "ราชชากัญญ์",
+            "Rajchakan"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009282"
+      ],
+      "rationale": "Counterfactual: claims คึกฤทธิ์ บุษราคัมวงศ์ (actually OPSVP) is COO. Correct = flag true role OPSVP or name the actual COO = พงษ์กานต์ ราชชากัญญ์. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "opsvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-15"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard ไพโรจน์ มหากุล is the CEO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "LEGVP",
+            "VP Legal",
+            "วชิร",
+            "Vachir",
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Counterfactual: claims ไพโรจน์ มหากุล (actually LEGVP) is CEO. Correct = flag true role LEGVP or name the actual CEO = วชิร จิรบุญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "legvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-16"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณวิริยะ จันทชัยเป็น CMO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RETVP",
+            "ส้ม",
+            "Som",
+            "กาญจน์สถิต",
+            "Kansathit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008000"
+      ],
+      "rationale": "Counterfactual: claims วิริยะ จันทชัย (actually RETVP) is CMO. Correct = flag true role RETVP or name the actual CMO = ส้ม กาญจน์สถิต. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "retvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-17"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard อุกฤษฎ์ วัชรเสริม is the CFO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "B2BVP",
+            "กมลา",
+            "Kamala",
+            "ชัยสนธิ์สว่าง",
+            "Chaisonsawang"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08878477"
+      ],
+      "rationale": "Counterfactual: claims อุกฤษฎ์ วัชรเสริม (actually B2BVP) is CFO. Correct = flag true role B2BVP or name the actual CFO = กมลา ชัยสนธิ์สว่าง. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "b2bvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-18"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณวชิร จิรบุญเป็น COO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CEO",
+            "Chief Executive",
+            "บริหารสูงสุด",
+            "พงษ์กานต์",
+            "Pongkan",
+            "ราชชากัญญ์",
+            "Rajchakan"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "Counterfactual: claims วชิร จิรบุญ (actually CEO) is COO. Correct = flag true role CEO or name the actual COO = พงษ์กานต์ ราชชากัญญ์. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "ceo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-19"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard พงษ์กานต์ ราชชากัญญ์ is the CMO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "COO",
+            "Chief Operating",
+            "ปฏิบัติการ",
+            "ส้ม",
+            "Som",
+            "กาญจน์สถิต",
+            "Kansathit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007631"
+      ],
+      "rationale": "Counterfactual: claims พงษ์กานต์ ราชชากัญญ์ (actually COO) is CMO. Correct = flag true role COO or name the actual CMO = ส้ม กาญจน์สถิต. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "coo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-20"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณณฐามน อภิชัยดีเป็น CFO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CHRO",
+            "Chief Human",
+            "ทรัพยากรบุคคล",
+            "กมลา",
+            "Kamala",
+            "ชัยสนธิ์สว่าง",
+            "Chaisonsawang"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001359"
+      ],
+      "rationale": "Counterfactual: claims ณฐามน อภิชัยดี (actually CHRO) is CFO. Correct = flag true role CHRO or name the actual CFO = กมลา ชัยสนธิ์สว่าง. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "chro"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-21"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard จิรภัทร วัชรใจงาม is the CTO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CPO",
+            "Chief Product",
+            "ผลิตภัณฑ์",
+            "ฤทธิชัย",
+            "Rittichai",
+            "แก้วใสภิญโญ",
+            "Kaewsaiphinyo"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001072"
+      ],
+      "rationale": "Counterfactual: claims จิรภัทร วัชรใจงาม (actually CPO) is CTO. Correct = flag true role CPO or name the actual CTO = ฤทธิชัย แก้วใสภิญโญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cpo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-22"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณกมลา ชัยสนธิ์สว่างเป็น CHRO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CFO",
+            "Chief Financial",
+            "การเงิน",
+            "ณฐามน",
+            "Nathamon",
+            "อภิชัยดี",
+            "Aphichaidee"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Counterfactual: claims กมลา ชัยสนธิ์สว่าง (actually CFO) is CHRO. Correct = flag true role CFO or name the actual CHRO = ณฐามน อภิชัยดี. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cfo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-23"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "en",
+      "question": "I heard ส้ม กาญจน์สถิต is the CEO — can I get their extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CMO",
+            "Chief Marketing",
+            "วชิร",
+            "Vachir",
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009368"
+      ],
+      "rationale": "Counterfactual: claims ส้ม กาญจน์สถิต (actually CMO) is CEO. Correct = flag true role CMO or name the actual CEO = วชิร จิรบุญ. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "cmo"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-24"
+    },
+    {
+      "bucket": "counterfactual",
+      "subtype": "F2",
+      "group": "F",
+      "v01_bucket": "counterfactual",
+      "priority": "P1",
+      "language": "th",
+      "question": "ได้ยินว่าคุณดาริกา อาวุทธ์ดีเป็น COO ขอเบอร์ต่อหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUPVP",
+            "พงษ์กานต์",
+            "Pongkan",
+            "ราชชากัญญ์",
+            "Rajchakan"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008495"
+      ],
+      "rationale": "Counterfactual: claims ดาริกา อาวุทธ์ดี (actually SUPVP) is COO. Correct = flag true role SUPVP or name the actual COO = พงษ์กานต์ ราชชากัญญ์. Hybrid gold.",
+      "tags": [
+        "counterfactual",
+        "grounding",
+        "supvp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F2-25"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "แบรนด์ดาวเหนือเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Phonphai",
+            "พรไพร"
+          ],
+          [
+            "Arthitkulwongs",
+            "อาทิตย์วงษ์"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004766"
+      ],
+      "rationale": "Subsidiary routing: ดาวเหนือ = internal division DN; DN-ENG unique head = พรไพร อาทิตย์วงษ์ (DIRECTOR DAONUEA PRODUCT ENGINEER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-01"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "The DaoNuea brand is an in-house FahMai division — who heads its marketing unit?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Phussadee",
+            "พุสดี"
+          ],
+          [
+            "Chaisaidi",
+            "ชัยสัยดี"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08821819"
+      ],
+      "rationale": "Subsidiary routing: ดาวเหนือ = internal division DN; DN-MKT unique head = พุสดี ชัยสัยดี (DIRECTOR DAONUEA BRAND MARKETER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-02"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "แบรนด์จุดเชื่อมเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Narong",
+            "ณรงค์"
+          ],
+          [
+            "Kobsookbun",
+            "กอบสุขบุญ"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08153847"
+      ],
+      "rationale": "Subsidiary routing: จุดเชื่อม = internal division JC; JC-ENG unique head = ณรงค์ กอบสุขบุญ (DIRECTOR JUDCHUEM PRODUCT ENGINEER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-03"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "The Judchuem brand is an in-house FahMai division — who heads its marketing unit?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Phaibun",
+            "ไพบูลย์"
+          ],
+          [
+            "Anujitranon",
+            "อนุจิตรานนท์"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08538360"
+      ],
+      "rationale": "Subsidiary routing: จุดเชื่อม = internal division JC; JC-MKT unique head = ไพบูลย์ อนุจิตรานนท์ (MANAGER JUDCHUEM BRAND MARKETER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-04"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "แบรนด์คลื่นเสียงเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Thongchai",
+            "ธงชัย"
+          ],
+          [
+            "Amphomsathit",
+            "อัมพรสถิต"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08526617"
+      ],
+      "rationale": "Subsidiary routing: คลื่นเสียง = internal division KS; KS-MKT unique head = ธงชัย อัมพรสถิต (DIRECTOR KLUENSIANG BRAND MARKETER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-05"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "The Kluensiang brand is an in-house FahMai division — who heads its operations unit?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Vasin",
+            "วศิน"
+          ],
+          [
+            "Rajchaidee",
+            "ราชชัยดี"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08155669"
+      ],
+      "rationale": "Subsidiary routing: คลื่นเสียง = internal division KS; KS-OPS unique head = วศิน ราชชัยดี (DIRECTOR KLUENSIANG BRAND OPERATIONS). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-06"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "แบรนด์วงโคจรเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Phichai",
+            "พิชัย"
+          ],
+          [
+            "Amarinfa",
+            "อมรินทร์ฟ้า"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08815508"
+      ],
+      "rationale": "Subsidiary routing: วงโคจร = internal division WK; WK-ENG unique head = พิชัย อมรินทร์ฟ้า (DIRECTOR WONGKHOJON PRODUCT ENGINEER). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-07"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Nangnoi",
+            "นางน้อย"
+          ],
+          [
+            "Kanchai",
+            "กาญจน์ชัย"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08597662"
+      ],
+      "rationale": "Subsidiary routing: วงโคจร = internal division WK; WK-OPS unique head = นางน้อย กาญจน์ชัย (DIRECTOR WONGKHOJON BRAND OPERATIONS). Must route inward, not refuse.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "section_head"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-08"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "สายฟ้าเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นผู้บริหารสูงสุด (VP) ของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Wirat",
+            "วิรัตน์"
+          ],
+          [
+            "Sombusarakham",
+            "สมบุษราคัม"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001167"
+      ],
+      "rationale": "Subsidiary routing: สายฟ้า = internal division SF; division VP = วิรัตน์ สมบุษราคัม. Route inward.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "division_vp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-VP-SF"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "Kluensiang is an in-house FahMai brand — who is the VP heading this division?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Tanet",
+            "ธเนศ"
+          ],
+          [
+            "Buathongprasert",
+            "บัวทองประเสริฐ"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08953826"
+      ],
+      "rationale": "Subsidiary routing: คลื่นเสียง = internal division KS; division VP = ธเนศ บัวทองประเสริฐ. Route inward.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "division_vp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-VP-KS"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "th",
+      "question": "ดาวเหนือเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นผู้บริหารสูงสุด (VP) ของแบรนด์นี้",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ruangsak",
+            "เรืองศักดิ์"
+          ],
+          [
+            "Thepkiatkamjorn",
+            "เทพเกียรติกำจร"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08109010"
+      ],
+      "rationale": "Subsidiary routing: ดาวเหนือ = internal division DN; division VP = เรืองศักดิ์ เทพเกียรติกำจร. Route inward.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "division_vp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-VP-DN"
+    },
+    {
+      "bucket": "subsidiary_routing",
+      "subtype": "F3",
+      "group": "F",
+      "v01_bucket": "subsidiary_routing",
+      "priority": "P1",
+      "language": "en",
+      "question": "Wongkhojon is an in-house FahMai brand — who is the VP heading this division?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Kukrit",
+            "คึกฤทธิ์"
+          ],
+          [
+            "Akaracharoen",
+            "อัครเจริญ"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001148"
+      ],
+      "rationale": "Subsidiary routing: วงโคจร = internal division WK; division VP = คึกฤทธิ์ อัครเจริญ. Route inward.",
+      "tags": [
+        "subsidiary_routing",
+        "brand",
+        "division_vp"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "F3-VP-WK"
+    }
+  ]
+}

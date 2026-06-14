@@ -1,0 +1,13 @@
+{
+  "model": "gpt54med",
+  "stamp": "full",
+  "kb": "knowledge_base/employees_v02.csv",
+  "answer_key": "questions/questions_v02.json",
+  "item_count": 626,
+  "configs": {
+    "t1_grep": "runs/gpt54med_grep-only_L2_t1_grep_full",
+    "t2_search": "runs/gpt54med_search_L2_t2_search_full",
+    "t3_both": "runs/gpt54med_both_L2_t3_both_full",
+    "t4_repl": "runs/gpt54med_repl_L2_t4_repl_full"
+  }
+}

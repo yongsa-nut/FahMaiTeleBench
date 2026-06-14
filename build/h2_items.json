@@ -1,0 +1,564 @@
+{
+  "questions": [
+    {
+      "id": "H2-01",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ของคุณ กฤษ อมรจงรัก หน่อยครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-02",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครคือ กานติมา อภิกอบสุข คะ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-03",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอข้อมูลคุณ อรุณ เขียวขจีศรี หน่อย",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-04",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "อีเมลของ อัญชลี มณีฟ้า คืออะไรครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-05",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "อรญา วัชรบุญ อยู่แผนกไหนคะ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap (อรญา×13)); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-06",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อคุณ ถาวร จิตรานนท์ฟ้า หน่อยครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap (ถาวร×13)); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-07",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครคือ ชยพล แสงทอง",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-08",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอข้อมูลของ ศุภเดช ไกรศรีมณี ครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-09",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "เบอร์ติดต่อ ประยุทธ์ ราชบุญมา หน่อยค่ะ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-10",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "จุฑามาศ พงอนุมาน อยู่ทีมไหนคะ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap (จุฑามาศ×12)); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-11",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลคุณ อรอนงค์ อัครกิตติ หน่อย",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-12",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครคือ โสภา บุญเรืองกุล ครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (combo-trap); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "combo-trap"
+      ]
+    },
+    {
+      "id": "H2-13",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ สมชาย รุ่งเรืองทรัพย์ หน่อยครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (invented); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "invented"
+      ]
+    },
+    {
+      "id": "H2-14",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ข้อมูลคุณ ปวีณา เลิศวิไลพงษ์ ขอหน่อยค่ะ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (invented); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "invented"
+      ]
+    },
+    {
+      "id": "H2-15",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "จิราพรรณ มหัศจรรย์ดี อยู่แผนกไหน",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (invented); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "invented"
+      ]
+    },
+    {
+      "id": "H2-16",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อ อนุชา ทองแท้แน่นอน หน่อยครับ",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (half-trap (อนุชา real)); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "half-trap"
+      ]
+    },
+    {
+      "id": "H2-17",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "en",
+      "question": "Can you find Robert Sandford at FahMai?",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (foreign); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "foreign"
+      ]
+    },
+    {
+      "id": "H2-18",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the extension for Helen Whitmore?",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (foreign); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "foreign"
+      ]
+    },
+    {
+      "id": "H2-19",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is James Okafor in the company?",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (foreign); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "foreign"
+      ]
+    },
+    {
+      "id": "H2-20",
+      "bucket": "refuse",
+      "subtype": "H2",
+      "group": "H",
+      "priority": "P1",
+      "language": "en",
+      "question": "I'm looking for Sandra Klein — which team is she on?",
+      "expected_behavior": "refuse",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไม่พบข้อมูล",
+            "no record found"
+          ]
+        ],
+        "must_not_contain": [],
+        "must_not_contain_phone_extension": true,
+        "must_not_contain_employee_id_pattern": true
+      },
+      "ground_truth_row_ids": [],
+      "rationale": "Not in directory (foreign); must refuse with canonical phrase, no fabrication.",
+      "tags": [
+        "refuse",
+        "not_found",
+        "foreign"
+      ]
+    }
+  ]
+}

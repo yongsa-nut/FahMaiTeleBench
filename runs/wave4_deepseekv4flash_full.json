@@ -1,0 +1,12 @@
+{
+  "model": "deepseekv4flash",
+  "stamp": "full",
+  "kb": "knowledge_base/employees_v02.csv",
+  "answer_key": "questions/questions_v02.json",
+  "item_count": 626,
+  "configs": {
+    "t1_grep": "runs/deepseekv4flash_grep-only_L2_t1_grep_full",
+    "t2_search": "runs/deepseekv4flash_search_L2_t2_search_full",
+    "t4_repl": "runs/deepseekv4flash_repl_L2_t4_repl_full"
+  }
+}

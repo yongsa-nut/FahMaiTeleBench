@@ -1,0 +1,16 @@
+{
+  "model": "gpt-5.5",
+  "model_key": "gpt55med",
+  "base_url": null,
+  "tool": "grep-only",
+  "tool_name": "grep_csv",
+  "kb": "knowledge_base\\employees_v02.csv",
+  "answer_key": "questions\\questions_v02.json",
+  "prompt_variant": "L2",
+  "prompt_file": "fahmai_system_prompt.md",
+  "prompt_chars": 4286,
+  "questions_file": "questions\\questions_v02_all.csv",
+  "item_count": 626,
+  "started_at": "2026-05-25T18:20:56.456838",
+  "max_tool_rounds": 7
+}

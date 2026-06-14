@@ -1,0 +1,1304 @@
+{
+  "questions": [
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณจรูญ ชัยบุญสังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74877"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002101"
+      ],
+      "rationale": "Two-hop section_to_senior: จรูญ ชัยบุญ (IC) -> section B2B-SUP -> unique senior Director ประยุทธ์ สมไชยา -> ext=74877. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S01"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that ฤทธิชัย มณีกาญจน์ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PHONPHAI.AR@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004766"
+      ],
+      "rationale": "Two-hop section_to_senior: ฤทธิชัย มณีกาญจน์ (IC) -> section DN-ENG -> unique senior Director พรไพร อาทิตย์วงษ์ -> email=PHONPHAI.AR@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S02"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76457"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08821819"
+      ],
+      "rationale": "Two-hop section_to_senior: ทัศนีย์ มณีพงศ์ (IC) -> section DN-MKT -> unique senior Director พุสดี ชัยสัยดี -> ext=76457. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S03"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MEKHA.PH2@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08612584"
+      ],
+      "rationale": "Two-hop section_to_senior: ภูมิ กาญจน์เจริญ (IC) -> section FIN-AR -> unique senior Director เมฆา ภัทรใจเขียว -> email=MEKHA.PH2@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S04"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "77404"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08978483"
+      ],
+      "rationale": "Two-hop section_to_senior: อภิชัย จิตรานนท์เจริญ (IC) -> section FIN-GL -> unique senior Director บุษบา อัครพัฒน์ -> ext=77404. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S05"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "UKRIT.AM@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003080"
+      ],
+      "rationale": "Two-hop section_to_senior: รุ่งนภา นราบุญเรือง (IC) -> section FIN-TR -> unique senior Director อุกฤษฎ์ อมรอาทิตย์ -> email=UKRIT.AM@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S06"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74296"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08378010"
+      ],
+      "rationale": "Two-hop section_to_senior: มนตรา บุญเรืองโชติ (IC) -> section HR-COMP -> unique senior Manager ก้อง ชัยใจดี -> ext=74296. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S07"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that ปิติ พรหมใจ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "NARONG.KO@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08153847"
+      ],
+      "rationale": "Two-hop section_to_senior: ปิติ พรหมใจ (IC) -> section JC-ENG -> unique senior Director ณรงค์ กอบสุขบุญ -> email=NARONG.KO@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S08"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "78017"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08538360"
+      ],
+      "rationale": "Two-hop section_to_senior: วิโรจน์ มหาวัฒน์ (IC) -> section JC-MKT -> unique senior Manager ไพบูลย์ อนุจิตรานนท์ -> ext=78017. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S09"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that อัมพร ประฟ้า works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "THONGCHAI.AM@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08526617"
+      ],
+      "rationale": "Two-hop section_to_senior: อัมพร ประฟ้า (IC) -> section KS-MKT -> unique senior Director ธงชัย อัมพรสถิต -> email=THONGCHAI.AM@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S10"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76044"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08155669"
+      ],
+      "rationale": "Two-hop section_to_senior: ศักดิ์สิทธิ์ สัมชากัญญ์ (IC) -> section KS-OPS -> unique senior Director วศิน ราชชัยดี -> ext=76044. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S11"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RITTHIRONG.KI@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006856"
+      ],
+      "rationale": "Two-hop section_to_senior: ทรัพย์ อาวุทธ์กุล (IC) -> section OPS-ADM -> unique senior Director ฤทธิรงค์ เกียรติจักรี -> email=RITTHIRONG.KI@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S12"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณคำรณ ศรีอัญชลีสังกัดอยู่ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "73069"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08255055"
+      ],
+      "rationale": "Two-hop section_to_senior: คำรณ ศรีอัญชลี (IC) -> section OPS-PROC -> unique senior Director ปิติ ภัทรรักษา -> ext=73069. Anchor's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S13"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "v01_bucket": "two_hop",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CHAYAPHON.AN@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08881674"
+      ],
+      "rationale": "Two-hop section_to_senior: เกียรติ บุญแก้วใส (IC) -> section OPS-TRV -> unique senior Director ชยพล อนุไกรศรี -> email=CHAYAPHON.AN@FAHMAI.CO.TH. Anchor's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "section_to_senior",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E1-S14"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E2",
+      "group": "E",
+      "v01_bucket": "hard_bridge_lookup",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the GM of the DaoNuea brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Wichian",
+            "วิเชียร"
+          ],
+          [
+            "Phonghomklin",
+            "พงหอมกลิ่น"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08554423"
+      ],
+      "rationale": "3-hop brand->dept->head (EN counterpart of g359): DaoNuea brand -> its department -> GM.",
+      "tags": [
+        "bridge",
+        "brand",
+        "gm",
+        "cross_lang"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E2-EN-DaoNuea"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E2",
+      "group": "E",
+      "v01_bucket": "hard_bridge_lookup",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the GM of the Kluensiang brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ram",
+            "ราม"
+          ],
+          [
+            "Lawan",
+            "ลวรรณ"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003047"
+      ],
+      "rationale": "3-hop brand->dept->head (EN counterpart of g360): Kluensiang brand -> its department -> GM.",
+      "tags": [
+        "bridge",
+        "brand",
+        "gm",
+        "cross_lang"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E2-EN-Kluensiang"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E2",
+      "group": "E",
+      "v01_bucket": "hard_bridge_lookup",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the GM of the Wongkhojon brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Kris",
+            "กฤษ"
+          ],
+          [
+            "Mahakaewsai",
+            "มหาแก้วใส"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009015"
+      ],
+      "rationale": "3-hop brand->dept->head (EN counterpart of g361): Wongkhojon brand -> its department -> GM.",
+      "tags": [
+        "bridge",
+        "brand",
+        "gm",
+        "cross_lang"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E2-EN-Wongkhojon"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E2",
+      "group": "E",
+      "v01_bucket": "hard_bridge_lookup",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the GM of the Judchuem brand?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Saran",
+            "สรัล"
+          ],
+          [
+            "Awutmani",
+            "อาวุทธ์มณี"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08972652"
+      ],
+      "rationale": "3-hop brand->dept->head (EN counterpart of g362): Judchuem brand -> its department -> GM.",
+      "tags": [
+        "bridge",
+        "brand",
+        "gm",
+        "cross_lang"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E2-EN-Judchuem"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล มณีฟ้า มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Rachata",
+            "ราชตะ"
+          ],
+          [
+            "Chantana",
+            "จันทนา"
+          ],
+          [
+            "Prija",
+            "พฤกษา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08990485",
+        "00001144",
+        "08282432"
+      ],
+      "rationale": "Surname-family listing: 3 members share มณีฟ้า; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L01"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname เขียวขจีศรี (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Pakorn",
+            "ปกรณ์"
+          ],
+          [
+            "Atchara",
+            "อัจฉรา"
+          ],
+          [
+            "Paitoon",
+            "ไพฑูรย์"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08960838",
+        "00004974",
+        "08608998"
+      ],
+      "rationale": "Surname-family listing: 3 members share เขียวขจีศรี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L02"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล แสงทอง มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ravee",
+            "ระวี"
+          ],
+          [
+            "Dao",
+            "ดาว"
+          ],
+          [
+            "Anurak",
+            "อนุรักษ์"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08824002",
+        "08943531",
+        "08147778"
+      ],
+      "rationale": "Surname-family listing: 3 members share แสงทอง; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L03"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname ไกรศรีมณี (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Yu-Pha",
+            "ยุพา"
+          ],
+          [
+            "Wipha",
+            "วิภา"
+          ],
+          [
+            "Panit",
+            "พาณิช"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08474350",
+        "08675490",
+        "08654684"
+      ],
+      "rationale": "Surname-family listing: 3 members share ไกรศรีมณี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L04"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล กิตติบุญใจ มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Panit",
+            "พาณิช"
+          ],
+          [
+            "Ngamchit",
+            "งามจิตร"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "00001415",
+        "08222582"
+      ],
+      "rationale": "Surname-family listing: 2 members share กิตติบุญใจ; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L05"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname บุญเรืองกุล (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Sasi",
+            "ศศิ"
+          ],
+          [
+            "Namthip",
+            "น้ำทิพย์"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08547903",
+        "08778113"
+      ],
+      "rationale": "Surname-family listing: 2 members share บุญเรืองกุล; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L06"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล ประกิตติชาติ มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Rai",
+            "รัศมี"
+          ],
+          [
+            "Uma",
+            "อุมา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08143319",
+        "08272985"
+      ],
+      "rationale": "Surname-family listing: 2 members share ประกิตติชาติ; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L07"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname พงอนุมาน (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Namthip",
+            "น้ำทิพย์"
+          ],
+          [
+            "Pravat",
+            "ประวัติ"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08303980",
+        "08872118"
+      ],
+      "rationale": "Surname-family listing: 2 members share พงอนุมาน; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L08"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล พงอัสนี มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Veera",
+            "วีระ"
+          ],
+          [
+            "Pimchanok",
+            "พิมพ์ชนก"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08911722",
+        "08335657"
+      ],
+      "rationale": "Surname-family listing: 2 members share พงอัสนี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L09"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname พรหมชากัญญ์ (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Sasi",
+            "ศศิ"
+          ],
+          [
+            "Phitsamai",
+            "พิศสมัย"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08387207",
+        "08759175"
+      ],
+      "rationale": "Surname-family listing: 2 members share พรหมชากัญญ์; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L10"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล มหาใจดี มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Kasem",
+            "เกษม"
+          ],
+          [
+            "Yothaka",
+            "โยธกา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08435906",
+        "08940594"
+      ],
+      "rationale": "Surname-family listing: 2 members share มหาใจดี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L11"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname รัตนจักรี (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Tassanee",
+            "ทัศนีย์"
+          ],
+          [
+            "Sorapong",
+            "สรพงษ์"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08102167",
+        "08412121"
+      ],
+      "rationale": "Surname-family listing: 2 members share รัตนจักรี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L12"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล ราชบุญมา มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Phuwadon",
+            "ภูวดล"
+          ],
+          [
+            "Rattana",
+            "รัตตนา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08238008",
+        "08631254"
+      ],
+      "rationale": "Surname-family listing: 2 members share ราชบุญมา; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L13"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname วัชรจงรัก (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Panya",
+            "ปัญญา"
+          ],
+          [
+            "Charoon",
+            "จรูญ"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08461303",
+        "08943878"
+      ],
+      "rationale": "Surname-family listing: 2 members share วัชรจงรัก; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L14"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล วัชรชัยวัฒน์ มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Thanin",
+            "ทนิน"
+          ],
+          [
+            "Thanachart",
+            "ธนชาติ"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08347785",
+        "00007910"
+      ],
+      "rationale": "Surname-family listing: 2 members share วัชรชัยวัฒน์; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L15"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname สมประเสริฐ (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Som",
+            "ส้ม"
+          ],
+          [
+            "Dara",
+            "ดารา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08653846",
+        "08636294"
+      ],
+      "rationale": "Surname-family listing: 2 members share สมประเสริฐ; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L16"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล สัมหอมกลิ่น มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Darika",
+            "ดาริกา"
+          ],
+          [
+            "Saengdao",
+            "แสงดาว"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08319443",
+        "08367899"
+      ],
+      "rationale": "Surname-family listing: 2 members share สัมหอมกลิ่น; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L17"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname อภิญญาเสริม (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Veera",
+            "วีระ"
+          ],
+          [
+            "Darha",
+            "ดาหลา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08322432",
+        "08683397"
+      ],
+      "rationale": "Surname-family listing: 2 members share อภิญญาเสริม; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L18"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "th",
+      "question": "พนักงานที่นามสกุล อมรกุล มีใครบ้าง ขอชื่อทุกคน",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ruangsak",
+            "เรืองศักดิ์"
+          ],
+          [
+            "Preed",
+            "ปรีดา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08182575",
+        "08235397"
+      ],
+      "rationale": "Surname-family listing: 2 members share อมรกุล; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L19"
+    },
+    {
+      "bucket": "multi_hop",
+      "subtype": "E4",
+      "group": "E",
+      "v01_bucket": "surname_family",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone with the surname อมรอัญชลี (give all of them).",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Orachon",
+            "อรชร"
+          ],
+          [
+            "Yothaka",
+            "โยธกา"
+          ]
+        ],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08485593",
+        "08221549"
+      ],
+      "rationale": "Surname-family listing: 2 members share อมรอัญชลี; gold requires every member (per-member AND-group of first-name variants), substring-proof.",
+      "tags": [
+        "surname",
+        "family",
+        "listing"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "E4-L20"
+    }
+  ]
+}

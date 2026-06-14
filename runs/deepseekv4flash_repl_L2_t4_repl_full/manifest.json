@@ -1,0 +1,16 @@
+{
+  "model": "deepseek/deepseek-v4-flash",
+  "model_key": "deepseekv4flash",
+  "base_url": "https://openrouter.ai/api/v1",
+  "tool": "repl",
+  "tool_name": "python_repl",
+  "kb": "knowledge_base\\employees_v02.csv",
+  "answer_key": "questions\\questions_v02.json",
+  "prompt_variant": "L2",
+  "prompt_file": "fahmai_system_prompt.md",
+  "prompt_chars": 4286,
+  "questions_file": "questions\\questions_v02_all.csv",
+  "item_count": 626,
+  "started_at": "2026-05-25T20:10:05.644587",
+  "max_tool_rounds": 7
+}

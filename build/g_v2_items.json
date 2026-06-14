@@ -1,0 +1,1681 @@
+{
+  "questions": [
+    {
+      "id": "G1-01",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ CEO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "VACHIR.CH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "Thai Q for English-only field (email=VACHIR.CH@FAHMAI.CO.TH) of CHIEF EXECUTIVE OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-02",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ CFO คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CFO"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=CFO) of CHIEF FINANCIAL OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-03",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "00003437"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=00003437) of CHIEF TECHNOLOGY OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-04",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ COO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PONGKAN.RA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007631"
+      ],
+      "rationale": "Thai Q for English-only field (email=PONGKAN.RA@FAHMAI.CO.TH) of CHIEF OPERATING OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-05",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ CMO คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CMO"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009368"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=CMO) of CHIEF MARKETING OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-06",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "00001072"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001072"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=00001072) of CHIEF PRODUCT OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-07",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ CHRO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "NATHAMON.AP@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001359"
+      ],
+      "rationale": "Thai Q for English-only field (email=NATHAMON.AP@FAHMAI.CO.TH) of CHIEF HUMAN RESOURCES OFFICER.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-08",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ Chief of Staff คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CEO-CoS"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006662"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=CEO-CoS) of CHIEF OF STAFF.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-09",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "00007543"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007543"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=00007543) of VICE PRESIDENT FINANCE.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-10",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ VP ฝ่ายบุคคล หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUMATE.AK@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008718"
+      ],
+      "rationale": "Thai Q for English-only field (email=SUMATE.AK@FAHMAI.CO.TH) of VICE PRESIDENT HUMAN RESOURCES.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-11",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ VP ฝ่ายการตลาด คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MKTVP"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08542152"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=MKTVP) of VICE PRESIDENT MARKETING.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-12",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ VP ฝ่ายกฎหมาย คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "08751994"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=08751994) of VICE PRESIDENT LEGAL.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-13",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ VP ฝ่ายเทคโนโลยี หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "NATTAPHONG.AT@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001368"
+      ],
+      "rationale": "Thai Q for English-only field (email=NATTAPHONG.AT@FAHMAI.CO.TH) of VICE PRESIDENT TECHNOLOGY.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-14",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ VP ฝ่ายปฏิบัติการ คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "OPSVP"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009282"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=OPSVP) of VICE PRESIDENT OPERATIONS.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-15",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ VP ฝ่ายโลจิสติกส์ คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "00003012"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003012"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=00003012) of VICE PRESIDENT LOGISTICS.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-16",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ VP ฝ่ายลูกค้าสัมพันธ์ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "DARIKA.AW@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008495"
+      ],
+      "rationale": "Thai Q for English-only field (email=DARIKA.AW@FAHMAI.CO.TH) of VICE PRESIDENT CUSTOMER SUPPORT.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-17",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ VP ฝ่ายคุณภาพ คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "OPSQA"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007001"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=OPSQA) of VICE PRESIDENT QUALITY.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G1-18",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสพนักงาน (employee ID) ของ VP ฝ่ายขนส่ง คือเลขอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "00002042"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002042"
+      ],
+      "rationale": "Thai Q for English-only field (employee id=00002042) of VICE PRESIDENT FLEET.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "empid"
+      ]
+    },
+    {
+      "id": "G1-19",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของ ผู้ช่วยผู้บริหารของ CEO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ORRAYA.WA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08902591"
+      ],
+      "rationale": "Thai Q for English-only field (email=ORRAYA.WA@FAHMAI.CO.TH) of EXECUTIVE ASSISTANT TO CEO.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "email"
+      ]
+    },
+    {
+      "id": "G1-20",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "รหัสหน่วยงาน (unit code) ของ ผู้ช่วยผู้บริหารของ CFO คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FIN-EA"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08550959"
+      ],
+      "rationale": "Thai Q for English-only field (unit code=FIN-EA) of EXECUTIVE ASSISTANT TO CFO.",
+      "tags": [
+        "bilingual",
+        "th_q_en_field",
+        "unit"
+      ]
+    },
+    {
+      "id": "G2-01",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the CEO's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เบอร์รี่",
+            "Berry",
+            "BERRY"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "English Q for Thai field (nickname เบอร์รี่); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-02",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the CFO?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "กมลา",
+            "Kamala"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "English Q for Thai field (first name กมลา); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-03",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the CTO?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "แก้วใสภิญโญ",
+            "Kaewsaiphinyo"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "English Q for Thai field (last name แก้วใสภิญโญ); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-04",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Chief of Staff's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "บูม",
+            "Boom",
+            "BOOM"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006662"
+      ],
+      "rationale": "English Q for Thai field (nickname บูม); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-05",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the VP of Finance?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "แสงดาว",
+            "Saengdao"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007543"
+      ],
+      "rationale": "English Q for Thai field (first name แสงดาว); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-06",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the VP of HR?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อัครใจงาม",
+            "Akarajaingam"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008718"
+      ],
+      "rationale": "English Q for Thai field (last name อัครใจงาม); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-07",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the VP of Marketing's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "โอ",
+            "Oh",
+            "OH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08542152"
+      ],
+      "rationale": "English Q for Thai field (nickname โอ); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-08",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the VP of Legal?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไพโรจน์",
+            "Phairoj"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "English Q for Thai field (first name ไพโรจน์); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-09",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the VP of Technology?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อธิดี",
+            "Athidi"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001368"
+      ],
+      "rationale": "English Q for Thai field (last name อธิดี); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-10",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the VP of Logistics's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ติ๊ก",
+            "Tik",
+            "TIK"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003012"
+      ],
+      "rationale": "English Q for Thai field (nickname ติ๊ก); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-11",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the VP of Customer Support?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ดาริกา",
+            "Darika"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008495"
+      ],
+      "rationale": "English Q for Thai field (first name ดาริกา); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-12",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the VP of Quality?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เก่งกาจชัย",
+            "Khaengkadchai"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007001"
+      ],
+      "rationale": "English Q for Thai field (last name เก่งกาจชัย); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-13",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the VP of Fleet's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "คลาวด์",
+            "Cloud",
+            "CLOUD"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002042"
+      ],
+      "rationale": "English Q for Thai field (nickname คลาวด์); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-14",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the CEO's executive assistant?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อรญา",
+            "Orraya"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08902591"
+      ],
+      "rationale": "English Q for Thai field (first name อรญา); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-15",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the CFO's executive assistant?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "โชคดีกำจร",
+            "Chokdeekamchon"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08550959"
+      ],
+      "rationale": "English Q for Thai field (last name โชคดีกำจร); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-16",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the CTO's executive assistant's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "มิ้น",
+            "Mint",
+            "MINT"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08392510"
+      ],
+      "rationale": "English Q for Thai field (nickname มิ้น); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-17",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the CMO's executive assistant?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ดาริกา",
+            "Darika"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08981768"
+      ],
+      "rationale": "English Q for Thai field (first name ดาริกา); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-18",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai family (last) name of the CEO?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "จิรบุญ",
+            "Chirabun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "English Q for Thai field (last name จิรบุญ); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "lastname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-19",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the CTO's Thai nickname (ชื่อเล่น)?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ปันปัน",
+            "Panpan",
+            "PANPAN"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "English Q for Thai field (nickname ปันปัน); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "nickname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G2-20",
+      "bucket": "bilingual",
+      "subtype": "G1",
+      "group": "G",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is the Thai given (first) name of the COO?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "พงษ์กานต์",
+            "Pongkan"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007631"
+      ],
+      "rationale": "English Q for Thai field (first name พงษ์กานต์); accept Thai script or romanization.",
+      "tags": [
+        "bilingual",
+        "en_q_th_field",
+        "firstname",
+        "merged_from_G2"
+      ]
+    },
+    {
+      "id": "G3-01",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email address ของ Chief Executive Officer หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "VACHIR.CH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "Code-switched Thai+English asking email; gold=VACHIR.CH@FAHMAI.CO.TH.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "email"
+      ]
+    },
+    {
+      "id": "G3-02",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "Chief Financial Officer เบอร์ extension อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74921"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Code-switched Thai+English asking ext; gold=74921.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "ext"
+      ]
+    },
+    {
+      "id": "G3-03",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "nickname ของ Chief Technology Officer คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ปันปัน",
+            "Panpan",
+            "PANPAN"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Code-switched Thai+English asking nickname; gold=ปันปัน.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "nickname"
+      ]
+    },
+    {
+      "id": "G3-04",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยหา unit code ของ Chief Operating Officer ให้ทีครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "COO"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007631"
+      ],
+      "rationale": "Code-switched Thai+English asking unit; gold=COO.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "unit"
+      ]
+    },
+    {
+      "id": "G3-05",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email address ของ Chief Marketing Officer หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SOM.KA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009368"
+      ],
+      "rationale": "Code-switched Thai+English asking email; gold=SOM.KA@FAHMAI.CO.TH.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "email"
+      ]
+    },
+    {
+      "id": "G3-06",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "Chief Product Officer เบอร์ extension อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "78052"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001072"
+      ],
+      "rationale": "Code-switched Thai+English asking ext; gold=78052.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "ext"
+      ]
+    },
+    {
+      "id": "G3-07",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "nickname ของ Chief Of Staff คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "บูม",
+            "Boom",
+            "BOOM"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006662"
+      ],
+      "rationale": "Code-switched Thai+English asking nickname; gold=บูม.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "nickname"
+      ]
+    },
+    {
+      "id": "G3-08",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยหา unit code ของ Vice President Finance ให้ทีครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FINVP"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007543"
+      ],
+      "rationale": "Code-switched Thai+English asking unit; gold=FINVP.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "unit"
+      ]
+    },
+    {
+      "id": "G3-09",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email address ของ Vice President Human Resources หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUMATE.AK@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008718"
+      ],
+      "rationale": "Code-switched Thai+English asking email; gold=SUMATE.AK@FAHMAI.CO.TH.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "email"
+      ]
+    },
+    {
+      "id": "G3-10",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "Vice President Marketing เบอร์ extension อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74711"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08542152"
+      ],
+      "rationale": "Code-switched Thai+English asking ext; gold=74711.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "ext"
+      ]
+    },
+    {
+      "id": "G3-11",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "nickname ของ Vice President Logistics คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ติ๊ก",
+            "Tik",
+            "TIK"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003012"
+      ],
+      "rationale": "Code-switched Thai+English asking nickname; gold=ติ๊ก.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "nickname"
+      ]
+    },
+    {
+      "id": "G3-12",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยหา unit code ของ Vice President Customer Support ให้ทีครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUPVP"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008495"
+      ],
+      "rationale": "Code-switched Thai+English asking unit; gold=SUPVP.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "unit"
+      ]
+    },
+    {
+      "id": "G3-13",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email address ของ Vice President Quality หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KANOK.KH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007001"
+      ],
+      "rationale": "Code-switched Thai+English asking email; gold=KANOK.KH@FAHMAI.CO.TH.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "email"
+      ]
+    },
+    {
+      "id": "G3-14",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "Vice President Fleet เบอร์ extension อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "75089"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002042"
+      ],
+      "rationale": "Code-switched Thai+English asking ext; gold=75089.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "ext"
+      ]
+    },
+    {
+      "id": "G3-15",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "nickname ของ Executive Assistant To CEO คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เป้",
+            "Pe",
+            "PE"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08902591"
+      ],
+      "rationale": "Code-switched Thai+English asking nickname; gold=เป้.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "nickname"
+      ]
+    },
+    {
+      "id": "G3-16",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยหา unit code ของ Executive Assistant To CFO ให้ทีครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FIN-EA"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08550959"
+      ],
+      "rationale": "Code-switched Thai+English asking unit; gold=FIN-EA.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "unit"
+      ]
+    },
+    {
+      "id": "G3-17",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email address ของ Executive Assistant To CTO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "JUTHAMAS.KA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08392510"
+      ],
+      "rationale": "Code-switched Thai+English asking email; gold=JUTHAMAS.KA@FAHMAI.CO.TH.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "email"
+      ]
+    },
+    {
+      "id": "G3-18",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "Executive Assistant To CMO เบอร์ extension อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "71338"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08981768"
+      ],
+      "rationale": "Code-switched Thai+English asking ext; gold=71338.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "ext"
+      ]
+    },
+    {
+      "id": "G3-19",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "nickname ของ Chief Executive Officer คืออะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เบอร์รี่",
+            "Berry",
+            "BERRY"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002699"
+      ],
+      "rationale": "Code-switched Thai+English asking nickname; gold=เบอร์รี่.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "nickname"
+      ]
+    },
+    {
+      "id": "G3-20",
+      "bucket": "bilingual",
+      "subtype": "G3",
+      "group": "G",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยหา unit code ของ Chief Financial Officer ให้ทีครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CFO"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Code-switched Thai+English asking unit; gold=CFO.",
+      "tags": [
+        "bilingual",
+        "code_switch",
+        "unit"
+      ]
+    }
+  ]
+}

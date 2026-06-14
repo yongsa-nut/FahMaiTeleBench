@@ -1,0 +1,35 @@
+# Secrets — never commit. Provide your own (see README "Environment").
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# LaTeX build artifacts (keep the committed PDF; ignore intermediates — some embed local paths)
+paper/acl-paper/*.aux
+paper/acl-paper/*.log
+paper/acl-paper/*.out
+paper/acl-paper/*.bbl
+paper/acl-paper/*.blg
+paper/acl-paper/*.fdb_latexmk
+paper/acl-paper/*.fls
+paper/acl-paper/*.synctex.gz
+# stray LaTeX log from a no-jobname run
+texput.log
+**/texput.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Evaluation outputs. The committed runs/ holds results.jsonl (graded per-item),
+# manifest.json, and report.md per run — enough to reproduce every paper table.
+# The raw per-item response transcripts (raw/*.md) are NOT committed: they are
+# byte-identical duplicates of the `response` field already inside results.jsonl.
+# Tool-call traces are not committed either. Regenerate with scripts/run_wave4_sweep.py.
+runs/**/raw/
+runs/**/traces/

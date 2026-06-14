@@ -1,0 +1,16 @@
+{
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "model_key": "opentyphoon",
+  "base_url": "https://api.opentyphoon.ai/v1",
+  "tool": "both",
+  "tool_name": "search_employees+grep_csv+read_csv_rows",
+  "kb": "knowledge_base\\employees_v02.csv",
+  "answer_key": "questions\\questions_v02.json",
+  "prompt_variant": "L2",
+  "prompt_file": "fahmai_system_prompt.md",
+  "prompt_chars": 4286,
+  "questions_file": "questions\\questions_v02_all.csv",
+  "item_count": 8,
+  "started_at": "2026-05-25T14:12:25.405217",
+  "max_tool_rounds": 7
+}

@@ -1,0 +1,771 @@
+{
+  "questions": [
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Hi, do you have the email of Khun Kamala Chaisonsavang, our CFO?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KAMALA.CH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009440"
+      ],
+      "rationale": "Noisy romanization 'Chaisonsavang' (w->v) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=email 'KAMALA.CH@FAHMAI.CO.TH'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "w_v",
+        "email",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-001"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "เบอร์ต่อของคุณ Jutamas ที่เป็น EA ของ CTO เบอร์อะไรคะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "77008"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08392510"
+      ],
+      "rationale": "Noisy romanization 'Jutamas' (drop-H(th)) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=ext '77008'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_th",
+        "ext",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-002"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Which floor is Kittikhun Pongchongrak, the Chief of Staff, working on?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FahMai Tower 16F"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006662"
+      ],
+      "rationale": "Noisy romanization 'Pongchongrak' (drop-H(ph)) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=office 'FahMai Tower 16F'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_ph",
+        "office",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-003"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email ของ Tanida เลขา COO หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "THANIDA.TH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001544"
+      ],
+      "rationale": "Noisy romanization 'Tanida' (drop-H(th)) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=email 'THANIDA.TH@FAHMAI.CO.TH'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_th",
+        "email",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-004"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Ext of Ritichai Kaewsaiphinyo (our CTO) please?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "75477"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Noisy romanization 'Ritichai' (collapse) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=ext '75477'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "collapse",
+        "ext",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-008"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ Sukum Suwanfahsai manager ทีม chat support หน่อยค่ะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUKHUM.SU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002568"
+      ],
+      "rationale": "Noisy romanization 'Sukum' (drop-H(kh)) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=email 'SUKHUM.SU@FAHMAI.CO.TH'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_kh",
+        "email",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-014"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Can I get the extension for Viriya Chanchai, VP of Retail Network?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79141"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008000"
+      ],
+      "rationale": "Noisy romanization 'Viriya' (w->v) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=ext '79141'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "w_v",
+        "ext",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-015"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Where's Ladawan Samphat's office? She's the EA to our CHRO.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FahMai Tower 24F"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08868941"
+      ],
+      "rationale": "Noisy romanization 'Ladawan' (collapse) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=office 'FahMai Tower 24F'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "collapse",
+        "office",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-017"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "เบอร์ต่อของคุณ Sombat Bunnamngam manager ทีม data scientist เบอร์อะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76059"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08672839"
+      ],
+      "rationale": "Noisy romanization 'Bunnamngam' (oo->u) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=ext '76059'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "oo_u",
+        "ext",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-018"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Could you share the email of Suphawadi Bundaorueng, the secretary to the WK VP?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUPHAWADEE.BU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08583872"
+      ],
+      "rationale": "Noisy romanization 'Suphawadi' (ee->i) = 0 name-field hits -> must normalize; full canonical name+role resolves uniquely. gold=email 'SUPHAWADEE.BU@FAHMAI.CO.TH'.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "ee_i",
+        "email",
+        "easy_tier",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-019"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ Oraya เลขาของ CEO หน่อยค่ะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ORRAYA.WA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [
+          "ORRAYA.AM@FAHMAI.CO.TH",
+          "ORRAYA.AN@FAHMAI.CO.TH",
+          "ORRAYA.CH2@FAHMAI.CO.TH",
+          "ORRAYA.CH3@FAHMAI.CO.TH",
+          "ORRAYA.CH@FAHMAI.CO.TH",
+          "ORRAYA.DA@FAHMAI.CO.TH",
+          "ORRAYA.HO@FAHMAI.CO.TH",
+          "ORRAYA.PH2@FAHMAI.CO.TH",
+          "ORRAYA.PH@FAHMAI.CO.TH",
+          "ORRAYA.WA2@FAHMAI.CO.TH",
+          "ORRAYA.WA3@FAHMAI.CO.TH",
+          "ORRAYA.WO@FAHMAI.CO.TH"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08902591"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'ORRAYA' x13 homonyms; noisy 'Oraya' (collapse) = 0 hits -> normalize, then company-unique role 'CEO's EA' disambiguates. gold=email 'ORRAYA.WA@FAHMAI.CO.TH'; 12 homonym emails as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "collapse",
+        "email",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H01"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the extension for Thavan, the GM of Saifah?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79517"
+          ]
+        ],
+        "must_not_contain": [
+          "09932",
+          "24770",
+          "46232",
+          "65232",
+          "71907",
+          "74095",
+          "76383",
+          "77052",
+          "77352",
+          "78993",
+          "79134",
+          "79534"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00005427"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'THAWAN' x13 homonyms; noisy 'Thavan' (w->v) = 0 hits -> normalize, then company-unique role 'GM of Saifah' disambiguates. gold=ext '79517'; 12 homonym exts as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "w_v",
+        "ext",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H02"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ Vaen ที่เป็น Director ทีม Escalations หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "71471"
+          ]
+        ],
+        "must_not_contain": [
+          "18918",
+          "34637",
+          "41792",
+          "53663",
+          "71030",
+          "74185",
+          "77044",
+          "78902",
+          "81419"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08863943"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'WAEN' x12 homonyms; noisy 'Vaen' (w->v) = 0 hits -> normalize, then company-unique role 'Director of Escalations (Support)' disambiguates. gold=ext '71471'; 9 homonym exts as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "w_v",
+        "ext",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H03"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Could you get me Natamon's email? She's our CHRO.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "NATHAMON.AP@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [
+          "NATHAMON.AP2@FAHMAI.CO.TH",
+          "NATHAMON.CH2@FAHMAI.CO.TH",
+          "NATHAMON.CH3@FAHMAI.CO.TH",
+          "NATHAMON.CH4@FAHMAI.CO.TH",
+          "NATHAMON.CH@FAHMAI.CO.TH",
+          "NATHAMON.KA2@FAHMAI.CO.TH",
+          "NATHAMON.KA@FAHMAI.CO.TH",
+          "NATHAMON.PH2@FAHMAI.CO.TH",
+          "NATHAMON.PH@FAHMAI.CO.TH"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00001359"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'NATHAMON' x10 homonyms; noisy 'Natamon' (drop-H(th)) = 0 hits -> normalize, then company-unique role 'CHRO' disambiguates. gold=email 'NATHAMON.AP@FAHMAI.CO.TH'; 9 homonym emails as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_th",
+        "email",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H04"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "คุณ Nattakan VP Logistics นั่งตึกไหนชั้นไหนคะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "FahMai Tower 16F"
+          ]
+        ],
+        "must_not_contain": [
+          "FahMai Tower 19F",
+          "FahMai Tower 4F",
+          "FahMai Tower 5F",
+          "FahMai Tower 6F",
+          "ทำงานทางไกล",
+          "สาขาบางนา",
+          "สาขาลาดพร้าว",
+          "สาขาเชียงใหม่"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00003012"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'NATTHAKAN' x9 homonyms; noisy 'Nattakan' (drop-H(th)) = 0 hits -> normalize, then company-unique role 'VP Logistics' disambiguates. gold=office 'FahMai Tower 16F'; 8 homonym offices as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_th",
+        "office",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H05"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ Wipa เลขาฯ ของ VP Logistics หน่อยค่ะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "72649"
+          ]
+        ],
+        "must_not_contain": [
+          "47835",
+          "72483",
+          "73507",
+          "74190",
+          "74919",
+          "75335",
+          "77855",
+          "78051",
+          "78655",
+          "99316"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08427848"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'WIPHA' x11 homonyms; noisy 'Wipa' (drop-H(ph)) = 0 hits -> normalize, then company-unique role 'secretary to the VP of Logistics' disambiguates. gold=ext '72649'; 10 homonym exts as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_ph",
+        "ext",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H06"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Can I get the extension for Sompong, the VP of Digital Marketing?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79901"
+          ]
+        ],
+        "must_not_contain": [
+          "26435",
+          "48530",
+          "71446",
+          "71530",
+          "76254",
+          "77067",
+          "79313",
+          "79743"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08765852"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'SOMPHONG' x10 homonyms; noisy 'Sompong' (drop-H(ph)) = 0 hits -> normalize, then company-unique role 'VP of Digital Marketing' disambiguates. gold=ext '79901'; 8 homonym exts as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_ph",
+        "ext",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H07"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's Meka's email — the Director of Accounts Receivable?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MEKHA.PH2@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [
+          "MEKHA.AN@FAHMAI.CO.TH",
+          "MEKHA.AP@FAHMAI.CO.TH",
+          "MEKHA.JA@FAHMAI.CO.TH",
+          "MEKHA.KA@FAHMAI.CO.TH",
+          "MEKHA.KH@FAHMAI.CO.TH",
+          "MEKHA.MA@FAHMAI.CO.TH",
+          "MEKHA.PH3@FAHMAI.CO.TH",
+          "MEKHA.PH@FAHMAI.CO.TH",
+          "MEKHA.RA@FAHMAI.CO.TH"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08612584"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'MEKHA' x10 homonyms; noisy 'Meka' (drop-H(kh)) = 0 hits -> normalize, then company-unique role 'Director of Accounts Receivable' disambiguates. gold=email 'MEKHA.PH2@FAHMAI.CO.TH'; 9 homonym emails as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "drop-H_kh",
+        "email",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H08"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "en",
+      "question": "Ravi, the Director of Support Training — what's his extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76523"
+          ]
+        ],
+        "must_not_contain": [
+          "13350",
+          "14440",
+          "22688",
+          "34113",
+          "71375",
+          "72662",
+          "75381",
+          "77428",
+          "82228",
+          "83479"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08210238"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'RAVEE' x12 homonyms; noisy 'Ravi' (ee->i) = 0 hits -> normalize, then company-unique role 'Director of Support Training' disambiguates. gold=ext '76523'; 10 homonym exts as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "ee_i",
+        "ext",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H09"
+    },
+    {
+      "bucket": "noisy_name_form",
+      "subtype": "B3",
+      "group": "B",
+      "v01_bucket": "noisy_name_form",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ Natanicha ที่เป็นเลขาฯ ของ VP ฝ่าย Retail ต่างจังหวัด หน่อยค่ะ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "NATTANICHA.KA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [
+          "NATTANICHA.CH2@FAHMAI.CO.TH",
+          "NATTANICHA.CH@FAHMAI.CO.TH",
+          "NATTANICHA.DA@FAHMAI.CO.TH",
+          "NATTANICHA.PH@FAHMAI.CO.TH",
+          "NATTANICHA.RA2@FAHMAI.CO.TH",
+          "NATTANICHA.RA3@FAHMAI.CO.TH",
+          "NATTANICHA.RA@FAHMAI.CO.TH",
+          "NATTANICHA.SU@FAHMAI.CO.TH",
+          "NATTANICHA.WA@FAHMAI.CO.TH",
+          "NATTANICHA.WI@FAHMAI.CO.TH"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00007097"
+      ],
+      "rationale": "Hard tier (B3xD1): shared first name 'NATTANICHA' x11 homonyms; noisy 'Natanicha' (collapse) = 0 hits -> normalize, then company-unique role 'secretary to the VP of Upcountry Retail' disambiguates. gold=email 'NATTANICHA.KA@FAHMAI.CO.TH'; 10 homonym emails as must_not_contain.",
+      "tags": [
+        "noisy_name",
+        "transliteration",
+        "collapse",
+        "email",
+        "hard_tier",
+        "homonym",
+        "disambiguation",
+        "retry_t1"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "B3-H10"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "model": "sonnet",
+  "stamp": "full",
+  "kb": "knowledge_base/employees_v02.csv",
+  "answer_key": "questions/questions_v02.json",
+  "item_count": 626,
+  "configs": {
+    "t1_grep": "runs/sonnet_grep-only_L2_t1_grep_full",
+    "t2_search": "runs/sonnet_search_L2_t2_search_full",
+    "t3_both": "runs/sonnet_both_L2_t3_both_full",
+    "t4_repl": "runs/sonnet_repl_L2_t4_repl_full"
+  }
+}

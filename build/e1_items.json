@@ -1,0 +1,490 @@
+{
+  "questions": [
+    {
+      "id": "E1-01",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของรองประธานที่มีเลขานุการคือคุณบุปผา อภิอภิญญา หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "77907"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007543"
+      ],
+      "rationale": "Two-hop: บุปผา อภิอภิญญา (FINVP) -> VP of FIN = แสงดาว พิดวงกมล -> ext=77907. Secretary's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-02",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email address of the VP whose secretary is แตง บุญญาสินธุ์?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUMATE.AK@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008718"
+      ],
+      "rationale": "Two-hop: แตง บุญญาสินธุ์ (HRVP) -> VP of HR = สุเมธ อัครใจงาม -> email=SUMATE.AK@FAHMAI.CO.TH. Secretary's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-03",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของรองประธานที่มีเลขานุการคือคุณมนตรา วิศกิตติบุญ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79653"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Two-hop: มนตรา วิศกิตติบุญ (LEGVP) -> VP of LEG = ไพโรจน์ มหากุล -> ext=79653. Secretary's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-04",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email address of the VP whose secretary is เพ็ญศรี นราบุษราคัม?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "WIRAT.SO@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001167"
+      ],
+      "rationale": "Two-hop: เพ็ญศรี นราบุษราคัม (SFVP) -> VP of SF = วิรัตน์ สมบุษราคัม -> email=WIRAT.SO@FAHMAI.CO.TH. Secretary's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-05",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของรองประธานที่มีเลขานุการคือคุณส้ม ราชชัยเจริญ หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "72280"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08109010"
+      ],
+      "rationale": "Two-hop: ส้ม ราชชัยเจริญ (DNVP) -> VP of DN = เรืองศักดิ์ เทพเกียรติกำจร -> ext=72280. Secretary's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-06",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email address of the VP whose secretary is ปิยนันท์ พรหมพิทักษ์?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "TANET.BU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08953826"
+      ],
+      "rationale": "Two-hop: ปิยนันท์ พรหมพิทักษ์ (KSVP) -> VP of KS = ธเนศ บัวทองประเสริฐ -> email=TANET.BU@FAHMAI.CO.TH. Secretary's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-07",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของรองประธานที่มีเลขานุการคือคุณสุภาวดี บุญดาวเรือง หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79033"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001148"
+      ],
+      "rationale": "Two-hop: สุภาวดี บุญดาวเรือง (WKVP) -> VP of WK = คึกฤทธิ์ อัครเจริญ -> ext=79033. Secretary's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-08",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the email address of the VP whose secretary is รัตพร จงรักกุล?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RACHINI.AR@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004661"
+      ],
+      "rationale": "Two-hop: รัตพร จงรักกุล (JCVP) -> VP of JC = ราชินี อาทิตย์สุข -> email=RACHINI.AR@FAHMAI.CO.TH. Secretary's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "secretary_bridge"
+      ]
+    },
+    {
+      "id": "E1-09",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณทัศนีย์ มณีพงศ์ สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RUANGSAK.TH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08109010"
+      ],
+      "rationale": "Two-hop: ทัศนีย์ มณีพงศ์ -> dept DN (single head) -> VP เรืองศักดิ์ เทพเกียรติกำจร -> email=RUANGSAK.TH@FAHMAI.CO.TH. Person's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-10",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the VP who heads the department that วศิน อมรอนงค์ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "72280"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08109010"
+      ],
+      "rationale": "Two-hop: วศิน อมรอนงค์ -> dept DN (single head) -> VP เรืองศักดิ์ เทพเกียรติกำจร -> ext=72280. Person's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-11",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณละไม บุญพงศ์ สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RACHINI.AR@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004661"
+      ],
+      "rationale": "Two-hop: ละไม บุญพงศ์ -> dept JC (single head) -> VP ราชินี อาทิตย์สุข -> email=RACHINI.AR@FAHMAI.CO.TH. Person's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-12",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the VP who heads the department that สมตา ประเสริม works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "75642"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004661"
+      ],
+      "rationale": "Two-hop: สมตา ประเสริม -> dept JC (single head) -> VP ราชินี อาทิตย์สุข -> ext=75642. Person's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-13",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณอัมพร ประฟ้า สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "TANET.BU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08953826"
+      ],
+      "rationale": "Two-hop: อัมพร ประฟ้า -> dept KS (single head) -> VP ธเนศ บัวทองประเสริฐ -> email=TANET.BU@FAHMAI.CO.TH. Person's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-14",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the VP who heads the department that วิจิตร อภิชากัญญ์ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "71215"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08953826"
+      ],
+      "rationale": "Two-hop: วิจิตร อภิชากัญญ์ -> dept KS (single head) -> VP ธเนศ บัวทองประเสริฐ -> ext=71215. Person's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-15",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณเกษม วิศอัญชลี สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PHAIROJ.MA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Two-hop: เกษม วิศอัญชลี -> dept LEG (single head) -> VP ไพโรจน์ มหากุล -> email=PHAIROJ.MA@FAHMAI.CO.TH. Person's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-16",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the VP who heads the department that วีระ ประอนงค์ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79653"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Two-hop: วีระ ประอนงค์ -> dept LEG (single head) -> VP ไพโรจน์ มหากุล -> ext=79653. Person's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-17",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณธนพล พิประเสริฐ สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KUKRIT.AK@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001148"
+      ],
+      "rationale": "Two-hop: ธนพล พิประเสริฐ -> dept WK (single head) -> VP คึกฤทธิ์ อัครเจริญ -> email=KUKRIT.AK@FAHMAI.CO.TH. Person's own email differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    },
+    {
+      "id": "E1-18",
+      "bucket": "multi_hop",
+      "subtype": "E1",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's the phone extension of the VP who heads the department that แตง ธนอารมณ์ดี works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79033"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001148"
+      ],
+      "rationale": "Two-hop: แตง ธนอารมณ์ดี -> dept WK (single head) -> VP คึกฤทธิ์ อัครเจริญ -> ext=79033. Person's own ext differs (anti-shortcut).",
+      "tags": [
+        "multi_hop",
+        "two_hop",
+        "dept_to_head"
+      ]
+    }
+  ]
+}

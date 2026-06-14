@@ -1,0 +1,607 @@
+# FahMai: A Thai Grounded Tool-Use Benchmark for the Deployable Model Tier
+
+*Working draft — Track 3. Status: full draft (Abstract → Conclusion). Results complete across the
+12-config model matrix with bootstrap CIs and cross-model error analysis; pending human review-bundle
+validation and optional Opus run.*
+
+---
+
+## Abstract
+
+We present **FahMai**, a bilingual (Thai/English) benchmark for *grounded tool-use*. The task is to
+answer employee-directory questions over a structured corporate database by issuing tool calls, or to
+refuse when the answer is not in the data. We design the questions to be inspired by a real Thai
+enterprise-directory deployment, while every record — names, nicknames, phone extensions, emails, and
+the org chart — is synthetic. The benchmark therefore carries no personal data and is
+contamination-free by construction. FahMai contains 626 items across 8 question groups (29 subtypes),
+and it targets phenomena specific to Thai directory search: nickname–formal-name resolution,
+idiosyncratic romanization, homonymous shared given-names, and a five-way refusal taxonomy. We grade
+every item deterministically, using substring and exact-count matching against unique-by-construction
+gold plus a fixed set of canonical refusal phrases, with no LLM judge. Our central design choice is to
+treat tool availability as an experimental variable: we run each item under four tool regimes
+(grep-only, structured search, both, and a Python REPL), which lets us measure not only *whether* a
+model answers correctly but *how* it uses tools. We find that the task is near-solved at the frontier
+(gpt-5.4 97–99%, GLM-5.1 95–98%, Sonnet 4.6 92–95%), yet remains sharply discriminating in the
+affordable, Thai-capable tier one would actually deploy (OpenThaiGPT-8B 22%, Typhoon-2.5-30B 57–73%).
+The tool axis also surfaces behavioral differences that a single accuracy number hides, including
+retry-after-failure, tool routing, and a frontier regression: gpt-5.5 collapses on the wide-schema
+search tool (74%) through a parameter-over-specification loop, while remaining at 96–97% on grep and
+the REPL. We argue that an easy, faithful, and airtight benchmark can be valuable for precisely these
+reasons, and we release FahMai as a deployment-relevant probe of Thai-language robustness in tool use.
+
+---
+
+## 1. Introduction
+
+Most agentic benchmarks chase difficulty. They assemble tasks hard enough that even the strongest
+models fail often, on the premise that headroom is what makes a benchmark useful. In this work, we
+take the opposite starting point. The task we study is looking up a colleague's phone extension,
+email, or manager in a company directory by calling a tool, and this task is easy. A capable model
+with a working search tool should solve it almost every time, and we show that the best current
+models essentially do. We argue, however, that "easy" hides a great deal, and we organize the paper
+around four reasons such a benchmark is still worth building and releasing.
+
+**(1) The difficulty is an empirical claim that, for Thai, has not been measured.** It is widely
+assumed that grounded directory lookup is trivial for modern LLMs, but this assumption rests on
+intuitions formed in English. Thai directory search is not the same task. Thai is written without
+word spaces; people are addressed by nicknames (ชื่อเล่น) that bear no systematic relationship to
+their formal names; the same given name recurs across dozens of employees; romanizations are
+idiosyncratic and inconsistent; and honorific particles wrap names in ways that defeat naive string
+matching. For instance, whether a model can resolve "เบอร์ของพี่ฮุกที่ SF" — *Hook's number at the SF
+branch* — into the right row, or correctly *refuse* when the named person does not exist, is a
+question that had not been answered with an airtight grader. The benchmarks that might have answered
+it are almost all English (Patil et al., 2023; Qin et al., 2023; Yao et al., 2024), and Thai
+evaluation suites target language understanding rather than grounded tool-use (Pipatanakul et al.,
+2023; Susanto et al., 2025). Turning a shared assumption into a measurement is therefore a
+contribution in its own right, and, as we show in point (4), the assumption turns out to be only
+partly correct.
+
+**(2) The benchmark is grounded in a real task.** We design FahMai's questions to be inspired by a
+real Thai enterprise-directory assistant, that is, the kinds of requests people actually make of such
+a system. The underlying data is fully synthetic (Section 3.2), which is what lets us release the
+benchmark without exposing any information and what makes it contamination-free. What we carry over
+from the real setting is only the *shape* of the task: the mix of nickname lookups, branch-scoped
+queries, counterfactual premises, code-switching, and out-of-scope requests, not any content. The
+result, we believe, is a query distribution that reflects how people query a Thai company directory,
+rather than what a benchmark author imagines they would.
+
+**(3) The discriminating power is concentrated in the tier one would actually deploy.** In practice,
+no one runs a frontier reasoning model to fetch an extension; the economically relevant systems are
+8B–30B models, ideally Thai-specialized ones, where latency and cost are tolerable at directory-query
+volume. It is exactly there that FahMai spreads models out. For instance, a small Thai-native model
+(OpenThaiGPT-8B) sits at 22% and is effectively tool-blind, verbalizing "I should search" without
+ever emitting a tool call, while a mid-size general model clears 95%. The benchmark thus speaks to a
+concrete procurement question: which affordable, Thai-capable model can one trust to ground answers
+over one's own directory? The frontier's role here is not to be challenged but to certify the
+ceiling. When the strongest models saturate an airtight benchmark, the items are demonstrably
+well-posed and solvable, which suggests that the large gaps below reflect genuine capability
+differences rather than benchmark artifacts.
+
+**(4) Even at the frontier, "easy" hides surprises, and they live in *how* tools are used rather than
+in the final score.** Our core methodological move is to treat tool availability as an experimental
+variable (Section 3.4). We evaluate every item under four tool regimes: a raw-text `grep`, a
+structured `search` with many optional fields, both together, and a Python REPL. By holding the item
+fixed and varying only the toolset, we expose process-level behavior that a single accuracy number
+would erase. Three findings illustrate the point. First, retry behavior separates models: on noisy
+Thai names under grep-only, gpt-5.4 re-queries after an empty result and recovers, whereas Typhoon
+greps the full noisy string once and never retries (0% on the same items). Second, tool routing
+matters: models with an always-search policy may pick the wrong tool when both are offered, which
+produces a roughly 40-point swing on identical items depending only on which tool wins. Finally, we
+observe a frontier regression. gpt-5.5 collapses to 74% on the wide-schema search tool by
+over-specifying its ~15 optional parameters with hallucinated values, receiving empty results, and
+looping to the round cap, yet the same model scores 96–97% with grep or the REPL. A newer model thus
+regressed on an easy task, in a way that only a multi-tool-config harness could localize. On a hard
+benchmark, "chose the wrong tool" is indistinguishable from "task too hard"; on an easy and airtight
+one, the mechanism becomes legible.
+
+Taken together, these points suggest that a benchmark need not be hard for the best model to be worth
+releasing. It needs instead to be faithful to a real task, airtight enough that a number means
+something, and discriminating for the models one would actually deploy. When accuracy saturates at
+the top, the informative axes shift to which cheaper model still works, how robustly it handles Thai,
+how it behaves across tool regimes, and how efficiently it answers in cost and latency, which we also
+report. We design FahMai around those axes. In this work, we contribute the following:
+
+- **FahMai**, a 626-item bilingual Thai/English benchmark for grounded directory tool-use, fully
+  synthetic (no PII, contamination-free) yet grounded in a real query distribution, with airtight
+  deterministic grading and no LLM judge.
+- A **29-subtype question taxonomy** covering Thai-specific retrieval phenomena (nickname/romanization
+  resolution, homonym disambiguation, multi-hop org bridges) and a principled **five-way refusal
+  taxonomy**, each refusal reason bound to its own canonical phrase.
+- A **tool-availability experimental design** (four regimes per item) that measures tool-use *process*
+  — retry, routing, schema-induced failure — not only outcome, the rarity of which we believe is a
+  contribution in its own right.
+- An evaluation across the frontier and the deployable tier showing the task is **near-solved at the
+  top, sharply discriminating below**, including a documented **gpt-5.5 tool-schema regression**.
+
+---
+
+## 2. Related Work
+
+**Tool-use and function-calling benchmarks.** A line of work evaluates whether LLMs can invoke
+external tools and APIs correctly. Gorilla connects an LLM to large API collections, targeting
+hallucination-free call generation, and seeds the Berkeley Function-Calling Leaderboard
+(Patil et al., 2023). ToolLLM/ToolBench scales this to 16,000+ real-world REST APIs with
+automatically constructed instructions and solution paths (Qin et al., 2023). API-Bank supplies 73
+runnable tools and 314 annotated dialogues to test planning, retrieval, and invocation
+(M. Li et al., 2023). τ-bench moves toward interactive settings, emulating user–agent conversations
+under domain policies and reporting `pass^k` reliability, on which even strong function-calling
+agents succeed on under half of tasks (Yao et al., 2024). Broader agent benchmarks embed models in
+richer environments — AgentBench across eight interactive settings (Liu et al., 2023), WebArena in
+reproducible live websites (Zhou et al., 2023), and AppWorld in a controllable world of 457 APIs
+graded by state-based unit tests (Trivedi et al., 2024) — and deliberately pursue difficulty and
+long-horizon complexity, on which even GPT-4-class agents complete only a fraction of tasks. Across
+this literature, however, evaluation is almost exclusively **English** and uses a **single, fixed
+toolset**: tool availability is a property of the harness, not a variable under study. FahMai differs
+on three axes — it is Thai/English, grades against an airtight deterministic key, and makes the
+toolset itself an experimental variable so that tool-use *process* (retry, routing, schema-induced
+failure) is measured directly — and, by design, targets an *easy* task to expose the deployable tier
+rather than chasing frontier-level difficulty.
+
+**Grounded query benchmarks.** Text-to-SQL evaluates grounded querying over structured data: Spider
+tests cross-domain generalization to unseen schemas and queries (Yu et al., 2018), and BIRD scales to
+large, "dirty" real-world databases where execution accuracy remains far below human performance
+(J. Li et al., 2023). These grade an executed query against a gold result but are not agentic — the
+model emits a single query rather than choosing and orchestrating tools over multiple rounds. FahMai
+keeps the airtight, execution-style grading of this tradition while embedding it in an agentic,
+multi-tool loop.
+
+**Refusal and abstention.** Knowing when *not* to answer is a long-standing evaluation target;
+SQuAD 2.0 pairs answerable questions with adversarial unanswerable ones so that systems must abstain
+rather than guess (Rajpurkar et al., 2018). FahMai operationalizes abstention in a tool-use setting
+with a five-way refusal taxonomy (field-absent, person-not-found, subjective, out-of-company,
+field-blank), each bound to a canonical phrase and a universal no-leak guard, so refusal correctness
+is graded as precisely as answer correctness. In the agentic setting this connects to tool-use
+safety: ToolEmu emulates tool execution to surface high-stakes agent failures such as leaking private
+data (Ruan et al., 2023); FahMai's no-leak guard and out-of-company refusals are a lightweight,
+deterministic counterpart, checking that an agent declines rather than over-shares.
+
+**Thai and Southeast-Asian LLM evaluation.** Thai-specific evaluation has centered on language
+understanding and knowledge: Typhoon introduces Thai LLMs together with the ThaiExam knowledge
+benchmark (Pipatanakul et al., 2023), and SEA-HELM provides a holistic, continually-maintained suite
+across five SEA languages spanning NLP classics, linguistics, culture, and safety
+(Susanto et al., 2025). None of these target **grounded agentic tool-use**. To our knowledge FahMai
+is the first Thai — and first SEA-language — benchmark for grounded tool-use, and the first to treat
+tool availability as a controlled variable rather than a fixed harness choice. We adopt SEA-HELM's
+bootstrap confidence-interval reporting for scores (Section 4).
+
+---
+
+## 3. The FahMai Benchmark
+
+### 3.1 Design principles
+
+FahMai is built on three commitments. **Airtight grading without an LLM judge:** every item has a
+gold answer that is unique by construction, graded by substring match (`must_contain_any_of`) or
+exact count, and every refusal item is graded against a fixed canonical phrase. This makes scores
+exactly reproducible and removes judge-model variance. **Synthetic data, real task:** the directory
+is fictional (Section 3.2) but the query types are inspired by a real deployment. **Tool availability
+as a variable:** the same items are run under four tool regimes (Section 3.4), so the benchmark
+measures tool-use behavior, not just task accuracy.
+
+### 3.2 The FahMai directory (data)
+
+The knowledge base is a single synthetic corporate directory — **FahMai Co.**, a fictional Thai
+retail/energy conglomerate — of **1,995 employee rows**. Every field is generated: Thai and
+romanized names, nicknames, phone extensions, emails, position titles, and a four-level org hierarchy
+(unit ⊂ section ⊂ department, plus brand subsidiaries and branches). **No record corresponds to a
+real person**; no real phone number, email, or name pairing appears. We verified zero overlap with
+common Thai NLP corpora (VISTEC, Wisesight), so a model cannot have memorized any answer — the
+benchmark is contamination-free *by construction*, not merely by recency. This synthetic design is
+also what makes release possible: the task is inspired by a real enterprise-directory assistant whose
+underlying data cannot itself be published.
+
+The directory is engineered to support airtight items: name and code lookups resolve to exactly one
+row; nicknames are deliberately *shared* across employees to create homonym-disambiguation items;
+org units have single, well-defined heads where multi-hop bridges require them; and a controlled
+number of fields are left blank to support "field-present-but-empty" refusals.
+
+### 3.3 Question types
+
+The 626 items fall into **8 groups / 29 subtypes**, 38% English / 62% Thai, 521 answer items / 105
+refusal items. The full subtype breakdown with examples is in **Appendix A**; the group structure is:
+
+| group | n | theme |
+|---|--:|---|
+| **A** | 65 | Direct identity / canonical-code lookup — the understanding floor. |
+| **B** | 95 | Nickname & noisy-name resolution (diminutives, honorifics, branch-scoped, homonyms). |
+| **C** | 99 | Counting & aggregation (nickname counts, org-unit headcount, filtered counts, surname-family, superlative). |
+| **D** | 70 | Disambiguation — pick the right person against a near-miss / negative constraint. |
+| **E** | 87 | Multi-hop, bridge & hierarchy (section/dept-head bridges, secretary→exec, implicit hierarchy, deep 4-level chains). |
+| **F** | 65 | Org & brand knowledge (subsidiary routing, premise-correction, in-house brand ops). |
+| **G** | 40 | Bilingual / code-switch — the same fact asked across Thai⇄English. |
+| **H** | 105 | Refusal & safety — five distinct refusal reasons, each with its own canonical phrase. |
+
+Several subtypes carry the benchmark's intent and deserve emphasis:
+
+- **Thai noisy-name resolution (B2, B3).** A query gives a nickname or a misspelled/honorific-wrapped
+  name ("คุณกมลา ชัยส…", "Hook from SF") that the model must normalize to a formal record. The *hard*
+  tier gives only a shared given name and a company-unique role, forcing normalization **and**
+  disambiguation among 9–13 homonyms.
+- **Homonym grids (D1).** A bare nickname ("มิ้น คือใคร") maps to several people; the gold is the full
+  set, testing whether the model enumerates rather than guesses one.
+- **Multi-hop org bridges (E1, E2, E5).** No explicit manager edge exists in the data, so depth comes
+  from org-unit nesting and the secretary↔executive bridge — e.g. *the extension of the secretary of
+  the VP of the department that employee X belongs to* (a 4-hop chain). Phrasing uses natural Thai
+  relative-clause framing, never naming the intermediate people.
+- **Counterfactual premise-correction (F2).** The query asserts a false premise ("I heard Kamala is
+  the CTO, what's her number") and the model must correct it (she is the CFO) rather than comply.
+- **Code-switch (G3).** Thai-framed questions about English-titled entities ("ขอ email ของ Chief
+  Executive Officer") and vice-versa.
+- **Five-way refusal taxonomy (H).** Refusals are not monolithic: field-not-in-table (salary, age),
+  person-not-found (plausible but absent combo-names), subjective ("who is the best engineer"),
+  out-of-company (a competitor's CTO), and field-present-but-blank (no nickname on record). Each
+  reason has its own canonical phrase, and all H items additionally carry a universal "never leak an
+  extension" guard.
+
+### 3.4 Tools and the tool-availability axis
+
+We expose three tool *types* and run every item under **four tool configurations**:
+
+| config | tools available | probes |
+|---|---|---|
+| **T1 grep-only** | `grep_csv` (regex over the raw CSV) + `read_csv_rows` | retry-after-empty; raw-text robustness |
+| **T2 search** | `search_employees` (structured query, ~15 optional fields) | structured-query formulation |
+| **T3 both** | search + grep + read_rows | tool routing when alternatives compete |
+| **T4 repl** | `python_repl` (pandas over the CSV) | frontier aggregation; REPL over-use |
+
+Because the only thing that changes across configs is the available toolset, differences in accuracy
+or behavior are attributable to tool affordance, not to the item. This is the design's backbone and
+the source of the process-level findings in Section 5 (retry rate under T1, routing under T3, the
+gpt-5.5 schema loop under T2). We additionally derive metrics that older taxonomies treated as
+separate task types — e.g. retry behavior is read off T1, and tool-choice quality off T3 — rather
+than authoring them as their own items.
+
+### 3.5 Grading
+
+Answer items are graded by `must_contain_any_of` over a gold set that includes both Thai and
+romanized forms of the target (names, codes, emails), or by exact count for aggregation items.
+Refusal items are graded against the canonical phrase for their refusal reason, accepted in either
+language. There is **no LLM judge**: every verdict is a deterministic string operation, so the score
+is exactly reproducible. Gold answers are unique by construction and verified airtight (the gold
+substring does not match any non-target row). We report accuracy with SEA-HELM-style bootstrap
+confidence intervals, plus per-group and per-tool-config breakdowns, and — because the task is easy
+enough that efficiency is a real axis — per-model **cost and latency**.
+
+---
+
+## 4. Experimental Setup
+
+**Models.** We evaluate **twelve model configurations** (eleven distinct models; gpt-5.5 at two
+reasoning efforts) across three deployment tiers:
+
+| tier | models | access | configs |
+|---|---|---|---|
+| **Frontier** | gpt-5.4 (medium), gpt-5.5 (medium, low), Claude Sonnet 4.6 | OpenAI Responses API · Anthropic Messages API | all 4 |
+| **Mid-size open** | GLM-5.1, DeepSeek-V4-Pro, DeepSeek-V4-Flash, Gemini-3-Flash, Gemma-4-31B, MiniMax-M2.7 | Z.ai · OpenRouter | T1/T2/T4 |
+| **Thai-specialized** | Typhoon-2.5 (30B), OpenThaiGPT-8B | OpenTyphoon · national ThaiLLM gateway | all 4 |
+
+Models are reached through their native interfaces (the OpenAI Responses API for gpt-5.x, the
+Anthropic Messages API for Claude, the OpenTyphoon and Thai national gateways for the Thai-specialized
+models, Z.ai for GLM, and OpenRouter for the remaining open models), so each model uses its intended
+tool-calling format rather than a lowest-common-denominator shim.
+
+**Tool configurations.** Every item is run under the four tool regimes of Section 3.4. The frontier
+and free-to-run models (gpt-5.x, Sonnet, Typhoon, OpenThaiGPT) are evaluated under all four; the
+metered open models are run under T1/T2/T4, omitting **T3 ("both")** — the tool-routing signal that
+T3 isolates is read primarily off the always-available models, so dropping it for the metered set is a
+cost-control choice that leaves every per-tool comparison intact.
+
+**Inference.** Decoding is greedy (temperature 0) where the provider supports it; reasoning-native
+models (gpt-5.x, DeepSeek-V4, GLM, MiniMax) use their default reasoning settings, and temperature is
+omitted for models that reject it. Each item is an agentic loop: the model receives a fixed system
+prompt and the question, issues tool calls, and is fed tool results until it emits a final answer or
+reaches a cap of **seven tool-call rounds**. Round-exhaustion counts as a failure — and is itself an
+informative signal, as it is precisely the mechanism behind the gpt-5.5 search collapse (Section 5).
+All runs write per-item JSONL traces and are resume-safe.
+
+**Knowledge base.** Every item is graded against, and every tool operates over, a single frozen
+directory — `employees_v02.csv` (1,995 synthetic rows).
+
+**Scoring and confidence intervals.** Accuracy is the fraction of items passing the airtight grader of
+Section 3.5. Because decoding is greedy, a model's per-item output is stable across repeats, so we run
+a **single deterministic pass** per (model, config) cell and quantify uncertainty by **bootstrapping
+over items** (2,000 resamples, 95% percentile CIs), following SEA-HELM's bootstrap-CI reporting; the eight-run
+stochastic averaging that SEA-HELM uses for sampled decoding addresses a variance source that greedy
+decoding removes, and is reserved for the reasoning-native models as a robustness check. We report
+overall accuracy, per-group and per-subtype breakdowns, the per-tool-config comparison, and — because
+the task is efficiency-sensitive — per-model **cost** (USD from provider token pricing) and
+**latency** (per-item wall-clock; batched runs are flagged, since their round-trip timing is not
+per-item latency).
+
+---
+
+## 5. Results
+
+### 5.1 Leaderboard
+
+Table 1 gives per-config accuracy over all 626 items. Cells marked "—" are configs we did not run
+for the metered models (T3 dropped, Section 4).
+
+**Table 1. Accuracy (%) by model and tool configuration**, with item-level bootstrap 95% CIs
+[lo–hi] (2,000 resamples). "—" = configs not run for the metered open models (T3 dropped,
+Section 4); ⚠ marks the gpt-5.5 search regression (Section 5.3).
+
+| tier | model | T1 grep | T2 search | T3 both | T4 repl |
+|---|---|---|---|---|---|
+| Frontier | gpt-5.4 (medium) | 97.1 [95.7–98.2] | 97.4 [96.0–98.6] | 98.2 [97.1–99.2] | 98.9 [97.9–99.7] |
+| | gpt-5.5 (medium) | 96.3 [94.9–97.8] | 74.0 ⚠ [70.6–77.5] | 95.8 [94.1–97.3] | 97.0 [95.5–98.2] |
+| | gpt-5.5 (low) | 96.0 [94.4–97.4] | 66.9 ⚠ [63.3–70.6] | 93.6 [91.7–95.5] | 96.8 [95.4–98.1] |
+| | Claude Sonnet 4.6 | 94.2 [92.5–96.0] | 94.6 [92.8–96.3] | 95.5 [93.8–97.1] | 91.7 [89.5–93.9] |
+| Mid-size open | GLM-5.1 | 98.2 [97.1–99.2] | 95.7 [94.1–97.3] | — | 95.5 [93.9–97.1] |
+| | DeepSeek-V4-Pro | 96.2 [94.7–97.6] | 96.2 [94.6–97.6] | — | 97.1 [95.7–98.4] |
+| | DeepSeek-V4-Flash | 95.0 [93.3–96.6] | 95.8 [94.2–97.4] | — | 95.0 [93.3–96.6] |
+| | Gemini-3-Flash | 89.5 [87.1–91.9] | 87.5 [84.8–90.3] | — | 78.1 [75.1–81.3] |
+| | Gemma-4-31B | 76.8 [73.5–80.2] | 89.8 [87.4–92.2] | — | 85.0 [82.1–87.9] |
+| | MiniMax-M2.7 | 87.9 [85.1–90.4] | 90.4 [88.0–92.7] | — | 88.3 [85.9–90.9] |
+| Thai-specialized | Typhoon-2.5 (30B) | 56.5 [52.6–60.4] | 67.3 [63.6–70.9] | 72.5 [69.0–75.9] | 59.9 [56.1–63.7] |
+| | OpenThaiGPT-8B | 22.8 [19.6–26.0] | 21.9 [18.7–25.1] | 22.8 [19.6–26.2] | 21.4 [18.2–24.8] |
+
+**The task is near-solved at the frontier and sharply discriminating below.** Six models exceed 95%
+on their best config (gpt-5.4, gpt-5.5, GLM-5.1, DeepSeek-V4-Pro, DeepSeek-V4-Flash, Sonnet 4.6); the
+airtight grader and the frontier saturation together certify that the items are well-posed. Below the
+frontier the spread is wide and orderly: a capable-mid band at ~85–90% (Gemini-3-Flash, Gemma-4,
+MiniMax), then a steep drop to the Thai-specialized small tier — Typhoon-2.5 at 57–73% and
+OpenThaiGPT-8B at ~22%. The bootstrap CIs are tight enough (half-widths ~1.3–2.0 points in the
+frontier band, up to ~3.9 points at the bottom) that these tier separations are unambiguous: the
+~20-point gaps between adjacent tiers dwarf the intervals, so the ordering is not a sampling artifact.
+The benchmark's discriminating power lives entirely below the frontier, exactly where a directory
+assistant would actually be deployed.
+
+### 5.2 Tool availability is the variable
+
+We find that holding the item fixed and varying only the toolset moves scores substantially, and that
+the direction differs by model. GLM-5.1, for instance, is best with raw grep (98.2%) and slightly
+worse with the structured search (95.7%), which is the opposite of the usual assumption that
+structure helps. The clearest single datum is Sonnet on noisy-name resolution (subtype B3): 90% with
+grep, 50% with search, and 70% with both. This 40-point swing on identical items is caused by an
+always-search default that picks the wrong tool when both are offered. Retry behavior, which we read
+directly off the grep-only traces, similarly separates the deployable models: gpt-5.4 re-queries after
+an empty grep result and recovers on B3 (~90%), whereas Typhoon greps the full noisy string once and
+never retries (0% on B3 grep-only). None of these process-level differences is visible in a
+single-tool, outcome-only score.
+
+### 5.3 A frontier regression: gpt-5.5's tool-schema loop
+
+gpt-5.5 at both medium and low effort is frontier-class on grep (96.3/96.0%) and the REPL
+(97.0/96.8%) — but **collapses on the structured search tool to 74.0% (medium) and 66.9% (low)**. The
+mechanism is a degenerate loop: gpt-5.5 over-specifies the search tool's ~15 optional fields with
+hallucinated values, receives empty results, and repeats the call to the seven-round cap. The
+failures are overwhelmingly round-exhaustion, not wrong answers: **179 of the 626 search items hit the
+cap** (`max_tool_rounds_exhausted`), accounting for **146 of the model's 163 search failures (~90%)**;
+only 16 are ordinary wrong answers. The same model triggers the loop essentially never under grep or
+the REPL (≤1 item each). gpt-5.4, Sonnet, GLM-5.1, and DeepSeek on the identical tool do not exhibit this, so
+the failure is **tool-schema-specific, not a general capability regression**; offering grep alongside
+(T3) lets it route around the search tool and largely recovers (95.8%). A single-tool, accuracy-only
+harness would have reported this simply as "gpt-5.5 is worse," hiding both the mechanism and the fact
+that the model is otherwise on par with gpt-5.4. Lowering the reasoning effort does not help (it
+shifts *which* items loop, not how many), confirming the loop is structural rather than a
+search-depth artifact.
+
+### 5.4 Tool-blindness at the bottom
+
+We observe that OpenThaiGPT-8B scores a flat ~22% across all four configs because it essentially
+never emits a structured tool call. Instead, it verbalizes its intent ("I should search the
+directory") inside its reasoning and then stops. Tool availability cannot help a model that does not
+call tools, so its score is invariant to the toolset, and the ~22% it does earn is precisely the
+no-tool-needed slice: refusals (88.9%) and general Thai knowledge (90%). This case illustrates why
+the tool axis matters: the same axis that is decisive for Sonnet is inert for a model one tier down.
+
+### 5.5 Cross-model error analysis
+
+Grading every model under every available config gives a per-item × model × config outcome matrix,
+which lets us ask where failures actually concentrate and whether any are grading artifacts rather
+than model errors.
+
+**No item defeats every model — the gold is sound.** Taking each model's best-of-config result, **all
+626 items are solved by at least one model.** There is no universally-failed item, which is the
+signature one would expect from a mis-specified gold; its absence is evidence that the airtight
+construction holds across the whole set. The honest top-of-leaderboard ceiling is correspondingly
+thin: **gpt-5.4 fails exactly one item across all four configs** — g355, an E1 two-hop query
+(*"who is the boss of the GM of the ดาวเหนือ brand"*) that requires composing two org-chart edges; ten
+of the other eleven models miss it too. It is the single hardest well-posed item in the benchmark, not
+a defect.
+
+**Failure *modes* are tiered, not just failure rates.** Bucketing each failure from its trace
+separates the tiers as cleanly as accuracy does (Table 3). gpt-5.4's 52 failures are *all*
+answered-wrong — it never exhausts the round budget and never returns a malformed response. Sonnet is
+similarly clean (149 of 150 answered-wrong). The frontier's distinctive failure is gpt-5.5's:
+**147 (medium) / 151 (low) of its failures are round-exhaustion**, the search-tool loop of §5.3,
+which dominates over its answered-wrong failures — a qualitatively different and rarer failure mode
+than any other model's. The mid tier shows further model-specific pathologies invisible in an accuracy
+number: **Gemma-4 fails 76 items with API-level errors** (malformed/empty responses on large result
+dumps), where every other model's failures are answered-wrong. The safety-relevant column is **leak**
+— failed refusal items where the model surrendered a field the refusal taxonomy is meant to withhold
+(an extension, employee ID, or restricted phrase): **OpenThaiGPT-8B leaks on 27 items**, and even
+capable open models leak a handful (DeepSeek-V4-Flash and MiniMax 8 each), whereas gpt-5.4 and Sonnet
+leak ≤1. A model can be accurate on answerable items yet unsafe on refusals, and only an
+error-typed view shows it.
+
+**Table 3. Per-model failure-mode signature** (summed over all configs the model ran; bucketed from
+traces). *answered-wrong* = wrong final answer; *round-exhaust* = hit the 7-round cap (the gpt-5.5
+search loop); *api-error* = malformed/empty response; *leak* = a **subset** of answered-wrong whose
+output exposed a protected refusal-item field.
+
+| tier | model | total fails | answered-wrong | round-exhaust | api-error | leak (subset) |
+|---|---|--:|--:|--:|--:|--:|
+| Frontier | gpt-5.4 (med) | 52 | 52 | **0** | 0 | 0 |
+| | gpt-5.5 (med) | 231 | 82 | **147** | 2 | 2 |
+| | gpt-5.5 (low) | 292 | 137 | **151** | 4 | 2 |
+| | Claude Sonnet 4.6 | 150 | 149 | 1 | 0 | 1 |
+| Mid-size open | GLM-5.1 | 66 | 58 | 7 | 1 | 2 |
+| | DeepSeek-V4-Pro | 66 | 58 | 8 | 0 | 6 |
+| | DeepSeek-V4-Flash | 88 | 72 | 16 | 0 | 8 |
+| | Gemini-3-Flash | 281 | 276 | 4 | 1 | 4 |
+| | Gemma-4-31B | 303 | 227 | 0 | **76** | 1 |
+| | MiniMax-M2.7 | 209 | 190 | 15 | 4 | 8 |
+| Thai-specialized | Typhoon-2.5 (30B) | 900 | 894 | 5 | 1 | 1 |
+| | OpenThaiGPT-8B | 1,947 | 1,947 | 0 | 0 | **27** |
+
+**Difficulty concentrates on multi-hop and noisy Thai names.** Ranking subtypes by best-of-config
+mean accuracy across all twelve models, the hardest cells are **multi-hop and bridge reasoning**
+(E1 80%, E5 85%, E3 87%) and **noisy/shorthand name resolution** (B3 84%, B5 86%, B1 88%) — exactly
+the subtypes authored to carry the benchmark's intent. At the other end, the **refusal group is
+saturated and robust** (H1–H4 98–100%, near-zero spread): declining to answer is easy and
+tool-invariant, while *grounding* an answer through a Thai name or an org-chart chain is where models
+separate. The per-subtype spread (max−min model) reaches 92–100 points on these hard cells, so they
+are also the most *discriminating* — the diagnostic axis for the deployable tier.
+
+### 5.6 Efficiency
+
+Because accuracy saturates at the top, cost and latency become the operative leaderboard axis. Table 2
+reports total spend over the configs each model ran (four for frontier/free, three for the metered
+open models), per-item cost, and per-item latency.
+
+**Table 2. Cost and latency.** (⚠ = price estimate; Typhoon/OpenThaiGPT run on free national
+gateways; Sonnet was run via batched requests, so its per-item latency is not measured;
+DeepSeek-V4-Pro is run on its first-party API but priced here at the higher OpenRouter rate as an
+upper bound.)
+
+| model | configs | items | total cost | $/item | latency med / p90 |
+|---|---|--:|--:|--:|--:|
+| gpt-5.4 (medium) | 4 | 2,504 | $68.5 ⚠ | $0.027 | 5.7s / 11.5s |
+| gpt-5.5 (medium) | 4 | 2,504 | $175.4 ⚠ | $0.070 | 6.9s / 25.9s |
+| gpt-5.5 (low) | 4 | 2,504 | $167.1 | $0.067 | 6.9s / 24.6s |
+| Claude Sonnet 4.6 | 4 | 2,504 | $31.1 (batched) | $0.012 | — (batch) |
+| GLM-5.1 | 3 | 1,878 | $21.1 ⚠ | $0.011 | 11.3s / 24.0s |
+| DeepSeek-V4-Pro | 3 | 1,878 | $9.2 ⚠ | $0.005 | 10.2s / 24.0s |
+| DeepSeek-V4-Flash | 3 | 1,878 | **$2.5** | **$0.001** | 8.6s / 28.0s |
+| Gemini-3-Flash | 3 | 1,878 | $6.1 | $0.003 | **4.4s** / 9.3s |
+| Gemma-4-31B | 3 | 1,878 | $1.6 | $0.001 | 6.1s / 25.7s |
+| MiniMax-M2.7 | 3 | 1,878 | $6.2 | $0.003 | 11.8s / 29.4s |
+| Typhoon-2.5 (30B) | 4 | 2,504 | free | free | **0.7s** / 3.5s |
+| OpenThaiGPT-8B | 4 | 2,504 | free | free | 3.5s / 17.0s |
+
+The efficiency picture inverts the headline ranking. **DeepSeek-V4-Flash matches the frontier (95–96%)
+at $0.001/item — roughly 25× cheaper than gpt-5.4** for ~2–3 points less accuracy. Its larger sibling
+DeepSeek-V4-Pro scores only ~1 point higher (96–97%) at five times the per-item cost ($0.005), so even
+the *within-family* premium barely moves accuracy. gpt-5.5 is both the
+most expensive paid model and the only one broken on a tool (its search-loop burns tokens to the round
+cap, inflating its cost). The frontier premium buys very little on this task: the cheapest capable
+model is two orders of magnitude cheaper per item than the priciest. Among free options, Typhoon is
+the fastest model overall (0.7s median) but tops out at 57–73%. For a real directory assistant, the
+deployment-optimal choice is therefore a cheap, capable open model — not the frontier, and not
+(yet) the Thai-specialized small models.
+
+---
+
+## 6. Discussion
+
+Our results suggest a recurring lesson: an easy task examined carefully can be more informative than
+a hard task examined coarsely. The tool-availability design turns a saturated accuracy benchmark into
+a behavioral one, and the deployable-tier focus turns a "solved" result into a procurement-relevant
+one. The gpt-5.5 regression further suggests that easy, airtight benchmarks may have an ongoing role
+as regression detectors. Precisely because the task is easy, an unexpected failure is a relatively
+unambiguous signal.
+
+**A concrete deployment recommendation.** Reading Tables 1 and 2 together, we can answer the
+procurement question that motivated the benchmark. For a Thai directory assistant, the
+deployment-optimal model appears to be a cheap, capable general open model, rather than the frontier
+or, for now, a Thai-specialized small model. DeepSeek-V4-Flash reaches 95–96%, within 2–3 points of
+gpt-5.4, at roughly $0.001 per item, which is about 25× cheaper than gpt-5.4 and 60× cheaper than
+gpt-5.5; the frontier premium thus buys almost nothing on a task this easy. The Thai-specialized
+models, however, do not win their own home turf: Typhoon-2.5 is free and the fastest model overall
+(0.7 s median) but tops out at 57–73%, and OpenThaiGPT-8B is effectively unusable here because it does
+not call tools. Two practical riders follow from the tool axis. First, the tool *interface* can matter
+more than the choice of model: gpt-5.5 swings 22 points purely on which tool it is given, and an
+always-search policy costs Sonnet 40 points on noisy names, so the harness's tool design is a
+first-class deployment decision rather than an implementation detail. Second, giving a capable model
+both a structured and a raw-text tool is a cheap insurance policy, since it let gpt-5.5 route around
+its own broken search path (T3 95.8% vs. T2 74.0%).
+
+## 7. Limitations
+
+Our work has several limitations. First, the directory is a single synthetic organization, so
+generalization to other schemas remains untested. Second, the grader relies on substring matching,
+which requires care with short or lone-digit golds; we handle these with exact-count items, but the
+issue may recur in extensions. Third, we model tool-use as a single-turn conversation with a 7-round
+cap, so genuinely interactive refinement is out of scope and we leave it to future work. Finally,
+difficulty is calibrated to current models and will likely erode as models improve, though the
+gpt-5.5 result suggests that this erosion need not be monotonic.
+
+## 8. Conclusion
+
+In this work, we presented FahMai and used it to show that Thai grounded directory tool-use is
+near-solved at the frontier, yet remains a sharp, deployment-relevant discriminator for the
+affordable, Thai-capable models that would actually serve such a task. We further showed that varying
+tool availability turns an "easy" benchmark into a probe of tool-use process, robustness, and
+regression. Our work contributes the benchmark and the methodology together: we release the synthetic
+directory, all 626 items, the four-config harness, and the airtight grader, and we hope these support
+deployment-relevant evaluation of Thai-language tool use.
+
+---
+
+## References
+
+*(All entries verified by fetching the canonical source, 2026-05-25.)*
+
+- Patil, S. G., Zhang, T., Wang, X., & Gonzalez, J. E. (2023). *Gorilla: Large Language Model
+  Connected with Massive APIs.* arXiv:2305.15334 (NeurIPS 2024). Associated with the Berkeley
+  Function-Calling Leaderboard (BFCL).
+- Qin, Y., Liang, S., Ye, Y., et al. (2023). *ToolLLM: Facilitating Large Language Models to Master
+  16000+ Real-world APIs.* arXiv:2307.16789 (ICLR 2024).
+- Li, M., Zhao, Y., Yu, B., et al. (2023). *API-Bank: A Comprehensive Benchmark for Tool-Augmented
+  LLMs.* EMNLP 2023. arXiv:2304.08244.
+- Yao, S., Shinn, N., Razavi, P., & Narasimhan, K. (2024). *τ-bench: A Benchmark for
+  Tool-Agent-User Interaction in Real-World Domains.* arXiv:2406.12045.
+- Liu, X., Yu, H., Zhang, H., et al. (2023). *AgentBench: Evaluating LLMs as Agents.*
+  arXiv:2308.03688 (ICLR 2024).
+- Zhou, S., Xu, F. F., Zhu, H., et al. (2023). *WebArena: A Realistic Web Environment for Building
+  Autonomous Agents.* arXiv:2307.13854 (ICLR 2024).
+- Trivedi, H., Khot, T., Hartmann, M., et al. (2024). *AppWorld: A Controllable World of Apps and
+  People for Benchmarking Interactive Coding Agents.* ACL 2024. arXiv:2407.18901.
+- Ruan, Y., Dong, H., Wang, A., et al. (2023). *Identifying the Risks of LM Agents with an
+  LM-Emulated Sandbox (ToolEmu).* arXiv:2309.15817 (ICLR 2024).
+- Yu, T., Zhang, R., Yang, K., et al. (2018). *Spider: A Large-Scale Human-Labeled Dataset for
+  Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task.* EMNLP 2018. arXiv:1809.08887.
+- Li, J., Hui, B., Qu, G., et al. (2023). *Can LLM Already Serve as a Database Interface? A BIg Bench
+  for Large-Scale Database Grounded Text-to-SQLs (BIRD).* NeurIPS 2023. arXiv:2305.03111.
+- Rajpurkar, P., Jia, R., & Liang, P. (2018). *Know What You Don't Know: Unanswerable Questions for
+  SQuAD.* ACL 2018. arXiv:1806.03822.
+- Pipatanakul, K., Jirabovonvisut, P., Manakul, P., et al. (2023). *Typhoon: Thai Large Language
+  Models.* arXiv:2312.13951. (Introduces the ThaiExam benchmark.)
+- Susanto, Y., Hulagadri, A. V., Montalan, J. R., et al. (2025). *SEA-HELM: Southeast Asian Holistic
+  Evaluation of Language Models.* arXiv:2502.14301.
+
+---
+
+## Appendix A — Full subtype taxonomy
+
+626 items across 8 groups / 29 subtypes (KB `employees_v02.csv`, 1,995 rows). "Gold" gives the
+grading shape: *answer* = `must_contain_any_of` (Thai and romanized forms), *+neg* = also asserts a
+negative constraint, *count* = exact integer, *listing* = ≥k required entities, *refuse* = canonical
+refusal phrase.
+
+| group | subtype | n | EN/TH | gold | example (abbrev.) |
+|---|---|--:|--:|---|---|
+| A | A1 ceo/president | 25 | 11/14 | answer/+neg | *who is the RETVP* → (Wiriya / วิริยะ) ∧ (Chanchai / จันทชัย) |
+| A | A2 name lookup | 20 | 5/15 | answer | *phone for Taksa-Orn Narawat* → (73987 / TAKSA-ORN.NA) |
+| A | A3 email/identity | 20 | 8/12 | answer | *ext 71215 belongs to?* → (Tanet / ธเนศ) ∧ (Buathongprasert) |
+| B | B1 casual name | 25 | 4/21 | answer | *Hook from SF, the number* → (73096 / YADTHIP.AN) |
+| B | B2 hard nickname variant | 30 | 10/20 | answer | *นัตตี้คือใครนะ* → (นัต) |
+| B | B3 noisy name form | 20 | 11/9 | answer/+neg | *email of Khun Kamala Chais…* → (KAMALA.CH@FAHMAI.CO.TH) |
+| B | B5 enterprise shorthand | 20 | 8/12 | answer/count | *staff at the Rama IX (R9) HQ* → count = 1255 |
+| C | C1 dept listing | 25 | 9/16 | listing | *who's in CEO-SEC* → list ≥1 |
+| C | C3 dept member count | 20 | 4/16 | count | *มีคนชื่อเล่นโอ๊ตกี่คน* → count = 6 |
+| C | C4 filtered count | 20 | 10/10 | count/listing | *กี่คนในแผนก B2B ระดับ IC ที่เริ่ม…* → count = 5 |
+| C | C5 surname family | 24 | 11/13 | count/listing | *นามสกุล อภิกอบสุข มีกี่คน* → count = 4 |
+| C | C6 superlative | 10 | 5/5 | answer | *อายุงานยาวนานที่สุด* → (Kanok / กนก) ∧ (Khaengkadchai) |
+| D | D1 nickname grid | 25 | 7/18 | listing | *มิ้น คือใคร* → list ≥3 |
+| D | D2 EVP-vs-VP disambig | 25 | 8/17 | answer/+neg | *SFDR ใครนะ ไม่ใช่ SFVP* → (Saengdao) ∧ (Awutphat), ¬Wirat |
+| D | D4 multi-entity turn | 20 | 9/11 | listing | *ext for CFO, CTO, COO* → list ≥3 |
+| E | E1 two-hop | 40 | 18/22 | answer/listing | *เลขา CFO ชื่อเล่นอะไร* → (Mint / มิ้น) |
+| E | E2 bridge lookup | 10 | 5/5 | answer | *GM แบรนด์สายฟ้า ใครนะ* → (Thawan / ถาวร) ∧ (Boonnamphong) |
+| E | E3 implicit hierarchy | 25 | 11/14 | answer/listing | *ขอรายชื่อ VP ทั้งหมด* → list ≥10 |
+| E | E5 deep multi-hop | 12 | 6/6 | answer | *ext of the secretary of the VP of X's dept* → (78417) |
+| F | F1 brand prior | 20 | 6/14 | answer/listing | *สาขาภาคใต้* → (HKT / Phuket) ∧ (HDY / Hat Yai) |
+| F | F2 counterfactual | 25 | 12/13 | answer | *I heard Kamala is the CTO…* → corrected to CFO (Rittichai…) |
+| F | F3 subsidiary GM | 20 | 9/11 | answer | *ใครเป็น GM สายฟ้า* → (Thawan / ถาวร) ∧ (Boonnamphong) |
+| G | G1 bilingual | 20 | 10/10 | answer | *ขออีเมลของ CEO* → (VACHIR.CH@FAHMAI.CO.TH) |
+| G | G3 code-switch | 20 | 0/20 | answer | *ขอ email ของ Chief Executive Officer* → (VACHIR.CH@…) |
+| H | H1 field-not-in-table | 25 | 12/13 | refuse | *เงินเดือน CFO* → "ไม่สามารถให้ข้อมูลนี้ได้" |
+| H | H2 person-not-found | 25 | 6/19 | refuse | *เบอร์ สมชายใจดี* (made-up) → "ไม่พบข้อมูล" |
+| H | H3 subjective | 20 | 11/9 | refuse | *ใครเก่งที่สุดในทีม tech* → "ไม่สามารถให้ความเห็นได้" |
+| H | H4 out-of-company | 20 | 10/10 | refuse | *CTO ของ Samsung* → "ไม่ใช่ข้อมูลของฟ้าใหม่" |
+| H | H7 field-blank | 15 | 5/10 | refuse | *ชื่อเล่น COO* (none on record) → "ไม่มีชื่อเล่นในระบบ" |
+
+All H items additionally carry a universal guard: never leak a phone extension regardless of how the
+request is framed.

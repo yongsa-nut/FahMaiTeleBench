@@ -1,0 +1,479 @@
+{
+  "note": "base → {th: common Thai variants (honorific + suffix), th_doubled_rare: uncommon doubled/reduplicated forms (kept for reference, not generator-default), en: CSV english base, en_variants: natural English variants, en_mixed: cross-language honorific forms}. Used ONLY by the question generator; CSV stores base form only.",
+  "count": 52,
+  "en_count": 9,
+  "variants": {
+    "นัต": {
+      "th": [
+        "น้องนัต",
+        "พี่นัต",
+        "นัตตี้",
+        "นัตจัง"
+      ],
+      "th_doubled_rare": [
+        "นัตนัต"
+      ],
+      "en": "NUT",
+      "en_variants": [
+        "NUTTY",
+        "NUTTIE"
+      ],
+      "en_mixed": [
+        "P'NUT"
+      ]
+    },
+    "มิ้น": {
+      "th": [
+        "มิ้นตี้",
+        "น้องมิ้น",
+        "พี่มิ้น"
+      ],
+      "th_doubled_rare": [
+        "มิ้นมิ้น"
+      ],
+      "en": "MINT",
+      "en_variants": [
+        "MINTY"
+      ],
+      "en_mixed": []
+    },
+    "เก่ง": {
+      "th": [
+        "เก่งกี้",
+        "น้องเก่ง"
+      ],
+      "th_doubled_rare": []
+    },
+    "มุก": {
+      "th": [
+        "น้องมุก",
+        "มุกกี้",
+        "มุกนี่"
+      ],
+      "th_doubled_rare": [
+        "มุกมุก"
+      ],
+      "en": "MOOK",
+      "en_variants": [
+        "MOOKIE"
+      ],
+      "en_mixed": []
+    },
+    "บี": {
+      "th": [
+        "พี่บี",
+        "น้องบี"
+      ],
+      "th_doubled_rare": [
+        "บีบี"
+      ]
+    },
+    "ปิ๊ง": {
+      "th": [
+        "น้องปิ๊ง"
+      ],
+      "th_doubled_rare": [
+        "ปิ๊งปิ๊ง"
+      ]
+    },
+    "ออม": {
+      "th": [
+        "น้องออม",
+        "ออมมี่"
+      ],
+      "th_doubled_rare": [
+        "ออมออม"
+      ]
+    },
+    "อ้อม": {
+      "th": [
+        "พี่อ้อม"
+      ],
+      "th_doubled_rare": [
+        "อ้อมอ้อม"
+      ]
+    },
+    "ปัน": {
+      "th": [
+        "ปันนี่"
+      ],
+      "th_doubled_rare": [
+        "ปันปัน"
+      ]
+    },
+    "นก": {
+      "th": [
+        "น้องนก",
+        "นกน้อย"
+      ],
+      "th_doubled_rare": [
+        "นกนก"
+      ],
+      "en": "NOK",
+      "en_variants": [
+        "NOKKY"
+      ],
+      "en_mixed": []
+    },
+    "ไอซ์": {
+      "th": [
+        "น้องไอซ์",
+        "พี่ไอซ์"
+      ],
+      "th_doubled_rare": [
+        "ไอซ์ไอซ์"
+      ],
+      "en": "ICE",
+      "en_variants": [
+        "ICEY",
+        "ICIE"
+      ],
+      "en_mixed": []
+    },
+    "เค้ก": {
+      "th": [
+        "น้องเค้ก"
+      ],
+      "th_doubled_rare": [
+        "เค้กเค้ก"
+      ]
+    },
+    "มุกมุก": {
+      "th": [
+        "พี่มุกมุก"
+      ],
+      "th_doubled_rare": []
+    },
+    "แบงค์": {
+      "th": [
+        "น้องแบงค์"
+      ],
+      "th_doubled_rare": [
+        "แบงค์แบงค์"
+      ]
+    },
+    "เบนซ์": {
+      "th": [
+        "น้องเบนซ์",
+        "พี่เบนซ์"
+      ],
+      "th_doubled_rare": [
+        "เบนซ์ซี่"
+      ],
+      "en": "BENZ",
+      "en_variants": [
+        "BENZY"
+      ],
+      "en_mixed": []
+    },
+    "บอส": {
+      "th": [
+        "น้องบอส",
+        "พี่บอส"
+      ],
+      "th_doubled_rare": []
+    },
+    "บีม": {
+      "th": [
+        "น้องบีม"
+      ],
+      "th_doubled_rare": [
+        "บีมบีม"
+      ]
+    },
+    "ฟิล์ม": {
+      "th": [
+        "ฟิล์มมี่",
+        "น้องฟิล์ม"
+      ],
+      "th_doubled_rare": []
+    },
+    "พลอย": {
+      "th": [
+        "น้องพลอย"
+      ],
+      "th_doubled_rare": [
+        "พลอยพลอย"
+      ]
+    },
+    "ปุ๊ก": {
+      "th": [
+        "ปุ๊กกี้"
+      ],
+      "th_doubled_rare": [
+        "ปุ๊กปุ๊ก"
+      ]
+    },
+    "ตูน": {
+      "th": [
+        "น้องตูน",
+        "พี่ตูน"
+      ],
+      "th_doubled_rare": [
+        "ตูนตูน"
+      ]
+    },
+    "เจี๊ยบ": {
+      "th": [
+        "น้องเจี๊ยบ"
+      ],
+      "th_doubled_rare": [
+        "เจี๊ยบเจี๊ยบ"
+      ]
+    },
+    "ต้อม": {
+      "th": [
+        "พี่ต้อม"
+      ],
+      "th_doubled_rare": [
+        "ต้อมต้อม"
+      ]
+    },
+    "แก้ม": {
+      "th": [
+        "น้องแก้ม"
+      ],
+      "th_doubled_rare": [
+        "แก้มแก้ม"
+      ]
+    },
+    "ฟ้า": {
+      "th": [
+        "น้องฟ้า",
+        "พี่ฟ้า"
+      ],
+      "th_doubled_rare": [
+        "ฟ้าฟ้า"
+      ]
+    },
+    "ฝน": {
+      "th": [
+        "น้องฝน"
+      ],
+      "th_doubled_rare": [
+        "ฟ่อนฟ่อน"
+      ]
+    },
+    "แพร": {
+      "th": [
+        "น้องแพร"
+      ],
+      "th_doubled_rare": [
+        "แพรแพร"
+      ]
+    },
+    "ดาว": {
+      "th": [
+        "น้องดาว"
+      ],
+      "th_doubled_rare": [
+        "ดาวดาว"
+      ]
+    },
+    "พีช": {
+      "th": [
+        "น้องพีช"
+      ],
+      "th_doubled_rare": [
+        "พีชพีช"
+      ]
+    },
+    "นิว": {
+      "th": [
+        "น้องนิว"
+      ],
+      "th_doubled_rare": [
+        "นิวนิว"
+      ]
+    },
+    "มิว": {
+      "th": [
+        "น้องมิว"
+      ],
+      "th_doubled_rare": [
+        "มิวมิว"
+      ]
+    },
+    "เอ": {
+      "th": [
+        "น้องเอ"
+      ],
+      "th_doubled_rare": [
+        "เอเอ"
+      ]
+    },
+    "โอ": {
+      "th": [
+        "น้องโอ"
+      ],
+      "th_doubled_rare": [
+        "โอโอ"
+      ]
+    },
+    "เปิ้ล": {
+      "th": [
+        "น้องเปิ้ล"
+      ],
+      "th_doubled_rare": [
+        "เปิ้ลเปิ้ล"
+      ]
+    },
+    "ปาล์ม": {
+      "th": [
+        "น้องปาล์ม"
+      ],
+      "th_doubled_rare": [
+        "ปาล์มปาล์ม"
+      ]
+    },
+    "เบียร์": {
+      "th": [
+        "น้องเบียร์"
+      ],
+      "th_doubled_rare": [
+        "เบียร์เบียร์"
+      ]
+    },
+    "ไผ่": {
+      "th": [
+        "น้องไผ่"
+      ],
+      "th_doubled_rare": [
+        "ไผ่ไผ่"
+      ]
+    },
+    "ติ๊ก": {
+      "th": [
+        "ติ๊กตี้"
+      ],
+      "th_doubled_rare": [
+        "ติ๊กติ๊ก"
+      ]
+    },
+    "ตุ๊ก": {
+      "th": [
+        "ตุ๊กตี้",
+        "น้องตุ๊ก"
+      ],
+      "th_doubled_rare": []
+    },
+    "จุ๊บ": {
+      "th": [
+        "น้องจุ๊บ"
+      ],
+      "th_doubled_rare": [
+        "จุ๊บจุ๊บ"
+      ]
+    },
+    "ปุ้ย": {
+      "th": [
+        "น้องปุ้ย"
+      ],
+      "th_doubled_rare": [
+        "ปุ้ยปุ้ย"
+      ]
+    },
+    "เจน": {
+      "th": [
+        "น้องเจน"
+      ],
+      "th_doubled_rare": [
+        "เจนเจน"
+      ],
+      "en": "JANE",
+      "en_variants": [
+        "JANIE",
+        "JENNY"
+      ],
+      "en_mixed": []
+    },
+    "เจย์": {
+      "th": [
+        "พี่เจย์"
+      ],
+      "th_doubled_rare": [
+        "เจย์เจย์"
+      ]
+    },
+    "บูม": {
+      "th": [
+        "น้องบูม"
+      ],
+      "th_doubled_rare": [
+        "บูมบูม"
+      ]
+    },
+    "นอร์ท": {
+      "th": [
+        "น้องนอร์ท"
+      ],
+      "th_doubled_rare": []
+    },
+    "มาร์ค": {
+      "th": [
+        "พี่มาร์ค"
+      ],
+      "th_doubled_rare": [
+        "มาร์คมาร์ค"
+      ],
+      "en": "MARK",
+      "en_variants": [
+        "MARKY"
+      ],
+      "en_mixed": []
+    },
+    "คิง": {
+      "th": [
+        "พี่คิง"
+      ],
+      "th_doubled_rare": [
+        "คิงคิง"
+      ]
+    },
+    "ซัน": {
+      "th": [
+        "น้องซัน"
+      ],
+      "th_doubled_rare": [
+        "ซันซัน"
+      ],
+      "en": "SUN",
+      "en_variants": [
+        "SUNNY"
+      ],
+      "en_mixed": []
+    },
+    "ไท": {
+      "th": [
+        "น้องไท"
+      ],
+      "th_doubled_rare": [
+        "ไทไท"
+      ]
+    },
+    "ปริม": {
+      "th": [
+        "น้องปริม"
+      ],
+      "th_doubled_rare": [
+        "ปริมปริม"
+      ]
+    },
+    "พีม": {
+      "th": [
+        "พี่พีม"
+      ],
+      "th_doubled_rare": [
+        "พีมพีม"
+      ]
+    },
+    "ต้น": {
+      "th": [
+        "น้องต้น"
+      ],
+      "th_doubled_rare": [
+        "ต้นต้น"
+      ]
+    }
+  }
+}

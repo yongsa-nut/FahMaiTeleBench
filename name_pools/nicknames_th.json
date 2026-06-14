@@ -1,0 +1,1010 @@
+{
+  "count": 201,
+  "items": [
+    {
+      "th": "เอซ",
+      "en": "ACE",
+      "category": "modern"
+    },
+    {
+      "th": "เอ",
+      "en": "AE",
+      "category": "classic"
+    },
+    {
+      "th": "แอรีน",
+      "en": "AIREEN",
+      "category": "aesthetic"
+    },
+    {
+      "th": "อาญา",
+      "en": "ANYA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ออม",
+      "en": "AOM",
+      "category": "soft"
+    },
+    {
+      "th": "อาร์ม",
+      "en": "ARM",
+      "category": "modern"
+    },
+    {
+      "th": "อาร์ต",
+      "en": "ART",
+      "category": "modern"
+    },
+    {
+      "th": "อรุณ",
+      "en": "ARUN",
+      "category": "nature"
+    },
+    {
+      "th": "ใบเฟิร์น",
+      "en": "BAIFERN",
+      "category": "nature"
+    },
+    {
+      "th": "ใบเตย",
+      "en": "BAITOEY",
+      "category": "nature"
+    },
+    {
+      "th": "บอล",
+      "en": "BALL",
+      "category": "modern"
+    },
+    {
+      "th": "บัมบัม",
+      "en": "BAMBAM",
+      "category": "doubled"
+    },
+    {
+      "th": "แบงค์",
+      "en": "BANK",
+      "category": "modern"
+    },
+    {
+      "th": "บีม",
+      "en": "BEAM",
+      "category": "modern"
+    },
+    {
+      "th": "ถั่ว",
+      "en": "BEAN",
+      "category": "food"
+    },
+    {
+      "th": "บี",
+      "en": "BEE",
+      "category": "classic"
+    },
+    {
+      "th": "เบียร์",
+      "en": "BEER",
+      "category": "classic"
+    },
+    {
+      "th": "เบนซ์",
+      "en": "BENZ",
+      "category": "modern"
+    },
+    {
+      "th": "เบอร์รี่",
+      "en": "BERRY",
+      "category": "food"
+    },
+    {
+      "th": "บิ๋ม",
+      "en": "BIM",
+      "category": "soft"
+    },
+    {
+      "th": "บูม",
+      "en": "BOOM",
+      "category": "teen"
+    },
+    {
+      "th": "บอส",
+      "en": "BOSS",
+      "category": "modern"
+    },
+    {
+      "th": "บัว",
+      "en": "BUA",
+      "category": "nature"
+    },
+    {
+      "th": "เค้ก",
+      "en": "CAKE",
+      "category": "food"
+    },
+    {
+      "th": "แชมป์",
+      "en": "CHAMP",
+      "category": "modern"
+    },
+    {
+      "th": "เชน",
+      "en": "CHANE",
+      "category": "modern"
+    },
+    {
+      "th": "ช้าง",
+      "en": "CHANG",
+      "category": "animal"
+    },
+    {
+      "th": "เชอร์รี่",
+      "en": "CHERRY",
+      "category": "food"
+    },
+    {
+      "th": "ชมพู",
+      "en": "CHOMPOO",
+      "category": "nature"
+    },
+    {
+      "th": "คลาวด์",
+      "en": "CLOUD",
+      "category": "modern"
+    },
+    {
+      "th": "โกโก้",
+      "en": "COCO",
+      "category": "food"
+    },
+    {
+      "th": "คอฟฟี่เมต",
+      "en": "COFFEEMATE",
+      "category": "weird"
+    },
+    {
+      "th": "คุกกี้",
+      "en": "COOKIE",
+      "category": "food"
+    },
+    {
+      "th": "คอตตอน",
+      "en": "COTTON",
+      "category": "weird"
+    },
+    {
+      "th": "แดง",
+      "en": "DAENG",
+      "category": "nature"
+    },
+    {
+      "th": "ดาว",
+      "en": "DAO",
+      "category": "nature"
+    },
+    {
+      "th": "ดาริน",
+      "en": "DARIN",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ดีดี",
+      "en": "DEEDEE",
+      "category": "doubled"
+    },
+    {
+      "th": "ดอกไม้",
+      "en": "DOKMAI",
+      "category": "nature"
+    },
+    {
+      "th": "โดนัท",
+      "en": "DONUT",
+      "category": "food"
+    },
+    {
+      "th": "ดำ",
+      "en": "DUM",
+      "category": "nature"
+    },
+    {
+      "th": "ฟ้า",
+      "en": "FAH",
+      "category": "nature"
+    },
+    {
+      "th": "ฟิล์ม",
+      "en": "FILM",
+      "category": "modern"
+    },
+    {
+      "th": "เฟิร์ส",
+      "en": "FIRST",
+      "category": "modern"
+    },
+    {
+      "th": "ฟลุ๊ค",
+      "en": "FLUKE",
+      "category": "modern"
+    },
+    {
+      "th": "โฟกัส",
+      "en": "FOCUS",
+      "category": "weird"
+    },
+    {
+      "th": "โฟล์ค",
+      "en": "FOLK",
+      "category": "teen"
+    },
+    {
+      "th": "โฟล์คซอง",
+      "en": "FOLKSONG",
+      "category": "weird"
+    },
+    {
+      "th": "ฝน",
+      "en": "FON",
+      "category": "nature"
+    },
+    {
+      "th": "ฟ่อนฟ่อน",
+      "en": "FONFON",
+      "category": "doubled"
+    },
+    {
+      "th": "เกม",
+      "en": "GAME",
+      "category": "modern"
+    },
+    {
+      "th": "กีกี",
+      "en": "GIGI",
+      "category": "doubled"
+    },
+    {
+      "th": "กอล์ฟ",
+      "en": "GOLF",
+      "category": "modern"
+    },
+    {
+      "th": "หงส์",
+      "en": "HONG",
+      "category": "animal"
+    },
+    {
+      "th": "ฮูก",
+      "en": "HOOK",
+      "category": "animal"
+    },
+    {
+      "th": "ไอบีเอ็ม",
+      "en": "IBM",
+      "category": "weird"
+    },
+    {
+      "th": "ไอซ์",
+      "en": "ICE",
+      "category": "food"
+    },
+    {
+      "th": "อิงค์",
+      "en": "INK",
+      "category": "modern"
+    },
+    {
+      "th": "ไอโฟน",
+      "en": "IPHONE",
+      "category": "weird"
+    },
+    {
+      "th": "เจน",
+      "en": "JANE",
+      "category": "modern"
+    },
+    {
+      "th": "เจแปน",
+      "en": "JAPAN",
+      "category": "weird"
+    },
+    {
+      "th": "เจย์",
+      "en": "JAY",
+      "category": "modern"
+    },
+    {
+      "th": "เจลลี่",
+      "en": "JELLY",
+      "category": "food"
+    },
+    {
+      "th": "เจี๊ยบ",
+      "en": "JIAB",
+      "category": "classic"
+    },
+    {
+      "th": "โจเอล",
+      "en": "JOEL",
+      "category": "modern"
+    },
+    {
+      "th": "จุ๊บ",
+      "en": "JUB",
+      "category": "classic"
+    },
+    {
+      "th": "จูปิเตอร์",
+      "en": "JUPITER",
+      "category": "weird"
+    },
+    {
+      "th": "แก้ว",
+      "en": "KAEW",
+      "category": "classic"
+    },
+    {
+      "th": "กาแฟ",
+      "en": "KAFAE",
+      "category": "weird"
+    },
+    {
+      "th": "ไก่",
+      "en": "KAI",
+      "category": "classic"
+    },
+    {
+      "th": "เคน",
+      "en": "KEN",
+      "category": "teen"
+    },
+    {
+      "th": "ขนม",
+      "en": "KHANOM",
+      "category": "food"
+    },
+    {
+      "th": "ข้าว",
+      "en": "KHAORICE",
+      "category": "food"
+    },
+    {
+      "th": "ขาว",
+      "en": "KHAOWHITE",
+      "category": "nature"
+    },
+    {
+      "th": "ขิง",
+      "en": "KHING",
+      "category": "food"
+    },
+    {
+      "th": "เขียว",
+      "en": "KIAW",
+      "category": "nature"
+    },
+    {
+      "th": "คิม",
+      "en": "KIM",
+      "category": "teen"
+    },
+    {
+      "th": "คิง",
+      "en": "KING",
+      "category": "modern"
+    },
+    {
+      "th": "กีวี่",
+      "en": "KIWI",
+      "category": "food"
+    },
+    {
+      "th": "กบ",
+      "en": "KOB",
+      "category": "animal"
+    },
+    {
+      "th": "กระต่าย",
+      "en": "KRATAI",
+      "category": "animal"
+    },
+    {
+      "th": "กุ้ง",
+      "en": "KUNG",
+      "category": "animal"
+    },
+    {
+      "th": "กวาง",
+      "en": "KWANG",
+      "category": "animal"
+    },
+    {
+      "th": "ลาลา",
+      "en": "LALA",
+      "category": "doubled"
+    },
+    {
+      "th": "ลลิน",
+      "en": "LALIN",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ลาเต้",
+      "en": "LATTE",
+      "category": "food"
+    },
+    {
+      "th": "ลีโอ",
+      "en": "LEO",
+      "category": "modern"
+    },
+    {
+      "th": "ลิน่า",
+      "en": "LINA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ลิง",
+      "en": "LING",
+      "category": "animal"
+    },
+    {
+      "th": "ลม",
+      "en": "LOM",
+      "category": "nature"
+    },
+    {
+      "th": "แมว",
+      "en": "MAEW",
+      "category": "animal"
+    },
+    {
+      "th": "มะลิ",
+      "en": "MALI",
+      "category": "nature"
+    },
+    {
+      "th": "มะม่วง",
+      "en": "MANGO",
+      "category": "food"
+    },
+    {
+      "th": "มาร์ค",
+      "en": "MARK",
+      "category": "modern"
+    },
+    {
+      "th": "มาร์ช",
+      "en": "MARSH",
+      "category": "food"
+    },
+    {
+      "th": "เมญ่า",
+      "en": "MAYA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "เมฆ",
+      "en": "MEK",
+      "category": "nature"
+    },
+    {
+      "th": "มิว",
+      "en": "MEW",
+      "category": "soft"
+    },
+    {
+      "th": "หมี",
+      "en": "MHEE",
+      "category": "animal"
+    },
+    {
+      "th": "มิลค์",
+      "en": "MILK",
+      "category": "food"
+    },
+    {
+      "th": "มิมิ",
+      "en": "MIMI",
+      "category": "doubled"
+    },
+    {
+      "th": "มิ้น",
+      "en": "MINT",
+      "category": "modern"
+    },
+    {
+      "th": "มิรา",
+      "en": "MIRA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "มอคค่า",
+      "en": "MOCHA",
+      "category": "food"
+    },
+    {
+      "th": "หมู",
+      "en": "MOO",
+      "category": "animal"
+    },
+    {
+      "th": "มุก",
+      "en": "MOOK",
+      "category": "nature"
+    },
+    {
+      "th": "มัฟฟิน",
+      "en": "MUFFIN",
+      "category": "food"
+    },
+    {
+      "th": "น้ำ",
+      "en": "NAM",
+      "category": "nature"
+    },
+    {
+      "th": "น้ำผึ้ง",
+      "en": "NAMPHUENG",
+      "category": "food"
+    },
+    {
+      "th": "น้ำตาล",
+      "en": "NAMTAN",
+      "category": "food"
+    },
+    {
+      "th": "น้ำหวาน",
+      "en": "NAMWAN",
+      "category": "food"
+    },
+    {
+      "th": "ณัฐ",
+      "en": "NAT",
+      "category": "teen"
+    },
+    {
+      "th": "นีโอ",
+      "en": "NEO",
+      "category": "modern"
+    },
+    {
+      "th": "เน่อเน่อ",
+      "en": "NERNER",
+      "category": "doubled"
+    },
+    {
+      "th": "เนสท์เล่",
+      "en": "NESTLE",
+      "category": "weird"
+    },
+    {
+      "th": "นิว",
+      "en": "NEW",
+      "category": "soft"
+    },
+    {
+      "th": "ณิช",
+      "en": "NISH",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ณิชา",
+      "en": "NISHA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "นก",
+      "en": "NOK",
+      "category": "animal"
+    },
+    {
+      "th": "นอร์ท",
+      "en": "NORTH",
+      "category": "modern"
+    },
+    {
+      "th": "โน้ต",
+      "en": "NOTE",
+      "category": "modern"
+    },
+    {
+      "th": "นัต",
+      "en": "NUT",
+      "category": "classic"
+    },
+    {
+      "th": "โอ๊ต",
+      "en": "OAT",
+      "category": "modern"
+    },
+    {
+      "th": "โอ",
+      "en": "OH",
+      "category": "classic"
+    },
+    {
+      "th": "โอ้โอ้",
+      "en": "OHOH",
+      "category": "doubled"
+    },
+    {
+      "th": "โอเค",
+      "en": "OKAY",
+      "category": "weird"
+    },
+    {
+      "th": "อ้อม",
+      "en": "OM",
+      "category": "soft"
+    },
+    {
+      "th": "อุ่น",
+      "en": "OON",
+      "category": "soft"
+    },
+    {
+      "th": "โอริโอ้",
+      "en": "OREO",
+      "category": "food"
+    },
+    {
+      "th": "ปาล์ม",
+      "en": "PALM",
+      "category": "modern"
+    },
+    {
+      "th": "ปันปัน",
+      "en": "PANPAN",
+      "category": "weird"
+    },
+    {
+      "th": "เป้",
+      "en": "PE",
+      "category": "classic"
+    },
+    {
+      "th": "พีช",
+      "en": "PEACH",
+      "category": "food"
+    },
+    {
+      "th": "พีม",
+      "en": "PEEM",
+      "category": "soft"
+    },
+    {
+      "th": "เป้เป้",
+      "en": "PEPE",
+      "category": "doubled"
+    },
+    {
+      "th": "เพชร",
+      "en": "PET",
+      "category": "nature"
+    },
+    {
+      "th": "พีท",
+      "en": "PETE",
+      "category": "soft"
+    },
+    {
+      "th": "ปีเตอร์",
+      "en": "PETER",
+      "category": "modern"
+    },
+    {
+      "th": "ไผ่",
+      "en": "PHAI",
+      "category": "classic"
+    },
+    {
+      "th": "ผึ้ง",
+      "en": "PHEUNG",
+      "category": "animal"
+    },
+    {
+      "th": "พิม",
+      "en": "PIM",
+      "category": "aesthetic"
+    },
+    {
+      "th": "พิมมาดา",
+      "en": "PIMMADA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ปิ๊ง",
+      "en": "PING",
+      "category": "classic"
+    },
+    {
+      "th": "ปลา",
+      "en": "PLA",
+      "category": "animal"
+    },
+    {
+      "th": "เปิ้ล",
+      "en": "PLE",
+      "category": "classic"
+    },
+    {
+      "th": "ปลื้ม",
+      "en": "PLERM",
+      "category": "teen"
+    },
+    {
+      "th": "พลอย",
+      "en": "PLOY",
+      "category": "nature"
+    },
+    {
+      "th": "ป๊อก",
+      "en": "POK",
+      "category": "teen"
+    },
+    {
+      "th": "ปอนด์",
+      "en": "POND",
+      "category": "teen"
+    },
+    {
+      "th": "ป๊อป",
+      "en": "POP",
+      "category": "teen"
+    },
+    {
+      "th": "ปอร์เช่",
+      "en": "PORSCHE",
+      "category": "weird"
+    },
+    {
+      "th": "แพร",
+      "en": "PRAEW",
+      "category": "soft"
+    },
+    {
+      "th": "เปรียว",
+      "en": "PREAW",
+      "category": "soft"
+    },
+    {
+      "th": "ปริม",
+      "en": "PRIM",
+      "category": "soft"
+    },
+    {
+      "th": "ปู",
+      "en": "PU",
+      "category": "animal"
+    },
+    {
+      "th": "พุดดิ้ง",
+      "en": "PUDDING",
+      "category": "food"
+    },
+    {
+      "th": "ปุ้ย",
+      "en": "PUI",
+      "category": "soft"
+    },
+    {
+      "th": "ปุ๊ก",
+      "en": "PUK",
+      "category": "classic"
+    },
+    {
+      "th": "ปุณณ์",
+      "en": "PUN",
+      "category": "soft"
+    },
+    {
+      "th": "พันช์",
+      "en": "PUNCH",
+      "category": "soft"
+    },
+    {
+      "th": "ควีน",
+      "en": "QUEEN",
+      "category": "modern"
+    },
+    {
+      "th": "เรย์",
+      "en": "RAY",
+      "category": "modern"
+    },
+    {
+      "th": "ริโอ",
+      "en": "RIO",
+      "category": "aesthetic"
+    },
+    {
+      "th": "ริริ",
+      "en": "RIRI",
+      "category": "doubled"
+    },
+    {
+      "th": "ริต",
+      "en": "RIT",
+      "category": "teen"
+    },
+    {
+      "th": "ริต้า",
+      "en": "RITA",
+      "category": "aesthetic"
+    },
+    {
+      "th": "รุ้ง",
+      "en": "RUNG",
+      "category": "nature"
+    },
+    {
+      "th": "ทราย",
+      "en": "SAI",
+      "category": "nature"
+    },
+    {
+      "th": "ซานตา",
+      "en": "SANTA",
+      "category": "weird"
+    },
+    {
+      "th": "ชาร์ค",
+      "en": "SHARK",
+      "category": "weird"
+    },
+    {
+      "th": "สกาย",
+      "en": "SKY",
+      "category": "modern"
+    },
+    {
+      "th": "ส้ม",
+      "en": "SOM",
+      "category": "food"
+    },
+    {
+      "th": "ส้มโอ",
+      "en": "SOMO",
+      "category": "food"
+    },
+    {
+      "th": "เสือ",
+      "en": "SUEA",
+      "category": "animal"
+    },
+    {
+      "th": "ซัน",
+      "en": "SUN",
+      "category": "teen"
+    },
+    {
+      "th": "ซูชิ",
+      "en": "SUSHI",
+      "category": "food"
+    },
+    {
+      "th": "ทาฟฟี่",
+      "en": "TAFFY",
+      "category": "food"
+    },
+    {
+      "th": "ไท",
+      "en": "TAI",
+      "category": "teen"
+    },
+    {
+      "th": "แท่น",
+      "en": "TAN",
+      "category": "teen"
+    },
+    {
+      "th": "ตังโอ๋",
+      "en": "TANGOH",
+      "category": "weird"
+    },
+    {
+      "th": "เต่า",
+      "en": "TAO",
+      "category": "animal"
+    },
+    {
+      "th": "ตะวัน",
+      "en": "TAWAN",
+      "category": "nature"
+    },
+    {
+      "th": "แทน",
+      "en": "THAEN",
+      "category": "teen"
+    },
+    {
+      "th": "ทอง",
+      "en": "THONG",
+      "category": "nature"
+    },
+    {
+      "th": "ไทเกอร์",
+      "en": "TIGER",
+      "category": "weird"
+    },
+    {
+      "th": "ติ๊ก",
+      "en": "TIK",
+      "category": "classic"
+    },
+    {
+      "th": "ติน",
+      "en": "TIN",
+      "category": "classic"
+    },
+    {
+      "th": "ไทเทิล",
+      "en": "TITLE",
+      "category": "modern"
+    },
+    {
+      "th": "ทอม",
+      "en": "TOM",
+      "category": "teen"
+    },
+    {
+      "th": "ต้น",
+      "en": "TON",
+      "category": "teen"
+    },
+    {
+      "th": "ตูน",
+      "en": "TOON",
+      "category": "classic"
+    },
+    {
+      "th": "ตุ๊ก",
+      "en": "TUK",
+      "category": "classic"
+    },
+    {
+      "th": "ต้อม",
+      "en": "TUM",
+      "category": "classic"
+    },
+    {
+      "th": "อุ้ย",
+      "en": "UI",
+      "category": "soft"
+    },
+    {
+      "th": "วาฟเฟิล",
+      "en": "WAFFLE",
+      "category": "food"
+    },
+    {
+      "th": "เวฟ",
+      "en": "WAVE",
+      "category": "modern"
+    },
+    {
+      "th": "วิน",
+      "en": "WIN",
+      "category": "modern"
+    },
+    {
+      "th": "โยเกิร์ต",
+      "en": "YOGURT",
+      "category": "food"
+    },
+    {
+      "th": "ยุ้ย",
+      "en": "YUI",
+      "category": "classic"
+    },
+    {
+      "th": "ยุ้ง",
+      "en": "YUNG",
+      "category": "classic"
+    },
+    {
+      "th": "เซน",
+      "en": "ZEN",
+      "category": "modern"
+    }
+  ]
+}

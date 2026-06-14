@@ -1,0 +1,124 @@
+{
+  "models": {
+    "deepseekv4flash": {
+      "n": 1878,
+      "err": 20,
+      "tin": 23076585,
+      "tout": 944565,
+      "cost": 2.4965715000000004,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "deepseekv4pro": {
+      "n": 1878,
+      "err": 12,
+      "tin": 19451132,
+      "tout": 895300,
+      "cost": 9.24015342,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "gemini30flash": {
+      "n": 1878,
+      "err": 3,
+      "tin": 10420124,
+      "tout": 286601,
+      "cost": 6.069865000000001,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "gemma4": {
+      "n": 1878,
+      "err": 76,
+      "tin": 12483260,
+      "tout": 207192,
+      "cost": 1.57465224,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "glm51": {
+      "n": 1878,
+      "err": 27,
+      "tin": 19470773,
+      "tout": 664131,
+      "cost": 21.12688102,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "gpt54med": {
+      "n": 2504,
+      "err": 0,
+      "tin": 23938784,
+      "tout": 862393,
+      "cost": 68.47089,
+      "lat_seq": 2504,
+      "any_batch": false,
+      "free": false
+    },
+    "gpt55low": {
+      "n": 2504,
+      "err": 144,
+      "tin": 28693923,
+      "tout": 789318,
+      "cost": 167.149155,
+      "lat_seq": 2504,
+      "any_batch": false,
+      "free": false
+    },
+    "gpt55med": {
+      "n": 2504,
+      "err": 203,
+      "tin": 29623107,
+      "tout": 910441,
+      "cost": 175.428765,
+      "lat_seq": 2504,
+      "any_batch": false,
+      "free": false
+    },
+    "minimax": {
+      "n": 1878,
+      "err": 24,
+      "tin": 18084545,
+      "tout": 960035,
+      "cost": 6.197630055,
+      "lat_seq": 1878,
+      "any_batch": false,
+      "free": false
+    },
+    "openthaigpt": {
+      "n": 2504,
+      "err": 0,
+      "tin": 6212817,
+      "tout": 1633130,
+      "cost": 0.0,
+      "lat_seq": 2504,
+      "any_batch": false,
+      "free": true
+    },
+    "opentyphoon": {
+      "n": 2504,
+      "err": 7,
+      "tin": 4611793,
+      "tout": 38593,
+      "cost": 0.0,
+      "lat_seq": 2504,
+      "any_batch": false,
+      "free": true
+    },
+    "sonnet": {
+      "n": 2504,
+      "err": 2,
+      "tin": 16848095,
+      "tout": 783346,
+      "cost": 31.147237500000003,
+      "lat_seq": 0,
+      "any_batch": true,
+      "free": false
+    }
+  }
+}

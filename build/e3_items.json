@@ -1,0 +1,516 @@
+{
+  "questions": [
+    {
+      "id": "E3-01",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เรืองศักดิ์",
+            "Ruangsak"
+          ],
+          [
+            "เทพเกียรติกำจร",
+            "Thepkiatkamjorn"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08109010"
+      ],
+      "rationale": "Implicit hierarchy: DN is a single-head dept; unique head = เรืองศักดิ์ เทพเกียรติกำจร.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "dept_head"
+      ]
+    },
+    {
+      "id": "E3-02",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the most senior person heading the Judchuem (JC) department?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ราชินี",
+            "Rachini"
+          ],
+          [
+            "อาทิตย์สุข",
+            "Arthitkulsuk"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004661"
+      ],
+      "rationale": "Implicit hierarchy: JC is a single-head dept; unique head = ราชินี อาทิตย์สุข.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "dept_head"
+      ]
+    },
+    {
+      "id": "E3-03",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ธเนศ",
+            "Tanet"
+          ],
+          [
+            "บัวทองประเสริฐ",
+            "Buathongprasert"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08953826"
+      ],
+      "rationale": "Implicit hierarchy: KS is a single-head dept; unique head = ธเนศ บัวทองประเสริฐ.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "dept_head"
+      ]
+    },
+    {
+      "id": "E3-04",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "Who is the most senior person heading the Legal (LEG) department?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไพโรจน์",
+            "Phairoj"
+          ],
+          [
+            "มหากุล",
+            "Mahakun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Implicit hierarchy: LEG is a single-head dept; unique head = ไพโรจน์ มหากุล.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "dept_head"
+      ]
+    },
+    {
+      "id": "E3-05",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "คึกฤทธิ์",
+            "Kukrit"
+          ],
+          [
+            "อัครเจริญ",
+            "Akaracharoen"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001148"
+      ],
+      "rationale": "Implicit hierarchy: WK is a single-head dept; unique head = คึกฤทธิ์ อัครเจริญ.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "dept_head"
+      ]
+    },
+    {
+      "id": "E3-06",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน B2B-SUP ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ประยุทธ์",
+            "Prayut"
+          ],
+          [
+            "สมไชยา",
+            "Somchaiyawong"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002101"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section B2B-SUP is Director ประยุทธ์ สมไชยา (n=16); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-07",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "In the DN-ENG section, who is the most senior employee by position level?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "พรไพร",
+            "Phonphai"
+          ],
+          [
+            "อาทิตย์วงษ์",
+            "Arthitkulwongs"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004766"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section DN-ENG is Director พรไพร อาทิตย์วงษ์ (n=35); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-08",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน DN-MKT ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "พุสดี",
+            "Phussadee"
+          ],
+          [
+            "ชัยสัยดี",
+            "Chaisaidi"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08821819"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section DN-MKT is Director พุสดี ชัยสัยดี (n=22); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-09",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "In the FIN-AR section, who is the most senior employee by position level?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "เมฆา",
+            "Mekha"
+          ],
+          [
+            "ภัทรใจเขียว",
+            "Phatjaikieow"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08612584"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section FIN-AR is Director เมฆา ภัทรใจเขียว (n=15); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-10",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน FIN-GL ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "บุษบา",
+            "Busaba"
+          ],
+          [
+            "อัครพัฒน์",
+            "Akaraphat"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08978483"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section FIN-GL is Director บุษบา อัครพัฒน์ (n=15); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-11",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "In the FIN-TR section, who is the most senior employee by position level?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อุกฤษฎ์",
+            "Ukrit"
+          ],
+          [
+            "อมรอาทิตย์",
+            "Amonarthitkul"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003080"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section FIN-TR is Director อุกฤษฎ์ อมรอาทิตย์ (n=11); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-12",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน HR-COMP ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ก้อง",
+            "Kong"
+          ],
+          [
+            "ชัยใจดี",
+            "Chaijaidi"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08378010"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section HR-COMP is Manager ก้อง ชัยใจดี (n=10); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-13",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "In the JC-ENG section, who is the most senior employee by position level?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ณรงค์",
+            "Narong"
+          ],
+          [
+            "กอบสุขบุญ",
+            "Kobsookbun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08153847"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section JC-ENG is Director ณรงค์ กอบสุขบุญ (n=17); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-14",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน JC-MKT ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ไพบูลย์",
+            "Phaibun"
+          ],
+          [
+            "อนุจิตรานนท์",
+            "Anujitranon"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08538360"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section JC-MKT is Manager ไพบูลย์ อนุจิตรานนท์ (n=15); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-15",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "en",
+      "question": "In the KS-MKT section, who is the most senior employee by position level?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ธงชัย",
+            "Thongchai"
+          ],
+          [
+            "อัมพรสถิต",
+            "Amphomsathit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08526617"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section KS-MKT is Director ธงชัย อัมพรสถิต (n=30); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    },
+    {
+      "id": "E3-16",
+      "bucket": "multi_hop",
+      "subtype": "E3",
+      "group": "E",
+      "priority": "P1",
+      "language": "th",
+      "question": "ในส่วนงาน KS-OPS ใครมีตำแหน่งสูงสุด",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "วศิน",
+            "Vasin"
+          ],
+          [
+            "ราชชัยดี",
+            "Rajchaidee"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08155669"
+      ],
+      "rationale": "Implicit hierarchy: unique top of section KS-OPS is Director วศิน ราชชัยดี (n=25); surname unique in section.",
+      "tags": [
+        "multi_hop",
+        "hierarchy",
+        "section_senior"
+      ]
+    }
+  ]
+}

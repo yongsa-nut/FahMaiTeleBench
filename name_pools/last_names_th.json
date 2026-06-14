@@ -1,0 +1,887 @@
+{
+  "count": 147,
+  "items": [
+    {
+      "th": "อมรินทร์",
+      "en": "AMARIN",
+      "origin": "thai",
+      "meaning": "undying"
+    },
+    {
+      "th": "อัมพร",
+      "en": "AMPHOM",
+      "origin": "thai",
+      "meaning": "sky"
+    },
+    {
+      "th": "อนันต์",
+      "en": "ANANT",
+      "origin": "thai",
+      "meaning": "eternal"
+    },
+    {
+      "th": "อัญชลี",
+      "en": "ANCHALI",
+      "origin": "thai",
+      "meaning": "greeting"
+    },
+    {
+      "th": "อนงค์",
+      "en": "ANONGKUN",
+      "origin": "thai",
+      "meaning": "gorgeous woman"
+    },
+    {
+      "th": "อนุมาน",
+      "en": "ANUMAN",
+      "origin": "thai",
+      "meaning": "patience"
+    },
+    {
+      "th": "อนุรักษ์",
+      "en": "ANURAK",
+      "origin": "thai",
+      "meaning": "angel"
+    },
+    {
+      "th": "อภิญญา",
+      "en": "APINYA",
+      "origin": "thai",
+      "meaning": "magical power"
+    },
+    {
+      "th": "อารี",
+      "en": "AREE",
+      "origin": "thai",
+      "meaning": "hospitable"
+    },
+    {
+      "th": "อารมณ์ดี",
+      "en": "AROMDEE",
+      "origin": "thai",
+      "meaning": "cheerful"
+    },
+    {
+      "th": "อาทิตย์",
+      "en": "ARTHITKUL",
+      "origin": "thai",
+      "meaning": "man of the sun"
+    },
+    {
+      "th": "อัสนี",
+      "en": "ASNEE",
+      "origin": "thai",
+      "meaning": "lightning"
+    },
+    {
+      "th": "อาวุทธ์",
+      "en": "AWUT",
+      "origin": "thai",
+      "meaning": "weapon"
+    },
+    {
+      "th": "บุญมี",
+      "en": "BOONMEE",
+      "origin": "thai",
+      "meaning": "have merit"
+    },
+    {
+      "th": "บุญนำ",
+      "en": "BOONNAM",
+      "origin": "thai",
+      "meaning": "born to good fortune"
+    },
+    {
+      "th": "บุญเรือง",
+      "en": "BOONRUENG",
+      "origin": "thai",
+      "meaning": "virtue with glory"
+    },
+    {
+      "th": "บุญญา",
+      "en": "BOONYA",
+      "origin": "thai",
+      "meaning": "virtue"
+    },
+    {
+      "th": "บัวทอง",
+      "en": "BUATHONG",
+      "origin": "thai",
+      "meaning": "gold lotus"
+    },
+    {
+      "th": "บุญมา",
+      "en": "BUNMAK",
+      "origin": "thai",
+      "meaning": "to have luck"
+    },
+    {
+      "th": "บุษราคัม",
+      "en": "BUSARAKHAM",
+      "origin": "thai",
+      "meaning": "topaz"
+    },
+    {
+      "th": "แช้มช้อย",
+      "en": "CHAEMCHOI",
+      "origin": "thai",
+      "meaning": "gracefulness"
+    },
+    {
+      "th": "ชัยเจริญ",
+      "en": "CHAICHAROEN",
+      "origin": "thai",
+      "meaning": "triumphant"
+    },
+    {
+      "th": "ชัยดี",
+      "en": "CHAIDEE",
+      "origin": "thai",
+      "meaning": "kind"
+    },
+    {
+      "th": "ชัยสัย",
+      "en": "CHAISAI",
+      "origin": "thai",
+      "meaning": "victory"
+    },
+    {
+      "th": "ชัยสนธิ์",
+      "en": "CHAISON",
+      "origin": "thai",
+      "meaning": "mischievous boy"
+    },
+    {
+      "th": "ชัยวัฒน์",
+      "en": "CHAIWAT",
+      "origin": "thai",
+      "meaning": "victory growth"
+    },
+    {
+      "th": "ไชยา",
+      "en": "CHAIYAWONG",
+      "origin": "thai",
+      "meaning": "victory"
+    },
+    {
+      "th": "ชากัญญ์",
+      "en": "CHAKAN",
+      "origin": "thai",
+      "meaning": "able bodied"
+    },
+    {
+      "th": "จักรี",
+      "en": "CHAKRII",
+      "origin": "thai",
+      "meaning": "king"
+    },
+    {
+      "th": "ชาญณรงค์",
+      "en": "CHANNARONG",
+      "origin": "thai",
+      "meaning": "experienced soldier"
+    },
+    {
+      "th": "เจริญ",
+      "en": "CHAROEN",
+      "origin": "sino",
+      "meaning": "advance"
+    },
+    {
+      "th": "เจริญผล",
+      "en": "CHAROENPHOL",
+      "origin": "thai",
+      "meaning": "prospering result"
+    },
+    {
+      "th": "ชาเรือนศักดิ์",
+      "en": "CHAROENSUK",
+      "origin": "thai",
+      "meaning": "prosper with delight"
+    },
+    {
+      "th": "จินดา",
+      "en": "CHINDA",
+      "origin": "thai",
+      "meaning": "precious stone"
+    },
+    {
+      "th": "โชคดี",
+      "en": "CHOKDEE",
+      "origin": "thai",
+      "meaning": "lucky"
+    },
+    {
+      "th": "จงรัก",
+      "en": "CHONGRAK",
+      "origin": "thai",
+      "meaning": "loyal"
+    },
+    {
+      "th": "ดาวเรือง",
+      "en": "DAORUENG",
+      "origin": "thai",
+      "meaning": "calendula"
+    },
+    {
+      "th": "ดาวใส",
+      "en": "DAOSAI",
+      "origin": "thai",
+      "meaning": "bright star"
+    },
+    {
+      "th": "ดวงกมล",
+      "en": "DUANGKAMOL",
+      "origin": "thai",
+      "meaning": "from the heart"
+    },
+    {
+      "th": "ฟ้าใส",
+      "en": "FAHSAI",
+      "origin": "thai",
+      "meaning": "clear sky"
+    },
+    {
+      "th": "หอมกลิ่น",
+      "en": "HOMKLIN",
+      "origin": "thai",
+      "meaning": "fragrant"
+    },
+    {
+      "th": "อินทรีย์",
+      "en": "INTHRI",
+      "origin": "thai",
+      "meaning": "majestic"
+    },
+    {
+      "th": "ใจดี",
+      "en": "JAIDI",
+      "origin": "thai",
+      "meaning": "good-hearted"
+    },
+    {
+      "th": "ใจเขียว",
+      "en": "JAIKIEOW",
+      "origin": "thai",
+      "meaning": "green heart"
+    },
+    {
+      "th": "ใจงาม",
+      "en": "JAINGAM",
+      "origin": "thai",
+      "meaning": "beautiful heart"
+    },
+    {
+      "th": "จิตรานนท์",
+      "en": "JITRANON",
+      "origin": "thai",
+      "meaning": "mind of joy"
+    },
+    {
+      "th": "แก้วกาญจน์",
+      "en": "KAEWKAN",
+      "origin": "thai",
+      "meaning": "golden crystal"
+    },
+    {
+      "th": "แก้วประเสริฐ",
+      "en": "KAEWPRASERT",
+      "origin": "thai",
+      "meaning": "precious crystal"
+    },
+    {
+      "th": "แก้วใส",
+      "en": "KAEWSAI",
+      "origin": "thai",
+      "meaning": "clear crystal"
+    },
+    {
+      "th": "กาญจน์",
+      "en": "KAN",
+      "origin": "thai",
+      "meaning": "gold"
+    },
+    {
+      "th": "การเวก",
+      "en": "KARAWEK",
+      "origin": "thai",
+      "meaning": "native bird"
+    },
+    {
+      "th": "เกษม",
+      "en": "KASEMKIT",
+      "origin": "thai",
+      "meaning": "pure happiness"
+    },
+    {
+      "th": "เก่งกาจ",
+      "en": "KHAENGKAD",
+      "origin": "thai",
+      "meaning": "brave"
+    },
+    {
+      "th": "เขียวขจี",
+      "en": "KIAOKAJI",
+      "origin": "thai",
+      "meaning": "lush green"
+    },
+    {
+      "th": "เกียรติกำจร",
+      "en": "KIATKAMJORN",
+      "origin": "thai",
+      "meaning": "spreading honor"
+    },
+    {
+      "th": "กิตติบุญ",
+      "en": "KITTIBUN",
+      "origin": "thai",
+      "meaning": "famous fortune"
+    },
+    {
+      "th": "กิตติชาติ",
+      "en": "KITTICHAT",
+      "origin": "thai",
+      "meaning": "famous clan"
+    },
+    {
+      "th": "กิตติ",
+      "en": "KITTIPONG",
+      "origin": "sino",
+      "meaning": "undertaking"
+    },
+    {
+      "th": "กอบสุข",
+      "en": "KOBSOOK",
+      "origin": "thai",
+      "meaning": "full happiness"
+    },
+    {
+      "th": "ไกรศรี",
+      "en": "KRAISEE",
+      "origin": "thai",
+      "meaning": "brave lion"
+    },
+    {
+      "th": "กูล",
+      "en": "KUL",
+      "origin": "sino",
+      "meaning": "family"
+    },
+    {
+      "th": "ขวัญใจ",
+      "en": "KWANJAI",
+      "origin": "thai",
+      "meaning": "beloved spirit"
+    },
+    {
+      "th": "ลวรรณ",
+      "en": "LAWAN",
+      "origin": "thai",
+      "meaning": "beautiful"
+    },
+    {
+      "th": "หลี",
+      "en": "LE",
+      "origin": "sino",
+      "meaning": "joy"
+    },
+    {
+      "th": "ลี้สกุล",
+      "en": "LEESAKUL",
+      "origin": "sino",
+      "meaning": "Lee family"
+    },
+    {
+      "th": "เลิศ",
+      "en": "LERT",
+      "origin": "sino",
+      "meaning": "brilliance"
+    },
+    {
+      "th": "ลิมปิสวัสดิ์",
+      "en": "LIMPISAWAT",
+      "origin": "sino",
+      "meaning": "Lin-blessed"
+    },
+    {
+      "th": "มาลัย",
+      "en": "MALAIKUL",
+      "origin": "thai",
+      "meaning": "garland"
+    },
+    {
+      "th": "มีบุญ",
+      "en": "MEEBOON",
+      "origin": "thai",
+      "meaning": "have merit"
+    },
+    {
+      "th": "มงคล",
+      "en": "MONGKHON",
+      "origin": "thai",
+      "meaning": "auspicious"
+    },
+    {
+      "th": "ณ เชียงใหม่",
+      "en": "NACHIANGMAI",
+      "origin": "thai",
+      "meaning": "descendants of rulers"
+    },
+    {
+      "th": "ณรงค์",
+      "en": "NARONGKUL",
+      "origin": "thai",
+      "meaning": "ready for war"
+    },
+    {
+      "th": "งาม",
+      "en": "NGAM",
+      "origin": "thai",
+      "meaning": "beautiful"
+    },
+    {
+      "th": "นิ่มนวล",
+      "en": "NIMNUAL",
+      "origin": "thai",
+      "meaning": "gentle and soft"
+    },
+    {
+      "th": "นิรันดร์",
+      "en": "NIRAN",
+      "origin": "thai",
+      "meaning": "never-ending"
+    },
+    {
+      "th": "น้อย",
+      "en": "NOI",
+      "origin": "thai",
+      "meaning": "little"
+    },
+    {
+      "th": "นกน้อย",
+      "en": "NOKNOI",
+      "origin": "thai",
+      "meaning": "little bird"
+    },
+    {
+      "th": "นพรัตน์",
+      "en": "NOPPARAT",
+      "origin": "thai",
+      "meaning": "nine gems"
+    },
+    {
+      "th": "อรศรี",
+      "en": "ONSI",
+      "origin": "thai",
+      "meaning": "glory"
+    },
+    {
+      "th": "ไพทูล",
+      "en": "PAITHOON",
+      "origin": "thai",
+      "meaning": "cat's eye"
+    },
+    {
+      "th": "พาณิชย์",
+      "en": "PANIT",
+      "origin": "sino",
+      "meaning": "commerce"
+    },
+    {
+      "th": "ปัญญา",
+      "en": "PANYA",
+      "origin": "thai",
+      "meaning": "intellect"
+    },
+    {
+      "th": "พัฒนา",
+      "en": "PATANA",
+      "origin": "sino",
+      "meaning": "develop"
+    },
+    {
+      "th": "ภัทราภรณ์",
+      "en": "PATTRAPORN",
+      "origin": "thai",
+      "meaning": "beautiful grace"
+    },
+    {
+      "th": "ผาสุก",
+      "en": "PHASUK",
+      "origin": "thai",
+      "meaning": "joyfully"
+    },
+    {
+      "th": "พัฒนสมสิทธิ์",
+      "en": "PHATTHANASOMSIT",
+      "origin": "thai",
+      "meaning": "development and rights"
+    },
+    {
+      "th": "พลเดช",
+      "en": "PHOLDECH",
+      "origin": "thai",
+      "meaning": "strong power"
+    },
+    {
+      "th": "พงศ์ภัค",
+      "en": "PHONGPHAK",
+      "origin": "thai",
+      "meaning": "fortunate lineage"
+    },
+    {
+      "th": "พรหมจรรย์",
+      "en": "PHROMCHAN",
+      "origin": "sino",
+      "meaning": "divine conduct"
+    },
+    {
+      "th": "พรหมสิทธิ์",
+      "en": "PHROMSIT",
+      "origin": "thai",
+      "meaning": "divine rights"
+    },
+    {
+      "th": "พรหมสุข",
+      "en": "PHROMSUK",
+      "origin": "thai",
+      "meaning": "divine happiness"
+    },
+    {
+      "th": "เผือก",
+      "en": "PHUEAK",
+      "origin": "thai",
+      "meaning": "white (albino)"
+    },
+    {
+      "th": "พิทักษ์",
+      "en": "PITAK",
+      "origin": "sino",
+      "meaning": "protect"
+    },
+    {
+      "th": "พงศ์",
+      "en": "PONG",
+      "origin": "sino",
+      "meaning": "family"
+    },
+    {
+      "th": "ประวัติ",
+      "en": "PRAVAT",
+      "origin": "thai",
+      "meaning": "historic"
+    },
+    {
+      "th": "ปรีดี",
+      "en": "PREEDEE",
+      "origin": "thai",
+      "meaning": "joyful"
+    },
+    {
+      "th": "รัตนพร",
+      "en": "RATANAPORN",
+      "origin": "thai",
+      "meaning": "crystal blessing"
+    },
+    {
+      "th": "รัตนวงศ์",
+      "en": "RATTANAWONG",
+      "origin": "thai",
+      "meaning": "crystal lineage"
+    },
+    {
+      "th": "ฤทธิรงค์",
+      "en": "RITTHIRONG",
+      "origin": "thai",
+      "meaning": "good fighter"
+    },
+    {
+      "th": "โรจนะ",
+      "en": "ROCHANA",
+      "origin": "thai",
+      "meaning": "good with words"
+    },
+    {
+      "th": "รุ่ง",
+      "en": "RUENG",
+      "origin": "thai",
+      "meaning": "glory"
+    },
+    {
+      "th": "เรืองไชย",
+      "en": "RUENGCHAI",
+      "origin": "thai",
+      "meaning": "glorious victory"
+    },
+    {
+      "th": "แซ่ฮวง",
+      "en": "SAEHUANG",
+      "origin": "sino",
+      "meaning": "Huang"
+    },
+    {
+      "th": "แซ่โค้ว",
+      "en": "SAEKHOR",
+      "origin": "sino",
+      "meaning": "Guo"
+    },
+    {
+      "th": "แซ่เล่า",
+      "en": "SAELAU",
+      "origin": "sino",
+      "meaning": "Liu"
+    },
+    {
+      "th": "แซ่หลี",
+      "en": "SAELEE",
+      "origin": "sino",
+      "meaning": "Li"
+    },
+    {
+      "th": "แซ่ลี้",
+      "en": "SAELI",
+      "origin": "sino",
+      "meaning": "Li"
+    },
+    {
+      "th": "แซ่หลิว",
+      "en": "SAELIEW",
+      "origin": "sino",
+      "meaning": "Liu"
+    },
+    {
+      "th": "แซ่ลิ้ม",
+      "en": "SAELIM",
+      "origin": "sino",
+      "meaning": "Lin (Chinese Lin)"
+    },
+    {
+      "th": "แสงแก้ว",
+      "en": "SAENGKAEW",
+      "origin": "thai",
+      "meaning": "crystal light"
+    },
+    {
+      "th": "แซ่โง้ว",
+      "en": "SAENGO",
+      "origin": "sino",
+      "meaning": "Wu"
+    },
+    {
+      "th": "แซ่ตั้ง",
+      "en": "SAETANG",
+      "origin": "sino",
+      "meaning": "Chen (Chinese Chen)"
+    },
+    {
+      "th": "แซ่เตียว",
+      "en": "SAETIAOW",
+      "origin": "sino",
+      "meaning": "Zhang"
+    },
+    {
+      "th": "แซ่อึ้ง",
+      "en": "SAEUENG",
+      "origin": "sino",
+      "meaning": "Huang"
+    },
+    {
+      "th": "ไทรทอง",
+      "en": "SAITHONG",
+      "origin": "thai",
+      "meaning": "golden banyan"
+    },
+    {
+      "th": "ศักดิ์ดา",
+      "en": "SAKDAKUL",
+      "origin": "thai",
+      "meaning": "powerful"
+    },
+    {
+      "th": "แสงทอง",
+      "en": "SANGTHONG",
+      "origin": "thai",
+      "meaning": "light of gold"
+    },
+    {
+      "th": "ชินวรา",
+      "en": "SHINWARA",
+      "origin": "thai",
+      "meaning": "does good routinely"
+    },
+    {
+      "th": "ศิริพร",
+      "en": "SIRIPORN",
+      "origin": "thai",
+      "meaning": "gloriously blessed"
+    },
+    {
+      "th": "สร้อยคำ",
+      "en": "SOIKHAM",
+      "origin": "thai",
+      "meaning": "gold necklace"
+    },
+    {
+      "th": "สมศรี",
+      "en": "SOMSRI",
+      "origin": "thai",
+      "meaning": "suitable with honor"
+    },
+    {
+      "th": "สมหวัง",
+      "en": "SOMWANG",
+      "origin": "thai",
+      "meaning": "as wished"
+    },
+    {
+      "th": "ศรีจันทร์",
+      "en": "SRICHAN",
+      "origin": "thai",
+      "meaning": "moon glory"
+    },
+    {
+      "th": "ศรีสุข",
+      "en": "SRISUK",
+      "origin": "thai",
+      "meaning": "happy glory"
+    },
+    {
+      "th": "ศรีสุวรรณ",
+      "en": "SRISUWAN",
+      "origin": "sino",
+      "meaning": "splendor with golden"
+    },
+    {
+      "th": "ศรีทอง",
+      "en": "SRITHONG",
+      "origin": "thai",
+      "meaning": "golden glory"
+    },
+    {
+      "th": "สุขสันต์",
+      "en": "SUKSAN",
+      "origin": "thai",
+      "meaning": "peaceful happiness"
+    },
+    {
+      "th": "สุขสวัสดิ์",
+      "en": "SUKSAWAT",
+      "origin": "thai",
+      "meaning": "happy fortune"
+    },
+    {
+      "th": "สุวรรณ",
+      "en": "SUWAN",
+      "origin": "thai",
+      "meaning": "gold"
+    },
+    {
+      "th": "สุวรรณรัตน์",
+      "en": "SUWANNARAT",
+      "origin": "thai",
+      "meaning": "gold with jewel"
+    },
+    {
+      "th": "ตันเจริญ",
+      "en": "TANCHAROEN",
+      "origin": "sino",
+      "meaning": "advance"
+    },
+    {
+      "th": "ตั้งธนวัฒน์",
+      "en": "TANGTHANAWAT",
+      "origin": "sino",
+      "meaning": "established prosperity"
+    },
+    {
+      "th": "ตันสุวรรณ",
+      "en": "TANSUWAN",
+      "origin": "sino",
+      "meaning": "Tan gold"
+    },
+    {
+      "th": "เตชะสุวรรณ",
+      "en": "TECHASUWAN",
+      "origin": "sino",
+      "meaning": "power of gold"
+    },
+    {
+      "th": "เตชะตนานนท์",
+      "en": "TECHATANANON",
+      "origin": "sino",
+      "meaning": "power of dwelling"
+    },
+    {
+      "th": "ทำบุญ",
+      "en": "THAMBOON",
+      "origin": "thai",
+      "meaning": "merit-making"
+    },
+    {
+      "th": "ตะวัน",
+      "en": "THAWANKUL",
+      "origin": "thai",
+      "meaning": "the sun"
+    },
+    {
+      "th": "เทพมณี",
+      "en": "THEPMANEE",
+      "origin": "thai",
+      "meaning": "divine gem"
+    },
+    {
+      "th": "ทองใบ",
+      "en": "THONGBAI",
+      "origin": "thai",
+      "meaning": "gold leaf"
+    },
+    {
+      "th": "ทองดี",
+      "en": "THONGDI",
+      "origin": "thai",
+      "meaning": "good gold"
+    },
+    {
+      "th": "ทองคำ",
+      "en": "THONGKHAM",
+      "origin": "thai",
+      "meaning": "gold"
+    },
+    {
+      "th": "ทองเพิ่ม",
+      "en": "THONGPERM",
+      "origin": "thai",
+      "meaning": "increasing gold"
+    },
+    {
+      "th": "ทองอยู่",
+      "en": "THONGYU",
+      "origin": "thai",
+      "meaning": "gold remains"
+    },
+    {
+      "th": "ตระกูล",
+      "en": "TRAKUN",
+      "origin": "sino",
+      "meaning": "family lineage"
+    },
+    {
+      "th": "อึ้งตระกูล",
+      "en": "UENGTRAKUN",
+      "origin": "sino",
+      "meaning": "Huang lineage"
+    },
+    {
+      "th": "วันชัย",
+      "en": "WANCHAI",
+      "origin": "thai",
+      "meaning": "victory day"
+    },
+    {
+      "th": "วงศ์",
+      "en": "WONG",
+      "origin": "sino",
+      "meaning": "family"
+    }
+  ]
+}

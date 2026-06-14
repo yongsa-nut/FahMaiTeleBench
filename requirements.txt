@@ -1,0 +1,6 @@
+# Core (grader, tools, analysis)
+pandas>=2.0
+
+# Model harness (only needed to re-run evaluations, not to use the dataset/grader)
+openai>=1.40          # OpenTyphoon, OpenAI Responses API, OpenRouter, Z.ai, DeepSeek (OpenAI-compatible)
+anthropic>=0.40       # Claude (native Messages API + Message Batches)

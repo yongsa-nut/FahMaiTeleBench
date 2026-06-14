@@ -1,0 +1,398 @@
+# Run: `deepseekv4pro_grep-only_L2_t1_grep_full`
+
+**Overall: 602/626 pass (96.2%)**
+
+## By bucket
+
+| Bucket | Pass/Total | Rate |
+|---|---|---|
+| evp_identity_by_code | 4/4 | 100.0% |
+| evp_identity_by_description | 4/4 | 100.0% |
+| evp_secretary | 5/5 | 100.0% |
+| evp_vs_vp_disambig | 25/25 | 100.0% |
+| vp_identity | 5/5 | 100.0% |
+| ceo_president | 4/4 | 100.0% |
+| name_lookup | 20/20 | 100.0% |
+| dept_listing_small | 7/7 | 100.0% |
+| dept_listing_medium | 8/8 | 100.0% |
+| section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
+| org_plus_person | 3/3 | 100.0% |
+| multi_entity_turn | 20/20 | 100.0% |
+| subsidiary_md | 8/8 | 100.0% |
+| extension_reverse | 7/7 | 100.0% |
+| email_mobile_lookup | 7/7 | 100.0% |
+| email_identity_lookup | 6/6 | 100.0% |
+| hard_bridge_lookup | 6/6 | 100.0% |
+| thai_knowledge | 10/10 | 100.0% |
+| surname_family | 24/24 | 100.0% |
+| hard_nickname_variant | 10/10 | 100.0% |
+| bilingual | 40/40 | 100.0% |
+| noisy_name_form | 20/20 | 100.0% |
+| multi_hop | 18/18 | 100.0% |
+| brand_prior | 10/10 | 100.0% |
+| counterfactual | 25/25 | 100.0% |
+| subsidiary_routing | 12/12 | 100.0% |
+| refuse | 89/90 | 98.9% |
+| nickname_grid | 60/61 | 98.4% |
+| enterprise_shorthand | 19/20 | 95.0% |
+| dept_member_count | 14/15 | 93.3% |
+| retrieval | 13/14 | 92.9% |
+| listing_count | 18/20 | 90.0% |
+| casual_name_lookup | 13/15 | 86.7% |
+| hard_multihop | 21/26 | 80.8% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
+| deep_multihop | 9/12 | 75.0% |
+| superlative | 7/10 | 70.0% |
+
+## By priority
+
+- P0: 222/226 (98.2%)
+- P1: 350/364 (96.2%)
+- P2: 30/36 (83.3%)
+
+## Failures (24)
+
+### g143 [casual_name_lookup] P0/th
+**Q:** ปลื้ม กมลา เบอร์อะไรครับ
+
+**Fails:** missing any-of ['74864', 'KAMALA.AK']
+
+**Response:**
+
+```
+คุณปลื้ม (กมลา อัครดวงกมล) — เบอร์มือถือ: **065-156-3892** ครับ
+```
+
+### g145 [casual_name_lookup] P0/th
+**Q:** น้ำ โกวิท เบอร์อะไรครับ
+
+**Fails:** missing any-of ['77251', 'KOVIT.MA']
+
+**Response:**
+
+```
+คุณน้ำ (โกวิท มหามณี) — ผู้จัดการนักการตลาดแบรนด์ดาวเหนือ — เบอร์มือถือ **094-711-0811** ครับ
+```
+
+### g172 [nickname_grid] P0/th
+**Q:** ขิง ที่ SUP เบอร์อะไร
+
+**Fails:** missing any-of ['Pholdech', 'พลเดช']
+
+**Response:**
+
+```
+คุณสุณี (ขิง) ฝ่าย SUP ตำแหน่ง Support Trainer
+
+- **เบอร์ต่อ**: 71734
+- **มือถือ**: 094-546-2762
+```
+
+### g238 [dept_member_count] P1/en
+**Q:** size of RET
+
+**Fails:** missing any-of ['380']; missing count 380
+
+**Response:**
+
+```
+[agent error: max_tool_rounds_exhausted]
+```
+
+### g355 [hard_multihop] P0/th
+**Q:** หัวหน้า GM ดาวเหนือคือใคร
+
+**Fails:** missing any-of ['Ruangsak', 'เรืองศักดิ์']; missing any-of ['Thepkiatkamjorn', 'เทพเกียรติกำจร']
+
+**Response:**
+
+```
+หัวหน้า GM ดาวเหนือคือ **คุณวิเชียร พงหอมกลิ่น** (Wichian Phonghomklin) ครับ
+
+- 📧 WICHIAN.PH@FAHMAI.CO.TH
+- 📞 เบอร์ต่อ: 76999
+- 🏢 FahMai Tower 19F
+```
+
+### g404 [refuse] P1/th
+**Q:** ขอเบอร์ต่อคุณ ถาวร จิตรานนท์ฟ้า หน่อยครับ
+
+**Fails:** has ext pattern
+
+**Response:**
+
+```
+ไม่พบข้อมูลครับ — ในระบบไม่มีพนักงานชื่อ "ถาวร จิตรานนท์ฟ้า" ครับ
+
+คนที่มีนามสกุล "จิตรานนท์ฟ้า" มี 3 ท่านคือ:
+- **อิสระ จิตรานนท์ฟ้า** (SUP-PHN) เบอร์ต่อ 72554
+- **สุจิรา จิตรานนท์ฟ้า** (LOG-FLT) เบอร์ต่อ 47209
+- **อิสรา จิตรานนท์ฟ้า** (MKT-EVT) เบอร์ต่อ 78318
+
+ส่วนชื่อ "ถาวร" ทั้ง 13 คนในระบบไม่มีใครใช้นามสกุลนี้ครับ อาจจะจำชื่อหรือนามสกุลผิดหรือเปล่าครับ?
+```
+
+### g442 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณทัศนีย์ มณีพงศ์ สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['RUANGSAK.TH@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณทัศนีย์ มณีพงศ์ สังกัดแผนก **DN (ดาวเหนือ)** ซึ่งผู้บริหารสูงสุดของแผนกคือ **GM (General Manager of DaoNuea)**
+
+- **คุณวิเชียร พงหอมกลิ่น** — อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+```
+
+### g444 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณละไม บุญพงศ์ สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['RACHINI.AR@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณละไม บุญพงศ์ สังกัดแผนก **JC (จุดเชื่อม)** ครับ ผู้บริหารสูงสุดของแผนกนี้คือ:
+
+**สรัล อาวุทธ์มณี** — ผู้จัดการทั่วไปแบรนด์จุดเชื่อม (General Manager of JudChuem)  
+📧 **SARAN.AW@FAHMAI.CO.TH**
+```
+
+### g446 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณอัมพร ประฟ้า สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['TANET.BU@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณอัมพร ประฟ้า สังกัดแผนก **KS (คลื่นเสียง)** ตำแหน่งนักการตลาดแบรนด์คลื่นเสียง
+
+ผู้บริหารสูงสุดของแผนก KS คือ **คุณราม ลวรรณ** ตำแหน่งผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
+
+อีเมล: **RAM.LA@FAHMAI.CO.TH**
+```
+
+### g450 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณธนพล พิประเสริฐ สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['KUKRIT.AK@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณธนพล พิประเสริฐ สังกัดแผนก **WK (วงโคจร / WongKhoJon)** ครับ
+
+ผู้บริหารสูงสุดของแผนก WK คือ **คุณกฤษ มหาแก้วใส (ขิง)** — ตำแหน่ง General Manager แบรนด์วงโคจร
+
+📧 อีเมล: **KRIS.MA@FAHMAI.CO.TH**
+```
+
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแบรนด์ดาวเหนือ (DN) คือ **คุณวิเชียร พงหอมกลิ่น**  
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)  
+- อีเมล: WICHIAN.PH@FAHMAI.CO.TH  
+- เบอร์โทร: 02-xxx-76999  
+- ชั้น: FahMai Tower 19F
+```
+
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem (JC) department?
+
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
+
+**Response:**
+
+```
+The most senior person heading the **Judchuem (JC)** department is:
+
+- **Saran Awutmani** (สรัล อาวุทธ์มณี) — General Manager of Judchuem
+- 📧 SARAN.AW@FAHMAI.CO.TH | 📞 Ext. 78762
+- Location: FahMai Tower 24F | Level: Director
+```
+
+### g454 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+
+**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแบรนด์คลื่นเสียง (KS) คือ **คุณราม ลวรรณ (จุ๊บ)** ตำแหน่งผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
+
+- 📧 RAM.LA@FAHMAI.CO.TH
+- 📞 เบอร์ต่อ 75965
+- 📍 FahMai Tower ชั้น 18F
+```
+
+### g456 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+
+**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ **คุณกฤษ มหาแก้วใส (ขิง)** ดำรงตำแหน่ง General Manager of Wongkhojon
+
+- 📧 KRIS.MA@FAHMAI.CO.TH
+- 📞 เบอร์ต่อ: 74375
+- 🏢 FahMai Tower 7F
+```
+
+### g533 [listing_count] P1/en
+**Q:** How many employees are in the DN department at IC level who started in 2020?
+
+**Fails:** missing count 6
+
+**Response:**
+
+```
+There are **7 employees** in the DN department at IC level who started in 2020.
+```
+
+### g535 [listing_count] P1/en
+**Q:** How many employees are in the DN department at Lead level who started in 2022?
+
+**Fails:** missing count 5
+
+**Response:**
+
+```
+There are **6 employees** in the DN department at Lead level who started in 2022.
+```
+
+### g556 [retrieval] P1/en
+**Q:** What's PETER's phone extension?
+
+**Fails:** missing any-of ['no extension', 'no phone extension', 'has no extension']
+
+**Response:**
+
+```
+Peter (Arthit Watcharafa) — Lead QA Engineer, TEC-QA — doesn't have a phone extension listed in the directory. You can reach him at **ARTHIT.WA@FAHMAI.CO.TH** instead.
+```
+
+### g666 [enterprise_shorthand] P1/en
+**Q:** How many staff work at the Rama IX (R9) HQ branch?
+
+**Fails:** missing any-of ['1255']
+
+**Response:**
+
+```
+The Rama IX HQ branch (BKK-R9) has **1,255** staff members.
+```
+
+### g828 [deep_multihop] P2/en
+**Q:** Among the departments headed by a VP, take the one with the most employees — what's the nickname of the secretary of the VP who heads that department?
+
+**Fails:** missing any-of ['มุก', 'Mook']
+
+**Response:**
+
+```
+Let me search for employees in each VP-headed department more directly.
+
+<｜｜DSML｜｜tool_calls>
+<｜｜DSML｜｜invoke name="grep_csv">
+<｜｜DSML｜｜parameter name="max_matches" string="false">300</｜｜DSML｜｜parameter>
+<｜｜DSML｜｜parameter name="pattern" string="true">B2B</｜｜DSML｜｜parameter>
+</｜｜DSML｜｜invoke>
+<｜｜DSML｜｜invoke name="grep_csv">
+<｜｜DSML｜｜parameter name="max_matches" string="false">300</｜｜DSML｜｜paramet
+```
+
+### g829 [deep_multihop] P2/th
+**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
+
+**Fails:** missing any-of ['79653']
+
+**Response:**
+
+```
+Let me try searching for specific patterns that isolate each department
+```
+
+### g831 [deep_multihop] P2/th
+**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
+
+**Fails:** missing any-of ['74235']
+
+**Response:**
+
+```
+ผมมีข้อมูลบางส่วนแล้ว แต่ต้องระบุจำนวนพนักงานให้แน่ชัดในแต่ละแผนกที่มี VP เป็นหัวหน้า ลองค้นหาด้วย Section code แบบกว้างขึ้นครับ
+
+
+
+
+```
+
+### g832 [superlative] P2/th
+**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
+
+**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
+
+**Response:**
+
+```
+[agent error: max_tool_rounds_exhausted]
+```
+
+### g840 [superlative] P2/th
+**Q:** section ไหนของฟ้าใหม่ที่มีพนักงานมากที่สุดครับ
+
+**Fails:** missing any-of ['RET-BKK-LP']
+
+**Response:**
+
+```
+Let me check the remaining departments and some specific RET section sizes.
+
+<｜｜DSML｜｜tool_calls>
+<｜｜DSML｜｜invoke name="grep_csv">
+<｜｜DSML｜｜parameter name="max_matches" string="false">1</｜｜DSML｜｜parameter>
+<｜｜DSML｜｜parameter name="pattern" string="true">RET-HQ</｜｜DSML｜｜parameter>
+</｜｜DSML｜｜invoke>
+<｜｜DSML｜｜invoke name="grep_csv">
+<｜｜DSML｜｜parameter name="max_matches" string="false">1</｜｜DSML｜｜para
+```
+
+### g841 [superlative] P2/en
+**Q:** Which department has the most employees company-wide?
+
+**Fails:** missing any-of ['380']
+
+**Response:**
+
+```
+Based on the directory, here are the department headcounts:
+
+| Department | Count |
+|---|---|
+| **RET** (Retail) | **416** |
+| TEC (Technology) | 240 |
+| MKT (Marketing) | 234 |
+| OPS (Operations) | 232 |
+| SUP (Customer Support) | 217 |
+| LOG (Logistics) | 180 |
+| SF (สายฟ้า) | 140 |
+| DN (ดาวเหนือ) | 130 |
+| KS (คลื่นเสียง) | 100 |
+| FIN (Finance) | 94 |
+| WK (วงโคจร) | 80 |
+| JC (จุดเชื่อม) | 8
+```
+

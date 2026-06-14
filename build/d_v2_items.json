@@ -1,0 +1,2477 @@
+{
+  "questions": [
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "ปิ๊ง คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08981768": [
+            "ดาริกา ดาวเรืองภิญโญ",
+            "Darika Daoruengphinyo"
+          ],
+          "08959130": [
+            "ธันทิรา จงรัก",
+            "Tanthira Chongrak"
+          ],
+          "08754060": [
+            "สมตา อัสนีรัตน์",
+            "Somta Asneerat"
+          ],
+          "08786401": [
+            "พิชิต สัมอภิญญา",
+            "Phichit Samapinya"
+          ],
+          "08164604": [
+            "อรญา พงรัตน์",
+            "Orraya Phongrat"
+          ],
+          "08378157": [
+            "ชยพล พงชัยสัย",
+            "Chayaphon Phongchaisai"
+          ],
+          "08620318": [
+            "ชฎา อินทรีย์วงษ์",
+            "Chada Inthriwongs"
+          ],
+          "08513530": [
+            "ถาวร เกษมใจดี",
+            "Thawan Kasemjaidi"
+          ],
+          "08356050": [
+            "ระวี ดวงกมลเจริญ",
+            "Ravee Duangkamolcharoen"
+          ],
+          "08171338": [
+            "สมพงษ์ ภัทรชัย",
+            "Somphong Phatchai"
+          ],
+          "08922316": [
+            "วิจิตร ธนจักรี",
+            "Vichit Thanachakrii"
+          ],
+          "08718269": [
+            "หญิง อัญชลีวงษ์",
+            "Ying Anchaliwongs"
+          ],
+          "08422380": [
+            "มนตรา ดาวเรืองนาม",
+            "Montra Daoruengnam"
+          ],
+          "08300692": [
+            "ณฐามน เจริญผลรัตน์",
+            "Nathamon Charoenpholrat"
+          ],
+          "08375434": [
+            "ชยพล จงรักบุญ",
+            "Chayaphon Chongrakbun"
+          ],
+          "08250913": [
+            "บุษบา รัตนฟ้า",
+            "Busaba Ratanafa"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08981768",
+        "08959130",
+        "08754060",
+        "08786401",
+        "08164604",
+        "08378157",
+        "08620318",
+        "08513530",
+        "08356050",
+        "08171338",
+        "08922316",
+        "08718269",
+        "08422380",
+        "08300692",
+        "08375434",
+        "08250913"
+      ],
+      "rationale": "Homonym/shared nickname: \"ปิ๊ง\" is held by 16 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-01"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed จุ๊บ?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00003047": [
+            "ราม ลวรรณ",
+            "Ram Lawan"
+          ],
+          "08470178": [
+            "นางน้อย อนุมานสถิต",
+            "Nangnoi Anumansathit"
+          ],
+          "08250993": [
+            "ภาสกร ชัยสัยกุล",
+            "Phassakorn Chaisaikun"
+          ],
+          "08778782": [
+            "ไพฑูรย์ มหาอภิญญา",
+            "Paitoon Mahaapinya"
+          ],
+          "08159328": [
+            "กิตติชัย เจริญผลดี",
+            "Kittichai Charoenpholdi"
+          ],
+          "08508777": [
+            "ไกรสร สุวรรณเจริญ",
+            "Kraisee Suwancharoen"
+          ],
+          "08573088": [
+            "พิมพ์ชนก พาณิชย์",
+            "Pimchanok Panit"
+          ],
+          "08604439": [
+            "อนงค์ วัชรบุญ",
+            "Anong Watcharabun"
+          ],
+          "08506655": [
+            "อรชร ชัยงาม",
+            "Orachon Chaingam"
+          ],
+          "08559724": [
+            "รัตตนา บุญโชติ",
+            "Rattana Bunchot"
+          ],
+          "08782755": [
+            "ระวี อารีวงศ์",
+            "Ravee Areewong"
+          ],
+          "08476715": [
+            "กมลา ไกรศรีใจ",
+            "Kamala Kraiseejai"
+          ],
+          "08792049": [
+            "ยุพา บุญนำสว่าง",
+            "Yu-Pha Boonnamsawang"
+          ],
+          "08232990": [
+            "อภิชัย ธนบุญ",
+            "Apichai Thanabun"
+          ],
+          "00006856": [
+            "ฤทธิรงค์ เกียรติจักรี",
+            "Ritthirong Kiatchakrii"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00003047",
+        "08470178",
+        "08250993",
+        "08778782",
+        "08159328",
+        "08508777",
+        "08573088",
+        "08604439",
+        "08506655",
+        "08559724",
+        "08782755",
+        "08476715",
+        "08792049",
+        "08232990",
+        "00006856"
+      ],
+      "rationale": "Homonym/shared nickname: \"จุ๊บ\" is held by 15 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-02"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "เปรียว คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08785654": [
+            "อัปสร จิรแก้วใส",
+            "Apsara Chirakaewsai"
+          ],
+          "08564106": [
+            "ธีรภพ ชัยวัฒน์กุล",
+            "Theeraphop Chaiwatkun"
+          ],
+          "08615346": [
+            "วีระ ศรีชัย",
+            "Veera Srichai"
+          ],
+          "08540885": [
+            "ปรีดา บุญมาวงศ์",
+            "Preed Bunmakwong"
+          ],
+          "08629286": [
+            "ฤทธิชัย ศรีอนงค์",
+            "Rittichai Srianongkun"
+          ],
+          "08797727": [
+            "นางน้อย กอบสุขสถิต",
+            "Nangnoi Kobsooksathit"
+          ],
+          "08712547": [
+            "รัตนา ทองเพิ่ม",
+            "Ratana Thongperm"
+          ],
+          "08373528": [
+            "นางน้อย ศรีวัฒน์",
+            "Nangnoi Sriwat"
+          ],
+          "08187078": [
+            "อนันดา อัครมณี",
+            "Ananda Akaramani"
+          ],
+          "08240893": [
+            "ระวี ดาวใสมณี",
+            "Ravee Daosaimani"
+          ],
+          "08356516": [
+            "อัปสร จิรรัตน์",
+            "Apsara Chirarat"
+          ],
+          "08961937": [
+            "อดิเทพ อนงค์พงศ์",
+            "Adithep Anongkunphong"
+          ],
+          "08424548": [
+            "จักรี บุญมีพัฒน์",
+            "Chakri Boonmeephat"
+          ],
+          "08602005": [
+            "ทรัพย์ ชัยเจริญเสริม",
+            "Sap Chaicharoensoem"
+          ],
+          "08435371": [
+            "คะวัง วิศอภิญญา",
+            "Kwang Wisapinya"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08785654",
+        "08564106",
+        "08615346",
+        "08540885",
+        "08629286",
+        "08797727",
+        "08712547",
+        "08373528",
+        "08187078",
+        "08240893",
+        "08356516",
+        "08961937",
+        "08424548",
+        "08602005",
+        "08435371"
+      ],
+      "rationale": "Homonym/shared nickname: \"เปรียว\" is held by 15 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-03"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed โอ?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08542152": [
+            "คะวัง กอบสุขรัตน์",
+            "Kwang Kobsookrat"
+          ],
+          "08828184": [
+            "ชาตรี อนุอนันต์",
+            "Chatri Anuanant"
+          ],
+          "08321645": [
+            "จุฑามาศ สัมกาญจน์",
+            "Juthamas Samkan"
+          ],
+          "08373588": [
+            "เบญจวรรณ มณีหอมกลิ่น",
+            "Benjawan Manihomklin"
+          ],
+          "08148142": [
+            "แสงดาว พิอาวุทธ์",
+            "Saengdao Phiawut"
+          ],
+          "08507405": [
+            "ลาวัณย์ ธนจงรัก",
+            "Lawana Thanachongrak"
+          ],
+          "08870075": [
+            "อัญชลี อธิเก่งกาจ",
+            "Anchali Athikhaengkad"
+          ],
+          "08977600": [
+            "เดชา อนันต์ฟ้า",
+            "Decha Anantfa"
+          ],
+          "08333654": [
+            "เบญจวรรณ ใจดีสินธุ์",
+            "Benjawan Jaidisin"
+          ],
+          "08887492": [
+            "กนกวรรณ บุญอนุรักษ์",
+            "Kanokwan Bunanurak"
+          ],
+          "08800598": [
+            "ทาน อัญชลีพัฒน์",
+            "Tarn Anchaliphat"
+          ],
+          "08774778": [
+            "หญิง สุกิตติบุญ",
+            "Ying Sukittibun"
+          ],
+          "08553585": [
+            "นิ่ม อมรจินดา",
+            "Nim Amonchinda"
+          ],
+          "08635498": [
+            "อัญชลี อัญชลีสุข",
+            "Anchali Anchalisuk"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08542152",
+        "08828184",
+        "08321645",
+        "08373588",
+        "08148142",
+        "08507405",
+        "08870075",
+        "08977600",
+        "08333654",
+        "08887492",
+        "08800598",
+        "08774778",
+        "08553585",
+        "08635498"
+      ],
+      "rationale": "Homonym/shared nickname: \"โอ\" is held by 14 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-04"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "มุก คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08991405": [
+            "ยุพา สัมกิตติ",
+            "Yu-Pha Samkittipong"
+          ],
+          "08491987": [
+            "งามจิตร อนุรักษ์มณี",
+            "Ngamchit Anurakmani"
+          ],
+          "08839846": [
+            "คึกฤทธิ์ รัตนเก่งกาจ",
+            "Kukrit Ratanakhaengkad"
+          ],
+          "08725292": [
+            "องอาจ อนงค์สุข",
+            "Ongart Anongkunsuk"
+          ],
+          "08795663": [
+            "แสงดาว อธิชัย",
+            "Saengdao Athichai"
+          ],
+          "08711577": [
+            "มงคล สุแก้วประเสริฐ",
+            "Mongkol Sukaewprasert"
+          ],
+          "08828691": [
+            "ธนิดา อมรอภิญญา",
+            "Thanida Amonapinya"
+          ],
+          "08881887": [
+            "มาลัย ราชสินธุ์",
+            "Malai Rajsin"
+          ],
+          "08109578": [
+            "อัปสร วิศกิตติชาติ",
+            "Apsara Wiskittichat"
+          ],
+          "08615299": [
+            "ณัฐกานต์ อนุกำจร",
+            "Natthakan Anukamchon"
+          ],
+          "08733543": [
+            "มงคล เทพอนุรักษ์",
+            "Mongkol Thepanurak"
+          ],
+          "08748722": [
+            "อรญา วงศ์",
+            "Orraya Wong"
+          ],
+          "08399928": [
+            "ชลธี แซ่โค้ว",
+            "Chonlathee Saekhor"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08991405",
+        "08491987",
+        "08839846",
+        "08725292",
+        "08795663",
+        "08711577",
+        "08828691",
+        "08881887",
+        "08109578",
+        "08615299",
+        "08733543",
+        "08748722",
+        "08399928"
+      ],
+      "rationale": "Homonym/shared nickname: \"มุก\" is held by 13 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-05"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed ปุ๊ก?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08149382": [
+            "ลัดดาวรรณ ไชยาพัฒน์",
+            "Laddawan Chaiyawongphat"
+          ],
+          "08965020": [
+            "ประยุทธ์ สมนาม",
+            "Prayut Somnam"
+          ],
+          "08597717": [
+            "สนุก ชัยบุญมี",
+            "Sanouk Chaiboonmee"
+          ],
+          "08998814": [
+            "ศุภเดช ดาวใสงาม",
+            "Suppadet Daosaingam"
+          ],
+          "08530402": [
+            "ยาดา กิตติชาติวงษ์",
+            "Yada Kittichatwongs"
+          ],
+          "08959926": [
+            "ดารา ชัยวัฒน์พงศ์",
+            "Dara Chaiwatphong"
+          ],
+          "08375479": [
+            "ยุทธนา เกียรติกำจรฟ้า",
+            "Yuthana Kiatkamjornfa"
+          ],
+          "08802681": [
+            "ทัศนีย์ มณีพงศ์",
+            "Tassanee Maniphong"
+          ],
+          "08306445": [
+            "ธนศักดิ์ เกษมทอง",
+            "Thanasak Kasemthong"
+          ],
+          "00004374": [
+            "ลลนา ใจเขียวสถิต",
+            "Lalana Jaikieowsathit"
+          ],
+          "08975158": [
+            "จงรัก สัมโชติ",
+            "Chongrak Samchot"
+          ],
+          "08542740": [
+            "ไพบูลย์ บุญมางาม",
+            "Phaibun Bunmakngam"
+          ],
+          "08997483": [
+            "สถาพร อธิใจ",
+            "Sathaporn Athijai"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08149382",
+        "08965020",
+        "08597717",
+        "08998814",
+        "08530402",
+        "08959926",
+        "08375479",
+        "08802681",
+        "08306445",
+        "00004374",
+        "08975158",
+        "08542740",
+        "08997483"
+      ],
+      "rationale": "Homonym/shared nickname: \"ปุ๊ก\" is held by 13 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-06"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "มิว คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08817551": [
+            "ทินกร นราเจริญ",
+            "Thinnakorn Naracharoen"
+          ],
+          "08659319": [
+            "เต่า กิตติบุญศรี",
+            "Tao Kittibunsi"
+          ],
+          "08723756": [
+            "วิพันธ์ ไกรศรีสินธุ์",
+            "Wiphan Kraiseesin"
+          ],
+          "00004314": [
+            "ดิเรก ศรีเก่งกาจ",
+            "Direk Srikhaengkad"
+          ],
+          "08432797": [
+            "วิภา ราชกอบสุข",
+            "Wipha Rajkobsook"
+          ],
+          "00002934": [
+            "เกาะ พงบุญ",
+            "Koh Phongbun"
+          ],
+          "08251250": [
+            "ศศิ รัตนกุล",
+            "Sasi Ratanakun"
+          ],
+          "08432186": [
+            "กิตติศักดิ์ อัญชลีสว่าง",
+            "Kittisak Anchalisawang"
+          ],
+          "08626737": [
+            "จันทรา เกียรติการเวก",
+            "Chantara Kiatkarawek"
+          ],
+          "08235222": [
+            "เมฆา ใจเขียวเสริม",
+            "Mekha Jaikieowsoem"
+          ],
+          "08464934": [
+            "เต่า บุญมาบุญ",
+            "Tao Bunmakbun"
+          ],
+          "08582177": [
+            "เกษม จิตรานนท์บุญ",
+            "Kasem Jitranonbun"
+          ],
+          "08912071": [
+            "มนตรา บุญเรืองโชติ",
+            "Montra Boonruengchot"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08817551",
+        "08659319",
+        "08723756",
+        "00004314",
+        "08432797",
+        "00002934",
+        "08251250",
+        "08432186",
+        "08626737",
+        "08235222",
+        "08464934",
+        "08582177",
+        "08912071"
+      ],
+      "rationale": "Homonym/shared nickname: \"มิว\" is held by 13 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-07"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed ใบเตย?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08574154": [
+            "กฤษ อัครฟ้า",
+            "Kris Akarafa"
+          ],
+          "08102167": [
+            "ทัศนีย์ รัตนจักรี",
+            "Tassanee Ratanachakrii"
+          ],
+          "08217747": [
+            "ธนกฤต ชัยสัยเจริญ",
+            "Thanakrit Chaisaicharoen"
+          ],
+          "08430479": [
+            "คำรณ มณีดาวเรือง",
+            "Khamron Manidaorueng"
+          ],
+          "00001594": [
+            "เพ็ญศรี อารีมณี",
+            "Pensri Areemani"
+          ],
+          "08852733": [
+            "ณฐามน พิอนันต์",
+            "Nathamon Phianant"
+          ],
+          "08910063": [
+            "ส้ม อัญชลีเจริญ",
+            "Som Anchalicharoen"
+          ],
+          "08936711": [
+            "ส้ม พรหมกาญจน์",
+            "Som Phromkan"
+          ],
+          "08146687": [
+            "ไชยา กิตติบุญมณี",
+            "Chaiya Kittibunmani"
+          ],
+          "08318292": [
+            "บุญเรือง รัตนพงศ์",
+            "Boonruang Ratanaphong"
+          ],
+          "08369965": [
+            "เรืองฤทธิ์ นรากอบสุข",
+            "Ruangrit Narakobsook"
+          ],
+          "08922216": [
+            "ภาสกร ชัยดีเสริม",
+            "Phassakorn Chaideesoem"
+          ],
+          "08872118": [
+            "ประวัติ พงอนุมาน",
+            "Pravat Phonganuman"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08574154",
+        "08102167",
+        "08217747",
+        "08430479",
+        "00001594",
+        "08852733",
+        "08910063",
+        "08936711",
+        "08146687",
+        "08318292",
+        "08369965",
+        "08922216",
+        "08872118"
+      ],
+      "rationale": "Homonym/shared nickname: \"ใบเตย\" is held by 13 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-08"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "ยุ้ย คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08405272": [
+            "แตง บุญญาสินธุ์",
+            "Taeng Boonyasin"
+          ],
+          "08890968": [
+            "ธีรภพ อัครกำจร",
+            "Theeraphop Akarakamchon"
+          ],
+          "08558212": [
+            "กฤต ธนศรี",
+            "Krid Thanasi"
+          ],
+          "08439163": [
+            "กฤษ วัชรการเวก",
+            "Kris Watcharakarawek"
+          ],
+          "08552301": [
+            "วิภา อัครแก้วกาญจน์",
+            "Wipha Akarakaewkan"
+          ],
+          "00002138": [
+            "เย็น จันทอัมพร",
+            "Yen Chanamphom"
+          ],
+          "08968408": [
+            "วิจิตร ใจเขียววงษ์",
+            "Vichit Jaikieowwongs"
+          ],
+          "08204361": [
+            "ดาว ราชพัฒน์",
+            "Dao Rajphat"
+          ],
+          "08769425": [
+            "มาลี วัชรเฉลิม",
+            "Malee Watcharachaloem"
+          ],
+          "08355725": [
+            "ดาว จันทเจริญ",
+            "Dao Chancharoen"
+          ],
+          "08105249": [
+            "มงคล อมรอารี",
+            "Mongkol Amonaree"
+          ],
+          "08783668": [
+            "กัลยา ชัยดีสุข",
+            "Kanlaya Chaideesuk"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08405272",
+        "08890968",
+        "08558212",
+        "08439163",
+        "08552301",
+        "00002138",
+        "08968408",
+        "08204361",
+        "08769425",
+        "08355725",
+        "08105249",
+        "08783668"
+      ],
+      "rationale": "Homonym/shared nickname: \"ยุ้ย\" is held by 12 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-09"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed ไก่?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00007097": [
+            "ณัฎฐณิชา แก้วกาญจน์นาม",
+            "Nattanicha Kaewkannam"
+          ],
+          "00005649": [
+            "งามจิตร เจริญผลงาม",
+            "Ngamchit Charoenpholngam"
+          ],
+          "08697511": [
+            "กัณณิกา อมรบุญญา",
+            "Kannika Amonboonya"
+          ],
+          "08289528": [
+            "สุชาดา ประเก่งกาจ",
+            "Suchada Prakhaengkad"
+          ],
+          "08852416": [
+            "วชิร มหาเกษม",
+            "Vachir Mahakasemkit"
+          ],
+          "08982445": [
+            "ปิยวัฒน์ ภัทรวงศ์",
+            "Piyawat Phatwong"
+          ],
+          "08397406": [
+            "เกาะ บุญญางาม",
+            "Koh Boonyangam"
+          ],
+          "08667506": [
+            "สมยศ อารีรัตน์",
+            "Somyot Areerat"
+          ],
+          "08368745": [
+            "ทินกร จิรดาวใส",
+            "Thinnakorn Chiradaosai"
+          ],
+          "08372403": [
+            "สุณี ศรีงาม",
+            "Sunee Sringam"
+          ],
+          "08880181": [
+            "พรหมพร สุอาทิตย์",
+            "Phromphun Suarthitkul"
+          ],
+          "08800543": [
+            "ยุทธ อัมพรนาม",
+            "Yut Amphomnam"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00007097",
+        "00005649",
+        "08697511",
+        "08289528",
+        "08852416",
+        "08982445",
+        "08397406",
+        "08667506",
+        "08368745",
+        "08372403",
+        "08880181",
+        "08800543"
+      ],
+      "rationale": "Homonym/shared nickname: \"ไก่\" is held by 12 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-10"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "แพร คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00001511": [
+            "งามจิตร ประรักษา",
+            "Ngamchit Praraksa"
+          ],
+          "08216228": [
+            "ธนศักดิ์ ชัยสัย",
+            "Thanasak Chaisai"
+          ],
+          "08737736": [
+            "สุชาดา พงพัฒน์",
+            "Suchada Phongphat"
+          ],
+          "08582874": [
+            "ศุภเดช จันทอนงค์",
+            "Suppadet Chananongkun"
+          ],
+          "08301635": [
+            "สุเมธ เทพเจริญผล",
+            "Sumate Thepcharoenphol"
+          ],
+          "08676588": [
+            "ธนพล พิสินธุ์",
+            "Thanaphon Phisin"
+          ],
+          "08320029": [
+            "โกวิท อนันต์เจริญ",
+            "Kovit Anantcharoen"
+          ],
+          "08302174": [
+            "กิตติชาติ มณีเขียวขจี",
+            "Kittichat Manikiaokaji"
+          ],
+          "08713784": [
+            "ดาริกา จิรบุญนำ",
+            "Darika Chiraboonnam"
+          ],
+          "08196867": [
+            "อรชร มณีพัฒน์",
+            "Orachon Maniphat"
+          ],
+          "08894006": [
+            "กานติมา พงบุญนำ",
+            "Kantima Phongboonnam"
+          ],
+          "08152375": [
+            "ธีรภพ ราชอนงค์",
+            "Theeraphop Rajanongkun"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00001511",
+        "08216228",
+        "08737736",
+        "08582874",
+        "08301635",
+        "08676588",
+        "08320029",
+        "08302174",
+        "08713784",
+        "08196867",
+        "08894006",
+        "08152375"
+      ],
+      "rationale": "Homonym/shared nickname: \"แพร\" is held by 12 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-11"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed บี?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08591103": [
+            "พุสดี ดาวเรืองกุล",
+            "Phussadee Daoruengkun"
+          ],
+          "08718899": [
+            "ชฎา อธิชัยสนธิ์",
+            "Chada Athichaison"
+          ],
+          "08715864": [
+            "ไพโรจน์ นราชัยสนธิ์",
+            "Phairoj Narachaison"
+          ],
+          "08727852": [
+            "ปัญญา ราชภิญโญ",
+            "Panya Rajphinyo"
+          ],
+          "08816238": [
+            "ระวี ภัทรอินทรีย์",
+            "Ravee Phatinthri"
+          ],
+          "08572985": [
+            "บุญมา อัครชาญณรงค์",
+            "Bunma Akarachannarong"
+          ],
+          "08175214": [
+            "วิภา กอบสุข",
+            "Wipha Kobsook"
+          ],
+          "08882257": [
+            "ณัฎฐณิชา สุอนุมาน",
+            "Nattanicha Suanuman"
+          ],
+          "08459587": [
+            "อนุรักษ์ สุวรรณอนันต์",
+            "Anurak Suwananant"
+          ],
+          "08459606": [
+            "สุดา รัตนบุญนำ",
+            "Suda Ratanaboonnam"
+          ],
+          "08825917": [
+            "อัมพร ประฟ้า",
+            "Umporn Prafa"
+          ],
+          "08966477": [
+            "อนุรักษ์ สุใจดี",
+            "Anurak Sujaidi"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08591103",
+        "08718899",
+        "08715864",
+        "08727852",
+        "08816238",
+        "08572985",
+        "08175214",
+        "08882257",
+        "08459587",
+        "08459606",
+        "08825917",
+        "08966477"
+      ],
+      "rationale": "Homonym/shared nickname: \"บี\" is held by 12 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-12"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "ตุ๊ก คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00002706": [
+            "ธัญญา เจริญผลภิญโญ",
+            "Thanya Charoenpholphinyo"
+          ],
+          "08932839": [
+            "กัณณิกา ภัทรใจงาม",
+            "Kannika Phatjaingam"
+          ],
+          "08593324": [
+            "ตะวัน ธนโชติ",
+            "Tawan Thanachot"
+          ],
+          "08341630": [
+            "กัญญาลักษณ์ กิตติชาติวัฒน์",
+            "Kanyalak Kittichatwat"
+          ],
+          "08827182": [
+            "ศศิ เทพชัยดี",
+            "Sasi Thepchaidee"
+          ],
+          "08933787": [
+            "แสงดาว อารีพัฒน์",
+            "Saengdao Areephat"
+          ],
+          "08283773": [
+            "ถวิน จันทวงศ์",
+            "Tawin Chanwong"
+          ],
+          "08431775": [
+            "กาญจนา สุกำจร",
+            "Kanchana Sukamchon"
+          ],
+          "08432396": [
+            "ปิยวัฒน์ แช้มช้อยพงศ์",
+            "Piyawat Chaemchoiphong"
+          ],
+          "08667237": [
+            "ดาว จิตรานนท์วัฒน์",
+            "Dao Jitranonwat"
+          ],
+          "08904355": [
+            "วิพันธ์ เจริญผลสินธุ์",
+            "Wiphan Charoenpholsin"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00002706",
+        "08932839",
+        "08593324",
+        "08341630",
+        "08827182",
+        "08933787",
+        "08283773",
+        "08431775",
+        "08432396",
+        "08667237",
+        "08904355"
+      ],
+      "rationale": "Homonym/shared nickname: \"ตุ๊ก\" is held by 11 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-13"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "en",
+      "question": "who are the employees nicknamed คิง?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08607570": [
+            "อนันต์ อมรจงรัก",
+            "Anan Amonchongrak"
+          ],
+          "08743709": [
+            "ไกรสร ประกำจร",
+            "Kraisee Prakamchon"
+          ],
+          "08321363": [
+            "สรัญญา บุญฟ้า",
+            "Saranya Bunfa"
+          ],
+          "08231716": [
+            "ลัดดาวรรณ นราวงศ์",
+            "Laddawan Narawong"
+          ],
+          "08792260": [
+            "หวาน ชาญณรงค์พงศ์",
+            "Waan Channarongphong"
+          ],
+          "08912476": [
+            "กฤติน ชัยเจริญบุญ",
+            "Krittin Chaicharoenbun"
+          ],
+          "08146329": [
+            "ไพโรจน์ เจริญผล",
+            "Phairoj Charoenphol"
+          ],
+          "08106724": [
+            "รัตนากร อนันต์เสริม",
+            "Ratanakorn Anantsoem"
+          ],
+          "08495124": [
+            "สมพงษ์ อมรชัยเจริญ",
+            "Somphong Amonchaicharoen"
+          ],
+          "08678416": [
+            "วิภา จันทบุญญา",
+            "Wipha Chanboonya"
+          ],
+          "08637427": [
+            "ณรงค์ อารีสินธุ์",
+            "Narong Areesin"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08607570",
+        "08743709",
+        "08321363",
+        "08231716",
+        "08792260",
+        "08912476",
+        "08146329",
+        "08106724",
+        "08495124",
+        "08678416",
+        "08637427"
+      ],
+      "rationale": "Homonym/shared nickname: \"คิง\" is held by 11 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-14"
+    },
+    {
+      "bucket": "nickname_grid",
+      "subtype": "D1",
+      "group": "D",
+      "v01_bucket": "nickname_grid",
+      "priority": "P1",
+      "language": "th",
+      "question": "เอ คือใคร มีใครบ้าง",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08709449": [
+            "ภาสกร ชากัญญ์ทอง",
+            "Phassakorn Chakanthong"
+          ],
+          "08332726": [
+            "เสนาะ ธนหอมกลิ่น",
+            "Sanoh Thanahomklin"
+          ],
+          "08180180": [
+            "โสภา การเวกพงศ์",
+            "Sopa Karawekphong"
+          ],
+          "08295406": [
+            "ศศิปราภา จิรบุญเรือง",
+            "Sasiprapa Chiraboonrueng"
+          ],
+          "08363209": [
+            "งามจิตร รัตนอัญชลี",
+            "Ngamchit Ratanaanchali"
+          ],
+          "08968067": [
+            "ธันทิรา เกษมโชคดี",
+            "Tanthira Kasemchokdee"
+          ],
+          "08821341": [
+            "กิตติชาติ ชัยเจริญมณี",
+            "Kittichat Chaicharoenmani"
+          ],
+          "08852863": [
+            "ผึ้ง เกียรติฟ้า",
+            "Phueng Kiatfa"
+          ],
+          "08709518": [
+            "เมฆา แก้วใสฟ้า",
+            "Mekha Kaewsaifa"
+          ],
+          "08652059": [
+            "ไพโรจน์ อัครภิญโญ",
+            "Phairoj Akaraphinyo"
+          ],
+          "08171048": [
+            "กานติมา อมรเจริญ",
+            "Kantima Amoncharoen"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08709449",
+        "08332726",
+        "08180180",
+        "08295406",
+        "08363209",
+        "08968067",
+        "08821341",
+        "08852863",
+        "08709518",
+        "08652059",
+        "08171048"
+      ],
+      "rationale": "Homonym/shared nickname: \"เอ\" is held by 11 people; must surface >=3 distinct holders (full-name tokens).",
+      "tags": [
+        "nickname",
+        "shared",
+        "homonym"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D1-15"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "FINVP-SEC ใครนะ ไม่ใช่ FINVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Buppha",
+            "บุปผา"
+          ],
+          [
+            "Aphiapinya",
+            "อภิอภิญญา"
+          ]
+        ],
+        "must_not_contain": [
+          "แสงดาว",
+          "Saengdao",
+          "พิดวงกมล",
+          "Phiduangkamol"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08496960"
+      ],
+      "rationale": "Code collision: FINVP-SEC = บุปผา อภิอภิญญา (SECRETARY OF FINVP); confusable with FINVP = แสงดาว พิดวงกมล (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "finvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-01"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "HRVP-SEC (not HRVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Taeng",
+            "แตง"
+          ],
+          [
+            "Boonyasin",
+            "บุญญาสินธุ์"
+          ]
+        ],
+        "must_not_contain": [
+          "สุเมธ",
+          "Sumate",
+          "อัครใจงาม",
+          "Akarajaingam"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08405272"
+      ],
+      "rationale": "Code collision: HRVP-SEC = แตง บุญญาสินธุ์ (SECRETARY OF HRVP); confusable with HRVP = สุเมธ อัครใจงาม (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "hrvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-02"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "B2BVP-SEC ใครนะ ไม่ใช่ B2BVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Nongyao",
+            "นงเยาว์"
+          ],
+          [
+            "Chiracharoenphol",
+            "จิรเจริญผล"
+          ]
+        ],
+        "must_not_contain": [
+          "อุกฤษฎ์",
+          "Ukrit",
+          "วัชรเสริม",
+          "Watcharasoem"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08858250"
+      ],
+      "rationale": "Code collision: B2BVP-SEC = นงเยาว์ จิรเจริญผล (SECRETARY OF B2BVP); confusable with B2BVP = อุกฤษฎ์ วัชรเสริม (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "b2bvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-03"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "DNVP-SEC (not DNVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Som",
+            "ส้ม"
+          ],
+          [
+            "Rajchaicharoen",
+            "ราชชัยเจริญ"
+          ]
+        ],
+        "must_not_contain": [
+          "เรืองศักดิ์",
+          "Ruangsak",
+          "เทพเกียรติกำจร",
+          "Thepkiatkamjorn"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08191737"
+      ],
+      "rationale": "Code collision: DNVP-SEC = ส้ม ราชชัยเจริญ (SECRETARY OF DNVP); confusable with DNVP = เรืองศักดิ์ เทพเกียรติกำจร (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "dnvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-04"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "JCVP-SEC ใครนะ ไม่ใช่ JCVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ratapon",
+            "รัตพร"
+          ],
+          [
+            "Chongrakkun",
+            "จงรักกุล"
+          ]
+        ],
+        "must_not_contain": [
+          "ราชินี",
+          "Rachini",
+          "อาทิตย์สุข",
+          "Arthitkulsuk"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08354139"
+      ],
+      "rationale": "Code collision: JCVP-SEC = รัตพร จงรักกุล (SECRETARY OF JCVP); confusable with JCVP = ราชินี อาทิตย์สุข (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "jcvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-05"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "KSVP-SEC (not KSVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Piyanan",
+            "ปิยนันท์"
+          ],
+          [
+            "Phromphithak",
+            "พรหมพิทักษ์"
+          ]
+        ],
+        "must_not_contain": [
+          "ธเนศ",
+          "Tanet",
+          "บัวทองประเสริฐ",
+          "Buathongprasert"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08878418"
+      ],
+      "rationale": "Code collision: KSVP-SEC = ปิยนันท์ พรหมพิทักษ์ (SECRETARY OF KSVP); confusable with KSVP = ธเนศ บัวทองประเสริฐ (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "ksvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-06"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "LEGVP-SEC ใครนะ ไม่ใช่ LEGVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Montra",
+            "มนตรา"
+          ],
+          [
+            "Wiskittibun",
+            "วิศกิตติบุญ"
+          ]
+        ],
+        "must_not_contain": [
+          "ไพโรจน์",
+          "Phairoj",
+          "มหากุล",
+          "Mahakun"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08222890"
+      ],
+      "rationale": "Code collision: LEGVP-SEC = มนตรา วิศกิตติบุญ (SECRETARY OF LEGVP); confusable with LEGVP = ไพโรจน์ มหากุล (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "legvp-sec"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-07"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "DN-GM (not DNVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Wichian",
+            "วิเชียร"
+          ],
+          [
+            "Phonghomklin",
+            "พงหอมกลิ่น"
+          ]
+        ],
+        "must_not_contain": [
+          "เรืองศักดิ์",
+          "Ruangsak",
+          "เทพเกียรติกำจร",
+          "Thepkiatkamjorn"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08554423"
+      ],
+      "rationale": "Code collision: DN-GM = วิเชียร พงหอมกลิ่น (GENERAL MANAGER OF DAONUEA); confusable with DNVP = เรืองศักดิ์ เทพเกียรติกำจร (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "dn-gm"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-08"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "SF-GM ใครนะ ไม่ใช่ SFVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Thawan",
+            "ถาวร"
+          ],
+          [
+            "Boonnamphong",
+            "บุญนำพงศ์"
+          ]
+        ],
+        "must_not_contain": [
+          "วิรัตน์",
+          "Wirat",
+          "สมบุษราคัม",
+          "Sombusarakham"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00005427"
+      ],
+      "rationale": "Code collision: SF-GM = ถาวร บุญนำพงศ์ (GENERAL MANAGER OF SAIFAH); confusable with SFVP = วิรัตน์ สมบุษราคัม (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "sf-gm"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-09"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "JC-GM (not JCVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Saran",
+            "สรัล"
+          ],
+          [
+            "Awutmani",
+            "อาวุทธ์มณี"
+          ]
+        ],
+        "must_not_contain": [
+          "ราชินี",
+          "Rachini",
+          "อาทิตย์สุข",
+          "Arthitkulsuk"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "08972652"
+      ],
+      "rationale": "Code collision: JC-GM = สรัล อาวุทธ์มณี (GENERAL MANAGER OF JUDCHUEM); confusable with JCVP = ราชินี อาทิตย์สุข (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "jc-gm"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-10"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "KS-GM ใครนะ ไม่ใช่ KSVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ram",
+            "ราม"
+          ],
+          [
+            "Lawan",
+            "ลวรรณ"
+          ]
+        ],
+        "must_not_contain": [
+          "ธเนศ",
+          "Tanet",
+          "บัวทองประเสริฐ",
+          "Buathongprasert"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00003047"
+      ],
+      "rationale": "Code collision: KS-GM = ราม ลวรรณ (GENERAL MANAGER OF KLUENSIANG); confusable with KSVP = ธเนศ บัวทองประเสริฐ (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "ks-gm"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-11"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "en",
+      "question": "WK-GM (not WKVP) — who is it?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Kris",
+            "กฤษ"
+          ],
+          [
+            "Mahakaewsai",
+            "มหาแก้วใส"
+          ]
+        ],
+        "must_not_contain": [
+          "คึกฤทธิ์",
+          "Kukrit",
+          "อัครเจริญ",
+          "Akaracharoen"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00009015"
+      ],
+      "rationale": "Code collision: WK-GM = กฤษ มหาแก้วใส (GENERAL MANAGER OF WONGKHOJON); confusable with WKVP = คึกฤทธิ์ อัครเจริญ (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "wk-gm"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-12"
+    },
+    {
+      "bucket": "evp_vs_vp_disambig",
+      "subtype": "D2",
+      "group": "D",
+      "v01_bucket": "evp_vs_vp_disambig",
+      "priority": "P1",
+      "language": "th",
+      "question": "FIN-FINDR ใครนะ ไม่ใช่ FINVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "Ukrit",
+            "อุกฤษฎ์"
+          ],
+          [
+            "Amonarthitkul",
+            "อมรอาทิตย์"
+          ]
+        ],
+        "must_not_contain": [
+          "แสงดาว",
+          "Saengdao",
+          "พิดวงกมล",
+          "Phiduangkamol"
+        ]
+      },
+      "ground_truth_row_ids": [
+        "00003080"
+      ],
+      "rationale": "Code collision: FIN-FINDR = อุกฤษฎ์ อมรอาทิตย์ (DIRECTOR FINANCE); confusable with FINVP = แสงดาว พิดวงกมล (forbidden).",
+      "tags": [
+        "disambig",
+        "code_collision",
+        "fin-findr"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D2-13"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ ext ของ WKVP, JCVP, LOGVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79033"
+          ],
+          [
+            "75642"
+          ],
+          [
+            "75105"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00001148": [
+            "79033"
+          ],
+          "00004661": [
+            "75642"
+          ],
+          "00003012": [
+            "75105"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00001148",
+        "00004661",
+        "00003012"
+      ],
+      "rationale": "Multi-entity: 3 codes ['WKVP', 'JCVP', 'LOGVP'] -> ext each = ['79033', '75642', '75105'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-01"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "ext for OPSVP, SUPVP, TECVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "77358"
+          ],
+          [
+            "79070"
+          ],
+          [
+            "75793"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00009282": [
+            "77358"
+          ],
+          "00008495": [
+            "79070"
+          ],
+          "00001368": [
+            "75793"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00009282",
+        "00008495",
+        "00001368"
+      ],
+      "rationale": "Multi-entity: 3 codes ['OPSVP', 'SUPVP', 'TECVP'] -> ext each = ['77358', '79070', '75793'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-02"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email ของ CEO, CTO",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "VACHIR.CH@FAHMAI.CO.TH"
+          ],
+          [
+            "RITTICHAI.KA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00002699": [
+            "VACHIR.CH@FAHMAI.CO.TH"
+          ],
+          "00003437": [
+            "RITTICHAI.KA@FAHMAI.CO.TH"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00002699",
+        "00003437"
+      ],
+      "rationale": "Multi-entity: 2 codes ['CEO', 'CTO'] -> email each = ['VACHIR.CH@FAHMAI.CO.TH', 'RITTICHAI.KA@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_entity",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-03"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "email for FINVP, HRVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SAENGDAO.PH@FAHMAI.CO.TH"
+          ],
+          [
+            "SUMATE.AK@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00007543": [
+            "SAENGDAO.PH@FAHMAI.CO.TH"
+          ],
+          "00008718": [
+            "SUMATE.AK@FAHMAI.CO.TH"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00007543",
+        "00008718"
+      ],
+      "rationale": "Multi-entity: 2 codes ['FINVP', 'HRVP'] -> email each = ['SAENGDAO.PH@FAHMAI.CO.TH', 'SUMATE.AK@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_entity",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-04"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ ext ของ B2BVP, RETVP, MKTVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79274"
+          ],
+          [
+            "79141"
+          ],
+          [
+            "74711"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08878477": [
+            "79274"
+          ],
+          "00008000": [
+            "79141"
+          ],
+          "08542152": [
+            "74711"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08878477",
+        "00008000",
+        "08542152"
+      ],
+      "rationale": "Multi-entity: 3 codes ['B2BVP', 'RETVP', 'MKTVP'] -> ext each = ['79274', '79141', '74711'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-05"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "email for CMO, CHRO",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SOM.KA@FAHMAI.CO.TH"
+          ],
+          [
+            "NATHAMON.AP@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00009368": [
+            "SOM.KA@FAHMAI.CO.TH"
+          ],
+          "00001359": [
+            "NATHAMON.AP@FAHMAI.CO.TH"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00009368",
+        "00001359"
+      ],
+      "rationale": "Multi-entity: 2 codes ['CMO', 'CHRO'] -> email each = ['SOM.KA@FAHMAI.CO.TH', 'NATHAMON.AP@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_entity",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-06"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ ext ของ SFVP, WKVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "72402"
+          ],
+          [
+            "79033"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00001167": [
+            "72402"
+          ],
+          "00001148": [
+            "79033"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00001167",
+        "00001148"
+      ],
+      "rationale": "Multi-entity: 2 codes ['SFVP', 'WKVP'] -> ext each = ['72402', '79033'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-07"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "email for DNVP, JCVP, KSVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RUANGSAK.TH@FAHMAI.CO.TH"
+          ],
+          [
+            "RACHINI.AR@FAHMAI.CO.TH"
+          ],
+          [
+            "TANET.BU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08109010": [
+            "RUANGSAK.TH@FAHMAI.CO.TH"
+          ],
+          "00004661": [
+            "RACHINI.AR@FAHMAI.CO.TH"
+          ],
+          "08953826": [
+            "TANET.BU@FAHMAI.CO.TH"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08109010",
+        "00004661",
+        "08953826"
+      ],
+      "rationale": "Multi-entity: 3 codes ['DNVP', 'JCVP', 'KSVP'] -> email each = ['RUANGSAK.TH@FAHMAI.CO.TH', 'RACHINI.AR@FAHMAI.CO.TH', 'TANET.BU@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_entity",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-08"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ ext ของ CEO, CFO, CTO, COO",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "73048"
+          ],
+          [
+            "74921"
+          ],
+          [
+            "75477"
+          ],
+          [
+            "75464"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 4,
+        "all_items_tokens_per_id": {
+          "00002699": [
+            "73048"
+          ],
+          "00009440": [
+            "74921"
+          ],
+          "00003437": [
+            "75477"
+          ],
+          "00007631": [
+            "75464"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00002699",
+        "00009440",
+        "00003437",
+        "00007631"
+      ],
+      "rationale": "Multi-entity: 4 codes ['CEO', 'CFO', 'CTO', 'COO'] -> ext each = ['73048', '74921', '75477', '75464'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-09"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "ext for SUPVP, OPSVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79070"
+          ],
+          [
+            "77358"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00008495": [
+            "79070"
+          ],
+          "00009282": [
+            "77358"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00008495",
+        "00009282"
+      ],
+      "rationale": "Multi-entity: 2 codes ['SUPVP', 'OPSVP'] -> ext each = ['79070', '77358'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-10"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ email ของ MKTVP, TECVP, LOGVP, B2BVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KWANG.KO@FAHMAI.CO.TH"
+          ],
+          [
+            "NATTAPHONG.AT@FAHMAI.CO.TH"
+          ],
+          [
+            "NATTHAKAN.SR@FAHMAI.CO.TH"
+          ],
+          [
+            "UKRIT.WA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 4,
+        "all_items_tokens_per_id": {
+          "08542152": [
+            "KWANG.KO@FAHMAI.CO.TH"
+          ],
+          "00001368": [
+            "NATTAPHONG.AT@FAHMAI.CO.TH"
+          ],
+          "00003012": [
+            "NATTHAKAN.SR@FAHMAI.CO.TH"
+          ],
+          "08878477": [
+            "UKRIT.WA@FAHMAI.CO.TH"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08542152",
+        "00001368",
+        "00003012",
+        "08878477"
+      ],
+      "rationale": "Multi-entity: 4 codes ['MKTVP', 'TECVP', 'LOGVP', 'B2BVP'] -> email each = ['KWANG.KO@FAHMAI.CO.TH', 'NATTAPHONG.AT@FAHMAI.CO.TH', 'NATTHAKAN.SR@FAHMAI.CO.TH', 'UKRIT.WA@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_entity",
+        "email"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-11"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "en",
+      "question": "ext for RETVP, SFVP",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79141"
+          ],
+          [
+            "72402"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "00008000": [
+            "79141"
+          ],
+          "00001167": [
+            "72402"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00008000",
+        "00001167"
+      ],
+      "rationale": "Multi-entity: 2 codes ['RETVP', 'SFVP'] -> ext each = ['79141', '72402'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-12"
+    },
+    {
+      "bucket": "multi_entity_turn",
+      "subtype": "D4",
+      "group": "D",
+      "v01_bucket": "multi_entity_turn",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอ ext ของ DN-GM, SF-GM, KS-GM",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76999"
+          ],
+          [
+            "79517"
+          ],
+          [
+            "75965"
+          ]
+        ],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08554423": [
+            "76999"
+          ],
+          "00005427": [
+            "79517"
+          ],
+          "00003047": [
+            "75965"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08554423",
+        "00005427",
+        "00003047"
+      ],
+      "rationale": "Multi-entity: 3 codes ['DN-GM', 'SF-GM', 'KS-GM'] -> ext each = ['76999', '79517', '75965'].",
+      "tags": [
+        "multi_entity",
+        "ext"
+      ],
+      "authored": "2026-05-24",
+      "src_id": "D4-13"
+    }
+  ]
+}

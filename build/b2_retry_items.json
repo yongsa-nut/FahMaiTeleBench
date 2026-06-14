@@ -1,0 +1,744 @@
+{
+  "questions": [
+    {
+      "id": "I1-01",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ PANPAN หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "75477"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003437"
+      ],
+      "rationale": "Retry-after-empty: \"PANPAN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 75477.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-02",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is CLOUD's email address?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MALEE.AM@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002042"
+      ],
+      "rationale": "Retry-after-empty: \"CLOUD\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-03",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "คุณ KAFAE ชื่อจริง-นามสกุลว่าอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "น้ำทิพย์",
+            "Namthip"
+          ],
+          [
+            "จินดาสินธุ์",
+            "Chindasin"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08172799"
+      ],
+      "rationale": "Retry-after-empty: \"KAFAE\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-04",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's PETER's phone extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            ""
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08747924"
+      ],
+      "rationale": "Retry-after-empty: \"PETER\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext .",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-05",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ RIRI หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PHICHAI.CH@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08589146"
+      ],
+      "rationale": "Retry-after-empty: \"RIRI\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-06",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is LALIN's full (real) name?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "กิตติ",
+            "Kitti"
+          ],
+          [
+            "ราชเกษม",
+            "Rajkasemkit"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08524468"
+      ],
+      "rationale": "Retry-after-empty: \"LALIN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-07",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ OKAY หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79936"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08789529"
+      ],
+      "rationale": "Retry-after-empty: \"OKAY\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 79936.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-08",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is IPHONE's email address?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PHUWADON.MA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08915765"
+      ],
+      "rationale": "Retry-after-empty: \"IPHONE\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-09",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "คุณ NESTLE ชื่อจริง-นามสกุลว่าอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ถาวร",
+            "Thawan"
+          ],
+          [
+            "วัชรแก้วใส",
+            "Watcharakaewsai"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009111"
+      ],
+      "rationale": "Retry-after-empty: \"NESTLE\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-10",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's DARIN's phone extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "54796"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08507769"
+      ],
+      "rationale": "Retry-after-empty: \"DARIN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 54796.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-11",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ SANTA หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "CHANTANA.RA@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08485230"
+      ],
+      "rationale": "Retry-after-empty: \"SANTA\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-12",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is COTTON's full (real) name?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "บุญมา",
+            "Bunma"
+          ],
+          [
+            "อนุมานสินธุ์",
+            "Anumansin"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08310537"
+      ],
+      "rationale": "Retry-after-empty: \"COTTON\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-13",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ NERNER หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "14122"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08258601"
+      ],
+      "rationale": "Retry-after-empty: \"NERNER\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 14122.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-14",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is KHANOM's email address?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "KRITSADA.AN@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08415414"
+      ],
+      "rationale": "Retry-after-empty: \"KHANOM\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-15",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "คุณ GIGI ชื่อจริง-นามสกุลว่าอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อรชร",
+            "Orachon"
+          ],
+          [
+            "ประพัฒน์",
+            "Praphat"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08693863"
+      ],
+      "rationale": "Retry-after-empty: \"GIGI\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-16",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's OHOH's phone extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "32350"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08228522"
+      ],
+      "rationale": "Retry-after-empty: \"OHOH\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 32350.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-17",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ PIMMADA หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ANCHALI.TH2@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08673166"
+      ],
+      "rationale": "Retry-after-empty: \"PIMMADA\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-18",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is JAPAN's full (real) name?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ธนกฤต",
+            "Thanakrit"
+          ],
+          [
+            "ประอัสนี",
+            "Praasnee"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08307968"
+      ],
+      "rationale": "Retry-after-empty: \"JAPAN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-19",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ MIMI หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "73004"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08945000"
+      ],
+      "rationale": "Retry-after-empty: \"MIMI\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 73004.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-20",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is LINA's email address?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "PHOOM.PH2@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08255681"
+      ],
+      "rationale": "Retry-after-empty: \"LINA\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-21",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "คุณ BEAN ชื่อจริง-นามสกุลว่าอะไรครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "พาณิช",
+            "Panit"
+          ],
+          [
+            "รัตนบุญเรือง",
+            "Ratanaboonrueng"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08755968"
+      ],
+      "rationale": "Retry-after-empty: \"BEAN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-22",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What's THAEN's phone extension?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "73098"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08780774"
+      ],
+      "rationale": "Retry-after-empty: \"THAEN\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext 73098.",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-23",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขออีเมลของคุณ TON หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SOPA.MA2@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08247087"
+      ],
+      "rationale": "Retry-after-empty: \"TON\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=email.",
+      "tags": [
+        "retry_after_empty",
+        "email",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-24",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "en",
+      "question": "What is TANGOH's full (real) name?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ศักดิ์ดา",
+            "Sakda"
+          ],
+          [
+            "อธิวงษ์",
+            "Athiwongs"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08632774"
+      ],
+      "rationale": "Retry-after-empty: \"TANGOH\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=full name.",
+      "tags": [
+        "retry_after_empty",
+        "name",
+        "retry_t1",
+        "from_I1"
+      ]
+    },
+    {
+      "id": "I1-25",
+      "bucket": "retrieval",
+      "subtype": "B2",
+      "group": "B",
+      "priority": "P1",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของคุณ BAMBAM หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            ""
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08876375"
+      ],
+      "rationale": "Retry-after-empty: \"BAMBAM\" is a nickname (0 name-field hits) used as a name; naive name search empty → pivot to nickname field. gold=ext .",
+      "tags": [
+        "retry_after_empty",
+        "ext",
+        "retry_t1",
+        "from_I1"
+      ]
+    }
+  ]
+}

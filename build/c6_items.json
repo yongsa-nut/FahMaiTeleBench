@@ -1,0 +1,414 @@
+{
+  "questions": [
+    {
+      "id": "C6-01",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "th",
+      "question": "ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "กนก",
+            "Kanok"
+          ],
+          [
+            "เก่งกาจชัย",
+            "Khaengkadchai"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00007001"
+      ],
+      "rationale": "argmin Start Year over all 1,995 rows = กนก เก่งกาจชัย (2015, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "overall"
+      ]
+    },
+    {
+      "id": "C6-02",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาผู้อำนวยการ (Director) ของฝ่ายการเงิน (FIN) ใครที่อายุงานยาวนานที่สุดครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อุกฤษฎ์",
+            "Ukrit"
+          ],
+          [
+            "อมรอาทิตย์",
+            "Amonarthitkul"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00003080"
+      ],
+      "rationale": "argmin Start Year over 5 Directors in FIN = อุกฤษฎ์ อมรอาทิตย์ (2016, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-03",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the Directors in the Technology (TEC) department, who has been at FahMai the longest?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "วิจิตร",
+            "Vichit"
+          ],
+          [
+            "พงอนงค์",
+            "Phonganongkun"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006424"
+      ],
+      "rationale": "argmin Start Year over 7 Directors in TEC = วิจิตร พงอนงค์ (2016, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-04",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาผู้อำนวยการ (Director) ของฝ่ายปฏิบัติการ (OPS) ใครที่อายุงานยาวนานที่สุดครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ฤทธิรงค์",
+            "Ritthirong"
+          ],
+          [
+            "เกียรติจักรี",
+            "Kiatchakrii"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00006856"
+      ],
+      "rationale": "argmin Start Year over 3 Directors in OPS = ฤทธิรงค์ เกียรติจักรี (2016, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-05",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the Directors in the Marketing (MKT) department, who has been at FahMai the longest?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "อัจฉรา",
+            "Atchara"
+          ],
+          [
+            "เขียวขจีศรี",
+            "Kiaokajisi"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004974"
+      ],
+      "rationale": "argmin Start Year over 4 Directors in MKT = อัจฉรา เขียวขจีศรี (2017, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-06",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาผู้อำนวยการ (Director) ของแผนก Retail (RET) ใครที่อายุงานยาวนานที่สุดครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ธนกฤต",
+            "Thanakrit"
+          ],
+          [
+            "บุญนำรักษา",
+            "Boonnamraksa"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00009706"
+      ],
+      "rationale": "argmin Start Year over 11 Directors in RET = ธนกฤต บุญนำรักษา (2018, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-07",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the Directors in the Support (SUP) department, who has been at FahMai the longest?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "วชิร",
+            "Vachir"
+          ],
+          [
+            "จิรอัสนี",
+            "Chiraasnee"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00002894"
+      ],
+      "rationale": "argmin Start Year over 5 Directors in SUP = วชิร จิรอัสนี (2019, unique).",
+      "tags": [
+        "superlative",
+        "tenure",
+        "director_by_dept"
+      ]
+    },
+    {
+      "id": "C6-08",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "en",
+      "question": "Which section has the most Directors?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "LOG-INV"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00004314",
+        "00003539",
+        "00002138",
+        "00007711"
+      ],
+      "rationale": "argmax Director-count over sections = LOG-INV (4, unique vs 3).",
+      "tags": [
+        "superlative",
+        "headcount",
+        "most_directors"
+      ]
+    },
+    {
+      "id": "C6-09",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "th",
+      "question": "section ไหนของฟ้าใหม่ที่มีพนักงานมากที่สุดครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RET-BKK-LP"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08769961",
+        "08407949",
+        "08992357",
+        "00009483",
+        "08644790",
+        "08290721",
+        "08220138",
+        "08781687",
+        "08507405",
+        "08190349",
+        "08261520",
+        "08589028",
+        "08237996",
+        "08904505",
+        "08827685",
+        "08574612",
+        "08998814",
+        "08509590",
+        "08146468",
+        "08329359",
+        "08226927",
+        "08272317",
+        "08913389",
+        "08331142",
+        "08269797",
+        "08320029",
+        "08629440",
+        "08575541",
+        "08831791",
+        "08761871",
+        "08833208",
+        "08965399",
+        "08853293",
+        "08652326",
+        "08439120",
+        "08576493",
+        "08458703",
+        "08672063",
+        "08307637",
+        "08944113",
+        "08546503",
+        "08728115",
+        "08957699",
+        "08823005",
+        "08912476",
+        "08894854",
+        "08673306",
+        "08798629",
+        "08368035",
+        "08723756"
+      ],
+      "rationale": "argmax headcount over sections = RET-BKK-LP (60, unique vs 54).",
+      "tags": [
+        "superlative",
+        "headcount",
+        "biggest_section"
+      ]
+    },
+    {
+      "id": "C6-10",
+      "bucket": "superlative",
+      "subtype": "C6",
+      "group": "C",
+      "priority": "P2",
+      "language": "en",
+      "question": "Which department has the most employees company-wide?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "RET",
+            "Retail"
+          ],
+          [
+            "380"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00008000",
+        "08881508",
+        "08975797",
+        "08991405",
+        "08436700",
+        "00007097",
+        "00007387",
+        "08175733",
+        "08319686",
+        "08528217",
+        "00009706",
+        "08279445",
+        "08769961",
+        "00009111",
+        "08405188",
+        "08744638",
+        "00001415",
+        "08407949",
+        "08992357",
+        "08180180",
+        "08505978",
+        "08464139",
+        "08497497",
+        "08236706",
+        "08114149",
+        "00002814",
+        "00009483",
+        "08498855",
+        "08644790",
+        "08441240",
+        "08284162",
+        "08536274",
+        "08457574",
+        "00007138",
+        "08362074",
+        "08362987",
+        "08894554",
+        "08593324",
+        "08290721",
+        "08712547",
+        "08668263",
+        "08929891",
+        "08917970",
+        "08788215",
+        "08141041",
+        "08460689",
+        "08666863",
+        "08799652",
+        "08850268",
+        "08955271"
+      ],
+      "rationale": "argmax headcount over departments = RET (n=380, unique vs 240); gold = code AND count.",
+      "tags": [
+        "superlative",
+        "headcount",
+        "largest_dept"
+      ]
+    }
+  ]
+}

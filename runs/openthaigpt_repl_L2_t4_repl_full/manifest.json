@@ -1,0 +1,16 @@
+{
+  "model": "openthaigpt-thaillm-8b-instruct-v7.2",
+  "model_key": "openthaigpt",
+  "base_url": "https://thaillm.or.th/api/v1",
+  "tool": "repl",
+  "tool_name": "python_repl",
+  "kb": "knowledge_base\\employees_v02.csv",
+  "answer_key": "questions\\questions_v02.json",
+  "prompt_variant": "L2",
+  "prompt_file": "fahmai_system_prompt.md",
+  "prompt_chars": 4286,
+  "questions_file": "questions\\questions_v02_all.csv",
+  "item_count": 626,
+  "started_at": "2026-05-25T18:51:45.131878",
+  "max_tool_rounds": 7
+}

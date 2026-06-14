@@ -1,0 +1,784 @@
+{
+  "questions": [
+    {
+      "id": "I4-01",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก B2B ระดับ IC และเริ่มงานในปี 2021 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 5
+      },
+      "ground_truth_row_ids": [
+        "08723179",
+        "08141671",
+        "08685888",
+        "08542740",
+        "08688690"
+      ],
+      "rationale": "Compound count: B2B ∧ IC ∧ start 2021 = 5.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-02",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the B2B department at Manager level who started in 2018?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "00001511",
+        "00007333"
+      ],
+      "rationale": "Compound count: B2B ∧ Manager ∧ start 2018 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-03",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก B2B ระดับ Manager และเริ่มงานในปี 2021 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08262740",
+        "08952881"
+      ],
+      "rationale": "Compound count: B2B ∧ Manager ∧ start 2021 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-04",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the CEO department at Manager level who started in 2023?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08902591",
+        "08904355"
+      ],
+      "rationale": "Compound count: CEO ∧ Manager ∧ start 2023 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-05",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก DN ระดับ Director และเริ่มงานในปี 2021 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08554423",
+        "08719665"
+      ],
+      "rationale": "Compound count: DN ∧ Director ∧ start 2021 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-06",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the DN department at IC level who started in 2020?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 6
+      },
+      "ground_truth_row_ids": [
+        "08368029",
+        "08193244",
+        "08911722",
+        "08282432",
+        "08557441",
+        "08195871"
+      ],
+      "rationale": "Compound count: DN ∧ IC ∧ start 2020 = 6.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-07",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก DN ระดับ Lead และเริ่มงานในปี 2021 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08224942",
+        "08547462"
+      ],
+      "rationale": "Compound count: DN ∧ Lead ∧ start 2021 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-08",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the DN department at Lead level who started in 2022?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 5
+      },
+      "ground_truth_row_ids": [
+        "08232990",
+        "08282649",
+        "08187336",
+        "08774360",
+        "08577531"
+      ],
+      "rationale": "Compound count: DN ∧ Lead ∧ start 2022 = 5.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-09",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก DN ระดับ Lead และเริ่มงานในปี 2023 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08936711",
+        "08727829"
+      ],
+      "rationale": "Compound count: DN ∧ Lead ∧ start 2023 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-10",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the DN department at Manager level who started in 2020?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08191737",
+        "08321470"
+      ],
+      "rationale": "Compound count: DN ∧ Manager ∧ start 2020 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-11",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก DN ระดับ Manager และเริ่มงานในปี 2021 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08210208",
+        "08922977",
+        "08676180"
+      ],
+      "rationale": "Compound count: DN ∧ Manager ∧ start 2021 = 3.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-12",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the FIN department at Director level who started in 2022?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 2
+      },
+      "ground_truth_row_ids": [
+        "08207877",
+        "08612584"
+      ],
+      "rationale": "Compound count: FIN ∧ Director ∧ start 2022 = 2.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-13",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก FIN ระดับ IC และเริ่มงานในปี 2020 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 4
+      },
+      "ground_truth_row_ids": [
+        "08935545",
+        "08923330",
+        "08744631",
+        "08966043"
+      ],
+      "rationale": "Compound count: FIN ∧ IC ∧ start 2020 = 4.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-14",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "How many employees are in the FIN department at Lead level who started in 2019?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "00001528",
+        "00008647",
+        "00008258"
+      ],
+      "rationale": "Compound count: FIN ∧ Lead ∧ start 2019 = 3.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-15",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "มีพนักงานกี่คนที่อยู่แผนก FIN ระดับ Manager และเริ่มงานในปี 2022 ครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "exact_count": 3
+      },
+      "ground_truth_row_ids": [
+        "08550959",
+        "08375434",
+        "08369578"
+      ],
+      "rationale": "Compound count: FIN ∧ Manager ∧ start 2022 = 3.",
+      "tags": [
+        "compound",
+        "count",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-16",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยบอกชื่อทุกคนที่เป็นระดับ Manager ในส่วนงาน B2B-ACC หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "00001511": [
+            "ประรักษา",
+            "Praraksa"
+          ],
+          "08262740": [
+            "ศรีภิญโญ",
+            "Sriphinyo"
+          ],
+          "08952881": [
+            "กิตติบุญ",
+            "Kittibun"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "00001511",
+        "08262740",
+        "08952881"
+      ],
+      "rationale": "Compound list: Manager in B2B-ACC = 3 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-17",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone at Manager level in the B2B-SLS section.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08858250": [
+            "จิรเจริญผล",
+            "Chiracharoenphol"
+          ],
+          "00007333": [
+            "สมอัญชลี",
+            "Somanchali"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08858250",
+        "00007333"
+      ],
+      "rationale": "Compound list: Manager in B2B-SLS = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-18",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยบอกชื่อทุกคนที่เป็นระดับ Manager ในส่วนงาน CEO-STR หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08904355": [
+            "เจริญผลสินธุ์",
+            "Charoenpholsin"
+          ],
+          "00005623": [
+            "อมรจงรัก",
+            "Amonchongrak"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08904355",
+        "00005623"
+      ],
+      "rationale": "Compound list: Manager in CEO-STR = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-19",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone at Manager level in the DN-ENG section.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08483190": [
+            "ธนเจริญผล",
+            "Thanacharoenphol"
+          ],
+          "00009616": [
+            "บุญเสริม",
+            "Bunsoem"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08483190",
+        "00009616"
+      ],
+      "rationale": "Compound list: Manager in DN-ENG = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-20",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยบอกชื่อทุกคนที่เป็นระดับ Manager ในส่วนงาน DN-OPS หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08210208": [
+            "พรหมชัยดี",
+            "Phromchaidee"
+          ],
+          "08254857": [
+            "อัครใจดี",
+            "Akarajaidi"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08210208",
+        "08254857"
+      ],
+      "rationale": "Compound list: Manager in DN-OPS = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-21",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone at Director level in the DN-PD section.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08554423": [
+            "พงหอมกลิ่น",
+            "Phonghomklin"
+          ],
+          "08719665": [
+            "ธนใจเขียว",
+            "Thanajaikieow"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08554423",
+        "08719665"
+      ],
+      "rationale": "Compound list: Director in DN-PD = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-22",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยบอกชื่อทุกคนที่เป็นระดับ Manager ในส่วนงาน DN-PD หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08191737": [
+            "ราชชัยเจริญ",
+            "Rajchaicharoen"
+          ],
+          "08922977": [
+            "พงดาวใส",
+            "Phongdaosai"
+          ],
+          "08676180": [
+            "อาทิตย์เฉลิม",
+            "Arthitkulchaloem"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08191737",
+        "08922977",
+        "08676180"
+      ],
+      "rationale": "Compound list: Manager in DN-PD = 3 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-23",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone at Director level in the FIN-FP section.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08207877": [
+            "อภิใจ",
+            "Aphijai"
+          ],
+          "00002007": [
+            "ราชการเวก",
+            "Rajkarawek"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08207877",
+        "00002007"
+      ],
+      "rationale": "Compound list: Director in FIN-FP = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-24",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "th",
+      "question": "ช่วยบอกชื่อทุกคนที่เป็นระดับ Manager ในส่วนงาน FIN-FP หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 2,
+        "all_items_tokens_per_id": {
+          "08496960": [
+            "อภิอภิญญา",
+            "Aphiapinya"
+          ],
+          "08375434": [
+            "จงรักบุญ",
+            "Chongrakbun"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08496960",
+        "08375434"
+      ],
+      "rationale": "Compound list: Manager in FIN-FP = 2 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    },
+    {
+      "id": "I4-25",
+      "bucket": "listing_count",
+      "subtype": "C4",
+      "group": "C",
+      "priority": "P1",
+      "language": "en",
+      "question": "List everyone at Manager level in the FIN-TAX section.",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [],
+        "must_not_contain": [],
+        "min_items": 3,
+        "all_items_tokens_per_id": {
+          "08369578": [
+            "สุวรรณรักษา",
+            "Suwanraksa"
+          ],
+          "00006457": [
+            "เกษมชัยสัย",
+            "Kasemchaisai"
+          ],
+          "08323417": [
+            "พรหมเขียวขจี",
+            "Phromkiaokaji"
+          ]
+        }
+      },
+      "ground_truth_row_ids": [
+        "08369578",
+        "00006457",
+        "08323417"
+      ],
+      "rationale": "Compound list: Manager in FIN-TAX = 3 people (must name all).",
+      "tags": [
+        "compound",
+        "list",
+        "filtered_count",
+        "from_I4"
+      ]
+    }
+  ]
+}

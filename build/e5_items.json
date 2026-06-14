@@ -1,0 +1,358 @@
+{
+  "questions": [
+    {
+      "id": "E5-01",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ขอเบอร์ต่อของเลขานุการของรองประธานฝ่ายที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "78417"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08802681",
+        "08109010",
+        "08191737"
+      ],
+      "rationale": "4-level nested: ทัศนีย์ มณีพงศ์ -> dept DN -> VP เรืองศักดิ์ เทพเกียรติกำจร -> VP's secretary ส้ม ราชชัยเจริญ -> ext=['78417']. Terminal is a 3rd person; anchor's own ext differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_ext"
+      ]
+    },
+    {
+      "id": "E5-02",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "What's the email of the secretary of the VP who heads the department that ภูมิ กาญจน์เจริญ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "BUPPHA.AP@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08302266",
+        "00007543",
+        "08496960"
+      ],
+      "rationale": "4-level nested: ภูมิ กาญจน์เจริญ -> dept FIN -> VP แสงดาว พิดวงกมล -> VP's secretary บุปผา อภิอภิญญา -> email=['BUPPHA.AP@FAHMAI.CO.TH']. Terminal is a 3rd person; anchor's own email differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_email"
+      ]
+    },
+    {
+      "id": "E5-03",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ขอชื่อเล่นของเลขานุการของรองประธานฝ่ายที่คุณปิยธิดา อนันต์เฉลิมสังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ยุ้ย",
+            "Yui"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08448763",
+        "00008718",
+        "08405272"
+      ],
+      "rationale": "4-level nested: ปิยธิดา อนันต์เฉลิม -> dept HR -> VP สุเมธ อัครใจงาม -> VP's secretary แตง บุญญาสินธุ์ -> nick=['ยุ้ย', 'Yui']. Terminal is a 3rd person; anchor's own nick differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_nick"
+      ]
+    },
+    {
+      "id": "E5-04",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "What's the phone extension of the secretary of the VP who heads the department that อัมพร ประฟ้า works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "76796"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08825917",
+        "08953826",
+        "08878418"
+      ],
+      "rationale": "4-level nested: อัมพร ประฟ้า -> dept KS -> VP ธเนศ บัวทองประเสริฐ -> VP's secretary ปิยนันท์ พรหมพิทักษ์ -> ext=['76796']. Terminal is a 3rd person; anchor's own ext differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_ext"
+      ]
+    },
+    {
+      "id": "E5-05",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ขออีเมลของเลขานุการของรองประธานฝ่ายที่คุณธนพล พิประเสริฐสังกัดอยู่หน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "SUPHAWADEE.BU@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08781971",
+        "00001148",
+        "08583872"
+      ],
+      "rationale": "4-level nested: ธนพล พิประเสริฐ -> dept WK -> VP คึกฤทธิ์ อัครเจริญ -> VP's secretary สุภาวดี บุญดาวเรือง -> email=['SUPHAWADEE.BU@FAHMAI.CO.TH']. Terminal is a 3rd person; anchor's own email differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_email"
+      ]
+    },
+    {
+      "id": "E5-06",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "What's the phone extension of the secretary of the VP who heads the department that ละไม บุญพงศ์ works in?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "71498"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08551452",
+        "00004661",
+        "08354139"
+      ],
+      "rationale": "4-level nested: ละไม บุญพงศ์ -> dept JC -> VP ราชินี อาทิตย์สุข -> VP's secretary รัตพร จงรักกุล -> ext=['71498']. Terminal is a 3rd person; anchor's own ext differs.",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_secretary",
+        "attr_ext"
+      ]
+    },
+    {
+      "id": "E5-07",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the departments headed by a VP, take the one with the most employees — what's the email of that department's VP?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "WIRAT.SO@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001167"
+      ],
+      "rationale": "Composite superlative: argmax/argmin headcount over VP-headed depts = SF (n=140, unique) -> VP วิรัตน์ สมบุษราคัม -> email=['WIRAT.SO@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "superlative_hop",
+        "attr_email"
+      ]
+    },
+    {
+      "id": "E5-08",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "72043"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001167",
+        "08234983"
+      ],
+      "rationale": "Composite superlative+nested secretary: argmax/argmin headcount over VP-headed depts = SF (n=140, unique) -> VP วิรัตน์ สมบุษราคัม -> secretary เพ็ญศรี นราบุษราคัม -> ext=['72043'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_superlative",
+        "attr_ext"
+      ]
+    },
+    {
+      "id": "E5-09",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the departments headed by a VP, take the one with the most employees — what's the nickname of the secretary of that department's VP?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "ติ๊ก",
+            "Tik"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "00001167",
+        "08234983"
+      ],
+      "rationale": "Composite superlative+nested secretary: argmax/argmin headcount over VP-headed depts = SF (n=140, unique) -> VP วิรัตน์ สมบุษราคัม -> secretary เพ็ญศรี นราบุษราคัม -> nick=['ติ๊ก', 'Tik'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_superlative",
+        "attr_nick"
+      ]
+    },
+    {
+      "id": "E5-10",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "79653"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994"
+      ],
+      "rationale": "Composite superlative: argmax/argmin headcount over VP-headed depts = LEG (n=25, unique) -> VP ไพโรจน์ มหากุล -> ext=['79653'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "superlative_hop",
+        "attr_ext"
+      ]
+    },
+    {
+      "id": "E5-11",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "en",
+      "question": "Among the departments headed by a VP, take the one with the fewest employees — what's the email of the secretary of that department's VP?",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "MONTRA.WI@FAHMAI.CO.TH"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994",
+        "08222890"
+      ],
+      "rationale": "Composite superlative+nested secretary: argmax/argmin headcount over VP-headed depts = LEG (n=25, unique) -> VP ไพโรจน์ มหากุล -> secretary มนตรา วิศกิตติบุญ -> email=['MONTRA.WI@FAHMAI.CO.TH'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_superlative",
+        "attr_email"
+      ]
+    },
+    {
+      "id": "E5-12",
+      "bucket": "deep_multihop",
+      "subtype": "E5",
+      "group": "E",
+      "priority": "P2",
+      "language": "th",
+      "question": "ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ",
+      "expected_behavior": "answer",
+      "expected_answer": {
+        "must_contain_any_of": [
+          [
+            "74235"
+          ]
+        ],
+        "must_not_contain": []
+      },
+      "ground_truth_row_ids": [
+        "08751994",
+        "08222890"
+      ],
+      "rationale": "Composite superlative+nested secretary: argmax/argmin headcount over VP-headed depts = LEG (n=25, unique) -> VP ไพโรจน์ มหากุล -> secretary มนตรา วิศกิตติบุญ -> ext=['74235'].",
+      "tags": [
+        "multi_hop",
+        "deep",
+        "nested_superlative",
+        "attr_ext"
+      ]
+    }
+  ]
+}
