@@ -1,0 +1,304 @@
+{
+ "rater": "raterA",
+ "exported": "2026-07-12T10:58:51.466Z",
+ "labels": {
+  "g053": {
+   "natural": "yes",
+   "wellformed": "no",
+   "gold_ok": "yes"
+  },
+  "g073": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g078": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g113": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g125": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g146": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g170": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g171": {
+   "gold_ok": "no",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g206": {
+   "wellformed": "no",
+   "natural": "yes",
+   "gold_ok": "unsure"
+  },
+  "g232": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g247": {
+   "gold_ok": "unsure",
+   "wellformed": "yes",
+   "comment": "ต้องระบุอย่างน้อย 3 รายการจากรายชื่อในหลักฐาน แต่มี 18 คน?",
+   "natural": "yes"
+  },
+  "g268": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g272": {
+   "gold_ok": "yes",
+   "natural": "no",
+   "wellformed": "yes"
+  },
+  "g273": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g298": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g309": {
+   "natural": "no",
+   "wellformed": "yes",
+   "gold_ok": "yes"
+  },
+  "g315": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g326": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g355": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g359": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g378": {
+   "wellformed": "yes",
+   "gold_ok": "yes",
+   "natural": "yes"
+  },
+  "g406": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g416": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g448": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g454": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g456": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g469": {
+   "gold_ok": "unsure",
+   "comment": "\"คำตอบต้องมี: CFO\" huh?",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g476": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g508": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g525": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g531": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g532": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g562": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g563": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g566": {
+   "wellformed": "yes",
+   "gold_ok": "yes",
+   "natural": "yes"
+  },
+  "g576": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g582": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g592": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g597": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g609": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": ""
+  },
+  "g620": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g634": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": "\"ต้องระบุอย่างน้อย 3 รายการจากรายชื่อในหลักฐาน\" again"
+  },
+  "g637": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": "\"ต้องระบุอย่างน้อย 3 รายการจากรายชื่อในหลักฐาน\" - ditto"
+  },
+  "g677": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": "(HKT) -> hint"
+  },
+  "g684": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": "(MKT) -> hint. not bad"
+  },
+  "g693": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g704": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g711": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g714": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g725": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g731": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g744": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g760": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g762": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "no"
+  },
+  "g776": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g778": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g825": {
+   "gold_ok": "yes",
+   "wellformed": "yes",
+   "natural": "yes"
+  },
+  "g840": {
+   "gold_ok": "no",
+   "wellformed": "yes",
+   "natural": "yes",
+   "comment": "คำตอบต้องมี: RET-BKK-LP ??"
+  }
+ }
+}

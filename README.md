@@ -101,6 +101,18 @@ tool-call **traces** are not committed (size). Scripts that read traces —
 `cost_latency_report.py`, and `build_review_bundle.py` — therefore require a full local sweep to recompute; their
 already-computed outputs are provided in `analysis/` (the `*-` and `wave4-*` `.md`/`.json` files).
 
+## Human validation
+
+Two native-Thai raters independently validated the **same 58-item stratified sample**
+(10% per subtype + the single all-config frontier-failure item) under a gold-vs-evidence
+protocol: each item shows the question, the ground-truth KB row(s) (with refusal-specific
+evidence), and the expected answer — no model outputs — and the rater judges gold
+correctness, well-formedness, and naturalness. Raw agreement 91% / 97% / 95%; Gwet's
+AC1 0.91 / 0.96 / 0.95 (α is degenerate at this label prevalence). Labels and the sample
+manifest are in `annotations/`; rebuild the rating interface with
+`analysis/build_gold_validation.py` and score with
+`analysis/score_gold_validation.py annotations/gold_labels_raterA.json annotations/gold_labels_raterB.json`.
+
 ## Models & environment
 
 Adding a model is one entry in the `MODELS` registry in `scripts/run_opentyphoon_baseline.py`

@@ -1,0 +1,296 @@
+{
+    "rater": "raterB",
+    "exported": "2026-07-12T13:58:23.635Z",
+    "labels": {
+        "g053": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g073": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g078": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g113": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g125": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g146": {
+            "gold_ok": "yes",
+            "natural": "yes",
+            "wellformed": "yes"
+        },
+        "g170": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g171": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g206": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g232": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g247": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g268": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g272": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g273": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g298": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g309": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g315": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g326": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g355": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g359": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g378": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g406": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g416": {
+            "wellformed": "yes",
+            "gold_ok": "yes",
+            "natural": "yes"
+        },
+        "g448": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g454": {
+            "gold_ok": "yes",
+            "natural": "yes",
+            "wellformed": "yes"
+        },
+        "g456": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g469": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g476": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g508": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g525": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g531": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g532": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g562": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g563": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g566": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g576": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g582": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g592": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g597": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g609": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g620": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g634": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g637": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g677": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g684": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g693": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g704": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g711": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g714": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g725": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g731": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g744": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g760": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g762": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g776": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g778": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g825": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        },
+        "g840": {
+            "gold_ok": "yes",
+            "wellformed": "yes",
+            "natural": "yes"
+        }
+    }
+}
