@@ -1,6 +1,6 @@
 # Run: `deepseekv4pro_grep-only_L2_t1_grep_full`
 
-**Overall: 602/626 pass (96.2%)**
+**Overall: 604/626 pass (96.5%)**
 
 ## By bucket
 
@@ -15,6 +15,7 @@
 | name_lookup | 20/20 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
+| dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
 | org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
@@ -37,22 +38,21 @@
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 60/61 | 98.4% |
 | enterprise_shorthand | 19/20 | 95.0% |
-| dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | listing_count | 18/20 | 90.0% |
 | casual_name_lookup | 13/15 | 86.7% |
 | hard_multihop | 21/26 | 80.8% |
+| superlative | 8/10 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | deep_multihop | 9/12 | 75.0% |
-| superlative | 7/10 | 70.0% |
 
 ## By priority
 
 - P0: 222/226 (98.2%)
-- P1: 350/364 (96.2%)
-- P2: 30/36 (83.3%)
+- P1: 351/364 (96.4%)
+- P2: 31/36 (86.1%)
 
-## Failures (24)
+## Failures (22)
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -88,17 +88,6 @@
 
 - **เบอร์ต่อ**: 71734
 - **มือถือ**: 094-546-2762
-```
-
-### g238 [dept_member_count] P1/en
-**Q:** size of RET
-
-**Fails:** missing any-of ['380']; missing count 380
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
 ```
 
 ### g355 [hard_multihop] P0/th
@@ -338,17 +327,6 @@ Let me try searching for specific patterns that isolate each department
 
 
 
-```
-
-### g832 [superlative] P2/th
-**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
-
-**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
 ```
 
 ### g840 [superlative] P2/th

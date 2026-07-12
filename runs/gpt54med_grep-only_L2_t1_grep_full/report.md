@@ -1,6 +1,6 @@
 # Run: `gpt54med_grep-only_L2_t1_grep_full`
 
-**Overall: 609/626 pass (97.3%)**
+**Overall: 608/626 pass (97.1%)**
 
 ## By bucket
 
@@ -29,7 +29,6 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
-| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -38,6 +37,7 @@
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 59/61 | 96.7% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
+| listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | superlative | 9/10 | 90.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 356/364 (97.8%)
+- P1: 355/364 (97.5%)
 - P2: 33/36 (91.7%)
 
-## Failures (17)
+## Failures (18)
 
 ### g073 [evp_vs_vp_disambig] P0/th
 **Q:** ขอ LOGFL หน่อย ไม่เอา LOGVP
@@ -186,6 +186,17 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 
 ```
 ผู้บริหารสูงสุดของแผนก KS คือ **ราม ลวรรณ (จุ๊บ)** — **ผู้จัดการทั่วไปแบรนด์คลื่นเสียง**, **RAM.LA@FAHMAI.CO.TH**, ต่อ **75965**
+```
+
+### g542 [listing_count] P1/th
+**Q:** มีพนักงานกี่คนที่อยู่แผนก FIN ระดับ Manager และเริ่มงานในปี 2022 ครับ
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+มี **4 คน** ครับ
 ```
 
 ### g586 [noisy_name_form] P1/th

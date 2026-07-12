@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_repl_L2_t4_repl_full`
 
-**Overall: 595/626 pass (95.0%)**
+**Overall: 598/626 pass (95.5%)**
 
 ## By bucket
 
@@ -33,26 +33,26 @@
 | superlative | 10/10 | 100.0% |
 | refuse | 87/90 | 96.7% |
 | enterprise_shorthand | 19/20 | 95.0% |
+| multi_hop | 17/18 | 94.4% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | nickname_grid | 56/61 | 91.8% |
 | listing_count | 18/20 | 90.0% |
 | hard_implicit_hierarchy | 17/19 | 89.5% |
-| multi_hop | 16/18 | 88.9% |
 | hard_multihop | 23/26 | 88.5% |
 | evp_vs_vp_disambig | 22/25 | 88.0% |
+| deep_multihop | 10/12 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
-| deep_multihop | 8/12 | 66.7% |
 
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 348/364 (95.6%)
-- P2: 32/36 (88.9%)
+- P1: 349/364 (95.9%)
+- P2: 34/36 (94.4%)
 
-## Failures (31)
+## Failures (28)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -337,17 +337,6 @@ There are **7** employees in the **DN (ดาวเหนือ / DaoNuea)** dep
 ไม่พบข้อมูลครับ ไม่มีพนักงานชื่อ NERNER ในระบบของฟ้าใหม่
 ```
 
-### g592 [multi_hop] P1/en
-**Q:** What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?
-
-**Fails:** missing any-of ['UKRIT.AM@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
-```
-
 ### g595 [multi_hop] P1/th
 **Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
 
@@ -463,17 +452,6 @@ However, if you'd like, I can look up the **Marketing department (MKT)** team me
 **ไม่มีชื่อเล่นในระบบ** ครับ (Nickname fields are blank)
 ```
 
-### g823 [deep_multihop] P2/en
-**Q:** What's the phone extension of the secretary of the VP who heads the department that อัมพร ประฟ้า works in?
-
-**Fails:** missing any-of ['76796']
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
-```
-
 ### g827 [deep_multihop] P2/th
 **Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
 
@@ -482,17 +460,13 @@ However, if you'd like, I can look up the **Marketing department (MKT)** team me
 **Response:**
 
 ```
-[agent error: max_tool_rounds_exhausted]
-```
-
-### g828 [deep_multihop] P2/en
-**Q:** Among the departments headed by a VP, take the one with the most employees — what's the nickname of the secretary of the VP who heads that department?
-
-**Fails:** missing any-of ['มุก', 'Mook']
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
+<｜｜DSML｜｜tool_calls>
+<｜｜DSML｜｜invoke name="python_repl">
+<｜｜DSML｜｜parameter name="code" string="true"># Check RET VPs in detail
+ret_vps_full = df[(df['Department'] == 'RET') & (df['Position Level'] == 'VP')][['First Name Thai', 'Last Name Thai', 'Unit', 'Position in English', 'Phone Extension']]
+ret_vps_full
+</｜｜DSML｜｜parameter>
+</｜｜DSML｜｜invoke>
+</｜｜DSML｜｜tool_calls>
 ```
 

@@ -1,6 +1,6 @@
 # Run: `gpt54med_repl_L2_t4_repl_full`
 
-**Overall: 620/626 pass (99.0%)**
+**Overall: 619/626 pass (98.9%)**
 
 ## By bucket
 
@@ -44,15 +44,15 @@
 | enterprise_shorthand | 19/20 | 95.0% |
 | casual_name_lookup | 14/15 | 93.3% |
 | hard_nickname_variant | 9/10 | 90.0% |
-| hard_multihop | 23/26 | 88.5% |
+| hard_multihop | 22/26 | 84.6% |
 
 ## By priority
 
 - P0: 221/226 (97.8%)
-- P1: 363/364 (99.7%)
+- P1: 362/364 (99.5%)
 - P2: 36/36 (100.0%)
 
-## Failures (6)
+## Failures (7)
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -108,6 +108,17 @@ SFVP’s boss is THAWAN BOONNAMPHONG — General Manager of SaiFah, THAWAN.BO@FA
 
 ```
 เจอชื่อเล่น “มุก” หลายคนในระบบ รบกวนขอชื่อจริงหรือแผนกเพิ่มหน่อยครับ/ค่ะ แล้วจะเช็กเบอร์ให้ทันที
+```
+
+### g448 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณเกษม วิศอัญชลี สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['PHAIROJ.MA@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณเกษม วิศอัญชลี สังกัดแผนก LEG; ผู้บริหารสูงสุดของแผนกคือ **ไพโรจน์ มหากุล** — **PAIROJ.MAHAKUL@FAHMAI.CO.TH**
 ```
 
 ### g673 [enterprise_shorthand] P1/th

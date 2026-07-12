@@ -1,5 +1,11 @@
 # FahMai Directory Benchmark — Design
 
+> **Historical design document (v0.1, Kaggle-era plan).** Kept for provenance. The released
+> benchmark is **v0.2**: 626 items / 8 groups / 29 subtypes over `employees_v02.csv`, evaluated
+> under four tool configurations — see `README.md`, `docs/dataset-breakdown.md`, and the paper.
+> Where this file disagrees with those (item counts, buckets, grader split, Kaggle packaging),
+> they are authoritative.
+
 **Status:** Gate A — design only, no artifacts generated yet.
 **Authored:** 2026-04-19.
 **Canon anchor:** `../knowledge_base/store_info/about_fahmai.md` (Level 1 FahMai universe).

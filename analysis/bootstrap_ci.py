@@ -33,7 +33,8 @@ MODELS = [
     ("glm51", "GLM-5.1", "open"), ("deepseekv4pro", "DeepSeek-V4-Pro", "open"),
     ("deepseekv4flash", "DeepSeek-V4-Flash", "open"), ("gemini30flash", "Gemini-3-Flash", "open"),
     ("gemma4", "Gemma-4-31B", "open"), ("minimax", "MiniMax-M2.7", "open"),
-    ("opentyphoon", "Typhoon-2.5 (30B)", "thai"), ("openthaigpt", "OpenThaiGPT-8B", "thai"),
+    ("opentyphoon", "Typhoon-2.5 (30B)", "thai"), ("typhoon8b", "Typhoon-S-8B", "thai"),
+    ("openthaigpt", "OpenThaiGPT-8B", "thai"),
 ]
 DISP = {k: d for k, d, _ in MODELS}
 TIER = {k: t for k, _, t in MODELS}
@@ -97,12 +98,24 @@ def main() -> None:
         cfgs = {k: str(_REPO_ROOT / v) for k, v in json.loads(man_p.read_text(encoding="utf-8"))["configs"].items()}
         present[key] = [c for c in CFG_ORDER if c in cfgs]
         for c in present[key]:
-            raw = Path(cfgs[c]) / "raw"
+            run_dir = Path(cfgs[c])
             d = {}
-            for f in raw.glob("*.md"):
-                if f.stem in items:
-                    resp = f.read_text(encoding="utf-8")
-                    d[f.stem] = int((not resp.startswith("[agent error")) and grade(items[f.stem], resp))
+            # The committed artifact per run is results.jsonl (each record embeds the
+            # model's final response verbatim); raw/*.md exists only after a local sweep.
+            res_p = run_dir / "results.jsonl"
+            if res_p.exists():
+                for line in res_p.read_text(encoding="utf-8").splitlines():
+                    if not line.strip():
+                        continue
+                    rec = json.loads(line)
+                    if rec["id"] in items:
+                        resp = rec.get("response", "")
+                        d[rec["id"]] = int((not resp.startswith("[agent error")) and grade(items[rec["id"]], resp))
+            else:
+                for f in (run_dir / "raw").glob("*.md"):
+                    if f.stem in items:
+                        resp = f.read_text(encoding="utf-8")
+                        d[f.stem] = int((not resp.startswith("[agent error")) and grade(items[f.stem], resp))
             cell[(key, c)] = d
     models = [k for k, _, _ in MODELS if k in present]
 

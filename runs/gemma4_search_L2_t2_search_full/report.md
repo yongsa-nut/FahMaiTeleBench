@@ -1,6 +1,6 @@
 # Run: `gemma4_search_L2_t2_search_full`
 
-**Overall: 562/626 pass (89.8%)**
+**Overall: 564/626 pass (90.1%)**
 
 ## By bucket
 
@@ -43,16 +43,16 @@
 | dept_listing_small | 5/7 | 71.4% |
 | counterfactual | 17/25 | 68.0% |
 | org_plus_person | 2/3 | 66.7% |
+| multi_hop | 11/18 | 61.1% |
 | noisy_name_form | 11/20 | 55.0% |
-| multi_hop | 9/18 | 50.0% |
 
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 314/364 (86.3%)
+- P1: 316/364 (86.8%)
 - P2: 33/36 (91.7%)
 
-## Failures (64)
+## Failures (62)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -467,18 +467,7 @@ no record found
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
-### g590 [multi_hop] P1/en
-**Q:** What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?
-
-**Fails:** missing any-of ['MEKHA.PH2@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+เบอร์ต่อของคุณเรืองศักดิ์ เทพเกียรติกำจร (รองประธานฝ่ายดาวเหนือ) คือ 72280 ครับ
 ```
 
 ### g591 [multi_hop] P1/th
@@ -489,7 +478,7 @@ no record found
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+เบอร์ต่อของคุณกมลา ชัยสนธิ์สว่าง (CFO) คือ 74921 ครับ
 ```
 
 ### g593 [multi_hop] P1/th
@@ -511,7 +500,7 @@ no record found
 **Response:**
 
 ```
-[agent error: JSONDecodeError: Extra data: line 1 column 50 (char 49)]
+เบอร์ต่อของคุณสรัล อาวุทธ์มณี (ผู้จัดการทั่วไปแบรนด์จุดเชื่อม) คือ 78762 ครับ
 ```
 
 ### g597 [multi_hop] P1/th
@@ -523,17 +512,6 @@ no record found
 
 ```
 คุณศักดิ์สิทธิ์ สัมชากัญญ์ สังกัดฝ่ายคลื่นเสียง (KS) ซึ่งผู้ที่มีตำแหน่งสูงสุดในส่วนงานนี้คือ คุณธเนศ บัวทองประเสริฐ (รองประธานฝ่ายคลื่นเสียง) เบอร์ต่อ 71215 ครับ
-```
-
-### g598 [multi_hop] P1/en
-**Q:** What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?
-
-**Fails:** missing any-of ['RITTHIRONG.KI@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
 ```
 
 ### g599 [multi_hop] P1/th
@@ -638,5 +616,27 @@ There are 1,255 staff members working at the Rama IX (R9) HQ branch.
     *   โทร: 085-184-8742 / ต่อ 79901
 ```
 
+### g755 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณแสงดาว พิดวงกมลเป็น CFO ขอเบอร์ต่อหน่อยครับ
 
-_+14 more failures — see results.jsonl_
+**Fails:** missing any-of ['FINVP', 'VP Finance', 'กมลา']
+
+**Response:**
+
+```
+คุณแสงดาว พิดวงกมล เบอร์ต่อ 77907 ครับ
+```
+
+### g756 [counterfactual] P1/en
+**Q:** I heard สุเมธ อัครใจงาม is the CHRO — can I get their extension?
+
+**Fails:** missing any-of ['HRVP', 'VP HR', 'ณฐามน']
+
+**Response:**
+
+```
+Sumate Akarajaingam's extension is 72146.
+```
+
+
+_+12 more failures — see results.jsonl_

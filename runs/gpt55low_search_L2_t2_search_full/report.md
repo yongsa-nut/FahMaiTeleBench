@@ -1,6 +1,6 @@
 # Run: `gpt55low_search_L2_t2_search_full`
 
-**Overall: 419/626 pass (66.9%)**
+**Overall: 420/626 pass (67.1%)**
 
 ## By bucket
 
@@ -10,7 +10,7 @@
 | evp_secretary | 5/5 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
-| refuse | 88/90 | 97.8% |
+| refuse | 89/90 | 98.9% |
 | bilingual | 37/40 | 92.5% |
 | multi_entity_turn | 18/20 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 162/226 (71.7%)
+- P0: 163/226 (72.1%)
 - P1: 235/364 (64.6%)
 - P2: 22/36 (61.1%)
 
-## Failures (207)
+## Failures (206)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -605,4 +605,4 @@ no record found
 ```
 
 
-_+157 more failures — see results.jsonl_
+_+156 more failures — see results.jsonl_

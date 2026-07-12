@@ -47,6 +47,7 @@ MODELS = [
     ("gemma4",          "Gemma-4-31B",       "open"),
     ("minimax",         "MiniMax-M2.7",      "open"),
     ("opentyphoon",     "Typhoon-2.5 (30B)", "thai"),
+    ("typhoon8b",       "Typhoon-S-8B",      "thai"),
     ("openthaigpt",     "OpenThaiGPT-8B",    "thai"),
 ]
 DISP = {k: d for k, d, _ in MODELS}
@@ -202,8 +203,8 @@ def main() -> None:
               f"| {len(also)}/{len(models)-1} | {q} |")
 
     # ---- 4. per-subtype discrimination (best-of across all models) ----
-    P("\n## 4. Per-subtype discrimination (best-of-config, all 12 models)\n")
-    P("Per subtype: mean best-of accuracy across the 12 models, and the max−min model spread. "
+    P(f"\n## 4. Per-subtype discrimination (best-of-config, all {len(models)} models)\n")
+    P(f"Per subtype: mean best-of accuracy across the {len(models)} models, and the max−min model spread. "
       "Low mean = hard for everyone; high spread = separates models (the discriminating cells).\n")
     by_sub = defaultdict(list)
     for iid in all_ids:

@@ -1,6 +1,6 @@
 # Run: `sonnet_grep-only_L2_t1_grep_full`
 
-**Overall: 589/626 pass (94.1%)**
+**Overall: 590/626 pass (94.2%)**
 
 ## By bucket
 
@@ -42,17 +42,17 @@
 | org_informal_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
+| superlative | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
-| superlative | 7/10 | 70.0% |
 | multi_hop | 11/18 | 61.1% |
 
 ## By priority
 
 - P0: 217/226 (96.0%)
 - P1: 339/364 (93.1%)
-- P2: 33/36 (91.7%)
+- P2: 34/36 (94.4%)
 
-## Failures (37)
+## Failures (36)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -562,22 +562,6 @@ The head of the คลื่นเสียง (KluenSiang / KS) division is:
 - 📧 RAM.LA@FAHMAI.CO.TH
 - ☎️ Ext. 75965
 - 📍 FahMai Tower 18F
-```
-
-### g832 [superlative] P2/th
-**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
-
-**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
-
-**Response:**
-
-```
-จากการค้นหาในระบบ พบว่าปีเริ่มงานที่เก่าที่สุดที่มีข้อมูลในไดเรกทอรีคือ **ปี 2020** ครับ โดยพนักงานที่เริ่มงานในปีนั้นได้แก่:
-
-- **สมตา สัมชัยสัย** (SOMTA SAMCHAISAI) — หัวหน้าทีมพนักงานขายสาขาลาดพร้าว, RET
-  📧 SOMTA.SA@FAHMAI.CO.TH | 📞 086-054-8439
-
-อย่างไรก็ตาม ต้องแจ้งตรงๆ ว่าการค้นหาด้วยวิธีนี้อาจไม่ครอบคลุม 100% ครับ เนื่องจากเครื่องมือค้นหาไม่รองรับการ **เรียงลำดับตาม Start Year** โดยตรง จึง
 ```
 
 ### g840 [superlative] P2/th

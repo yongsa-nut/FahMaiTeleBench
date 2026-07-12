@@ -1,6 +1,6 @@
 # Run: `gemma4_grep-only_L2_t1_grep_full`
 
-**Overall: 482/626 pass (77.0%)**
+**Overall: 542/626 pass (86.6%)**
 
 ## By bucket
 
@@ -8,6 +8,7 @@
 |---|---|---|
 | evp_identity_by_code | 4/4 | 100.0% |
 | evp_identity_by_description | 4/4 | 100.0% |
+| vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
 | casual_name_lookup | 15/15 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
@@ -21,70 +22,47 @@
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
+| retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | nickname_grid | 58/61 | 95.1% |
+| bilingual | 38/40 | 95.0% |
+| noisy_name_form | 19/20 | 95.0% |
+| multi_entity_turn | 18/20 | 90.0% |
+| evp_vs_vp_disambig | 22/25 | 88.0% |
 | dept_member_count | 13/15 | 86.7% |
-| evp_vs_vp_disambig | 21/25 | 84.0% |
+| listing_count | 17/20 | 85.0% |
 | org_informal_listing | 5/6 | 83.3% |
-| vp_identity | 4/5 | 80.0% |
+| evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
-| multi_entity_turn | 15/20 | 75.0% |
+| enterprise_shorthand | 16/20 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 19/26 | 73.1% |
 | superlative | 7/10 | 70.0% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
 | counterfactual | 17/25 | 68.0% |
 | org_plus_person | 2/3 | 66.7% |
-| enterprise_shorthand | 13/20 | 65.0% |
-| evp_secretary | 3/5 | 60.0% |
+| multi_hop | 11/18 | 61.1% |
 | name_lookup | 12/20 | 60.0% |
 | deep_multihop | 7/12 | 58.3% |
-| bilingual | 23/40 | 57.5% |
 | surname_family | 13/24 | 54.2% |
-| listing_count | 10/20 | 50.0% |
 | subsidiary_routing | 6/12 | 50.0% |
-| retrieval | 6/14 | 42.9% |
-| multi_hop | 6/18 | 33.3% |
-| noisy_name_form | 5/20 | 25.0% |
 
 ## By priority
 
-- P0: 213/226 (94.2%)
-- P1: 241/364 (66.2%)
+- P0: 215/226 (95.1%)
+- P1: 299/364 (82.1%)
 - P2: 28/36 (77.8%)
 
-## Failures (144)
+## Failures (84)
 
 ### g045 [evp_secretary] P0/th
 **Q:** CFO secretary ใคร
 
-**Fails:** missing any-of ['Benjawan', 'เบญจวรรณ']; missing any-of ['Chokdeekamchon', 'โชคดีกำจร']
+**Fails:** missing any-of ['Chokdeekamchon', 'โชคดีกำจร']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
-### g047 [evp_secretary] P0/en
-**Q:** who's the secretary for LOGVP
-
-**Fails:** missing any-of ['Wipha', 'วิภา']; missing any-of ['Anongkunkamchon', 'อนงค์กำจร']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
-### g070 [evp_vs_vp_disambig] P0/th
-**Q:** TECPM ใครนะ ไม่ใช่ TECVP
-
-**Fails:** missing any-of ['Rachata', 'ราชตะ']; missing any-of ['Samchannarong', 'สัมชาญณรงค์']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+คุณเบญจวรรณ (มิ้น) - BENJAWAN.CH@FAHMAI.CO.TH ต่อ 75703
 ```
 
 ### g073 [evp_vs_vp_disambig] P0/th
@@ -118,17 +96,6 @@
 
 ```
 คุณงามจิตร ประรักษา (แพร) - NGAMCHIT.PR@FAHMAI.CO.TH ต่อ 76434
-```
-
-### g082 [vp_identity] P1/th
-**Q:** VP วงโคจร คือใคร
-
-**Fails:** missing any-of ['Kukrit', 'คึกฤทธิ์']; missing any-of ['Akaracharoen', 'อัครเจริญ']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
 ```
 
 ### g114 [name_lookup] P1/th
@@ -459,28 +426,6 @@ Email: SARAN.AW@FAHMAI.CO.TH
 ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
 ```
 
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee by position level?
-
-**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
-### g466 [hard_implicit_hierarchy] P1/en
-**Q:** In the KS-MKT section, who is the most senior employee by position level?
-
-**Fails:** missing any-of ['ธงชัย', 'Thongchai']; missing any-of ['อัมพรสถิต', 'Amphomsathit']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
 ### g473 [bilingual] P1/th
 **Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
 
@@ -503,126 +448,197 @@ Email: SARAN.AW@FAHMAI.CO.TH
 ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
-### g488 [bilingual] P1/en
-**Q:** What is the CEO's Thai nickname (ชื่อเล่น)?
+### g533 [listing_count] P1/en
+**Q:** How many employees are in the DN department at IC level who started in 2020?
 
-**Fails:** missing any-of ['เบอร์รี่', 'Berry', 'BERRY']
-
-**Response:**
-
-```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
-```
-
-### g493 [bilingual] P1/en
-**Q:** What is the Thai family (last) name of the VP of HR?
-
-**Fails:** missing any-of ['อัครใจงาม', 'Akarajaingam']
+**Fails:** missing count 6
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+There are 0 employees in the DN department at the IC level who started in 2020.
 ```
 
-### g495 [bilingual] P1/en
-**Q:** What is the Thai given (first) name of the VP of Legal?
+### g535 [listing_count] P1/en
+**Q:** How many employees are in the DN department at Lead level who started in 2022?
 
-**Fails:** missing any-of ['ไพโรจน์', 'Phairoj']
+**Fails:** missing count 5
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+There are 6 employees in the DN department at the Lead level who started in 2022.
 ```
 
-### g496 [bilingual] P1/en
-**Q:** What is the Thai family (last) name of the VP of Technology?
+### g540 [listing_count] P1/th
+**Q:** มีพนักงานกี่คนที่อยู่แผนก FIN ระดับ IC และเริ่มงานในปี 2020 ครับ
 
-**Fails:** missing any-of ['อธิดี', 'Athidi']
+**Fails:** missing count 4
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+มีพนักงานแผนก FIN ระดับ IC ที่เริ่มงานในปี 2020 จำนวน 1 คน คือ คุณสนิท อธิบุญนำ ครับ
 ```
 
-### g497 [bilingual] P1/en
-**Q:** What is the VP of Logistics's Thai nickname (ชื่อเล่น)?
+### g569 [noisy_name_form] P1/en
+**Q:** Which floor is Kittikhun Pongchongrak, the Chief of Staff, working on?
 
-**Fails:** missing any-of ['ติ๊ก', 'Tik', 'TIK']
+**Fails:** missing any-of ['FahMai Tower 16F', 'ชั้น 16', 'ชั้น16']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+Kittikhun Phongchongrak (Chief of Staff) works on the 16th floor of FahMai Tower.
 ```
 
-### g508 [bilingual] P1/th
-**Q:** ขอ email address ของ Chief Executive Officer หน่อยครับ
+### g587 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณจรูญ ชัยบุญสังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['VACHIR.CH@FAHMAI.CO.TH']
+**Fails:** missing any-of ['74877']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+คุณจรูญ ชัยบุญ สังกัดฝ่าย B2B ซึ่งผู้ที่มีตำแหน่งสูงสุดในฝ่ายนี้คือ รองประธาน (VP) โดยมี 2 ท่าน ดังนี้ครับ:
+
+*   **คุณอุกฤษฎ์ วัชรเสริม** (รองประธานฝ่ายขายองค์กร): เบอร์ต่อ 79274
+*   **คุณธัญญา เจริญผลภิญโญ** (รองประธานฝ่ายดูแลลูกค้าองค์กร): เบอร์ต่อ 71547
 ```
 
-### g509 [bilingual] P1/th
-**Q:** Chief Financial Officer เบอร์ extension อะไรครับ
+### g589 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['74921']
+**Fails:** missing any-of ['76457']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+คุณทัศนีย์ มณีพงศ์ สังกัดแผนกดาวเหนือ (DN) ซึ่งผู้ที่มีตำแหน่งสูงสุดคือ คุณวิเชียร พงหอมกลิ่น (General Manager) เบอร์ต่อ 76999 ครับ
 ```
 
-### g510 [bilingual] P1/th
-**Q:** nickname ของ Chief Technology Officer คืออะไรครับ
+### g591 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['ปันปัน', 'Panpan', 'PANPAN']
+**Fails:** missing any-of ['77404']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+คุณอภิชัย จิตรานนท์เจริญ สังกัดฝ่ายการเงิน (FIN) ซึ่งผู้ที่มีตำแหน่งสูงสุดในฝ่ายนี้คือ คุณกมลา ชัยสนธิ์สว่าง (CFO) เบอร์โทรศัพท์ภายในคือ 74921 ครับ
 ```
 
-### g512 [bilingual] P1/th
-**Q:** ขอ email address ของ Chief Marketing Officer หน่อยครับ
+### g593 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['SOM.KA@FAHMAI.CO.TH']
+**Fails:** missing any-of ['74296']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+คุณมนตรา บุญเรืองโชติ สังกัดฝ่ายทรัพยากรบุคคล (HR) ซึ่งผู้ที่มีตำแหน่งสูงสุดในฝ่ายนี้คือ คุณณฐามน อภิชัยดี (CHRO) เบอร์โทรศัพท์ภายในคือ 79303 ครับ
 ```
 
-### g514 [bilingual] P1/th
-**Q:** nickname ของ Chief Of Staff คืออะไรครับ
+### g595 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['บูม', 'Boom', 'BOOM']
+**Fails:** missing any-of ['78017']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+เบอร์ต่อของคุณสรัล อาวุทธ์มณี (GM แบรนด์จุดเชื่อม) คือ 78762 ครับ
 ```
 
-### g517 [bilingual] P1/th
-**Q:** Vice President Marketing เบอร์ extension อะไรครับ
+### g597 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ
 
-**Fails:** missing any-of ['74711']
+**Fails:** missing any-of ['76044']
 
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+เบอร์ต่อของคุณราม ลวรรณ (GM แบรนด์คลื่นเสียง) คือ 75965 ครับ
+```
+
+### g599 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณคำรณ ศรีอัญชลีสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['73069']
+
+**Response:**
+
+```
+คุณคำรณ ศรีอัญชลี สังกัดฝ่ายปฏิบัติการ (OPS) ซึ่งผู้ที่มีตำแหน่งสูงสุดในฝ่ายนี้คือ คุณพงษ์กานต์ ราชชากัญญ์ (Chief Operating Officer) เบอร์โทรศัพท์ภายในคือ 75464 ครับ
+```
+
+### g605 [surname_family] P1/th
+**Q:** พนักงานที่นามสกุล มณีฟ้า มีใครบ้าง ขอชื่อทุกคน
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+พนักงานที่นามสกุล มณีฟ้า มีดังนี้ครับ:
+- คุณราชตะ มณีฟ้า
+- คุณจันทนา มณีฟ้า
+- คุณพฤกษา มณีฟ้า
+```
+
+### g606 [surname_family] P1/en
+**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+Here are the employees with the surname เขียวขจีศรี:
+
+* **Pakorn Kiaokajisi (ปกรณ์ เขียวขจีศรี)** - PAKORN.KI@FAHMAI.CO.TH
+* **Atchara Kiaokajisi (อัจฉรา เขียวขจีศรี)** - ATCHARA.KI@FAHMAI.CO.TH
+* **Paitoon Kiaokajisi (ไพฑูรย์ เขียวขจีศรี)** - PAITOON.KI@FAHMAI.CO.TH
+```
+
+### g607 [surname_family] P1/th
+**Q:** พนักงานที่นามสกุล แสงทอง มีใครบ้าง ขอชื่อทุกคน
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+พนักงานที่นามสกุล แสงทอง มีดังนี้ครับ:
+- คุณระวี แสงทอง
+- คุณดาว แสงทอง
+- คุณอนุรักษ์ แสงทอง
+```
+
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ยุพา ไกรศรีมณี: YU-PHA.KR@FAHMAI.CO.TH
+- วิภา ไกรศรีมณี: WIPHA.KR@FAHMAI.CO.TH
+- พาณิช ไกรศรีมณี: PANIT.KR@FAHMAI.CO.TH
+```
+
+### g610 [surname_family] P1/en
+**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ศศิ บุญเรืองกุล (SASI BOONRUENGKUN) - SASI.BO@FAHMAI.CO.TH
+- น้ำทิพย์ บุญเรืองกุล (NAMTHIP BOONRUENGKUN) - NAMTHIP.BO@FAHMAI.CO.TH
 ```
 
 
-_+94 more failures — see results.jsonl_
+_+34 more failures — see results.jsonl_

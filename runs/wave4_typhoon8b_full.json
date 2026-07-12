@@ -1,0 +1,13 @@
+{
+ "model": "typhoon8b",
+ "stamp": "full",
+ "kb": "knowledge_base/employees_v02.csv",
+ "answer_key": "questions/questions_v02.json",
+ "item_count": 626,
+ "configs": {
+  "t1_grep": "runs/typhoon8b_grep-only_L2_t1_grep_20260526_114107",
+  "t2_search": "runs/typhoon8b_search_L2_t2_search_20260526_114107",
+  "t3_both": "runs/typhoon8b_both_L2_t3_both_20260526_114107",
+  "t4_repl": "runs/typhoon8b_repl_L2_t4_repl_20260526_114107"
+ }
+}

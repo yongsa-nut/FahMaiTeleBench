@@ -1,6 +1,6 @@
 # Run: `opentyphoon_both_L2_t3_both_full`
 
-**Overall: 456/626 pass (72.8%)**
+**Overall: 454/626 pass (72.5%)**
 
 ## By bucket
 
@@ -27,16 +27,16 @@
 | evp_secretary | 4/5 | 80.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | listing_count | 15/20 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | dept_member_count | 11/15 | 73.3% |
 | dept_listing_small | 5/7 | 71.4% |
 | thai_knowledge | 7/10 | 70.0% |
 | enterprise_shorthand | 14/20 | 70.0% |
+| hard_implicit_hierarchy | 13/19 | 68.4% |
 | nickname_grid | 41/61 | 67.2% |
 | org_plus_person | 2/3 | 66.7% |
 | hard_nickname_variant | 6/10 | 60.0% |
-| deep_multihop | 7/12 | 58.3% |
 | surname_family | 13/24 | 54.2% |
+| deep_multihop | 6/12 | 50.0% |
 | hard_multihop | 11/26 | 42.3% |
 | counterfactual | 10/25 | 40.0% |
 | superlative | 4/10 | 40.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 172/226 (76.1%)
+- P0: 171/226 (75.7%)
 - P1: 259/364 (71.2%)
-- P2: 25/36 (69.4%)
+- P2: 24/36 (66.7%)
 
-## Failures (170)
+## Failures (172)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -664,4 +664,4 @@ CEO-CoS คือ กิตติคุณ พงจงรัก (บูม) จ
 ```
 
 
-_+120 more failures — see results.jsonl_
+_+122 more failures — see results.jsonl_

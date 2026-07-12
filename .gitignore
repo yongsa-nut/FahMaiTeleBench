@@ -33,3 +33,9 @@ Thumbs.db
 # Tool-call traces are not committed either. Regenerate with scripts/run_wave4_sweep.py.
 runs/**/raw/
 runs/**/traces/
+
+# superseded working artifacts kept locally, not published
+paper/acl-paper/paper.tex
+paper/acl-paper/paper.pdf
+paper/paper-draft.md
+questions/questions.json

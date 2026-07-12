@@ -1,6 +1,6 @@
 """Haiku 4.5 agent for FahMai directory questions.
 
-Port of `the source telephone-directory project/ikq_haiku_agent.py` with:
+Port of the source telephone-directory project's agent runner with:
   - System prompt: fahmai_system_prompt.md (FahMai universe + canonical refusals)
   - Tool: fahmai_csv_tool.SEARCH_EMPLOYEES_TOOL
   - Workspace .env discovery walked up to the workspace root

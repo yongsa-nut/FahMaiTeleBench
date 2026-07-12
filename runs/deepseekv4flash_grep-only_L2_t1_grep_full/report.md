@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_grep-only_L2_t1_grep_full`
 
-**Overall: 595/626 pass (95.0%)**
+**Overall: 596/626 pass (95.2%)**
 
 ## By bucket
 
@@ -44,15 +44,15 @@
 | hard_multihop | 21/26 | 80.8% |
 | superlative | 7/10 | 70.0% |
 | org_informal_listing | 4/6 | 66.7% |
-| deep_multihop | 7/12 | 58.3% |
+| deep_multihop | 8/12 | 66.7% |
 
 ## By priority
 
 - P0: 217/226 (96.0%)
 - P1: 350/364 (96.2%)
-- P2: 28/36 (77.8%)
+- P2: 29/36 (80.6%)
 
-## Failures (31)
+## Failures (30)
 
 ### g120 [name_lookup] P1/th
 **Q:** ขอเบอร์ ณัฏฐพล ชากัญญ์รักษา หน่อย
@@ -381,7 +381,15 @@ DNVP (รองประธานฝ่ายดาวเหนือ) คือ
 **Response:**
 
 ```
-[agent error: max_tool_rounds_exhausted]
+Let me get employee counts per department properly.
+
+<｜｜DSML｜｜tool_calls>
+<｜｜DSML｜｜invoke name="query_csv">
+<｜｜DSML｜｜parameter name="columns" string="false">["Department"]</｜｜DSML｜｜parameter>
+<｜｜DSML｜｜parameter name="filters" string="false">{"Department": "FIN"}</｜｜DSML｜｜parameter>
+<｜｜DSML｜｜parameter name="max_matches" string="false">300</｜｜DSML｜｜parameter>
+</｜｜DSML｜｜invoke>
+<｜｜DSML｜｜invoke name="
 ```
 
 ### g827 [deep_multihop] P2/th
@@ -402,17 +410,6 @@ DNVP (รองประธานฝ่ายดาวเหนือ) คือ
 <｜｜DSML｜｜parameter name="pattern" string="true">OPS</｜｜DSML｜｜parameter>
 </｜｜DSML｜｜invoke>
 </｜｜DSML
-```
-
-### g829 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['79653']
-
-**Response:**
-
-```
-[agent error: max_tool_rounds_exhausted]
 ```
 
 ### g830 [deep_multihop] P2/en
@@ -457,7 +454,12 @@ Let me count employees in each VP-headed department.
 **Response:**
 
 ```
-[agent error: max_tool_rounds_exhausted]
+เนื่องจากข้อมูลในระบบระบุว่า **ปีที่เก่าที่สุดของ Start Year คือ 2021** และไม่มีปีที่ต่ำกว่านั้น พนักงานที่เริ่มงานในปี 2021 จึงเป็นกลุ่มที่ **อายุงานยาวนานที่สุด** เท่ากันทั้งหมด โดยมีจำนวนทั้งสิ้น **213 คน**
+
+ตัวอย่างพนักงานในกลุ่มนี้ เช่น
+
+- **คะวัง กอบสุขรัตน์** (KWANG KOBSOOKRAT) — รองประธานฝ่ายการตลาด (VP Marketing)
+- **เรืองศักดิ์ เทพเกียรติกำจร** (RUANGSAK THEPKIATKAMJORN) — รองประธานฝ่ายด
 ```
 
 ### g840 [superlative] P2/th

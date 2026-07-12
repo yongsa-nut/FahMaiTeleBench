@@ -1,12 +1,13 @@
 {
-  "model": "deepseekv4pro",
-  "stamp": "full",
-  "kb": "knowledge_base/employees_v02.csv",
-  "answer_key": "questions/questions_v02.json",
-  "item_count": 626,
-  "configs": {
-    "t1_grep": "runs/deepseekv4pro_grep-only_L2_t1_grep_full",
-    "t2_search": "runs/deepseekv4pro_search_L2_t2_search_full",
-    "t4_repl": "runs/deepseekv4pro_repl_L2_t4_repl_full"
-  }
+ "model": "deepseekv4pro",
+ "stamp": "full",
+ "kb": "knowledge_base/employees_v02.csv",
+ "answer_key": "questions/questions_v02.json",
+ "item_count": 626,
+ "configs": {
+  "t1_grep": "runs/deepseekv4pro_grep-only_L2_t1_grep_full",
+  "t2_search": "runs/deepseekv4pro_search_L2_t2_search_full",
+  "t3_both": "runs/deepseekv4pro_both_L2_t3_both_full",
+  "t4_repl": "runs/deepseekv4pro_repl_L2_t4_repl_full"
+ }
 }

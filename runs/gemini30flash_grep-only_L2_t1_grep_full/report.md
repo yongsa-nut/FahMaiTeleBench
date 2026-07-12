@@ -705,7 +705,7 @@ no record found
 **Response:**
 
 ```
-[agent error: TypeError: 'NoneType' object is not subscriptable]
+
 ```
 
 ### g629 [nickname_grid] P1/th

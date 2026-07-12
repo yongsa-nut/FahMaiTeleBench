@@ -4,7 +4,11 @@ All Thai names used in `knowledge_base/employees.csv` are **synthetic combinatio
 
 Retrieval date: **2026-04-19** (all sources).
 
-## First names — `first_names_th.json` (253 entries)
+> Section headers give the **released** pool sizes (the JSON `count` field in each file is
+> authoritative). Fine-grained breakdowns below (e.g., nickname category counts) describe the
+> curated draft, which was slightly larger before a final dedup pass.
+
+## First names — `first_names_th.json` (250 entries)
 
 | # | Source | URL | Retrieved |
 |---|---|---|---|
@@ -14,7 +18,7 @@ Retrieval date: **2026-04-19** (all sources).
 
 **Curation bias**: skewed toward *uncommon* / non-top-100 names. Common Thai first names like สมชาย (Somchai), สมศักดิ์ (Somsak), มะลิ (Mali) are deliberately underrepresented so that first-name-alone disambiguation is frequently ambiguous or empty — forcing the bot to combine with other fields.
 
-## Last names — `last_names_th.json` (150 entries)
+## Last names — `last_names_th.json` (147 entries)
 
 | # | Source | URL | Retrieved |
 |---|---|---|---|
@@ -23,7 +27,7 @@ Retrieval date: **2026-04-19** (all sources).
 
 **Important context** — under Thailand's Surname Act 1913, Thai surnames are legally required to be unique to a family. Recurring surnames are mostly Sino-Thai (e.g., `แซ่ตั้ง` SAETANG, `แซ่ลิ้ม` SAELIM, `แซ่เล่า` SAELAU). Our pool includes 118 Thai-origin + 32 Sino-Thai to reflect real urban Thai company demographics (~20% Sino-Thai in Bangkok-centric office populations).
 
-## Nicknames — `nicknames_th.json` (210 entries, 10 categories)
+## Nicknames — `nicknames_th.json` (201 entries, 10 categories)
 
 | # | Source | URL | Retrieved |
 |---|---|---|---|

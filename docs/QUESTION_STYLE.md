@@ -316,7 +316,7 @@ During Gate H exploration, several hand-crafted hard questions read like transla
 
 ### 12.7 English-variant patterns (new for Gate H)
 
-Because `nickname_variants.json` currently has 0 English variants, the pool needs extending before H.2 question generation can pull from it.
+Because `nickname_variants.json` had 0 English variants at the time of this note, the pool needed extending before H.2 question generation could pull from it. *(Historical note — the released pool now contains 9 English variants.)*
 
 | Pattern | Thai base | Thai variant | English base | English variant |
 |---|---|---|---|---|

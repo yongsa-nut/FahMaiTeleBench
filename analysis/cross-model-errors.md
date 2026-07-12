@@ -9,17 +9,17 @@ Summed over all configs the model ran; bucket from the trace. **answered-wrong**
 | tier | model | cfgs | total fails | answered-wrong | round-exhaust | api-error | leak (subset) |
 |---|---|--:|--:|--:|--:|--:|--:|
 | frontier | gpt-5.4 (med) | 4 | 52 | 52 | 0 | 0 | 0 |
-| frontier | gpt-5.5 (med) | 4 | 231 | 82 | 147 | 2 | 2 |
-| frontier | gpt-5.5 (low) | 4 | 292 | 137 | 151 | 4 | 2 |
+| frontier | gpt-5.5 (med) | 4 | 229 | 82 | 147 | 0 | 2 |
+| frontier | gpt-5.5 (low) | 4 | 288 | 137 | 151 | 0 | 2 |
 | frontier | Claude Sonnet 4.6 | 4 | 150 | 149 | 1 | 0 | 1 |
-| open | GLM-5.1 | 3 | 66 | 58 | 7 | 1 | 2 |
-| open | DeepSeek-V4-Pro | 3 | 66 | 58 | 8 | 0 | 6 |
-| open | DeepSeek-V4-Flash | 3 | 88 | 72 | 16 | 0 | 8 |
-| open | Gemini-3-Flash | 3 | 281 | 276 | 4 | 1 | 4 |
-| open | Gemma-4-31B | 3 | 303 | 227 | 0 | 76 | 1 |
-| open | MiniMax-M2.7 | 3 | 209 | 190 | 15 | 4 | 8 |
-| thai | Typhoon-2.5 (30B) | 4 | 900 | 894 | 5 | 1 | 1 |
-| thai | OpenThaiGPT-8B | 4 | 1947 | 1947 | 0 | 0 | 27 |
+| open | GLM-5.1 | 4 | 80 | 72 | 7 | 1 | 3 |
+| open | DeepSeek-V4-Pro | 4 | 84 | 78 | 6 | 0 | 10 |
+| open | DeepSeek-V4-Flash | 4 | 104 | 91 | 13 | 0 | 8 |
+| open | Gemini-3-Flash | 4 | 338 | 333 | 5 | 0 | 5 |
+| open | Gemma-4-31B | 4 | 290 | 289 | 1 | 0 | 1 |
+| open | MiniMax-M2.7 | 4 | 256 | 234 | 16 | 6 | 9 |
+| thai | Typhoon-2.5 (30B) | 4 | 900 | 895 | 5 | 0 | 1 |
+| thai | Typhoon-S-8B | 4 | 1696 | 1674 | 15 | 7 | 1 |
 
 ## 2. Universal-hard items (no model passes at ANY config)
 
@@ -32,7 +32,7 @@ Summed over all configs the model ran; bucket from the trace. **answered-wrong**
 
 | id | sub | lang | also-fail (best-of) | question |
 |---|---|---|---|---|
-| g355 | E1 | th | 10/11 | หัวหน้า GM ดาวเหนือคือใคร |
+| g355 | E1 | th | 9/11 | หัวหน้า GM ดาวเหนือคือใคร |
 
 ## 4. Per-subtype discrimination (best-of-config, all 12 models)
 
@@ -40,35 +40,35 @@ Per subtype: mean best-of accuracy across the 12 models, and the max−min model
 
 | sub | n | mean acc | spread (max−min) | weakest model | its acc |
 |---|--:|--:|--:|---|--:|
-| E1 | 40 | 80% | 92 | OpenThaiGPT-8B | 5% |
-| B3 | 20 | 84% | 95 | OpenThaiGPT-8B | 5% |
-| E5 | 12 | 85% | 100 | OpenThaiGPT-8B | 0% |
-| B5 | 20 | 86% | 95 | OpenThaiGPT-8B | 5% |
-| E3 | 25 | 87% | 96 | OpenThaiGPT-8B | 4% |
-| B1 | 25 | 88% | 100 | OpenThaiGPT-8B | 0% |
-| F3 | 20 | 88% | 100 | OpenThaiGPT-8B | 0% |
-| F2 | 25 | 89% | 76 | OpenThaiGPT-8B | 24% |
-| G1 | 20 | 90% | 90 | OpenThaiGPT-8B | 10% |
-| A1 | 25 | 91% | 100 | OpenThaiGPT-8B | 0% |
-| C5 | 24 | 91% | 92 | OpenThaiGPT-8B | 8% |
-| E2 | 10 | 92% | 100 | OpenThaiGPT-8B | 0% |
-| C6 | 10 | 92% | 100 | OpenThaiGPT-8B | 0% |
-| A2 | 20 | 92% | 95 | OpenThaiGPT-8B | 5% |
-| D4 | 20 | 92% | 95 | OpenThaiGPT-8B | 5% |
-| C4 | 20 | 92% | 30 | OpenThaiGPT-8B | 70% |
-| D2 | 25 | 93% | 88 | OpenThaiGPT-8B | 12% |
-| C1 | 25 | 93% | 84 | OpenThaiGPT-8B | 16% |
-| C3 | 20 | 93% | 80 | OpenThaiGPT-8B | 20% |
-| G3 | 20 | 93% | 80 | OpenThaiGPT-8B | 20% |
-| D1 | 25 | 94% | 60 | OpenThaiGPT-8B | 40% |
-| B2 | 30 | 94% | 40 | OpenThaiGPT-8B | 60% |
-| A3 | 20 | 95% | 60 | OpenThaiGPT-8B | 40% |
-| F1 | 20 | 96% | 50 | OpenThaiGPT-8B | 50% |
-| H7 | 15 | 98% | 20 | OpenThaiGPT-8B | 80% |
-| H1 | 25 | 99% | 8 | Typhoon-2.5 (30B) | 92% |
-| H3 | 20 | 100% | 5 | OpenThaiGPT-8B | 95% |
+| E1 | 40 | 83% | 65 | Typhoon-S-8B | 32% |
+| B3 | 20 | 87% | 85 | Typhoon-S-8B | 15% |
+| F2 | 25 | 88% | 96 | Typhoon-S-8B | 4% |
+| E5 | 12 | 90% | 67 | Typhoon-S-8B | 33% |
+| B1 | 25 | 90% | 76 | Typhoon-S-8B | 24% |
+| H3 | 20 | 92% | 95 | Typhoon-S-8B | 5% |
+| F3 | 20 | 93% | 45 | Typhoon-S-8B | 55% |
+| H4 | 20 | 93% | 80 | Typhoon-S-8B | 20% |
+| B5 | 20 | 93% | 20 | Typhoon-2.5 (30B) | 80% |
+| B2 | 30 | 94% | 47 | Typhoon-S-8B | 53% |
+| H1 | 25 | 94% | 64 | Typhoon-S-8B | 36% |
+| C4 | 20 | 94% | 20 | Typhoon-S-8B | 80% |
+| E3 | 25 | 94% | 12 | Gemma-4-31B | 88% |
+| D1 | 25 | 96% | 32 | Typhoon-S-8B | 68% |
+| H7 | 15 | 96% | 47 | Typhoon-S-8B | 53% |
+| D4 | 20 | 97% | 35 | Typhoon-S-8B | 65% |
+| C6 | 10 | 98% | 30 | Typhoon-S-8B | 70% |
+| C5 | 24 | 98% | 12 | Typhoon-S-8B | 88% |
+| D2 | 25 | 98% | 28 | Typhoon-S-8B | 72% |
+| F1 | 20 | 98% | 25 | Typhoon-S-8B | 75% |
+| C3 | 20 | 98% | 20 | Typhoon-S-8B | 80% |
+| G1 | 20 | 98% | 10 | Gemma-4-31B | 90% |
+| A1 | 25 | 98% | 12 | Typhoon-S-8B | 88% |
+| G3 | 20 | 99% | 15 | Typhoon-S-8B | 85% |
+| A2 | 20 | 99% | 10 | Typhoon-S-8B | 90% |
+| E2 | 10 | 99% | 10 | Typhoon-S-8B | 90% |
+| C1 | 25 | 99% | 4 | Typhoon-2.5 (30B) | 96% |
+| A3 | 20 | 100% | 0 | gpt-5.4 (med) | 100% |
 | H2 | 25 | 100% | 0 | gpt-5.4 (med) | 100% |
-| H4 | 20 | 100% | 0 | gpt-5.4 (med) | 100% |
 
 ## 5. Tool-axis sensitivity (config-dependent items)
 
@@ -77,14 +77,14 @@ Per model: items solved under ≥1 config but failed under ≥1 other (the tool 
 | model | configs | config-sensitive items | uniquely rescued by |
 |---|--:|--:|---|
 | gpt-5.4 (med) | 4 | 35 | T4 repl 3, T1 grep 1 |
-| gpt-5.5 (med) | 4 | 167 | T4 repl 4, T3 both 1, T1 grep 1 |
+| gpt-5.5 (med) | 4 | 166 | T4 repl 4, T3 both 1, T1 grep 1 |
 | gpt-5.5 (low) | 4 | 213 | T4 repl 5, T3 both 2, T2 search 1 |
 | Claude Sonnet 4.6 | 4 | 71 | T1 grep 5, T4 repl 4, T3 both 2 |
-| GLM-5.1 | 3 | 45 | T1 grep 3, T4 repl 2, T2 search 1 |
-| DeepSeek-V4-Pro | 3 | 38 | T4 repl 6, T2 search 4 |
-| DeepSeek-V4-Flash | 3 | 63 | T1 grep 3, T2 search 3, T4 repl 1 |
-| Gemini-3-Flash | 3 | 207 | T2 search 15, T4 repl 13, T1 grep 13 |
-| Gemma-4-31B | 3 | 164 | T2 search 18, T4 repl 12, T1 grep 10 |
-| MiniMax-M2.7 | 3 | 139 | T4 repl 10, T2 search 9, T1 grep 9 |
+| GLM-5.1 | 4 | 47 | T1 grep 1, T4 repl 1 |
+| DeepSeek-V4-Pro | 4 | 48 | T2 search 3, T3 both 2, T4 repl 1 |
+| DeepSeek-V4-Flash | 4 | 65 | T3 both 2, T4 repl 1, T2 search 1, T1 grep 1 |
+| Gemini-3-Flash | 4 | 224 | T2 search 4, T4 repl 4, T3 both 3, T1 grep 3 |
+| Gemma-4-31B | 4 | 125 | T1 grep 6, T4 repl 5, T3 both 4, T2 search 2 |
+| MiniMax-M2.7 | 4 | 152 | T4 repl 8, T2 search 7, T3 both 4, T1 grep 3 |
 | Typhoon-2.5 (30B) | 4 | 296 | T3 both 23, T4 repl 22, T1 grep 19, T2 search 14 |
-| OpenThaiGPT-8B | 4 | 98 | T1 grep 24, T2 search 9, T3 both 7, T4 repl 6 |
+| Typhoon-S-8B | 4 | 340 | T1 grep 73, T3 both 35, T4 repl 32, T2 search 20 |

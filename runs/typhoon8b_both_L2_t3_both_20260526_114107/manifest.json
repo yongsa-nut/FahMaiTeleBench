@@ -1,0 +1,16 @@
+{
+  "model": "typhoon-s-thaillm-8b-instruct",
+  "model_key": "typhoon8b",
+  "base_url": "https://thaillm.or.th/api/v1",
+  "tool": "both",
+  "tool_name": "search_employees+grep_csv+read_csv_rows",
+  "kb": "knowledge_base\\employees_v02.csv",
+  "answer_key": "questions\\questions_v02.json",
+  "prompt_variant": "L2",
+  "prompt_file": "fahmai_system_prompt.md",
+  "prompt_chars": 4286,
+  "questions_file": "questions\\questions_v02_all.csv",
+  "item_count": 24,
+  "started_at": "2026-05-26T12:47:46.860300",
+  "max_tool_rounds": 7
+}

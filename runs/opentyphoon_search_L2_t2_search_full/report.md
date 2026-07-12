@@ -1,6 +1,6 @@
 # Run: `opentyphoon_search_L2_t2_search_full`
 
-**Overall: 422/626 pass (67.4%)**
+**Overall: 421/626 pass (67.3%)**
 
 ## By bucket
 
@@ -40,8 +40,8 @@
 | superlative | 5/10 | 50.0% |
 | counterfactual | 11/25 | 44.0% |
 | subsidiary_routing | 4/12 | 33.3% |
-| deep_multihop | 4/12 | 33.3% |
 | hard_multihop | 8/26 | 30.8% |
+| deep_multihop | 3/12 | 25.0% |
 | retrieval | 3/14 | 21.4% |
 | noisy_name_form | 3/20 | 15.0% |
 | casual_name_lookup | 1/15 | 6.7% |
@@ -50,9 +50,9 @@
 
 - P0: 169/226 (74.8%)
 - P1: 230/364 (63.2%)
-- P2: 23/36 (63.9%)
+- P2: 22/36 (61.1%)
 
-## Failures (204)
+## Failures (205)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -653,4 +653,4 @@ SFVP: วิรัตน์ สมบุษราคัม (ดอกไม้)
 ```
 
 
-_+154 more failures — see results.jsonl_
+_+155 more failures — see results.jsonl_

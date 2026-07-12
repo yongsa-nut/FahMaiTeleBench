@@ -1,6 +1,6 @@
 # Run: `minimax_repl_L2_t4_repl_full`
 
-**Overall: 553/626 pass (88.3%)**
+**Overall: 554/626 pass (88.5%)**
 
 ## By bucket
 
@@ -38,10 +38,10 @@
 | casual_name_lookup | 12/15 | 80.0% |
 | noisy_name_form | 16/20 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
+| deep_multihop | 9/12 | 75.0% |
 | dept_member_count | 11/15 | 73.3% |
 | hard_multihop | 19/26 | 73.1% |
 | multi_hop | 12/18 | 66.7% |
-| deep_multihop | 8/12 | 66.7% |
 | evp_secretary | 3/5 | 60.0% |
 | evp_identity_by_code | 2/4 | 50.0% |
 | dept_listing_small | 3/7 | 42.9% |
@@ -50,9 +50,9 @@
 
 - P0: 201/226 (88.9%)
 - P1: 321/364 (88.2%)
-- P2: 31/36 (86.1%)
+- P2: 32/36 (88.9%)
 
-## Failures (73)
+## Failures (72)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -736,4 +736,4 @@ No record found.
 ```
 
 
-_+23 more failures — see results.jsonl_
+_+22 more failures — see results.jsonl_

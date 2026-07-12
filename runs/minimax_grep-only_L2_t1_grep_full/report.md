@@ -1,6 +1,6 @@
 # Run: `minimax_grep-only_L2_t1_grep_full`
 
-**Overall: 550/626 pass (87.9%)**
+**Overall: 551/626 pass (88.0%)**
 
 ## By bucket
 
@@ -42,17 +42,17 @@
 | org_informal_listing | 4/6 | 66.7% |
 | hard_multihop | 17/26 | 65.4% |
 | multi_hop | 11/18 | 61.1% |
+| deep_multihop | 6/12 | 50.0% |
 | name_lookup | 9/20 | 45.0% |
-| deep_multihop | 5/12 | 41.7% |
 | org_plus_person | 1/3 | 33.3% |
 
 ## By priority
 
 - P0: 204/226 (90.3%)
 - P1: 319/364 (87.6%)
-- P2: 27/36 (75.0%)
+- P2: 28/36 (77.8%)
 
-## Failures (76)
+## Failures (75)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -691,4 +691,4 @@ no record found
 ```
 
 
-_+26 more failures — see results.jsonl_
+_+25 more failures — see results.jsonl_

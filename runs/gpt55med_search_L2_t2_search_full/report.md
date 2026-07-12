@@ -1,6 +1,6 @@
 # Run: `gpt55med_search_L2_t2_search_full`
 
-**Overall: 463/626 pass (74.0%)**
+**Overall: 464/626 pass (74.1%)**
 
 ## By bucket
 
@@ -10,7 +10,7 @@
 | tier_listing | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
-| refuse | 88/90 | 97.8% |
+| refuse | 89/90 | 98.9% |
 | bilingual | 38/40 | 95.0% |
 | surname_family | 22/24 | 91.7% |
 | dept_listing_small | 6/7 | 85.7% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 184/226 (81.4%)
+- P0: 185/226 (81.9%)
 - P1: 261/364 (71.7%)
 - P2: 18/36 (50.0%)
 
-## Failures (163)
+## Failures (162)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -605,4 +605,4 @@ I couldn’t retrieve a usable SaiFah list from the lookup, so I can’t provide
 ```
 
 
-_+113 more failures — see results.jsonl_
+_+112 more failures — see results.jsonl_
