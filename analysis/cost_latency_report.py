@@ -34,7 +34,6 @@ PRICE = {
     "deepseekv4pro": (0.435, 0.870), "deepseekv4flash": (0.100, 0.200),
     "glm51": (0.980, 3.080), "gemma4": (0.120, 0.370), "gemma-4-31b": (0.120, 0.370),
     "minimax": (0.279, 1.200),            # OpenRouter authoritative (2026-05-25)
-    "openthaigpt": None,                  # ThaiLLM national gateway — free
     "typhoon8b": None,                    # ThaiLLM national gateway — free
 }
 ESTIMATED = {"gpt54med", "gpt55med", "glm51"}   # prices we are unsure about -> flag in output (glm51 now via Z.ai direct)

@@ -90,16 +90,6 @@
       "any_batch": false,
       "free": false
     },
-    "openthaigpt": {
-      "n": 2504,
-      "err": 0,
-      "tin": 6212817,
-      "tout": 1633130,
-      "cost": 0.0,
-      "lat_seq": 2504,
-      "any_batch": false,
-      "free": true
-    },
     "opentyphoon": {
       "n": 2504,
       "err": 6,

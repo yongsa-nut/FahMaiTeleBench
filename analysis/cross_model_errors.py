@@ -48,7 +48,6 @@ MODELS = [
     ("minimax",         "MiniMax-M2.7",      "open"),
     ("opentyphoon",     "Typhoon-2.5 (30B)", "thai"),
     ("typhoon8b",       "Typhoon-S-8B",      "thai"),
-    ("openthaigpt",     "OpenThaiGPT-8B",    "thai"),
 ]
 DISP = {k: d for k, d, _ in MODELS}
 TIER = {k: t for k, _, t in MODELS}

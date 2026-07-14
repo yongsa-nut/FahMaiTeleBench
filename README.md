@@ -128,7 +128,7 @@ grader — only to re-run inference. Recognized variables:
 | `OPENROUTER_API_KEY` | OpenRouter (Gemini, DeepSeek-Flash, Gemma, MiniMax) |
 | `DEEPSEEK_API_KEY` | DeepSeek (first-party) |
 | `ZAI_API_KEY` | Z.ai (GLM) |
-| `THAILLM_API_KEY` | ThaiLLM gateway (Typhoon-S-8B, OpenThaiGPT-8B) |
+| `THAILLM_API_KEY` | ThaiLLM gateway (Typhoon-S-8B) |
 
 ## License
 

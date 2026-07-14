@@ -17,7 +17,6 @@ Per-model efficiency over the FahMai matrix (cost = tokens × Track-1 OpenRouter
 | gpt55low | 2504 | 140 | 28,702,244 | 789,350 | $167.192 | $0.067 | 6.9s / 24.6s |
 | gpt55med | 2504 | 201 | 29,626,857 | 910,457 | $175.448 ⚠est | $0.070 | 6.9s / 25.9s |
 | minimax | 2504 | 29 | 28,563,423 | 1,232,930 | $9.449 | $0.004 | 11.4s / 28.8s |
-| openthaigpt | 2504 | 0 | 6,212,817 | 1,633,130 | free | free | 3.5s / 17.0s |
 | opentyphoon | 2504 | 6 | 4,673,289 | 38,794 | free | free | 0.7s / 3.5s |
 | sonnet | 2504 | 2 | 16,848,095 | 783,346 | $31.147 | $0.012 | batch (n/a) |
 | typhoon8b | 2504 | 23 | 13,650,862 | 386,848 | free | free | 1.3s / 4.2s |
@@ -62,10 +61,6 @@ Per-model efficiency over the FahMai matrix (cost = tokens × Track-1 OpenRouter
 | minimax | t2_search | 626 | 4 | 6,655,612 | 273,628 | $2.185 | 12.4s |
 | minimax | t3_both | 626 | 7 | 10,691,434 | 281,539 | $3.321 | 10.3s |
 | minimax | t4_repl | 626 | 10 | 4,008,770 | 328,413 | $1.513 | 13.3s |
-| openthaigpt | t1_grep | 626 | 0 | 1,288,758 | 378,364 | free | 2.9s |
-| openthaigpt | t2_search | 626 | 0 | 1,733,593 | 484,798 | free | 4.5s |
-| openthaigpt | t3_both | 626 | 0 | 2,190,207 | 399,425 | free | 3.9s |
-| openthaigpt | t4_repl | 626 | 0 | 1,000,259 | 370,543 | free | 3.2s |
 | opentyphoon | t1_grep | 626 | 1 | 1,153,397 | 8,212 | free | 0.6s |
 | opentyphoon | t2_search | 626 | 1 | 1,120,405 | 9,662 | free | 0.7s |
 | opentyphoon | t3_both | 626 | 4 | 2,188,590 | 10,572 | free | 0.8s |

@@ -27,18 +27,20 @@ QJSON = BENCH / "questions" / "questions_v02.json"
 
 CFG_ORDER = ["t1_grep", "t2_search", "t3_both", "t4_repl"]
 CFG_DISP = {"t1_grep": "T1 grep", "t2_search": "T2 search", "t3_both": "T3 both", "t4_repl": "T4 repl"}
+# The 12 model configurations reported in paper Table 3, in table order.
 MODELS = [
-    ("gpt54med", "gpt-5.4 (med)", "frontier"), ("gpt55med", "gpt-5.5 (med)", "frontier"),
-    ("gpt55low", "gpt-5.5 (low)", "frontier"), ("sonnet", "Claude Sonnet 4.6", "frontier"),
+    ("gpt54med", "gpt-5.4 (med)", "closed"), ("gpt55med", "gpt-5.5 (med)", "closed"),
+    ("gpt55low", "gpt-5.5 (low)", "closed"), ("sonnet", "Claude Sonnet 4.6", "closed"),
+    ("gemini30flash", "Gemini-3-Flash", "closed"),
     ("glm51", "GLM-5.1", "open"), ("deepseekv4pro", "DeepSeek-V4-Pro", "open"),
-    ("deepseekv4flash", "DeepSeek-V4-Flash", "open"), ("gemini30flash", "Gemini-3-Flash", "open"),
+    ("deepseekv4flash", "DeepSeek-V4-Flash", "open"),
     ("gemma4", "Gemma-4-31B", "open"), ("minimax", "MiniMax-M2.7", "open"),
     ("opentyphoon", "Typhoon-2.5 (30B)", "thai"), ("typhoon8b", "Typhoon-S-8B", "thai"),
-    ("openthaigpt", "OpenThaiGPT-8B", "thai"),
 ]
 DISP = {k: d for k, d, _ in MODELS}
 TIER = {k: t for k, _, t in MODELS}
-TIER_ORDER = ["frontier", "open", "thai"]
+TIER_ORDER = ["closed", "open", "thai"]
+TIER_DISP = {"closed": "Closed source", "open": "Open weight", "thai": "Thai open weight"}
 
 
 def grade(it, resp):  # verbatim from scripts/grade.py
@@ -140,7 +142,7 @@ def main() -> None:
                 m, lo, hi = boot_ci(vec, args.boot, rng)
                 results[k][c] = {"acc": m, "lo": lo, "hi": hi, "n": len(vec)}
                 cells_disp.append(f"{m:.1f} [{lo:.1f}–{hi:.1f}]")
-            P(f"| {tier} | {DISP[k]} | " + " | ".join(cells_disp) + " |")
+            P(f"| {TIER_DISP[tier]} | {DISP[k]} | " + " | ".join(cells_disp) + " |")
 
     md = HERE / "leaderboard-ci.md"
     md.write_text("\n".join(out) + "\n", encoding="utf-8")
