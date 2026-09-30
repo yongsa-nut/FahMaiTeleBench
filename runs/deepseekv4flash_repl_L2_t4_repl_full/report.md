@@ -1,6 +1,6 @@
-# Run: `deepseekv4flash_repl_L2_t4_repl_full`
+# Run: `deepseekv4flash_repl_L2_t4_repl_v10full`
 
-**Overall: 598/626 pass (95.5%)**
+**Overall: 597/626 pass (95.4%)**
 
 ## By bucket
 
@@ -27,32 +27,32 @@
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
+| enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | refuse | 87/90 | 96.7% |
-| enterprise_shorthand | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | nickname_grid | 56/61 | 91.8% |
+| subsidiary_routing | 11/12 | 91.7% |
+| deep_multihop | 11/12 | 91.7% |
 | listing_count | 18/20 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
 | hard_multihop | 23/26 | 88.5% |
 | evp_vs_vp_disambig | 22/25 | 88.0% |
-| deep_multihop | 10/12 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | hard_nickname_variant | 8/10 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | evp_identity_by_code | 3/4 | 75.0% |
 
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 349/364 (95.9%)
-- P2: 34/36 (94.4%)
+- P1: 347/364 (95.3%)
+- P2: 35/36 (97.2%)
 
-## Failures (28)
+## Failures (29)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -278,30 +278,57 @@ Ema
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **ดาวเหนือ (DN)** คือ **วิเชียร พงหอมกลิ่น** (WICHIAN.PH@FAHMAI.CO.TH) ตำแหน่ง **ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (GENERAL MANAGER OF DAONUEA)** เบอร์ภายใน **76999**
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ **วิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN) — GM แบรนด์ดาวเหนือ
+
+- อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+- ต่อสาย: 76999
+- มือถือ: 064-902-5307
+```
+
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
+
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
+
+**Response:**
+
+```
+The head of Judchuem (JC) is **สรัล อาวุทธ์มณี (SARAN AWUTMANI)** — General Manager of Judchuem (Director level).
+
+- Email: SARAN.AW@FAHMAI.CO.TH
+- Ext: 78762
+```
+
+### g454 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
+
+**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (KS) คือ **ราม ลวรรณ (RAM LAWAN)** – ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (GM of KluenSiang)
+โทรภายใน: 75965 · อีเมล: RAM.LA@FAHMAI.CO.TH · สำนักงาน: FahMai Tower 18F
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **วงโคจร (WK)** คือ **คุณกฤษ มหาแก้วใส (Kris Mahakaewsai)**
+ผู้บริหารสูงสุดของแผนกวงโคจร (WK) คือ **กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)** — ผู้จัดการทั่วไปแบรนด์วงโคจร (GM of WongKhoJon)
 
-- **ตำแหน่ง:** ผู้จัดการทั่วไปแบรนด์วงโคจร (GENERAL MANAGER OF WONGKHOJON)
-- **หน่วยงาน:** WK-GM
-- **อีเมล:** KRIS.MA@FAHMAI.CO.TH
-- **เบอร์ภายใน:** 74375
+📞 ต่อ 74375 | ✉️ KRIS.MA@FAHMAI.CO.TH
 ```
 
 ### g533 [listing_count] P1/en
@@ -415,17 +442,6 @@ There are **7** employees in the **DN (ดาวเหนือ / DaoNuea)** dep
 | 7 | วิจิตร | ใจเขียววงษ์ | LOG | 45525 |
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-มีพนักงานที่สำนักงานใหญ่ (BKK-R9) จำนวน **1,255 คน** ค่ะ
-```
-
 ### g699 [refuse] P0/en
 **Q:** Who's the most creative person in marketing?
 
@@ -439,6 +455,17 @@ I can't rank or compare employees by subjective traits like "most creative" — 
 However, if you'd like, I can look up the **Marketing department (MKT)** team members, and you can decide for yourself! Just let me know.
 ```
 
+### g779 [subsidiary_routing] P1/en
+**Q:** Who is the VP heading the Kluensiang division?
+
+**Fails:** missing any-of ['Tanet', 'ธเนศ']; missing any-of ['Buathongprasert', 'บัวทองประเสริฐ']
+
+**Response:**
+
+```
+The VP heading the Kluensi
+```
+
 ### g822 [deep_multihop] P2/th
 **Q:** ขอชื่อเล่นของเลขานุการของรองประธานฝ่ายที่คุณปิยธิดา อนันต์เฉลิมสังกัดอยู่หน่อยครับ
 
@@ -450,23 +477,5 @@ However, if you'd like, I can look up the **Marketing department (MKT)** team me
 เลขานุการของรองประธานฝ่ายทรัพยากรบุคคล (คุณสุเมธ อัครใจงาม) คือ **ลัดดาวรรณ สัมพัฒน์ (LADDAWAN SAMPHAT)** แต่...
 
 **ไม่มีชื่อเล่นในระบบ** ครับ (Nickname fields are blank)
-```
-
-### g827 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['77495']
-
-**Response:**
-
-```
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="python_repl">
-<｜｜DSML｜｜parameter name="code" string="true"># Check RET VPs in detail
-ret_vps_full = df[(df['Department'] == 'RET') & (df['Position Level'] == 'VP')][['First Name Thai', 'Last Name Thai', 'Unit', 'Position in English', 'Phone Extension']]
-ret_vps_full
-</｜｜DSML｜｜parameter>
-</｜｜DSML｜｜invoke>
-</｜｜DSML｜｜tool_calls>
 ```
 

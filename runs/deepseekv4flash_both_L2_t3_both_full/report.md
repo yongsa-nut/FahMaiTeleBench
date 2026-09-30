@@ -1,6 +1,6 @@
-# Run: `deepseekv4flash_both_L2_t3_both_full`
+# Run: `deepseekv4flash_both_L2_t3_both_v10full`
 
-**Overall: 606/626 pass (96.8%)**
+**Overall: 609/626 pass (97.3%)**
 
 ## By bucket
 
@@ -32,27 +32,27 @@
 | multi_hop | 18/18 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | nickname_grid | 60/61 | 98.4% |
 | refuse | 88/90 | 97.8% |
 | listing_count | 19/20 | 95.0% |
+| enterprise_shorthand | 19/20 | 95.0% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
+| subsidiary_routing | 11/12 | 91.7% |
 | hard_nickname_variant | 9/10 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
+| superlative | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
 | dept_listing_small | 6/7 | 85.7% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | hard_multihop | 21/26 | 80.8% |
-| superlative | 8/10 | 80.0% |
 | org_plus_person | 2/3 | 66.7% |
 
 ## By priority
 
 - P0: 221/226 (97.8%)
-- P1: 351/364 (96.4%)
-- P2: 34/36 (94.4%)
+- P1: 353/364 (97.0%)
+- P2: 35/36 (97.2%)
 
-## Failures (20)
+## Failures (17)
 
 ### g175 [nickname_grid] P0/th
 **Q:** ตะวัน ที่อยู่ DN คือใคร
@@ -219,56 +219,17 @@
 อีเมล: **KRIS.MA@FAHMAI.CO.TH**
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
 
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ **คุณวิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN)
-
-ตำแหน่ง: **GENERAL MANAGER OF DAONUEA** (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ)
-- เบอร์โทรศัพท์มือถือ: 064-902-5307
-- อีเมล: WICHIAN.PH@FAHMAI.CO.TH
-- ที่อยู่: FahMai Tower ชั้น 19
-- สาขา: BKK-R9 (สำนักงานใหญ่)
-```
-
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
-
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **Kluensiang (KS / คลื่นเสียง)** คือ
+The head of Judchuem (จุดเชื่อม) is **SARAN AWUTMANI (สรัล อาวุทธ์มณี)**, General Manager of Judchuem (Director level).
 
-**ราม ลวรรณ (RAM LAWAN)** — ชื่อเล่น จุ๊บ (JUB)
-ตำแหน่ง: **GENERAL MANAGER OF KLUENSIANG** (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)
-อีเมล: RAM.LA@FAHMAI.CO.TH
-เบอร์ภายใน: 75965
-ที่อยู่: FahMai Tower ชั้น 18 (BKK-R9)
-```
-
-### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
-
-**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก **WK (วงโคจร / Wongkhojon)** คือ **คุณกฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)** — ชื่อเล่น **ขิง (KHING)**
-
-**ตำแหน่ง:** General Manager of Wongkhojon (ผู้จัดการทั่วไปแบรนด์วงโคจร)
-**อีเมล:** KRIS.MA@FAHMAI.CO.TH
-**เบอร์ภายใน:** 74375
-**ออฟฟิศ:** FahMai Tower ชั้น 7
-
-😊
+📞 Ext: 78762 | Mobile: 064-655-7513 | ✉️ SARAN.AW@FAHMAI.CO.TH | FahMai Tower 24F
 ```
 
 ### g535 [listing_count] P1/en
@@ -289,17 +250,6 @@
 | ราม | มหากิตติ | DN-OPS-LEAD-4 |
 | วีระ | ชัยโชคดี | DN-PD-LEAD-1 |
 | กิตติศักดิ์ | ฟ้าใสทอง | DN-MKT-LEAD-4 |
-```
-
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-มีพนักงาน **1,255 คน** ที่ทำงานที่สำนักงานใหญ่ (FahMai Tower) สาขา Rama IX (BKK-R9) ครับ 🏢
 ```
 
 ### g682 [enterprise_shorthand] P1/th
@@ -331,20 +281,20 @@ I can't rank people by creativity — that's subjective. 😅
 But I can list the Marketing (MKT) team if you'd like to know who works there. Just let me know!
 ```
 
-### g832 [superlative] P2/th
-**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
+### g772 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
 
-**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
+**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
 
 **Response:**
 
 ```
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="grep_csv">
-<｜｜DSML｜｜parameter name="pattern" string="true">2015</｜｜DSML｜｜parameter>
-<｜｜DSML｜｜parameter name="max_matches" string="false">50</｜｜DSML｜｜parameter>
-</｜｜DSML｜｜invoke>
-</｜｜DSML｜｜tool_calls>
+หัวหน้าฝ่ายวิศวกรรมแบรนด์จุดเชื่อม (JC) คือ **คุณสุขุม เกษมแช้มช้อย** (ซูคุม / SUKHUM KASEMCHAEMCHOI) — ตำแหน่งผู้จัดการวิศวกรผลิตภัณฑ์จุดเชื่อม (MANAGER JUDCHUEM PRODUCT ENGINEER)
+
+- Email: SUKHUM.KA@FAHMAI.CO.TH
+- เบอร์ภายใน: 74900
+- โทรศัพท์: 094-219-4563
+- ที่ทำงาน: FahMai Tower 21F
 ```
 
 ### g840 [superlative] P2/th

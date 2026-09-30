@@ -1,6 +1,6 @@
-# Run: `opentyphoon_repl_L2_t4_repl_full`
+# Run: `opentyphoon_repl_L2_t4_repl_v10full`
 
-**Overall: 375/626 pass (59.9%)**
+**Overall: 362/626 pass (57.8%)**
 
 ## By bucket
 
@@ -15,30 +15,30 @@
 | multi_entity_turn | 17/20 | 85.0% |
 | tier_listing | 5/6 | 83.3% |
 | email_identity_lookup | 5/6 | 83.3% |
-| superlative | 8/10 | 80.0% |
 | nickname_grid | 48/61 | 78.7% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | name_lookup | 15/20 | 75.0% |
-| surname_family | 18/24 | 75.0% |
 | extension_reverse | 5/7 | 71.4% |
 | email_mobile_lookup | 5/7 | 71.4% |
 | hard_nickname_variant | 7/10 | 70.0% |
+| superlative | 7/10 | 70.0% |
 | vp_identity | 3/5 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
+| retrieval | 8/14 | 57.1% |
 | multi_hop | 10/18 | 55.6% |
-| bilingual | 21/40 | 52.5% |
 | dept_listing_medium | 4/8 | 50.0% |
-| retrieval | 7/14 | 50.0% |
-| enterprise_shorthand | 10/20 | 50.0% |
+| bilingual | 20/40 | 50.0% |
 | evp_vs_vp_disambig | 12/25 | 48.0% |
 | hard_implicit_hierarchy | 9/19 | 47.4% |
 | casual_name_lookup | 6/15 | 40.0% |
 | dept_member_count | 6/15 | 40.0% |
+| enterprise_shorthand | 8/20 | 40.0% |
+| surname_family | 9/24 | 37.5% |
 | org_plus_person | 1/3 | 33.3% |
 | evp_identity_by_description | 1/4 | 25.0% |
 | ceo_president | 1/4 | 25.0% |
-| subsidiary_routing | 3/12 | 25.0% |
 | org_informal_listing | 1/6 | 16.7% |
+| subsidiary_routing | 2/12 | 16.7% |
 | hard_multihop | 3/26 | 11.5% |
 | evp_secretary | 0/5 | 0.0% |
 | dept_listing_small | 0/7 | 0.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 162/226 (71.7%)
-- P1: 195/364 (53.6%)
-- P2: 18/36 (50.0%)
+- P1: 183/364 (50.3%)
+- P2: 17/36 (47.2%)
 
-## Failures (251)
+## Failures (264)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -578,17 +578,15 @@ The current CEO of FahMai is **สมชาย ฟ้าสว่าง**, who a
 ไม่มีเบอร์มือถือในระบบ
 ```
 
-### g193 [nickname_grid] P0/th
-**Q:** ใครคือปันปัน
+### g190 [nickname_grid] P0/th
+**Q:** นัตตี้คือใครนะ
 
-**Fails:** missing any-of ['ปัน', 'ปัน', 'ไม่พบข้อมูล']
+**Fails:** missing any-of ['ดวงเพ็ญ', 'Duanphen', 'ยุทธนา']
 
 **Response:**
 
 ```
-ฤทธิชัย แก้วใสภิญโญ  
-Email: RITTICHAI.KA@FAHMAI.CO.TH  
-เบอร์ภายใน: 75477
+นัตตี้อาจหมายถึงหลายคนในระบบ แต่ไม่มีข้อมูลชื่อเล่นตรงกับ "นัตตี้" โดยตรง ดังนั้นไม่สามารถระบุได้อย่างแน่ชัดจากข้อมูลที่มี
 ```
 
 ### g196 [dept_listing_small] P1/en
@@ -636,4 +634,4 @@ Email: RITTICHAI.KA@FAHMAI.CO.TH
 ```
 
 
-_+201 more failures — see results.jsonl_
+_+214 more failures — see results.jsonl_

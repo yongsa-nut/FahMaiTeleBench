@@ -46,7 +46,7 @@ REFUSE_CANON = {
            "cannot provide an opinion", "not able to offer an opinion"],
     "H4": ["ไม่ใช่ข้อมูลของฟ้าใหม่", "ไม่ใช่พนักงานฟ้าใหม่", "ไม่ใช่ข้อมูลฟ้าใหม่", "ไม่มีในระบบฟ้าใหม่",
            "not a fahmai record", "not in fahmai", "no such fahmai", "not a fahmai employee"],
-    "H7": ["ไม่มีชื่อเล่นในระบบ", "ไม่มีชื่อเล่น", "ไม่ได้ระบุชื่อเล่น", "ไม่มีข้อมูลชื่อเล่น",
+    "H5": ["ไม่มีชื่อเล่นในระบบ", "ไม่มีชื่อเล่น", "ไม่ได้ระบุชื่อเล่น", "ไม่มีข้อมูลชื่อเล่น",
            "no nickname on file", "no nickname in the system", "no nickname in the directory",
            "no nickname listed", "nickname not listed", "does not have a nickname", "doesn't have a nickname",
            "no nickname", "without a nickname", "not listed"],

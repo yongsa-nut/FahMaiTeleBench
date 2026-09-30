@@ -1,6 +1,6 @@
-# Run: `minimax_repl_L2_t4_repl_full`
+# Run: `minimax_repl_L2_t4_repl_v10full`
 
-**Overall: 554/626 pass (88.5%)**
+**Overall: 548/626 pass (87.5%)**
 
 ## By bucket
 
@@ -20,11 +20,10 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
+| bilingual | 39/40 | 97.5% |
 | surname_family | 23/24 | 95.8% |
 | refuse | 86/90 | 95.6% |
 | name_lookup | 19/20 | 95.0% |
-| bilingual | 38/40 | 95.0% |
-| enterprise_shorthand | 19/20 | 95.0% |
 | evp_vs_vp_disambig | 23/25 | 92.0% |
 | subsidiary_routing | 11/12 | 91.7% |
 | thai_knowledge | 9/10 | 90.0% |
@@ -34,13 +33,14 @@
 | counterfactual | 22/25 | 88.0% |
 | dept_listing_medium | 7/8 | 87.5% |
 | retrieval | 12/14 | 85.7% |
-| nickname_grid | 51/61 | 83.6% |
+| nickname_grid | 50/61 | 82.0% |
 | casual_name_lookup | 12/15 | 80.0% |
 | noisy_name_form | 16/20 | 80.0% |
-| hard_implicit_hierarchy | 15/19 | 78.9% |
+| enterprise_shorthand | 15/20 | 75.0% |
 | deep_multihop | 9/12 | 75.0% |
 | dept_member_count | 11/15 | 73.3% |
 | hard_multihop | 19/26 | 73.1% |
+| hard_implicit_hierarchy | 13/19 | 68.4% |
 | multi_hop | 12/18 | 66.7% |
 | evp_secretary | 3/5 | 60.0% |
 | evp_identity_by_code | 2/4 | 50.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 201/226 (88.9%)
-- P1: 321/364 (88.2%)
+- P0: 200/226 (88.5%)
+- P1: 316/364 (86.8%)
 - P2: 32/36 (88.9%)
 
-## Failures (72)
+## Failures (78)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -303,6 +303,19 @@ The secretary for LOGVP is **ณัฐกานต์ ศรีอารมณ�
 - อาจเป็นชื่อเล่น/ชื่อจริงที่แตกต่าง
 
 หากทราบข้อมูลเพิ่มเติม เช่น ชื่อจริง แผนก หรือสาขา ช่วยบอกมาได้เลยครับ
+```
+
+### g194 [nickname_grid] P0/th
+**Q:** ใครคือออมออม
+
+**Fails:** missing any-of ['กฤษฎา', 'Kritsada', 'อาทิตย์']
+
+**Response:**
+
+```
+ไม่พบพนักงานที่มีชื่อเล่น "ออมออม" ในระบบค่ะ
+
+(มี "ออม" 4 คน แต่เป็นชื่อเล่นอื่น ไม่ใช่ "ออมออม")
 ```
 
 ### g196 [dept_listing_small] P1/en
@@ -605,47 +618,70 @@ The VP heading the DN (ดาวเหนือ) department is **วิเชี
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **DN (ดาวเหนือ)** คือ **คุณวิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (DN-GM)
+**ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (DN-GM):** วิเชียร พงหอมกลิ่น
 
 📧 WICHIAN.PH@FAHMAI.CO.TH | 📞 76999
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
 
-**คุณราม ลวรรณ** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง
+
+ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ **ราม ลวรรณ** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (KS-GM)
 
 - 📧 RAM.LA@FAHMAI.CO.TH
 - 📞 75965
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-**ผู้บริหารสูงสุดของแผนก Wongkhojon (WK):**
 
-**กฤษ มหาแก้วใส** — ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)
-- 📧 KRIS.MA@FAHMAI.CO.TH
-- 📞 74375
+**ผู้บริหารสูงสุดของแผนก Wongkhojon (วงโคจร):** กฤษ มหาแก้วใส — ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)
+
+📧 KRIS.MA@FAHMAI.CO.TH | 📞 74375
+```
+
+### g462 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-TR section, who is the most senior employee?
+
+**Fails:** missing any-of ['อมรอาทิตย์', 'Amonarthitkul']
+
+**Response:**
+
+```
+**อุกฤษฎ์** — Director Finance (FIN-TR), เริ่มงานปี 2016 เป็น Senior สุดในส่วนนี้ค่ะ
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+**สุขุม เกษมแช้มช้อย (ตะวัน)** — ผู้จัดการวิศวกรผลิตภัณฑ์จุดเชื่อม (Manager), เริ่มงานปี 2020
+
+📧 SUKHUM.KA@FAHMAI.CO.TH | 📞 74900
 ```
 
 ### g471 [bilingual] P1/th
@@ -665,17 +701,6 @@ FahMai อาจไม่มีตำแหน่ง COO หรือใช้�
 - หรือติดต่อ **CEO Office / EA ของ CEO** แทนครับ
 
 ต้องการให้ค้นหาตำแหน่งอื่นแทนไหมครับ?
-```
-
-### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
-
-**Fails:** missing any-of ['00001072']
-
-**Response:**
-
-```
-**CPO** ของฟ้าใหม่คือ **มาลัย** — รหัสพนักงาน **08113564** ครับ
 ```
 
 ### g533 [listing_count] P1/en
@@ -711,29 +736,5 @@ There are **7 employees** in the DN department at IC level who started in 2020.
 No record found.
 ```
 
-### g565 [retrieval] P1/th
-**Q:** ขอเบอร์ต่อของคุณ NERNER หน่อยครับ
 
-**Fails:** missing any-of ['14122']
-
-**Response:**
-
-```
-ไม่พบข้อมูล
-```
-
-### g570 [noisy_name_form] P1/th
-**Q:** ขอ email ของ Tanida เลขา COO หน่อยครับ
-
-**Fails:** missing any-of ['THANIDA.TH@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-ไม่พบข้อมูล
-
-ไม่มีรายชื่อ ธนิดา ที่ดำรงตำแหน่งเลขา COO ในระบบ หรือหน่วย COO-EA ไม่มีในไดเรกทอรีครับ
-```
-
-
-_+22 more failures — see results.jsonl_
+_+28 more failures — see results.jsonl_

@@ -1,6 +1,6 @@
-# Run: `gpt54med_grep-only_L2_t1_grep_full`
+# Run: `gpt54med_grep-only_L2_t1_grep_v10full`
 
-**Overall: 608/626 pass (97.1%)**
+**Overall: 606/626 pass (96.8%)**
 
 ## By bucket
 
@@ -26,7 +26,6 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
-| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
@@ -40,8 +39,9 @@
 | listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
 | superlative | 9/10 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
+| surname_family | 21/24 | 87.5% |
 | tier_listing | 5/6 | 83.3% |
 | deep_multihop | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 355/364 (97.5%)
+- P1: 353/364 (97.0%)
 - P2: 33/36 (91.7%)
 
-## Failures (18)
+## Failures (20)
 
 ### g073 [evp_vs_vp_disambig] P0/th
 **Q:** ขอ LOGFL หน่อย ไม่เอา LOGVP
@@ -167,25 +167,14 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Daonuea (DN) คือ **วิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ, **WICHIAN.PH@FAHMAI.CO.TH**, ต่อ **76999**
-```
-
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
-
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก KS คือ **ราม ลวรรณ (จุ๊บ)** — **ผู้จัดการทั่วไปแบรนด์คลื่นเสียง**, **RAM.LA@FAHMAI.CO.TH**, ต่อ **75965**
+ผู้บริหารสูงสุดของแผนก Daonuea คือ **วิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ, **WICHIAN.PH@FAHMAI.CO.TH**, ต่อ **76999**
 ```
 
 ### g542 [listing_count] P1/th
@@ -210,6 +199,45 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 ไม่พบข้อมูล Natanicha ในบทบาทนี้ — เลขาฯ ของ RETVP ในระบบคือ คุณยุพา สัมกิตติ, อีเมล **YU-PHA.SA@FAHMAI.CO.TH**
 ```
 
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ยุพา ไกรศรีมณี — SAIFAH PRODUCT MANAGER, YU-PHA.KR@FAHMAI.CO.TH, ext. 77475
+- วิภา ไกรศรีมณี (ฮูก) — B2B SUPPORT SPECIALIST, WIPHA.KR@FAHMAI.CO.TH, ext. 75335
+- พาณิช ไกรศรีมณี — SOLUTIONS ENGINEER, PANIT.KR@FAHMAI.CO.TH, ext. 08109
+```
+
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก — Lead Technical Support Agent, SUP-TECH — PANYA.WA@fahmai.co.th, ext. 72201
+- จรูญ วัชรจงรัก — Learning & Development Specialist, HR-LD — CHAROON.WA@fahmai.co.th, ext. 71981
+```
+
+### g622 [surname_family] P1/en
+**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+Here are all employees with the surname อภิญญาเสริม:
+
+- วีระ อภิญญาเสริม — SaiFah Product Manager, SF-PD-25, `VEERA.AP@fahmai.co.th`
+- ดาหลา อภิญญาเสริม — Daonuea Brand Operations, DN-OPS-81, `DARHA.AP@fahmai.co.th`, ext. 75781
+```
+
 ### g639 [nickname_grid] P1/th
 **Q:** เอ คือใคร มีใครบ้าง
 
@@ -227,15 +255,15 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 - **เอกพล ชัยวัฒน
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g676 [enterprise_shorthand] P1/th
+**Q:** พนักงานที่ทำงานทางไกล มีกี่คน
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 160
 
 **Response:**
 
 ```
-1,255 staff work at the Rama IX (BKK-R9) HQ branch.
+ไม่สามารถให้ข้อมูลนี้ได้ เนื่องจากระบบไดเรกทอรีไม่มีข้อมูลสถานะการทำงานทางไกลของพนักงาน
 ```
 
 ### g826 [deep_multihop] P2/en

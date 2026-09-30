@@ -1,6 +1,6 @@
-# Run: `gpt55low_grep-only_L2_t1_grep_full`
+# Run: `gpt55low_grep-only_L2_t1_grep_v10full`
 
-**Overall: 602/626 pass (96.2%)**
+**Overall: 595/626 pass (95.0%)**
 
 ## By bucket
 
@@ -13,7 +13,6 @@
 | ceo_president | 4/4 | 100.0% |
 | name_lookup | 20/20 | 100.0% |
 | casual_name_lookup | 15/15 | 100.0% |
-| nickname_grid | 61/61 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
@@ -36,23 +35,24 @@
 | subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | refuse | 89/90 | 98.9% |
-| surname_family | 23/24 | 95.8% |
-| enterprise_shorthand | 19/20 | 95.0% |
+| nickname_grid | 59/61 | 96.7% |
 | listing_count | 18/20 | 90.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | dept_member_count | 13/15 | 86.7% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | evp_identity_by_description | 3/4 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
+| surname_family | 18/24 | 75.0% |
 | hard_multihop | 19/26 | 73.1% |
 | hard_nickname_variant | 7/10 | 70.0% |
 
 ## By priority
 
-- P0: 218/226 (96.5%)
-- P1: 349/364 (95.9%)
+- P0: 216/226 (95.6%)
+- P1: 344/364 (94.5%)
 - P2: 35/36 (97.2%)
 
-## Failures (24)
+## Failures (31)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -63,6 +63,28 @@
 
 ```
 Tech is led by Rittichai Kaewsaiphinyō, Chief Technology Officer — RITTICHAI.KA@FAHMAI.CO.TH, ext. 75477.
+```
+
+### g191 [nickname_grid] P0/th
+**Q:** มิ้นตี้คือใครนะ
+
+**Fails:** missing any-of ['เบญจวรรณ', 'Benjawan', 'จุฑามาศ']
+
+**Response:**
+
+```
+เจอ “มิ้น” หลายคนครับ ระบุแผนก/สาขาเพิ่มได้ไหม เช่น FIN, TEC, SUP, RET, SF ฯลฯ
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+เจอหลายคนชื่อเล่น “มุก” ค่ะ รบกวนระบุชื่อจริง/แผนก/สาขาเพิ่มนิดนึงได้ไหมคะ?
 ```
 
 ### g231 [dept_member_count] P1/th
@@ -224,48 +246,37 @@ COO: PONGKAN RAJCHAKAN — PONGKAN.RA@FAHMAI.CO.TH, ext. 75464.
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ Daonuea (DN) คือ วิเชียร พงหอมกลิ่น — WICHIAN.PH@FAHMAI.CO.TH, ต่อ 76999
-```
-
-### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
-
-**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
-
-**Response:**
-
-```
-Saran Awutmani — General Manager of JudChuem (JC). Email: SARAN.AW@FAHMAI.CO.TH, ext. 78762.
+ผู้บริหารสูงสุดของ Daonuea คือ วิเชียร พงหอมกลิ่น — WICHIAN.PH@FAHMAI.CO.TH, ต่อ 76999
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ราม ลวรรณ (RAM LAWAN) — General Manager of KluenSiang, อีเมล RAM.LA@FAHMAI.CO.TH, ต่อ 75965
+ราม ลวรรณ — General Manager of KluenSiang  
+อีเมล: RAM.LA@FAHMAI.CO.TH, ต่อ 75965
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-กฤษ มหาแก้วใส — General Manager of WongKhoJon (WK)  
-อีเมล: KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
+กฤษ มหาแก้วใส — General Manager of WongKhoJon, อีเมล KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
 ```
 
 ### g533 [listing_count] P1/en
@@ -290,6 +301,70 @@ Saran Awutmani — General Manager of JudChuem (JC). Email: SARAN.AW@FAHMAI.CO.T
 6 employees.
 ```
 
+### g606 [surname_family] P1/en
+**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ปกรณ์ เขียวขจีศรี — DATA ENGINEER, TEC — PAKORN.KI@FAHMAI.CO.TH
+- อัจฉรา เขียวขจีศรี — DIRECTOR CRM SPECIALIST, MKT — ATCHARA.KI@FAHMAI.CO.TH, ext. 78341, 067-671-3743
+- ไพฑูรย์ เขียวขจีศรี — LEAD SAIFAH BRAND MARKETER, SF — PAITOON.KI@FAHMAI.CO.TH, ext. 74791
+```
+
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ยุพา ไกรศรีมณี — YU-PHA.KR@FAHMAI.CO.TH, ext. 77475, mobile 061-810-1278
+- วิภา ไกรศรีมณี — WIPHA.KR@FAHMAI.CO.TH, ext. 75335
+- พาณิช ไกรศรีมณี — PANIT.KR@FAHMAI.CO.TH, ext. 08109
+```
+
+### g610 [surname_family] P1/en
+**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ศศิ บุญเรืองกุล — PHONE SUPPORT AGENT, SUP — SASI.BO@FAHMAI.CO.TH, ext. 72832
+- น้ำทิพย์ บุญเรืองกุล — SALES ASSOCIATE SIAM, RET — NAMTHIP.BO@FAHMAI.CO.TH, ext. 19234
+```
+
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก — PANYA.WA@FAHMAI.CO.TH, ext. 72201, mobile 093-616-9898
+- จรูญ วัชรจงรัก — CHAROON.WA@FAHMAI.CO.TH, ext. 71981
+```
+
+### g620 [surname_family] P1/en
+**Q:** List everyone with the surname สมประเสริฐ (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+Everyone with surname สมประเสริฐ:
+
+- ส้ม สมประเสริฐ — SOM.SO@FAHMAI.CO.TH, ext. 29089, 086-366-0302
+- ดารา สมประเสริฐ — DARA.SO@FAHMAI.CO.TH, ext. 78138, 065-660-6196
+```
+
 ### g622 [surname_family] P1/en
 **Q:** List everyone with the surname อภิญญาเสริม (give all of them).
 
@@ -302,15 +377,26 @@ Saran Awutmani — General Manager of JudChuem (JC). Email: SARAN.AW@FAHMAI.CO.T
 - ดาหลา อภิญญาเสริม — DARHA.AP@FAHMAI.CO.TH, ext. 75781
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g671 [enterprise_shorthand] P1/th
+**Q:** พนักงานสาขาโคราช มีกี่คน
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 30
 
 **Response:**
 
 ```
-1,255 staff work at the Rama IX (BKK-R9) HQ branch.
+สาขาโคราชมีพนักงานทั้งหมด 72 คน
+```
+
+### g672 [enterprise_shorthand] P1/en
+**Q:** How many staff work at the Chonburi branch?
+
+**Fails:** missing count 49
+
+**Response:**
+
+```
+40 staff work at the Chonburi branch.
 ```
 
 ### g841 [superlative] P2/en

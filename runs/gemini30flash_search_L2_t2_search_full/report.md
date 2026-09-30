@@ -1,6 +1,6 @@
-# Run: `gemini30flash_search_L2_t2_search_full`
+# Run: `gemini30flash_search_L2_t2_search_v10full`
 
-**Overall: 548/626 pass (87.5%)**
+**Overall: 543/626 pass (86.7%)**
 
 ## By bucket
 
@@ -22,24 +22,24 @@
 | refuse | 88/90 | 97.8% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | dept_member_count | 14/15 | 93.3% |
-| retrieval | 13/14 | 92.9% |
 | counterfactual | 23/25 | 92.0% |
-| surname_family | 22/24 | 91.7% |
 | deep_multihop | 11/12 | 91.7% |
+| nickname_grid | 55/61 | 90.2% |
 | name_lookup | 18/20 | 90.0% |
 | brand_prior | 9/10 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
-| nickname_grid | 54/61 | 88.5% |
+| superlative | 9/10 | 90.0% |
+| surname_family | 21/24 | 87.5% |
 | extension_reverse | 6/7 | 85.7% |
+| retrieval | 12/14 | 85.7% |
 | enterprise_shorthand | 17/20 | 85.0% |
+| hard_implicit_hierarchy | 16/19 | 84.2% |
 | tier_listing | 5/6 | 83.3% |
-| bilingual | 33/40 | 82.5% |
 | evp_secretary | 4/5 | 80.0% |
-| listing_count | 16/20 | 80.0% |
-| superlative | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | ceo_president | 3/4 | 75.0% |
+| bilingual | 30/40 | 75.0% |
+| listing_count | 15/20 | 75.0% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 12/18 | 66.7% |
 | noisy_name_form | 10/20 | 50.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 210/226 (92.9%)
-- P1: 306/364 (84.1%)
-- P2: 32/36 (88.9%)
+- P0: 211/226 (93.4%)
+- P1: 299/364 (82.1%)
+- P2: 33/36 (91.7%)
 
-## Failures (78)
+## Failures (83)
 
 ### g024 [evp_identity_by_description] P0/th
 **Q:** ใครดูแลด้าน tech สูงสุด
@@ -154,17 +154,6 @@ The Executive Assistant (EA) for TECPM (CTO) is **Juthamas Kaewsaiphong (Mint)**
 
 ```
 
-### g171 [nickname_grid] P0/th
-**Q:** เสือ ที่ KS เบอร์อะไร
-
-**Fails:** missing any-of ['Anuboonrueng', 'อนุบุญเรือง']
-
-**Response:**
-
-```
-คุณเสือ (วชิร) แผนก KS เบอร์ภายในคือ 72469 ครับ
-```
-
 ### g174 [nickname_grid] P0/th
 **Q:** อรุณ ที่อยู่ SUP คือใคร
 
@@ -190,7 +179,7 @@ The Executive Assistant (EA) for TECPM (CTO) is **Juthamas Kaewsaiphong (Mint)**
 ### g193 [nickname_grid] P0/th
 **Q:** ใครคือปันปัน
 
-**Fails:** missing any-of ['ปัน', 'ปัน', 'ไม่พบข้อมูล']
+**Fails:** missing any-of ['ฤทธิชัย', 'Rittichai']; missing any-of ['แก้วใสภิญโญ', 'Kaewsaiphinyo']
 
 **Response:**
 
@@ -323,7 +312,7 @@ Wiriya Chanchai (Tik) is the Vice President of the Retail Network. You can conta
 ```
 
 ### g354 [hard_multihop] P0/th
-**Q:** เลขา CEO อยู่แผนกไหน
+**Q:** เลขาของประธานเจ้าหน้าที่บริหารอยู่แผนกไหน
 
 **Fails:** missing any-of ['CEO']
 
@@ -387,7 +376,7 @@ According to the directory, the CEO is:
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
@@ -395,41 +384,87 @@ According to the directory, the CEO is:
 
 ```
 
+
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ **คุณราม ลวรรณ (จุ๊บ)** ครับ
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of KluenSiang)
-อีเมล: RAM.LA@FAHMAI.CO.TH | ต่อ: 75965
+
+
+```
+
+### g456 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
+
+**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก Wongkhojon (แบรนด์วงโคจร) คือ **คุณกฤษ มหาแก้วใส (ขิง)** ตำแหน่งผู้จัดการทั่วไป (General Manager)
+*   **อีเมล:** KRIS.MA@FAHMAI.CO.TH
+*   **เบอร์ภายใน:** 74375
+```
+
+### g470 [bilingual] P1/th
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
+
+**Fails:** missing any-of ['00003437']
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้
+```
+
+### g473 [bilingual] P1/th
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
+
+**Fails:** missing any-of ['00001072']
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
 ### g475 [bilingual] P1/th
-**Q:** รหัสหน่วยงาน (unit code) ของ Chief of Staff คืออะไรครับ
+**Q:** รหัสหน่วยงานของ Chief of Staff คืออะไรครับ
 
 **Fails:** missing any-of ['CEO-CoS']
 
 **Response:**
 
 ```
-ไม่พบข้อมูลเกี่ยวกับรหัสหน่วยงาน (unit code) ของ Chief of Staff ในระบบครับ หากคุณหมายถึงผู้ช่วยหรือเลขานุการของผู้บริหารระดับสูง โดยปกติจะใช้รหัสหน่วยงานในรูปแบบ `CEO-EA` หรือ `FIN-EA` ครับ
+รหัสหน่วยงาน (Unit code) ของ Chief of Staff คือ **COS** ครับ
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
 **Response:**
 
 ```
+ไม่สามารถให้ข้อมูลนี้ได้
+```
 
+### g491 [bilingual] P1/en
+**Q:** What is the Chief of Staff's Thai nickname?
+
+**Fails:** missing any-of ['บูม', 'Boom', 'BOOM']
+
+**Response:**
+
+```
+เป้ (Pe)
 ```
 
 ### g493 [bilingual] P1/en
@@ -487,6 +522,22 @@ According to the directory, the CEO is:
 
 ```
 
+### g528 [listing_count] P1/th
+**Q:** มีพนักงานกี่คนที่อยู่แผนก B2B ระดับ IC และเริ่มงานในปี 2021 ครับ
+
+**Fails:** missing count 5
+
+**Response:**
+
+```
+มีพนักงานระดับ IC ในแผนก B2B ที่เริ่มงานในปี 2021 ทั้งหมด 4 คน ดังนี้ครับ:
+
+1. **ณัฏฐพล ศรีพิทักษ์** — ผู้แทนขายองค์กร (081-078-8452)
+2. **อรอนงค์ รัตนเกษม (กบ)** — เจ้าหน้าที่บริการลูกค้าองค์กร (086-927-9060)
+3. **อรุณ สัมภิญโญ (แมว)** — ผู้แทนขายองค์กร
+4. **ไพบูลย์ บุญมางาม (ปุ๊ก)** — วิศวกรโซลูชันองค์กร
+```
+
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
@@ -529,6 +580,17 @@ There are 6 employees in the DN (DaoNuea) department at the Lead level who start
 **Q:** List everyone at Director level in the DN-PD section.
 
 **Fails:** min_items 2 not met (0)
+
+**Response:**
+
+```
+
+```
+
+### g558 [retrieval] P1/en
+**Q:** What is LALIN's full name?
+
+**Fails:** missing any-of ['กิตติ', 'Kitti']; missing any-of ['ราชเกษม', 'Rajkasemkit']
 
 **Response:**
 
@@ -591,60 +653,5 @@ Kittikhun Phongchongrak (Boom) works on the **16th floor** of FahMai Tower (BKK-
 ไม่พบข้อมูล
 ```
 
-### g574 [noisy_name_form] P1/en
-**Q:** Where's Ladawan Samphat's office? She's the EA to our CHRO.
 
-**Fails:** missing any-of ['FahMai Tower 24F', 'ชั้น 24', 'ชั้น24']
-
-**Response:**
-
-```
-no record found
-```
-
-### g579 [noisy_name_form] P1/th
-**Q:** ขอเบอร์ต่อของคุณ Vaen ที่เป็น Director ทีม Escalations หน่อยครับ
-
-**Fails:** missing any-of ['71471']
-
-**Response:**
-
-```
-ไม่พบข้อมูล
-```
-
-### g581 [noisy_name_form] P1/th
-**Q:** คุณ Nattakan VP Logistics นั่งตึกไหนชั้นไหนคะ
-
-**Fails:** missing any-of ['FahMai Tower 16F', 'ชั้น 16', 'ชั้น16']
-
-**Response:**
-
-```
-ไม่พบข้อมูลของคุณ Nattakan ในระบบค่ะ
-```
-
-### g583 [noisy_name_form] P1/en
-**Q:** Can I get the extension for Sompong, the VP of Digital Marketing?
-
-**Fails:** missing any-of ['79901']
-
-**Response:**
-
-```
-no record found
-```
-
-### g585 [noisy_name_form] P1/en
-**Q:** Ravi, the Director of Support Training — what's his extension?
-
-**Fails:** missing any-of ['76523']
-
-**Response:**
-
-```
-no record found
-```
-
-
-_+28 more failures — see results.jsonl_
+_+33 more failures — see results.jsonl_

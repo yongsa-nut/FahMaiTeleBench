@@ -1,6 +1,6 @@
-# Run: `gemma4_both_L2_t3_both_full`
+# Run: `gemma4_both_L2_t3_both_v10full`
 
-**Overall: 576/626 pass (92.0%)**
+**Overall: 572/626 pass (91.4%)**
 
 ## By bucket
 
@@ -29,12 +29,11 @@
 | refuse | 88/90 | 97.8% |
 | nickname_grid | 59/61 | 96.7% |
 | multi_entity_turn | 19/20 | 95.0% |
+| enterprise_shorthand | 19/20 | 95.0% |
 | bilingual | 37/40 | 92.5% |
 | listing_count | 18/20 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | hard_multihop | 23/26 | 88.5% |
-| surname_family | 21/24 | 87.5% |
 | casual_name_lookup | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | noisy_name_form | 17/20 | 85.0% |
@@ -42,17 +41,18 @@
 | deep_multihop | 10/12 | 83.3% |
 | thai_knowledge | 8/10 | 80.0% |
 | counterfactual | 20/25 | 80.0% |
+| surname_family | 18/24 | 75.0% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 11/18 | 61.1% |
-| subsidiary_routing | 7/12 | 58.3% |
+| subsidiary_routing | 5/12 | 41.7% |
 
 ## By priority
 
 - P0: 217/226 (96.0%)
-- P1: 326/364 (89.6%)
+- P1: 322/364 (88.5%)
 - P2: 33/36 (91.7%)
 
-## Failures (50)
+## Failures (54)
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -197,40 +197,41 @@ Email: WIRIYA.CH@FAHMAI.CO.TH | Ext: 79141
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) อีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (Daonuea) คือ คุณวิเชียร พงหอมกลิ่น (General Manager) ติดต่อได้ที่เบอร์ภายใน 76999 หรืออีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ คุณราม ลวรรณ (จุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ต่อ 75965 ครับ
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (Kluensiang) คือ คุณราม ลวรรณ (จุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ต่อ 75965 ครับ
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
+thought
+ผู้บริหารสูงสุดของแผนก Wongkhojon คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
 ```
 
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
@@ -241,7 +242,7 @@ Email: WIRIYA.CH@FAHMAI.CO.TH | Ext: 79141
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
@@ -252,7 +253,7 @@ Email: WIRIYA.CH@FAHMAI.CO.TH | Ext: 79141
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
@@ -410,6 +411,19 @@ no record found
 - ไพฑูรย์ เขียวขจีศรี: PAITOON.KI@FAHMAI.CO.TH
 ```
 
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ยุพา ไกรศรีมณี: YU-PHA.KR@FAHMAI.CO.TH (Ext. 77475)
+- วิภา ไกรศรีมณี: WIPHA.KR@FAHMAI.CO.TH (Ext. 75335)
+- พาณิช ไกรศรีมณี: PANIT.KR@FAHMAI.CO.TH (Ext. 08109)
+```
+
 ### g610 [surname_family] P1/en
 **Q:** List everyone with the surname บุญเรืองกุล (give all of them).
 
@@ -420,6 +434,30 @@ no record found
 ```
 - ศศิ บุญเรืองกุล (เบอร์รี่): SASI.BO@FAHMAI.CO.TH
 - น้ำทิพย์ บุญเรืองกุล: NAMTHIP.BO@FAHMAI.CO.TH
+```
+
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก (ไทเทิล): PANYA.WA@FAHMAI.CO.TH, ต่อ 72201
+- จรูญ วัชรจงรัก (ไผ่): CHAROON.WA@FAHMAI.CO.TH, ต่อ 71981
+```
+
+### g620 [surname_family] P1/en
+**Q:** List everyone with the surname สมประเสริฐ (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ส้ม สมประเสริฐ: SOM.SO@FAHMAI.CO.TH (086-366-0302)
+- ดารา สมประเสริฐ: DARA.SO@FAHMAI.CO.TH (065-660-6196)
 ```
 
 ### g622 [surname_family] P1/en
@@ -434,29 +472,17 @@ no record found
 - ดาหลา อภิญญาเสริม (DARHA APINYASOEM): DARHA.AP@FAHMAI.CO.TH
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-There are 1,255 staff members working at the Rama IX (BKK-R9) HQ branch.
-```
-
 ### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
 **Fails:** missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-หัวหน้าทีมการตลาด (MKT) มี 2 ท่านครับ:
-
-*   **คุณคะวัง กอบสุขรัตน์ (โอ)** - รองประธานฝ่ายการตลาด (VP Marketing) | โทร. 74711 | Email: KWANG.KO@FAHMAI.CO.TH
-*   **คุณสมพงษ์ กอบสุขประเสริฐ** - รองประธานฝ่ายการตลาดดิจิทัล (VP Digital Marketing) | โทร. 79901 | Email: SOMPHONG.KO@FAHMAI.CO.TH
+หัวหน้าฝ่ายการตลาด (VP) มี 2 ท่าน คือ:
+* **คุณคะวัง กอบสุขรัตน์ (โอ)** - รองประธานฝ่ายการตลาด (Email: KWANG.KO@FAHMAI.CO.TH, ต่อ 74711)
+* **คุณสมพงษ์ กอบสุขประเสริฐ** - รองประธานฝ่ายการตลาดดิจิทัล (Email: SOMPHONG.KO@FAHMAI.CO.TH, ต่อ 79901)
 ```
 
 ### g697 [refuse] P0/en
@@ -537,94 +563,76 @@ Sumate Akarajaingam (สุเมธ อัครใจงาม) is the VP of H
 ```
 
 ### g770 [subsidiary_routing] P1/th
-**Q:** แบรนด์ดาวเหนือเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์ดาวเหนือ
 
 **Fails:** missing any-of ['Phonphai', 'พรไพร']; missing any-of ['Arthitkulwongs', 'อาทิตย์วงษ์']
 
 **Response:**
 
 ```
-หัวหน้าฝ่าย (General Manager) ของแบรนด์ดาวเหนือคือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) ติดต่อได้ที่เบอร์ภายใน 76999 หรืออีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
+หัวหน้าฝ่าย (GM) ของแบรนด์ดาวเหนือคือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) ติดต่อได้ที่เบอร์ภายใน 76999 หรืออีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
+```
+
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
+
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
+
+**Response:**
+
+```
+The head of the marketing unit for the DaoNuea brand is **Kovit Mahamani (โกวิท มหามณี)**, who serves as the Manager DaoNuea Brand Marketer.
+
+**Contact Details:**
+*   **Email:** KOVIT.MA@FAHMAI.CO.TH
+*   **Extension:** 77251
+*   **Mobile:** 094-711-0811
 ```
 
 ### g772 [subsidiary_routing] P1/th
-**Q:** แบรนด์จุดเชื่อมเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
 
 **Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
 
 **Response:**
 
 ```
-หัวหน้าฝ่าย (General Manager) ของแบรนด์จุดเชื่อม คือ คุณสรัล อาวุทธ์มณี (SARAN AWUTMANI) อีเมล SARAN.AW@FAHMAI.CO.TH ต่อ 78762 ครับ
+thought
+หัวหน้าฝ่าย (General Manager) ของแบรนด์จุดเชื่อมคือ คุณสรัล อาวุทธ์มณี (Saran Awutmani) อีเมล SARAN.AW@FAHMAI.CO.TH โทร. 78762 หรือ 064-655-7513 ครับ
+```
+
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
+
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+
+**Response:**
+
+```
+หัวหน้าฝ่าย (General Manager) ของแบรนด์คลื่นเสียงคือ คุณราม ลวรรณ (จุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ครับ
 ```
 
 ### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Kluensiang brand?
 
 **Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
 
 **Response:**
 
 ```
-Ram Lawan (Jub) heads the Kluensiang brand.
-Email: RAM.LA@FAHMAI.CO.TH | Ext: 75965
+Ram Lawan (RAM.LA@FAHMAI.CO.TH) heads the Kluensiang brand as the General Manager.
 ```
 
 ### g776 [subsidiary_routing] P1/th
-**Q:** แบรนด์วงโคจรเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์วงโคจร
 
 **Fails:** missing any-of ['Phichai', 'พิชัย']; missing any-of ['Amarinfa', 'อมรินทร์ฟ้า']
 
 **Response:**
 
 ```
-หัวหน้าฝ่าย (General Manager) ของแบรนด์วงโคจร คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ต่อ 74375 ครับ
+หัวหน้าฝ่าย (General Manager) ของแบรนด์วงโคจรคือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
 ```
 
-### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
 
-**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
-
-**Response:**
-
-```
-Kris Mahakaewsai (Khing) heads the Wongkhojon brand.
-Email: KRIS.MA@FAHMAI.CO.TH | Ext: 74375
-```
-
-### g829 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['79653']
-
-**Response:**
-
-```
-แผนกที่มีรองประธาน (VP) เป็นหัวหน้าและมีจำนวนพนักงานน้อยที่สุดคือ **แผนกจุดเชื่อม (JC)** โดยมีพนักงานทั้งหมด 80 คน
-
-เบอร์ต่อของรองประธานฝ่ายจุดเชื่อม (คุณราชินี อาทิตย์สุข) คือ **75642** ครับ
-```
-
-### g830 [deep_multihop] P2/en
-**Q:** Among the departments headed by a VP, take the one with the fewest employees — what's the email of the secretary of that department's VP?
-
-**Fails:** missing any-of ['MONTRA.WI@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-The department headed by a VP with the fewest employees is **JC (JudChuem)**, with 80 employees. The secretary of the VP of that department (JCVP) is **รัตพร จงรักกุล (RATAPON CHONGRAKKUN)**, and her email is **RATAPON.CH@FAHMAI.CO.TH**.
-```
-
-### g840 [superlative] P2/th
-**Q:** section ไหนของฟ้าใหม่ที่มีพนักงานมากที่สุดครับ
-
-**Fails:** missing any-of ['RET-BKK-LP']
-
-**Response:**
-
-```
-จากข้อมูลในระบบ Section ที่มีพนักงานมากที่สุดคือ **TEC-MOB** (วิศวกรโมบาย) ครับ
-```
-
+_+4 more failures — see results.jsonl_

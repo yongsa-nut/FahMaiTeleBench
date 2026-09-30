@@ -1,6 +1,6 @@
-# Run: `deepseekv4pro_repl_L2_t4_repl_full`
+# Run: `deepseekv4pro_repl_L2_t4_repl_v10full`
 
-**Overall: 608/626 pass (97.1%)**
+**Overall: 611/626 pass (97.6%)**
 
 ## By bucket
 
@@ -30,29 +30,29 @@
 | bilingual | 40/40 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
+| enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
+| subsidiary_routing | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | nickname_grid | 60/61 | 98.4% |
 | refuse | 87/90 | 96.7% |
 | hard_multihop | 25/26 | 96.2% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
-| enterprise_shorthand | 19/20 | 95.0% |
 | retrieval | 13/14 | 92.9% |
-| subsidiary_routing | 11/12 | 91.7% |
 | deep_multihop | 11/12 | 91.7% |
 | listing_count | 18/20 | 90.0% |
+| hard_implicit_hierarchy | 16/19 | 84.2% |
 | org_informal_listing | 5/6 | 83.3% |
 | tier_listing | 5/6 | 83.3% |
-| hard_implicit_hierarchy | 15/19 | 78.9% |
 
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 353/364 (97.0%)
+- P1: 356/364 (97.8%)
 - P2: 35/36 (97.2%)
 
-## Failures (18)
+## Failures (15)
 
 ### g071 [evp_vs_vp_disambig] P0/en
 **Q:** MKTDG not MKTVP, who is it
@@ -181,60 +181,41 @@ GM แบรนด์ดาวเหนือคือ **คุณวิเช�
 - **อิสรา จิตรานนท์ฟ้า** — เจ้าหน้าที่จัดอีเวนต์ (MKT) — เบอร์ต่อ 78318
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
-
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก DaoNuea (DN) คือ **คุณวิเชียร พงหอมกลิ่น**  
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (DN-GM)  
-อีเมล: WICHIAN.PH@FAHMAI.CO.TH  
-โทร: 76999
-```
-
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading Judchuem (JC) is **Saran Awutmani** (ศรัณย์ อวุฒิมณี), General Manager of Judchuem.
-
-- **Level:** Director
-- **Email:** SARAN.AW@FAHMAI.CO.TH
-- **Extension:** 78762
+The most senior person heading the Judchuem department is **Saran Awutmani (สรัล อาวุทธ์มณี)**, General Manager of Judchuem — *saran.aw@fahmai.co.th*, ext. 78762.
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแบรนด์คลื่นเสียง (KS) คือ **คุณราม ลวรรณ** ตำแหน่งผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of KluenSiang)
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (KS) คือ **คุณราม ลวรรณ** (GM, KluenSiang)
 
-📧 RAM.LA@FAHMAI.CO.TH | 📞 ต่อ 75965
+📧 RAM.LA@FAHMAI.CO.TH | 📞 เบอร์ต่อ 75965
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ **คุณกฤษ มหาแก้วใส**  
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)  
-อีเมล: KRIS.MA@FAHMAI.CO.TH  
-เบอร์ต่อ: 74375
+ผู้บริหารสูงสุดของแบรนด์วงโคจร (Wongkhojon / WK) คือ **คุณกฤษ มหาแก้วใส** ตำแหน่ง General Manager of Wongkhojon
+
+📧 KRIS.MA@FAHMAI.CO.TH | 📞 ต่อ 74375
 ```
 
 ### g533 [listing_count] P1/en
@@ -268,35 +249,6 @@ The most senior person heading Judchuem (JC) is **Saran Awutmani** (ศรัณ
 
 ```
 PETER (Arthit Watcharafa), Lead QA Engineer in TEC, doesn't have a phone extension listed in the directory — the field is blank for his record.
-```
-
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-มีพนักงานที่สำนักงานใหญ่ (FahMai Tower, BKK-R9) ทั้งหมด **1,255 คน** ครับ
-```
-
-### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
-
-**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
-
-**Response:**
-
-```
-The **Kluensiang (คลื่นเสียง)** brand is headed by:
-
-- **คุณราม ลวรรณ** (RAM LAWAN) — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
-  - 📧 RAM.LA@FAHMAI.CO.TH
-  - 📞 ต่อ 75965
-  - 📍 FahMai Tower ชั้น 18
-
-However, if you meant the specific *operations* unit within Kluensiang (rather than the GM), let me double-check — would you like me to look up the KS Operations team lead as well?
 ```
 
 ### g823 [deep_multihop] P2/en

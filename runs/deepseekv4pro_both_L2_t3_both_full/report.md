@@ -1,6 +1,6 @@
-# Run: `deepseekv4pro_both_L2_t3_both_full`
+# Run: `deepseekv4pro_both_L2_t3_both_v10full`
 
-**Overall: 606/626 pass (96.8%)**
+**Overall: 597/626 pass (95.4%)**
 
 ## By bucket
 
@@ -27,12 +27,10 @@
 | bilingual | 40/40 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
-| superlative | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
-| nickname_grid | 59/61 | 96.7% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
+| nickname_grid | 58/61 | 95.1% |
 | name_lookup | 19/20 | 95.0% |
 | listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
@@ -40,19 +38,21 @@
 | retrieval | 13/14 | 92.9% |
 | hard_multihop | 24/26 | 92.3% |
 | hard_nickname_variant | 9/10 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
+| superlative | 9/10 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
 | email_mobile_lookup | 6/7 | 85.7% |
 | enterprise_shorthand | 17/20 | 85.0% |
 | hard_bridge_lookup | 5/6 | 83.3% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
+| subsidiary_routing | 7/12 | 58.3% |
 
 ## By priority
 
-- P0: 220/226 (97.3%)
-- P1: 351/364 (96.4%)
-- P2: 35/36 (97.2%)
+- P0: 219/226 (96.9%)
+- P1: 344/364 (94.5%)
+- P2: 34/36 (94.4%)
 
-## Failures (20)
+## Failures (29)
 
 ### g080 [evp_vs_vp_disambig] P0/th
 **Q:** หา FIN-ACCDR หน่อย อย่าสับกับ FINVP
@@ -94,6 +94,17 @@
 CMO คือ **คุณส้ม กาญจน์สถิต** (SOM KANSATHIT) — **ไม่มีชื่อเล่นในระบบ** ครับ
 
 ติดต่อได้ที่ SOM.KA@FAHMAI.CO.TH หรือเบอร์ภายใน 79005 ครับ
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+มี "มุก" หลายคนครับ ขอข้อมูลเพิ่มนิดนึงว่า **พี่มุกกี้** ที่หมายถึงอยู่แผนกไหนหรือทำตำแหน่งอะไรครับ จะได้ระบุตัวให้ถูก — ตอนนี้มี 13 คนที่ชื่อเล่น "มุก" ทั้งบริษัทครับ
 ```
 
 ### g196 [dept_listing_small] P1/en
@@ -207,36 +218,50 @@ There's no `CEO-SEC` unit — but the role you're looking for is **CEO-EA** (Exe
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-**ผู้บริหารสูงสุดของแผนก DN (Daonuea/ดาวเหนือ):**
+ผู้บริหารสูงสุดของแผนก Daonuea (ดาวเหนือ) คือ **วิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN) — General Manager of Daonuea
 
-**คุณวิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN)  
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)  
-อีเมล: WICHIAN.PH@FAHMAI.CO.TH  
-มือถือ: 064-902-5307  
-เบอร์ต่อ: 76999  
-ที่ตั้ง: FahMai Tower ชั้น 19F
+📧 WICHIAN.PH@FAHMAI.CO.TH · ☎️ 76999
+```
+
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
+
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
+
+**Response:**
+
+```
+The most senior person heading the Judchuem (จุดเชื่อม) department is **Saran Awutmani (สรัล อาวุทธ์มณี)**, General Manager of Judchuem — ext. 78762, SARAN.AW@FAHMAI.CO.TH.
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกคลื่นเสียง (KS) คือ **คุณราม ลวรรณ (จุ๊บ)** ตำแหน่ง ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang) ครับ
+ผู้บริหารสูงสุดของแผนก Kluensiang (คลื่นเสียง) คือ **คุณราม ลวรรณ (จุ๊บ)** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง
+📧 RAM.LA@FAHMAI.CO.TH | ✆ 75965
+```
 
-- 📧 RAM.LA@FAHMAI.CO.TH
-- 📞 ต่อ 75965
-- 🏢 FahMai Tower ชั้น 18F
+### g456 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
+
+**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก Wongkhojon (วงโคจร) คือ **คุณกฤษ มหาแก้วใส (ขิง)** — ผู้จัดการทั่วไปแบรนด์วงโคจร ติดต่อ: KRIS.MA@FAHMAI.CO.TH, เบอร์ 74375
 ```
 
 ### g535 [listing_count] P1/en
@@ -294,15 +319,21 @@ No record found. There is no "Sompong" in the directory, and the VP of Marketing
 (อีเมล: NATHAMON.AP@FAHMAI.CO.TH | ชั้น 27 FahMai Tower)
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g677 [enterprise_shorthand] P1/th
+**Q:** ผู้อำนวยการทีมขายสาขาภูเก็ต คือใคร
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing any-of ['Watcharakaewsai', 'วัชรแก้วใส']
 
 **Response:**
 
 ```
-There are **1,255** staff at the Rama IX HQ branch (BKK-R9).
+ผู้อำนวยการทีมขายสาขาภูเก็ตคือ **คุณถาวร วัชรแกัวใส (เนสท์เล่)**
+
+- **ตำแหน่ง:** ผู้อำนวยการฝ่ายพนักงานขายสาขาภูเก็ต
+- **อีเมล:** THAWAN.WA@FAHMAI.CO.TH
+- **เบอร์ต่อ:** 09932
+- **มือถือ:** 091-455-0102
+- **ที่ตั้ง:** สาขาภูเก็ต
 ```
 
 ### g683 [enterprise_shorthand] P1/en
@@ -321,18 +352,19 @@ The HR team is headed by **Sumate Akarajaingam (สุเมธ อัครใ�
 ```
 
 ### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
 **Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-หัวหน้าทีมการตลาด (MKT) คือ **คุณคะวัง กอบสุขรัตน์ (โอ)** — รองประธานฝ่ายการตลาด (VICE PRESIDENT MARKETING)
+หัวหน้าทีมการตลาด (รองประธานฝ่ายการตลาด) คือ **คุณคะวัง กอบสุขรัตน์ (โอ)**
 
 - 📧 KWANG.KO@FAHMAI.CO.TH
-- 📞 เบอร์ต่อ: 74711 | มือถือ: 088-904-0088
-- 📍 FahMai Tower ชั้น 20
+- ☎️ 74711
+
+นอกจากนี้ยังมีรองประธานฝ่ายการตลาดดิจิทัลอีก 1 ท่าน: **คุณสมพงษ์ กอบสุขประเสริฐ** (☎️ 79901)
 ```
 
 ### g725 [nickname_grid] P0/en
@@ -348,5 +380,89 @@ The TECVP is **Nattaphong Athidi** (ณัฐพงษ์ อธิดี). Howe
 You can reach him at:
 - 📧 NATTAPHONG.AT@FAHMAI.CO.TH
 - 📞 Ext: 75793 | Mobile: 068-561-3976
+```
+
+### g770 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์ดาวเหนือ
+
+**Fails:** missing any-of ['Phonphai', 'พรไพร']; missing any-of ['Arthitkulwongs', 'อาทิตย์วงษ์']
+
+**Response:**
+
+```
+[agent error: JSONDecodeError: Unterminated string starting at: line 1 column 12 (char 11)]
+```
+
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
+
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
+
+**Response:**
+
+```
+The head of the DaoNuea (ดาวเหนือ) brand is **Wichian Phonghomklin** (วิเชียร พงหอมกลิ่น), who serves as **General Manager of DaoNuea** (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ).
+
+- **Email:** WICHIAN.PH@FAHMAI.CO.TH
+- **Phone Extension:** 76999
+- **Mobile:** 064-902-5307
+- **Office:** FahMai Tower 19F, BKK-R9
+
+Note that DaoNuea is a house brand with its own product division (DN), and marketing for the bran
+```
+
+### g773 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the Judchuem brand?
+
+**Fails:** missing any-of ['Phaibun', 'ไพบูลย์']; missing any-of ['Anujitranon', 'อนุจิตรานนท์']
+
+**Response:**
+
+```
+[agent error: JSONDecodeError: Expecting ',' delimiter: line 1 column 37 (char 36)]
+```
+
+### g776 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์วงโคจร
+
+**Fails:** missing any-of ['Phichai', 'พิชัย']; missing any-of ['Amarinfa', 'อมรินทร์ฟ้า']
+
+**Response:**
+
+```
+หัวหน้าฝ่าย (VP) ของแบรนด์วงโคจร (WK) คือ **คุณคึกฤทธิ์ อัครเจริญ (ดำ)**
+
+- 📧 KUKRIT.AK@FAHMAI.CO.TH
+- 📞 เบอร์ต่อ: 79033 | มือถือ: 097-302-2863
+- 📍 FahMai Tower ชั้น 16F
+
+ถ้าคุณหมายถึงหัวหน้าฝ่าย**วิศวกรรม**ของวงโคจรโดยเฉพาะ (ส่วน Engineering) ไม่ใช่ VP ของแบรนด์โดยรวม รบกวนบอกเพิ่มเติมได้นะครับ จะได้ค้นให้ละเอียดขึ้น
+```
+
+### g777 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Wongkhojon brand?
+
+**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
+
+**Response:**
+
+```
+The Wongkhojon (วงโคจร) brand is headed by **Kris Mahakaewsai (กฤษ มหาแก้วใส)** — General Manager of Wongkhojon.
+
+📞 Extension: 74375  
+✉️ Email: KRIS.MA@FAHMAI.CO.TH
+```
+
+### g832 [superlative] P2/th
+**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ
+
+**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
+
+**Response:**
+
+```
+"อายุงาน" (tenure) เป็นข้อมูลที่ไม่ได้เก็บอยู่ในระบบ directory — ระบบเก็บเฉพาะ **Start Year** (ปีที่เริ่มงาน) เท่านั้น ซึ่งไม่เทียบเท่าอายุงานโดยแท้จริง
+
+ถ้าต้องการให้ช่วยดูว่าใครมี **Start Year เก่าที่สุด** (เริ่มงานปีแรกสุด) บอกได้ครับ เดี๋ยวหาข้อมูลให้ได้จาก directory ครับ
 ```
 

@@ -1,6 +1,6 @@
-# Run: `typhoon8b_grep-only_L2_t1_grep_20260526_114107`
+# Run: `typhoon8b_grep-only_L2_t1_grep_v10full`
 
-**Overall: 231/626 pass (36.9%)**
+**Overall: 227/626 pass (36.3%)**
 
 ## By bucket
 
@@ -16,30 +16,30 @@
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | section_listing | 3/4 | 75.0% |
-| bilingual | 26/40 | 65.0% |
+| multi_entity_turn | 13/20 | 65.0% |
 | evp_vs_vp_disambig | 16/25 | 64.0% |
+| bilingual | 25/40 | 62.5% |
 | vp_identity | 3/5 | 60.0% |
-| multi_entity_turn | 12/20 | 60.0% |
 | email_mobile_lookup | 4/7 | 57.1% |
 | evp_identity_by_code | 2/4 | 50.0% |
-| surname_family | 11/24 | 45.8% |
+| subsidiary_routing | 6/12 | 50.0% |
 | nickname_grid | 26/61 | 42.6% |
 | evp_secretary | 2/5 | 40.0% |
 | dept_member_count | 6/15 | 40.0% |
-| enterprise_shorthand | 8/20 | 40.0% |
 | brand_prior | 4/10 | 40.0% |
+| surname_family | 9/24 | 37.5% |
 | hard_bridge_lookup | 2/6 | 33.3% |
-| subsidiary_routing | 4/12 | 33.3% |
 | hard_nickname_variant | 3/10 | 30.0% |
+| retrieval | 4/14 | 28.6% |
 | refuse | 23/90 | 25.6% |
-| retrieval | 3/14 | 21.4% |
+| enterprise_shorthand | 5/20 | 25.0% |
 | casual_name_lookup | 3/15 | 20.0% |
-| listing_count | 4/20 | 20.0% |
+| superlative | 2/10 | 20.0% |
 | subsidiary_md | 1/8 | 12.5% |
 | noisy_name_form | 2/20 | 10.0% |
-| superlative | 1/10 | 10.0% |
 | deep_multihop | 1/12 | 8.3% |
 | multi_hop | 1/18 | 5.6% |
+| listing_count | 1/20 | 5.0% |
 | name_lookup | 0/20 | 0.0% |
 | org_plus_person | 0/3 | 0.0% |
 | hard_multihop | 0/26 | 0.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 73/226 (32.3%)
-- P1: 146/364 (40.1%)
-- P2: 12/36 (33.3%)
+- P0: 74/226 (32.7%)
+- P1: 140/364 (38.5%)
+- P2: 13/36 (36.1%)
 
-## Failures (395)
+## Failures (399)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -615,4 +615,4 @@ I need to clarify your question. Could you please specify which "บอส" you 
 ```
 
 
-_+345 more failures — see results.jsonl_
+_+349 more failures — see results.jsonl_

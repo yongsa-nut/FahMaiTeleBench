@@ -1,6 +1,6 @@
-# Run: `gemma4_repl_L2_t4_repl_full`
+# Run: `gemma4_repl_L2_t4_repl_v10full`
 
-**Overall: 532/626 pass (85.0%)**
+**Overall: 531/626 pass (84.8%)**
 
 ## By bucket
 
@@ -28,31 +28,31 @@
 | hard_nickname_variant | 9/10 | 90.0% |
 | bilingual | 36/40 | 90.0% |
 | listing_count | 18/20 | 90.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | casual_name_lookup | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
+| nickname_grid | 52/61 | 85.2% |
 | email_identity_lookup | 5/6 | 83.3% |
-| nickname_grid | 49/61 | 80.3% |
 | evp_secretary | 4/5 | 80.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | hard_multihop | 19/26 | 73.1% |
 | counterfactual | 18/25 | 72.0% |
 | thai_knowledge | 7/10 | 70.0% |
 | noisy_name_form | 14/20 | 70.0% |
+| hard_implicit_hierarchy | 13/19 | 68.4% |
 | deep_multihop | 8/12 | 66.7% |
-| enterprise_shorthand | 13/20 | 65.0% |
 | multi_hop | 11/18 | 61.1% |
-| subsidiary_routing | 7/12 | 58.3% |
 | org_informal_listing | 3/6 | 50.0% |
-| surname_family | 12/24 | 50.0% |
+| subsidiary_routing | 4/12 | 33.3% |
+| surname_family | 7/24 | 29.2% |
 
 ## By priority
 
-- P0: 200/226 (88.5%)
-- P1: 301/364 (82.7%)
+- P0: 203/226 (89.8%)
+- P1: 297/364 (81.6%)
 - P2: 31/36 (86.1%)
 
-## Failures (94)
+## Failures (95)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -121,28 +121,6 @@ Phloi Daoruengchot (SF): Ext. 79180
 
 ```
 ไม่พบข้อมูล
-```
-
-### g171 [nickname_grid] P0/th
-**Q:** เสือ ที่ KS เบอร์อะไร
-
-**Fails:** missing any-of ['Anuboonrueng', 'อนุบุญเรือง']
-
-**Response:**
-
-```
-คุณวชิร (เสือ) เบอร์ต่อ 72469 ครับ
-```
-
-### g172 [nickname_grid] P0/th
-**Q:** ขิง ที่ SUP เบอร์อะไร
-
-**Fails:** missing any-of ['Pholdech', 'พลเดช']
-
-**Response:**
-
-```
-คุณสุณี (ขิง) เบอร์โทร 094-546-2762 ต่อ 71734 ครับ
 ```
 
 ### g174 [nickname_grid] P0/th
@@ -220,17 +198,6 @@ Phloi Daoruengchot (SF): Ext. 79180
 
 ```
 ไม่พบข้อมูล
-```
-
-### g193 [nickname_grid] P0/th
-**Q:** ใครคือปันปัน
-
-**Fails:** missing any-of ['ปัน', 'ปัน', 'ไม่พบข้อมูล']
-
-**Response:**
-
-```
-คุณฤทธิชัย แก้วใสภิญโญ (CTO) อีเมล: RITTICHAI.KA@FAHMAI.CO.TH
 ```
 
 ### g199 [dept_listing_small] P1/th
@@ -461,62 +428,74 @@ The boss of the SFVP (Wirat Sombusarakham) is Thawan Boonnamphong, the General M
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ คุณวิเชียร พงหอมกลิ่น (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ) ครับ
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (Daonuea) คือ คุณวิเชียร พงหอมกลิ่น (General Manager of Daonuea) ครับ
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the Judchuem (JC) department is Saran Awutmani (SARAN.AW@FAHMAI.CO.TH).
+Saran Awutmani (General Manager of Judchuem)
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ คุณราม ลวรรณ (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง) ครับ
-```
-
-### g455 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Legal (LEG) department?
-
-**Fails:** missing any-of ['ไพโรจน์', 'Phairoj']; missing any-of ['มหากุล', 'Mahakun']
-
-**Response:**
-
-```
-The most senior person heading the Legal (LEG) department is Namthip Samamphom (NAMTHIP.SA2@FAHMAI.CO.TH).
+thought
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (Kluensiang) คือ คุณราม ลวรรณ (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง) ครับ
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ คุณกฤษ มหาแก้วใส (ผู้จัดการทั่วไปแบรนด์วงโคจร) ครับ
+ผู้บริหารสูงสุดของแผนก Wongkhojon คือ คุณกฤษ มหาแก้วใส (KRIS.MA@FAHMAI.CO.TH) ครับ
+```
+
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the most senior employee?
+
+**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
+
+**Response:**
+
+```
+The most senior employee in the FIN-AR section is Sanit Athiboonnam (started in 2020).
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+The most senior employee in the JC-ENG section is Sukhum Kasemchaemchoi (Manager JudChuem Product Engineer), who started in 2020.
 ```
 
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
@@ -527,7 +506,7 @@ The most senior person heading the Legal (LEG) department is Namthip Samamphom (
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
@@ -538,7 +517,7 @@ The most senior person heading the Legal (LEG) department is Namthip Samamphom (
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
@@ -636,5 +615,27 @@ no record found
 ไม่พบข้อมูล
 ```
 
+### g585 [noisy_name_form] P1/en
+**Q:** Ravi, the Director of Support Training — what's his extension?
 
-_+44 more failures — see results.jsonl_
+**Fails:** missing any-of ['76523']
+
+**Response:**
+
+```
+no record found
+```
+
+### g586 [noisy_name_form] P1/th
+**Q:** ขออีเมลของคุณ Natanicha ที่เป็นเลขาฯ ของ VP ฝ่าย Retail ต่างจังหวัด หน่อยค่ะ
+
+**Fails:** missing any-of ['NATTANICHA.KA@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+```
+
+
+_+45 more failures — see results.jsonl_

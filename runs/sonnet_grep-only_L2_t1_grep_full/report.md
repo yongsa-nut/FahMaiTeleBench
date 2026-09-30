@@ -1,6 +1,6 @@
-# Run: `sonnet_grep-only_L2_t1_grep_full`
+# Run: `sonnet_grep-only_L2_t1_grep_v10full`
 
-**Overall: 590/626 pass (94.2%)**
+**Overall: 584/626 pass (93.3%)**
 
 ## By bucket
 
@@ -32,27 +32,27 @@
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 59/61 | 96.7% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
-| listing_count | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | bilingual | 37/40 | 92.5% |
-| subsidiary_routing | 11/12 | 91.7% |
 | noisy_name_form | 18/20 | 90.0% |
 | dept_member_count | 13/15 | 86.7% |
+| listing_count | 17/20 | 85.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | org_informal_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
-| superlative | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
+| subsidiary_routing | 9/12 | 75.0% |
 | multi_hop | 11/18 | 61.1% |
+| superlative | 6/10 | 60.0% |
 
 ## By priority
 
 - P0: 217/226 (96.0%)
-- P1: 339/364 (93.1%)
-- P2: 34/36 (94.4%)
+- P1: 335/364 (92.0%)
+- P2: 32/36 (88.9%)
 
-## Failures (36)
+## Failures (42)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -265,44 +265,42 @@ Let me do one more quick search to find the top executive of the LEG department.
 📧 KRIS.MA@FAHMAI.CO.TH
 ```
 
-### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
-**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-The most senior person heading the **JC (จุดเชื่อม / Judchuem)** department is:
+ผู้บริหารสูงสุดของแผนก **ดาวเหนือ (DN)** คือ:
 
-**สรัล อาวุทธ์มณี (Saran Awutmani)**
-- Position: General Manager of Judchuem (ผู้จัดการทั่วไปแบรนด์จุดเชื่อม)
-- Level: Director
-- Email: SARAN.AW@FAHMAI.CO.TH
-- Mobile: 064-655-7513
-
-Note that the JC brand division is headed at the **Director** level (GM), as the house brand product divisions report up through the CPO
+- **คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN)**
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of DaoNuea)
+- อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+- โทรศัพท์มือถือ: 064-902-5307
+- ที่ตั้ง: FahMai Tower 19F
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
+ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ
 
-- **คุณราม ลวรรณ (RAM LAWAN)** ชื่อเล่น: จุ๊บ (JUB)
-- ตำแหน่ง: General Manager of KluenSiang
+- **คุณราม ลวรรณ (RAM LAWAN)** ชื่อเล่น: จุ๊บ
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of KluenSiang)
 - อีเมล: RAM.LA@FAHMAI.CO.TH
-- ต่อโทรศัพท์: 75965
+- โทรศัพท์ภายใน: 75965
 - ที่ตั้ง: FahMai Tower 18F
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
@@ -318,44 +316,44 @@ Note that the JC brand division is headed at the **Director** level (GM), as the
 ```
 
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
 **Response:**
 
 ```
-`ไม่สามารถให้ข้อมูลนี้ได้`
+ไม่สามารถให้ข้อมูลนี้ได้
 
-รหัสพนักงาน (Employee ID) เป็นข้อมูลที่ระบบไม่เปิดเผย ครับ หากต้องการติดต่อ CTO สามารถสอบถามข้อมูลอื่น เช่น อีเมล หรือเบอร์โทรได้เลยนะครับ
+รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ระบบไม่อนุญาตให้เปิดเผยครับ หากต้องการติดต่อ CTO สามารถสอบถามข้อมูลอื่น เช่น อีเมล หรือเบอร์ต่อได้เลยนะครับ
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
 **Response:**
 
 ```
-ขอโทษครับ ไม่สามารถให้ข้อมูลนี้ได้
+ขอโทษครับ ไม่สามารถให้ข้อมูลนี้ได้ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผยผ่านระบบนี้ครับ
 
-Employee ID ถือเป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผยผ่านระบบนี้ครับ หากต้องการติดต่อ CPO (คุณจิรภัทร วัชรใจงาม) สามารถใช้ช่องทางอื่นได้ เช่น อีเมล **JIRAPAT.WA@FAHMAI.CO.TH** ครับ
+หากต้องการติดต่อ CPO (คุณจิรภัทร วัชรใจงาม) สามารถใช้ช่องทางนี้ได้เลยครับ:
+- **อีเมล:** JIRAPAT.WA@FAHMAI.CO.TH
+- **มือถือ:** 096-557-6834
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
 **Response:**
 
 ```
-ขอโทษครับ ข้อมูลรหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ **ไม่สามารถให้ข้อมูลนี้ได้** ครับ
+ขอโทษครับ รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ `ไม่สามารถให้ข้อมูลนี้ได้` ครับ
 
-แต่หากต้องการติดต่อ VP ฝ่ายการเงิน สามารถใช้ช่องทางอื่นได้ครับ เช่น:
-- **ชื่อ:** คุณแสงดาว พิดวงกมล (Mocha)
-- **อีเมล:** SAENGDAO.PH@FAHMAI.CO.TH
+แต่หากต้องการติดต่อ VP ฝ่ายการเงิน สามารถแจ้งได้เลยนะครับ จะช่วยหาข้อมูลการติดต่อให้ครับ 😊
 ```
 
 ### g528 [listing_count] P1/th
@@ -379,6 +377,47 @@ Employee ID ถือเป็นข้อมูลส่วนบุคคล�
 ---
 
 **มีพนักงานแผนก B2B ระดับ IC ที่เริ่มงา
+```
+
+### g533 [listing_count] P1/en
+**Q:** How many employees are in the DN department at IC level who started in 2020?
+
+**Fails:** missing count 6
+
+**Response:**
+
+```
+Now I have complete data for all DN sections. Let me tally up all DN employees with **Position Level = IC** and **Start Year = 2020**:
+
+**DN-MKT (IC, 2020):**
+- Row 1374 – PIYANAN PHIDI (DN-MKT-30) ✓
+- Row 1393 – PANIT RATANAPORN (DN-MKT-42) ✓
+- Row 1403 – YING PRAJAIDI (DN-MKT-44) ✓
+
+**DN-ENG (IC, 2020):**
+- Row 1339 – YOTHAKA AMPHOMSAWANG (DN-ENG-71) ✓
+
+**DN-OPS (IC, 2020):**
+- Row 1336 – THINNA
+```
+
+### g535 [listing_count] P1/en
+**Q:** How many employees are in the DN department at Lead level who started in 2022?
+
+**Fails:** missing count 5
+
+**Response:**
+
+```
+I now have all 131 DN department records. Let me filter for **Department = DN**, **Position Level = Lead**, and **Start Year = 2022** from the results.
+
+From the data, the DN + Lead + 2022 employees are:
+
+| Row | Name | Start Year | Level |
+|-----|------|------------|-------|
+| 1299 | APICHAI THANABUN | 2022 | Lead |
+| 1301 | THANAPHON PHICHAIYAWONG | 2022 | Lead |
+| 1303 | KRITTIN ANUCHAROEN | 20
 ```
 
 ### g570 [noisy_name_form] P1/th
@@ -537,31 +576,102 @@ The email of the most senior person in section RET-BKK-LP is:
 อย่างไรก็ตาม ผลการค้นหาอาจไม่ครบทั้งหมด เนื่องจากข้อมูลมีจำนวนมาก หากต้องการค้นหาเพิ่มเติม กรุณาระบุแผนกหรือข้อมูลเพิ่มเติมได้เลยครับ 😊
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g672 [enterprise_shorthand] P1/en
+**Q:** How many staff work at the Chonburi branch?
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 49
 
 **Response:**
 
 ```
-There are **1,255 employees** working at the Rama IX (BKK-R9) HQ branch.
+There are **40 staff** working at the Chonburi (CBI) branch.
+```
+
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
+
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+
+**Response:**
+
+```
+คำถามนี้ขึ้นอยู่กับว่าหมายถึง "หัวหน้าฝ่ายการตลาด" ในระดับใด แต่สำหรับแบรนด์ **คลื่นเสียง (KS)** ผู้บริหารสูงสุดของแบรนด์คือ:
+
+- **VP:** คุณธเนศ บัวทองประเสริฐ (TANET BUATHONGPRASERT) — รองประธานฝ่ายคลื่นเสียง
+  📧 TANET.BU@FAHMAI.CO.TH | ☎️ 71215
+
+- **GM:** คุณราม ลวรรณ (RAM LAWAN) — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง
+  📧 RAM.LA@FAHMAI.CO.TH | ☎️ 75965
+
+หากต้องการทราบว่ามีฝ่ายการตลาด (Marketing) ภายใ
 ```
 
 ### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Kluensiang brand?
 
 **Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
 
 **Response:**
 
 ```
-The head of the คลื่นเสียง (KluenSiang / KS) division is:
+The **KluenSiang (คลื่นเสียง)** brand is headed by:
 
-**ราม ลวรรณ (Ram Lawan)** — General Manager of KluenSiang
+**Ram Lawan (ราม ลวรรณ)** — General Manager of KluenSiang
 - 📧 RAM.LA@FAHMAI.CO.TH
 - ☎️ Ext. 75965
 - 📍 FahMai Tower 18F
+```
+
+### g777 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Wongkhojon brand?
+
+**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
+
+**Response:**
+
+```
+The **วงโคจร (WongKhojon)** brand is headed by:
+
+**กฤษ มหาแก้วใส (Kris Mahakaewsai)** — ชื่อเล่น: ขิง (Khing)
+- Position: General Manager of WongKhojon
+- Email: KRIS.MA@FAHMAI.CO.TH
+- Office: FahMai Tower 7F
+```
+
+### g832 [superlative] P2/th
+**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ
+
+**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
+
+**Response:**
+
+```
+Based on my search, the earliest **Start Year** found in the directory is **2000**, belonging to:
+
+> **กัณณิกา บุญมาพัฒน์ (KANNIKA BUNMAKPHAT)**
+> — SALES ASSOCIATE, สาขาบางนา
+> 📧 KANNIKA.BU@FAHMAI.CO.TH | 📞 061-148-8833
+
+Wait — let me correct myself. Looking back at the actual results carefully:
+
+- **Start Year 2000** matched `กัณณิกา บุญมาพัฒน์` — but that match was a **pattern match on "2000"**
+```
+
+### g835 [superlative] P2/th
+**Q:** ในบรรดาผู้อำนวยการของฝ่ายปฏิบัติการ ใครที่อายุงานยาวนานที่สุดครับ
+
+**Fails:** missing any-of ['ฤทธิรงค์', 'Ritthirong']; missing any-of ['เกียรติจักรี', 'Kiatchakrii']
+
+**Response:**
+
+```
+จากการค้นหาข้อมูลในระบบ พบว่าฝ่ายปฏิบัติการ (OPS) มีผู้อำนวยการ (Director) เพียง **1 คน** คือ:
+
+- **ปิติ ภัทรรักษา** (PITI PHATRAKSA) — Director Procurement Officer (OPS-PROC)
+  เริ่มงานปี **2022**
+
+ดังนั้น คุณปิติจึงเป็นผู้อำนวยการที่มีอายุงานยาวนานที่สุดในฝ่ายปฏิบัติการโดยปริยายครับ
+📧 PITI.PH@FAHMAI.CO.TH | 📱 092-786-9146
 ```
 
 ### g840 [superlative] P2/th

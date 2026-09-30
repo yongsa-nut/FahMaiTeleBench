@@ -76,18 +76,33 @@ MODELS = {
     # ThaiLLM gateway sits behind Cloudflare: it WAF-blocks the default httpx/SDK User-Agent (403
     # "error code: 1010" BEFORE the key is checked). A browser-like UA via default_headers clears it;
     # the THAILLM_API_KEY is valid (fix mirrors track1/.../run_editing.py, re-verified 2026-05-25).
-    "openthaigpt": {"provider": "chat", "model_id": "openthaigpt-thaillm-8b-instruct-v7.2",
+    # Typhoon-S 8B on the ThaiLLM gateway — a Thai 8B that DOES emit tool calls (unlike OpenThaiGPT-8B).
+    "typhoon8b":   {"provider": "chat", "model_id": "typhoon-s-thaillm-8b-instruct",
                     "base_url": "https://thaillm.or.th/api/v1", "key_env": "THAILLM_API_KEY",
                     "extra_headers": _GATEWAY_HEADERS,
+                    # 16k context: 4096 output tokens 400s ("max_tokens too large") on large tool
+                    # dumps; 2048 is ample for a directory answer and leaves room under the cap.
                     "params": {"max_tokens": 2048, "temperature": 0.2}},
     # DeepSeek first-party (api.deepseek.com): far cheaper than OpenRouter, which has no
     # economical provider for V4-Pro. First-party model id has no "deepseek/" prefix.
     "deepseekv4pro": {"provider": "chat", "model_id": "deepseek-v4-pro",
                     "base_url": "https://api.deepseek.com", "key_env": "DEEPSEEK_API_KEY",
                     "params": {"max_tokens": 24000}},
-    "deepseekv4flash": {"provider": "chat", "model_id": "deepseek/deepseek-v4-flash",
-                    "base_url": "https://openrouter.ai/api/v1", "key_env": "OPENROUTER_API_KEY",
+    "deepseekv4flash": {"provider": "chat", "model_id": "deepseek-v4-flash",  # first-party; the reported T2 cell used deepseek/deepseek-v4-flash via OpenRouter
+                    "base_url": "https://api.deepseek.com", "key_env": "DEEPSEEK_API_KEY",
                     "params": {"max_tokens": 24000}},
+    # DeepSeek's first-party API now serves newer versions under the V4 names; these routes reach the
+    # April 2026 V4 weights (the reported checkpoints) on fp8 hosts through OpenRouter.
+    "deepseekv4pro_fp8": {"provider": "chat", "model_id": "deepseek/deepseek-v4-pro",
+                    "base_url": "https://openrouter.ai/api/v1", "key_env": "OPENROUTER_API_KEY",
+                    "params": {"max_tokens": 24000, "extra_body": {"provider": {
+                        "only": ["deepinfra", "parasail", "novita", "siliconflow", "gmicloud"],
+                        "quantizations": ["fp8"], "allow_fallbacks": True}}}},
+    "deepseekv4flash_fp8": {"provider": "chat", "model_id": "deepseek/deepseek-v4-flash",
+                    "base_url": "https://openrouter.ai/api/v1", "key_env": "OPENROUTER_API_KEY",
+                    "params": {"max_tokens": 24000, "extra_body": {"provider": {
+                        "only": ["deepinfra", "parasail", "novita", "siliconflow", "gmicloud"],
+                        "quantizations": ["fp8"], "allow_fallbacks": True}}}},
     "glm51":       {"provider": "chat", "model_id": "glm-5.1",  # direct Z.ai (own key) — not OpenRouter
                     "base_url": "https://api.z.ai/api/paas/v4", "key_env": "ZAI_API_KEY",
                     "params": {"max_tokens": 24000}},
@@ -262,6 +277,8 @@ def run_item(item: dict, tool_name: str, run_dir: Path, resume: bool = False) ->
             round_rec = {
                 "round": round_idx,
                 "finish_reason": choice.finish_reason,
+                "served_model": getattr(resp, "model", None),
+                "served_provider": (getattr(resp, "model_extra", None) or {}).get("provider"),
                 "tool_calls": [{"id": tc.id, "name": tc.function.name,
                                 "args": tc.function.arguments,
                                 "is_error": False} for tc in tool_calls],

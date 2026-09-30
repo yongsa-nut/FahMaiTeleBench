@@ -1,6 +1,6 @@
-# Run: `opentyphoon_grep-only_L2_t1_grep_full`
+# Run: `opentyphoon_grep-only_L2_t1_grep_v10full`
 
-**Overall: 354/626 pass (56.5%)**
+**Overall: 344/626 pass (55.0%)**
 
 ## By bucket
 
@@ -11,9 +11,9 @@
 | email_mobile_lookup | 7/7 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | brand_prior | 9/10 | 90.0% |
+| hard_implicit_hierarchy | 17/19 | 89.5% |
 | tier_listing | 5/6 | 83.3% |
-| hard_implicit_hierarchy | 15/19 | 78.9% |
-| nickname_grid | 48/61 | 78.7% |
+| nickname_grid | 47/61 | 77.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | dept_listing_medium | 6/8 | 75.0% |
@@ -21,22 +21,23 @@
 | multi_entity_turn | 14/20 | 70.0% |
 | hard_nickname_variant | 7/10 | 70.0% |
 | bilingual | 28/40 | 70.0% |
-| enterprise_shorthand | 14/20 | 70.0% |
 | casual_name_lookup | 10/15 | 66.7% |
 | email_identity_lookup | 4/6 | 66.7% |
 | hard_bridge_lookup | 4/6 | 66.7% |
 | vp_identity | 3/5 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
-| subsidiary_routing | 7/12 | 58.3% |
 | extension_reverse | 4/7 | 57.1% |
 | retrieval | 8/14 | 57.1% |
-| surname_family | 10/24 | 41.7% |
+| enterprise_shorthand | 9/20 | 45.0% |
 | evp_vs_vp_disambig | 10/25 | 40.0% |
 | subsidiary_md | 3/8 | 37.5% |
-| listing_count | 7/20 | 35.0% |
 | org_informal_listing | 2/6 | 33.3% |
+| subsidiary_routing | 4/12 | 33.3% |
+| listing_count | 6/20 | 30.0% |
+| surname_family | 7/24 | 29.2% |
 | evp_secretary | 1/5 | 20.0% |
 | multi_hop | 3/18 | 16.7% |
+| superlative | 1/10 | 10.0% |
 | hard_multihop | 2/26 | 7.7% |
 | counterfactual | 1/25 | 4.0% |
 | ceo_president | 0/4 | 0.0% |
@@ -44,15 +45,14 @@
 | org_plus_person | 0/3 | 0.0% |
 | noisy_name_form | 0/20 | 0.0% |
 | deep_multihop | 0/12 | 0.0% |
-| superlative | 0/10 | 0.0% |
 
 ## By priority
 
-- P0: 167/226 (73.9%)
-- P1: 176/364 (48.4%)
-- P2: 11/36 (30.6%)
+- P0: 166/226 (73.5%)
+- P1: 166/364 (45.6%)
+- P2: 12/36 (33.3%)
 
-## Failures (272)
+## Failures (282)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -564,7 +564,7 @@ Apologies, but I cannot provide that information.
 ### g172 [nickname_grid] P0/th
 **Q:** ขิง ที่ SUP เบอร์อะไร
 
-**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช']
+**Fails:** missing any-of ['Sunee', 'สุณี']
 
 **Response:**
 
@@ -628,22 +628,17 @@ Apologies, but I cannot provide that information.
 ปุ๊ก จงรัก มีเบอร์โทรศัพท์ติดต่อ: 089-751-5800 (สำนักงาน: 089-751-5800)
 ```
 
-### g210 [dept_listing_medium] P1/th
-**Q:** แผนก WK-PD มีใครบ้าง
+### g193 [nickname_grid] P0/th
+**Q:** ใครคือปันปัน
 
-**Fails:** min_items 5 not met (3)
+**Fails:** missing any-of ['แก้วใสภิญโญ', 'Kaewsaiphinyo']
 
 **Response:**
 
 ```
-แผนก WK-PD มีพนักงานทั้งหมด 27 คน ตัวอย่างเช่น:
-
-- กฤษ มหาแก้วใส (ขิง) – ผู้จัดการทั่วไปแบรนด์วงโคจร (Email: KRIS.MA@FAHMAI.CO.TH)
-- พิชัย สุวรรณเขียวขจี (โฟล์ค) – หัวหน้าทีมผู้จัดการผลิตภัณฑ์วงโคจร (Email: PHICHAI.SU@FAHMAI.CO.TH)
-- ธีรพัฒน์ บุญเก่งกาจ (ส้มโอ) – ผู้จัดการผลิตภัณฑ์วงโคจร (Email: TEERAPAT.BU2@FAHMAI.CO.TH)
-
-(แสดงเฉพาะบางส่วนเนื่องจากมีจำนวนมาก)
+ปันปัน (ชื่อเล่น) คือ ริทธิชัย เก้าใสภิญโญ ตำแหน่ง ประธานเจ้าหน้าที่เทคโนโลยี (CTO) ที่สำนักงาน FahMai Tower ชั้น 25  
+อีเมล: RITTICHAI.KA@FAHMAI.CO.TH | โทร: 75477
 ```
 
 
-_+222 more failures — see results.jsonl_
+_+232 more failures — see results.jsonl_

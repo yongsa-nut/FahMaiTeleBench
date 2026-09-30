@@ -1,6 +1,6 @@
-# Run: `opentyphoon_both_L2_t3_both_full`
+# Run: `opentyphoon_both_L2_t3_both_v10full`
 
-**Overall: 454/626 pass (72.5%)**
+**Overall: 446/626 pass (71.2%)**
 
 ## By bucket
 
@@ -18,41 +18,41 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
+| bilingual | 38/40 | 95.0% |
 | multi_entity_turn | 18/20 | 90.0% |
-| bilingual | 36/40 | 90.0% |
 | evp_vs_vp_disambig | 21/25 | 84.0% |
 | tier_listing | 5/6 | 83.3% |
 | email_identity_lookup | 5/6 | 83.3% |
 | multi_hop | 15/18 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
-| listing_count | 15/20 | 75.0% |
+| enterprise_shorthand | 15/20 | 75.0% |
 | dept_member_count | 11/15 | 73.3% |
 | dept_listing_small | 5/7 | 71.4% |
 | thai_knowledge | 7/10 | 70.0% |
-| enterprise_shorthand | 14/20 | 70.0% |
 | hard_implicit_hierarchy | 13/19 | 68.4% |
 | nickname_grid | 41/61 | 67.2% |
 | org_plus_person | 2/3 | 66.7% |
 | hard_nickname_variant | 6/10 | 60.0% |
-| surname_family | 13/24 | 54.2% |
-| deep_multihop | 6/12 | 50.0% |
+| listing_count | 11/20 | 55.0% |
+| superlative | 5/10 | 50.0% |
 | hard_multihop | 11/26 | 42.3% |
 | counterfactual | 10/25 | 40.0% |
-| superlative | 4/10 | 40.0% |
 | retrieval | 5/14 | 35.7% |
 | org_informal_listing | 2/6 | 33.3% |
 | subsidiary_routing | 4/12 | 33.3% |
+| deep_multihop | 4/12 | 33.3% |
+| surname_family | 7/24 | 29.2% |
 | noisy_name_form | 5/20 | 25.0% |
 | casual_name_lookup | 2/15 | 13.3% |
 
 ## By priority
 
 - P0: 171/226 (75.7%)
-- P1: 259/364 (71.2%)
-- P2: 24/36 (66.7%)
+- P1: 252/364 (69.2%)
+- P2: 23/36 (63.9%)
 
-## Failures (172)
+## Failures (180)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -339,7 +339,7 @@ Location: FahMai Tower 10F, HQ
 ### g172 [nickname_grid] P0/th
 **Q:** ขิง ที่ SUP เบอร์อะไร
 
-**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช']
+**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช', '71734']
 
 **Response:**
 
@@ -664,4 +664,4 @@ CEO-CoS คือ กิตติคุณ พงจงรัก (บูม) จ
 ```
 
 
-_+122 more failures — see results.jsonl_
+_+130 more failures — see results.jsonl_

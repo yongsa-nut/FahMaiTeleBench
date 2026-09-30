@@ -46,7 +46,7 @@ CONFIG_ORDER = ["t1_grep", "t2_search", "t3_both", "t4_repl"]
 BLIND_SEED = 20260524
 BLIND_N = 40
 PER_CATEGORY = 3                                             # extra coverage items per category
-HARD_SUBTYPES = {"E1", "E2", "E3", "B3", "B5"}               # multi-hop + disambiguation (C5 = aggregation, not hard)
+HARD_SUBTYPES = {"E1", "E2", "E3", "B3", "B4"}               # multi-hop + disambiguation (C4 = aggregation, not hard)
 
 # triage flag -> weight (higher = more urgent to review)
 FLAG_WEIGHT = {"strong_fail": 100, "weak_pass_risk": 80, "all_fail": 60,
@@ -62,21 +62,29 @@ NAME_PLACEHOLDER = "const BAKED_NAME  = null; /* BAKED_NAME_PLACEHOLDER */"
 
 # ============================ grader (inlined from scripts/grade.py:37-57) ============================
 
+def _contains(resp, tok):
+    """Case-insensitive containment. A purely numeric token (count, extension, ID) must appear as a
+    standalone number, not inside a longer one ("2" does not match "2021"); thousands separators ignored."""
+    if tok.isdigit():
+        return re.search(rf"(?<!\d){tok}(?!\d)", resp.replace(",", "")) is not None
+    return tok.lower() in resp.lower()
+
+
 def grade(it, resp):
     """Reason-rich fails, identical to scripts/grade.py — empty list == PASS."""
     ea = it["expected_answer"]
     fails = []
     for g in ea.get("must_contain_any_of", []):
-        if g and not any(t.lower() in resp.lower() for t in g if t):
+        if g and not any(_contains(resp, t) for t in g if t):
             fails.append(f"missing any-of {g[:3]}")
     for t in ea.get("must_not_contain", []):
         if t and t.lower() in resp.lower():
             fails.append(f"has forbidden {t!r}")
-    if ea.get("exact_count") is not None and str(ea["exact_count"]) not in resp.replace(",", ""):
+    if ea.get("exact_count") is not None and not _contains(resp, str(ea["exact_count"])):
         fails.append(f"missing count {ea['exact_count']}")
     if ea.get("min_items"):
         tpi = ea.get("all_items_tokens_per_id", {})
-        hits = sum(1 for eid, toks in tpi.items() if any(t.lower() in resp.lower() for t in toks if t))
+        hits = sum(1 for eid, toks in tpi.items() if any(_contains(resp, t) for t in toks if t))
         if hits < ea["min_items"]:
             fails.append(f"min_items {ea['min_items']} not met ({hits})")
     if ea.get("must_not_contain_phone_extension") and re.search(r"\b\d{5}\b", resp):

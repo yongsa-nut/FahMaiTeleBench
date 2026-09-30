@@ -10,7 +10,9 @@
   "prompt_file": "fahmai_system_prompt.md",
   "prompt_chars": 4286,
   "questions_file": "questions\\questions_v02_all.csv",
-  "item_count": 2,
+  "item_count": 626,
   "started_at": "2026-05-25T14:11:23.920240",
-  "max_tool_rounds": 7
+  "max_tool_rounds": 7,
+  "dataset_version": "1.0",
+  "note": "results.jsonl = v1.0 items; items revised in v1.0 were re-run with this configuration"
 }

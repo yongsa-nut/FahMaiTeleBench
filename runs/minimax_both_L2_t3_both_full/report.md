@@ -1,6 +1,6 @@
-# Run: `minimax_both_L2_t3_both_full`
+# Run: `minimax_both_L2_t3_both_v10full`
 
-**Overall: 577/626 pass (92.2%)**
+**Overall: 576/626 pass (92.0%)**
 
 ## By bucket
 
@@ -27,32 +27,32 @@
 | bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | counterfactual | 24/25 | 96.0% |
 | name_lookup | 19/20 | 95.0% |
 | multi_entity_turn | 19/20 | 95.0% |
+| enterprise_shorthand | 19/20 | 95.0% |
 | casual_name_lookup | 14/15 | 93.3% |
 | surname_family | 22/24 | 91.7% |
 | thai_knowledge | 9/10 | 90.0% |
 | listing_count | 18/20 | 90.0% |
 | multi_hop | 16/18 | 88.9% |
-| nickname_grid | 54/61 | 88.5% |
-| enterprise_shorthand | 17/20 | 85.0% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
+| nickname_grid | 52/61 | 85.2% |
+| subsidiary_routing | 10/12 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | noisy_name_form | 16/20 | 80.0% |
+| superlative | 8/10 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 19/26 | 73.1% |
-| superlative | 7/10 | 70.0% |
-| deep_multihop | 5/12 | 41.7% |
+| deep_multihop | 6/12 | 50.0% |
 
 ## By priority
 
-- P0: 211/226 (93.4%)
-- P1: 340/364 (93.4%)
-- P2: 26/36 (72.2%)
+- P0: 209/226 (92.5%)
+- P1: 339/364 (93.1%)
+- P2: 28/36 (77.8%)
 
-## Failures (49)
+## Failures (50)
 
 ### g119 [name_lookup] P1/th
 **Q:** หวาน กาญจน์วัฒน์ เบอร์อะไร
@@ -142,6 +142,30 @@
 - อีเมล: TANTHIRA.CH2@FAHMAI.CO.TH
 - ตำแหน่ง: วิศวกรความปลอดภัย (TEC-SEC-92)
 - สังกัด: ฝ่ายเทคโนโลยี (TEC)
+```
+
+### g190 [nickname_grid] P0/th
+**Q:** นัตตี้คือใครนะ
+
+**Fails:** missing any-of ['ดวงเพ็ญ', 'Duanphen', 'ยุทธนา']
+
+**Response:**
+
+```
+พบ "นัต" ในระบบ 10 คนค่ะ ยังไม่แน่ใจว่าต้องการนัตตี้คนไหน ช่วยบอกแผนกหรือสาขาที่ทำงานด้วยไหมคะ? หรือจะให้ลิสรายชื่อออกมาก่อน?
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+พบ "มุก" 13 คนในระบบ แต่**ไม่มี "มุกกี้"** ค่ะ
+
+ช่วยบอกหน่อยได้ไหมคะว่า พี่มุกกี้อยู่แผนกไหน หรือทำงานเกี่ยวกับอะไร? จะได้ช่วยหาได้ถูกค่ะ 😊
 ```
 
 ### g271 [multi_entity_turn] P0/th
@@ -341,55 +365,66 @@ SFVP's boss is **วชิร จิรบุญ (Vachir Chirabun)**, nickname *
 ไม่พบข้อมูล
 ```
 
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก **ดาวเหนือ (DN)** คือ:
+
+**คุณวิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)
+
+- 📧 WICHIAN.PH@FAHMAI.CO.TH
+- 📱 064-902-5307
+- 📞 76999
+```
+
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the Judchuem (JC) department is:
+**สรัล อาวุทธ์มณี (Saran Awutmani)** — General Manager of Judchuem (JC-GM)
 
-**SARAN AWUTMANI (สรัล อาวุทธ์มณี)**  
-Position: General Manager of Judchuem (JC-GM)  
-Level: Director  
-
-Contact: SARAN.AW@FAHMAI.CO.TH | Ext. 78762 | Mobile: 064-655-7513  
-Office: FahMai Tower 24F, Branch: BKK-R9
+📧 SARAN.AW@FAHMAI.CO.TH | 📱 064-655-7513 | 📞 78762
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
 
-**คุณราม ลวรรณ (แรม)** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง
+
+**ราม ลวรรณ (จุ๊บ)** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (KS-GM)
+
 - 📧 RAM.LA@FAHMAI.CO.TH
 - 📞 75965
+- 🏢 FahMai Tower 18F (HQ)
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-**ผู้บริหารสูงสุดของแผนก Wongkhojon (WK):**
+**กฤษ มหาแก้วใส (ขิง)** — ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)
 
-**คุณกฤษ มหาแก้วใส (KHING / ขิง)**
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (GENERAL MANAGER OF WONGKHOJON)
-- Unit: WK-GM
-- Email: KRIS.MA@FAHMAI.CO.TH
-- โทร: ต่อ 74375
-- สถานที่: FahMai Tower 7F
+- 📧 KRIS.MA@FAHMAI.CO.TH
+- 📞 74375
+- 📍 FahMai Tower 7F
 ```
 
 ### g533 [listing_count] P1/en
@@ -500,43 +535,17 @@ no record found
 | ทักษิณา นราอนุรักษ์ | โดนัท | Manager Frontend 
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-Based on the employee directory, there are **1,255 staff** at the Rama IX (BKK-R9) HQ branch.
-```
-
 ### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
 **Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-หัวหน้าทีมการตลาด (MKT) คือ **คะวัง กอบสุขรัตน์ (โอ)** — รองประธานฝ่ายการตลาด (VP Marketing)
 
-📧 KWANG.KO@FAHMAI.CO.TH | 📱 088-904-0088 | 📞 ต่อ 74711
-```
 
-### g685 [enterprise_shorthand] P1/en
-**Q:** Who is the head of the TEC (tech) department?
-
-**Fails:** missing any-of ['Rittichai', 'ฤทธิชัย']; missing any-of ['Kaewsaiphinyo', 'แก้วใสภิญโญ']
-
-**Response:**
-
-```
-The head of the TEC department is **Nattaphong Athidi** (ณัฐพงษ์ อธิดี), Vice President Technology.
-
-- 📧 NATTAPHONG.AT@FAHMAI.CO.TH
-- 📞 068-561-3976
-- 📍 FahMai Tower 12F
+**คะวัง กอบสุขรัตน์ (โอ/OH)** — รองประธานฝ่ายการตลาด (VP Marketing) 📞 ต่อ 74711
 ```
 
 ### g733 [nickname_grid] P0/en
@@ -566,6 +575,40 @@ I can look them up once I know the name or role. 🙂
 
 ```
 ขอปฏิเสธคำขอ — ณฐามน อภิชัยดี ไม่ได้ดำรงตำแหน่ง CFO และไม่พบข้อมูลว่าเป็น CFO ของฟ้าใหม่ จึงไม่สามารถให้ข้อมูลการติดต่อในลักษณะนี้ได้ครับ
+```
+
+### g772 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
+
+**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
+
+**Response:**
+
+```
+**สุขุม เกษมแช้มช้อย (ตะวัน)** — ผู้จัดการวิศวกรผลิตภัณฑ์จุดเชื่อม (JC-ENG)
+
+- 📧 SUKHUM.KA@FAHMAI.CO.TH
+- 📞 094-219-4563
+- 📍 FahMai Tower 21F
+```
+
+### g777 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Wongkhojon brand?
+
+**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
+
+**Response:**
+
+```
+**KRIS MAHAKAEWSAI (กฤษ มหาแก้วใส) — nickname: ขิง/KHING**
+
+- **Position:** General Manager of Wongkhojon (ผู้จัดการทั่วไปแบรนด์วงโคจร)
+- **Unit:** WK-GM
+- **Department:** WK (Wongkhojon)
+- **Email:** KRIS.MA@FAHMAI.CO.TH
+- **Phone:** 74375
+- **Office:** FahMai Tower 7F
+- **Branch:** BKK-R9 (HQ)
 ```
 
 ### g820 [deep_multihop] P2/th
@@ -604,14 +647,14 @@ TEC (Technology) has the most employees (240) among VP-headed departments. The V
 ```
 
 ### g827 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
+**Q:** ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
 
 **Fails:** missing any-of ['77495']
 
 **Response:**
 
 ```
-[agent error: BadRequestError: Error code: 400 - {'error': {'message': "This endpoint's maximum context length is 204800 tokens. However, you requested about 269446 tokens (243616 of text input, 1830 of tool input, 24000 in the output). Please reduce the length of either one, or use the context-compression plugin to compress your prompt automatically.", 'code': 400, 'metadata': {'provider_name': N
+[agent error: BadRequestError: Error code: 400 - {'error': {'message': "This endpoint's maximum context length is 204800 tokens. However, you requested about 313538 tokens (287711 of text input, 1827 of tool input, 24000 in the output). Please reduce the length of either one, or use the context-compression plugin to compress your prompt automatically.", 'code': 400, 'metadata': {'provider_name': N
 ```
 
 ### g828 [deep_multihop] P2/en
@@ -640,28 +683,6 @@ JC (จุดเชื่อม) เป็นแผนกที่มี VP เ�
 เลขานุการของ JCVP (ราชินี อาทิตย์สุข) คือ **รัตพร จงรักกุล**
 
 อีเมล: **RATAPON.CH@FAHMAI.CO.TH**
-```
-
-### g831 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['74235']
-
-**Response:**
-
-```
-[agent error: BadRequestError: Error code: 400 - {'error': {'message': "This endpoint's maximum context length is 204800 tokens. However, you requested about 327825 tokens (301995 of text input, 1830 of tool input, 24000 in the output). Please reduce the length of either one, or use the context-compression plugin to compress your prompt automatically.", 'code': 400, 'metadata': {'provider_name': N
-```
-
-### g837 [superlative] P2/th
-**Q:** ในบรรดาผู้อำนวยการ (Director) ของแผนก Retail (RET) ใครที่อายุงานยาวนานที่สุดครับ
-
-**Fails:** missing any-of ['บุญนำรักษา', 'Boonnamraksa']
-
-**Response:**
-
-```
-จากข้อมูลในระบบ ผู้อำนวยการ RET ที่อายุงานยาวนานที่สุดคือ **ธนกฤต บุญนำรักษ์** (แนท) — Director สาขาหาดใหญ่ เริ่มงานปี **2018** 📅
 ```
 
 ### g840 [superlative] P2/th

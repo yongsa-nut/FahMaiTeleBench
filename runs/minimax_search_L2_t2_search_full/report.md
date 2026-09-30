@@ -1,6 +1,6 @@
-# Run: `minimax_search_L2_t2_search_full`
+# Run: `minimax_search_L2_t2_search_v10full`
 
-**Overall: 566/626 pass (90.4%)**
+**Overall: 567/626 pass (90.6%)**
 
 ## By bucket
 
@@ -27,6 +27,7 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
+| subsidiary_routing | 12/12 | 100.0% |
 | refuse | 87/90 | 96.7% |
 | counterfactual | 24/25 | 96.0% |
 | bilingual | 38/40 | 95.0% |
@@ -34,9 +35,8 @@
 | surname_family | 22/24 | 91.7% |
 | superlative | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
-| nickname_grid | 53/61 | 86.9% |
+| nickname_grid | 52/61 | 85.2% |
 | enterprise_shorthand | 17/20 | 85.0% |
-| subsidiary_routing | 10/12 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | noisy_name_form | 16/20 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 207/226 (91.6%)
-- P1: 328/364 (90.1%)
+- P0: 206/226 (91.2%)
+- P1: 330/364 (90.7%)
 - P2: 31/36 (86.1%)
 
-## Failures (60)
+## Failures (59)
 
 ### g140 [casual_name_lookup] P0/en
 **Q:** khun Jub in OPS — ext?
@@ -173,6 +173,17 @@ CMO (Chief Marketing Officer) ของฟ้าใหม่คือ **ดา�
 
 ```
 พบ **จงรัก สัมโชติ** ชื่อเล่น **ปุ๊ก** — ทำงานแผนก JC (จุดเชื่อม) สาขา Remote แต่ **ไม่มีเบอร์โทรศัพท์ในระบบ** (ทั้ง Extension และ Mobile ว่างเปล่าค่ะ)
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+มี 13 คนในระบบที่ชื่อเล่น "มุก" ค่ะ ช่วยบอกแผนกหรือตำแหน่งของพี่มุกที่ต้องการติดต่อด้วยได้ไหมคะ?
 ```
 
 ### g211 [dept_listing_medium] P1/en
@@ -341,65 +352,64 @@ General Manager of JudChuem
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก DN (ดาวเหนือ) คือ **คุณวิเชียร พงหอมกลิ่น** ดำรงตำแหน่ง **ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)**
+**ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN):** วิเชียร พงหอมกลิ่น
 
-📧 WICHIAN.PH@FAHMAI.CO.TH | 📱 064-902-5307 | 📞 ต่อ 76999
+- ตำแหน่ง: ผู้จัดการทั่ววไปแบรนด์ดาวเหนือ (General Manager of DaoNuea)
+- Email: WICHIAN.PH@FAHMAI.CO.TH
+- โทร: 064-902-5307
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the Judchuem (JC) department is **SARAN AWUTMANI (สรัล อาวุทธ์มณี)**, serving as General Manager of Judchuem.
+**Saran Awutmani (สรัล อาวุทธ์มณี)**
 
-- **Position:** General Manager of Judchuem (JC-GM)
-- **Level:** Director
-- **Email:** SARAN.AW@FAHMAI.CO.TH
-- **Phone:** 064-655-7513 (ext. 78762)
-- **Location:** FahMai Tower 24F, HQ (BKK-R9)
+General Manager of Judchuem (JC-GM)
+📧 SARAN.AW@FAHMAI.CO.TH
+📱 064-655-7513
+📍 FahMai Tower 24F | Ext. 78762
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **Kluensiang (KS)** คือ **ราม ลวรณ (จุ๊บ)** — ตำแหน่ง General Manager ของแบรนด์คลื่นเสียง 📧 RAM.LA@FAHMAI.CO.TH | ☎️ 75965
+ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
+
+**ราม ลวรรณ (RAM LAWAN)** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง
+- 📧 RAM.LA@FAHMAI.CO.TH
+- 📞 75965
+- 🏢 FahMai Tower 18F
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-**ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)**
+**กฤษ มหาแก้วใส (KHING)** — ผู้จัดการทั่วไปแบรนด์วงโคจร (WK-GM)
 
-👤 **กฤษ มหาแก้วใส (ขิง / KRIS MAHAKAEWSAI)**
 - 📧 KRIS.MA@FAHMAI.CO.TH
-- 📱 เฉพาะ内線: 74375
-- 📍 FahMai Tower 7F, BKK-R9 (HQ)
-- 🎯 Position Level: Director (เริ่มงาน 2017)
-
----
-
-⚠️ **หมายเหตุ:** ตำแหน่ง WK-GM ถือเป็นผู้บริหารสูงสุดของแผนก/แบรนด์วงโคจร (Wongkhojon) โดยตรง
+- 📞 74375
 ```
 
 ### g492 [bilingual] P1/en
@@ -681,17 +691,6 @@ CFO (ประธานเจ้าหน้าที่การเงิน) �
 | เอกลักษณ์ เทพบุญนำ (ฟิล์ม) | Flee
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-**1,255** staff work at the Rama IX (BKK-R9) HQ branch.
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -723,4 +722,4 @@ The head of the HR team is **สุเมธ อัครใจงาม (SUMATE
 ```
 
 
-_+10 more failures — see results.jsonl_
+_+9 more failures — see results.jsonl_

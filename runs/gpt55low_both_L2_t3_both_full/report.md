@@ -1,6 +1,6 @@
-# Run: `gpt55low_both_L2_t3_both_full`
+# Run: `gpt55low_both_L2_t3_both_v10full`
 
-**Overall: 587/626 pass (93.8%)**
+**Overall: 579/626 pass (92.5%)**
 
 ## By bucket
 
@@ -13,7 +13,6 @@
 | vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
 | casual_name_lookup | 15/15 | 100.0% |
-| nickname_grid | 61/61 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
 | dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
@@ -27,32 +26,33 @@
 | bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
-| superlative | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
+| nickname_grid | 60/61 | 98.4% |
 | counterfactual | 24/25 | 96.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
-| surname_family | 22/24 | 91.7% |
 | name_lookup | 18/20 | 90.0% |
 | listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
+| superlative | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
 | extension_reverse | 6/7 | 85.7% |
-| subsidiary_routing | 10/12 | 83.3% |
 | deep_multihop | 10/12 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 20/26 | 76.9% |
+| subsidiary_routing | 9/12 | 75.0% |
+| surname_family | 17/24 | 70.8% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 12/18 | 66.7% |
 | email_mobile_lookup | 4/7 | 57.1% |
 
 ## By priority
 
-- P0: 221/226 (97.8%)
-- P1: 336/364 (92.3%)
-- P2: 30/36 (83.3%)
+- P0: 220/226 (97.3%)
+- P1: 330/364 (90.7%)
+- P2: 29/36 (80.6%)
 
-## Failures (39)
+## Failures (47)
 
 ### g114 [name_lookup] P1/th
 **Q:** ขอเบอร์ สมพงษ์ อินทรีย์นาม หน่อย
@@ -74,6 +74,17 @@
 
 ```
 no record found
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+เจอหลายคนชื่อเล่น “มุก” ครับ ช่วยบอกชื่อจริง/แผนกเพิ่มหน่อยว่าเป็นพี่มุกคนไหน?
 ```
 
 ### g212 [dept_listing_medium] P1/en
@@ -254,51 +265,52 @@ GM ดาวเหนือคือ **วิเชียร พงหอมก�
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ Daonuea (DN) คือ **วิเชียร พงหอมกลิ่น** — General Manager of Daonuea  
-โทร. **76999**, มือถือ **064-902-5307**, อีเมล **WICHIAN.PH@FAHMAI.CO.TH**
+ผู้บริหารสูงสุดของแผนก DaoNuea คือ **วิเชียร พงหอมกลิ่น** — General Manager of DaoNuea  
+โทร: 76999 / 064-902-5307  
+อีเมล: WICHIAN.PH@FAHMAI.CO.TH
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-Saran Awutmani — General Manager of JudChuem (JC)  
+The most senior person heading JudChuem (JC) is Saran Awutmani — General Manager of JudChuem.  
 Email: SARAN.AW@FAHMAI.CO.TH | Ext: 78762 | Mobile: 064-655-7513
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ราม ลวรรณ — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (KS)  
-อีเมล: RAM.LA@FAHMAI.CO.TH, ต่อ 75965
+ผู้บริหารสูงสุดของแผนก KluenSiang คือ **ราม ลวรรณ** — General Manager of KluenSiang  
+อีเมล: **RAM.LA@FAHMAI.CO.TH**, ต่อ **75965**
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ Wongkhojon (WK) คือ **กฤษ มหาแก้วใส** — General Manager of WongKhoJon  
-อีเมล: **KRIS.MA@FAHMAI.CO.TH**, ต่อ **74375**
+ผู้บริหารสูงสุดของแผนก WongKhoJon คือ **กฤษ มหาแก้วใส** — General Manager of WongKhoJon  
+อีเมล: KRIS.MA@FAHMAI.CO.TH | ต่อ: 74375
 ```
 
 ### g533 [listing_count] P1/en
@@ -412,6 +424,19 @@ no record found
 คนที่ตำแหน่งสูงสุดคือ **พงษ์กานต์ ราชชากัญญ์ (COO)** เบอร์ต่อ **75464**
 ```
 
+### g606 [surname_family] P1/en
+**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ปกรณ์ เขียวขจีศรี — PAKORN.KI@FAHMAI.CO.TH
+- อัจฉรา เขียวขจีศรี — ext. 78341, 067-671-3743, ATCHARA.KI@FAHMAI.CO.TH
+- ไพฑูรย์ เขียวขจีศรี — ext. 74791, PAITOON.KI@FAHMAI.CO.TH
+```
+
 ### g607 [surname_family] P1/th
 **Q:** พนักงานที่นามสกุล แสงทอง มีใครบ้าง ขอชื่อทุกคน
 
@@ -421,6 +446,57 @@ no record found
 
 ```
 ไม่พบข้อมูล
+```
+
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+- ยุพา ไกรศรีมณี — YU-PHA.KR@FAHMAI.CO.TH, ext. 77475, mobile 061-810-1278
+- วิภา ไกรศรีมณี — WIPHA.KR@FAHMAI.CO.TH, ext. 75335
+- พาณิช ไกรศรีมณี — PANIT.KR@FAHMAI.CO.TH, ext. 08109
+```
+
+### g610 [surname_family] P1/en
+**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+Everyone with surname บุญเรืองกุล:
+
+- ศศิ บุญเรืองกุล — Phone Support Agent, SUP — SASI.BO@FAHMAI.CO.TH, ext. 72832
+- น้ำทิพย์ บุญเรืองกุล — Sales Associate Siam, RET — NAMTHIP.BO@FAHMAI.CO.TH, ext. 19234
+```
+
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก (PANYA WATCHARACHONGRAK) — SUP, ext. 72201, 093-616-9898, PANYA.WA@FAHMAI.CO.TH
+- จรูญ วัชรจงรัก (CHAROON WATCHARACHONGRAK) — HR, ext. 71981, CHAROON.WA@FAHMAI.CO.TH
+```
+
+### g620 [surname_family] P1/en
+**Q:** List everyone with the surname สมประเสริฐ (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ส้ม สมประเสริฐ — Sales Associate Lad Phrao, ext. 29089, 086-366-0302, SOM.SO@FAHMAI.CO.TH
+- ดารา สมประเสริฐ — KluenSiang Brand Marketer, ext. 78138, 065-660-6196, DARA.SO@FAHMAI.CO.TH
 ```
 
 ### g622 [surname_family] P1/en
@@ -435,15 +511,16 @@ no record found
 - ดาหลา อภิญญาเสริม — DARHA.AP@FAHMAI.CO.TH, ext. 75781
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g685 [enterprise_shorthand] P1/en
+**Q:** Who is the head of the tech department?
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing any-of ['Kaewsaiphinyo', 'แก้วใสภิญโญ']
 
 **Response:**
 
 ```
-1,255 staff work at the Rama IX (R9) HQ branch.
+Rittichai Kaewsaiph inyo — Chief Technology Officer (CTO)  
+Ext. 75477 | 082-837-1298 | RITTICHAI.KA@FAHMAI.CO.TH
 ```
 
 ### g758 [counterfactual] P1/en
@@ -457,28 +534,38 @@ no record found
 no record found for ณัฐพงษ์ อธิดี as CTO.
 ```
 
-### g772 [subsidiary_routing] P1/th
-**Q:** แบรนด์จุดเชื่อมเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
 
-**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
 
 **Response:**
 
 ```
-หัวหน้าทีมวิศวกรผลิตภัณฑ์จุดเชื่อมคือ **สุชาดา วัชรอาวุทธ์**  
-อีเมล: **SUCHADA.WA@FAHMAI.CO.TH** | ต่อ: **74383**
+หัวหน้าทีมนักการตลาดแบรนด์คลื่นเสียงคือ **เย็น นรากุล**  
+อีเมล: **YEN.NA@FAHMAI.CO.TH** | ต่อ **78572**
+```
+
+### g775 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Kluensiang brand?
+
+**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
+
+**Response:**
+
+```
+LALANA JAIKIEOWSATHIT heads Kluensiang Brand Operations — ext. 73432, LALANA.JA@FAHMAI.CO.TH.
 ```
 
 ### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Wongkhojon brand?
 
 **Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
 
 **Response:**
 
 ```
-WongKhoJon is headed by **Kris Mahakaewsai** — General Manager of WongKhoJon.  
-Email: **KRIS.MA@FAHMAI.CO.TH**, ext. **74375**
+Kris Mahakaewsai — General Manager of WongKhoJon. Email: KRIS.MA@FAHMAI.CO.TH, ext. 74375.
 ```
 
 ### g821 [deep_multihop] P2/en
@@ -501,5 +588,17 @@ Email: **KRIS.MA@FAHMAI.CO.TH**, ext. **74375**
 
 ```
 ละไม บุญพงศ์ อยู่แผนก JC แต่จากข้อมูลที่ค้นได้ตอนนี้ยังไม่พบเบอร์ต่อของเลขา JCVP — no record found
+```
+
+### g836 [superlative] P2/en
+**Q:** Among the Directors in the Marketing department, who has been at FahMai the longest?
+
+**Fails:** missing any-of ['อัจฉรา', 'Atchara']; missing any-of ['เขียวขจีศรี', 'Kiaokajisi']
+
+**Response:**
+
+```
+Among Marketing Directors, **Oranong Wisanuman** has been at FahMai the longest — started **2019**.  
+Email: **ORANONG.WI@FAHMAI.CO.TH**, ext. **78713**, mobile **081-480-0974**.
 ```
 

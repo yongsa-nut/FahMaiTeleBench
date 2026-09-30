@@ -1,6 +1,6 @@
-# Run: `typhoon8b_both_L2_t3_both_20260526_114107`
+# Run: `typhoon8b_both_L2_t3_both_v10full`
 
-**Overall: 225/626 pass (35.9%)**
+**Overall: 210/626 pass (33.5%)**
 
 ## By bucket
 
@@ -15,27 +15,26 @@
 | evp_identity_by_code | 3/4 | 75.0% |
 | section_listing | 3/4 | 75.0% |
 | extension_reverse | 5/7 | 71.4% |
-| listing_count | 12/20 | 60.0% |
-| surname_family | 14/24 | 58.3% |
-| enterprise_shorthand | 11/20 | 55.0% |
+| surname_family | 13/24 | 54.2% |
 | evp_vs_vp_disambig | 13/25 | 52.0% |
 | ceo_president | 2/4 | 50.0% |
 | dept_listing_medium | 4/8 | 50.0% |
 | subsidiary_md | 4/8 | 50.0% |
 | multi_hop | 9/18 | 50.0% |
-| nickname_grid | 26/61 | 42.6% |
+| enterprise_shorthand | 9/20 | 45.0% |
 | vp_identity | 2/5 | 40.0% |
 | thai_knowledge | 4/10 | 40.0% |
+| nickname_grid | 24/61 | 39.3% |
 | dept_member_count | 5/15 | 33.3% |
 | org_informal_listing | 2/6 | 33.3% |
 | org_plus_person | 1/3 | 33.3% |
 | refuse | 29/90 | 32.2% |
 | hard_nickname_variant | 3/10 | 30.0% |
-| bilingual | 12/40 | 30.0% |
-| superlative | 3/10 | 30.0% |
+| listing_count | 6/20 | 30.0% |
 | evp_identity_by_description | 1/4 | 25.0% |
-| multi_entity_turn | 4/20 | 20.0% |
-| subsidiary_routing | 2/12 | 16.7% |
+| multi_entity_turn | 5/20 | 25.0% |
+| bilingual | 10/40 | 25.0% |
+| superlative | 2/10 | 20.0% |
 | deep_multihop | 2/12 | 16.7% |
 | brand_prior | 1/10 | 10.0% |
 | hard_multihop | 2/26 | 7.7% |
@@ -45,14 +44,15 @@
 | retrieval | 0/14 | 0.0% |
 | noisy_name_form | 0/20 | 0.0% |
 | counterfactual | 0/25 | 0.0% |
+| subsidiary_routing | 0/12 | 0.0% |
 
 ## By priority
 
-- P0: 75/226 (33.2%)
-- P1: 133/364 (36.5%)
-- P2: 17/36 (47.2%)
+- P0: 74/226 (32.7%)
+- P1: 120/364 (33.0%)
+- P2: 16/36 (44.4%)
 
-## Failures (401)
+## Failures (416)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -565,7 +565,7 @@ I need to clarify your question. Are you asking about the number of employees na
 ### g171 [nickname_grid] P0/th
 **Q:** เสือ ที่ KS เบอร์อะไร
 
-**Fails:** missing any-of ['Vachir', 'วชิร']; missing any-of ['Anuboonrueng', 'อนุบุญเรือง']
+**Fails:** missing any-of ['Vachir', 'วชิร']; missing any-of ['Anuboonrueng', 'อนุบุญเรือง', '72469']
 
 **Response:**
 
@@ -578,7 +578,7 @@ Once I have the correct name or nickname, I can search the directory to find the
 ### g172 [nickname_grid] P0/th
 **Q:** ขิง ที่ SUP เบอร์อะไร
 
-**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช']
+**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช', '71734']
 
 **Response:**
 
@@ -620,4 +620,4 @@ Once I have the correct name or nickname, I can search the directory to find the
 ```
 
 
-_+351 more failures — see results.jsonl_
+_+366 more failures — see results.jsonl_

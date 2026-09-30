@@ -1,6 +1,6 @@
-# Run: `gpt55med_both_L2_t3_both_full`
+# Run: `gpt55med_both_L2_t3_both_v10full`
 
-**Overall: 600/626 pass (95.8%)**
+**Overall: 597/626 pass (95.4%)**
 
 ## By bucket
 
@@ -29,18 +29,18 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
-| bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
+| bilingual | 39/40 | 97.5% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | dept_member_count | 14/15 | 93.3% |
 | deep_multihop | 11/12 | 91.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | listing_count | 17/20 | 85.0% |
+| subsidiary_routing | 10/12 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
 | hard_implicit_hierarchy | 14/19 | 73.7% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 222/226 (98.2%)
-- P1: 343/364 (94.2%)
+- P1: 340/364 (93.4%)
 - P2: 35/36 (97.2%)
 
-## Failures (26)
+## Failures (29)
 
 ### g196 [dept_listing_small] P1/en
 **Q:** who's in CEO-SEC
@@ -181,51 +181,61 @@ cannot provide this information — reporting lines aren’t tracked in the dire
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-วิเชียร พงหอมกลิ่น — General Manager of DaoNuea (DN)  
-โทร: 76999 / 064-902-5307, อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+ผู้บริหารสูงสุดของ Daonuea คือ **วิเชียร พงหอมกลิ่น** — General Manager of DaoNuea  
+โทร: **76999** / **064-902-5307** | อีเมล: **WICHIAN.PH@FAHMAI.CO.TH**
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-Saran Awutmani — General Manager of JudChuem (JC)  
-Email: SARAN.AW@FAHMAI.CO.TH | Ext. 78762 | Mobile: 064-655-7513
+Saran Awutmani — General Manager of JudChuem. Email: SARAN.AW@FAHMAI.CO.TH, ext. 78762, mobile 064-655-7513.
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ KluenSiang (KS) คือ **ราม ลวรรณ** — General Manager of KluenSiang  
-อีเมล: **RAM.LA@FAHMAI.CO.TH**, เบอร์ต่อ: **75965**
+ผู้บริหารสูงสุดของ KluenSiang คือ **ราม ลวรรณ** — GM แบรนด์คลื่นเสียง  
+อีเมล: **RAM.LA@FAHMAI.CO.TH**, เบอร์ต่อ **75965**
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ WongKhoJon (WK) คือ **กฤษ มหาแก้วใส** — General Manager of WongKhoJon  
-อีเมล: **KRIS.MA@FAHMAI.CO.TH** | เบอร์ต่อ: **74375**
+ผู้บริหารสูงสุดของ Wongkhojon คือ **กฤษ มหาแก้วใส** — General Manager of Wongkhojon  
+อีเมล: **KRIS.MA@FAHMAI.CO.TH**, ต่อ **74375**
+```
+
+### g476 [bilingual] P1/th
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+
+**Fails:** missing any-of ['00007543']
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
 ### g533 [listing_count] P1/en
@@ -327,15 +337,37 @@ Based on the lookup I ran: **0 employees**.
 คุณคำรณอยู่ส่วนงาน OPS — คนตำแหน่งสูงสุดคือ พงษ์กานต์ ราชชากัญญ์ (COO) เบอร์ต่อ 75464
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g685 [enterprise_shorthand] P1/en
+**Q:** Who is the head of the tech department?
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing any-of ['Kaewsaiphinyo', 'แก้วใสภิญโญ']
 
 **Response:**
 
 ```
-1,255 staff work at the Rama IX (R9) HQ branch.
+Rittichai Kaewsaiphiny (CTO) — ext. 75477, mobile 082-837-1298, RITTICHAI.KA@FAHMAI.CO.TH
+```
+
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
+
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
+
+**Response:**
+
+```
+Kovit Mahamani heads DaoNuea brand marketing — ext. 77251, KOVIT.MA@FAHMAI.CO.TH, mobile 094-711-0811.
+```
+
+### g775 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Kluensiang brand?
+
+**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
+
+**Response:**
+
+```
+Lalana Jaikieowsathit heads KluenSiang Brand Operations — ext. 73432, LALANA.JA@FAHMAI.CO.TH.
 ```
 
 ### g826 [deep_multihop] P2/en

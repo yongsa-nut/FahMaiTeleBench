@@ -1,6 +1,6 @@
-# Run: `minimax_grep-only_L2_t1_grep_full`
+# Run: `minimax_grep-only_L2_t1_grep_v10full`
 
-**Overall: 551/626 pass (88.0%)**
+**Overall: 549/626 pass (87.7%)**
 
 ## By bucket
 
@@ -20,39 +20,39 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | surname_family | 23/24 | 95.8% |
 | multi_entity_turn | 19/20 | 95.0% |
 | listing_count | 19/20 | 95.0% |
-| nickname_grid | 57/61 | 93.4% |
 | retrieval | 13/14 | 92.9% |
+| nickname_grid | 56/61 | 91.8% |
+| subsidiary_routing | 11/12 | 91.7% |
 | thai_knowledge | 9/10 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
+| hard_implicit_hierarchy | 17/19 | 89.5% |
 | dept_listing_medium | 7/8 | 87.5% |
 | dept_member_count | 13/15 | 86.7% |
 | noisy_name_form | 17/20 | 85.0% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | hard_bridge_lookup | 5/6 | 83.3% |
 | casual_name_lookup | 12/15 | 80.0% |
-| superlative | 8/10 | 80.0% |
+| hard_nickname_variant | 8/10 | 80.0% |
+| enterprise_shorthand | 16/20 | 80.0% |
 | counterfactual | 19/25 | 76.0% |
-| hard_nickname_variant | 7/10 | 70.0% |
 | org_informal_listing | 4/6 | 66.7% |
+| deep_multihop | 8/12 | 66.7% |
 | hard_multihop | 17/26 | 65.4% |
 | multi_hop | 11/18 | 61.1% |
-| deep_multihop | 6/12 | 50.0% |
+| superlative | 6/10 | 60.0% |
 | name_lookup | 9/20 | 45.0% |
 | org_plus_person | 1/3 | 33.3% |
 
 ## By priority
 
 - P0: 204/226 (90.3%)
-- P1: 319/364 (87.6%)
+- P1: 317/364 (87.1%)
 - P2: 28/36 (77.8%)
 
-## Failures (75)
+## Failures (77)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -262,6 +262,17 @@
 
 ```
 ไม่พบข้อมูล
+```
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+ไม่พบชื่อเล่น "มุกกี้" ในระบบโดยตรงค่ะ แต่พบพนักงานชื่อเล่น "มุก" ทั้งหมด 13 คน ขอทราบแผนกหรือตำแหน่งที่ต้องการเพิ่มเติมได้ไหมคะ?
 ```
 
 ### g212 [dept_listing_medium] P1/en
@@ -506,18 +517,6 @@ Contact: WIRIYA.CH@FAHMAI.CO.TH · ext. 79141.
 เจอ 13 คนชื่อเล่น "มุก" ในระบบ พี่มุกกี้หมายถึงคนไหนคะ? เช่น แผนกไหน หรือตำแหน่งอะไร?
 ```
 
-### g396 [hard_nickname_variant] P0/en
-**Q:** MINTY's extension in FIN please
-
-**Fails:** missing any-of ['เบญจวรรณ', 'Benjawan', 'โชคดีกำจร']
-
-**Response:**
-
-```
-**มิ้น (Mint)** — FIN / Executive Assistant to CFO  
-📞 เบอร์ต่อ: **75703** | 📍 FahMai Tower 26F
-```
-
 ### g439 [hard_multihop] P1/en
 **Q:** What's the email address of the VP whose secretary is ปิยนันท์ พรหมพิทักษ์?
 
@@ -589,46 +588,29 @@ Phone extension: **78762**
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **DN (ดาวเหนือ)** คือ **คุณวิเชียร พงหอมกลิ่น** ตำแหน่ง General Manager ของแบรนด์ดาวเหนือ (DN-GM)
+**วิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (DN-GM)
 
-📧 WICHIAN.PH@FAHMAI.CO.TH | 📱 064-902-5307 | 📞 ต่อ 76999
-```
-
-### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
-
-**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
-
-**Response:**
-
-```
-The most senior person heading the Judchuem (JC) department is:
-
-**SARAN AWUTMANI (สรัล อาวุทธ์มณี)**
-General Manager of Judchuem | Director level
-📧 SARAN.AW@FAHMAI.CO.TH | 📞 064-655-7513 | 📍 FahMai Tower 24F
+- 📧 WICHIAN.PH@FAHMAI.CO.TH
+- 📞 064-902-5307
+- 📍 FahMai Tower 19F
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-**ราม ลวรรณ (จุ๊บ)** — General Manager ของแผนก KS (คลื่นเสียง)
-
-- 📧 RAM.LA@FAHMAI.CO.TH
-- 📞 75965
-- 📍 FahMai Tower 18F
+ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ **ราม ลวรรณ (จุ๊บ)** — ตำแหน่ง General Manager ของแบรนด์คลื่นเสียง 📧 RAM.LA@FAHMAI.CO.TH | ☎️ 75965
 ```
 
 ### g533 [listing_count] P1/en
@@ -690,5 +672,20 @@ no record found
 ไม่พบข้อมูล
 ```
 
+### g587 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณจรูญ ชัยบุญสังกัดอยู่ หน่อยครับ
 
-_+25 more failures — see results.jsonl_
+**Fails:** missing any-of ['74877']
+
+**Response:**
+
+```
+คุณจรูญ ชัยบุญ สังกัดแผนก **B2B** (ฝ่ายขายองค์กร)
+
+ผู้บริหารสูงสุดใน B2B คือ **อุกฤษฎ์ วัชรเสริม** — ตำแหน่ง รองประธานฝ่ายขายองค์กร (VP B2B Sales)
+
+เบอร์ต่อ: **79274**
+```
+
+
+_+27 more failures — see results.jsonl_

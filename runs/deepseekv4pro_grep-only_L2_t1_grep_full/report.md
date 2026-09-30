@@ -1,6 +1,6 @@
-# Run: `deepseekv4pro_grep-only_L2_t1_grep_full`
+# Run: `deepseekv4pro_grep-only_L2_t1_grep_v10full`
 
-**Overall: 604/626 pass (96.5%)**
+**Overall: 606/626 pass (96.8%)**
 
 ## By bucket
 
@@ -13,6 +13,7 @@
 | vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
 | name_lookup | 20/20 | 100.0% |
+| nickname_grid | 61/61 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | dept_member_count | 15/15 | 100.0% |
@@ -34,25 +35,24 @@
 | multi_hop | 18/18 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | refuse | 89/90 | 98.9% |
-| nickname_grid | 60/61 | 98.4% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | retrieval | 13/14 | 92.9% |
+| subsidiary_routing | 11/12 | 91.7% |
+| deep_multihop | 11/12 | 91.7% |
 | listing_count | 18/20 | 90.0% |
 | casual_name_lookup | 13/15 | 86.7% |
+| hard_implicit_hierarchy | 16/19 | 84.2% |
 | hard_multihop | 21/26 | 80.8% |
-| superlative | 8/10 | 80.0% |
-| hard_implicit_hierarchy | 15/19 | 78.9% |
-| deep_multihop | 9/12 | 75.0% |
+| superlative | 7/10 | 70.0% |
 
 ## By priority
 
-- P0: 222/226 (98.2%)
+- P0: 223/226 (98.7%)
 - P1: 351/364 (96.4%)
-- P2: 31/36 (86.1%)
+- P2: 32/36 (88.9%)
 
-## Failures (22)
+## Failures (20)
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -74,20 +74,6 @@
 
 ```
 คุณน้ำ (โกวิท มหามณี) — ผู้จัดการนักการตลาดแบรนด์ดาวเหนือ — เบอร์มือถือ **094-711-0811** ครับ
-```
-
-### g172 [nickname_grid] P0/th
-**Q:** ขิง ที่ SUP เบอร์อะไร
-
-**Fails:** missing any-of ['Pholdech', 'พลเดช']
-
-**Response:**
-
-```
-คุณสุณี (ขิง) ฝ่าย SUP ตำแหน่ง Support Trainer
-
-- **เบอร์ต่อ**: 71734
-- **มือถือ**: 094-546-2762
 ```
 
 ### g355 [hard_multihop] P0/th
@@ -180,64 +166,42 @@
 📧 อีเมล: **KRIS.MA@FAHMAI.CO.TH**
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
-
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแบรนด์ดาวเหนือ (DN) คือ **คุณวิเชียร พงหอมกลิ่น**  
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)  
-- อีเมล: WICHIAN.PH@FAHMAI.CO.TH  
-- เบอร์โทร: 02-xxx-76999  
-- ชั้น: FahMai Tower 19F
-```
-
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the **Judchuem (JC)** department is:
+The most senior person heading Judchuem (จุดเชื่อม) is **Saran Awutmani** (สรัล อาวุทธ์มณี), General Manager of Judchuem.
 
-- **Saran Awutmani** (สรัล อาวุทธ์มณี) — General Manager of Judchuem
-- 📧 SARAN.AW@FAHMAI.CO.TH | 📞 Ext. 78762
-- Location: FahMai Tower 24F | Level: Director
+- Email: SARAN.AW@FAHMAI.CO.TH
+- Phone Extension: 78762
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแบรนด์คลื่นเสียง (KS) คือ **คุณราม ลวรรณ (จุ๊บ)** ตำแหน่งผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
-
-- 📧 RAM.LA@FAHMAI.CO.TH
-- 📞 เบอร์ต่อ 75965
-- 📍 FahMai Tower ชั้น 18F
+ผู้บริหารสูงสุดของแผนก Kluensiang (คลื่นเสียง) คือ **คุณราม ลวรรณ (จุ๊บ)** — General Manager of Kluensiang
+📧 RAM.LA@FAHMAI.CO.TH | โทร 75965
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ **คุณกฤษ มหาแก้วใส (ขิง)** ดำรงตำแหน่ง General Manager of Wongkhojon
-
-- 📧 KRIS.MA@FAHMAI.CO.TH
-- 📞 เบอร์ต่อ: 74375
-- 🏢 FahMai Tower 7F
+ผู้บริหารสูงสุดของแผนกวงโคจร (WK) คือ **กฤษ มหาแก้วใส (ขิง)** — ผู้จัดการทั่วไปแบรนด์วงโคจร
+อีเมล: KRIS.MA@FAHMAI.CO.TH | เบอร์ต่อ: 74375
 ```
 
 ### g533 [listing_count] P1/en
@@ -273,15 +237,32 @@ There are **6 employees** in the DN department at Lead level who started in 2022
 Peter (Arthit Watcharafa) — Lead QA Engineer, TEC-QA — doesn't have a phone extension listed in the directory. You can reach him at **ARTHIT.WA@FAHMAI.CO.TH** instead.
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g671 [enterprise_shorthand] P1/th
+**Q:** พนักงานสาขาโคราช มีกี่คน
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 30
 
 **Response:**
 
 ```
-The Rama IX HQ branch (BKK-R9) has **1,255** staff members.
+สาขาขอนแก่น (KKN) มีพนักงานทั้งหมด **21 คน** แบ่งเป็น:
+
+- **Manager** 3 คน
+- **Lead** 4 คน
+- **IC (พนักงานขาย)** 14 คน
+```
+
+### g775 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Kluensiang brand?
+
+**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
+
+**Response:**
+
+```
+The Kluensiang brand is headed by **Ram Lawan** (ราม ลวรรณ), General Manager of Kluensiang.
+
+📧 RAM.LA@FAHMAI.CO.TH · ☎️ 75965 · FahMai Tower 18F
 ```
 
 ### g828 [deep_multihop] P2/en
@@ -303,30 +284,18 @@ Let me search for employees in each VP-headed department more directly.
 <｜｜DSML｜｜parameter name="max_matches" string="false">300</｜｜DSML｜｜paramet
 ```
 
-### g829 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
+### g832 [superlative] P2/th
+**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ
 
-**Fails:** missing any-of ['79653']
-
-**Response:**
-
-```
-Let me try searching for specific patterns that isolate each department
-```
-
-### g831 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['74235']
+**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
 
 **Response:**
 
 ```
-ผมมีข้อมูลบางส่วนแล้ว แต่ต้องระบุจำนวนพนักงานให้แน่ชัดในแต่ละแผนกที่มี VP เป็นหัวหน้า ลองค้นหาด้วย Section code แบบกว้างขึ้นครับ
-
-
-
-
+เท่าที่ตรวจสอบจากระบบ พนักงานที่เริ่มงานเร็วที่สุดที่พบคือ **คุณประยุทธ์ สมไชยา** ครับ  
+- ตำแหน่ง: Director B2B Support Specialist  
+- เริ่มงานปี: 2017  
+- อีเมล: PRAYUT.SO2@FAHMAI.CO.TH
 ```
 
 ### g840 [superlative] P2/th

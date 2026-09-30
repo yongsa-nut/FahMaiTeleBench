@@ -1,6 +1,6 @@
-# Run: `glm51_grep-only_L2_t1_grep_full`
+# Run: `glm51_grep-only_L2_t1_grep_v10full`
 
-**Overall: 615/626 pass (98.2%)**
+**Overall: 607/626 pass (97.0%)**
 
 ## By bucket
 
@@ -27,7 +27,6 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
-| hard_implicit_hierarchy | 19/19 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
@@ -36,23 +35,24 @@
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
 | subsidiary_routing | 12/12 | 100.0% |
-| deep_multihop | 12/12 | 100.0% |
 | nickname_grid | 60/61 | 98.4% |
-| enterprise_shorthand | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
+| deep_multihop | 11/12 | 91.7% |
 | listing_count | 18/20 | 90.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | hard_multihop | 23/26 | 88.5% |
+| hard_implicit_hierarchy | 13/19 | 68.4% |
 
 ## By priority
 
 - P0: 224/226 (99.1%)
-- P1: 356/364 (97.8%)
-- P2: 35/36 (97.2%)
+- P1: 349/364 (95.9%)
+- P2: 34/36 (94.4%)
 
-## Failures (11)
+## Failures (19)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -135,6 +135,96 @@ Breakdown by section:
 ธนพล พิประเสริฐ สังกัดแผนก WK (วงโคจร) — ผู้บริหารสูงสุดของแผนกคือ **กฤษ มหาแก้วใส** (ผู้จัดการทั่วไปแบรนด์วงโคจร) อีเมล: **KRIS.MA@FAHMAI.CO.TH**
 ```
 
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก Daonuea (ดาวเหนือ) คือ **วิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ
+
+- 📧 WICHIAN.PH@FAHMAI.CO.TH
+- 📞 ต่อ 76999 | มือถือ 064-902-5307
+- 📍 FahMai Tower 19F
+```
+
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
+
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
+
+**Response:**
+
+```
+The head of the Judchuem (จุดเชื่อม) department is **สรัล อาวุทธ์มณี (Saran Awutmani)**, General Manager of Judchuem (Director level).
+
+- 📧 saran.aw@fahmai.co.th
+- 📞 Ext. 78762 | 📱 064-655-7513
+- 📍 FahMai Tower 24F, BKK-R9
+```
+
+### g454 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
+
+**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+
+**Response:**
+
+```
+**ราม ลวรรณ** (จุ๊บ) — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (KS-GM)
+
+📧 RAM.LA@FAHMAI.CO.TH | ☎️ ต่อ 75965 | 📍 FahMai Tower 18F
+```
+
+### g456 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
+
+**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนกวงโคจร (WK) คือ **กฤษ มหาแก้วใส** (ชื่อเล่น: ขิง)
+
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of WongkhoJon)
+- อีเมล: KRIS.MA@FAHMAI.CO.TH
+- โทรศัพท์: ต่อ 74375
+- สถานที่: FahMai Tower 7F
+```
+
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the most senior employee?
+
+**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
+
+**Response:**
+
+```
+The most senior employees in **FIN-AR** both started in **2020** (tied for earliest):
+
+- **สนิท อธิบุญนำ** (SANIT ATHIBOONNAM) — Accounts Receivable Officer · ext. 79860
+- **ธนวัฒน์ อารีวัฒน์** (TANAWAT AREEWAT) — Accounts Receivable Officer · ext. 74381
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+Three employees in JC-ENG share the earliest start year of **2020**, making them the most senior:
+
+- **สุขุม เกษมแช้มช้อย** (SUKHUM KASEMCHAEMCHOI) — Manager, ext 74900, SUKHUM.KA@FAHMAI.CO.TH
+- **อุมา ประเกียรติกำจร** (UMA PRAKIATKAMJORN) — IC, ext 78200, UMA.PR2@FAHMAI.CO.TH
+- **ฤทธิรงค์ ชาญณรงค์นาม** (RITTHIRONG CHANNARONGNAM) — IC, ext 36615, RITTHIRONG.CH@FAHMAI.CO.TH
+
+All three started in 20
+```
+
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
@@ -193,15 +283,37 @@ PETER (ปีเตอร์) doesn't have a phone extension listed in the direc
 - 📞 ต่อ **78762**
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g672 [enterprise_shorthand] P1/en
+**Q:** How many staff work at the Chonburi branch?
 
-**Fails:** missing any-of ['1255']; missing count 1255
+**Fails:** missing count 49
 
 **Response:**
 
 ```
-[agent error: BadRequestError: Error code: 400 - {'error': {'code': '1261', 'message': 'Prompt exceeds max length'}}]
+**40** staff work at the Chonburi branch (CBI).
+```
+
+### g676 [enterprise_shorthand] P1/th
+**Q:** พนักงานที่ทำงานทางไกล มีกี่คน
+
+**Fails:** missing count 160
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้ — ไดเรกทอรีไม่มีฟิลด์บันทึกสถานะการทำงานทางไกล จึงไม่สามารถนับได้ครับ
+```
+
+### g829 [deep_multihop] P2/th
+**Q:** ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
+
+**Fails:** missing any-of ['79653']
+
+**Response:**
+
+```
+[agent error: BadRequestError: Error code: 400 - {'error': {'code': '1261', 'message': 'Prompt 超长'}}]
 ```
 
 ### g841 [superlative] P2/en

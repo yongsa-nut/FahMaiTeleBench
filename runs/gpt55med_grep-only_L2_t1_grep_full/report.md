@@ -1,6 +1,6 @@
-# Run: `gpt55med_grep-only_L2_t1_grep_full`
+# Run: `gpt55med_grep-only_L2_t1_grep_v10full`
 
-**Overall: 603/626 pass (96.3%)**
+**Overall: 596/626 pass (95.2%)**
 
 ## By bucket
 
@@ -14,7 +14,6 @@
 | ceo_president | 4/4 | 100.0% |
 | name_lookup | 20/20 | 100.0% |
 | casual_name_lookup | 15/15 | 100.0% |
-| nickname_grid | 61/61 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
@@ -34,25 +33,37 @@
 | subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
+| nickname_grid | 60/61 | 98.4% |
 | refuse | 88/90 | 97.8% |
 | counterfactual | 24/25 | 96.0% |
-| surname_family | 23/24 | 95.8% |
+| enterprise_shorthand | 19/20 | 95.0% |
 | listing_count | 18/20 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
 | dept_member_count | 13/15 | 86.7% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | org_informal_listing | 5/6 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
+| surname_family | 18/24 | 75.0% |
+| hard_implicit_hierarchy | 14/19 | 73.7% |
 | org_plus_person | 2/3 | 66.7% |
 
 ## By priority
 
-- P0: 219/226 (96.9%)
-- P1: 348/364 (95.6%)
+- P0: 218/226 (96.5%)
+- P1: 342/364 (94.0%)
 - P2: 36/36 (100.0%)
 
-## Failures (23)
+## Failures (30)
+
+### g192 [nickname_grid] P0/th
+**Q:** ขอเบอร์พี่มุกกี้
+
+**Fails:** missing any-of ['ยุพา', 'Yu-Pha', 'งามจิตร']
+
+**Response:**
+
+```
+เจอชื่อเล่น “มุก” หลายคนครับ รบกวนระบุชื่อ/แผนกเพิ่มหน่อยครับว่าเป็นมุกไหน
+```
 
 ### g231 [dept_member_count] P1/th
 **Q:** แผนก MKT กี่คน
@@ -217,38 +228,62 @@ GM ดาวเหนือคือ วิเชียร พงหอมกล
 คุณธนพลสังกัดแผนก WK — ผู้บริหารสูงสุดคือ กฤษ มหาแก้วใส: KRIS.MA@FAHMAI.CO.TH
 ```
 
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของ Daonuea คือ วิเชียร พงหอมกลิ่น — WICHIAN.PH@FAHMAI.CO.TH, ต่อ 76999
+```
+
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-Saran Awutmani — General Manager of JudChuem (JC), SARAN.AW@FAHMAI.CO.TH, ext. 78762
+Saran Awutmani — General Manager of JudChuem  
+SARAN.AW@FAHMAI.CO.TH, ext. 78762
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ KluenSiang (KS) คือ **ราม ลวรรณ** — General Manager of KluenSiang  
-อีเมล: **RAM.LA@FAHMAI.CO.TH**, เบอร์ต่อ: **75965**
+ผู้บริหารสูงสุดของแผนก KluenSiang (KS) คือ **ราม ลวรรณ** — GM of KluenSiang  
+อีเมล: **RAM.LA@FAHMAI.CO.TH**, ต่อ **75965**
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของ WK คือ กฤษ มหาแก้วใส — GENERAL MANAGER OF WONGKHOJON, อีเมล KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
+กฤษ มหาแก้วใส — General Manager of WongKhoJon  
+อีเมล: KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+Narong Kobsoookbun — Director, JC-ENG. Email: NARONG.KO@FAHMAI.CO.TH, ext. 75194
 ```
 
 ### g533 [listing_count] P1/en
@@ -273,6 +308,74 @@ Saran Awutmani — General Manager of JudChuem (JC), SARAN.AW@FAHMAI.CO.TH, ext.
 6 employees.
 ```
 
+### g606 [surname_family] P1/en
+**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+All employees with surname เขียวขจีศรี:
+
+- ปกรณ์ เขียวขจีศรี — DATA ENGINEER, TEC — PAKORN.KI@FAHMAI.CO.TH
+- อัจฉรา เขียวขจีศรี — DIRECTOR CRM SPECIALIST, MKT — ATCHARA.KI@FAHMAI.CO.TH, ext. 78341, 067-671-3743
+- ไพฑูรย์ เขียวขจีศรี — LEAD SAIFAH BRAND MARKETER, SF — PAITOON.KI@FAHMAI.CO.TH, ext. 74791
+```
+
+### g608 [surname_family] P1/en
+**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+Everyone with surname ไกรศรีมณี:
+
+- ยุพา ไกรศรีมณี — YU-PHA.KR@FAHMAI.CO.TH, ext. 77475, mobile 061-810-1278
+- วิภา ไกรศรีมณี — WIPHA.KR@FAHMAI.CO.TH, ext. 75335
+- พาณิช ไกรศรีมณี — PANIT.KR@FAHMAI.CO.TH, ext. 08109
+```
+
+### g610 [surname_family] P1/en
+**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ศศิ บุญเรืองกุล — PHONE SUPPORT AGENT, SASI.BO@FAHMAI.CO.TH, ext. 72832
+- น้ำทิพย์ บุญเรืองกุล — SALES ASSOCIATE SIAM, NAMTHIP.BO@FAHMAI.CO.TH, ext. 19234
+```
+
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก — LEAD TECHNICAL SUPPORT AGENT, SUP — PANYA.WA@FAHMAI.CO.TH, ext. 72201, mobile 093-616-9898
+- จรูญ วัชรจงรัก — LEARNING & DEVELOPMENT SPECIALIST, HR — CHAROON.WA@FAHMAI.CO.TH, ext. 71981
+```
+
+### g620 [surname_family] P1/en
+**Q:** List everyone with the surname สมประเสริฐ (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+Everyone with surname สมประเสริฐ:
+
+- ส้ม สมประเสริฐ — SOM.SO@FAHMAI.CO.TH, ext. 29089, mobile 086-366-0302
+- ดารา สมประเสริฐ — DARA.SO@FAHMAI.CO.TH, ext. 78138, mobile 065-660-6196
+```
+
 ### g622 [surname_family] P1/en
 **Q:** List everyone with the surname อภิญญาเสริม (give all of them).
 
@@ -285,27 +388,15 @@ Saran Awutmani — General Manager of JudChuem (JC), SARAN.AW@FAHMAI.CO.TH, ext.
 - ดาหลา อภิญญาเสริม — DARHA.AP@FAHMAI.CO.TH, ext. 75781
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g672 [enterprise_shorthand] P1/en
+**Q:** How many staff work at the Chonburi branch?
 
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-1,255 staff work at the Rama IX (BKK-R9) HQ branch.
-```
-
-### g685 [enterprise_shorthand] P1/en
-**Q:** Who is the head of the TEC (tech) department?
-
-**Fails:** missing any-of ['Kaewsaiphinyo', 'แก้วใสภิญโญ']
+**Fails:** missing count 49
 
 **Response:**
 
 ```
-The head of TEC is **Rittichai Kaewsaiphinyō** — **Chief Technology Officer**.  
-Email: **RITTICHAI.KA@FAHMAI.CO.TH**, ext. **75477**.
+40 staff work at the Chonburi branch.
 ```
 
 ### g757 [counterfactual] P1/th

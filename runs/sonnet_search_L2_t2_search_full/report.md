@@ -1,6 +1,6 @@
-# Run: `sonnet_search_L2_t2_search_full`
+# Run: `sonnet_search_L2_t2_search_v10full`
 
-**Overall: 592/626 pass (94.6%)**
+**Overall: 586/626 pass (93.6%)**
 
 ## By bucket
 
@@ -32,27 +32,27 @@
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
-| superlative | 10/10 | 100.0% |
 | nickname_grid | 59/61 | 96.7% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | bilingual | 38/40 | 95.0% |
-| hard_implicit_hierarchy | 18/19 | 94.7% |
 | hard_multihop | 24/26 | 92.3% |
 | listing_count | 18/20 | 90.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
+| superlative | 9/10 | 90.0% |
+| hard_implicit_hierarchy | 17/19 | 89.5% |
 | dept_listing_small | 6/7 | 85.7% |
-| enterprise_shorthand | 17/20 | 85.0% |
-| subsidiary_routing | 10/12 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | multi_hop | 11/18 | 61.1% |
 | noisy_name_form | 10/20 | 50.0% |
+| subsidiary_routing | 5/12 | 41.7% |
 
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 336/364 (92.3%)
-- P2: 36/36 (100.0%)
+- P1: 331/364 (90.9%)
+- P2: 35/36 (97.2%)
 
-## Failures (34)
+## Failures (40)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -161,7 +161,7 @@ GM ของแบรนด์ดาวเหนือคือ **คุณว�
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
@@ -171,34 +171,55 @@ GM ของแบรนด์ดาวเหนือคือ **คุณว�
 ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
 
 - **ราม ลวรรณ (RAM LAWAN)** ชื่อเล่น: จุ๊บ
-- ตำแหน่ง: General Manager of Kluensiang (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)
+- ตำแหน่ง: General Manager of Kluensiang
 - อีเมล: RAM.LA@FAHMAI.CO.TH
 - ต่อโทรศัพท์: 75965
 - สถานที่: FahMai Tower 18F
 ```
 
+### g456 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
+
+**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก **วงโคจร (WK)** คือ:
+
+- **กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)** ชื่อเล่น: ขิง
+- ตำแหน่ง: General Manager of WongKhoJon (ผู้จัดการทั่วไปแบรนด์วงโคจร)
+- อีเมล: KRIS.MA@FAHMAI.CO.TH
+- ต่อภายใน: 74375
+- สถานที่: FahMai Tower 7F (HQ)
+```
+
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
 **Response:**
 
 ```
-ไม่สามารถให้ข้อมูลนี้ได้ ครับ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ระบบไม่อนุญาตให้เปิดเผย หากต้องการติดต่อ CTO สามารถสอบถามชื่อ อีเมล หรือเบอร์โทรได้เลยครับ
+ไม่สามารถให้ข้อมูลนี้ได้ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ระบบไม่อนุญาตให้เปิดเผยครับ
 ```
 
-### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+### g476 [bilingual] P1/th
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
-**Fails:** missing any-of ['00001072']
+**Fails:** missing any-of ['00007543']
 
 **Response:**
 
 ```
-ไม่สามารถให้ข้อมูลนี้ได้ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ระบบไม่อนุญาตให้เปิดเผยครับ
+ขออภัยครับ รหัสพนักงาน (Employee ID) เป็นข้อมูลภายในที่ `ไม่สามารถให้ข้อมูลนี้ได้` ครับ
 
-หากต้องการข้อมูลอื่นของ CPO เช่น ชื่อ, อีเมล, หรือเบอร์ติดต่อ ยินดีช่วยได้เลยนะครับ 😊
+หากต้องการติดต่อ VP ฝ่ายการเงิน สามารถใช้ช่องทางนี้ได้เลยครับ:
+- **ชื่อ:** คุณแสงดาว พิดวงกมล (มอคค่า)
+- **ตำแหน่ง:** รองประธานฝ่ายการเงิน
+- **อีเมล:** SAENGDAO.PH@FAHMAI.CO.TH
+- **มือถือ:** 097-641-8674
 ```
 
 ### g528 [listing_count] P1/th
@@ -468,17 +489,6 @@ no record found — I couldn't find any Director named Ravi in the FahMai direct
 > 📞 เบอร์ต่อ: **75464**
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-The directory shows **1,255 staff** are based at the Rama IX (BKK-R9) HQ branch. 🏢
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -515,39 +525,137 @@ The HR team is headed by:
 - **Location:** FahMai Tower 22F
 ```
 
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
+
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
+
+**Response:**
+
+```
+The DaoNuea (ดาวเหนือ) brand is headed by:
+
+**คุณเรืองศักดิ์ เทพเกียรติกำจร (RUANGSAK THEPKIATKAMJORN)**
+- ตำแหน่ง: รองประธานฝ่ายดาวเหนือ (Vice President of DaoNuea)
+- อีเมล: RUANGSAK.TH@FAHMAI.CO.TH
+- ต่อ: 72280
+- สถานที่: FahMai Tower 5F
+```
+
+### g772 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
+
+**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
+
+**Response:**
+
+```
+หัวหน้าฝ่ายของแบรนด์ **จุดเชื่อม (JC)** คือ:
+
+- **สรัล อาวุทธ์มณี (SARAN AWUTMANI)**
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์จุดเชื่อม (General Manager of JudChuem)
+- 📧 SARAN.AW@FAHMAI.CO.TH
+- 📱 064-655-7513
+- 📍 FahMai Tower 24F
+```
+
+### g773 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the Judchuem brand?
+
+**Fails:** missing any-of ['Phaibun', 'ไพบูลย์']; missing any-of ['Anujitranon', 'อนุจิตรานนท์']
+
+**Response:**
+
+```
+The head of the **จุดเชื่อม (JC)** brand's marketing unit is:
+
+- **ราชินี อาทิตย์สุข (RACHINI ARTHITKULSUK)**
+- Position: Vice President of Judchuem (รองประธานฝ่ายจุดเชื่อม)
+- Email: RACHINI.AR@FAHMAI.CO.TH
+- Extension: 75642
+```
+
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
+
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+
+**Response:**
+
+```
+หัวหน้าฝ่ายคลื่นเสียง (KS) คือ:
+
+**คุณธเนศ บัวทองประเสริฐ (Tanet Buathongprasert)**
+- ตำแหน่ง: รองประธานฝ่ายคลื่นเสียง (VP of KluenSiang)
+- อีเมล: TANET.BU@FAHMAI.CO.TH
+- มือถือ: 099-185-8401
+- ที่ตั้ง: FahMai Tower 11F
+```
+
 ### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Kluensiang brand?
 
 **Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
 
 **Response:**
 
 ```
-The head of the **คลื่นเสียง (KluenSiang / KS)** division is:
+The **KluenSiang (คลื่นเสียง)** brand is headed by:
 
-- **ธเนศ บัวทองประเสริฐ (TANET BUATHONGPRASERT)**
-- Position: Vice President of KluenSiang (รองประธานฝ่ายคลื่นเสียง)
-- 📧 TANET.BU@FAHMAI.CO.TH
-- 📱 099-185-8401
-- 📍 FahMai Tower 11F, HQ (BKK-R9)
+- **ราม ลวรรณ (RAM LAWAN)** — ชื่อเล่น: จุ๊บ (JUB)
+- ตำแหน่ง: General Manager of KluenSiang (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)
+- 📧 RAM.LA@FAHMAI.CO.TH
+- 📞 Ext. 75965
+- 📍 FahMai Tower 18F, HQ (BKK-R9)
+```
+
+### g776 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์วงโคจร
+
+**Fails:** missing any-of ['Phichai', 'พิชัย']; missing any-of ['Amarinfa', 'อมรินทร์ฟ้า']
+
+**Response:**
+
+```
+จากระบบ ตำแหน่งสูงสุดของแบรนด์ **วงโคจร (WK)** คือ **VP** ไม่ได้แยกเป็น "หัวหน้าฝ่ายวิศวกรรม" โดยเฉพาะ แต่ผู้ที่ดูแลภาพรวมของแบรนด์วงโคจรคือ:
+
+> **คึกฤทธิ์ อัครเจริญ (ดำ)** — Vice President of WongKhoJon
+> 📧 KUKRIT.AK@FAHMAI.CO.TH
+> 📱 097-302-2863
+> 🏢 FahMai Tower 16F
+
+หากต้องการค้นหาตำแหน่งวิศวกรรมเฉพาะเจาะจงภายในแบรนด์วงโคจร สามารถแจ้งเพิ่มเติมได้เลยครับ 😊
 ```
 
 ### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Wongkhojon brand?
 
 **Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
 
 **Response:**
 
 ```
-The **วงโคจร (WongKhoJon / WK)** division has two key leaders at the top:
+There are two key leaders for the **วงโคจร (WongKhoJon)** brand:
 
-- **VP:** คึกฤทธิ์ อัครเจริญ (KUKRIT AKARACHAROEN) — รองประธานฝ่ายวงโคจร
-  📧 KUKRIT.AK@FAHMAI.CO.TH | 📱 097-302-2863
+- **VP:** คึกฤทธิ์ อัครเจริญ (KUKRIT AKARACHAROEN / ชื่อเล่น: ดำ) — Vice President of WongKhoJon
+📧 KUKRIT.AK@FAHMAI.CO.TH | 📱 097-302-2863
 
-- **General Manager:** กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI) — ผู้จัดการทั่วไปแบรนด์วงโคจร
-  📧 KRIS.MA@FAHMAI.CO.TH
+- **GM:** กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI / ชื่อเล่น: ขิง) — General Manager of WongKhoJon
+📧 KRIS.MA@FAHMAI.CO.TH
 
-The VP **คุณคึกฤทธิ์** heads the division at the VP level, with **คุณกฤษ** serving as GM overse
+The overall head of the WongKhoJon brand division is **คึกฤทธิ์ อัครเจริญ** as 
+```
+
+### g832 [superlative] P2/th
+**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ
+
+**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้
+
+ระบบ Directory ของฟ้าใหม่เก็บข้อมูล **ปีที่เริ่มงาน (Start Year)** ไว้ แต่ไม่มีฟังก์ชันเรียงลำดับหรือค้นหาตาม Start Year ได้โดยตรง จึงไม่สามารถระบุได้ว่าใครมีอายุงานยาวนานที่สุดครับ หากต้องการข้อมูลนี้ แนะนำให้ติดต่อฝ่าย HR โดยตรงนะครับ 😊
 ```
 

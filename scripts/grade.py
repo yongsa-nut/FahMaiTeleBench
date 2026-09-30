@@ -34,20 +34,28 @@ ak_items = data.get("items") or data.get("questions") or []  # v0.1 uses "items"
 items = {it["id"]: it for it in ak_items if (RAW_DIR / f"{it['id']}.md").exists()}
 
 
+def _contains(resp, tok):
+    """Case-insensitive containment. A purely numeric token (count, extension, ID) must appear as a
+    standalone number, not inside a longer one ("2" does not match "2021"); thousands separators ignored."""
+    if tok.isdigit():
+        return re.search(rf"(?<!\d){tok}(?!\d)", resp.replace(",", "")) is not None
+    return tok.lower() in resp.lower()
+
+
 def grade(it, resp):
     ea = it["expected_answer"]
     fails = []
     for g in ea.get("must_contain_any_of", []):
-        if g and not any(t.lower() in resp.lower() for t in g if t):
+        if g and not any(_contains(resp, t) for t in g if t):
             fails.append(f"missing any-of {g[:3]}")
     for t in ea.get("must_not_contain", []):
         if t and t.lower() in resp.lower():
             fails.append(f"has forbidden {t!r}")
-    if ea.get("exact_count") is not None and str(ea["exact_count"]) not in resp.replace(",", ""):
+    if ea.get("exact_count") is not None and not _contains(resp, str(ea["exact_count"])):
         fails.append(f"missing count {ea['exact_count']}")  # strip thousands separators (1,270 -> 1270)
     if ea.get("min_items"):
         tpi = ea.get("all_items_tokens_per_id", {})
-        hits = sum(1 for eid, toks in tpi.items() if any(t.lower() in resp.lower() for t in toks if t))
+        hits = sum(1 for eid, toks in tpi.items() if any(_contains(resp, t) for t in toks if t))
         if hits < ea["min_items"]:
             fails.append(f"min_items {ea['min_items']} not met ({hits})")
     if ea.get("must_not_contain_phone_extension") and re.search(r"\b\d{5}\b", resp):

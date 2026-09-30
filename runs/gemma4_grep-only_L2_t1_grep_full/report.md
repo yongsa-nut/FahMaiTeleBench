@@ -1,4 +1,4 @@
-# Run: `gemma4_grep-only_L2_t1_grep_full`
+# Run: `gemma4_grep-only_L2_t1_grep_v10full`
 
 **Overall: 542/626 pass (86.6%)**
 
@@ -24,17 +24,17 @@
 | hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
-| nickname_grid | 58/61 | 95.1% |
+| nickname_grid | 59/61 | 96.7% |
 | bilingual | 38/40 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
 | multi_entity_turn | 18/20 | 90.0% |
 | evp_vs_vp_disambig | 22/25 | 88.0% |
 | dept_member_count | 13/15 | 86.7% |
 | listing_count | 17/20 | 85.0% |
+| enterprise_shorthand | 17/20 | 85.0% |
 | org_informal_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
-| enterprise_shorthand | 16/20 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 19/26 | 73.1% |
 | superlative | 7/10 | 70.0% |
@@ -44,12 +44,12 @@
 | name_lookup | 12/20 | 60.0% |
 | deep_multihop | 7/12 | 58.3% |
 | surname_family | 13/24 | 54.2% |
-| subsidiary_routing | 6/12 | 50.0% |
+| subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
-- P0: 215/226 (95.1%)
-- P1: 299/364 (82.1%)
+- P0: 216/226 (95.6%)
+- P1: 298/364 (81.9%)
 - P2: 28/36 (77.8%)
 
 ## Failures (84)
@@ -202,17 +202,6 @@
 * **คุณพงษ์กานต์ ราชชากัญญ์** - COO: PONGKAN.RA@FAHMAI.CO.TH
 * **คุณส้ม กาญจน์สถิต** - CMO: SOM.KA@FAHMAI.CO.TH
 * **คุณจิรภัทร วัชรใจงาม** - CPO: JIRAPAT.WA@FAHM
-```
-
-### g172 [nickname_grid] P0/th
-**Q:** ขิง ที่ SUP เบอร์อะไร
-
-**Fails:** missing any-of ['Pholdech', 'พลเดช']
-
-**Response:**
-
-```
-คุณสุณี (ขิง) เบอร์ต่อ 71734 หรือมือถือ 094-546-2762 ครับ
 ```
 
 ### g231 [dept_member_count] P1/th
@@ -382,52 +371,52 @@ The SFVP (Vice President of SaiFah) is **Wirat Sombusarakham** (วิรัต�
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+thought
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ คุณวิเชียร พงหอมกลิ่น (General Manager) อีเมล: WICHIAN.PH@FAHMAI.CO.TH ครับ
 ```
 
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the Judchuem (JC) department is Saran Awutmani (General Manager of Judchuem).
-Email: SARAN.AW@FAHMAI.CO.TH
+Saran Awutmani (SARAN.AW@FAHMAI.CO.TH) is the General Manager of Judchuem.
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ คุณราม ลวรรณ (คุณจุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ครับ
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (Kluensiang) คือ คุณราม ลวรรณ (คุณจุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ครับ
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
+ผู้บริหารสูงสุดของแผนก Wongkhojon คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
@@ -438,7 +427,7 @@ Email: SARAN.AW@FAHMAI.CO.TH
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
@@ -638,6 +627,19 @@ Here are the employees with the surname เขียวขจีศรี:
 ```
 - ศศิ บุญเรืองกุล (SASI BOONRUENGKUN) - SASI.BO@FAHMAI.CO.TH
 - น้ำทิพย์ บุญเรืองกุล (NAMTHIP BOONRUENGKUN) - NAMTHIP.BO@FAHMAI.CO.TH
+```
+
+### g613 [surname_family] P1/th
+**Q:** พนักงานที่นามสกุล พงอัสนี มีใครบ้าง ขอชื่อทุกคน
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+พนักงานที่นามสกุล พงอัสนี มีดังนี้ครับ:
+- คุณวีระ พงอัสนี
+- คุณพิมพ์ชนก พงอัสนี
 ```
 
 

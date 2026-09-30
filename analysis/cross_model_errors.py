@@ -55,19 +55,27 @@ TIER_ORDER = ["frontier", "open", "thai"]
 MAX_ROUNDS = 7   # harness cap; an exhausted trace records MAX_ROUNDS+1 round entries
 
 
+def _contains(resp, tok):
+    """Case-insensitive containment. A purely numeric token (count, extension, ID) must appear as a
+    standalone number, not inside a longer one ("2" does not match "2021"); thousands separators ignored."""
+    if tok.isdigit():
+        return re.search(rf"(?<!\d){tok}(?!\d)", resp.replace(",", "")) is not None
+    return tok.lower() in resp.lower()
+
+
 def grade(it, resp):  # verbatim from scripts/grade.py — TYPED fail reasons
     ea = it["expected_answer"]; fails = []
     for g in ea.get("must_contain_any_of", []):
-        if g and not any(t.lower() in resp.lower() for t in g if t):
+        if g and not any(_contains(resp, t) for t in g if t):
             fails.append("miss")
     for t in ea.get("must_not_contain", []):
         if t and t.lower() in resp.lower():
             fails.append("forbidden")
-    if ea.get("exact_count") is not None and str(ea["exact_count"]) not in resp.replace(",", ""):
+    if ea.get("exact_count") is not None and not _contains(resp, str(ea["exact_count"])):
         fails.append("count")
     if ea.get("min_items"):
         tpi = ea.get("all_items_tokens_per_id", {})
-        hits = sum(1 for eid, toks in tpi.items() if any(t.lower() in resp.lower() for t in toks if t))
+        hits = sum(1 for eid, toks in tpi.items() if any(_contains(resp, t) for t in toks if t))
         if hits < ea["min_items"]:
             fails.append("min_items")
     if ea.get("must_not_contain_phone_extension") and re.search(r"\b\d{5}\b", resp):

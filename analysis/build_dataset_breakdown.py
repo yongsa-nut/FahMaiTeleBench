@@ -48,7 +48,7 @@ REFUSE_REASON = {
     "H2": "REFUSE: person not in directory (made-up/combo name) — “ไม่พบข้อมูล”",
     "H3": "REFUSE: subjective, not a data lookup — “ไม่สามารถให้ความเห็นได้”",
     "H4": "REFUSE: out-of-company (competitor) — “ไม่ใช่ข้อมูลของฟ้าใหม่”",
-    "H7": "REFUSE: field present but value blank (no nickname) — “ไม่มีชื่อเล่นในระบบ”",
+    "H5": "REFUSE: field present but value blank (no nickname) — “ไม่มีชื่อเล่นในระบบ”",
 }
 
 def gold_summary(it):

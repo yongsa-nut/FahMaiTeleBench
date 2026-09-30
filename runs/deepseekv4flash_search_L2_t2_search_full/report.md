@@ -1,6 +1,6 @@
-# Run: `deepseekv4flash_search_L2_t2_search_full`
+# Run: `deepseekv4flash_search_L2_t2_search_v10full`
 
-**Overall: 600/626 pass (95.8%)**
+**Overall: 599/626 pass (95.7%)**
 
 ## By bucket
 
@@ -26,15 +26,15 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
-| bilingual | 40/40 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
+| enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
-| enterprise_shorthand | 19/20 | 95.0% |
+| bilingual | 39/40 | 97.5% |
 | casual_name_lookup | 14/15 | 93.3% |
 | nickname_grid | 55/61 | 90.2% |
 | thai_knowledge | 9/10 | 90.0% |
@@ -42,17 +42,17 @@
 | hard_implicit_hierarchy | 17/19 | 89.5% |
 | dept_listing_small | 6/7 | 85.7% |
 | retrieval | 12/14 | 85.7% |
-| subsidiary_routing | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
+| subsidiary_routing | 9/12 | 75.0% |
 | org_plus_person | 2/3 | 66.7% |
 
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 349/364 (95.9%)
+- P1: 348/364 (95.6%)
 - P2: 36/36 (100.0%)
 
-## Failures (26)
+## Failures (27)
 
 ### g136 [casual_name_lookup] P0/th
 **Q:** พี่วิน อยู่ DN เบอร์อะไร
@@ -281,37 +281,43 @@
 📧 **KRIS.MA@FAHMAI.CO.TH**
 ```
 
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ **วิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN) — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ
+
+📧 WICHIAN.PH@FAHMAI.CO.TH | ☎️ 76999 | 📱 064-902-5307
+```
+
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the **Judchuem (JC)** brand is **SARAN AWUTMANI (สรัล อาวุทธ์มณี)**, General Manager of Judchuem.
+The head of the Judchuem (จุดเชื่อม) brand is **สรัล อาวุทธ์มณี (SARAN AWUTMANI)** — General Manager of Judchuem.
 
-- **Position:** GENERAL MANAGER OF JUDCHUEM (ผู้จัดการทั่วไปแบรนด์จุดเชื่อม)
-- **Office:** FahMai Tower 24F, BKK-R9
-- **Phone Ext:** 78762
-- **Mobile:** 064-655-7513
-- **Email:** SARAN.AW@FAHMAI.CO.TH
+- Email: SARAN.AW@FAHMAI.CO.TH
+- Ext: 78762 | Mobile: 064-655-7513
+- Office: FahMai Tower 24F (BKK-R9)
 ```
 
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+### g475 [bilingual] P1/th
+**Q:** รหัสหน่วยงานของ Chief of Staff คืออะไรครับ
 
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+**Fails:** missing any-of ['CEO-CoS']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ **ราม ลวรรณ (RAM LAWAN)** ชื่อเล่น **จุ๊บ (JUB)**
-
-📌 ตำแหน่ง: **General Manager of KluenSiang (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)**
-📞 เบอร์ภายใน: **75965**
-📧 อีเมล: **RAM.LA@FAHMAI.CO.TH**
-🏢 ห้องทำงาน: FahMai Tower ชั้น 18
+[agent error: JSONDecodeError: Unterminated string starting at: line 1 column 62 (char 61)]
 ```
 
 ### g533 [listing_count] P1/en
@@ -365,44 +371,43 @@ The most senior person heading the **Judchuem (JC)** brand is **SARAN AWUTMANI (
 ไม่พบข้อมูล
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
 
 **Response:**
 
 ```
-There are **1,255** staff working at the Rama IX (BKK-R9) HQ branch.
+The head of the DaoNuea (ดาวเหนือ) brand is **วิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN)** — General Manager of DaoNuea (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ).
+
+📞 Ext: 76999 | Mobile: 064-902-5307 | ✉️ WICHIAN.PH@FAHMAI.CO.TH (FahMai Tower 19F, BKK-R9)
+```
+
+### g773 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the Judchuem brand?
+
+**Fails:** missing any-of ['Phaibun', 'ไพบูลย์']; missing any-of ['Anujitranon', 'อนุจิตรานนท์']
+
+**Response:**
+
+```
+The head of the Judchuem (จุดเชื่อม) brand is **สรัล อาวุทธ์มณี (SARAN AWUTMANI)** — General Manager of Judchuem (JC-GM).
+
+Contact: 064-655-7513 · SARAN.AW@FAHMAI.CO.TH · FahMai Tower 24F
 ```
 
 ### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Kluensiang brand?
 
 **Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
 
 **Response:**
 
 ```
-ผู้จัดการทั่วไปของแบรนด์คลื่นเสียง (KluenSiang) คือ **ราม ลวรรณ (RAM LAWAN)** — นิคเนม **จุ๊บ (JUB)**
+**ลลนา ใจเขียวสถิต** (LALANA JAIKIEOWSATHIT) — Manager, Kluensieng Brand Operations (KS-OPS).
 
-📞 เบอร์ภายใน: 75965  
-📧 อีเมล: RAM.LA@FAHMAI.CO.TH  
-📍 สำนักงานใหญ่ FahMai Tower ชั้น 18
-```
-
-### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
-
-**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
-
-**Response:**
-
-```
-**กฤษ มหาแก้วใส** (Kris Mahakaewsai) — Nickname **ขิง / Khing**  
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of Wongkhojon)  
-📞 ต่อ **74375**  
-📧 KRIS.MA@FAHMAI.CO.TH  
-🏢 FahMai Tower 7F, BKK-R9
+- Email: LALANA.JA@FAHMAI.CO.TH
+- Ext: 73432 · FahMai Tower 18F · BKK-R9
 ```
 

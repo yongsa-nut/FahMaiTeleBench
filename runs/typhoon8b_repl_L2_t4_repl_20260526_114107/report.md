@@ -1,6 +1,6 @@
-# Run: `typhoon8b_repl_L2_t4_repl_20260526_114107`
+# Run: `typhoon8b_repl_L2_t4_repl_v10full`
 
-**Overall: 156/626 pass (24.9%)**
+**Overall: 152/626 pass (24.3%)**
 
 ## By bucket
 
@@ -9,30 +9,30 @@
 | org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 5/6 | 83.3% |
 | email_mobile_lookup | 5/7 | 71.4% |
+| superlative | 7/10 | 70.0% |
 | email_identity_lookup | 4/6 | 66.7% |
-| surname_family | 16/24 | 66.7% |
-| listing_count | 11/20 | 55.0% |
+| surname_family | 14/24 | 58.3% |
 | evp_identity_by_description | 2/4 | 50.0% |
 | section_listing | 2/4 | 50.0% |
 | hard_nickname_variant | 5/10 | 50.0% |
-| enterprise_shorthand | 10/20 | 50.0% |
-| superlative | 5/10 | 50.0% |
+| listing_count | 9/20 | 45.0% |
 | extension_reverse | 3/7 | 42.9% |
 | dept_member_count | 6/15 | 40.0% |
 | brand_prior | 4/10 | 40.0% |
 | hard_bridge_lookup | 2/6 | 33.3% |
+| enterprise_shorthand | 6/20 | 30.0% |
 | evp_vs_vp_disambig | 7/25 | 28.0% |
 | nickname_grid | 17/61 | 27.9% |
 | evp_identity_by_code | 1/4 | 25.0% |
 | vp_identity | 1/5 | 20.0% |
+| multi_entity_turn | 4/20 | 20.0% |
 | thai_knowledge | 2/10 | 20.0% |
+| bilingual | 8/40 | 20.0% |
 | refuse | 16/90 | 17.8% |
-| bilingual | 7/40 | 17.5% |
 | multi_hop | 3/18 | 16.7% |
 | deep_multihop | 2/12 | 16.7% |
 | hard_implicit_hierarchy | 3/19 | 15.8% |
 | hard_multihop | 4/26 | 15.4% |
-| multi_entity_turn | 3/20 | 15.0% |
 | subsidiary_md | 1/8 | 12.5% |
 | subsidiary_routing | 1/12 | 8.3% |
 | noisy_name_form | 1/20 | 5.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 51/226 (22.6%)
-- P1: 90/364 (24.7%)
-- P2: 15/36 (41.7%)
+- P0: 52/226 (23.0%)
+- P1: 83/364 (22.8%)
+- P2: 17/36 (47.2%)
 
-## Failures (470)
+## Failures (474)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -637,4 +637,4 @@ I need to clarify: "Hook from SF" refers to a person in the **สายฟ้า
 ```
 
 
-_+420 more failures — see results.jsonl_
+_+424 more failures — see results.jsonl_

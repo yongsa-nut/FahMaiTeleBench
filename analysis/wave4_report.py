@@ -35,40 +35,48 @@ CFG_ORDER = ["t1_grep", "t2_search", "t3_both", "t4_repl"]
 CFG_DISP = {"t1_grep": "T1 grep", "t2_search": "T2 search", "t3_both": "T3 both", "t4_repl": "T4 repl"}
 
 # v2 subtype display order
-SUB_ORDER = ["A1", "A2", "A3", "B1", "B2", "B3", "B5", "C1", "C3", "C4", "C5", "C6",
-             "D1", "D2", "D4", "E1", "E2", "E3", "E5", "F1", "F2", "F3", "F5",
-             "G1", "G3", "H1", "H2", "H3", "H4", "H7"]
+SUB_ORDER = ["A1", "A2", "A3", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4", "C5",
+             "D1", "D2", "D3", "E1", "E2", "E3", "E4", "F1", "F2", "F3", "F5",
+             "G1", "G2", "H1", "H2", "H3", "H4", "H5"]
 
-RETRY_COHORT = {"B2", "B3", "B5", "F1"}  # retry@T1 subtypes (taxonomy v2)
+RETRY_COHORT = {"B2", "B3", "B4", "F1"}  # retry@T1 subtypes (taxonomy v2)
 
 # affordance-optimal tool family per subtype (seeded from per-subtype-baseline.md;
 # search = identity/code/reverse-lookup, grep = nickname/noisy/listing/count-by-scan,
 # "either" = no clear winner / refusal -> excluded from tool-choice accuracy denominator).
 OPT = {
     "A1": "search", "A2": "search", "A3": "search",
-    "B1": "grep", "B2": "grep", "B3": "grep", "B5": "search",
-    "C1": "grep", "C3": "grep", "C4": "search", "C5": "grep", "C6": "either",
-    "D1": "grep", "D2": "search", "D4": "search",
-    "E1": "search", "E2": "search", "E3": "search", "E5": "search",
+    "B1": "grep", "B2": "grep", "B3": "grep", "B4": "search",
+    "C1": "grep", "C2": "grep", "C3": "search", "C4": "grep", "C5": "either",
+    "D1": "grep", "D2": "search", "D3": "search",
+    "E1": "search", "E2": "search", "E3": "search", "E4": "search",
     "F1": "search", "F2": "either", "F3": "search", "F5": "search",
-    "G1": "either", "G3": "either",
-    "H1": "either", "H2": "either", "H3": "either", "H4": "either", "H7": "search",
+    "G1": "either", "G2": "either",
+    "H1": "either", "H2": "either", "H3": "either", "H4": "either", "H5": "search",
 }
+
+
+def _contains(resp, tok):
+    """Case-insensitive containment. A purely numeric token (count, extension, ID) must appear as a
+    standalone number, not inside a longer one ("2" does not match "2021"); thousands separators ignored."""
+    if tok.isdigit():
+        return re.search(rf"(?<!\d){tok}(?!\d)", resp.replace(",", "")) is not None
+    return tok.lower() in resp.lower()
 
 
 def grade(it, resp):  # verbatim from scripts/grade.py (incl. comma-strip count fix)
     ea = it["expected_answer"]; fails = []
     for g in ea.get("must_contain_any_of", []):
-        if g and not any(t.lower() in resp.lower() for t in g if t):
+        if g and not any(_contains(resp, t) for t in g if t):
             fails.append("miss")
     for t in ea.get("must_not_contain", []):
         if t and t.lower() in resp.lower():
             fails.append("forbidden")
-    if ea.get("exact_count") is not None and str(ea["exact_count"]) not in resp.replace(",", ""):
+    if ea.get("exact_count") is not None and not _contains(resp, str(ea["exact_count"])):
         fails.append("count")
     if ea.get("min_items"):
         tpi = ea.get("all_items_tokens_per_id", {})
-        hits = sum(1 for eid, toks in tpi.items() if any(t.lower() in resp.lower() for t in toks if t))
+        hits = sum(1 for eid, toks in tpi.items() if any(_contains(resp, t) for t in toks if t))
         if hits < ea["min_items"]:
             fails.append("min_items")
     if ea.get("must_not_contain_phone_extension") and re.search(r"\b\d{5}\b", resp):

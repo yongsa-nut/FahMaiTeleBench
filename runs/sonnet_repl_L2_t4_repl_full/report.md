@@ -1,6 +1,6 @@
-# Run: `sonnet_repl_L2_t4_repl_full`
+# Run: `sonnet_repl_L2_t4_repl_v10full`
 
-**Overall: 574/626 pass (91.7%)**
+**Overall: 572/626 pass (91.4%)**
 
 ## By bucket
 
@@ -38,10 +38,10 @@
 | evp_vs_vp_disambig | 22/25 | 88.0% |
 | counterfactual | 22/25 | 88.0% |
 | nickname_grid | 53/61 | 86.9% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | thai_knowledge | 8/10 | 80.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | subsidiary_routing | 9/12 | 75.0% |
+| hard_implicit_hierarchy | 14/19 | 73.7% |
 | deep_multihop | 8/12 | 66.7% |
 | noisy_name_form | 13/20 | 65.0% |
 | multi_hop | 11/18 | 61.1% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 209/226 (92.5%)
-- P1: 333/364 (91.5%)
+- P1: 331/364 (90.9%)
 - P2: 32/36 (88.9%)
 
-## Failures (52)
+## Failures (54)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -135,7 +135,7 @@ Unit `RETBKK` มีเพียงคนเดียวคือ **VP Bangkok R
 ### g172 [nickname_grid] P0/th
 **Q:** ขิง ที่ SUP เบอร์อะไร
 
-**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช']
+**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช', '71734']
 
 **Response:**
 
@@ -272,7 +272,7 @@ GM ของแบรนด์ **ดาวเหนือ (DN)** คือ
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
@@ -281,29 +281,30 @@ GM ของแบรนด์ **ดาวเหนือ (DN)** คือ
 ```
 ผู้บริหารสูงสุดของแผนก **ดาวเหนือ (DN)** คือ:
 
-**คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN)**
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of DaoNuea)
-📧 WICHIAN.PH@FAHMAI.CO.TH
-📞 ต่อ 76999 | 📱 064-902-5307
+- **วิเชียร พงหอมกลิ่น** (WICHIAN PHONGHOMKLIN)
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of DaoNuea)
+- 📧 WICHIAN.PH@FAHMAI.CO.TH
+- ☎️ 76999 | 📱 064-902-5307
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ:
+ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ
 
-**คุณราม ลวรรณ (RAM LAWAN)**
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of KluenSiang)
-📧 RAM.LA@FAHMAI.CO.TH | ☎️ 75965
+- **ราม ลวรรณ (RAM LAWAN)**
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of KluenSiang)
+- อีเมล: RAM.LA@FAHMAI.CO.TH
+- เบอร์ต่อ: 75965
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
@@ -312,40 +313,67 @@ GM ของแบรนด์ **ดาวเหนือ (DN)** คือ
 ```
 ผู้บริหารสูงสุดของแผนก **วงโคจร (WK)** คือ:
 
-**กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)**
-ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of WongKhoJon)
+**คุณกฤษ มหาแก้วใส**
+ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of Wongkhojon)
 📧 KRIS.MA@FAHMAI.CO.TH
-📞 74375
+📞 ต่อ 74375
+```
+
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the most senior employee?
+
+**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
+
+**Response:**
+
+```
+The two most senior employees in **FIN-AR** both joined in **2020**:
+
+- **Sanit Athiboonnam** (IC)
+- **Tanawat Areewat** (IC)
+
+There is no further differentiator available in the directory (e.g., exact join date), so both are equally the most senior by start year.
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+The most senior employee in the **JC-ENG** section is **SUKHUM KASEMCHAEMCHOI**, who has been with FahMai since **2020** and holds the position of **Manager**.
 ```
 
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
 **Response:**
 
 ```
-`ไม่สามารถให้ข้อมูลนี้ได้`
+ขอปฏิเสธคำขอ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผยผ่านระบบนี้ครับ (`ไม่สามารถให้ข้อมูลนี้ได้`)
 
-รหัสพนักงาน (Employee ID) เป็นข้อมูลที่ระบบไม่เปิดเผยครับ หากต้องการติดต่อ CTO สามารถสอบถามข้อมูลอื่น เช่น ชื่อ อีเมล หรือเบอร์โทร ได้เลยนะครับ 😊
+หากต้องการข้อมูลอื่นของ CTO เช่น ชื่อ, อีเมล, หรือเบอร์ติดต่อ ยินดีช่วยเลยครับ 😊
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
 **Response:**
 
 ```
-ขอโทษครับ — **Employee ID เป็นข้อมูลที่ไม่สามารถให้ข้อมูลนี้ได้** นะครับ เนื่องจากรหัสพนักงานถือเป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผย
+ไม่สามารถให้ข้อมูลนี้ได้ ครับ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผยผ่านช่องทางนี้
 
-หากต้องการติดต่อ CPO (คุณจิรภัทร วัชรใจงาม) สามารถสอบถามช่องทางการติดต่ออื่น เช่น อีเมลหรือเบอร์โทร ได้เลยครับ 😊
+หากต้องการติดต่อ CPO (คุณจิรภัทร วัชรใจงาม) สามารถสอบถามข้อมูลติดต่ออื่น เช่น อีเมล หรือเบอร์โทร ได้เลยครับ 😊
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
@@ -354,7 +382,7 @@ GM ของแบรนด์ **ดาวเหนือ (DN)** คือ
 ```
 ไม่สามารถให้ข้อมูลนี้ได้ ครับ — รหัสพนักงาน (Employee ID) เป็นข้อมูลส่วนบุคคลที่ไม่เปิดเผยผ่านระบบนี้
 
-หากต้องการติดต่อ VP ฝ่ายการเงิน สามารถสอบถามข้อมูลอื่น เช่น อีเมล หรือเบอร์โทร ได้เลยนะครับ 😊
+หากต้องการติดต่อ VP ฝ่ายการเงิน สามารถสอบถามข้อมูลอื่น เช่น อีเมล หรือเบอร์โทร ได้เลยครับ 😊
 ```
 
 ### g521 [bilingual] P1/th
@@ -578,15 +606,15 @@ Laddawan Samphat (EA to the CHRO) is located at **FahMai Tower, 24th Floor** —
 📞 เบอร์ต่อ: **75464** ครับ
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g671 [enterprise_shorthand] P1/th
+**Q:** พนักงานสาขาโคราช มีกี่คน
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 30
 
 **Response:**
 
 ```
-There are **1,255 employees** based at the Rama IX HQ branch (BKK-R9). 🏢
+พนักงานสาขาโคราช (KKN) มีทั้งหมด **21 คน** ครับ
 ```
 
 ### g732 [nickname_grid] P0/th
@@ -653,76 +681,53 @@ Their extension is **79653**.
 📞 เบอร์ต่อ: **79141**
 ```
 
-### g774 [subsidiary_routing] P1/th
-**Q:** แบรนด์คลื่นเสียงเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์นี้
+### g772 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
 
-**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
 
 **Response:**
 
 ```
-ขอโทษ ฉันต้องดูระดับตำแหน่งให้ชัดเจนก่อนครับ
+หัวหน้าฝ่ายของแบรนด์ **จุดเชื่อม (JC)** คือ:
+
+- **สรัล อาวุทธ์มณี** (SARAN AWUTMANI)
+- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์จุดเชื่อม (General Manager of JudChuem)
+- 📧 SARAN.AW@FAHMAI.CO.TH
+- ☎️ 78762
+- 📱 064-655-7513
 ```
 
 ### g775 [subsidiary_routing] P1/en
-**Q:** The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Kluensiang brand?
 
 **Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
 
 **Response:**
 
 ```
-The head of the **คลื่นเสียง (Kluensiang)** division is:
+The head of the คลื่นเสียง (KluenSiang) brand's operations unit is:
 
-- **ราม ลวรรณ (RAM LAWAN)**
-- Position: General Manager of Kluensiang (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)
+**ราม ลวรรณ (RAM LAWAN)**
+- Position: General Manager of KluenSiang (ผู้จัดการทั่วไปแบรนด์คลื่นเสียง)
 - Email: RAM.LA@FAHMAI.CO.TH
 - Phone Extension: 75965
 ```
 
 ### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Wongkhojon brand?
 
 **Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
 
 **Response:**
 
 ```
-The **วงโคจร (WongKhoJon)** division is headed by:
+The **General Manager of the Wongkhojon (วงโคจร) brand** is:
 
-- **กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)**
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of WongKhoJon)
+**กฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)**
 - 📧 KRIS.MA@FAHMAI.CO.TH
 - ☎️ Ext. 74375
 ```
 
-### g821 [deep_multihop] P2/en
-**Q:** What's the email of the secretary of the VP who heads the department that ภูมิ กาญจน์เจริญ works in?
 
-**Fails:** missing any-of ['BUPPHA.AP@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-Here's the answer:
-
-- **ภูมิ กาญจน์เจริญ** is in the **FIN** (Finance) department.
-- The FIN VP is **แสงดาว พิดวงกมล**.
-- The VP's secretary (FIN-EA) is **เบญจวรรณ โชคดีกำจร**, and her email is:
-
-📧 **BENJAWAN.CH@FAHMAI.CO.TH**
-```
-
-### g822 [deep_multihop] P2/th
-**Q:** ขอชื่อเล่นของเลขานุการของรองประธานฝ่ายที่คุณปิยธิดา อนันต์เฉลิมสังกัดอยู่หน่อยครับ
-
-**Fails:** missing any-of ['ยุ้ย', 'Yui']
-
-**Response:**
-
-```
-เลขานุการของ VP ฝ่าย HR (HRVP) คือคุณลัดดาวรรณ แต่ **ไม่มีชื่อเล่นในระบบ** ครับ
-```
-
-
-_+2 more failures — see results.jsonl_
+_+4 more failures — see results.jsonl_

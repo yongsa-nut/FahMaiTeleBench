@@ -1,6 +1,6 @@
-# Run: `gpt55med_search_L2_t2_search_full`
+# Run: `gpt55med_search_L2_t2_search_v10full`
 
-**Overall: 464/626 pass (74.1%)**
+**Overall: 460/626 pass (73.5%)**
 
 ## By bucket
 
@@ -11,35 +11,35 @@
 | thai_knowledge | 10/10 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
-| bilingual | 38/40 | 95.0% |
+| bilingual | 37/40 | 92.5% |
 | surname_family | 22/24 | 91.7% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
-| subsidiary_routing | 10/12 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | evp_vs_vp_disambig | 20/25 | 80.0% |
 | casual_name_lookup | 12/15 | 80.0% |
+| superlative | 8/10 | 80.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | dept_listing_medium | 6/8 | 75.0% |
 | multi_entity_turn | 15/20 | 75.0% |
-| enterprise_shorthand | 15/20 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | hard_multihop | 19/26 | 73.1% |
 | noisy_name_form | 14/20 | 70.0% |
 | nickname_grid | 42/61 | 68.9% |
 | counterfactual | 17/25 | 68.0% |
 | dept_member_count | 10/15 | 66.7% |
 | org_informal_listing | 4/6 | 66.7% |
-| deep_multihop | 8/12 | 66.7% |
-| retrieval | 9/14 | 64.3% |
 | multi_hop | 11/18 | 61.1% |
+| subsidiary_routing | 7/12 | 58.3% |
+| deep_multihop | 7/12 | 58.3% |
+| hard_implicit_hierarchy | 11/19 | 57.9% |
 | extension_reverse | 4/7 | 57.1% |
+| retrieval | 8/14 | 57.1% |
 | ceo_president | 2/4 | 50.0% |
 | subsidiary_md | 4/8 | 50.0% |
 | hard_bridge_lookup | 3/6 | 50.0% |
-| listing_count | 10/20 | 50.0% |
+| listing_count | 8/20 | 40.0% |
 | brand_prior | 4/10 | 40.0% |
-| superlative | 4/10 | 40.0% |
 | org_plus_person | 1/3 | 33.3% |
 | email_identity_lookup | 2/6 | 33.3% |
 | name_lookup | 6/20 | 30.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 185/226 (81.9%)
-- P1: 261/364 (71.7%)
-- P2: 18/36 (50.0%)
+- P1: 254/364 (69.8%)
+- P2: 21/36 (58.3%)
 
-## Failures (162)
+## Failures (166)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -475,7 +475,7 @@ no record found
 ### g193 [nickname_grid] P0/th
 **Q:** ใครคือปันปัน
 
-**Fails:** missing any-of ['ปัน', 'ปัน', 'ไม่พบข้อมูล']
+**Fails:** missing any-of ['ฤทธิชัย', 'Rittichai']; missing any-of ['แก้วใสภิญโญ', 'Kaewsaiphinyo']
 
 **Response:**
 
@@ -605,4 +605,4 @@ I couldn’t retrieve a usable SaiFah list from the lookup, so I can’t provide
 ```
 
 
-_+112 more failures — see results.jsonl_
+_+116 more failures — see results.jsonl_

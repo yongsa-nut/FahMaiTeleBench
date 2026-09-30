@@ -1,6 +1,6 @@
-# Run: `typhoon8b_search_L2_t2_search_20260526_114107`
+# Run: `typhoon8b_search_L2_t2_search_v10full`
 
-**Overall: 196/626 pass (31.3%)**
+**Overall: 189/626 pass (30.2%)**
 
 ## By bucket
 
@@ -14,28 +14,29 @@
 | name_lookup | 12/20 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
 | hard_nickname_variant | 6/10 | 60.0% |
-| enterprise_shorthand | 12/20 | 60.0% |
-| listing_count | 11/20 | 55.0% |
 | section_listing | 2/4 | 50.0% |
-| surname_family | 12/24 | 50.0% |
+| surname_family | 11/24 | 45.8% |
 | bilingual | 18/40 | 45.0% |
+| enterprise_shorthand | 9/20 | 45.0% |
 | evp_secretary | 2/5 | 40.0% |
-| nickname_grid | 23/61 | 37.7% |
+| listing_count | 8/20 | 40.0% |
+| superlative | 4/10 | 40.0% |
 | evp_vs_vp_disambig | 9/25 | 36.0% |
 | dept_member_count | 5/15 | 33.3% |
 | org_informal_listing | 2/6 | 33.3% |
 | org_plus_person | 1/3 | 33.3% |
 | hard_bridge_lookup | 2/6 | 33.3% |
+| nickname_grid | 20/61 | 32.8% |
 | refuse | 29/90 | 32.2% |
 | evp_identity_by_code | 1/4 | 25.0% |
 | evp_identity_by_description | 1/4 | 25.0% |
 | ceo_president | 1/4 | 25.0% |
 | vp_identity | 1/5 | 20.0% |
-| subsidiary_routing | 2/12 | 16.7% |
 | deep_multihop | 2/12 | 16.7% |
 | dept_listing_small | 1/7 | 14.3% |
 | hard_multihop | 3/26 | 11.5% |
 | multi_entity_turn | 2/20 | 10.0% |
+| subsidiary_routing | 1/12 | 8.3% |
 | multi_hop | 1/18 | 5.6% |
 | hard_implicit_hierarchy | 1/19 | 5.3% |
 | noisy_name_form | 1/20 | 5.0% |
@@ -44,15 +45,14 @@
 | retrieval | 0/14 | 0.0% |
 | brand_prior | 0/10 | 0.0% |
 | counterfactual | 0/25 | 0.0% |
-| superlative | 0/10 | 0.0% |
 
 ## By priority
 
-- P0: 59/226 (26.1%)
-- P1: 124/364 (34.1%)
-- P2: 13/36 (36.1%)
+- P0: 56/226 (24.8%)
+- P1: 116/364 (31.9%)
+- P2: 17/36 (47.2%)
 
-## Failures (430)
+## Failures (437)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -615,4 +615,4 @@ I need to clarify: "คุณเนสท์เล่" is not a real person in t
 ```
 
 
-_+380 more failures — see results.jsonl_
+_+387 more failures — see results.jsonl_

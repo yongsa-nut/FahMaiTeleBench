@@ -1,6 +1,6 @@
-# Run: `gemini30flash_repl_L2_t4_repl_full`
+# Run: `gemini30flash_repl_L2_t4_repl_v10full`
 
-**Overall: 489/626 pass (78.1%)**
+**Overall: 488/626 pass (78.0%)**
 
 ## By bucket
 
@@ -11,10 +11,11 @@
 | tier_listing | 6/6 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
-| bilingual | 39/40 | 97.5% |
+| superlative | 10/10 | 100.0% |
 | refuse | 87/90 | 96.7% |
 | name_lookup | 19/20 | 95.0% |
 | multi_entity_turn | 19/20 | 95.0% |
+| bilingual | 38/40 | 95.0% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | listing_count | 18/20 | 90.0% |
@@ -31,28 +32,27 @@
 | noisy_name_form | 15/20 | 75.0% |
 | hard_multihop | 19/26 | 73.1% |
 | thai_knowledge | 7/10 | 70.0% |
-| superlative | 7/10 | 70.0% |
 | counterfactual | 17/25 | 68.0% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 12/18 | 66.7% |
-| subsidiary_routing | 8/12 | 66.7% |
 | vp_identity | 3/5 | 60.0% |
 | casual_name_lookup | 9/15 | 60.0% |
 | email_mobile_lookup | 4/7 | 57.1% |
 | surname_family | 13/24 | 54.2% |
 | evp_identity_by_description | 2/4 | 50.0% |
 | ceo_president | 2/4 | 50.0% |
+| enterprise_shorthand | 10/20 | 50.0% |
 | deep_multihop | 5/12 | 41.7% |
-| enterprise_shorthand | 7/20 | 35.0% |
-| hard_implicit_hierarchy | 5/19 | 26.3% |
+| subsidiary_routing | 3/12 | 25.0% |
+| hard_implicit_hierarchy | 4/19 | 21.1% |
 
 ## By priority
 
 - P0: 194/226 (85.8%)
-- P1: 273/364 (75.0%)
-- P2: 22/36 (61.1%)
+- P1: 269/364 (73.9%)
+- P2: 25/36 (69.4%)
 
-## Failures (137)
+## Failures (138)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -686,4 +686,4 @@ The email address of Tanet Sornpichai (Vice President of KluenSiang) is TANET.SO
 ```
 
 
-_+87 more failures — see results.jsonl_
+_+88 more failures — see results.jsonl_

@@ -135,7 +135,7 @@ def evidence_for(q, rows, by_emp):
     ea = q["expected_answer"]
     note, extra = "", ""
     if q["expected_behavior"] == "answer":
-        if sub == "C6":
+        if sub == "C5":
             # superlative: show the computed ranking from the FULL table so the rater can
             # verify the argmax/argmin themselves (the winner's row cards follow below)
             from collections import Counter
@@ -163,7 +163,7 @@ def evidence_for(q, rows, by_emp):
                 note += ("<br><b>ค่าที่คำนวณโดยสคริปต์ผู้สร้างโจทย์:</b> "
                          + html.escape(q.get("rationale", "") or ""))
             return note, gt[:MAX_CARDS], extra
-        if sub in ("E1", "E5", "E2", "F3") or q.get("group") == "E":
+        if sub in ("E1", "E4", "E2", "F3") or q.get("group") == "E":
             # multi-hop / bridge: the gold row alone doesn't show the chain — add the rows
             # of people named in the question, and (for section-senior items) the shared
             # section roster sorted by position level
@@ -218,7 +218,7 @@ def evidence_for(q, rows, by_emp):
                 f"สแกนทั้ง 1,995 แถวแล้ว: แถวที่ตรงกับชื่อเต็มในคำถาม = <b>{len(full)}</b>; "
                 "ด้านล่างคือแถวที่ใกล้เคียงที่สุด (ชื่อหรือนามสกุลคล้าย) เพื่อยืนยันว่าไม่ใช่คนเดียวกัน")
         return note, near, extra
-    if sub == "H7":
+    if sub == "H5":
         note = ("โจทย์ที่<b>ต้องปฏิเสธ (ข้อมูลว่าง)</b>: บุคคลมีตัวตน แต่<b>ช่องที่ถามว่างเปล่า</b> "
                 "— โปรดดูแถวของบุคคลด้านล่างและตรวจว่าช่องนั้นว่างจริง")
         return note, gt if gt else [], extra
@@ -405,7 +405,7 @@ def main():
         q = items[i]
         note, cards, extra = evidence_for(q, rows, by_emp)
         blank_focus = None
-        if q["subtype"] == "H7":
+        if q["subtype"] == "H5":
             blank_focus = {"Nickname Thai", "Nickname English", "Phone Extension", "Mobile No."}
         data.append({
             "id": i, "subtype": q["subtype"], "lang": q["language"],

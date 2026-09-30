@@ -1,6 +1,6 @@
-# Run: `deepseekv4flash_grep-only_L2_t1_grep_full`
+# Run: `deepseekv4flash_grep-only_L2_t1_grep_v10full`
 
-**Overall: 596/626 pass (95.2%)**
+**Overall: 601/626 pass (96.0%)**
 
 ## By bucket
 
@@ -24,35 +24,35 @@
 | email_mobile_lookup | 7/7 | 100.0% |
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| hard_implicit_hierarchy | 19/19 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
+| enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | subsidiary_routing | 12/12 | 100.0% |
 | refuse | 89/90 | 98.9% |
 | counterfactual | 24/25 | 96.0% |
 | listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
-| enterprise_shorthand | 19/20 | 95.0% |
-| hard_implicit_hierarchy | 18/19 | 94.7% |
 | multi_hop | 17/18 | 94.4% |
 | nickname_grid | 57/61 | 93.4% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | name_lookup | 17/20 | 85.0% |
 | tier_listing | 5/6 | 83.3% |
+| deep_multihop | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
-| superlative | 7/10 | 70.0% |
+| superlative | 8/10 | 80.0% |
 | org_informal_listing | 4/6 | 66.7% |
-| deep_multihop | 8/12 | 66.7% |
 
 ## By priority
 
 - P0: 217/226 (96.0%)
-- P1: 350/364 (96.2%)
-- P2: 29/36 (80.6%)
+- P1: 352/364 (96.7%)
+- P2: 32/36 (88.9%)
 
-## Failures (30)
+## Failures (25)
 
 ### g120 [name_lookup] P1/th
 **Q:** ขอเบอร์ ณัฏฐพล ชากัญญ์รักษา หน่อย
@@ -273,21 +273,6 @@ Here are 5 people from **SaiFah (สายฟ้า / SF)**:
 👉 **คุณกฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)** — อีเมล: **KRIS.MA@FAHMAI.CO.TH**
 ```
 
-### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
-
-**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก **วงโคจร (WK)** คือ **กฤษ มหาแก้วใส (คุณขิง)** ตำแหน่ง **General Manager of Wongkhojon (ผู้จัดการทั่วไปแบรนด์วงโคจร)**
-
-- **Email:** KRIS.MA@FAHMAI.CO.TH
-- **Phone Extension:** 74375
-- **Office:** FahMai Tower 7F, BKK-R9
-```
-
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
@@ -338,17 +323,6 @@ Here are 5 people from **SaiFah (สายฟ้า / SF)**:
 มีคนเดียวในระบบที่ใช้ชื่อเล่น **"เอ"** ค่ะ ส่วนรายชื่ออื่นที่มี "เอ" ในชื่อเป็นส่วนหนึ่งของคำอื่น (เช่น เอกพล, เอพริล ฯลฯ) ไม่ใช่ชื่อเล่นเอโดยตรง
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-**1,255 staff** work at the Rama IX (R9) HQ branch (BKK-R9).
-```
-
 ### g728 [nickname_grid] P0/th
 **Q:** ชื่อเล่นของ DNVP คืออะไร
 
@@ -392,26 +366,6 @@ Let me get employee counts per department properly.
 <｜｜DSML｜｜invoke name="
 ```
 
-### g827 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['77495']
-
-**Response:**
-
-```
-จากข้อมูลที่ดึงมา ผมลองนับจำนวนพนักงานแต่ละแผนกที่มีรองประธานเป็นหัวหน้า (ไม่รวม CEO และ FIN ซึ่งมี C-level เป็นหัวหน้า)
-
-ขอใช้ `grep_csv` เพื่อนับพนักงานในแต่ละแผนกครับ
-
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="grep_csv">
-<｜｜DSML｜｜parameter name="max_matches" string="false">200</｜｜DSML｜｜parameter>
-<｜｜DSML｜｜parameter name="pattern" string="true">OPS</｜｜DSML｜｜parameter>
-</｜｜DSML｜｜invoke>
-</｜｜DSML
-```
-
 ### g830 [deep_multihop] P2/en
 **Q:** Among the departments headed by a VP, take the one with the fewest employees — what's the email of the secretary of that department's VP?
 
@@ -423,43 +377,6 @@ Let me get employee counts per department properly.
 Let me count employees in each VP-headed department.
 
 
-```
-
-### g831 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['74235']
-
-**Response:**
-
-```
-จากข้อมูลที่ผมมี ขอตรวจสอบจำนวนพนักงานในแต่ละแผนกที่มี VP เป็นหัวหน้า (ไม่รวม CEO และ FIN ที่มี C-level เป็นหัวหน้า) ก่อนครับ
-
-
-
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="grep_csv">
-<｜｜DSML｜｜parameter name="max_matches" string="false">1000</｜｜DSML｜｜parameter>
-<｜｜DSML｜｜parameter name="pattern" string="true">^00007543</｜｜DSML｜｜parameter>
-</｜｜DSML｜｜invoke>
-<｜｜DSML｜｜invoke name="grep_csv">
-<｜｜DSML｜｜p
-```
-
-### g832 [superlative] P2/th
-**Q:** ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
-
-**Fails:** missing any-of ['กนก', 'Kanok']; missing any-of ['เก่งกาจชัย', 'Khaengkadchai']
-
-**Response:**
-
-```
-เนื่องจากข้อมูลในระบบระบุว่า **ปีที่เก่าที่สุดของ Start Year คือ 2021** และไม่มีปีที่ต่ำกว่านั้น พนักงานที่เริ่มงานในปี 2021 จึงเป็นกลุ่มที่ **อายุงานยาวนานที่สุด** เท่ากันทั้งหมด โดยมีจำนวนทั้งสิ้น **213 คน**
-
-ตัวอย่างพนักงานในกลุ่มนี้ เช่น
-
-- **คะวัง กอบสุขรัตน์** (KWANG KOBSOOKRAT) — รองประธานฝ่ายการตลาด (VP Marketing)
-- **เรืองศักดิ์ เทพเกียรติกำจร** (RUANGSAK THEPKIATKAMJORN) — รองประธานฝ่ายด
 ```
 
 ### g840 [superlative] P2/th

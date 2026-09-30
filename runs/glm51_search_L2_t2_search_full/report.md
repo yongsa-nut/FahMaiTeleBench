@@ -1,6 +1,6 @@
-# Run: `glm51_search_L2_t2_search_full`
+# Run: `glm51_search_L2_t2_search_v10full`
 
-**Overall: 599/626 pass (95.7%)**
+**Overall: 602/626 pass (96.2%)**
 
 ## By bucket
 
@@ -30,16 +30,16 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
+| enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
+| subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | bilingual | 39/40 | 97.5% |
 | nickname_grid | 57/61 | 93.4% |
-| subsidiary_routing | 11/12 | 91.7% |
 | listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
 | hard_multihop | 22/26 | 84.6% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 343/364 (94.2%)
+- P1: 346/364 (95.1%)
 - P2: 36/36 (100.0%)
 
-## Failures (27)
+## Failures (24)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -184,52 +184,53 @@ GM ดาวเหนือคือ **วิเชียร พงหอมก�
 📧 **KRIS.MA@FAHMAI.CO.TH**
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
 
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ **วิเชียร พงหอมกลิ่น** (Wichian Phonghomklin)
-
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (General Manager of Daonuea)
-- โทรภายใน: 76999
-- มือถือ: 064-902-5307
-- อีเมล: WICHIAN.PH@FAHMAI.CO.TH
-- สถานที่: FahMai Tower 19F
-```
-
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
-
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-**ราม ลวรรณ** (JUB) — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
+The most senior person heading the **Judchuem (จุดเชื่อม)** department is:
 
-- 📧 RAM.LA@FAHMAI.CO.TH
-- ☎️ ต่อ 75965
-- 📍 FahMai Tower 18F
+- **สรัล อาวุทธ์มณี (Saran Awutmani)** — General Manager of Judchuem (ผู้จัดการทั่วไปแบรนด์จุดเชื่อม)
+- 📧 SARAN.AW@FAHMAI.CO.TH
+- ☎️ Ext. 78762 | 📱 064-655-7513
+- 📍 FahMai Tower 24F, BKK-R9
 ```
 
-### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the most senior employee?
 
-**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก WK (วงโคจร) คือ **คุณกฤษ มหาแก้วใส** (ขิง / Khing)
+The most senior employees in FIN-AR both started in **2020** (the earliest year in the section):
 
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of Wongkhojon)
-- ต่อภายใน: 74375
-- อีเมล: KRIS.MA@FAHMAI.CO.TH
-- สำนักงาน: FahMai Tower 7F
+- **สนิท อธิบุญนำ** (SANIT ATHIBOONNAM) — AR Officer, ext 79860, mobile 082-744-7187
+- **ธนวัฒน์ อารีวัฒน์** (TANAWAT AREEWAT) — AR Officer, ext 74381, mobile 068-728-6438
+
+They share the longest tenure in the section at ~5 years.
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+The earliest start year in JC-ENG is **2020**, and three employees share it:
+
+- **สุขุม เกษมแช้มช้อย** (SUKHUM KASEMCHAEMCHOI) — Manager, ext. 74900, SUKHUM.KA@FAHMAI.CO.TH
+- **อุมา ประเกียรติกำจร** (UMA PRAKIATKAMJORN) — IC, ext. 78200, UMA.PR2@FAHMAI.CO.TH
+- **ฤทธิรงค์ ชาญณรงค์นาม** (RITTHIRONG CHANNARONGNAM) — IC, ext. 36615, RITTHIRONG.CH@FAHMAI.CO.TH
+
+All three started in 2020, making them th
 ```
 
 ### g521 [bilingual] P1/th
@@ -392,55 +393,5 @@ no record found
 - **TEC-EA** → จุฑามาศ แก้วใสพงศ์ (มิ้น) · 77008 · JUTHAMAS.KA@FAHMAI.CO.TH
 - **OPS-EA** → ธนิดา ธนกอบสุข · 74037 · THANIDA.TH@FAHMAI.CO.TH
 - **MKT-EA** → ดาริกา ดาวเรืองภิญโญ (ปิ๊ง) · 71338 · DARIKA.D
-```
-
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-**1,255** staff work at the Rama IX (R9) HQ branch.
-```
-
-### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
-
-**Fails:** missing any-of ['Kansathit', 'กาญจน์สถิต']
-
-**Response:**
-
-```
-หัวหน้าฝ่ายการตลาด (MKT) ระดับสูงสุดคือ:
-
-- **คะวัง กอบสุขรัตน์ (โอ)** — รองประธานฝ่ายการตลาด (VP Marketing)
-  - 📞 ต่อ 74711 | 📱 088-904-0088
-  - ✉️ KWANG.KO@FAHMAI.CO.TH
-  - 📍 FahMai Tower 20F
-
-และมี VP อีกท่านดูแลสายดิจิทัล:
-
-- **สมพงษ์ กอบสุขประเสริฐ** — รองประธานฝ่ายการตลาดดิจิทัล (VP Digital Marketing)
-  - 📞 ต่อ 79901 | 📱 085-184-8742
-  - ✉️ SOMPHONG.KO@FAHMAI.CO.TH
-  - 📍 FahMai Tower 18F
-```
-
-### g774 [subsidiary_routing] P1/th
-**Q:** แบรนด์คลื่นเสียงเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์นี้
-
-**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
-
-**Response:**
-
-```
-หัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียงคือ **กัญญา เก่งกาจเฉลิม** (ชื่อเล่น: ปุ๊ก)
-
-- ตำแหน่ง: ผู้จัดการนักการตลาดแบรนด์คลื่นเสียง (MANAGER KLUENSIANG BRAND MARKETER)
-- หมายเลขภายใน: 76408
-- อีเมล: KANYA.KH@FAHMAI.CO.TH
-- สถานที่ทำงาน: FahMai Tower 6F
 ```
 

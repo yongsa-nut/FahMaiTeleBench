@@ -1,16 +1,16 @@
-# FahMai Directory Benchmark
+# FahMai-TeleBench
+
+*A Thai grounded tool-use benchmark for the deployable model tier* (AACL-IJCNLP 2026).
 
 A bilingual (Thai / English) **grounded tool-use** benchmark for evaluating LLM agents on a
 **synthetic 1,995-row enterprise employee directory**. Each item pairs a natural-language query
 with a set of allowed tools and a deterministic gold behaviour — either *answer* (token-graded)
-or *refuse* with one of a small set of canonical phrases. Because the directory is fully
-synthetic, the benchmark is contamination-free by construction.
+or *refuse* with an accepted phrasing for the refusal reason. Every record and item is newly
+generated, so none of the benchmark text predates its release.
 
 The directory schema and question style are *inspired by a real enterprise directory deployment*;
 all names, codes, contacts, and rows are generated (see `scripts/generate_employees.py`, fixed
 seed). No real personal data is included.
-
-> **Anonymized for double-blind review.** Author and institution identifiers have been removed.
 
 ## What makes it distinctive
 
@@ -26,11 +26,13 @@ seed). No real personal data is included.
   | **T4** | `python_repl` (pandas over the directory) | code-based aggregation / over-use |
 
 - **Airtight, deterministic grading — no LLM judge.** Answers are graded by token containment,
-  forbidden-token / leak checks, exact counts, and minimum-coverage listing (`scripts/grade.py`).
+  forbidden-token / leak checks, exact counts (the gold number must appear as a standalone number),
+  and minimum-coverage listing (`scripts/grade.py`).
   Gold answers are unique by construction.
 - **Refusal as a first-class behaviour.** 105 items must be refused (field not in the table,
-  person not found, subjective question, out-of-company entity, blank field), each with its own
-  canonical phrase, plus a universal "never leak a phone extension / employee ID" guard.
+  person not found, subjective question, out-of-company entity, blank field). Each reason has a
+  canonical Thai phrase plus accepted Thai/English paraphrases, and a universal "never leak a phone
+  extension / employee ID" guard applies.
 
 ## Dataset
 
@@ -42,7 +44,8 @@ seed). No real personal data is included.
 - Knowledge base: **`knowledge_base/employees_v02.csv`** (the evaluation KB) — 19 columns,
   ~95–98% surname uniqueness by design. `employees.csv` is the frozen v0.1 directory used by some
   item-construction scripts.
-- Questions + gold: **`questions/questions_v02.json`**.
+- Questions + gold: **`questions/questions_v02.json`** (dataset version 1.0; see
+  **`questions/CHANGELOG.md`** for the changes from the review-time v0.2).
 
 ## Repository layout
 

@@ -1,6 +1,6 @@
-# Run: `gemma4_search_L2_t2_search_full`
+# Run: `gemma4_search_L2_t2_search_v10full`
 
-**Overall: 564/626 pass (90.1%)**
+**Overall: 558/626 pass (89.1%)**
 
 ## By bucket
 
@@ -23,6 +23,7 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
@@ -31,28 +32,27 @@
 | casual_name_lookup | 14/15 | 93.3% |
 | bilingual | 37/40 | 92.5% |
 | thai_knowledge | 9/10 | 90.0% |
-| hard_nickname_variant | 9/10 | 90.0% |
-| superlative | 9/10 | 90.0% |
-| enterprise_shorthand | 17/20 | 85.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | hard_multihop | 22/26 | 84.6% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
-| surname_family | 20/24 | 83.3% |
 | deep_multihop | 10/12 | 83.3% |
 | listing_count | 16/20 | 80.0% |
-| subsidiary_routing | 9/12 | 75.0% |
+| superlative | 8/10 | 80.0% |
+| surname_family | 18/24 | 75.0% |
 | dept_listing_small | 5/7 | 71.4% |
 | counterfactual | 17/25 | 68.0% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 11/18 | 61.1% |
 | noisy_name_form | 11/20 | 55.0% |
+| subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
-- P0: 215/226 (95.1%)
-- P1: 316/364 (86.8%)
-- P2: 33/36 (91.7%)
+- P0: 216/226 (95.6%)
+- P1: 310/364 (85.2%)
+- P2: 32/36 (88.9%)
 
-## Failures (62)
+## Failures (68)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -195,17 +195,6 @@ GM ดาวเหนือ คือ คุณวิเชียร พงห�
 ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
-### g396 [hard_nickname_variant] P0/en
-**Q:** MINTY's extension in FIN please
-
-**Fails:** missing any-of ['เบญจวรรณ', 'Benjawan', 'โชคดีกำจร']
-
-**Response:**
-
-```
-Minty's extension is 75703.
-```
-
 ### g444 [hard_multihop] P1/th
 **Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณละไม บุญพงศ์ สังกัดอยู่หน่อยครับ
 
@@ -229,40 +218,40 @@ Minty's extension is 75703.
 ```
 
 ### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
 
 **Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกดาวเหนือ (DN) คือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) อีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
+ผู้บริหารสูงสุดของแผนกดาวเหนือ (Daonuea) คือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) ตำแหน่งผู้จัดการทั่วไปแบรนด์ดาวเหนือ ติดต่อได้ที่เบอร์ภายใน 76999 หรืออีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ คุณราม ลวรรณ (จุ๊บ) อีเมล RAM.LA@FAHMAI.CO.TH ต่อ 75965 ครับ
+ผู้บริหารสูงสุดของแผนกคลื่นเสียง (Kluensiang) คือ คุณราม ลวรรณ (จุ๊บ) ติดต่อได้ที่ RAM.LA@FAHMAI.CO.TH หรือต่อ 75965 ครับ
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ต่อ 74375 ครับ
+ผู้บริหารสูงสุดของแผนก Wongkhojon คือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ต่อ 74375 ครับ
 ```
 
 ### g470 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00003437']
 
@@ -273,7 +262,7 @@ Minty's extension is 75703.
 ```
 
 ### g473 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00001072']
 
@@ -284,7 +273,7 @@ Minty's extension is 75703.
 ```
 
 ### g476 [bilingual] P1/th
-**Q:** รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+**Q:** รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 
 **Fails:** missing any-of ['00007543']
 
@@ -525,6 +514,21 @@ no record found
 เบอร์ต่อของคุณพงษ์กานต์ ราชชากัญญ์ (COO) คือ 75464 ครับ
 ```
 
+### g606 [surname_family] P1/en
+**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
+
+**Fails:** missing count 3
+
+**Response:**
+
+```
+Here are the employees with the surname เขียวขจีศรี:
+
+* **ปกรณ์ เขียวขจีศรี (Lom)** - DATA ENGINEER (TEC), Email: PAKORN.KI@FAHMAI.CO.TH
+* **อัจฉรา เขียวขจีศรี (Beam)** - DIRECTOR CRM SPECIALIST (MKT), Email: ATCHARA.KI@FAHMAI.CO.TH, Ext: 78341
+* **ไพฑูรย์ เขียวขจีศรี** - LEAD SAIFAH BRAND MARKETER (SF), Email: PAITOON.KI@FAHMAI.CO.TH, Ext: 74791
+```
+
 ### g608 [surname_family] P1/en
 **Q:** List everyone with the surname ไกรศรีมณี (give all of them).
 
@@ -552,6 +556,18 @@ Here are the employees with the surname ไกรศรีมณี:
 - น้ำทิพย์ บุญเรืองกุล (NAMTHIP BOONRUENGKUN) - NAMTHIP.BO@FAHMAI.CO.TH
 ```
 
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
+
+**Fails:** missing count 2
+
+**Response:**
+
+```
+- ปัญญา วัชรจงรัก (ไทเทิล): PANYA.WA@FAHMAI.CO.TH, Ext. 72201
+- จรูญ วัชรจงรัก (ไผ่): CHAROON.WA@FAHMAI.CO.TH, Ext. 71981
+```
+
 ### g620 [surname_family] P1/en
 **Q:** List everyone with the surname สมประเสริฐ (give all of them).
 
@@ -576,17 +592,6 @@ Here are the employees with the surname ไกรศรีมณี:
 - ดาหลา อภิญญาเสริม (DARHA APINYASOEM) - DARHA.AP@FAHMAI.CO.TH
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-There are 1,255 staff members working at the Rama IX (R9) HQ branch.
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -599,21 +604,19 @@ There are 1,255 staff members working at the Rama IX (R9) HQ branch.
 ```
 
 ### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
-**Fails:** missing any-of ['Kansathit', 'กาญจน์สถิต']
+**Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-หัวหน้าทีมการตลาด (MKT) ระดับ VP มี 2 ท่านครับ:
+ในแผนกการตลาด (MKT) มีผู้จัดการหลายท่านแบ่งตามสายงาน ดังนี้ครับ:
 
-*   **คุณคะวัง กอบสุขรัตน์ (โอ)** - รองประธานฝ่ายการตลาด (VP Marketing)
-    *   อีเมล: KWANG.KO@FAHMAI.CO.TH
-    *   โทร: 088-904-0088 / ต่อ 74711
-*   **คุณสมพงษ์ กอบสุขประเสริฐ** - รองประธานฝ่ายการตลาดดิจิทัล (VP Digital Marketing)
-    *   อีเมล: SOMPHONG.KO@FAHMAI.CO.TH
-    *   โทร: 085-184-8742 / ต่อ 79901
+*   **ด้านแบรนด์:** คุณสรพงษ์ อารีฟ้า (โทร. 79726 / 091-419-6218)
+*   **ด้านดิจิทัล:** คุณนงเยาว์ ภัทรจิตรานนท์ และ คุณกฤษฎา ชาเรือนศักดิ์ (โทร. 79448)
+*   **ด้านอีเวนต์:** คุณเพ็ญศรี กาญจน์กำจร และ คุณสถาพร อมรอัสนี (โทร. 13648 / 081-270-5243)
+*   **ด้าน CRM:** คุณอุษณี จินดาบุญ (โทร. 73121 / 081-786-8407)
 ```
 
 ### g755 [counterfactual] P1/th
@@ -639,4 +642,4 @@ Sumate Akarajaingam's extension is 72146.
 ```
 
 
-_+12 more failures — see results.jsonl_
+_+18 more failures — see results.jsonl_

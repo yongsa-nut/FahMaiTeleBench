@@ -154,7 +154,7 @@ g267,th,FINFP คือใคร
 g268,en,who's the Bangkok retail VP
 g270,en,"ext for CFO, CTO, COO"
 g271,th,ขอ ext ของ CEO กับ CFO
-g272,th,"ขอ ext ของ HRVP กับ LEGVP, FINVP"
+g272,th,"ขอ ext ของ HRVP, LEGVP กับ FINVP"
 g273,en,"ext for SFVP, DNVP, KSVP"
 g274,th,ขอ ext ของ CMO กับ MKTVP
 g275,th,"ขอเบอร์ของ CPO, SFVP"
@@ -223,9 +223,9 @@ g350,th,เลขา CFO ชื่อเล่นอะไรนะ
 g351,th,ผู้บริหารที่มีจุฑามาศ แก้วใสพงศ์เป็นเลขานุการคือใคร
 g352,th,CEO-CoS ทีมเดียวกับใครบ้าง
 g353,en,who's the boss of the CMO's EA
-g354,th,เลขา CEO อยู่แผนกไหน
+g354,th,เลขาของประธานเจ้าหน้าที่บริหารอยู่แผนกไหน
 g355,th,หัวหน้า GM ดาวเหนือคือใคร
-g356,th,รองประธาน (VP) ที่อยู่สังกัดเดียวกับ GM ของแบรนด์สายฟ้าคือใคร
+g356,th,รองประธานที่อยู่สังกัดเดียวกับ GM ของแบรนด์สายฟ้าคือใคร
 g357,en,who is SFVP's boss
 g358,th,GM แบรนด์สายฟ้า ใครนะ
 g359,th,GM ดาวเหนือ ใคร
@@ -298,42 +298,42 @@ g448,th,ขออีเมลของผู้บริหารสูงสุ
 g449,en,What's the phone extension of the VP who heads the department that วีระ ประอนงค์ works in?
 g450,th,ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณธนพล พิประเสริฐ สังกัดอยู่หน่อยครับ
 g451,en,What's the phone extension of the VP who heads the department that แตง ธนอารมณ์ดี works in?
-g452,th,ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
-g453,en,Who is the most senior person heading the Judchuem (JC) department?
-g454,th,ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
-g455,en,Who is the most senior person heading the Legal (LEG) department?
-g456,th,ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+g452,th,ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+g453,en,Who is the most senior person heading the Judchuem department?
+g454,th,ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
+g455,en,Who is the most senior person heading the Legal department?
+g456,th,ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 g457,th,ในส่วนงาน B2B-SUP ใครมีตำแหน่งสูงสุด
-g458,en,"In the DN-ENG section, who is the most senior employee by position level?"
+g458,en,"In the DN-ENG section, who is the most senior employee?"
 g459,th,ในส่วนงาน DN-MKT ใครมีตำแหน่งสูงสุด
-g460,en,"In the FIN-AR section, who is the most senior employee by position level?"
+g460,en,"In the FIN-AR section, who is the most senior employee?"
 g461,th,ในส่วนงาน FIN-GL ใครมีตำแหน่งสูงสุด
-g462,en,"In the FIN-TR section, who is the most senior employee by position level?"
+g462,en,"In the FIN-TR section, who is the most senior employee?"
 g463,th,ในส่วนงาน HR-COMP ใครมีตำแหน่งสูงสุด
-g464,en,"In the JC-ENG section, who is the most senior employee by position level?"
+g464,en,"In the JC-ENG section, who is the most senior employee?"
 g465,th,ในส่วนงาน JC-MKT ใครมีตำแหน่งสูงสุด
-g466,en,"In the KS-MKT section, who is the most senior employee by position level?"
+g466,en,"In the KS-MKT section, who is the most senior employee?"
 g467,th,ในส่วนงาน KS-OPS ใครมีตำแหน่งสูงสุด
 g468,th,ขออีเมลของ CEO หน่อยครับ
-g469,th,รหัสหน่วยงาน (unit code) ของ CFO คืออะไรครับ
-g470,th,รหัสพนักงาน (employee ID) ของ CTO คือเลขอะไรครับ
+g469,th,รหัสหน่วยงานของประธานเจ้าหน้าที่การเงินคืออะไรครับ
+g470,th,รหัสพนักงานของ CTO คือเลขอะไรครับ
 g471,th,ขออีเมลของ COO หน่อยครับ
-g472,th,รหัสหน่วยงาน (unit code) ของ CMO คืออะไรครับ
-g473,th,รหัสพนักงาน (employee ID) ของ CPO คือเลขอะไรครับ
+g472,th,รหัสหน่วยงานของประธานเจ้าหน้าที่การตลาดคืออะไรครับ
+g473,th,รหัสพนักงานของ CPO คือเลขอะไรครับ
 g474,th,ขออีเมลของ CHRO หน่อยครับ
-g475,th,รหัสหน่วยงาน (unit code) ของ Chief of Staff คืออะไรครับ
-g476,th,รหัสพนักงาน (employee ID) ของ VP ฝ่ายการเงิน คือเลขอะไรครับ
+g475,th,รหัสหน่วยงานของ Chief of Staff คืออะไรครับ
+g476,th,รหัสพนักงานของ VP ฝ่ายการเงิน คือเลขอะไรครับ
 g477,th,ขออีเมลของ VP ฝ่ายบุคคล หน่อยครับ
-g488,en,What is the CEO's Thai nickname (ชื่อเล่น)?
+g488,en,What is the CEO's Thai nickname?
 g489,en,What is the Thai given (first) name of the CFO?
 g490,en,What is the Thai family (last) name of the CTO?
-g491,en,What is the Chief of Staff's Thai nickname (ชื่อเล่น)?
+g491,en,What is the Chief of Staff's Thai nickname?
 g492,en,What is the Thai given (first) name of the VP of Finance?
 g493,en,What is the Thai family (last) name of the VP of HR?
-g494,en,What is the VP of Marketing's Thai nickname (ชื่อเล่น)?
+g494,en,What is the VP of Marketing's Thai nickname?
 g495,en,What is the Thai given (first) name of the VP of Legal?
 g496,en,What is the Thai family (last) name of the VP of Technology?
-g497,en,What is the VP of Logistics's Thai nickname (ชื่อเล่น)?
+g497,en,What is the VP of Logistics's Thai nickname?
 g508,th,ขอ email address ของ Chief Executive Officer หน่อยครับ
 g509,th,Chief Financial Officer เบอร์ extension อะไรครับ
 g510,th,nickname ของ Chief Technology Officer คืออะไรครับ
@@ -379,13 +379,13 @@ g554,en,What is CLOUD's email address?
 g555,th,คุณ KAFAE ชื่อจริง-นามสกุลว่าอะไรครับ
 g556,en,What's PETER's phone extension?
 g557,th,ขออีเมลของคุณ RIRI หน่อยครับ
-g558,en,What is LALIN's full (real) name?
+g558,en,What is LALIN's full name?
 g559,th,ขอเบอร์ต่อของคุณ OKAY หน่อยครับ
 g560,en,What is IPHONE's email address?
 g561,th,คุณ NESTLE ชื่อจริง-นามสกุลว่าอะไรครับ
 g562,en,What's DARIN's phone extension?
 g563,th,ขออีเมลของคุณ SANTA หน่อยครับ
-g564,en,What is COTTON's full (real) name?
+g564,en,What is COTTON's full name?
 g565,th,ขอเบอร์ต่อของคุณ NERNER หน่อยครับ
 g566,en,What is KHANOM's email address?
 g567,en,"Hi, do you have the email of Khun Kamala Chaisonsavang, our CFO?"
@@ -487,26 +487,26 @@ g662,en,"ext for SUPVP, OPSVP"
 g663,th,"ขอ email ของ MKTVP, TECVP, LOGVP, B2BVP"
 g664,en,"ext for RETVP, SFVP"
 g665,th,"ขอ ext ของ DN-GM, SF-GM, KS-GM"
-g666,en,How many staff work at the Rama IX (R9) HQ branch?
-g667,th,พนักงานสาขาเชียงใหม่ (CNX) มีกี่คน
-g668,th,พนักงานสาขาภูเก็ต (HKT) มีกี่คน
-g669,en,How many staff work at the Hat Yai (HDY) branch?
-g670,th,พนักงานสาขาขอนแก่น (KKN) มีกี่คน
-g671,th,พนักงานสาขาโคราช (NMA) มีกี่คน
-g672,en,How many staff work at the Chonburi (CBI) branch?
-g673,th,พนักงานสาขาบางนา (BNA) มีกี่คน
-g674,th,พนักงานสาขาลาดพร้าว (LP) มีกี่คน
-g675,en,How many staff work at the Siam (SIAM) branch?
-g676,th,พนักงานที่ทำงานทางไกล (REMOTE) มีกี่คน
-g677,th,ผู้อำนวยการทีมขายสาขาภูเก็ต (HKT) คือใคร
-g678,en,Who is the sales director at the Hat Yai (HDY) branch?
-g679,th,ผู้อำนวยการทีมขายสาขาโคราช (NMA) คือใคร
-g680,en,Who is the sales director at the Siam (SIAM) branch?
-g681,th,ผู้อำนวยการทีมขายสาขาลาดพร้าว (LP) คือใคร
+g666,en,How many staff work at the Rama IX HQ branch?
+g667,th,พนักงานสาขาเชียงใหม่ มีกี่คน
+g668,th,พนักงานสาขาภูเก็ต มีกี่คน
+g669,en,How many staff work at the Hat Yai branch?
+g670,th,พนักงานสาขาขอนแก่น มีกี่คน
+g671,th,พนักงานสาขาโคราช มีกี่คน
+g672,en,How many staff work at the Chonburi branch?
+g673,th,พนักงานสาขาบางนา มีกี่คน
+g674,th,พนักงานสาขาลาดพร้าว มีกี่คน
+g675,en,How many staff work at the Siam branch?
+g676,th,พนักงานที่ทำงานทางไกล มีกี่คน
+g677,th,ผู้อำนวยการทีมขายสาขาภูเก็ต คือใคร
+g678,en,Who is the sales director at the Hat Yai branch?
+g679,th,ผู้อำนวยการทีมขายสาขาโคราช คือใคร
+g680,en,Who is the sales director at the Siam branch?
+g681,th,ผู้อำนวยการทีมขายสาขาลาดพร้าว คือใคร
 g682,th,หัวหน้าทีมฟินฯ คือใคร
 g683,en,Who heads the HR team?
-g684,th,ใครเป็นหัวหน้าทีมการตลาด (MKT)
-g685,en,Who is the head of the TEC (tech) department?
+g684,th,ใครเป็นหัวหน้าทีมการตลาด
+g685,en,Who is the head of the tech department?
 g686,en,What is the COO's annual salary?
 g687,en,How old is the CTO?
 g688,en,What's the home address of the CEO?
@@ -591,18 +591,18 @@ g766,en,I heard จิรภัทร วัชรใจงาม is the CTO —
 g767,th,ได้ยินว่าคุณกมลา ชัยสนธิ์สว่างเป็น CHRO ขอเบอร์ต่อหน่อยครับ
 g768,en,I heard ส้ม กาญจน์สถิต is the CEO — can I get their extension?
 g769,th,ได้ยินว่าคุณดาริกา อาวุทธ์ดีเป็น COO ขอเบอร์ต่อหน่อยครับ
-g770,th,แบรนด์ดาวเหนือเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
-g771,en,The DaoNuea brand is an in-house FahMai division — who heads its marketing unit?
-g772,th,แบรนด์จุดเชื่อมเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
-g773,en,The Judchuem brand is an in-house FahMai division — who heads its marketing unit?
-g774,th,แบรนด์คลื่นเสียงเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์นี้
-g775,en,The Kluensiang brand is an in-house FahMai division — who heads its operations unit?
-g776,th,แบรนด์วงโคจรเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์นี้
-g777,en,The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
-g778,th,สายฟ้าเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นผู้บริหารสูงสุด (VP) ของแบรนด์นี้
-g779,en,Kluensiang is an in-house FahMai brand — who is the VP heading this division?
-g780,th,ดาวเหนือเป็นแบรนด์ในเครือฟ้าใหม่ ใครเป็นผู้บริหารสูงสุด (VP) ของแบรนด์นี้
-g781,en,Wongkhojon is an in-house FahMai brand — who is the VP heading this division?
+g770,th,ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์ดาวเหนือ
+g771,en,Who heads the marketing unit of the DaoNuea brand?
+g772,th,ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
+g773,en,Who heads the marketing unit of the Judchuem brand?
+g774,th,ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
+g775,en,Who heads the operations unit of the Kluensiang brand?
+g776,th,ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์วงโคจร
+g777,en,Who heads the operations unit of the Wongkhojon brand?
+g778,th,รองประธานที่ดูแลแบรนด์สายฟ้าคือใคร
+g779,en,Who is the VP heading the Kluensiang division?
+g780,th,รองประธานที่ดูแลแบรนด์ดาวเหนือคือใคร
+g781,en,Who is the VP heading the Wongkhojon division?
 g820,th,ขอเบอร์ต่อของเลขานุการของรองประธานฝ่ายที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่หน่อยครับ
 g821,en,What's the email of the secretary of the VP who heads the department that ภูมิ กาญจน์เจริญ works in?
 g822,th,ขอชื่อเล่นของเลขานุการของรองประธานฝ่ายที่คุณปิยธิดา อนันต์เฉลิมสังกัดอยู่หน่อยครับ
@@ -610,18 +610,18 @@ g823,en,What's the phone extension of the secretary of the VP who heads the depa
 g824,th,ขออีเมลของเลขานุการของรองประธานฝ่ายที่คุณธนพล พิประเสริฐสังกัดอยู่หน่อยครับ
 g825,en,What's the phone extension of the secretary of the VP who heads the department that ละไม บุญพงศ์ works in?
 g826,en,"Among the departments headed by a VP, take the one with the most employees — what's the email of the VP who heads that department?"
-g827,th,ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
+g827,th,ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
 g828,en,"Among the departments headed by a VP, take the one with the most employees — what's the nickname of the secretary of the VP who heads that department?"
-g829,th,ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
+g829,th,ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
 g830,en,"Among the departments headed by a VP, take the one with the fewest employees — what's the email of the secretary of that department's VP?"
-g831,th,ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
-g832,th,ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ
-g833,th,ในบรรดาผู้อำนวยการ (Director) ของฝ่ายการเงิน (FIN) ใครที่อายุงานยาวนานที่สุดครับ
-g834,en,"Among the Directors in the Technology (TEC) department, who has been at FahMai the longest?"
-g835,th,ในบรรดาผู้อำนวยการ (Director) ของฝ่ายปฏิบัติการ (OPS) ใครที่อายุงานยาวนานที่สุดครับ
-g836,en,"Among the Directors in the Marketing (MKT) department, who has been at FahMai the longest?"
-g837,th,ในบรรดาผู้อำนวยการ (Director) ของแผนก Retail (RET) ใครที่อายุงานยาวนานที่สุดครับ
-g838,en,"Among the Directors in the Support (SUP) department, who has been at FahMai the longest?"
+g831,th,ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
+g832,th,ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ
+g833,th,ในบรรดาผู้อำนวยการของฝ่ายการเงิน ใครที่อายุงานยาวนานที่สุดครับ
+g834,en,"Among the Directors in the Technology department, who has been at FahMai the longest?"
+g835,th,ในบรรดาผู้อำนวยการของฝ่ายปฏิบัติการ ใครที่อายุงานยาวนานที่สุดครับ
+g836,en,"Among the Directors in the Marketing department, who has been at FahMai the longest?"
+g837,th,ในบรรดาผู้อำนวยการของแผนก Retail ใครที่อายุงานยาวนานที่สุดครับ
+g838,en,"Among the Directors in the Support department, who has been at FahMai the longest?"
 g839,en,Which section has the most Directors?
 g840,th,section ไหนของฟ้าใหม่ที่มีพนักงานมากที่สุดครับ
 g841,en,Which department has the most employees company-wide?

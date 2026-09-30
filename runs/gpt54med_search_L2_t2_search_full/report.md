@@ -1,6 +1,6 @@
-# Run: `gpt54med_search_L2_t2_search_full`
+# Run: `gpt54med_search_L2_t2_search_v10full`
 
-**Overall: 610/626 pass (97.4%)**
+**Overall: 609/626 pass (97.3%)**
 
 ## By bucket
 
@@ -28,7 +28,6 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
-| bilingual | 40/40 | 100.0% |
 | listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
@@ -37,22 +36,23 @@
 | subsidiary_routing | 12/12 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
+| bilingual | 39/40 | 97.5% |
 | nickname_grid | 59/61 | 96.7% |
-| surname_family | 23/24 | 95.8% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
+| surname_family | 22/24 | 91.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | hard_multihop | 22/26 | 84.6% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | org_plus_person | 2/3 | 66.7% |
 
 ## By priority
 
 - P0: 219/226 (96.9%)
-- P1: 355/364 (97.5%)
+- P1: 354/364 (97.3%)
 - P2: 36/36 (100.0%)
 
-## Failures (16)
+## Failures (17)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -188,39 +188,38 @@ cannot provide this information — the directory does not track reporting lines
 คุณธนพล พิประเสริฐ สังกัดแผนก WK ครับ ผู้บริหารสูงสุดของแผนกนี้คือ กฤษ มหาแก้วใส (ผู้จัดการทั่วไปแบรนด์วงโคจร) — `KRIS.MA@FAHMAI.CO.TH`
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
 
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก DN คือ **วิเชียร พงหอมกลิ่น** — ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (ต่อ **76999**, มือถือ **064-902-5307**, อีเมล **WICHIAN.PH@FAHMAI.CO.TH**)
-```
-
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
-
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ **ราม ลวรรณ** — **ผู้จัดการทั่วไปแบรนด์คลื่นเสียง**  
-อีเมล: **RAM.LA@FAHMAI.CO.TH** | ต่อ **75965**
+The most senior head of the Judchuem department is **SARAN AWUTMANI** — **General Manager of Judchuem**.  
+Contact: **78762** · **SARAN.AW@FAHMAI.CO.TH**
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนก Wongkhojon (WK) คือ **กฤษ มหาแก้วใส** — **ผู้จัดการทั่วไปแบรนด์วงโคจร**  
-อีเมล: **KRIS.MA@FAHMAI.CO.TH** | ต่อ **74375**
+กฤษ มหาแก้วใส (ขิง) — ผู้จัดการทั่วไปแบรนด์วงโคจร, อีเมล KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
+```
+
+### g473 [bilingual] P1/th
+**Q:** รหัสพนักงานของ CPO คือเลขอะไรครับ
+
+**Fails:** missing any-of ['00001072']
+
+**Response:**
+
+```
+ไม่สามารถให้ข้อมูลนี้ได้ รหัสพนักงานเป็นข้อมูลภายในนอกเหนือจากชื่อและข้อมูลติดต่อ
 ```
 
 ### g597 [multi_hop] P1/th
@@ -234,14 +233,31 @@ cannot provide this information — the directory does not track reporting lines
 คุณศักดิ์สิทธิ์ สัมชากัญญ์ สังกัดส่วนงาน KS ครับ — ตำแหน่งสูงสุดในส่วนงานนี้คือ **ธเนศ บัวทองประเสริฐ (รองประธานฝ่ายคลื่นเสียง)** เบอร์ต่อ **71215** ครับ
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
+### g618 [surname_family] P1/en
+**Q:** List everyone with the surname วัชรจงรัก (give all of them).
 
-**Fails:** missing any-of ['1255']
+**Fails:** missing count 2
 
 **Response:**
 
 ```
-1,255 staff work at the Rama IX HQ branch.
+Here are all employees with the surname วัชรจงรัก:
+
+- ปัญญา วัชรจงรัก (ไทเทิล) — Lead Technical Support Agent, ext. 72201, 093-616-9898, PANYA.WA@FAHMAI.CO.TH
+- จรูญ วัชรจงรัก (ไผ่) — Learning & Development Specialist, ext. 71981, CHAROON.WA@FAHMAI.CO.TH
+```
+
+### g684 [enterprise_shorthand] P1/th
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
+
+**Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
+
+**Response:**
+
+```
+หัวหน้าทีมการตลาดคือ **คะวัง กอบสุขรัตน์ (โอ)** — **รองประธานฝ่ายการตลาด**  
+ต่อ **74711** | มือถือ **088-904-0088** | **KWANG.KO@FAHMAI.CO.TH**
+
+ถ้าหมายถึง **การตลาดดิจิทัล** คือ **สมพงษ์ กอบสุขประเสริฐ** — **รองประธานฝ่ายการตลาดดิจิทัล**
 ```
 

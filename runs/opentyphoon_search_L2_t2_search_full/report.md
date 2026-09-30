@@ -1,6 +1,6 @@
-# Run: `opentyphoon_search_L2_t2_search_full`
+# Run: `opentyphoon_search_L2_t2_search_v10full`
 
-**Overall: 421/626 pass (67.3%)**
+**Overall: 419/626 pass (66.9%)**
 
 ## By bucket
 
@@ -27,21 +27,21 @@
 | multi_entity_turn | 15/20 | 75.0% |
 | bilingual | 30/40 | 75.0% |
 | hard_nickname_variant | 7/10 | 70.0% |
+| superlative | 7/10 | 70.0% |
 | nickname_grid | 41/61 | 67.2% |
 | dept_member_count | 10/15 | 66.7% |
 | org_plus_person | 2/3 | 66.7% |
-| listing_count | 13/20 | 65.0% |
+| enterprise_shorthand | 13/20 | 65.0% |
 | multi_hop | 11/18 | 61.1% |
-| enterprise_shorthand | 12/20 | 60.0% |
-| hard_implicit_hierarchy | 11/19 | 57.9% |
+| listing_count | 12/20 | 60.0% |
 | dept_listing_small | 4/7 | 57.1% |
+| hard_implicit_hierarchy | 10/19 | 52.6% |
 | org_informal_listing | 3/6 | 50.0% |
-| surname_family | 12/24 | 50.0% |
-| superlative | 5/10 | 50.0% |
 | counterfactual | 11/25 | 44.0% |
+| surname_family | 8/24 | 33.3% |
 | subsidiary_routing | 4/12 | 33.3% |
+| deep_multihop | 4/12 | 33.3% |
 | hard_multihop | 8/26 | 30.8% |
-| deep_multihop | 3/12 | 25.0% |
 | retrieval | 3/14 | 21.4% |
 | noisy_name_form | 3/20 | 15.0% |
 | casual_name_lookup | 1/15 | 6.7% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 169/226 (74.8%)
-- P1: 230/364 (63.2%)
-- P2: 22/36 (61.1%)
+- P1: 225/364 (61.8%)
+- P2: 25/36 (69.4%)
 
-## Failures (205)
+## Failures (207)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -327,7 +327,7 @@ Apologies, but I cannot provide this information.
 ### g172 [nickname_grid] P0/th
 **Q:** ขิง ที่ SUP เบอร์อะไร
 
-**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช']
+**Fails:** missing any-of ['Sunee', 'สุณี']; missing any-of ['Pholdech', 'พลเดช', '71734']
 
 **Response:**
 
@@ -653,4 +653,4 @@ SFVP: วิรัตน์ สมบุษราคัม (ดอกไม้)
 ```
 
 
-_+155 more failures — see results.jsonl_
+_+157 more failures — see results.jsonl_

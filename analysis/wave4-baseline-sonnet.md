@@ -1,4 +1,4 @@
-# Track 3 Wave 4 — baseline · `claude-sonnet-4-6` (stamp `full`, KB `employees_v02.csv`)
+# Track 3 Wave 4 — baseline · `claude-sonnet-4-6` (stamp `v10full`, KB `employees_v02.csv`)
 
 Model: claude-sonnet-4-6 (`sonnet`) · 626 items × 4 configs.
 
@@ -6,10 +6,10 @@ Model: claude-sonnet-4-6 (`sonnet`) · 626 items × 4 configs.
 
 | config | pass/total | rate | errors |
 |---|---|---|---|
-| T1 grep | 590/626 |   94% | 0 |
-| T2 search | 592/626 |   95% | 0 |
-| T3 both | 598/626 |   96% | 0 |
-| T4 repl | 574/626 |   92% | 0 |
+| T1 grep | 584/626 |   93% | 0 |
+| T2 search | 586/626 |   94% | 0 |
+| T3 both | 596/626 |   95% | 0 |
+| T4 repl | 572/626 |   91% | 0 |
 
 ## Subtype × config matrix
 
@@ -21,41 +21,41 @@ Model: claude-sonnet-4-6 (`sonnet`) · 626 items × 4 configs.
 | B1 | 25 |  100% |   92% |   92% |   80% |
 | B2 | 30 |  100% |  100% |  100% |   97% |
 | B3 | 20 |   90% |   50% |   70% |   65% |
-| B5 | 20 |   95% |   85% |   90% |   95% |
+| B4 | 20 |   95% |   90% |   95% |   95% |
 | C1 | 25 |   96% |   96% |   96% |  100% |
-| C3 | 20 |   85% |  100% |  100% |   95% |
-| C4 | 20 |   95% |   90% |   85% |   90% |
-| C5 | 24 |  100% |  100% |  100% |  100% |
-| C6 | 10 |   80% |  100% |  100% |  100% |
+| C2 | 20 |   85% |  100% |  100% |   95% |
+| C3 | 20 |   85% |   90% |   85% |   90% |
+| C4 | 24 |  100% |  100% |  100% |  100% |
+| C5 | 10 |   60% |   90% |  100% |  100% |
 | D1 | 25 |   96% |  100% |  100% |   96% |
 | D2 | 25 |   96% |   96% |  100% |   88% |
-| D4 | 20 |  100% |  100% |  100% |  100% |
+| D3 | 20 |  100% |  100% |  100% |  100% |
 | E1 | 40 |   68% |   78% |   78% |   78% |
 | E2 | 10 |  100% |  100% |  100% |  100% |
-| E3 | 25 |   88% |   96% |   96% |   88% |
-| E5 | 12 |  100% |  100% |  100% |   67% |
+| E3 | 25 |   88% |   92% |   88% |   80% |
+| E4 | 12 |  100% |  100% |  100% |   67% |
 | F1 | 20 |   90% |  100% |  100% |   90% |
 | F2 | 25 |  100% |  100% |  100% |   88% |
-| F3 | 20 |   95% |   90% |   90% |   85% |
-| G1 | 20 |   85% |   90% |   95% |   85% |
-| G3 | 20 |  100% |  100% |  100% |   95% |
+| F3 | 20 |   85% |   65% |   80% |   85% |
+| G1 | 20 |   85% |   90% |  100% |   85% |
+| G2 | 20 |  100% |  100% |  100% |   95% |
 | H1 | 25 |  100% |  100% |  100% |  100% |
 | H2 | 25 |   96% |  100% |  100% |  100% |
 | H3 | 20 |  100% |  100% |  100% |  100% |
 | H4 | 20 |  100% |  100% |  100% |  100% |
-| H7 | 15 |  100% |  100% |  100% |   87% |
+| H5 | 15 |  100% |  100% |  100% |   87% |
 
 ## Group rollup
 
 | grp | T1 grep | T2 search | T3 both | T4 repl |
 |---|--:|--:|--:|--:|
 | A |   98% |   98% |   98% |   98% |
-| B |   97% |   84% |   89% |   85% |
-| C |   93% |   97% |   96% |   97% |
+| B |   97% |   85% |   91% |   85% |
+| C |   89% |   96% |   96% |   97% |
 | D |   97% |   99% |  100% |   94% |
-| E |   82% |   89% |   89% |   82% |
-| F |   95% |   97% |   97% |   88% |
-| G |   92% |   95% |   98% |   90% |
+| E |   82% |   87% |   86% |   79% |
+| F |   92% |   89% |   94% |   88% |
+| G |   92% |   95% |  100% |   90% |
 | H |   99% |  100% |  100% |   98% |
 
 ## retry@T1 (grep-only; cohort B2/B3/B5/F1)
@@ -64,10 +64,10 @@ Model: claude-sonnet-4-6 (`sonnet`) · 626 items × 4 configs.
 |---|--:|--:|--:|--:|--:|
 | B2 | 30 | 7 | 23% |  100% (7) |  100% (23) |
 | B3 | 20 | 19 | 95% |   95% (19) |    0% (1) |
-| B5 | 20 | 4 | 20% |  100% (4) |   94% (16) |
+| B4 | 20 | 10 | 50% |   90% (10) |  100% (10) |
 | F1 | 20 | 3 | 15% |  100% (3) |   88% (17) |
 
-Cohort retry-rate: **33/90 = 37%**
+Cohort retry-rate: **39/90 = 43%**
 
 ## tool-choice@T3 (first tool when both offered)
 
@@ -79,29 +79,29 @@ Cohort retry-rate: **33/90 = 37%**
 | B1 | grep | 25 | 0 | 0 |
 | B2 | grep | 30 | 0 | 0 |
 | B3 | grep | 20 | 0 | 0 |
-| B5 | search | 20 | 0 | 0 |
+| B4 | search | 20 | 0 | 0 |
 | C1 | grep | 23 | 2 | 0 |
-| C3 | grep | 20 | 0 | 0 |
-| C4 | search | 20 | 0 | 0 |
-| C5 | grep | 24 | 0 | 0 |
-| C6 | either | 8 | 2 | 0 |
+| C2 | grep | 20 | 0 | 0 |
+| C3 | search | 20 | 0 | 0 |
+| C4 | grep | 24 | 0 | 0 |
+| C5 | either | 8 | 2 | 0 |
 | D1 | grep | 25 | 0 | 0 |
 | D2 | search | 25 | 0 | 0 |
-| D4 | search | 20 | 0 | 0 |
+| D3 | search | 20 | 0 | 0 |
 | E1 | search | 40 | 0 | 0 |
 | E2 | search | 10 | 0 | 0 |
 | E3 | search | 25 | 0 | 0 |
-| E5 | search | 12 | 0 | 0 |
+| E4 | search | 12 | 0 | 0 |
 | F1 | search | 12 | 1 | 7 |
 | F2 | either | 25 | 0 | 0 |
 | F3 | search | 20 | 0 | 0 |
-| G1 | either | 18 | 0 | 2 |
-| G3 | either | 20 | 0 | 0 |
+| G1 | either | 20 | 0 | 0 |
+| G2 | either | 20 | 0 | 0 |
 | H1 | either | 0 | 0 | 25 |
 | H2 | either | 25 | 0 | 0 |
 | H3 | either | 0 | 0 | 20 |
 | H4 | either | 0 | 0 | 20 |
-| H7 | search | 15 | 0 | 0 |
+| H5 | search | 15 | 0 | 0 |
 
 Tool-choice accuracy (definite-optimal subtypes): **286/461 =   62%** — ⚠️ the aggregate is dominated by the search-default; use the split:
 - when **search** is optimal:   97% (284/292)
@@ -109,4 +109,4 @@ Tool-choice accuracy (definite-optimal subtypes): **286/461 =   62%** — ⚠️
 
 ## REPL over-use (T4)
 
-Of 574 items correct under T4 repl, **560 (98%)** were also correct under T2 search alone (repl unnecessary).
+Of 572 items correct under T4 repl, **553 (97%)** were also correct under T2 search alone (repl unnecessary).

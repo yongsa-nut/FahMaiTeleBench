@@ -1,4 +1,4 @@
-# Run: `deepseekv4pro_search_L2_t2_search_full`
+# Run: `deepseekv4pro_search_L2_t2_search_v10full`
 
 **Overall: 602/626 pass (96.2%)**
 
@@ -36,15 +36,15 @@
 | superlative | 10/10 | 100.0% |
 | nickname_grid | 59/61 | 96.7% |
 | refuse | 87/90 | 96.7% |
-| subsidiary_routing | 11/12 | 91.7% |
+| enterprise_shorthand | 19/20 | 95.0% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
 | listing_count | 18/20 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
 | casual_name_lookup | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | multi_hop | 15/18 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
 | evp_identity_by_description | 3/4 | 75.0% |
+| subsidiary_routing | 9/12 | 75.0% |
 
 ## By priority
 
@@ -230,30 +230,15 @@ I can't recommend who should lead a project — that's a subjective decision bas
 📧 อีเมล: **KRIS.MA@FAHMAI.CO.TH**
 ```
 
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+### g453 [hard_implicit_hierarchy] P1/en
+**Q:** Who is the most senior person heading the Judchuem department?
 
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแบรนด์คลื่นเสียง (KS) คือ **คุณราม ลวรรณ (จุ๊บ)** ตำแหน่งผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)
-
-📧 RAM.LA@FAHMAI.CO.TH | 📞 ต่อ 75965 | 📍 FahMai Tower ชั้น 18F
-```
-
-### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
-
-**Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
+**Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแบรนด์วงโคจร (WK) คือ **คุณกฤษ มหาแก้วใส (ขิง)** — ตำแหน่ง ผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of Wongkhojon)
-
-📧 KRIS.MA@FAHMAI.CO.TH | 📞 เบอร์ต่อ 74375 | ชั้น 7 FahMai Tower
+สรัล อาวุทธ์มณี (SARAN AWUTMANI) — General Manager of Judchuem, ext. 78762, saran.aw@fahmai.co.th
 ```
 
 ### g533 [listing_count] P1/en
@@ -335,34 +320,18 @@ There are **6 employees** in the DN (ดาวเหนือ) department at Lea
 📍 FahMai Tower 11F
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-There are **1,255 staff** at the Rama IX HQ branch (BKK-R9).
-```
-
 ### g684 [enterprise_shorthand] P1/th
-**Q:** ใครเป็นหัวหน้าทีมการตลาด (MKT)
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
-**Fails:** missing any-of ['Kansathit', 'กาญจน์สถิต']
+**Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-หัวหน้าฝ่ายการตลาด (MKT) มี 2 ตำแหน่ง VP ครับ:
+หัวหน้าทีมการตลาดคือ **คุณคะวัง กอบสุขรัตน์ (โอ)** — รองประธานฝ่ายการตลาด
 
-- **คุณคะวัง กอบสุขรัตน์ (โอ)** — รองประธานฝ่ายการตลาด (MKTVP)  
-  📧 KWANG.KO@FAHMAI.CO.TH | 📞 088-904-0088 | ต่อ 74711 | ชั้น 20
-
-- **คุณสมพงษ์ กอบสุขประเสริฐ** — รองประธานฝ่ายการตลาดดิจิทัล (MKTDG)  
-  📧 SOMPHONG.KO@FAHMAI.CO.TH | 📞 085-184-8742 | ต่อ 79901 | ชั้น 18
-
-ถ้าหมายถึงหัวหน้าสูงสุดของ MKT คือ **คุณคะวัง** ครับ
+- 📧 KWANG.KO@FAHMAI.CO.TH
+- ☎️ 088-904-0088
 ```
 
 ### g699 [refuse] P0/en
@@ -378,15 +347,49 @@ I can't answer that — "most creative" is a subjective judgment. I can only pro
 If you'd like, I can list the Marketing (MKT) team members and you can decide for yourself. Just let me know!
 ```
 
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
+
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+
+**Response:**
+
+```
+สำหรับแบรนด์คลื่นเสียง (KS) ไม่มีตำแหน่ง "หัวหน้าฝ่ายการตลาด" แยกออกมาโดยเฉพาะ แต่ผู้ที่ดูแลแบรนด์คลื่นเสียงโดยรวมคือ **คุณราม ลวรรณ (จุ๊บ)** ในตำแหน่ง **ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang)**
+
+- **ชื่อ:** ราม ลวรรณ (RAM LAWAN)
+- **ชื่อเล่น:** จุ๊บ (JUB)
+- **อีเมล:** RAM.LA@FAHMAI.CO.TH
+- **เบอร์ต่อ:** 75965
+- **ที่ตั้ง:** FahMai Tower ชั้น 18F
+
+หากคุณหมายถึงฝ่ายการตลาดก
+```
+
+### g775 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Kluensiang brand?
+
+**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
+
+**Response:**
+
+```
+**KluenSiang (คลื่นเสียง)** operations are headed by **Tanet Buathongprasert** (ธเนศ บัวทองประเสริฐ), VP of KluenSiang.
+
+- 📧 TANET.BU@FAHMAI.CO.TH
+- 📞 Ext. 71215
+- 📱 099-185-8401
+- 📍 FahMai Tower 11F
+```
+
 ### g777 [subsidiary_routing] P1/en
-**Q:** The Wongkhojon brand is an in-house FahMai division — who heads its operations unit?
+**Q:** Who heads the operations unit of the Wongkhojon brand?
 
 **Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
 
 **Response:**
 
 ```
-**คุณกฤษ มหาแก้วใส (Kris Mahakaewsai)** — General Manager of Wongkhojon  
-📧 KRIS.MA@FAHMAI.CO.TH | 📞 x74375 | FahMai Tower 7F
+Kris Mahakaewsai (ขิง) heads the Wongkhojon brand as General Manager — KRIS.MA@FAHMAI.CO.TH, ext. 74375.
 ```
 

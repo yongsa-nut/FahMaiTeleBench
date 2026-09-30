@@ -1,4 +1,4 @@
-# Run: `gemini30flash_both_L2_t3_both_full`
+# Run: `gemini30flash_both_L2_t3_both_v10full`
 
 **Overall: 569/626 pass (90.9%)**
 
@@ -32,19 +32,19 @@
 | nickname_grid | 55/61 | 90.2% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_nickname_variant | 9/10 | 90.0% |
+| bilingual | 36/40 | 90.0% |
+| enterprise_shorthand | 18/20 | 90.0% |
 | brand_prior | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
-| bilingual | 35/40 | 87.5% |
 | extension_reverse | 6/7 | 85.7% |
 | listing_count | 17/20 | 85.0% |
 | hard_multihop | 22/26 | 84.6% |
+| hard_implicit_hierarchy | 16/19 | 84.2% |
 | email_identity_lookup | 5/6 | 83.3% |
 | noisy_name_form | 16/20 | 80.0% |
-| enterprise_shorthand | 16/20 | 80.0% |
 | superlative | 8/10 | 80.0% |
-| subsidiary_routing | 9/12 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | multi_hop | 11/18 | 61.1% |
+| subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
@@ -53,17 +53,6 @@
 - P2: 32/36 (88.9%)
 
 ## Failures (57)
-
-### g171 [nickname_grid] P0/th
-**Q:** เสือ ที่ KS เบอร์อะไร
-
-**Fails:** missing any-of ['Anuboonrueng', 'อนุบุญเรือง']
-
-**Response:**
-
-```
-คุณวชิร (เสือ) แผนก KS เบอร์ภายในคือ 72469 ครับ
-```
 
 ### g174 [nickname_grid] P0/th
 **Q:** อรุณ ที่อยู่ SUP คือใคร
@@ -109,12 +98,32 @@
 ### g190 [nickname_grid] P0/th
 **Q:** นัตตี้คือใครนะ
 
-**Fails:** missing any-of ['นัต', 'นัต', 'ไม่พบข้อมูล']
+**Fails:** missing any-of ['ดวงเพ็ญ', 'Duanphen', 'ยุทธนา']
 
 **Response:**
 
 ```
 
+```
+
+### g195 [nickname_grid] P0/th
+**Q:** เก่งกี้คือใครนะ
+
+**Fails:** missing any-of ['ไม่พบข้อมูล', 'no record found']
+
+**Response:**
+
+```
+ในระบบมีบุคลากรที่มีชื่อหรือนามสกุลเกี่ยวข้องกับคำว่า "เก่ง" หลายท่านครับ แต่หากหมายถึงผู้บริหารระดับสูงคือ:
+
+**คุณกนก เก่งกาจชัย (กนก)**
+*   **ตำแหน่ง:** VP Quality (รองประธานฝ่ายคุณภาพ)
+*   **แผนก:** OPS (ฝ่ายปฏิบัติการ)
+*   **อีเมล:** KANOK.KH@FAHMAI.CO.TH
+*   **เบอร์โทรศัพท์:** 082-636-4244 (ต่อ 79867)
+*   **สถานที่ทำงาน:** FahMai Tower ชั้น 13
+
+หากคุณหมายถึงท่านอื่นที่มีชื่อเล่น "เก่ง" โดยตรง
 ```
 
 ### g212 [dept_listing_medium] P1/en
@@ -257,99 +266,66 @@ VP ฝ่ายการตลาด (MKT) คือ คุณคะวัง �
 **อีเมล:** RAM.LA@FAHMAI.CO.TH
 ```
 
-### g452 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea (DN)
-
-**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
-
-**Response:**
-
-```
-ผู้บริหารสูงสุดของแผนก DaoNuea (DN) คือ **คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN)** ตำแหน่ง ผู้จัดการทั่วไปแบรนด์ดาวเหนือ (GENERAL MANAGER OF DAONUEA) ครับ
-```
-
 ### g453 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Judchuem (JC) department?
+**Q:** Who is the most senior person heading the Judchuem department?
 
 **Fails:** missing any-of ['ราชินี', 'Rachini']; missing any-of ['อาทิตย์สุข', 'Arthitkulsuk']
 
 **Response:**
 
 ```
-The most senior person heading the Judchuem (JC) department is **Saran Awutmani (สรัล อาวุทธ์มณี)**.
+The most senior person heading the Judchuem (JC) department is **Saran Awutmani (สรัล อาวุทธ์มณี)**, General Manager of Judchuem.
 
-*   **Position:** General Manager (GM) of Judchuem
 *   **Email:** SARAN.AW@FAHMAI.CO.TH
 *   **Extension:** 78762
 *   **Mobile:** 064-655-7513
-*   **Office:** FahMai Tower 24F
+*   **Location:** FahMai Tower 24F
 ```
 
 ### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang
 
 **Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
 
 **Response:**
 
 ```
-คุณราม ลวรรณ (จุ๊บ) เป็นผู้จัดการทั่วไปแบรนด์คลื่นเสียง (General Manager of Kluensiang) ครับ
-```
-
-### g455 [hard_implicit_hierarchy] P1/en
-**Q:** Who is the most senior person heading the Legal (LEG) department?
-
-**Fails:** missing any-of ['ไพโรจน์', 'Phairoj']; missing any-of ['มหากุล', 'Mahakun']
-
-**Response:**
-
-```
-
+ผู้บริหารสูงสุดของแผนก Kluensiang (KS) คือ คุณราม ลวรรณ (จุ๊บ) ตำแหน่ง General Manager of Kluensiang ครับ (Email: RAM.LA@FAHMAI.CO.TH, เบอร์ภายใน 75965)
 ```
 
 ### g456 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 
 **Fails:** missing any-of ['คึกฤทธิ์', 'Kukrit']; missing any-of ['อัครเจริญ', 'Akaracharoen']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกวงโคจร (WK) คือ **คุณกฤษ มหาแก้วใส (ขิง)** ตำแหน่งผู้จัดการทั่วไปแบรนด์วงโคจร (General Manager of Wongkhojon) ครับ
+ผู้บริหารสูงสุดของแผนก Wongkhojon (แบรนด์วงโคจร) คือ **คุณกฤษ มหาแก้วใส (ขิง)** ตำแหน่ง General Manager (GM) 
+- อีเมล: KRIS.MA@FAHMAI.CO.TH
+- เบอร์ภายใน: 74375
 ```
 
-### g475 [bilingual] P1/th
-**Q:** รหัสหน่วยงาน (unit code) ของ Chief of Staff คืออะไรครับ
+### g470 [bilingual] P1/th
+**Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
-**Fails:** missing any-of ['CEO-CoS']
+**Fails:** missing any-of ['00003437']
 
 **Response:**
 
 ```
-
+ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
 ### g491 [bilingual] P1/en
-**Q:** What is the Chief of Staff's Thai nickname (ชื่อเล่น)?
+**Q:** What is the Chief of Staff's Thai nickname?
 
 **Fails:** missing any-of ['บูม', 'Boom', 'BOOM']
 
 **Response:**
 
 ```
-คุณเป้ (PE)
-```
-
-### g494 [bilingual] P1/en
-**Q:** What is the VP of Marketing's Thai nickname (ชื่อเล่น)?
-
-**Fails:** missing any-of ['โอ', 'Oh', 'OH']
-
-**Response:**
-
-```
-
-
+เป้
 ```
 
 ### g514 [bilingual] P1/th
@@ -612,39 +588,6 @@ Here are the employees with the surname อภิญญาเสริม:
 
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-There are 1,255 staff members working at the Rama IX (BKK-R9) HQ branch.
-```
-
-### g667 [enterprise_shorthand] P1/th
-**Q:** พนักงานสาขาเชียงใหม่ (CNX) มีกี่คน
-
-**Fails:** missing count 79
-
-**Response:**
-
-```
-
-```
-
-### g678 [enterprise_shorthand] P1/en
-**Q:** Who is the sales director at the Hat Yai (HDY) branch?
-
-**Fails:** missing any-of ['Thanakrit', 'ธนกฤต']; missing any-of ['Boonnamraksa', 'บุญนำรักษา']
-
-**Response:**
-
-```
-
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -660,6 +603,24 @@ There are 1,255 staff members working at the Rama IX (BKK-R9) HQ branch.
 *   **สถานที่ปฏิบัติงาน:** FahMai Tower ชั้น 19
 ```
 
+### g684 [enterprise_shorthand] P1/th
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
+
+**Fails:** missing any-of ['Kansathit', 'กาญจน์สถิต']
+
+**Response:**
+
+```
+หัวหน้าทีมการตลาดมี 2 ท่านครับ:
+
+*   **คุณคะวัง กอบสุขรัตน์ (โอ)** - รองประธานฝ่ายการตลาด (MKTVP)
+    *   อีเมล: KWANG.KO@FAHMAI.CO.TH
+    *   โทร: 088-904-0088 (ต่อ 74711)
+*   **คุณสมพงษ์ กอบสุขประเสริฐ** - รองประธานฝ่ายการตลาดดิจิทัล (MKTDG)
+    *   อีเมล: SOMPHONG.KO@FAHMAI.CO.TH
+    *   โทร: 085-184-8742 (ต่อ 79901)
+```
+
 ### g739 [brand_prior] P1/th
 **Q:** ขอเบอร์ต่อของ GM แบรนด์ดาวเหนือ หน่อย
 
@@ -669,6 +630,74 @@ There are 1,255 staff members working at the Rama IX (BKK-R9) HQ branch.
 
 ```
 
+```
+
+### g758 [counterfactual] P1/en
+**Q:** I heard ณัฐพงษ์ อธิดี is the CTO — can I get their extension?
+
+**Fails:** missing any-of ['TECVP', 'VP Technology', 'ฤทธิชัย']
+
+**Response:**
+
+```
+Actually, Nattaphong Athidi is the Vice President of Technology (VP). Their extension is 75793.
+```
+
+### g770 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์ดาวเหนือ
+
+**Fails:** missing any-of ['Phonphai', 'พรไพร']; missing any-of ['Arthitkulwongs', 'อาทิตย์วงษ์']
+
+**Response:**
+
+```
+คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) เป็นผู้จัดการทั่วไปแบรนด์ดาวเหนือ (GENERAL MANAGER OF DAONUEA) ครับ
+อีเมล: WICHIAN.PH@FAHMAI.CO.TH
+เบอร์ภายใน: 76999
+มือถือ: 064-902-5307
+```
+
+### g771 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the DaoNuea brand?
+
+**Fails:** missing any-of ['Phussadee', 'พุสดี']; missing any-of ['Chaisaidi', 'ชัยสัยดี']
+
+**Response:**
+
+```
+The General Manager (GM) of the DaoNuea brand is **Wichian Phonghomklin**.
+
+*   **Position:** GENERAL MANAGER OF DAONUEA
+*   **Email:** WICHIAN.PH@FAHMAI.CO.TH
+*   **Extension:** 76999
+*   **Mobile:** 064-902-5307
+```
+
+### g772 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์จุดเชื่อม
+
+**Fails:** missing any-of ['Narong', 'ณรงค์']; missing any-of ['Kobsookbun', 'กอบสุขบุญ']
+
+**Response:**
+
+```
+หัวหน้าฝ่ายวิศวกรรม (PD - Product Development) ของแบรนด์จุดเชื่อม คือ **คุณสรัล อาวุทธ์มณี** ตำแหน่งผู้จัดการทั่วไปแบรนด์จุดเชื่อม (JudChuem General Manager) ติดต่อได้ที่เบอร์ภายใน 78762 หรืออีเมล SARAN.AW@FAHMAI.CO.TH ครับ
+```
+
+### g773 [subsidiary_routing] P1/en
+**Q:** Who heads the marketing unit of the Judchuem brand?
+
+**Fails:** missing any-of ['Phaibun', 'ไพบูลย์']; missing any-of ['Anujitranon', 'อนุจิตรานนท์']
+
+**Response:**
+
+```
+The Judchuem brand is headed by Saran Awutmani (สรัล อาวุทธ์มณี), the General Manager.
+
+**Contact:**
+*   **Email:** SARAN.AW@FAHMAI.CO.TH
+*   **Extension:** 78762
+*   **Mobile:** 064-655-7513
 ```
 
 

@@ -1,6 +1,6 @@
-# Run: `glm51_repl_L2_t4_repl_full`
+# Run: `glm51_repl_L2_t4_repl_v10full`
 
-**Overall: 598/626 pass (95.5%)**
+**Overall: 597/626 pass (95.4%)**
 
 ## By bucket
 
@@ -25,34 +25,34 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | surname_family | 24/24 | 100.0% |
-| bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
-| subsidiary_routing | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
+| bilingual | 39/40 | 97.5% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | nickname_grid | 58/61 | 95.1% |
-| hard_implicit_hierarchy | 18/19 | 94.7% |
+| enterprise_shorthand | 19/20 | 95.0% |
 | casual_name_lookup | 14/15 | 93.3% |
 | dept_member_count | 14/15 | 93.3% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
-| enterprise_shorthand | 18/20 | 90.0% |
+| hard_implicit_hierarchy | 17/19 | 89.5% |
 | multi_hop | 16/18 | 88.9% |
+| subsidiary_routing | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
-| deep_multihop | 7/12 | 58.3% |
+| deep_multihop | 9/12 | 75.0% |
 
 ## By priority
 
 - P0: 216/226 (95.6%)
-- P1: 351/364 (96.4%)
-- P2: 31/36 (86.1%)
+- P1: 348/364 (95.6%)
+- P2: 33/36 (91.7%)
 
-## Failures (28)
+## Failures (29)
 
 ### g072 [evp_vs_vp_disambig] P0/th
 **Q:** หา MKTBR หน่อย อย่าสับกับ MKTVP
@@ -236,19 +236,42 @@ Based on the directory, แตง บุญญาสินธุ์ is an HR-OPS
 📧 อีเมล: **RUENGSAK.TK@FAHMAI.CO.TH**
 ```
 
-### g454 [hard_implicit_hierarchy] P1/th
-**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the most senior employee?
 
-**Fails:** missing any-of ['ธเนศ', 'Tanet']; missing any-of ['บัวทองประเสริฐ', 'Buathongprasert']
+**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
 
 **Response:**
 
 ```
-ผู้บริหารสูงสุดของแผนกคลื่นเสียง (KS) คือ **ราม ลวรรณ** (จุ๊บ)
+The most senior employee in **FIN-AR** is **Sanit Athiboonnam** (สนิท อธิบุญนำ), Accounts Receivable Officer, who started in **2020**.
 
-- ตำแหน่ง: ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (Director)
-- อีเมล: RAM.LA@FAHMAI.CO.TH
-- ต่อ: 75965
+- 📧 SANIT.AT@FAHMAI.CO.TH
+- 📞 Ext. 79860
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the most senior employee?
+
+**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+The most senior employee in JC-ENG is **Sukhum Kasemchaemchoi** (nickname: Tawan), Manager – JudChuem Product Engineer, who started in **2020**. 
+
+📧 SUKHUM.KA@FAHMAI.CO.TH · ext. 74900
+```
+
+### g475 [bilingual] P1/th
+**Q:** รหัสหน่วยงานของ Chief of Staff คืออะไรครับ
+
+**Fails:** missing any-of ['CEO-CoS']
+
+**Response:**
+
+```
+รหัสหน่วยงานของ Chief of Staff คือ **CEO-OFF** ครับ (สังกัด Department CEO, Section CEO-OFF)
 ```
 
 ### g533 [listing_count] P1/en
@@ -319,17 +342,6 @@ The GM of the Wongkhojon (วงโคจร) brand is **Kris Mahakaeewsai** (�
 📧 KRIS.MA@FAHMAI.CO.TH | ☎️ Ext. 74375
 ```
 
-### g666 [enterprise_shorthand] P1/en
-**Q:** How many staff work at the Rama IX (R9) HQ branch?
-
-**Fails:** missing any-of ['1255']
-
-**Response:**
-
-```
-**1,255** staff work at the Rama IX (BKK-R9) HQ branch.
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -346,6 +358,34 @@ The GM of the Wongkhojon (วงโคจร) brand is **Kris Mahakaeewsai** (�
 - **สุเมธ เกษมรักษา** — หัวหน้าทีมนักบัญชี (ต่อ 74333)
 - **ดาว แสงทอง** — หัวหน้าทีมเจ้าหน้าที่บัญชีลูกหนี้ (ต่อ 76539)
 - **ปกรณ์ บุญดาวใส** — หัวหน้าทีมเจ
+```
+
+### g777 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Wongkhojon brand?
+
+**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
+
+**Response:**
+
+```
+The head of Wongkhojon (วงโคจร) is **Kris Mahakaewsai** — General Manager, Director level.
+
+- 📧 KRIS.MA@FAHMAI.CO.TH
+- ☎️ Ext. 74375
+```
+
+### g779 [subsidiary_routing] P1/en
+**Q:** Who is the VP heading the Kluensiang division?
+
+**Fails:** missing any-of ['Buathongprasert', 'บัวทองประเสริฐ']
+
+**Response:**
+
+```
+The VP heading the Kluensiang (KS) division is **Tanet Buathongpras>rasert**.
+
+- **Email:** TANET.BU@FAHMAI.CO.TH
+- **Extension:** 71215
 ```
 
 ### g821 [deep_multihop] P2/en
@@ -389,35 +429,5 @@ The email of the FIN VP's secretary is **BENJAWAN.CH@FAHMAI.CO.TH** (เบญ�
 
 - **ชื่อ-สกุล:** บุญดาวเรือง (นามสกุลเต็มจากระบบ)
 - **อีเมล:** ไม่ได้แสดงในผล
-```
-
-### g827 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['77495']
-
-**Response:**
-
-```
-แผนกที่มีพนักงานมากที่สุดในบรรดาแผนกที่มี VP เป็นหัวหน้าคือ **RET (เครือข่ายร้านค้า)** มีพนักงาน 380 คน โดย VP หัวหน้าแผนกคือ **วิริยะ จันทชัย** (Unit: RETVP)
-
-แต่ในระบบไดเรกทอรี **ไม่มีหน่วย RET-EA** (เลขานุการประจำ VP ฝ่าย RET) บันทึกไว้
-
-**ไม่พบข้อมูล** เลขานุการของรองประธานฝ่าย RET ครับ
-```
-
-### g829 [deep_multihop] P2/th
-**Q:** ในบรรดาแผนกที่มีรองประธาน (VP) เป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของรองประธานของแผนกนั้นหน่อยครับ
-
-**Fails:** missing any-of ['79653']
-
-**Response:**
-
-```
-แผนกที่มี VP เป็นหัวหน้าและมีพนักงานน้อยที่สุดคือ **แผนก CEO** (10 คน)
-
-รองประธานของแผนกนั้น:
-- **กิตติคุณ พงจงรัก** — Chief of Staff
-- เบอร์ต่อ: **79367**
 ```
 

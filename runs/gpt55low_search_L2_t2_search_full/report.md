@@ -1,6 +1,6 @@
-# Run: `gpt55low_search_L2_t2_search_full`
+# Run: `gpt55low_search_L2_t2_search_v10full`
 
-**Overall: 420/626 pass (67.1%)**
+**Overall: 412/626 pass (65.8%)**
 
 ## By bucket
 
@@ -11,28 +11,28 @@
 | tier_listing | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
-| bilingual | 37/40 | 92.5% |
 | multi_entity_turn | 18/20 | 90.0% |
+| bilingual | 36/40 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
-| enterprise_shorthand | 17/20 | 85.0% |
-| deep_multihop | 10/12 | 83.3% |
 | dept_member_count | 12/15 | 80.0% |
 | hard_nickname_variant | 8/10 | 80.0% |
-| superlative | 8/10 | 80.0% |
 | ceo_president | 3/4 | 75.0% |
 | dept_listing_medium | 6/8 | 75.0% |
+| deep_multihop | 9/12 | 75.0% |
 | noisy_name_form | 14/20 | 70.0% |
-| hard_implicit_hierarchy | 12/19 | 63.2% |
+| enterprise_shorthand | 14/20 | 70.0% |
+| hard_implicit_hierarchy | 13/19 | 68.4% |
+| nickname_grid | 37/61 | 60.7% |
 | casual_name_lookup | 9/15 | 60.0% |
-| listing_count | 12/20 | 60.0% |
 | counterfactual | 15/25 | 60.0% |
-| nickname_grid | 36/61 | 59.0% |
 | evp_vs_vp_disambig | 14/25 | 56.0% |
+| listing_count | 11/20 | 55.0% |
 | evp_identity_by_code | 2/4 | 50.0% |
 | email_identity_lookup | 3/6 | 50.0% |
-| surname_family | 12/24 | 50.0% |
 | multi_hop | 9/18 | 50.0% |
 | brand_prior | 5/10 | 50.0% |
+| superlative | 5/10 | 50.0% |
+| surname_family | 11/24 | 45.8% |
 | retrieval | 6/14 | 42.9% |
 | hard_multihop | 11/26 | 42.3% |
 | subsidiary_routing | 5/12 | 41.7% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 163/226 (72.1%)
-- P1: 235/364 (64.6%)
-- P2: 22/36 (61.1%)
+- P0: 164/226 (72.6%)
+- P1: 230/364 (63.2%)
+- P2: 18/36 (50.0%)
 
-## Failures (206)
+## Failures (214)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -582,17 +582,6 @@ no record found
 ไม่พบข้อมูล
 ```
 
-### g190 [nickname_grid] P0/th
-**Q:** นัตตี้คือใครนะ
-
-**Fails:** missing any-of ['นัต', 'นัต', 'ไม่พบข้อมูล']
-
-**Response:**
-
-```
-no record found
-```
-
 ### g197 [dept_listing_small] P1/th
 **Q:** แผนก FIN-EXEC มีใครบ้าง
 
@@ -604,5 +593,16 @@ no record found
 ไม่พบข้อมูล ในแผนก/ส่วนงาน FIN-EXEC
 ```
 
+### g212 [dept_listing_medium] P1/en
+**Q:** who's in OPS-FAC
 
-_+156 more failures — see results.jsonl_
+**Fails:** min_items 5 not met (0)
+
+**Response:**
+
+```
+no record found
+```
+
+
+_+164 more failures — see results.jsonl_
