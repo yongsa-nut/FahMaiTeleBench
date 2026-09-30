@@ -21,8 +21,10 @@
 \title{FahMai-TeleBench: A Thai Grounded Tool-Use Benchmark for the Deployable Model Tier}
 
 \author{Nutchanon Yongsatianchot$^{1}$ \quad Piyalitt Ittichaiwong$^{1}$ \quad Jitkapat Sawatphol$^{2}$ \quad Tichanat Ruangsiri$^{3}$ \\
-  $^{1}$AFFILIATION-1 \quad $^{2}$AFFILIATION-2 \quad $^{3}$AFFILIATION-3 \\
-  \texttt{EMAIL-1}, \texttt{EMAIL-2}, \texttt{EMAIL-3}, \texttt{EMAIL-4}}
+  $^{1}$Faculty of Medicine Siriraj Hospital, Mahidol University \\
+  $^{2}$CARIVA \quad $^{3}$Thai Oil Public Company Limited \\
+  \texttt{nutchanon.yon@mahidol.ac.th}, \texttt{piyalitt.itt@mahidol.ac.th}, \\
+  \texttt{jitkapat.saw@preceptorai.tech}, \texttt{tichanat@thaioilgroup.com}}
 
 \begin{document}
 \maketitle
@@ -329,7 +331,7 @@ open-weight licenses.
 
 \section*{Acknowledgments}
 
-ACKNOWLEDGMENTS
+We thank Pachaya Sailamul for independently rating the human-validation sample.
 
 \bibliography{custom}
 
@@ -433,9 +435,9 @@ raters confirmed the gold on 53 of the 58 items.
 \paragraph{Full-set check.} The raters surfaced two kinds of issue: a gold that did not accept the phone
 number its question asked for, and questions that glossed a directory code in parentheses. We checked all
 626 items for these issues and for golds whose token also appears in the question, and corrected every
-instance before evaluation: three golds accept the requested number, nine golds require the resolved
-entity, and 63 questions lost a gloss of a code, a field name, or the answer's role. Agreement was measured
-on the items as rated.
+instance before evaluation (73 items), so that in the evaluated set every gold accepts the number its
+question asks for, no gold can be satisfied by a token from its own question, and no question glosses a
+code, a field name, or the answer's role. Agreement was measured on the items as rated.
 
 \section{Oracle-Context Control}
 \label{app:oracle}
