@@ -1,6 +1,6 @@
 # Run: `gpt55med_search_L2_t2_search_v10full`
 
-**Overall: 460/626 pass (73.5%)**
+**Overall: 457/626 pass (73.0%)**
 
 ## By bucket
 
@@ -17,24 +17,24 @@
 | dept_listing_small | 6/7 | 85.7% |
 | evp_secretary | 4/5 | 80.0% |
 | evp_vs_vp_disambig | 20/25 | 80.0% |
-| casual_name_lookup | 12/15 | 80.0% |
 | superlative | 8/10 | 80.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | dept_listing_medium | 6/8 | 75.0% |
 | multi_entity_turn | 15/20 | 75.0% |
+| casual_name_lookup | 11/15 | 73.3% |
 | hard_multihop | 19/26 | 73.1% |
 | noisy_name_form | 14/20 | 70.0% |
 | nickname_grid | 42/61 | 68.9% |
 | counterfactual | 17/25 | 68.0% |
 | dept_member_count | 10/15 | 66.7% |
 | org_informal_listing | 4/6 | 66.7% |
-| multi_hop | 11/18 | 61.1% |
 | subsidiary_routing | 7/12 | 58.3% |
 | deep_multihop | 7/12 | 58.3% |
-| hard_implicit_hierarchy | 11/19 | 57.9% |
 | extension_reverse | 4/7 | 57.1% |
 | retrieval | 8/14 | 57.1% |
+| multi_hop | 10/18 | 55.6% |
+| hard_implicit_hierarchy | 10/19 | 52.6% |
 | ceo_president | 2/4 | 50.0% |
 | subsidiary_md | 4/8 | 50.0% |
 | hard_bridge_lookup | 3/6 | 50.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 185/226 (81.9%)
-- P1: 254/364 (69.8%)
+- P0: 184/226 (81.4%)
+- P1: 252/364 (69.2%)
 - P2: 21/36 (58.3%)
 
-## Failures (166)
+## Failures (169)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -308,14 +308,14 @@ no record found
 ```
 
 ### g135 [casual_name_lookup] P0/th
-**Q:** พี่นัต ฝ่าย RET เบอร์อะไร
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
 
 **Fails:** missing any-of ['54337', 'SUNEE.SU']
 
 **Response:**
 
 ```
-ไม่พบข้อมูล — จากผลที่ค้นหา ยังไม่เจอ “พี่นัต” ในฝ่าย RET ครับ
+no record found
 ```
 
 ### g137 [casual_name_lookup] P0/th
@@ -333,6 +333,17 @@ no record found
 **Q:** คุณยุ้ย จาก HR ต่ออะไร
 
 **Fails:** missing any-of ['79340', 'TAENG.BO']
+
+**Response:**
+
+```
+no record found
+```
+
+### g146 [casual_name_lookup] P0/en
+**Q:** Chompoo from TEC, the manager, what's the number
+
+**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
 
 **Response:**
 
@@ -593,16 +604,5 @@ I can’t confirm the RET size from the results retrieved — the lookup returne
 I couldn’t retrieve a usable SaiFah list from the lookup, so I can’t provide 5 verified people right now.
 ```
 
-### g266 [org_plus_person] P0/th
-**Q:** VP SUP ใคร
 
-**Fails:** missing any-of ['Darika', 'ดาริกา']; missing any-of ['Awutdi', 'อาวุทธ์ดี']
-
-**Response:**
-
-```
-ไม่พบข้อมูล
-```
-
-
-_+116 more failures — see results.jsonl_
+_+119 more failures — see results.jsonl_

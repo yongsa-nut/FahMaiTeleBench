@@ -1,6 +1,6 @@
 # Run: `deepseekv4pro_grep-only_L2_t1_grep_v10full`
 
-**Overall: 606/626 pass (96.8%)**
+**Overall: 608/626 pass (97.1%)**
 
 ## By bucket
 
@@ -31,6 +31,7 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -40,7 +41,6 @@
 | retrieval | 13/14 | 92.9% |
 | subsidiary_routing | 11/12 | 91.7% |
 | deep_multihop | 11/12 | 91.7% |
-| listing_count | 18/20 | 90.0% |
 | casual_name_lookup | 13/15 | 86.7% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | hard_multihop | 21/26 | 80.8% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 223/226 (98.7%)
-- P1: 351/364 (96.4%)
+- P1: 353/364 (97.0%)
 - P2: 32/36 (88.9%)
 
-## Failures (20)
+## Failures (18)
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -202,28 +202,6 @@ The most senior person heading Judchuem (จุดเชื่อม) is **Saran
 ```
 ผู้บริหารสูงสุดของแผนกวงโคจร (WK) คือ **กฤษ มหาแก้วใส (ขิง)** — ผู้จัดการทั่วไปแบรนด์วงโคจร
 อีเมล: KRIS.MA@FAHMAI.CO.TH | เบอร์ต่อ: 74375
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7 employees** in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6 employees** in the DN department at Lead level who started in 2022.
 ```
 
 ### g556 [retrieval] P1/en

@@ -11,7 +11,6 @@
 | evp_secretary | 5/5 | 100.0% |
 | vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
-| casual_name_lookup | 15/15 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
@@ -25,6 +24,7 @@
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
@@ -32,9 +32,9 @@
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | nickname_grid | 58/61 | 95.1% |
 | name_lookup | 19/20 | 95.0% |
-| listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
+| casual_name_lookup | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | hard_multihop | 24/26 | 92.3% |
 | hard_nickname_variant | 9/10 | 90.0% |
@@ -48,8 +48,8 @@
 
 ## By priority
 
-- P0: 219/226 (96.9%)
-- P1: 344/364 (94.5%)
+- P0: 218/226 (96.5%)
+- P1: 345/364 (94.8%)
 - P2: 34/36 (94.4%)
 
 ## Failures (29)
@@ -81,6 +81,17 @@
 
 ```
 
+```
+
+### g135 [casual_name_lookup] P0/th
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
+
+**Fails:** missing any-of ['54337', 'SUNEE.SU']
+
+**Response:**
+
+```
+พี่นัต (สุณี สุวรรณอนุมาน) ผู้จัดการฝ่าย RET สาขาเชียงใหม่ — เบอร์ 099-408-3592 ครับ
 ```
 
 ### g183 [nickname_grid] P0/th
@@ -160,7 +171,7 @@ There's no `CEO-SEC` unit — but the role you're looking for is **CEO-EA** (Exe
 ### g363 [hard_bridge_lookup] P0/en
 **Q:** who manages the SaiFah brand
 
-**Fails:** missing any-of ['Boonnamphong', 'บุญนำพงศ์']
+**Fails:** missing any-of ['Boonnamphong', 'บุญนำพงศ์', 'Sombusarakham']
 
 **Response:**
 
@@ -262,24 +273,6 @@ The most senior person heading the Judchuem (จุดเชื่อม) depart
 
 ```
 ผู้บริหารสูงสุดของแผนก Wongkhojon (วงโคจร) คือ **คุณกฤษ มหาแก้วใส (ขิง)** — ผู้จัดการทั่วไปแบรนด์วงโคจร ติดต่อ: KRIS.MA@FAHMAI.CO.TH, เบอร์ 74375
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6 employees** in the DN department at Lead level who started in 2022:
-
-- อภิชัย ธนบุญ (จุ๊บ) — DN-MKT
-- ธนพล พิไชยา (ไผ่) — DN-PD
-- กฤติน อนุเจริญ — DN-OPS
-- ราม มหากิตติ — DN-OPS
-- วีระ ชัยโชคดี — DN-PD
-- กิตติศักดิ์ ฟ้าใสทอง — DN-MKT
 ```
 
 ### g556 [retrieval] P1/en

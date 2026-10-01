@@ -1,6 +1,6 @@
 # Run: `minimax_both_L2_t3_both_v10full`
 
-**Overall: 576/626 pass (92.0%)**
+**Overall: 579/626 pass (92.5%)**
 
 ## By bucket
 
@@ -24,7 +24,9 @@
 | email_mobile_lookup | 7/7 | 100.0% |
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| thai_knowledge | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
@@ -34,8 +36,6 @@
 | enterprise_shorthand | 19/20 | 95.0% |
 | casual_name_lookup | 14/15 | 93.3% |
 | surname_family | 22/24 | 91.7% |
-| thai_knowledge | 9/10 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | multi_hop | 16/18 | 88.9% |
 | nickname_grid | 52/61 | 85.2% |
 | subsidiary_routing | 10/12 | 83.3% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 209/226 (92.5%)
-- P1: 339/364 (93.1%)
+- P0: 210/226 (92.9%)
+- P1: 341/364 (93.7%)
 - P2: 28/36 (77.8%)
 
-## Failures (50)
+## Failures (47)
 
 ### g119 [name_lookup] P1/th
 **Q:** หวาน กาญจน์วัฒน์ เบอร์อะไร
@@ -236,26 +236,6 @@ SFVP's boss is **วชิร จิรบุญ (Vachir Chirabun)**, nickname *
 - 📍 FahMai Tower 12F
 ```
 
-### g379 [thai_knowledge] P0/th
-**Q:** ใครมีชื่อเล่นเป็นชื่อผลไม้บ้าง
-
-**Fails:** min_items 3 not met (0)
-
-**Response:**
-
-```
-จากการค้นหาในระบบ พบพนักงานที่มีชื่อเล่นเป็นผลไม้ดังนี้:
-
-**มะม่วง (Mango)**
-- **ชยพล ราชโชติ** — ฝ่ายเทคโนโลยี (TEC), ทำงาน remote
-- **จันทรา อนุบุษราคัม** — ฝ่ายสนับสนุน (SUP), สำนักงานใหญ่ บางนา
-- **วีระ พงอัสนี** — ฝ่ายดาวเหนือ (DN), สำนักงานใหญ่ รามคำแหง
-
----
-
-หมายเหตุ: **มะลิ** ที่เจอ 4 คน เป็นดอกมะลิ (茉莉花) ซึ่งเป็นดอกไม้ ไม่ใช่ผลไม้ จึงไม่รวมในรายการนี้ค่ะ 🍈
-```
-
 ### g384 [surname_family] P1/th
 **Q:** จิตรานนท์ฟ้า มีกี่คน
 
@@ -425,28 +405,6 @@ SFVP's boss is **วชิร จิรบุญ (Vachir Chirabun)**, nickname *
 - 📧 KRIS.MA@FAHMAI.CO.TH
 - 📞 74375
 - 📍 FahMai Tower 7F
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7 employees** in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-**6 employees** — อภิชัย, ธนพล, กฤติน, ราม, วีระ, และกิตติศักดิ์ เริ่มงานปี 2022
 ```
 
 ### g569 [noisy_name_form] P1/en

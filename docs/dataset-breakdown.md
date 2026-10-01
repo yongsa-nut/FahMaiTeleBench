@@ -41,7 +41,7 @@
 | C1 | dept_listing_medium… | 25 | 9/16 | listing | _who's in CEO-SEC_ → LIST ≥1 |
 | C2 | dept_member_count… | 20 | 4/16 | count | _มีคนชื่อเล่นโอ๊ตกี่คน_ → COUNT = 6 |
 | C3 | listing_count | 20 | 10/10 | count/listing | _มีพนักงานกี่คนที่อยู่แผนก B2B ระดับ IC และเริ่_ → COUNT = 5 |
-| C4 | surname_family | 24 | 11/13 | count/listing | _นามสกุล อภิกอบสุข มีกี่คน_ → COUNT = 4 |
+| C4 | surname_family | 24 | 11/13 | answer/count/listing | _นามสกุล อภิกอบสุข มีกี่คน_ → COUNT = 4 |
 | C5 | superlative | 10 | 5/5 | answer | _ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ค_ → mention (กนก / Kanok) AND (เก่งกาจชัย / Khaengkadchai) |
 
 ## Group D — Disambiguation — pick the right person against a near-miss / negative constraint.

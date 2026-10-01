@@ -1,6 +1,6 @@
 # Run: `typhoon8b_search_L2_t2_search_v10full`
 
-**Overall: 189/626 pass (30.2%)**
+**Overall: 195/626 pass (31.2%)**
 
 ## By bucket
 
@@ -11,11 +11,12 @@
 | tier_listing | 5/6 | 83.3% |
 | extension_reverse | 5/7 | 71.4% |
 | dept_listing_medium | 5/8 | 62.5% |
+| surname_family | 15/24 | 62.5% |
 | name_lookup | 12/20 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
 | hard_nickname_variant | 6/10 | 60.0% |
 | section_listing | 2/4 | 50.0% |
-| surname_family | 11/24 | 45.8% |
+| org_informal_listing | 3/6 | 50.0% |
 | bilingual | 18/40 | 45.0% |
 | enterprise_shorthand | 9/20 | 45.0% |
 | evp_secretary | 2/5 | 40.0% |
@@ -23,7 +24,6 @@
 | superlative | 4/10 | 40.0% |
 | evp_vs_vp_disambig | 9/25 | 36.0% |
 | dept_member_count | 5/15 | 33.3% |
-| org_informal_listing | 2/6 | 33.3% |
 | org_plus_person | 1/3 | 33.3% |
 | hard_bridge_lookup | 2/6 | 33.3% |
 | nickname_grid | 20/61 | 32.8% |
@@ -35,9 +35,9 @@
 | deep_multihop | 2/12 | 16.7% |
 | dept_listing_small | 1/7 | 14.3% |
 | hard_multihop | 3/26 | 11.5% |
+| multi_hop | 2/18 | 11.1% |
 | multi_entity_turn | 2/20 | 10.0% |
 | subsidiary_routing | 1/12 | 8.3% |
-| multi_hop | 1/18 | 5.6% |
 | hard_implicit_hierarchy | 1/19 | 5.3% |
 | noisy_name_form | 1/20 | 5.0% |
 | casual_name_lookup | 0/15 | 0.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 56/226 (24.8%)
-- P1: 116/364 (31.9%)
+- P0: 57/226 (25.2%)
+- P1: 121/364 (33.2%)
 - P2: 17/36 (47.2%)
 
-## Failures (437)
+## Failures (431)
 
 ### g002 [evp_identity_by_code] P0/th
 **Q:** ใครเป็น OPSVP
@@ -450,14 +450,14 @@ I need to clarify your request. Could you please specify which person you're ask
 ```
 
 ### g135 [casual_name_lookup] P0/th
-**Q:** พี่นัต ฝ่าย RET เบอร์อะไร
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
 
 **Fails:** missing any-of ['54337', 'SUNEE.SU']
 
 **Response:**
 
 ```
-พี่นัต ฝ่าย RET เบอร์ 099-408-3592 (สุณี สุวรรณอนุมาน)
+พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์ 099-408-3592
 ```
 
 ### g136 [casual_name_lookup] P0/th
@@ -571,7 +571,7 @@ I need to clarify: "คุณเนสท์เล่" is not a real person in t
 ```
 
 ### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
+**Q:** Chompoo from TEC, the manager, what's the number
 
 **Fails:** missing any-of ['75012', 'EAKPHOL.SR']
 
@@ -615,4 +615,4 @@ I need to clarify: "คุณเนสท์เล่" is not a real person in t
 ```
 
 
-_+387 more failures — see results.jsonl_
+_+381 more failures — see results.jsonl_

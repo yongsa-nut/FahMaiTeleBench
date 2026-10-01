@@ -1,6 +1,6 @@
 # Run: `glm51_grep-only_L2_t1_grep_v10full`
 
-**Overall: 607/626 pass (97.0%)**
+**Overall: 611/626 pass (97.6%)**
 
 ## By bucket
 
@@ -31,6 +31,7 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
@@ -40,19 +41,18 @@
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | deep_multihop | 11/12 | 91.7% |
-| listing_count | 18/20 | 90.0% |
 | enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | hard_multihop | 23/26 | 88.5% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 
 ## By priority
 
 - P0: 224/226 (99.1%)
-- P1: 349/364 (95.9%)
+- P1: 353/364 (97.0%)
 - P2: 34/36 (94.4%)
 
-## Failures (19)
+## Failures (15)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -192,66 +192,6 @@ The head of the Judchuem (จุดเชื่อม) department is **สรั
 - อีเมล: KRIS.MA@FAHMAI.CO.TH
 - โทรศัพท์: ต่อ 74375
 - สถานที่: FahMai Tower 7F
-```
-
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The most senior employees in **FIN-AR** both started in **2020** (tied for earliest):
-
-- **สนิท อธิบุญนำ** (SANIT ATHIBOONNAM) — Accounts Receivable Officer · ext. 79860
-- **ธนวัฒน์ อารีวัฒน์** (TANAWAT AREEWAT) — Accounts Receivable Officer · ext. 74381
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-Three employees in JC-ENG share the earliest start year of **2020**, making them the most senior:
-
-- **สุขุม เกษมแช้มช้อย** (SUKHUM KASEMCHAEMCHOI) — Manager, ext 74900, SUKHUM.KA@FAHMAI.CO.TH
-- **อุมา ประเกียรติกำจร** (UMA PRAKIATKAMJORN) — IC, ext 78200, UMA.PR2@FAHMAI.CO.TH
-- **ฤทธิรงค์ ชาญณรงค์นาม** (RITTHIRONG CHANNARONGNAM) — IC, ext 36615, RITTHIRONG.CH@FAHMAI.CO.TH
-
-All three started in 20
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-**7** employees in the DN department are at IC level and started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-**6 employees** in the DN department are at Lead level and started in 2022:
-
-- อภิชัย ธนบุญ — Lead DAONUEA BRAND MARKETER (DN-MKT)
-- ธนพล พิไชยา — Lead DAONUEA PRODUCT MANAGER (DN-PD)
-- กฤติน อนุเจริญ — Lead DAONUEA BRAND OPERATIONS (DN-OPS)
-- ราม มหากิตติ — Lead DAONUEA BRAND OPERATIONS (DN-OPS)
-- วีระ ชัยโชคดี — Lead DAONUEA PRODUCT MANAGER (DN-PD)
-- กิตติศักดิ์ ฟ้าใสทอง — Lead DAONUEA BRAND MAR
 ```
 
 ### g556 [retrieval] P1/en

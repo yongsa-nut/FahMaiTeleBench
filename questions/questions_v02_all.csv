@@ -54,7 +54,7 @@ g129,th,ขอเบอร์ต่อของ ฤทธิรงค์ บุ�
 g130,th,ขอเบอร์ต่อของ สมบัติ การเวกรัตน์
 g132,en,ext for Boonruang Jaingamphong
 g134,en,"Hook from SF, what's the number"
-g135,th,พี่นัต ฝ่าย RET เบอร์อะไร
+g135,th,พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
 g136,th,พี่วิน อยู่ DN เบอร์อะไร
 g137,th,น้องโดนัท ทีม TEC เบอร์หน่อย
 g138,th,คุณยุ้ย จาก HR ต่ออะไร
@@ -65,7 +65,7 @@ g142,th,คุณเนสท์เล่ จาก RET ต่ออะไร
 g143,th,ปลื้ม กมลา เบอร์อะไรครับ
 g144,th,พี่ลาเต้ ฝ่าย WK เบอร์อะไร
 g145,th,น้ำ โกวิท เบอร์อะไรครับ
-g146,en,"Chompoo from TEC, what's the number"
+g146,en,"Chompoo from TEC, the manager, what's the number"
 g147,th,พี่โดนัท อยู่ SUP เบอร์อะไร
 g152,en,"Ploy from SF, what's the number"
 g156,th,มิ้น คือใคร
@@ -304,15 +304,15 @@ g454,th,ใครเป็นผู้บริหารสูงสุดขอ
 g455,en,Who is the most senior person heading the Legal department?
 g456,th,ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon
 g457,th,ในส่วนงาน B2B-SUP ใครมีตำแหน่งสูงสุด
-g458,en,"In the DN-ENG section, who is the most senior employee?"
+g458,en,"In the DN-ENG section, who is the highest-ranking employee?"
 g459,th,ในส่วนงาน DN-MKT ใครมีตำแหน่งสูงสุด
-g460,en,"In the FIN-AR section, who is the most senior employee?"
+g460,en,"In the FIN-AR section, who is the highest-ranking employee?"
 g461,th,ในส่วนงาน FIN-GL ใครมีตำแหน่งสูงสุด
-g462,en,"In the FIN-TR section, who is the most senior employee?"
+g462,en,"In the FIN-TR section, who is the highest-ranking employee?"
 g463,th,ในส่วนงาน HR-COMP ใครมีตำแหน่งสูงสุด
-g464,en,"In the JC-ENG section, who is the most senior employee?"
+g464,en,"In the JC-ENG section, who is the highest-ranking employee?"
 g465,th,ในส่วนงาน JC-MKT ใครมีตำแหน่งสูงสุด
-g466,en,"In the KS-MKT section, who is the most senior employee?"
+g466,en,"In the KS-MKT section, who is the highest-ranking employee?"
 g467,th,ในส่วนงาน KS-OPS ใครมีตำแหน่งสูงสุด
 g468,th,ขออีเมลของ CEO หน่อยครับ
 g469,th,รหัสหน่วยงานของประธานเจ้าหน้าที่การเงินคืออะไรครับ
@@ -409,19 +409,19 @@ g584,en,What's Meka's email — the Director of Accounts Receivable?
 g585,en,"Ravi, the Director of Support Training — what's his extension?"
 g586,th,ขออีเมลของคุณ Natanicha ที่เป็นเลขาฯ ของ VP ฝ่าย Retail ต่างจังหวัด หน่อยค่ะ
 g587,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณจรูญ ชัยบุญสังกัดอยู่ หน่อยครับ
-g588,en,What's the email of the most senior person in the section that ฤทธิชัย มณีกาญจน์ works in?
+g588,en,What's the email of the highest-ranking person in the section that ฤทธิชัย มณีกาญจน์ works in?
 g589,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่ หน่อยครับ
-g590,en,What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?
+g590,en,What's the email of the highest-ranking person in the section that ภูมิ กาญจน์เจริญ works in?
 g591,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ
-g592,en,What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?
+g592,en,What's the email of the highest-ranking person in the section that รุ่งนภา นราบุญเรือง works in?
 g593,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ
-g594,en,What's the email of the most senior person in the section that ปิติ พรหมใจ works in?
+g594,en,What's the email of the highest-ranking person in the section that ปิติ พรหมใจ works in?
 g595,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
-g596,en,What's the email of the most senior person in the section that อัมพร ประฟ้า works in?
+g596,en,What's the email of the highest-ranking person in the section that อัมพร ประฟ้า works in?
 g597,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ
-g598,en,What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?
+g598,en,What's the email of the highest-ranking person in the section that ทรัพย์ อาวุทธ์กุล works in?
 g599,th,ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณคำรณ ศรีอัญชลีสังกัดอยู่ หน่อยครับ
-g600,en,What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?
+g600,en,What's the email of the highest-ranking person in the section that เกียรติ บุญแก้วใส works in?
 g601,en,Who is the GM of the DaoNuea brand?
 g602,en,Who is the GM of the Kluensiang brand?
 g603,en,Who is the GM of the Wongkhojon brand?

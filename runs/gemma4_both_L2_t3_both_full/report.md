@@ -1,6 +1,6 @@
 # Run: `gemma4_both_L2_t3_both_v10full`
 
-**Overall: 572/626 pass (91.4%)**
+**Overall: 577/626 pass (92.2%)**
 
 ## By bucket
 
@@ -23,6 +23,7 @@
 | email_mobile_lookup | 7/7 | 100.0% |
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -34,25 +35,35 @@
 | listing_count | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | hard_multihop | 23/26 | 88.5% |
-| casual_name_lookup | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | noisy_name_form | 17/20 | 85.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | deep_multihop | 10/12 | 83.3% |
+| casual_name_lookup | 12/15 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
 | counterfactual | 20/25 | 80.0% |
-| surname_family | 18/24 | 75.0% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 11/18 | 61.1% |
 | subsidiary_routing | 5/12 | 41.7% |
 
 ## By priority
 
-- P0: 217/226 (96.0%)
-- P1: 322/364 (88.5%)
+- P0: 216/226 (95.6%)
+- P1: 328/364 (90.1%)
 - P2: 33/36 (91.7%)
 
-## Failures (54)
+## Failures (49)
+
+### g135 [casual_name_lookup] P0/th
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
+
+**Fails:** missing any-of ['54337', 'SUNEE.SU']
+
+**Response:**
+
+```
+คุณสุณี (นัต) เบอร์โทร 099-408-3592 ครับ
+```
 
 ### g143 [casual_name_lookup] P0/th
 **Q:** ปลื้ม กมลา เบอร์อะไรครับ
@@ -263,15 +274,15 @@ thought
 ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
+### g533 [listing_count] P1/en
+**Q:** How many employees are in the DN department at IC level who started in 2020?
 
-**Fails:** missing count 5
+**Fails:** missing count 7
 
 **Response:**
 
 ```
-There are 6 employees in the DN department at Lead level who started in 2022.
+[agent error: JSONDecodeError: Expecting value: line 1 column 5 (char 4)]
 ```
 
 ### g540 [listing_count] P1/th
@@ -396,80 +407,6 @@ no record found
 
 ```
 เบอร์ต่อของคุณพงษ์กานต์ ราชชากัญญ์ (COO) คือ 75464 ครับ
-```
-
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-- ปกรณ์ เขียวขจีศรี: PAKORN.KI@FAHMAI.CO.TH
-- อัจฉรา เขียวขจีศรี: ATCHARA.KI@FAHMAI.CO.TH
-- ไพฑูรย์ เขียวขจีศรี: PAITOON.KI@FAHMAI.CO.TH
-```
-
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-- ยุพา ไกรศรีมณี: YU-PHA.KR@FAHMAI.CO.TH (Ext. 77475)
-- วิภา ไกรศรีมณี: WIPHA.KR@FAHMAI.CO.TH (Ext. 75335)
-- พาณิช ไกรศรีมณี: PANIT.KR@FAHMAI.CO.TH (Ext. 08109)
-```
-
-### g610 [surname_family] P1/en
-**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ศศิ บุญเรืองกุล (เบอร์รี่): SASI.BO@FAHMAI.CO.TH
-- น้ำทิพย์ บุญเรืองกุล: NAMTHIP.BO@FAHMAI.CO.TH
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ปัญญา วัชรจงรัก (ไทเทิล): PANYA.WA@FAHMAI.CO.TH, ต่อ 72201
-- จรูญ วัชรจงรัก (ไผ่): CHAROON.WA@FAHMAI.CO.TH, ต่อ 71981
-```
-
-### g620 [surname_family] P1/en
-**Q:** List everyone with the surname สมประเสริฐ (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ส้ม สมประเสริฐ: SOM.SO@FAHMAI.CO.TH (086-366-0302)
-- ดารา สมประเสริฐ: DARA.SO@FAHMAI.CO.TH (065-660-6196)
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- วีระ อภิญญาเสริม (VEERA APINYASOEM): VEERA.AP@FAHMAI.CO.TH
-- ดาหลา อภิญญาเสริม (DARHA APINYASOEM): DARHA.AP@FAHMAI.CO.TH
 ```
 
 ### g684 [enterprise_shorthand] P1/th
@@ -634,5 +571,50 @@ Ram Lawan (RAM.LA@FAHMAI.CO.TH) heads the Kluensiang brand as the General Manage
 หัวหน้าฝ่าย (General Manager) ของแบรนด์วงโคจรคือ คุณกฤษ มหาแก้วใส (ขิง) อีเมล KRIS.MA@FAHMAI.CO.TH ครับ
 ```
 
+### g777 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Wongkhojon brand?
 
-_+4 more failures — see results.jsonl_
+**Fails:** missing any-of ['Nangnoi', 'นางน้อย']; missing any-of ['Kanchai', 'กาญจน์ชัย']
+
+**Response:**
+
+```
+thought
+Kris Mahakaewsai (KRIS.MA@FAHMAI.CO.TH) heads the Wongkhojon brand as the General Manager.
+```
+
+### g830 [deep_multihop] P2/en
+**Q:** Among the departments headed by a VP, take the one with the fewest employees — what's the email of the secretary of that department's VP?
+
+**Fails:** missing any-of ['MONTRA.WI@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+The department headed by a VP with the fewest employees is **JC (JudChuem)**, with 80 employees. The secretary of the VP of that department (JCVP) is **รัตพร จงรักกุล (RATAPON CHONGRAKKUN)**, and her email is **RATAPON.CH@FAHMAI.CO.TH**.
+```
+
+### g831 [deep_multihop] P2/th
+**Q:** ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานน้อยที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานของแผนกนั้นหน่อยครับ
+
+**Fails:** missing any-of ['74235']
+
+**Response:**
+
+```
+แผนกที่มีรองประธาน (VP) เป็นหัวหน้าและมีจำนวนพนักงานน้อยที่สุดคือ **แผนกจุดเชื่อม (JC)** โดยมีพนักงานทั้งหมด 80 คน
+
+เบอร์ต่อของเลขานุการของรองประธานฝ่ายจุดเชื่อม (เลขานุการของ JCVP) คือ **71498** (คุณรัตพร จงรักกุล) ครับ
+```
+
+### g840 [superlative] P2/th
+**Q:** section ไหนของฟ้าใหม่ที่มีพนักงานมากที่สุดครับ
+
+**Fails:** missing any-of ['RET-BKK-LP']
+
+**Response:**
+
+```
+จากข้อมูลในระบบ Section ที่มีพนักงานมากที่สุดคือ **TEC-MOB** (วิศวกรโมบาย) ครับ
+```
+

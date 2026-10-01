@@ -1,6 +1,6 @@
 # Run: `minimax_grep-only_L2_t1_grep_v10full`
 
-**Overall: 549/626 pass (87.7%)**
+**Overall: 554/626 pass (88.5%)**
 
 ## By bucket
 
@@ -12,25 +12,26 @@
 | vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
 | dept_listing_small | 7/7 | 100.0% |
+| dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
 | extension_reverse | 7/7 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
 | email_identity_lookup | 6/6 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | surname_family | 23/24 | 95.8% |
 | multi_entity_turn | 19/20 | 95.0% |
-| listing_count | 19/20 | 95.0% |
 | retrieval | 13/14 | 92.9% |
 | nickname_grid | 56/61 | 91.8% |
 | subsidiary_routing | 11/12 | 91.7% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_implicit_hierarchy | 17/19 | 89.5% |
-| dept_listing_medium | 7/8 | 87.5% |
 | dept_member_count | 13/15 | 86.7% |
 | noisy_name_form | 17/20 | 85.0% |
 | hard_bridge_lookup | 5/6 | 83.3% |
@@ -38,21 +39,20 @@
 | hard_nickname_variant | 8/10 | 80.0% |
 | enterprise_shorthand | 16/20 | 80.0% |
 | counterfactual | 19/25 | 76.0% |
-| org_informal_listing | 4/6 | 66.7% |
+| org_plus_person | 2/3 | 66.7% |
 | deep_multihop | 8/12 | 66.7% |
 | hard_multihop | 17/26 | 65.4% |
 | multi_hop | 11/18 | 61.1% |
 | superlative | 6/10 | 60.0% |
 | name_lookup | 9/20 | 45.0% |
-| org_plus_person | 1/3 | 33.3% |
 
 ## By priority
 
-- P0: 204/226 (90.3%)
-- P1: 317/364 (87.1%)
+- P0: 207/226 (91.6%)
+- P1: 319/364 (87.6%)
 - P2: 28/36 (77.8%)
 
-## Failures (77)
+## Failures (72)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -275,23 +275,6 @@
 ไม่พบชื่อเล่น "มุกกี้" ในระบบโดยตรงค่ะ แต่พบพนักงานชื่อเล่น "มุก" ทั้งหมด 13 คน ขอทราบแผนกหรือตำแหน่งที่ต้องการเพิ่มเติมได้ไหมคะ?
 ```
 
-### g212 [dept_listing_medium] P1/en
-**Q:** who's in OPS-FAC
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-**OPS-FAC — Facilities Section (23 people)**
-
-- **Managers (2):** KRITSADA THANAKAEWSAI (ext. 76199) · NARIN KAEWSAIJAI (ext. 76684)
-- **Leads (2):** YING THANACHAIDEE (ext. 79536) · CHONLATHEE ATHIKOBSOOK / Pudding (ext. 74105)
-- **ICs (19):** Facilities Officers across various units (OPS-FAC-15, 16, 19, 22, 30, 51, 59, 63, 67, 72, 75, 81, 87, 88)
-
-Most are based at FahMai Tower (BKK-R9), except 
-```
-
 ### g231 [dept_member_count] P1/th
 **Q:** แผนก MKT กี่คน
 
@@ -312,63 +295,6 @@ Most are based at FahMai Tower (BKK-R9), except
 
 ```
 **RET (แผนกรีเทล):** มีพนักงานทั้งหมด **437 คน**
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-รายชื่อพนักงานแผนก **คลื่นเสียง (KS)** 5 คน:
-
-1. **ธเนศ บัวทองประเสริฐ** — รองประธานฝ่ายคลื่นเสียง (VP) | TANET.BU@FAHMAI.CO.TH | ต่อ 71215
-2. **ปิยนันท์ พรหมพิทักษ์** — เลขานุการของ KSVP (Manager) | PIYANAN.PH@FAHMAI.CO.TH | ต่อ 76796
-3. **ราม ลวรรณ (จุ๊บ)** — ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (Director) | RAM.LA@FAHMAI.CO.TH | ต่อ 75965
-4. **งามจิตร ประรักษา (แพร)** — เลขานุการของ B2BACC (Manager)
-```
-
-### g255 [org_informal_listing] P0/th
-**Q:** วงโคจร มีใครบ้าง
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-## ฝ่ายวงโคจร (WK) — พบ 102 คน
-
-### ผู้บริหาร
-| ตำแหน่ง | ชื่อ | ชื่อเล่น | ติดต่อ |
-|---|---|---|---|
-| VP | คึกฤทธิ์ อัครเจริญ | ดำ | 097-302-2863 |
-| GM | กฤษ มหาแก้วใส | ขิง | 74375 |
-| Director (Engineering) | พิชัย อมรินทร์ฟ้า | — | 78177 |
-| Director (Operations) | นางน้อย กาญจน์ชัย | เจน | 098-883-9879 |
-
-### หัวหน้าทีม (Lead)
-- จันทรา อภิกอบสุข (ไทเทิล) — MKT
-- พิชัย สุวรรณเขียวขจี (โฟล์ค
-```
-
-### g266 [org_plus_person] P0/th
-**Q:** VP SUP ใคร
-
-**Fails:** missing any-of ['Awutdi', 'อาวุทธ์ดี']
-
-**Response:**
-
-```
-**VP SUP (แผนกบริการลูกค้า)** มี 2 คน:
-
-| ชื่อ | ตำแหน่ง | ช่องทางติดต่อ |
-|---|---|---|
-| ดาริกา อาวุทธดี (ตูน) | รองประธานฝ่ายบริการลูกค้า | darika.aw@fahmai.co.th, ต่อ 79070 |
-| บุญชู ไกรศรีสว่าง | รองประธานฝ่ายประสบการณ์ลูกค้า | boonchu.kr@fahmai.co.th, ต่อ 73680 |
-
-ทั้งคู่อยู่ที่ FahMai Tower ชั้น 5 และ 23 ตามลำดับครับ
 ```
 
 ### g268 [org_plus_person] P0/en
@@ -613,19 +539,6 @@ Phone extension: **78762**
 ผู้บริหารสูงสุดของแผนก **คลื่นเสียง (KS)** คือ **ราม ลวรรณ (จุ๊บ)** — ตำแหน่ง General Manager ของแบรนด์คลื่นเสียง 📧 RAM.LA@FAHMAI.CO.TH | ☎️ 75965
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-Based on the directory data, there are **0** employees in the DN department at IC level who started in 2020.
-
-The search returned 50 DN department records, but none of them match both criteria (IC level AND start year 2020). The closest matches were DN employees at IC level with start years like 2021, 2022, 2023, 2024, and 2025, but no one with 2020.
-```
-
 ### g559 [retrieval] P1/th
 **Q:** ขอเบอร์ต่อของคุณ OKAY หน่อยครับ
 
@@ -687,5 +600,65 @@ no record found
 เบอร์ต่อ: **79274**
 ```
 
+### g590 [multi_hop] P1/en
+**Q:** What's the email of the highest-ranking person in the section that ภูมิ กาญจน์เจริญ works in?
 
-_+27 more failures — see results.jsonl_
+**Fails:** missing any-of ['MEKHA.PH2@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+no record found
+```
+
+### g591 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['77404']
+
+**Response:**
+
+```
+CFO ของฝ่าย FIN คือ **กมลา ชัยสนธิ์สว่าง** — เบอร์ต่อ **74921** 📞
+```
+
+### g593 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['74296']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+```
+
+### g595 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['78017']
+
+**Response:**
+
+```
+คุณวิโรจน์ มหาวัฒน์ สังกัดแผนก **JC (จุดเชื่อม)**
+
+ผู้บริหารสูงสุดของแผนกนี้คือ:
+
+- **คุณสรัล อาวุทธ์มณี** (SARAN.AW@FAHMAI.CO.TH)
+- เบอร์ต่อ: **78762**
+```
+
+### g597 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['76044']
+
+**Response:**
+
+```
+คุณศักดิ์สิทธิ์ สัมชากัญญ์ สังกัดแผนก **KS (คลื่นเสียง)** หัวหน้าสูงสุดในแผนกนี้คือ **รองประธานฝ่ายคลื่นเสียง (VP)** — คุณธเนศ บัวทองประเสริฐ เบอร์ต่อ: **71215**
+```
+
+
+_+22 more failures — see results.jsonl_

@@ -40,11 +40,11 @@ deployment, and they are graded deterministically without an LLM judge. Our cent
 treat \textbf{tool availability as an experimental variable}: each item runs under four tool
 configurations (grep, structured search, both, and a Python REPL), so the benchmark measures not just
 \emph{whether} a model answers but \emph{how} it uses tools. The task is near-solved at the frontier
-(GPT-5.4 97--98\%), yet sharply discriminating for the Thai-capable models an organization would host
-itself (Typhoon-2.5 55--71\%, Typhoon-S-8B 24--36\%). The Thai penalty is model-specific, and Typhoon-2.5 answers
+(GPT-5.4 97--99\%), yet sharply discriminating for the Thai-capable models an organization would host
+itself (Typhoon-2.5 58--74\%, Typhoon-S-8B 25--37\%). The Thai penalty is model-specific, and Typhoon-2.5 answers
 90\% of items correctly once the relevant records are placed in its context, so its failures are
-failures of tool use. The tool axis also exposes differences at the frontier: GPT-5.5 drops to 74\% with
-a wide-schema structured search tool while scoring 95--96\% with grep and the REPL.
+failures of tool use. The tool axis also exposes differences at the frontier: GPT-5.5 drops to 73\% with
+a wide-schema structured search tool while scoring 97--98\% with grep and the REPL.
 \end{abstract}
 
 \section{Introduction}
@@ -67,7 +67,7 @@ has a unique gold answer computed from the directory, so grading is a determinis
 LLM judge, and frontier models solving nearly every item confirms that the golds are reachable. Second,
 an easy task that the frontier solves still spreads models apart below it, in the \emph{deployable
 tier}: open-weight models that an organization can host itself, keeping personnel records in-house, and
-can afford to run at assistant volume. There the spread is large: a Thai-specialized 8B model (Typhoon-S-8B) scores 24--36\%, while
+can afford to run at assistant volume. There the spread is large: a Thai-specialized 8B model (Typhoon-S-8B) scores 25--37\%, while
 larger open-weight models exceed 95\%.
 
 We run every item under four tool configurations: a raw-text grep, a structured search with 14 optional
@@ -81,7 +81,7 @@ within the same subtype, and the \emph{tool axis} compares identical items acros
 ask whether multilingual ability, as measured by text-only evaluation, carries over to agentic use. For
 Typhoon-2.5, the Thai model we test in depth, it does not. When the relevant directory records are
 placed in its prompt, it answers 90\% of a 149-item sample correctly. When it must find the same records
-with tools, it answers only 48--72\% of those items.
+with tools, it answers only 48--71\% of those items.
 
 We make four contributions. First, we release
 \textbf{FahMai-TeleBench}\footnote{Code (MIT) and data (CC BY 4.0): \url{https://github.com/yongsa-nut/FahMaiTeleBench}.}, a
@@ -134,34 +134,31 @@ Thai name lists, skewed toward uncommon names, and each surname is compounded fr
 parts. No record is copied from a real person. Every record and item is newly generated, so no model
 trained before the release can have seen them. Every item has a unique gold, whether a single row, a complete set, or an exact count: given
 names and nicknames are deliberately shared across employees, but each item's constraints jointly
-identify one answer. Some fields are deliberately blank, as in real directories where many employees
+identify one answer (in two items, either of two employees). Some fields are deliberately blank, as in real directories where many employees
 record no nickname; these support the field-blank refusals. We fix one schema on purpose: holding the
 knowledge base constant is what makes the tool configuration the only varied factor. The released
 generator can produce organizations with other schemas, sizes, and blank profiles.
 
-\paragraph{Construction.} Deterministic scripts, which we release, generate both the directory and the
-items. A seed-pinned generator lays out the org chart, allocating headcounts to each department and
-position level, and fills every slot with a generated employee. It keeps 95--98\% of surnames unique
-apart from planted family clusters, shares nicknames across employees to create homonyms, and leaves
-fields blank at controlled rates. Each item is then built from directory rows in three steps. (i)~A
-script selects rows that fit the subtype, such as an employee whose given name 12 others share but whose
-job title is unique. (ii)~It writes the question, either by filling a Thai or English phrasing template
-with the row's values or by using a question written for that row. (iii)~It reads the gold from the selected
-rows: a field value for a lookup, the full member set for a listing, or a computed number for a count.
-Before writing an item, the script checks it against the whole directory and aborts if the gold is not
-unique, a superlative is tied, or a not-found name matches any record. Of the 626 items, 261 come from
-one generator that samples rows and templates at random, and 365 from per-subtype scripts that target
-rows with a specific structure; Appendix~\ref{app:construction} traces one item. Phrasing follows a style
-guide drawn from real usage logs, so questions read as a user would type them and never gloss a
-directory code, a field name, or the role of the answer. An LLM coding assistant helped write the
-scripts and their templates; every gold is computed from directory rows rather than stated by a model,
-and we reviewed every item manually.
+\paragraph{Construction.} Deterministic scripts generate the directory and the items. A seed-pinned
+generator fills an org chart, with headcounts per department and position level, with generated
+employees; it keeps 95--98\% of surnames unique apart from planted family clusters, shares nicknames to
+create homonyms, and leaves fields blank at controlled rates. Thirteen scripts build the items: a random
+generator (261 items, 21 subtypes) and twelve targeted scripts covering one to four subtypes each.
+(i)~A script selects rows that fit the subtype, e.g., an employee whose given name 12 others share but
+whose title is unique. (ii)~It phrases the question: 388 items fill one of 159 Thai or English templates, 161 use a question written for the item, and 77 are individually edited versions of either. (iii)~It reads the gold from the selected rows: a field value, the full member set, or a
+computed count. The checks are queries over the directory, not keyword matches on the question: they
+count the rows that meet an item's constraints, compare a superlative's top value with the runner-up, or
+search every name field for a not-found name. A separate checker then re-derived each item's constraints
+from its question text, evaluated them on the directory, and graded an ideal answer for every matching
+row (Appendix~\ref{app:construction}, Table~\ref{tab:construction}). Phrasing follows a style guide drawn
+from real usage logs: questions read as a user would type them and never gloss a directory code, a field
+name, or the answer's role. An LLM coding assistant wrote the scripts, including every template and written question, from our taxonomy and style guide; every gold is
+computed from directory rows, not stated by a model, and we reviewed the items manually.
 
 \paragraph{Validation.} Two native Thai raters, one of them an author, independently checked a stratified 10\% sample (58 items, all 29 subtypes) against the
 directory rows that define each gold. Raw agreement on gold correctness, well-formedness, and
-naturalness is 91\%, 97\%, and 95\% (Gwet's AC1 0.91, 0.96, and 0.95). We then checked all 626 items for
-the issue types the raters found and corrected 73 of them; all reported results use the corrected items
-(Appendix~\ref{app:human}).
+naturalness is 91\%, 97\%, and 95\% (Gwet's AC1 0.91, 0.96, and 0.95). Every instance of the issue types the
+raters found has been corrected across all 626 items (Appendix~\ref{app:human}).
 
 \paragraph{Question types.} The 626 items span eight groups and 29 subtypes (Appendix~\ref{app:tax}): A
 identity lookup, B name resolution, C counting and aggregation, D disambiguation, E multi-hop, F org and
@@ -240,12 +237,12 @@ not run-to-run variation.
 
 
 \paragraph{Near-solved at the frontier, discriminating below it.} Seven of the twelve model variants (six
-distinct models) exceed 95\% on their best tool configuration (Table~\ref{tab:leaderboard}), which shows
-that the items are answerable as specified. Below this group the spread is wide and ordered:
-Gemini-3-Flash, Gemma-4-31B, and MiniMax-M2.7 reach 78--92\% across configurations, Typhoon-2.5 55--71\%,
-and Typhoon-S-8B 24--36\%. The gaps between these groups exceed the bootstrap half-widths (at most about
-four points), while most differences within the top group do not. Open weights are not the bottleneck:
-DeepSeek-V4-Flash and GLM-5.1 reach 97.3\% and 97.1\% on their best configuration, on par with the closed
+distinct models) reach 95\% or more on their best tool configuration (Table~\ref{tab:leaderboard}), which
+shows that the items are answerable as specified. Below this group the spread is wide and ordered:
+Gemini-3-Flash, Gemma-4-31B, and MiniMax-M2.7 reach 81--93\% across configurations, Typhoon-2.5 58--74\%,
+and Typhoon-S-8B 25--37\%. The two Thai-specialized models trail all others by far more than the bootstrap
+half-widths (at most about four points); the other gaps are smaller. Open weights are not the bottleneck:
+GLM-5.1 and DeepSeek-V4-Flash reach 97.8\% and 97.4\% on their best configuration, on par with the closed
 frontier. Accuracy therefore separates models mainly in the smaller and Thai-specialized part of the
 deployable tier; at the frontier, the tool axis separates them.
 
@@ -260,13 +257,13 @@ branch priors F1), GPT-5.4 issues a second, different query on 49 and solves
 single-tool, outcome-only score.
 
 \paragraph{A tool-schema sensitivity: GPT-5.5's search-tool loop.} GPT-5.5 is frontier-class with grep
-(95.2/95.0\%, medium/low effort) and the REPL (96.3/96.8\%) but drops to 73.5\% and 65.8\% with the
+(96.8/96.3\%, medium/low effort) and the REPL (97.6/98.1\%) but drops to 73.0\% and 65.5\% with the
 structured search tool. The mechanism is a degenerate loop: it fills the search tool's optional fields
 with hallucinated values, gets empty results, and repeats the call until the seven-round cap. Of
-GPT-5.5-medium's 166 search-tool failures, 148 (89\%) are round-exhaustion, against two exhaustions in all
-its other configurations combined, and no other model exceeds 19 round-exhaustions across all
+GPT-5.5-medium's 169 search-tool failures, 152 (90\%) are round-exhaustion, against two exhaustions in all
+its other configurations combined, and no other model exceeds 18 round-exhaustions across all
 configurations (Table~\ref{tab:failmodes}). Offering grep alongside (T3) lets GPT-5.5 route around the
-search tool and largely recover (95.4\%). Both efforts fail by looping on a similar number of search items (148 and 149),
+search tool and largely recover (95.7\%). Both efforts fail by looping on the same number of search items (152 each),
 but these sets overlap only partly (Jaccard similarity 0.25), which suggests that the loop is a property of the model--interface pairing rather
 than of particular items. The drop is language-independent (Table~\ref{tab:lang}).
 
@@ -282,24 +279,24 @@ language; negative values mean a Thai penalty. Code-switched items are excluded.
 
 \paragraph{Language axis versus tool axis.} Because the English and Thai halves are not parallel
 translations, we compare the two languages within subtypes (Table~\ref{tab:lang}). The Thai penalty is
-model-specific rather than uniform. GPT-5.4, GPT-5.5, GLM-5.1, and both DeepSeek models show no
-Thai penalty ($\Delta$ between $-0.1$ and $+1.7$), while Gemma-4-31B, Gemini-3-Flash, Sonnet~4.6, and
-MiniMax-M2.7 pay about four to six points. The Thai-specialized Typhoon-2.5 shows the reverse pattern and scores higher on Thai.
+model-specific rather than uniform. GPT-5.4, GPT-5.5, GLM-5.1, and both DeepSeek models show little or no
+Thai penalty ($\Delta$ between $-1.6$ and $+0.2$), while Gemma-4-31B, Gemini-3-Flash, Sonnet~4.6, and
+MiniMax-M2.7 pay about four to seven points. The Thai-specialized Typhoon-2.5 shows the reverse pattern and scores higher on Thai.
 Language can also shift behavior rather than accuracy: nearly all of Sonnet~4.6's failures on bilingual field
 lookups are Thai-phrased employee-ID requests that it refuses as personal data. The tool axis, in
 contrast, moves every model regardless of language, and it explains most of Typhoon-2.5's deficit. On the
 refusal group, which demands Thai comprehension and a phrasing contract but little tool work, Typhoon-2.5
-scores 95.5\%, against 56.1\% on the tool-requiring remainder. An oracle-context control makes the
+scores 95.5\%, against 59.5\% on the tool-requiring remainder. An oracle-context control makes the
 comparison direct (Appendix~\ref{app:oracle}): with tools disabled and the gold rows placed among
-distractors in the prompt, Typhoon-2.5 answers 89.9\% of 149 answer items, against 47.7--71.8\%
+distractors in the prompt, Typhoon-2.5 answers 89.9\% of 149 answer items, against 48.3--71.1\%
 agentically on the same items, while Gemma-4-31B stays within its agentic range (91.3\% against
-86.6--91.9\%). Typhoon-2.5 reads the Thai records well; operating the tools is what it cannot reliably do,
+86.6--91.3\%). Typhoon-2.5 reads the Thai records well; operating the tools is what it cannot reliably do,
 and a text-only multilingual evaluation would miss this.
 
 \paragraph{Error analysis.} Every one of the 626 items is solved by at least one model variant, a
 necessary (though not sufficient) condition for gold validity, and only one item is failed by GPT-5.4
 under all four configurations. Failure types differ by model (Appendix~\ref{app:errors}): GPT-5.4's
-failures are all wrong answers, about half of GPT-5.5's are round-exhaustions from the search loop, and
+failures are all wrong answers, more than half of GPT-5.5's are round-exhaustions from the search loop, and
 Gemma-4-31B's are almost all wrong answers.
 
 \section{Discussion and Conclusion}
@@ -308,12 +305,11 @@ An easy task examined carefully can be more informative than a hard task examine
 is near its ceiling by design: on a simple but real task, the small local models one may actually deploy
 still struggle, and the reason is tool use rather than language. Two practical implications follow from
 the tool axis. First, the tool \emph{interface} can matter as much as the choice of model: GPT-5.5
-(medium) swings 22 points between grep and search, and Sonnet~4.6 loses 40 points on noisy names when grep is
+(medium) swings 24 points between grep and search, and Sonnet~4.6 loses 40 points on noisy names when grep is
 replaced by search, and 20 when it must choose between them. Second, offering both a structured and a
-raw-text tool is cheap insurance: for nine of the twelve variants, T3 is within one point of the best
+raw-text tool is cheap insurance: for eight of the twelve variants, T3 is within one point of the best
 configuration, and it is never more than 4.3 points below it.
-The GPT-5.5 result further suggests that easy, well-posed benchmarks can serve as regression detectors,
-since a failure on such a task is a clear signal. Finally, a model's multilingual ability measured on text
+The GPT-5.5 result further suggests that easy, well-posed benchmarks can serve as regression detectors. Finally, a model's multilingual ability measured on text
 does not predict its agentic behavior in that language, which argues for evaluating agents in the
 languages they will serve.
 
@@ -321,9 +317,11 @@ languages they will serve.
 
 We deliberately fix one schema and one domain, so that the tool configuration is the only factor that
 varies; results may not transfer to directories with other schemas (for example, with explicit manager
-fields) or to other domains. Gold validity rests on programmatic uniqueness checks at construction, on
-every item being solved by at least one model, and on a two-rater validation of a 58-item stratified
-sample; the remaining items were reviewed by the authors but not independently validated. Grading is string-based: golds list
+fields) or to other domains. Gold validity rests on checks at construction, on an automated re-check of
+every item against the directory, on every item being solved by at least one model, and on a two-rater
+validation of a 58-item stratified sample; the remaining items were reviewed by the authors but not
+independently validated. The question phrasings were written by an LLM coding assistant; they follow a
+style guide drawn from real usage logs but may still differ from how real users phrase requests. Grading is string-based: golds list
 Thai and romanized forms and refusals accept a fixed set of paraphrases, so a correct answer in an
 unanticipated surface form is scored wrong. Each cell comes from a single run. The bootstrap intervals
 reflect which items were sampled, not how much a score would change if the same items were run again;
@@ -334,13 +332,6 @@ context limits how much tool output it can read. The seven-round cap bounds the 
 genuinely interactive refinement, such as clarification turns, is out of scope. Finally, difficulty is
 calibrated to current models and will likely erode as they improve, though the GPT-5.5 result suggests
 this erosion need not be monotonic.
-
-\section*{Ethical Considerations}
-
-All directory records are synthetic, and the email domain belongs to the fictional company; the released
-data contain no information about real people. An LLM coding assistant helped write the generation
-scripts, as described in Section~3. Evaluated models are used under their respective API terms or
-open-weight licenses.
 
 \section*{Acknowledgments}
 
@@ -403,11 +394,78 @@ hierarchy; F (65) org and brand knowledge; G (40) bilingual and code-switched fi
 \label{tab:taxonomy}
 \end{table*}
 
-\section{Item Construction Example}
+\section{Item Construction}
 \label{app:construction}
 
-One hard-tier item of subtype B3 asks ``What's the extension for Thavan, the GM of Saifah?'' Its build
-script makes it in the three steps of Section~3.
+Table~\ref{tab:construction} gives, for each subtype, how many items come from the random generator and
+how many from a targeted script, how many distinct phrasing templates produced them, how each question
+was phrased, and what the checks compute on the directory.
+
+\paragraph{Re-check against the directory.} A separate checker tests whether each question determines its
+answer. For each item it re-derives the constraints stated in the final question text and evaluates them
+on the directory. In 427 items the constraint values are parsed with the template that generated the
+item and matched by exact field equality; in 193, one phrase is first mapped to a field value by a
+recorded annotation (for example, ``VP of Logistics'' to the position VICE PRESIDENT LOGISTICS, or a fixed
+list of the fruit and colour words among the 188 distinct nicknames). For every row that satisfies the
+constraints, the checker grades an ideal answer with the benchmark's grader. An item that fails is corrected:
+a question that more than one employee satisfies names the target's level or rank, or its gold accepts
+both readings (16 items); a count must equal the directory's (2 items); and a listing's gold credits every
+valid member and requires nothing the question does not ask for (46 items). Of the 626 items, 469
+single-answer and refusal items match exactly one row or have a refusal reason
+that holds, and 148 count, set, or two-reading items have golds consistent with the directory. Three
+items identify a department's head by its unit code (the department code plus VP), since that department
+has three VPs, and six depend on facts outside the directory's fields: three reporting-line items, which
+we checked against the organization chart behind the directory, and three regional-geography items. The
+checker flagged all eleven items in a deliberately corrupted control set.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrccc>{\raggedright\arraybackslash}p{5.5cm}@{}}
+\toprule
+\textbf{subtype} & \textbf{n} & \textbf{gen./script} & \textbf{templates} & \textbf{T/W/R} & \textbf{what the checks compute} \\
+\midrule
+A1 executive by code or title & 25 & 25/0 & 12 & 14/11/0 & the code or title matches one employee (one item accepts either of two VPs) \\
+A2 name lookup & 20 & 20/0 & 6 & 20/0/0 & the full name matches one employee \\
+A3 reverse lookup & 20 & 20/0 & 13 & 20/0/0 & the extension, mobile, or email matches one employee \\
+B1 casual name & 25 & 25/0 & 13 & 23/0/2 & nickname plus department, branch, name, or level matches one employee \\
+B2 nickname variant & 30 & 16/14 & 9 & 18/10/2 & the nickname, without the variant's affix, matches its holders, or no one \\
+B3 noisy name form & 20 & 0/20 & 0 & 0/20/0 & the spelling has no name-field hit; the title matches one employee \\
+B4 enterprise shorthand & 20 & 0/20 & 4 & 0/2/18 & the expanded name gives one count or one head \\
+C1 unit listing & 25 & 25/0 & 13 & 25/0/0 & the gold credits every member of the unit \\
+C2 member count & 20 & 20/0 & 10 & 20/0/0 & the count equals the matching rows \\
+C3 filtered count & 20 & 0/20 & 4 & 20/0/0 & the count or list equals the rows meeting all filters \\
+C4 surname family & 24 & 4/20 & 6 & 24/0/0 & the count or list equals the holders of the surname \\
+C5 superlative & 10 & 0/10 & 2 & 0/3/7 & the top value beats the runner-up \\
+D1 nickname grid & 25 & 10/15 & 7 & 25/0/0 & the gold credits every holder of the name \\
+D2 code disambiguation & 25 & 12/13 & 9 & 25/0/0 & the code matches one employee; the look-alike code's holder is rejected \\
+D3 multi-entity turn & 20 & 7/13 & 5 & 19/0/1 & each code matches one employee \\
+E1 two-hop & 40 & 8/32 & 6 & 25/5/10 & each hop resolves to one employee (one item asks for a three-person team) \\
+E2 bridge lookup & 10 & 6/4 & 5 & 9/1/0 & the brand has one GM (one item also accepts the brand's VP) \\
+E3 implicit hierarchy & 25 & 9/16 & 4 & 6/9/10 & one employee tops the level ladder, or the gold credits every member of the level; three reporting-line items follow the org chart \\
+E4 deep multi-hop & 12 & 0/12 & 4 & 7/0/5 & each hop resolves to one employee; the largest or smallest department is unique; three items take the department-code VP as its head \\
+F1 brand and branch priors & 20 & 10/10 & 4 & 10/10/0 & the brand has one GM; the branch's city or region; the nickname's category \\
+F2 premise correction & 25 & 0/25 & 2 & 25/0/0 & the premise is false; the real role holder differs \\
+F3 brand unit head & 20 & 8/12 & 8 & 8/0/12 & the brand's GM, VP, or section head is unique \\
+G1 cross-script field & 20 & 0/20 & 6 & 10/0/10 & the title matches one employee \\
+G2 code-switch & 20 & 0/20 & 4 & 20/0/0 & the title matches one employee \\
+H1 field not in table & 25 & 16/9 & 0 & 0/25/0 & no column holds the requested field \\
+H2 person not found & 25 & 5/20 & 0 & 0/25/0 & the name has no hit in any name field \\
+H3 subjective & 20 & 6/14 & 0 & 0/20/0 & the question asks for an opinion (no directory check) \\
+H4 out of company & 20 & 5/15 & 0 & 0/20/0 & the organization appears nowhere in the directory \\
+H5 blank field & 15 & 4/11 & 3 & 15/0/0 & the employee's nickname field is blank \\
+\midrule
+total & 626 & 261/365 & 159 & 388/161/77 & \
+\bottomrule
+\end{tabular}
+\caption{How each subtype is built. \emph{gen./script}: items from the random generator and from
+targeted scripts. \emph{templates}: distinct phrasing templates behind the subtype's items. \emph{T/W/R}:
+questions that fill a template as generated, questions written for the item, and individually edited versions of either. The last column states what the checks compute on the directory rows to confirm the gold.}
+\label{tab:construction}
+\end{table*}
+
+\paragraph{Worked example.} One hard-tier item of subtype B3 asks ``What's the extension for Thavan, the
+GM of Saifah?'' Its build script makes it in the three steps of Section~3.
 
 \paragraph{(i) Selection.} The target is Thawan Boonnamphong, General Manager of the Saifah brand.
 Thirteen employees share the given name Thawan (ถาวร), but no one else holds this title, so the title alone
@@ -434,10 +492,10 @@ sampled extension, and the gold is that row's first and last name.
 We bucket each failure from its trace and sum over the four tool configurations
 (Table~\ref{tab:failmodes}). \emph{Answered-wrong} is a wrong final answer; \emph{round-exhaust} means the
 agent hit the seven-round cap (mostly the GPT-5.5 search loop); \emph{error} is a request that failed after
-retries, mostly a context-window overflow on a large tool result and in three cases malformed tool-call
+retries, mostly a context-window overflow on a large tool result and in four cases malformed tool-call
 arguments. For each
 subtype, taking the mean over the twelve model variants of each variant's best configuration, the hardest
-subtypes are the multi-hop bridges (E1 77\%, E4 83\%), noisy-name resolution (B3 83\%), brand unit heads
+subtypes are the multi-hop bridges (E1 76\%, E4 83\%), noisy-name resolution (B3 83\%), brand unit heads
 (F3 85\%), and premise correction (F2 85\%). The refusal subtypes average 92--100\%, but two of them
 discriminate sharply: Typhoon-S-8B scores 5\% on subjective questions (H3) and 15\% on out-of-company
 questions (H4).
@@ -473,10 +531,12 @@ wrong gold, which omitted the extension its question asked for; the other four g
 
 \paragraph{Full-set check.} The raters' flags point to two issue types that can recur across items: a
 gold that does not accept the phone number its question asks for, and a question that glosses a
-directory code in parentheses. We checked all 626 items for both, and for golds whose token also appears
-in the question, and corrected 73 items. In the evaluated set, every gold accepts the number its question
-asks for, no gold can be satisfied by a token from its own question, and no question glosses a code, a
-field name, or the answer's role. The agreement figures above describe the items as the raters saw them.
+directory code in parentheses. A check of all 626 items for both, and for golds whose token also appears
+in the question, ensures that every gold accepts the number its question asks for, no gold can be
+satisfied by a token from its own question, and no question glosses a code, a field name, or the answer's
+role; 73 items needed a correction. With the re-check in Appendix~\ref{app:construction}, 14 of the 58
+sampled items differ from the versions the raters labeled (11 in wording, 3 in gold); the agreement
+figures describe the labeled versions.
 
 \section{Oracle-Context Control}
 \label{app:oracle}

@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_search_L2_t2_search_v10full`
 
-**Overall: 599/626 pass (95.7%)**
+**Overall: 601/626 pass (96.0%)**
 
 ## By bucket
 
@@ -26,6 +26,7 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
 | enterprise_shorthand | 20/20 | 100.0% |
@@ -38,7 +39,6 @@
 | casual_name_lookup | 14/15 | 93.3% |
 | nickname_grid | 55/61 | 90.2% |
 | thai_knowledge | 9/10 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | hard_implicit_hierarchy | 17/19 | 89.5% |
 | dept_listing_small | 6/7 | 85.7% |
 | retrieval | 12/14 | 85.7% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 348/364 (95.6%)
+- P1: 350/364 (96.2%)
 - P2: 36/36 (100.0%)
 
-## Failures (27)
+## Failures (25)
 
 ### g136 [casual_name_lookup] P0/th
 **Q:** พี่วิน อยู่ DN เบอร์อะไร
@@ -318,35 +318,6 @@ The head of the Judchuem (จุดเชื่อม) brand is **สรัล �
 
 ```
 [agent error: JSONDecodeError: Unterminated string starting at: line 1 column 62 (char 61)]
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-มีพนักงานในแผนก DN ระดับ IC ที่เริ่มงานปี 2020 จำนวน **7 คน**
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-ในแผนก DN (ดาวเหนือ) ที่ระดับ Lead และเริ่มงานปี 2022 มี **6 คน** ได้แก่
-
-- **อภิชัย ธนบุญ** (JUB) – DN-MKT-LEAD-4
-- **ธนพล พิไชยา** (PHAI) – DN-PD-LEAD-9
-- **กฤติน อนุเจริญ** – DN-OPS-LEAD-3
-- **ราม มหากิตติ** – DN-OPS-LEAD-4
-- **วีระ ชัยโชคดี** – DN-PD-LEAD-1
-- **กิตติศักดิ์ ฟ้าใสทอง** – DN-MKT-LEAD-4
 ```
 
 ### g562 [retrieval] P1/en

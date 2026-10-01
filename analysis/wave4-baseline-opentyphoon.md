@@ -6,10 +6,10 @@ Model: typhoon-v2.5-30b-a3b-instruct (`opentyphoon`) · 626 items × 4 configs.
 
 | config | pass/total | rate | errors |
 |---|---|---|---|
-| T1 grep | 344/626 |   55% | 0 |
-| T2 search | 419/626 |   67% | 0 |
-| T3 both | 446/626 |   71% | 0 |
-| T4 repl | 362/626 |   58% | 0 |
+| T1 grep | 362/626 |   58% | 0 |
+| T2 search | 435/626 |   69% | 0 |
+| T3 both | 465/626 |   74% | 0 |
+| T4 repl | 379/626 |   61% | 0 |
 
 ## Subtype × config matrix
 
@@ -18,14 +18,14 @@ Model: typhoon-v2.5-30b-a3b-instruct (`opentyphoon`) · 626 items × 4 configs.
 | A1 | 25 |   40% |   84% |   88% |   36% |
 | A2 | 20 |    0% |  100% |  100% |   75% |
 | A3 | 20 |   75% |  100% |   95% |   75% |
-| B1 | 25 |   56% |   12% |   16% |   32% |
+| B1 | 25 |   60% |   12% |   12% |   32% |
 | B2 | 30 |   67% |   53% |   57% |   67% |
 | B3 | 20 |    0% |   15% |   25% |    0% |
 | B4 | 20 |   45% |   65% |   75% |   40% |
-| C1 | 25 |   76% |   64% |   76% |   36% |
+| C1 | 25 |   80% |   68% |   92% |   48% |
 | C2 | 20 |   75% |   65% |   65% |   50% |
 | C3 | 20 |   30% |   60% |   55% |  100% |
-| C4 | 24 |   29% |   33% |   29% |   38% |
+| C4 | 24 |   96% |   96% |   96% |   96% |
 | C5 | 10 |   10% |   70% |   50% |   70% |
 | D1 | 25 |   80% |   72% |   68% |   92% |
 | D2 | 25 |   40% |   92% |   84% |   48% |
@@ -50,8 +50,8 @@ Model: typhoon-v2.5-30b-a3b-instruct (`opentyphoon`) · 626 items × 4 configs.
 | grp | T1 grep | T2 search | T3 both | T4 repl |
 |---|--:|--:|--:|--:|
 | A |   38% |   94% |   94% |   60% |
-| B |   45% |   37% |   43% |   38% |
-| C |   48% |   57% |   56% |   56% |
+| B |   46% |   37% |   42% |   38% |
+| C |   66% |   73% |   76% |   73% |
 | D |   63% |   80% |   80% |   74% |
 | E |   36% |   51% |   62% |   38% |
 | F |   35% |   63% |   60% |   40% |
@@ -109,4 +109,4 @@ Tool-choice accuracy (definite-optimal subtypes): **273/461 =   59%** — ⚠️
 
 ## REPL over-use (T4)
 
-Of 362 items correct under T4 repl, **306 (85%)** were also correct under T2 search alone (repl unnecessary).
+Of 379 items correct under T4 repl, **326 (86%)** were also correct under T2 search alone (repl unnecessary).

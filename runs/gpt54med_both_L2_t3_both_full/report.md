@@ -1,6 +1,6 @@
 # Run: `gpt54med_both_L2_t3_both_v10full`
 
-**Overall: 614/626 pass (98.1%)**
+**Overall: 615/626 pass (98.2%)**
 
 ## By bucket
 
@@ -29,6 +29,7 @@
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | listing_count | 20/20 | 100.0% |
@@ -40,7 +41,6 @@
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | nickname_grid | 60/61 | 98.4% |
-| surname_family | 23/24 | 95.8% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | hard_multihop | 24/26 | 92.3% |
 | multi_hop | 15/18 | 83.3% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 223/226 (98.7%)
-- P1: 355/364 (97.5%)
+- P1: 356/364 (97.8%)
 - P2: 36/36 (100.0%)
 
-## Failures (12)
+## Failures (11)
 
 ### g184 [nickname_grid] P0/th
 **Q:** ปุ๊ก จงรัก เบอร์อะไร
@@ -165,21 +165,6 @@ Email: **SARAN.AW@fahmai.co.th** · Ext: **78762**
 
 ```
 คุณวิโรจน์ มหาวัฒน์สังกัดฝ่าย JC ครับ — คนที่ตำแหน่งสูงสุดในฝ่ายนี้คือ **ราชินี อาทิตย์สุข** (รองประธานฝ่ายจุดเชื่อม) **เบอร์ต่อ 75642**
-```
-
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-Here’s everyone with the surname เขียวขจีศรี:
-
-- ปกรณ์ เขียวขจีศรี — DATA ENGINEER, TEC-DATA, email: PAKORN.KI@FAHMAI.CO.TH, branch: REMOTE
-- อัจฉรา เขียวขจีศรี — DIRECTOR CRM SPECIALIST, MKT-CRM, ext. 78341, mobile: 067-671-3743, email: ATCHARA.KI@FAHMAI.CO.TH
-- ไพฑูรย์ เขียวขจีศรี — LEAD SAIFAH BRAND MARKETER, SF-MKT, ext. 74791, email: PAITOON.KI@FAHMAI.CO.TH
 ```
 
 ### g684 [enterprise_shorthand] P1/th

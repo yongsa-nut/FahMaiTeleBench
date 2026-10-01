@@ -1,6 +1,6 @@
 # Run: `gemini30flash_grep-only_L2_t1_grep_v10full`
 
-**Overall: 546/626 pass (87.2%)**
+**Overall: 552/626 pass (88.2%)**
 
 ## By bucket
 
@@ -10,8 +10,10 @@
 | evp_identity_by_description | 4/4 | 100.0% |
 | vp_identity | 5/5 | 100.0% |
 | ceo_president | 4/4 | 100.0% |
+| casual_name_lookup | 15/15 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
@@ -25,7 +27,6 @@
 | nickname_grid | 59/61 | 96.7% |
 | surname_family | 23/24 | 95.8% |
 | noisy_name_form | 19/20 | 95.0% |
-| casual_name_lookup | 14/15 | 93.3% |
 | bilingual | 35/40 | 87.5% |
 | dept_member_count | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
@@ -36,23 +37,22 @@
 | deep_multihop | 10/12 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | name_lookup | 15/20 | 75.0% |
 | multi_hop | 13/18 | 72.2% |
 | counterfactual | 18/25 | 72.0% |
 | superlative | 7/10 | 70.0% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
-| org_informal_listing | 4/6 | 66.7% |
+| listing_count | 13/20 | 65.0% |
 | hard_multihop | 16/26 | 61.5% |
-| listing_count | 12/20 | 60.0% |
 | subsidiary_routing | 6/12 | 50.0% |
 
 ## By priority
 
-- P0: 213/226 (94.2%)
-- P1: 304/364 (83.5%)
+- P0: 216/226 (95.6%)
+- P1: 307/364 (84.3%)
 - P2: 29/36 (80.6%)
 
-## Failures (80)
+## Failures (74)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -183,20 +183,6 @@ The Executive Assistant for the Technology department (TEC) is Juthamas Kaewsai-
 ไม่พบข้อมูล
 ```
 
-### g135 [casual_name_lookup] P0/th
-**Q:** พี่นัต ฝ่าย RET เบอร์อะไร
-
-**Fails:** missing any-of ['54337', 'SUNEE.SU']
-
-**Response:**
-
-```
-เบอร์ติดต่อของพี่นัต (คุณอรญา จิรจิตรานนท์) ฝ่าย RET คือ:
-
-*   **เบอร์ต่อ:** 76423
-*   **เบอร์โทรศัพท์มือถือ:** 085-682-5148
-```
-
 ### g200 [dept_listing_small] P1/th
 **Q:** ขอรายชื่อ MKT-EXEC ทั้งหมด
 
@@ -228,40 +214,6 @@ The Executive Assistant for the Technology department (TEC) is Juthamas Kaewsai-
 
 ```
 The Retail (RET) department has a total of 437 employees.
-```
-
-### g253 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ สายฟ้า สัก 5 คน
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-ตัวอย่างพนักงานจากฝ่ายสายฟ้า (SF) 5 ท่าน ได้แก่:
-
-1.  **จิรภัทร วัชรใจงาม** – ประธานเจ้าหน้าที่ฝ่ายผลิตภัณฑ์ (CPO) โทร. 78052
-2.  **วิรัตน์ สมบุษราคัม (ดอกไม้)** – รองประธานฝ่ายสายฟ้า โทร. 72402
-3.  **ถาวร บุญนำพงศ์** – ผู้จัดการทั่วไปแบรนด์สายฟ้า (GM) โทร. 79517
-4.  **สรัญญา มหาอมรินทร์ (ฟลุ๊ค)** – ผู้อำนวยการฝ่ายนักการตลาดแบรนด์สายฟ้า
-5.  **ทนิน บุญเกษม (บูม)** – ผู้จัดการผลิตภัณฑ์สายฟ้า โทร. 72
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-รายชื่อพนักงานแบรนด์คลื่นเสียง (KS) 5 ท่าน เช่น:
-
-*   **ธเนศ บัวทองประเสริฐ (VP)** - อีเมล: TANET.BU@FAHMAI.CO.TH, ต่อ 71215
-*   **ราม ลวรรณ (จุ๊บ) (GM)** - อีเมล: RAM.LA@FAHMAI.CO.TH, ต่อ 75965
-*   **วศิน ราชชัยดี (ทาฟฟี่)** - แผนกปฏิบัติการ, ต่อ 76044
-*   **ธงชัย อัมพรสถิต** - แผนกการตลาด, ต่อ 75590
-*   **วิสิทธิ์ ใจงาม (บอส)** - แผนกผลิตภัณฑ์, ต่อ 73419
 ```
 
 ### g290 [extension_reverse] P2/en
@@ -527,39 +479,6 @@ As for the head of the JudChuem (JC) department, the General Manager is **Saran 
 - **เบอร์ต่อ:** 74375
 ```
 
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-Determining who is the "most senior" employee is subjective and depends on diverse perspectives, such as their position level, years of service, or age. I can provide a list of employees in the **FIN-AR** section for your review:
-
-*   **NUTCHA (CHOMP) WONGDEE** – MANAGER (FIN-AR-1)
-*   **PAWEEN (NEW) THANASUK** – LEAD (FIN-AR-2)
-*   **NATTHAPAT (NAT) PONGSA** – LEAD (FIN-AR-3)
-*   **WARAPORN (WARA
-```
-
-### g466 [hard_implicit_hierarchy] P1/en
-**Q:** In the KS-MKT section, who is the most senior employee?
-
-**Fails:** missing any-of ['ธงชัย', 'Thongchai']; missing any-of ['อัมพรสถิต', 'Amphomsathit']
-
-**Response:**
-
-```
-Identifying the "most senior" employee is subjective and depends on diverse perspectives, such as whether seniority is measured by age, years of experience, start date at the company, or position level. 
-
-I can, however, provide information regarding the employees in the **KS-MKT** (KluenSiang Marketing) section by their start year and position level.
-
-According to the directory:
-
-*   **THITIPHAN 
-```
-
 ### g472 [bilingual] P1/th
 **Q:** รหัสหน่วยงานของประธานเจ้าหน้าที่การตลาดคืออะไรครับ
 
@@ -627,33 +546,21 @@ According to the directory:
 ขออภัยครับ ไม่พบข้อมูลพนักงานที่ตรงตามเงื่อนไขดังกล่าว (แผนก DN, ระดับ Director, เริ่มงานในปี 2021) ในระบบครับ
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
+### g535 [listing_count] P1/en
+**Q:** How many employees are in the DN department at Lead level who started in 2022?
 
 **Fails:** missing count 6
 
 **Response:**
 
 ```
-There are 0 employees in the DN department at the IC level who started in 2020. Individuals in that department who started in 2020 hold Manager or Director level positions.
-```
+There are 5 employees in the DN department at the Lead level who started in 2022:
 
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are 6 employees in the DN department at the Lead level who started in 2022:
-
-*   **อภิชัย ธนบุญ (APICHAI THANABUN)** - DN-MKT
-*   **ธนพล พิไชยา (THANAPHON PHICHAIYAWONG)** - DN-PD
-*   **กฤติน อนุเจริญ (KRITTIN ANUCHAROEN)** - DN-OPS
-*   **ราม มหากิตติ (RAM MAHAKITTIPONG)** - DN-OPS
-*   **วีระ ชัยโชคดี (VEERA CHAICHOKDEE)** - DN-PD
-*   **กิตติศักดิ์ ฟ้าใสทอง (KITTISAK FAHSAITHONG)** - DN-MKT
+*   **Apichai Thanabun (Jub)** - Lead Daonuea Brand Marketer (Ext. 72096)
+*   **Thanaphon Phichaiyawong (Phai)** - Lead Daonuea Product Manager (Ext. 74017)
+*   **Krittin Anucharoen** - Lead Daonuea Brand Operations (Ext. 74594)
+*   **Ram Mahakittipong** - Lead Daonuea Brand Operations (Ext. 74838)
+*   **Kittisak Fa
 ```
 
 ### g536 [listing_count] P1/th
@@ -711,5 +618,86 @@ There are no records of employees in the FIN department at the Lead level who st
 พบพนักงาน 0 คนในแผนก FIN ระดับ Manager ที่เริ่มงานในปี 2022 ครับ
 ```
 
+### g576 [noisy_name_form] P1/en
+**Q:** Could you share the email of Suphawadi Bundaorueng, the secretary to the WK VP?
 
-_+30 more failures — see results.jsonl_
+**Fails:** missing any-of ['SUPHAWADEE.BU@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+no record found
+```
+
+### g589 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['76457']
+
+**Response:**
+
+```
+คุณทัศนีย์ มณีพงศ์ (ปุ๊ก) สังกัดแบรนด์ดาวเหนือ (DN) โดยตำแหน่งสูงสุดของส่วนงานนี้คือ
+
+**คุณวิเชียร พงหอมกลิ่น (General Manager of DaoNuea)**
+*   **เบอร์ต่อ:** 76999
+```
+
+### g591 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['77404']
+
+**Response:**
+
+```
+คุณอภิชัย จิตรานนท์เจริญ (นักบัญชี) สังกัดแผนกการเงิน (FIN) ซึ่งตำแหน่งสูงสุดในสายงานนี้คือประธานเจ้าหน้าที่การเงิน (CFO) ข้อมูลการติดต่อมีดังนี้ครับ:
+
+**คุณกมลา ชัยสนธิ์สว่าง (CFO)**
+*   **เบอร์ต่อ:** 74921
+*   **อีเมล:** KAMALA.CH@FAHMAI.CO.TH
+```
+
+### g593 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['74296']
+
+**Response:**
+
+```
+คุณมนตรา บุญเรืองโชติ (มิว) ตำแหน่งเจ้าหน้าที่ฝ่ายผลตอบแทน สังกัดส่วนงาน **HR-COMP** (แผนกทรัพยากรบุคคล) โดยบุคคลที่มีตำแหน่งสูงสุดในแผนก HR คือ:
+
+*   **คุณณฐามน อภิชัยดี**
+*   **ตำแหน่ง:** ประธานเจ้าหน้าที่ฝ่ายทรัพยากรบุคคล (CHRO)
+*   **เบอร์ต่อ:** 79303
+```
+
+### g595 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['78017']
+
+**Response:**
+
+```
+คุณวิโรจน์ มหาวัฒน์ สังกัดแผนก JC (จุดเชื่อม) โดยผู้ดำรงตำแหน่งสูงสุดของแผนกนี้คือ คุณสรัล อาวุทธ์มณี (ผู้จัดการทั่วไปแบรนด์จุดเชื่อม) เบอร์ต่อคือ 78762 ครับ
+```
+
+### g597 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['76044']
+
+**Response:**
+
+```
+คุณศักดิ์สิทธิ์ สัมชากัญญ์ (SAKSIT SAMCHAKAN) สังกัดแบรนด์ **คลื่นเสียง (KS)** โดยบุคคลที่มีตำแหน่งสูงสุดในส่วนงานนี้ (Unit: KS-GM) คือ:
+
+**คุณราม ลวรรณ (จุ๊บ)**
+*   **ตำแหน่ง:** ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (GENERAL MANAGER OF KLUENSIANG)
+*   **เบอร์ต่อ:** 75965
+```
+
+
+_+24 more failures — see results.jsonl_

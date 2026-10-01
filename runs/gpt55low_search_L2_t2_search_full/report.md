@@ -1,6 +1,6 @@
 # Run: `gpt55low_search_L2_t2_search_v10full`
 
-**Overall: 412/626 pass (65.8%)**
+**Overall: 410/626 pass (65.5%)**
 
 ## By bucket
 
@@ -21,21 +21,21 @@
 | deep_multihop | 9/12 | 75.0% |
 | noisy_name_form | 14/20 | 70.0% |
 | enterprise_shorthand | 14/20 | 70.0% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
+| hard_implicit_hierarchy | 12/19 | 63.2% |
 | nickname_grid | 37/61 | 60.7% |
-| casual_name_lookup | 9/15 | 60.0% |
+| listing_count | 12/20 | 60.0% |
 | counterfactual | 15/25 | 60.0% |
 | evp_vs_vp_disambig | 14/25 | 56.0% |
-| listing_count | 11/20 | 55.0% |
+| casual_name_lookup | 8/15 | 53.3% |
 | evp_identity_by_code | 2/4 | 50.0% |
 | email_identity_lookup | 3/6 | 50.0% |
-| multi_hop | 9/18 | 50.0% |
+| surname_family | 12/24 | 50.0% |
 | brand_prior | 5/10 | 50.0% |
 | superlative | 5/10 | 50.0% |
-| surname_family | 11/24 | 45.8% |
 | retrieval | 6/14 | 42.9% |
 | hard_multihop | 11/26 | 42.3% |
 | subsidiary_routing | 5/12 | 41.7% |
+| multi_hop | 7/18 | 38.9% |
 | name_lookup | 7/20 | 35.0% |
 | org_informal_listing | 2/6 | 33.3% |
 | extension_reverse | 2/7 | 28.6% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 164/226 (72.6%)
-- P1: 230/364 (63.2%)
+- P0: 163/226 (72.1%)
+- P1: 229/364 (62.9%)
 - P2: 18/36 (50.0%)
 
-## Failures (214)
+## Failures (216)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -417,6 +417,17 @@ no record found
 ไม่พบข้อมูล
 ```
 
+### g146 [casual_name_lookup] P0/en
+**Q:** Chompoo from TEC, the manager, what's the number
+
+**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
+
+**Response:**
+
+```
+no record found
+```
+
 ### g157 [nickname_grid] P0/th
 **Q:** ไผ่ มีใครบ้าง
 
@@ -593,16 +604,5 @@ no record found
 ไม่พบข้อมูล ในแผนก/ส่วนงาน FIN-EXEC
 ```
 
-### g212 [dept_listing_medium] P1/en
-**Q:** who's in OPS-FAC
 
-**Fails:** min_items 5 not met (0)
-
-**Response:**
-
-```
-no record found
-```
-
-
-_+164 more failures — see results.jsonl_
+_+166 more failures — see results.jsonl_

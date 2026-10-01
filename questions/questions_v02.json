@@ -11,7 +11,7 @@
     },
     "kb": "employees_v02.csv",
     "note": "Fully synthetic employee-directory tool-use benchmark; deterministic grading, no LLM judge. See docs/dataset-breakdown.md for per-subtype counts.",
-    "revision_note": "v1.0: question-side hints removed (63 items), answer-echo golds tightened (9 items), phone-number golds repaired (3 items), subtype codes made contiguous (v0.2 code in subtype_v0_2). Previous wording kept in question_v0_2; see questions/CHANGELOG.md."
+    "revision_note": "v1.0: question-side hints removed (63 items), answer-echo golds tightened (9 items), phone-number golds repaired (3 items), two counts recomputed, 16 ambiguous questions disambiguated or given both readings, 46 listing golds credit every valid member, subtype codes made contiguous (v0.2 code in subtype_v0_2). Previous wording kept in question_v0_2; see questions/CHANGELOG.md."
   },
   "questions": [
     {
@@ -1832,7 +1832,7 @@
       "bucket": "casual_name_lookup",
       "priority": "P0",
       "language": "th",
-      "question": "พี่นัต ฝ่าย RET เบอร์อะไร",
+      "question": "พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -1854,7 +1854,9 @@
       "v01_bucket": "casual_name_lookup",
       "subtype": "B1",
       "group": "B",
-      "subtype_v0_2": "B1"
+      "subtype_v0_2": "B1",
+      "question_v0_2": "พี่นัต ฝ่าย RET เบอร์อะไร",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g136",
@@ -2151,7 +2153,7 @@
       "bucket": "casual_name_lookup",
       "priority": "P0",
       "language": "en",
-      "question": "Chompoo from TEC, what's the number",
+      "question": "Chompoo from TEC, the manager, what's the number",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -2173,7 +2175,9 @@
       "v01_bucket": "casual_name_lookup",
       "subtype": "B1",
       "group": "B",
-      "subtype_v0_2": "B1"
+      "subtype_v0_2": "B1",
+      "question_v0_2": "Chompoo from TEC, what's the number",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g147",
@@ -4605,6 +4609,12 @@
             "Rajbun",
             "ราชบุญ"
           ],
+          "08502562": [
+            "Chantara",
+            "จันทรา",
+            "Kobsookwong",
+            "กอบสุขวงศ์"
+          ],
           "08882645": [
             "Uma",
             "อุมา",
@@ -4620,6 +4630,7 @@
         "00007910",
         "08178520",
         "08460720",
+        "08502562",
         "08882645"
       ],
       "rationale": "Small section HR-OPS — 7 members.",
@@ -4630,7 +4641,8 @@
       "v01_bucket": "dept_listing_small",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g210",
@@ -4703,6 +4715,108 @@
             "ชฎา",
             "Channarongphat",
             "ชาญณรงค์พัฒน์"
+          ],
+          "08208692": [
+            "Phoom",
+            "ภูมิ",
+            "Amondaorueng",
+            "อมรดาวเรือง"
+          ],
+          "08196894": [
+            "Kitti",
+            "กิตติ",
+            "Busarakhamphat",
+            "บุษราคัมพัฒน์"
+          ],
+          "08938458": [
+            "Orachon",
+            "อรชร",
+            "Aphidaosai",
+            "อภิดาวใส"
+          ],
+          "08621402": [
+            "Sopa",
+            "โสภา",
+            "Kasemsin",
+            "เกษมสินธุ์"
+          ],
+          "08739605": [
+            "Pongkan",
+            "พงษ์กานต์",
+            "Daosaichaloem",
+            "ดาวใสเฉลิม"
+          ],
+          "08321275": [
+            "Thongchai",
+            "ธงชัย",
+            "Wiskraisee",
+            "วิศไกรศรี"
+          ],
+          "08533227": [
+            "Somyot",
+            "สมยศ",
+            "Chaisonthong",
+            "ชัยสนธิ์ทอง"
+          ],
+          "08132280": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Thepjaingam",
+            "เทพใจงาม"
+          ],
+          "08163858": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Amonphong",
+            "อมรพงศ์"
+          ],
+          "08939853": [
+            "Wat",
+            "วัฒน์",
+            "Boonmeewong",
+            "บุญมีวงศ์"
+          ],
+          "08751277": [
+            "Chet",
+            "เชษฐ์",
+            "Wisdi",
+            "วิศดี"
+          ],
+          "08943619": [
+            "Waan",
+            "หวาน",
+            "Chaemchoiwat",
+            "แช้มช้อยวัฒน์"
+          ],
+          "08966477": [
+            "Anurak",
+            "อนุรักษ์",
+            "Sujaidi",
+            "สุใจดี"
+          ],
+          "08171048": [
+            "Kantima",
+            "กานติมา",
+            "Amoncharoen",
+            "อมรเจริญ"
+          ],
+          "08941160": [
+            "Som",
+            "ส้ม",
+            "Kasemchaidee",
+            "เกษมชัยดี"
+          ],
+          "08356078": [
+            "Nathamon",
+            "ณฐามน",
+            "Chaideewat",
+            "ชัยดีวัฒน์"
+          ],
+          "08584352": [
+            "Ying",
+            "หญิง",
+            "Jaingamsawang",
+            "ใจงามสว่าง"
           ]
         }
       },
@@ -4719,13 +4833,16 @@
         "08930633",
         "08208692",
         "08196894",
+        "08938458",
         "08621402",
         "08739605",
         "08321275",
         "08533227",
         "08132280",
+        "08163858",
         "08939853",
         "08751277",
+        "08943619",
         "08966477",
         "08171048",
         "08941160",
@@ -4741,7 +4858,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g211",
@@ -4814,6 +4932,78 @@
             "ก้อง",
             "Chaiyawongkun",
             "ไชยากุล"
+          ],
+          "08997392": [
+            "Usanee",
+            "อุษณี",
+            "Sukan",
+            "สุกาญจน์"
+          ],
+          "08589824": [
+            "Theeraphop",
+            "ธีรภพ",
+            "Daoruengjai",
+            "ดาวเรืองใจ"
+          ],
+          "08778294": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Chaideedi",
+            "ชัยดีดี"
+          ],
+          "08448618": [
+            "Apsara",
+            "อัปสร",
+            "Saelau",
+            "แซ่เล่า"
+          ],
+          "08863834": [
+            "Sanit",
+            "สนิท",
+            "Fahsaikamchon",
+            "ฟ้าใสกำจร"
+          ],
+          "08168460": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Boonyawong",
+            "บุญญาวงศ์"
+          ],
+          "08866197": [
+            "Chantana",
+            "จันทนา",
+            "Inthrisawang",
+            "อินทรีย์สว่าง"
+          ],
+          "08417446": [
+            "Taeng",
+            "แตง",
+            "Chansoem",
+            "จันทเสริม"
+          ],
+          "08166799": [
+            "Vanida",
+            "วนิดา",
+            "Wisdaosai",
+            "วิศดาวใส"
+          ],
+          "08994685": [
+            "Sanit",
+            "สนิท",
+            "Chiraanongkun",
+            "จิรอนงค์"
+          ],
+          "08255086": [
+            "Sukrit",
+            "สุกฤต",
+            "Kanphinyo",
+            "กาญจน์ภิญโญ"
+          ],
+          "08368243": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Apinyaraksa",
+            "อภิญญารักษา"
           ]
         }
       },
@@ -4850,7 +5040,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g212",
@@ -4923,6 +5114,84 @@
             "กัณณิกา",
             "Karawekmani",
             "การเวกมณี"
+          ],
+          "08178660": [
+            "Chada",
+            "ชฎา",
+            "Kasemanuman",
+            "เกษมอนุมาน"
+          ],
+          "08795388": [
+            "Somyot",
+            "สมยศ",
+            "Asneethong",
+            "อัสนีทอง"
+          ],
+          "08716398": [
+            "Ukrit",
+            "อุกฤษฎ์",
+            "Chirangam",
+            "จิรงาม"
+          ],
+          "08339793": [
+            "Prija",
+            "พฤกษา",
+            "Chanduangkamol",
+            "จันทดวงกมล"
+          ],
+          "08724378": [
+            "Mali",
+            "มะลิ",
+            "Phatduangkamol",
+            "ภัทรดวงกมล"
+          ],
+          "08432979": [
+            "Taksa-Orn",
+            "ทักษอร",
+            "Narawat",
+            "นราวัฒน์"
+          ],
+          "08312120": [
+            "Wat",
+            "วัฒน์",
+            "Watcharaphinyo",
+            "วัชรภิญโญ"
+          ],
+          "08951874": [
+            "Phairoj",
+            "ไพโรจน์",
+            "Narachaisai",
+            "นราชัยสัย"
+          ],
+          "08630370": [
+            "Nattaphong",
+            "ณัฐพงษ์",
+            "Mahaasnee",
+            "มหาอัสนี"
+          ],
+          "08177234": [
+            "Atchara",
+            "อัจฉรา",
+            "Sudaosai",
+            "สุดาวใส"
+          ],
+          "08324580": [
+            "Klaharn",
+            "กล้าหาญ",
+            "Chanwongs",
+            "จันทวงษ์"
+          ],
+          "08404532": [
+            "Mekha",
+            "เมฆา",
+            "Rajkamchon",
+            "ราชกำจร"
+          ],
+          "08677906": [
+            "Aroon",
+            "อรุณ",
+            "Anuboonya",
+            "อนุบุญญา"
           ]
         }
       },
@@ -4948,6 +5217,7 @@
         "08630370",
         "08177234",
         "08324580",
+        "08404532",
         "08677906"
       ],
       "rationale": "Medium section OPS-FAC — 22 members.",
@@ -4959,7 +5229,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g213",
@@ -5032,6 +5303,72 @@
             "สรพงษ์",
             "Chindawongs",
             "จินดาวงษ์"
+          ],
+          "08105371": [
+            "Vanida",
+            "วนิดา",
+            "Chirasawang",
+            "จิรสว่าง"
+          ],
+          "08167740": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Thanabusarakham",
+            "ธนบุษราคัม"
+          ],
+          "08470217": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Anumankamchon",
+            "อนุมานกำจร"
+          ],
+          "08681698": [
+            "Mali",
+            "มะลิ",
+            "Chaicharoendi",
+            "ชัยเจริญดี"
+          ],
+          "08729811": [
+            "Sathaporn",
+            "สถาพร",
+            "Athibunmak",
+            "อธิบุญมา"
+          ],
+          "08175399": [
+            "Thawan",
+            "ถาวร",
+            "Sambusarakham",
+            "สัมบุษราคัม"
+          ],
+          "08859796": [
+            "Anchali",
+            "อัญชลี",
+            "Praboonrueng",
+            "ประบุญเรือง"
+          ],
+          "08562483": [
+            "Nongyao",
+            "นงเยาว์",
+            "Chirawong",
+            "จิรวงศ์"
+          ],
+          "08963584": [
+            "Tanawat",
+            "ธนวัฒน์",
+            "Suanurak",
+            "สุอนุรักษ์"
+          ],
+          "08725102": [
+            "Yu-Pha",
+            "ยุพา",
+            "Chanfahsai",
+            "จันทฟ้าใส"
+          ],
+          "08524000": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Rajanurak",
+            "ราชอนุรักษ์"
           ]
         }
       },
@@ -5067,7 +5404,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g214",
@@ -5098,6 +5436,12 @@
             "มนตรา",
             "Daoruengnam",
             "ดาวเรืองนาม"
+          ],
+          "08389723": [
+            "Rochana",
+            "โรจนา",
+            "Srihomklin",
+            "ศรีหอมกลิ่น"
           ],
           "08627614": [
             "Kiet",
@@ -5140,6 +5484,96 @@
             "อรอนงค์",
             "Kiatsin",
             "เกียรติสินธุ์"
+          ],
+          "08257084": [
+            "Rochana",
+            "โรจนา",
+            "Suphithak",
+            "สุพิทักษ์"
+          ],
+          "08399951": [
+            "Satja",
+            "สัจจะ",
+            "Ngam",
+            "งาม"
+          ],
+          "08709518": [
+            "Mekha",
+            "เมฆา",
+            "Kaewsaifa",
+            "แก้วใสฟ้า"
+          ],
+          "08464927": [
+            "Ratana",
+            "รัตนา",
+            "Awutwongs",
+            "อาวุทธ์วงษ์"
+          ],
+          "08566550": [
+            "Busaba",
+            "บุษบา",
+            "Duangkamolchaloem",
+            "ดวงกมลเฉลิม"
+          ],
+          "08314149": [
+            "Ruangsak",
+            "เรืองศักดิ์",
+            "Daosairat",
+            "ดาวใสรัตน์"
+          ],
+          "08306445": [
+            "Thanasak",
+            "ธนศักดิ์",
+            "Kasemthong",
+            "เกษมทอง"
+          ],
+          "08970648": [
+            "Oranong",
+            "อรอนงค์",
+            "Mahaaree",
+            "มหาอารี"
+          ],
+          "08175303": [
+            "Chatri",
+            "ชาตรี",
+            "Thanachinda",
+            "ธนจินดา"
+          ],
+          "08323575": [
+            "Navin",
+            "นาวิน",
+            "Samchakrii",
+            "สัมจักรี"
+          ],
+          "08129208": [
+            "Kanya",
+            "กัญญา",
+            "Phiapinya",
+            "พิอภิญญา"
+          ],
+          "08332466": [
+            "Sujira",
+            "สุจิรา",
+            "Rajanchali",
+            "ราชอัญชลี"
+          ],
+          "08685577": [
+            "Chet",
+            "เชษฐ์",
+            "Amphomphong",
+            "อัมพรพงศ์"
+          ],
+          "08424548": [
+            "Chakri",
+            "จักรี",
+            "Boonmeephat",
+            "บุญมีพัฒน์"
+          ],
+          "08574207": [
+            "Kwang",
+            "คะวัง",
+            "Wisphong",
+            "วิศพงศ์"
           ]
         }
       },
@@ -5147,6 +5581,7 @@
         "08881674",
         "08881887",
         "08422380",
+        "08389723",
         "08627614",
         "08172093",
         "08389606",
@@ -5154,6 +5589,7 @@
         "08413666",
         "08525517",
         "08435702",
+        "08257084",
         "08399951",
         "08709518",
         "08464927",
@@ -5163,6 +5599,7 @@
         "08970648",
         "08175303",
         "08323575",
+        "08129208",
         "08332466",
         "08685577",
         "08424548",
@@ -5177,7 +5614,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g215",
@@ -5250,6 +5688,90 @@
             "ลัดดาวรรณ",
             "Daosai",
             "ดาวใส"
+          ],
+          "08599427": [
+            "Somphong",
+            "สมพงษ์",
+            "Chongraksin",
+            "จงรักสินธุ์"
+          ],
+          "08718899": [
+            "Chada",
+            "ชฎา",
+            "Athichaison",
+            "อธิชัยสนธิ์"
+          ],
+          "08440859": [
+            "Vanida",
+            "วนิดา",
+            "Chakriiphithak",
+            "จักรีพิทักษ์"
+          ],
+          "08632307": [
+            "Pimchanok",
+            "พิมพ์ชนก",
+            "Suwanchannarong",
+            "สุวรรณชาญณรงค์"
+          ],
+          "08149382": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Chaiyawongphat",
+            "ไชยาพัฒน์"
+          ],
+          "08201602": [
+            "Saengdao",
+            "แสงดาว",
+            "Athiaree",
+            "อธิอารี"
+          ],
+          "08238008": [
+            "Phuwadon",
+            "ภูวดล",
+            "Rajbunmak",
+            "ราชบุญมา"
+          ],
+          "08227059": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Phongnam",
+            "พงนาม"
+          ],
+          "08516464": [
+            "Kannika",
+            "กัณณิกา",
+            "Ratanakaewkan",
+            "รัตนแก้วกาญจน์"
+          ],
+          "08791074": [
+            "Dusadi",
+            "ดุษฎี",
+            "Thepkan",
+            "เทพกาญจน์"
+          ],
+          "08879404": [
+            "Chakri",
+            "จักรี",
+            "Jitranonsawang",
+            "จิตรานนท์สว่าง"
+          ],
+          "08972265": [
+            "Anchali",
+            "อัญชลี",
+            "Kittibunbun",
+            "กิตติบุญบุญ"
+          ],
+          "08768737": [
+            "Uma",
+            "อุมา",
+            "Akarakittichat",
+            "อัครกิตติชาติ"
+          ],
+          "08557825": [
+            "Juthamas",
+            "จุฑามาศ",
+            "Chakankamchon",
+            "ชากัญญ์กำจร"
           ]
         }
       },
@@ -5288,7 +5810,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g217",
@@ -5361,6 +5884,108 @@
             "สมตา",
             "Prasoem",
             "ประเสริม"
+          ],
+          "08617123": [
+            "Ratana",
+            "รัตนา",
+            "Mahakarawek",
+            "มหาการเวก"
+          ],
+          "08632774": [
+            "Sakda",
+            "ศักดิ์ดา",
+            "Athiwongs",
+            "อธิวงษ์"
+          ],
+          "08916848": [
+            "Suppadet",
+            "ศุภเดช",
+            "Boonruengdi",
+            "บุญเรืองดี"
+          ],
+          "08342063": [
+            "Ukrit",
+            "อุกฤษฎ์",
+            "Anchalijai",
+            "อัญชลีใจ"
+          ],
+          "08726323": [
+            "Sukhum",
+            "สุขุม",
+            "Daoruengdi",
+            "ดาวเรืองดี"
+          ],
+          "08660476": [
+            "Buppha",
+            "บุปผา",
+            "Samanongkun",
+            "สัมอนงค์"
+          ],
+          "08464934": [
+            "Tao",
+            "เต่า",
+            "Bunmakbun",
+            "บุญมาบุญ"
+          ],
+          "08489581": [
+            "Dao",
+            "ดาว",
+            "Leesakul",
+            "ลี้สกุล"
+          ],
+          "08876375": [
+            "Boonruang",
+            "บุญเรือง",
+            "Thepwong",
+            "เทพวงศ์"
+          ],
+          "08953741": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Fahsaisathit",
+            "ฟ้าใสสถิต"
+          ],
+          "08933080": [
+            "Krairoek",
+            "ไกรฤกษ์",
+            "Thepphat",
+            "เทพพัฒน์"
+          ],
+          "08568026": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Chaideephinyo",
+            "ชัยดีภิญโญ"
+          ],
+          "08826202": [
+            "Dao",
+            "ดาว",
+            "Chaikaewkan",
+            "ชัยแก้วกาญจน์"
+          ],
+          "08522001": [
+            "Prija",
+            "พฤกษา",
+            "Pramani",
+            "ประมณี"
+          ],
+          "08863469": [
+            "Wiphan",
+            "วิพันธ์",
+            "Prachaloem",
+            "ประเฉลิม"
+          ],
+          "08694114": [
+            "Kovit",
+            "โกวิท",
+            "Aromdeekamchon",
+            "อารมณ์ดีกำจร"
+          ],
+          "08145781": [
+            "Kittipong",
+            "กิตติพงศ์",
+            "Prakan",
+            "ประกาญจน์"
           ]
         }
       },
@@ -5379,6 +6004,7 @@
         "08632774",
         "08916848",
         "08342063",
+        "08726323",
         "08660476",
         "08464934",
         "08489581",
@@ -5401,7 +6027,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g218",
@@ -5474,6 +6101,36 @@
             "อนันต์",
             "Srichokdee",
             "ศรีโชคดี"
+          ],
+          "08613006": [
+            "Thawan",
+            "ถาวร",
+            "Chaideephat",
+            "ชัยดีพัฒน์"
+          ],
+          "08980119": [
+            "Pimchanok",
+            "พิมพ์ชนก",
+            "Manikiatkamjorn",
+            "มณีเกียรติกำจร"
+          ],
+          "08305493": [
+            "Anong",
+            "อนงค์",
+            "Kittipongthong",
+            "กิตติทอง"
+          ],
+          "08526356": [
+            "Prayut",
+            "ประยุทธ์",
+            "Buathongbun",
+            "บัวทองบุญ"
+          ],
+          "08652059": [
+            "Phairoj",
+            "ไพโรจน์",
+            "Akaraphinyo",
+            "อัครภิญโญ"
           ]
         }
       },
@@ -5503,7 +6160,8 @@
       "subtype": "C1",
       "group": "C",
       "relabel_from": "C2",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g228",
@@ -6907,6 +7565,72 @@
             "สุชาดา",
             "Samfahsai",
             "สัมฟ้าใส"
+          ],
+          "08458220": [
+            "Nongyao",
+            "นงเยาว์",
+            "Akaradi",
+            "อัครดี"
+          ],
+          "08916154": [
+            "Ratapon",
+            "รัตพร",
+            "Chirakasemkit",
+            "จิรเกษม"
+          ],
+          "08132974": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Chirasoem",
+            "จิรเสริม"
+          ],
+          "08240280": [
+            "Phonphai",
+            "พรไพร",
+            "Chaemchoicharoen",
+            "แช้มช้อยเจริญ"
+          ],
+          "08945457": [
+            "Isara",
+            "อิสรา",
+            "Jitranonfa",
+            "จิตรานนท์ฟ้า"
+          ],
+          "08955934": [
+            "Sasiprapa",
+            "ศศิปราภา",
+            "Daosaibun",
+            "ดาวใสบุญ"
+          ],
+          "08744382": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Phiamarin",
+            "พิอมรินทร์"
+          ],
+          "08800598": [
+            "Tarn",
+            "ทาน",
+            "Anchaliphat",
+            "อัญชลีพัฒน์"
+          ],
+          "08162687": [
+            "Theeraphop",
+            "ธีรภพ",
+            "Chaisondi",
+            "ชัยสนธิ์ดี"
+          ],
+          "08816603": [
+            "Sukanya",
+            "สุกัญญา",
+            "Phiphinyo",
+            "พิภิญโญ"
+          ],
+          "08531844": [
+            "Charoon",
+            "จรูญ",
+            "Thepbuathong",
+            "เทพบัวทอง"
           ]
         }
       },
@@ -6923,6 +7647,7 @@
         "08916154",
         "08132974",
         "08240280",
+        "08945457",
         "08955934",
         "08744382",
         "08800598",
@@ -6937,7 +7662,8 @@
       "v01_bucket": "section_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g248",
@@ -6998,6 +7724,60 @@
             "โรจนา",
             "Rajanuman",
             "ราชอนุมาน"
+          ],
+          "08523242": [
+            "Prija",
+            "พฤกษา",
+            "Suinthri",
+            "สุอินทรีย์"
+          ],
+          "08262956": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Phongarthitkul",
+            "พงอาทิตย์"
+          ],
+          "08916223": [
+            "Yut",
+            "ยุทธ",
+            "Amarinchot",
+            "อมรินทร์โชติ"
+          ],
+          "08936119": [
+            "Phueng",
+            "ผึ้ง",
+            "Phromanchali",
+            "พรหมอัญชลี"
+          ],
+          "08813530": [
+            "Kanchana",
+            "กาญจนา",
+            "Kittipong",
+            "กิตติ"
+          ],
+          "08194125": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Ratanaaree",
+            "รัตนอารี"
+          ],
+          "08245122": [
+            "Kantima",
+            "กานติมา",
+            "Suwansoem",
+            "สุวรรณเสริม"
+          ],
+          "08684933": [
+            "Sanit",
+            "สนิท",
+            "Chaisonngam",
+            "ชัยสนธิ์งาม"
+          ],
+          "08577757": [
+            "Sakchai",
+            "ศักดิ์ชัย",
+            "Kittipongngam",
+            "กิตติงาม"
           ]
         }
       },
@@ -7027,7 +7807,8 @@
       "v01_bucket": "section_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g249",
@@ -7088,6 +7869,30 @@
             "เรืองศักดิ์",
             "Chanfa",
             "จันทฟ้า"
+          ],
+          "08654684": [
+            "Panit",
+            "พาณิช",
+            "Kraiseemani",
+            "ไกรศรีมณี"
+          ],
+          "08572416": [
+            "Rungnapa",
+            "รุ่งนภา",
+            "Chaicharoenwong",
+            "ชัยเจริญวงศ์"
+          ],
+          "08702507": [
+            "Khamron",
+            "คำรณ",
+            "Karawekwong",
+            "การเวกวงศ์"
+          ],
+          "08387673": [
+            "Yut",
+            "ยุทธ",
+            "Kittipongwong",
+            "กิตติวงศ์"
           ]
         }
       },
@@ -7100,6 +7905,7 @@
         "08525599",
         "08568408",
         "08970465",
+        "08654684",
         "08572416",
         "08702507",
         "08387673"
@@ -7111,7 +7917,8 @@
       "v01_bucket": "section_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g252",
@@ -7184,6 +7991,726 @@
             "ชาตรี",
             "Bunsoem",
             "บุญเสริม"
+          ],
+          "08321470": [
+            "Kovit",
+            "โกวิท",
+            "Mahamani",
+            "มหามณี"
+          ],
+          "08922977": [
+            "Nangnoi",
+            "นางน้อย",
+            "Phongdaosai",
+            "พงดาวใส"
+          ],
+          "08676180": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Arthitkulchaloem",
+            "อาทิตย์เฉลิม"
+          ],
+          "08372403": [
+            "Sunee",
+            "สุณี",
+            "Sringam",
+            "ศรีงาม"
+          ],
+          "08232990": [
+            "Apichai",
+            "อภิชัย",
+            "Thanabun",
+            "ธนบุญ"
+          ],
+          "08224942": [
+            "Kanya",
+            "กัญญา",
+            "Apinyamani",
+            "อภิญญามณี"
+          ],
+          "08282649": [
+            "Thanaphon",
+            "ธนพล",
+            "Phichaiyawong",
+            "พิไชยา"
+          ],
+          "08547462": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Aromdeejai",
+            "อารมณ์ดีใจ"
+          ],
+          "08171530": [
+            "Krittin",
+            "กฤติน",
+            "Anucharoen",
+            "อนุเจริญ"
+          ],
+          "08936711": [
+            "Som",
+            "ส้ม",
+            "Phromkan",
+            "พรหมกาญจน์"
+          ],
+          "08187336": [
+            "Ram",
+            "ราม",
+            "Mahakittipong",
+            "มหากิตติ"
+          ],
+          "08727829": [
+            "Apsara",
+            "อัปสร",
+            "Anongkunphat",
+            "อนงค์พัฒน์"
+          ],
+          "08617677": [
+            "Kwang",
+            "คะวัง",
+            "Kiatkamjornngam",
+            "เกียรติกำจรงาม"
+          ],
+          "08774360": [
+            "Veera",
+            "วีระ",
+            "Chaichokdee",
+            "ชัยโชคดี"
+          ],
+          "08577531": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Fahsaithong",
+            "ฟ้าใสทอง"
+          ],
+          "08802681": [
+            "Tassanee",
+            "ทัศนีย์",
+            "Maniphong",
+            "มณีพงศ์"
+          ],
+          "08763218": [
+            "Vasin",
+            "วศิน",
+            "Amonanongkun",
+            "อมรอนงค์"
+          ],
+          "08770721": [
+            "Yut",
+            "ยุทธ",
+            "Kobsooksuk",
+            "กอบสุขสุข"
+          ],
+          "08611242": [
+            "Thanasak",
+            "ธนศักดิ์",
+            "Maniamarin",
+            "มณีอมรินทร์"
+          ],
+          "08127795": [
+            "Saengdao",
+            "แสงดาว",
+            "Tancharoen",
+            "ตันเจริญ"
+          ],
+          "08774991": [
+            "Chatri",
+            "ชาตรี",
+            "Boonyasoem",
+            "บุญญาเสริม"
+          ],
+          "08953181": [
+            "Atchara",
+            "อัจฉรา",
+            "Rajfahsai",
+            "ราชฟ้าใส"
+          ],
+          "08204886": [
+            "Ratanakorn",
+            "รัตนากร",
+            "Chaemchoirat",
+            "แช้มช้อยรัตน์"
+          ],
+          "08705502": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Akarasuk",
+            "อัครสุข"
+          ],
+          "08546336": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Manikan",
+            "มณีกาญจน์"
+          ],
+          "08980631": [
+            "Charoon",
+            "จรูญ",
+            "Aphiboonmee",
+            "อภิบุญมี"
+          ],
+          "08672743": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Kasembun",
+            "เกษมบุญ"
+          ],
+          "08804059": [
+            "Anchali",
+            "อัญชลี",
+            "Asneesi",
+            "อัสนีศรี"
+          ],
+          "08828691": [
+            "Thanida",
+            "ธนิดา",
+            "Amonapinya",
+            "อมรอภิญญา"
+          ],
+          "08540649": [
+            "Nim",
+            "นิ่ม",
+            "Amonkasemkit",
+            "อมรเกษม"
+          ],
+          "08954634": [
+            "Thanin",
+            "ทนิน",
+            "Aphiboonya",
+            "อภิบุญญา"
+          ],
+          "08564954": [
+            "Dokrak",
+            "ดอกรัก",
+            "Karaweksoem",
+            "การเวกเสริม"
+          ],
+          "08196783": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Chaisonkun",
+            "ชัยสนธิ์กุล"
+          ],
+          "08557406": [
+            "Kantima",
+            "กานติมา",
+            "Bunchaicharoen",
+            "บุญชัยเจริญ"
+          ],
+          "08431775": [
+            "Kanchana",
+            "กาญจนา",
+            "Sukamchon",
+            "สุกำจร"
+          ],
+          "08983740": [
+            "Phailin",
+            "ไพลิน",
+            "Chakriikamchon",
+            "จักรีกำจร"
+          ],
+          "08458672": [
+            "Montra",
+            "มนตรา",
+            "Buathongchaloem",
+            "บัวทองเฉลิม"
+          ],
+          "08144031": [
+            "Kraisee",
+            "ไกรสร",
+            "Chaiaromdee",
+            "ชัยอารมณ์ดี"
+          ],
+          "08778696": [
+            "Suphawadee",
+            "สุภาวดี",
+            "Phatfa",
+            "ภัทรฟ้า"
+          ],
+          "08673166": [
+            "Anchali",
+            "อัญชลี",
+            "Thepprasert",
+            "เทพประเสริฐ"
+          ],
+          "08101780": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Kandi",
+            "กาญจน์ดี"
+          ],
+          "08368029": [
+            "Thinnakorn",
+            "ทินกร",
+            "Narachannarong",
+            "นราชาญณรงค์"
+          ],
+          "08602547": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Bunmakfa",
+            "บุญมาฟ้า"
+          ],
+          "08335708": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Amonduangkamol",
+            "อมรดวงกมล"
+          ],
+          "08193244": [
+            "Yothaka",
+            "โยธกา",
+            "Amphomsawang",
+            "อัมพรสว่าง"
+          ],
+          "08315414": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Amarinrat",
+            "อมรินทร์รัตน์"
+          ],
+          "08922316": [
+            "Vichit",
+            "วิจิตร",
+            "Thanachakrii",
+            "ธนจักรี"
+          ],
+          "08911722": [
+            "Veera",
+            "วีระ",
+            "Phongasnee",
+            "พงอัสนี"
+          ],
+          "08428798": [
+            "Kovit",
+            "โกวิท",
+            "Jaikieow",
+            "ใจเขียว"
+          ],
+          "08284808": [
+            "Badin",
+            "บดินทร์",
+            "Chaisuk",
+            "ชัยสุข"
+          ],
+          "08282432": [
+            "Prija",
+            "พฤกษา",
+            "Manifa",
+            "มณีฟ้า"
+          ],
+          "08256623": [
+            "Kongphop",
+            "ก้องภพ",
+            "Aromdee",
+            "อารมณ์ดี"
+          ],
+          "08712689": [
+            "Phichai",
+            "พิชัย",
+            "Phichakrii",
+            "พิจักรี"
+          ],
+          "08941913": [
+            "Kulap",
+            "กุหลาบ",
+            "Thepchaiwat",
+            "เทพชัยวัฒน์"
+          ],
+          "08215266": [
+            "Phuwadon",
+            "ภูวดล",
+            "Aphiarthitkul",
+            "อภิอาทิตย์"
+          ],
+          "08426204": [
+            "Wat",
+            "วัฒน์",
+            "Kannam",
+            "กาญจน์นาม"
+          ],
+          "08920068": [
+            "Kanlaya",
+            "กัลยา",
+            "Daosaisoem",
+            "ดาวใสเสริม"
+          ],
+          "08803357": [
+            "Orachon",
+            "อรชร",
+            "Praanuman",
+            "ประอนุมาน"
+          ],
+          "08614946": [
+            "Krairoek",
+            "ไกรฤกษ์",
+            "Bunmaksi",
+            "บุญมาศรี"
+          ],
+          "08777846": [
+            "Chakri",
+            "จักรี",
+            "Chaisonchot",
+            "ชัยสนธิ์โชติ"
+          ],
+          "08658071": [
+            "Phaibun",
+            "ไพบูลย์",
+            "Kasemkit",
+            "เกษม"
+          ],
+          "08718269": [
+            "Ying",
+            "หญิง",
+            "Anchaliwongs",
+            "อัญชลีวงษ์"
+          ],
+          "08307968": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Praasnee",
+            "ประอัสนี"
+          ],
+          "08779959": [
+            "Songpol",
+            "ทรงพล",
+            "Karaweksi",
+            "การเวกศรี"
+          ],
+          "08727620": [
+            "Kanok",
+            "กนก",
+            "Anuchai",
+            "อนุชัย"
+          ],
+          "08857331": [
+            "Yut",
+            "ยุทธ",
+            "Amonsawang",
+            "อมรสว่าง"
+          ],
+          "08852863": [
+            "Phueng",
+            "ผึ้ง",
+            "Kiatfa",
+            "เกียรติฟ้า"
+          ],
+          "08862251": [
+            "Darika",
+            "ดาริกา",
+            "Phongkan",
+            "พงกาญจน์"
+          ],
+          "08394580": [
+            "Kannika",
+            "กัณณิกา",
+            "Chanboonmee",
+            "จันทบุญมี"
+          ],
+          "08947835": [
+            "Kasem",
+            "เกษม",
+            "Chaemchoikamchon",
+            "แช้มช้อยกำจร"
+          ],
+          "08537453": [
+            "Chakri",
+            "จักรี",
+            "Mahaaromdee",
+            "มหาอารมณ์ดี"
+          ],
+          "08887711": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Charoenchaloem",
+            "เจริญเฉลิม"
+          ],
+          "08430403": [
+            "Sopa",
+            "โสภา",
+            "Chaison",
+            "ชัยสนธิ์"
+          ],
+          "08104815": [
+            "Sukrit",
+            "สุกฤต",
+            "Phromdaosai",
+            "พรหมดาวใส"
+          ],
+          "08414170": [
+            "Ngamchit",
+            "งามจิตร",
+            "Manichinda",
+            "มณีจินดา"
+          ],
+          "08985089": [
+            "Somta",
+            "สมตา",
+            "Watcharajaikieow",
+            "วัชรใจเขียว"
+          ],
+          "08183552": [
+            "Phonphai",
+            "พรไพร",
+            "Akarajai",
+            "อัครใจ"
+          ],
+          "08683397": [
+            "Darha",
+            "ดาหลา",
+            "Apinyasoem",
+            "อภิญญาเสริม"
+          ],
+          "08931784": [
+            "Prayut",
+            "ประยุทธ์",
+            "Homklinsawang",
+            "หอมกลิ่นสว่าง"
+          ],
+          "08557441": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Phidi",
+            "พิดี"
+          ],
+          "08192229": [
+            "Songpol",
+            "ทรงพล",
+            "Amonfa",
+            "อมรฟ้า"
+          ],
+          "08948643": [
+            "Natthaphon",
+            "ณัฏฐพล",
+            "Apinyabun",
+            "อภิญญาบุญ"
+          ],
+          "08277836": [
+            "Yuthana",
+            "ยุทธนา",
+            "Akaraphithak",
+            "อัครพิทักษ์"
+          ],
+          "08615850": [
+            "Somta",
+            "สมตา",
+            "Suamarin",
+            "สุอมรินทร์"
+          ],
+          "08917332": [
+            "Thanya",
+            "ธัญญา",
+            "Watcharachaiyawong",
+            "วัชรไชยา"
+          ],
+          "08624491": [
+            "Yothaka",
+            "โยธกา",
+            "Wisduangkamol",
+            "วิศดวงกมล"
+          ],
+          "08982974": [
+            "Badin",
+            "บดินทร์",
+            "Karawekngam",
+            "การเวกงาม"
+          ],
+          "08969639": [
+            "Krid",
+            "กฤต",
+            "Daosaichot",
+            "ดาวใสโชติ"
+          ],
+          "08779993": [
+            "Phromphun",
+            "พรหมพร",
+            "Somapinya",
+            "สมอภิญญา"
+          ],
+          "08823476": [
+            "Aroon",
+            "อรุณ",
+            "Chokdeecharoen",
+            "โชคดีเจริญ"
+          ],
+          "08792376": [
+            "Kwang",
+            "คะวัง",
+            "Jaidicharoen",
+            "ใจดีเจริญ"
+          ],
+          "08113196": [
+            "Thawan",
+            "ถาวร",
+            "Bunchakrii",
+            "บุญจักรี"
+          ],
+          "08945000": [
+            "Veera",
+            "วีระ",
+            "Suwansuk",
+            "สุวรรณสุข"
+          ],
+          "08981742": [
+            "Chakri",
+            "จักรี",
+            "Phikiaokaji",
+            "พิเขียวขจี"
+          ],
+          "08320608": [
+            "Kasem",
+            "เกษม",
+            "Bunraksa",
+            "บุญรักษา"
+          ],
+          "08643748": [
+            "Anan",
+            "อนันต์",
+            "Naraphinyo",
+            "นราภิญโญ"
+          ],
+          "08595190": [
+            "Saksit",
+            "ศักดิ์สิทธิ์",
+            "Phromaromdee",
+            "พรหมอารมณ์ดี"
+          ],
+          "08875163": [
+            "Wiphan",
+            "วิพันธ์",
+            "Chaisaiphong",
+            "ชัยสัยพงศ์"
+          ],
+          "08195871": [
+            "Panit",
+            "พาณิช",
+            "Ratanaporn",
+            "รัตนพร"
+          ],
+          "08281053": [
+            "Uma",
+            "อุมา",
+            "Prachot",
+            "ประโชติ"
+          ],
+          "08819350": [
+            "Sopa",
+            "โสภา",
+            "Areesuk",
+            "อารีสุข"
+          ],
+          "08305373": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Kanngam",
+            "กาญจน์งาม"
+          ],
+          "08315950": [
+            "Wat",
+            "วัฒน์",
+            "Kobsookwongs",
+            "กอบสุขวงษ์"
+          ],
+          "08146687": [
+            "Chaiya",
+            "ไชยา",
+            "Kittibunmani",
+            "กิตติบุญมณี"
+          ],
+          "08296359": [
+            "Lamai",
+            "ละไม",
+            "Khaengkadchot",
+            "เก่งกาจโชติ"
+          ],
+          "08713916": [
+            "Saranya",
+            "สรัญญา",
+            "Phromkarawek",
+            "พรหมการเวก"
+          ],
+          "08688197": [
+            "Juthamas",
+            "จุฑามาศ",
+            "Chindarat",
+            "จินดารัตน์"
+          ],
+          "08861098": [
+            "Thanin",
+            "ทนิน",
+            "Chokdeekun",
+            "โชคดีกุล"
+          ],
+          "08497953": [
+            "Ying",
+            "หญิง",
+            "Prajaidi",
+            "ประใจดี"
+          ],
+          "08214549": [
+            "Somphong",
+            "สมพงษ์",
+            "Mahasi",
+            "มหาศรี"
+          ],
+          "08838302": [
+            "Yotthakarn",
+            "ยศกร",
+            "Kasemchannarong",
+            "เกษมชาญณรงค์"
+          ],
+          "08528919": [
+            "Taeng",
+            "แตง",
+            "Kittichatchaloem",
+            "กิตติชาติเฉลิม"
+          ],
+          "08534011": [
+            "Santichai",
+            "สันติชัย",
+            "Somjaingam",
+            "สมใจงาม"
+          ],
+          "08769425": [
+            "Malee",
+            "มาลี",
+            "Watcharachaloem",
+            "วัชรเฉลิม"
+          ],
+          "08139156": [
+            "Ngamchit",
+            "งามจิตร",
+            "Jitranonkamchon",
+            "จิตรานนท์กำจร"
+          ],
+          "08433942": [
+            "Arthit",
+            "อาทิตย์",
+            "Watcharachinda",
+            "วัชรจินดา"
+          ],
+          "08488024": [
+            "Kitti",
+            "กิตติ",
+            "Amonjaingam",
+            "อมรใจงาม"
+          ],
+          "08156231": [
+            "Veera",
+            "วีระ",
+            "Sambunmak",
+            "สัมบุญมา"
+          ],
+          "08691159": [
+            "Malai",
+            "มาลัย",
+            "Phromchaloem",
+            "พรหมเฉลิม"
+          ],
+          "08763937": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Buathongmani",
+            "บัวทองมณี"
           ]
         }
       },
@@ -7206,8 +8733,118 @@
         "08224942",
         "08282649",
         "08547462",
+        "08171530",
         "08936711",
-        "08187336"
+        "08187336",
+        "08727829",
+        "08617677",
+        "08774360",
+        "08577531",
+        "08802681",
+        "08763218",
+        "08770721",
+        "08611242",
+        "08127795",
+        "08774991",
+        "08953181",
+        "08204886",
+        "08705502",
+        "08546336",
+        "08980631",
+        "08672743",
+        "08804059",
+        "08828691",
+        "08540649",
+        "08954634",
+        "08564954",
+        "08196783",
+        "08557406",
+        "08431775",
+        "08983740",
+        "08458672",
+        "08144031",
+        "08778696",
+        "08673166",
+        "08101780",
+        "08368029",
+        "08602547",
+        "08335708",
+        "08193244",
+        "08315414",
+        "08922316",
+        "08911722",
+        "08428798",
+        "08284808",
+        "08282432",
+        "08256623",
+        "08712689",
+        "08941913",
+        "08215266",
+        "08426204",
+        "08920068",
+        "08803357",
+        "08614946",
+        "08777846",
+        "08658071",
+        "08718269",
+        "08307968",
+        "08779959",
+        "08727620",
+        "08857331",
+        "08852863",
+        "08862251",
+        "08394580",
+        "08947835",
+        "08537453",
+        "08887711",
+        "08430403",
+        "08104815",
+        "08414170",
+        "08985089",
+        "08183552",
+        "08683397",
+        "08931784",
+        "08557441",
+        "08192229",
+        "08948643",
+        "08277836",
+        "08615850",
+        "08917332",
+        "08624491",
+        "08982974",
+        "08969639",
+        "08779993",
+        "08823476",
+        "08792376",
+        "08113196",
+        "08945000",
+        "08981742",
+        "08320608",
+        "08643748",
+        "08595190",
+        "08875163",
+        "08195871",
+        "08281053",
+        "08819350",
+        "08305373",
+        "08315950",
+        "08146687",
+        "08296359",
+        "08713916",
+        "08688197",
+        "08861098",
+        "08497953",
+        "08214549",
+        "08838302",
+        "08528919",
+        "08534011",
+        "08769425",
+        "08139156",
+        "08433942",
+        "08488024",
+        "08156231",
+        "08691159",
+        "08763937"
       ],
       "rationale": "Informal 'ดาวเหนือ' = dept DN.",
       "tags": [
@@ -7217,7 +8854,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g253",
@@ -7290,6 +8928,786 @@
             "สรัญญา",
             "Mahaamarin",
             "มหาอมรินทร์"
+          ],
+          "08630029": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Kaewkanfa",
+            "แก้วกาญจน์ฟ้า"
+          ],
+          "08475074": [
+            "Prasert",
+            "ประเสริฐ",
+            "Kittipongprasert",
+            "กิตติประเสริฐ"
+          ],
+          "00009202": [
+            "Kitti",
+            "กิตติ",
+            "Anantphithak",
+            "อนันต์พิทักษ์"
+          ],
+          "08667641": [
+            "Boonchu",
+            "บุญชู",
+            "Boonyanam",
+            "บุญญานาม"
+          ],
+          "00007115": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Phikobsook",
+            "พิกอบสุข"
+          ],
+          "08958338": [
+            "Yadthip",
+            "หยาดทิพย์",
+            "Anumanwong",
+            "อนุมานวงศ์"
+          ],
+          "00003058": [
+            "Ruangsak",
+            "เรืองศักดิ์",
+            "Areeprasert",
+            "อารีประเสริฐ"
+          ],
+          "08981678": [
+            "Jirapat",
+            "จิรภัทร",
+            "Jaidiwong",
+            "ใจดีวงศ์"
+          ],
+          "08360264": [
+            "Direk",
+            "ดิเรก",
+            "Athichaidee",
+            "อธิชัยดี"
+          ],
+          "08451951": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Chankittipong",
+            "จันทกิตติ"
+          ],
+          "08713784": [
+            "Darika",
+            "ดาริกา",
+            "Chiraboonnam",
+            "จิรบุญนำ"
+          ],
+          "00005441": [
+            "Orachon",
+            "อรชร",
+            "Bunmakchai",
+            "บุญมาชัย"
+          ],
+          "08414525": [
+            "Aroon",
+            "อรุณ",
+            "Bunamarin",
+            "บุญอมรินทร์"
+          ],
+          "08459587": [
+            "Anurak",
+            "อนุรักษ์",
+            "Suwananant",
+            "สุวรรณอนันต์"
+          ],
+          "08608998": [
+            "Paitoon",
+            "ไพฑูรย์",
+            "Kiaokajisi",
+            "เขียวขจีศรี"
+          ],
+          "08651930": [
+            "Thanaphon",
+            "ธนพล",
+            "Bunmakphithak",
+            "บุญมาพิทักษ์"
+          ],
+          "08933787": [
+            "Saengdao",
+            "แสงดาว",
+            "Areephat",
+            "อารีพัฒน์"
+          ],
+          "08364560": [
+            "Issara",
+            "อิสระ",
+            "Phibuathong",
+            "พิบัวทอง"
+          ],
+          "08725292": [
+            "Ongart",
+            "องอาจ",
+            "Anongkunsuk",
+            "อนงค์สุข"
+          ],
+          "08676977": [
+            "Darika",
+            "ดาริกา",
+            "Bunfahsai",
+            "บุญฟ้าใส"
+          ],
+          "08755687": [
+            "Wichian",
+            "วิเชียร",
+            "Wisamphom",
+            "วิศอัมพร"
+          ],
+          "08622795": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Samdaosai",
+            "สัมดาวใส"
+          ],
+          "08821341": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Chaicharoenmani",
+            "ชัยเจริญมณี"
+          ],
+          "08191811": [
+            "Niran",
+            "นิรันดร์",
+            "Sriasnee",
+            "ศรีอัสนี"
+          ],
+          "08364650": [
+            "Koh",
+            "เกาะ",
+            "Kobsookkun",
+            "กอบสุขกุล"
+          ],
+          "08261211": [
+            "Kris",
+            "กฤษ",
+            "Srisi",
+            "ศรีศรี"
+          ],
+          "08284000": [
+            "Patcharee",
+            "พัชรี",
+            "Phongwong",
+            "พงวงศ์"
+          ],
+          "08788942": [
+            "Santichai",
+            "สันติชัย",
+            "Apinyasuk",
+            "อภิญญาสุข"
+          ],
+          "08784256": [
+            "Kanyalak",
+            "กัญญาลักษณ์",
+            "Anongkunnam",
+            "อนงค์นาม"
+          ],
+          "08762762": [
+            "Thanin",
+            "ทนิน",
+            "Bunkasemkit",
+            "บุญเกษม"
+          ],
+          "08256730": [
+            "Yu-Pha",
+            "ยุพา",
+            "Thepboonrueng",
+            "เทพบุญเรือง"
+          ],
+          "08541160": [
+            "Kanya",
+            "กัญญา",
+            "Athijaingam",
+            "อธิใจงาม"
+          ],
+          "08610107": [
+            "Ananda",
+            "อนันดา",
+            "Kiatsathit",
+            "เกียรติสถิต"
+          ],
+          "08559724": [
+            "Rattana",
+            "รัตตนา",
+            "Bunchot",
+            "บุญโชติ"
+          ],
+          "08721904": [
+            "Kong",
+            "ก้อง",
+            "Phromaree",
+            "พรหมอารี"
+          ],
+          "08171848": [
+            "Kantima",
+            "กานติมา",
+            "Karawekprasert",
+            "การเวกประเสริฐ"
+          ],
+          "08868260": [
+            "Chada",
+            "ชฎา",
+            "Boonruengwongs",
+            "บุญเรืองวงษ์"
+          ],
+          "08511102": [
+            "Kongphop",
+            "ก้องภพ",
+            "Phisi",
+            "พิศรี"
+          ],
+          "08530275": [
+            "Charoon",
+            "จรูญ",
+            "Jaingamjai",
+            "ใจงามใจ"
+          ],
+          "08433531": [
+            "Teerapat",
+            "ธีรพัฒน์",
+            "Boonnambun",
+            "บุญนำบุญ"
+          ],
+          "08748479": [
+            "Kongphop",
+            "ก้องภพ",
+            "Somkittipong",
+            "สมกิตติ"
+          ],
+          "08882143": [
+            "Anurak",
+            "อนุรักษ์",
+            "Athisathit",
+            "อธิสถิต"
+          ],
+          "08475616": [
+            "Sukhum",
+            "สุขุม",
+            "Jaikieowbun",
+            "ใจเขียวบุญ"
+          ],
+          "08795663": [
+            "Saengdao",
+            "แสงดาว",
+            "Athichai",
+            "อธิชัย"
+          ],
+          "08941624": [
+            "Piti",
+            "ปิติ",
+            "Boonruengngam",
+            "บุญเรืองงาม"
+          ],
+          "08187292": [
+            "Orachon",
+            "อรชร",
+            "Thepkraisee",
+            "เทพไกรศรี"
+          ],
+          "08336189": [
+            "Nattaphong",
+            "ณัฐพงษ์",
+            "Shinwara",
+            "ชินวรา"
+          ],
+          "08319363": [
+            "Anchali",
+            "อัญชลี",
+            "Jaidiphat",
+            "ใจดีพัฒน์"
+          ],
+          "08230856": [
+            "Lamai",
+            "ละไม",
+            "Thanarat",
+            "ธนรัตน์"
+          ],
+          "08782755": [
+            "Ravee",
+            "ระวี",
+            "Areewong",
+            "อารีวงศ์"
+          ],
+          "08211115": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Kiatchongrak",
+            "เกียรติจงรัก"
+          ],
+          "08425761": [
+            "Lalana",
+            "ลลนา",
+            "Awutsin",
+            "อาวุทธ์สินธุ์"
+          ],
+          "08586142": [
+            "Kanchana",
+            "กาญจนา",
+            "Kiaokajiwat",
+            "เขียวขจีวัฒน์"
+          ],
+          "08141477": [
+            "Prasert",
+            "ประเสริฐ",
+            "Asneesawang",
+            "อัสนีสว่าง"
+          ],
+          "08540258": [
+            "Ukrit",
+            "อุกฤษฎ์",
+            "Athiamarin",
+            "อธิอมรินทร์"
+          ],
+          "08730775": [
+            "Boonruang",
+            "บุญเรือง",
+            "Chaideejai",
+            "ชัยดีใจ"
+          ],
+          "08694505": [
+            "Rachata",
+            "ราชตะ",
+            "Anantngam",
+            "อนันต์งาม"
+          ],
+          "08717203": [
+            "Malee",
+            "มาลี",
+            "Prachai",
+            "ประชัย"
+          ],
+          "08283773": [
+            "Tawin",
+            "ถวิน",
+            "Chanwong",
+            "จันทวงศ์"
+          ],
+          "08368745": [
+            "Thinnakorn",
+            "ทินกร",
+            "Chiradaosai",
+            "จิรดาวใส"
+          ],
+          "08495796": [
+            "Isara",
+            "อิสรา",
+            "Bunsi",
+            "บุญศรี"
+          ],
+          "08121186": [
+            "Suppadet",
+            "ศุภเดช",
+            "Thepsin",
+            "เทพสินธุ์"
+          ],
+          "08878853": [
+            "Nim",
+            "นิ่ม",
+            "Chaisaisawang",
+            "ชัยสัยสว่าง"
+          ],
+          "08297735": [
+            "Kanchana",
+            "กาญจนา",
+            "Phatkiaokaji",
+            "ภัทรเขียวขจี"
+          ],
+          "08149105": [
+            "Phloi",
+            "พลอย",
+            "Daoruengchot",
+            "ดาวเรืองโชติ"
+          ],
+          "08370474": [
+            "Kitti",
+            "กิตติ",
+            "Rajfa",
+            "ราชฟ้า"
+          ],
+          "08137397": [
+            "Phussadee",
+            "พุสดี",
+            "Ratanafahsai",
+            "รัตนฟ้าใส"
+          ],
+          "08146329": [
+            "Phairoj",
+            "ไพโรจน์",
+            "Charoenphol",
+            "เจริญผล"
+          ],
+          "08476715": [
+            "Kamala",
+            "กมลา",
+            "Kraiseejai",
+            "ไกรศรีใจ"
+          ],
+          "08414062": [
+            "Usanee",
+            "อุษณี",
+            "Khaengkadmani",
+            "เก่งกาจมณี"
+          ],
+          "08137216": [
+            "Kovit",
+            "โกวิท",
+            "Karawekbun",
+            "การเวกบุญ"
+          ],
+          "08381947": [
+            "Tanthira",
+            "ธันทิรา",
+            "Chairat",
+            "ชัยรัตน์"
+          ],
+          "08847059": [
+            "Satja",
+            "สัจจะ",
+            "Samawut",
+            "สัมอาวุทธ์"
+          ],
+          "08985134": [
+            "Ratapon",
+            "รัตพร",
+            "Watcharacharoen",
+            "วัชรเจริญ"
+          ],
+          "08301094": [
+            "Awut",
+            "อาวุธ",
+            "Wiswong",
+            "วิศวงศ์"
+          ],
+          "08979536": [
+            "Sakchai",
+            "ศักดิ์ชัย",
+            "Athicharoen",
+            "อธิเจริญ"
+          ],
+          "08521819": [
+            "Kris",
+            "กฤษ",
+            "Theparthitkul",
+            "เทพอาทิตย์"
+          ],
+          "08121725": [
+            "Rai",
+            "รัศมี",
+            "Charoenphinyo",
+            "เจริญภิญโญ"
+          ],
+          "08476951": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Subusarakham",
+            "สุบุษราคัม"
+          ],
+          "08547269": [
+            "Malee",
+            "มาลี",
+            "Channgam",
+            "จันทงาม"
+          ],
+          "08114369": [
+            "Natthaphon",
+            "ณัฏฐพล",
+            "Kiataree",
+            "เกียรติอารี"
+          ],
+          "08198598": [
+            "Kantima",
+            "กานติมา",
+            "Chaithong",
+            "ชัยทอง"
+          ],
+          "08196867": [
+            "Orachon",
+            "อรชร",
+            "Maniphat",
+            "มณีพัฒน์"
+          ],
+          "08711577": [
+            "Mongkol",
+            "มงคล",
+            "Sukaewprasert",
+            "สุแก้วประเสริฐ"
+          ],
+          "08759175": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Phromchakan",
+            "พรหมชากัญญ์"
+          ],
+          "08824002": [
+            "Ravee",
+            "ระวี",
+            "Sangthong",
+            "แสงทอง"
+          ],
+          "08678475": [
+            "Koh",
+            "เกาะ",
+            "Kaewsaingam",
+            "แก้วใสงาม"
+          ],
+          "08258331": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Anuchannarong",
+            "อนุชาญณรงค์"
+          ],
+          "08334094": [
+            "Santichai",
+            "สันติชัย",
+            "Buathongcharoen",
+            "บัวทองเจริญ"
+          ],
+          "08667070": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Akarachai",
+            "อัครชัย"
+          ],
+          "08481926": [
+            "Pim",
+            "พิม",
+            "Chaicharoenraksa",
+            "ชัยเจริญรักษา"
+          ],
+          "08390537": [
+            "Sap",
+            "ทรัพย์",
+            "Ratanasoem",
+            "รัตนเสริม"
+          ],
+          "08762330": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Chiraraksa",
+            "จิรรักษา"
+          ],
+          "08824868": [
+            "Kanyalak",
+            "กัญญาลักษณ์",
+            "Kaewsaisi",
+            "แก้วใสศรี"
+          ],
+          "08105750": [
+            "Sorapong",
+            "สรพงษ์",
+            "Akarachakan",
+            "อัครชากัญญ์"
+          ],
+          "08106724": [
+            "Ratanakorn",
+            "รัตนากร",
+            "Anantsoem",
+            "อนันต์เสริม"
+          ],
+          "08396280": [
+            "Nongyao",
+            "นงเยาว์",
+            "Watcharathong",
+            "วัชรทอง"
+          ],
+          "08188068": [
+            "Suppadet",
+            "ศุภเดช",
+            "Khaengkadfa",
+            "เก่งกาจฟ้า"
+          ],
+          "08508235": [
+            "Narong",
+            "ณรงค์",
+            "Areekamchon",
+            "อารีกำจร"
+          ],
+          "08433581": [
+            "Oranong",
+            "อรอนงค์",
+            "Chongrakphinyo",
+            "จงรักภิญโญ"
+          ],
+          "08728628": [
+            "Phuwadon",
+            "ภูวดล",
+            "Chaisaingam",
+            "ชัยสัยงาม"
+          ],
+          "08127728": [
+            "Phichai",
+            "พิชัย",
+            "Chakriibun",
+            "จักรีบุญ"
+          ],
+          "08647606": [
+            "Vanida",
+            "วนิดา",
+            "Chakriichaloem",
+            "จักรีเฉลิม"
+          ],
+          "08294843": [
+            "Lawana",
+            "ลาวัณย์",
+            "Manijaidi",
+            "มณีใจดี"
+          ],
+          "08796953": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Chindachaloem",
+            "จินดาเฉลิม"
+          ],
+          "08216299": [
+            "Wiphan",
+            "วิพันธ์",
+            "Anantraksa",
+            "อนันต์รักษา"
+          ],
+          "08988086": [
+            "Umporn",
+            "อัมพร",
+            "Anukaewkan",
+            "อนุแก้วกาญจน์"
+          ],
+          "08410853": [
+            "Jirapat",
+            "จิรภัทร",
+            "Phatphat",
+            "ภัทรพัฒน์"
+          ],
+          "08195011": [
+            "Anan",
+            "อนันต์",
+            "Chankaewkan",
+            "จันทแก้วกาญจน์"
+          ],
+          "08278236": [
+            "Adithep",
+            "อดิเทพ",
+            "Chaemchoikun",
+            "แช้มช้อยกุล"
+          ],
+          "08201332": [
+            "Phichai",
+            "พิชัย",
+            "Boonyabun",
+            "บุญญาบุญ"
+          ],
+          "08976113": [
+            "Prem",
+            "เปรม",
+            "Ratanaawut",
+            "รัตนอาวุทธ์"
+          ],
+          "08875136": [
+            "Usanee",
+            "อุษณี",
+            "Phikaewprasert",
+            "พิแก้วประเสริฐ"
+          ],
+          "08712397": [
+            "Waen",
+            "แหวน",
+            "Suwanwongs",
+            "สุวรรณวงษ์"
+          ],
+          "08474787": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Amphomsin",
+            "อัมพรสินธุ์"
+          ],
+          "08761183": [
+            "Yen",
+            "เย็น",
+            "Phatchokdee",
+            "ภัทรโชคดี"
+          ],
+          "08908550": [
+            "Panit",
+            "พาณิช",
+            "Anukittipong",
+            "อนุกิตติ"
+          ],
+          "08150886": [
+            "Chaiya",
+            "ไชยา",
+            "Anumanjai",
+            "อนุมานใจ"
+          ],
+          "08949234": [
+            "Sanit",
+            "สนิท",
+            "Kaewsaisin",
+            "แก้วใสสินธุ์"
+          ],
+          "08792049": [
+            "Yu-Pha",
+            "ยุพา",
+            "Boonnamsawang",
+            "บุญนำสว่าง"
+          ],
+          "08328319": [
+            "Rai",
+            "รัศมี",
+            "Phongkasemkit",
+            "พงเกษม"
+          ],
+          "08610260": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Akaraanchali",
+            "อัครอัญชลี"
+          ],
+          "08516322": [
+            "Klaharn",
+            "กล้าหาญ",
+            "Phasuk",
+            "ผาสุก"
+          ],
+          "08322432": [
+            "Veera",
+            "วีระ",
+            "Apinyasoem",
+            "อภิญญาเสริม"
+          ],
+          "08251652": [
+            "Wiriya",
+            "วิริยะ",
+            "Bunboonnam",
+            "บุญบุญนำ"
+          ],
+          "08474350": [
+            "Yu-Pha",
+            "ยุพา",
+            "Kraiseemani",
+            "ไกรศรีมณี"
+          ],
+          "08215868": [
+            "Yotthakarn",
+            "ยศกร",
+            "Watcharajai",
+            "วัชรใจ"
+          ],
+          "08744292": [
+            "Adithep",
+            "อดิเทพ",
+            "Anumansawang",
+            "อนุมานสว่าง"
+          ],
+          "08910063": [
+            "Som",
+            "ส้ม",
+            "Anchalicharoen",
+            "อัญชลีเจริญ"
+          ],
+          "08106099": [
+            "Nathamon",
+            "ณฐามน",
+            "Apinyachai",
+            "อภิญญาชัย"
           ]
         }
       },
@@ -7313,7 +9731,127 @@
         "00003058",
         "08981678",
         "08360264",
-        "08451951"
+        "08451951",
+        "08713784",
+        "00005441",
+        "08414525",
+        "08459587",
+        "08608998",
+        "08651930",
+        "08933787",
+        "08364560",
+        "08725292",
+        "08676977",
+        "08755687",
+        "08622795",
+        "08821341",
+        "08191811",
+        "08364650",
+        "08261211",
+        "08284000",
+        "08788942",
+        "08784256",
+        "08762762",
+        "08256730",
+        "08541160",
+        "08610107",
+        "08559724",
+        "08721904",
+        "08171848",
+        "08868260",
+        "08511102",
+        "08530275",
+        "08433531",
+        "08748479",
+        "08882143",
+        "08475616",
+        "08795663",
+        "08941624",
+        "08187292",
+        "08336189",
+        "08319363",
+        "08230856",
+        "08782755",
+        "08211115",
+        "08425761",
+        "08586142",
+        "08141477",
+        "08540258",
+        "08730775",
+        "08694505",
+        "08717203",
+        "08283773",
+        "08368745",
+        "08495796",
+        "08121186",
+        "08878853",
+        "08297735",
+        "08149105",
+        "08370474",
+        "08137397",
+        "08146329",
+        "08476715",
+        "08414062",
+        "08137216",
+        "08381947",
+        "08847059",
+        "08985134",
+        "08301094",
+        "08979536",
+        "08521819",
+        "08121725",
+        "08476951",
+        "08547269",
+        "08114369",
+        "08198598",
+        "08196867",
+        "08711577",
+        "08759175",
+        "08824002",
+        "08678475",
+        "08258331",
+        "08334094",
+        "08667070",
+        "08481926",
+        "08390537",
+        "08762330",
+        "08824868",
+        "08105750",
+        "08106724",
+        "08396280",
+        "08188068",
+        "08508235",
+        "08433581",
+        "08728628",
+        "08127728",
+        "08647606",
+        "08294843",
+        "08796953",
+        "08216299",
+        "08988086",
+        "08410853",
+        "08195011",
+        "08278236",
+        "08201332",
+        "08976113",
+        "08875136",
+        "08712397",
+        "08474787",
+        "08761183",
+        "08908550",
+        "08150886",
+        "08949234",
+        "08792049",
+        "08328319",
+        "08610260",
+        "08516322",
+        "08322432",
+        "08251652",
+        "08474350",
+        "08215868",
+        "08744292",
+        "08910063",
+        "08106099"
       ],
       "rationale": "Informal 'สายฟ้า' = dept SF.",
       "tags": [
@@ -7323,7 +9861,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g254",
@@ -7396,6 +9935,546 @@
             "อัญชลี",
             "Phromchan",
             "พรหมจรรย์"
+          ],
+          "00008348": [
+            "Wisit",
+            "วิสิทธิ์",
+            "Jaingam",
+            "ใจงาม"
+          ],
+          "08604829": [
+            "Chonlathee",
+            "ชลธี",
+            "Anongkunwong",
+            "อนงค์วงศ์"
+          ],
+          "08775573": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Phiphong",
+            "พิพงศ์"
+          ],
+          "08798807": [
+            "Mali",
+            "มะลิ",
+            "Boonnamdi",
+            "บุญนำดี"
+          ],
+          "08649292": [
+            "Yen",
+            "เย็น",
+            "Narakun",
+            "นรากุล"
+          ],
+          "08705490": [
+            "Yuthana",
+            "ยุทธนา",
+            "Mahachaiyawong",
+            "มหาไชยา"
+          ],
+          "08811816": [
+            "Kong",
+            "ก้อง",
+            "Thepchinda",
+            "เทพจินดา"
+          ],
+          "08755968": [
+            "Panit",
+            "พาณิช",
+            "Ratanaboonrueng",
+            "รัตนบุญเรือง"
+          ],
+          "00003219": [
+            "Vanida",
+            "วนิดา",
+            "Daosaiwat",
+            "ดาวใสวัฒน์"
+          ],
+          "08825917": [
+            "Umporn",
+            "อัมพร",
+            "Prafa",
+            "ประฟ้า"
+          ],
+          "08122621": [
+            "Vichit",
+            "วิจิตร",
+            "Aphichakan",
+            "อภิชากัญญ์"
+          ],
+          "08493049": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Charoenpholfa",
+            "เจริญผลฟ้า"
+          ],
+          "08469223": [
+            "Khamron",
+            "คำรณ",
+            "Charoenpholnam",
+            "เจริญผลนาม"
+          ],
+          "08745619": [
+            "Saksit",
+            "ศักดิ์สิทธิ์",
+            "Samchakan",
+            "สัมชากัญญ์"
+          ],
+          "08693299": [
+            "Yothaka",
+            "โยธกา",
+            "Bunjaikieow",
+            "บุญใจเขียว"
+          ],
+          "08510800": [
+            "Charoon",
+            "จรูญ",
+            "Athikraisee",
+            "อธิไกรศรี"
+          ],
+          "08478470": [
+            "Bunma",
+            "บุญมา",
+            "Phromanurak",
+            "พรหมอนุรักษ์"
+          ],
+          "08882842": [
+            "Nim",
+            "นิ่ม",
+            "Chokdeechaloem",
+            "โชคดีเฉลิม"
+          ],
+          "08622378": [
+            "Lamai",
+            "ละไม",
+            "Kittibunphat",
+            "กิตติบุญพัฒน์"
+          ],
+          "08579239": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Akarakittipong",
+            "อัครกิตติ"
+          ],
+          "08210010": [
+            "Manit",
+            "มานิตย์",
+            "Boonnamrat",
+            "บุญนำรัตน์"
+          ],
+          "08625149": [
+            "Kanok",
+            "กนก",
+            "Wischot",
+            "วิศโชติ"
+          ],
+          "08494825": [
+            "Sanouk",
+            "สนุก",
+            "Phibusarakham",
+            "พิบุษราคัม"
+          ],
+          "08673388": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Amphommani",
+            "อัมพรมณี"
+          ],
+          "08457247": [
+            "Sujinda",
+            "สุจินดา",
+            "Kiatngam",
+            "เกียรติงาม"
+          ],
+          "08557223": [
+            "Yada",
+            "ยาดา",
+            "Chaideesawang",
+            "ชัยดีสว่าง"
+          ],
+          "08461289": [
+            "Thanaphon",
+            "ธนพล",
+            "Areejai",
+            "อารีใจ"
+          ],
+          "08816583": [
+            "Nattaphong",
+            "ณัฐพงษ์",
+            "Samkasemkit",
+            "สัมเกษม"
+          ],
+          "08632737": [
+            "Tawan",
+            "ตะวัน",
+            "Rajboonya",
+            "ราชบุญญา"
+          ],
+          "08636294": [
+            "Dara",
+            "ดารา",
+            "Somprasert",
+            "สมประเสริฐ"
+          ],
+          "08913397": [
+            "Chatri",
+            "ชาตรี",
+            "Boonnamchai",
+            "บุญนำชัย"
+          ],
+          "08188067": [
+            "Teerapat",
+            "ธีรพัฒน์",
+            "Busarakhamcharoen",
+            "บุษราคัมเจริญ"
+          ],
+          "08644077": [
+            "Kanlaya",
+            "กัลยา",
+            "Bunmakwongs",
+            "บุญมาวงษ์"
+          ],
+          "08419415": [
+            "Wiphan",
+            "วิพันธ์",
+            "Samprasert",
+            "สัมประเสริฐ"
+          ],
+          "08780774": [
+            "Narin",
+            "นรินทร์",
+            "Phromphong",
+            "พรหมพงศ์"
+          ],
+          "08796094": [
+            "Wiphan",
+            "วิพันธ์",
+            "Amphomrat",
+            "อัมพรรัตน์"
+          ],
+          "08939728": [
+            "Taeng",
+            "แตง",
+            "Kiatkhaengkad",
+            "เกียรติเก่งกาจ"
+          ],
+          "08625274": [
+            "Tanet",
+            "ธเนศ",
+            "Anujaingam",
+            "อนุใจงาม"
+          ],
+          "08200289": [
+            "Prayut",
+            "ประยุทธ์",
+            "Kasemnam",
+            "เกษมนาม"
+          ],
+          "08254326": [
+            "Yada",
+            "ยาดา",
+            "Chindakun",
+            "จินดากุล"
+          ],
+          "08131060": [
+            "Koh",
+            "เกาะ",
+            "Phikittipong",
+            "พิกิตติ"
+          ],
+          "08183800": [
+            "Kantima",
+            "กานติมา",
+            "Bunarthitkul",
+            "บุญอาทิตย์"
+          ],
+          "08639610": [
+            "Bunma",
+            "บุญมา",
+            "Meeboon",
+            "มีบุญ"
+          ],
+          "08165788": [
+            "Yuthana",
+            "ยุทธนา",
+            "Kiatjai",
+            "เกียรติใจ"
+          ],
+          "08454351": [
+            "Kittipong",
+            "กิตติพงศ์",
+            "Daoruengchaloem",
+            "ดาวเรืองเฉลิม"
+          ],
+          "08591995": [
+            "Narin",
+            "นรินทร์",
+            "Anantsin",
+            "อนันต์สินธุ์"
+          ],
+          "08743087": [
+            "Sanoh",
+            "เสนาะ",
+            "Akarathong",
+            "อัครทอง"
+          ],
+          "08685656": [
+            "Lalana",
+            "ลลนา",
+            "Bunchokdee",
+            "บุญโชคดี"
+          ],
+          "08241668": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Suchaloem",
+            "สุเฉลิม"
+          ],
+          "08369965": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Narakobsook",
+            "นรากอบสุข"
+          ],
+          "08960611": [
+            "Uma",
+            "อุมา",
+            "Narakittipong",
+            "นรากิตติ"
+          ],
+          "08553585": [
+            "Nim",
+            "นิ่ม",
+            "Amonchinda",
+            "อมรจินดา"
+          ],
+          "08485505": [
+            "Anong",
+            "อนงค์",
+            "Wiskan",
+            "วิศกาญจน์"
+          ],
+          "08855553": [
+            "Sanoh",
+            "เสนาะ",
+            "Daosaikamchon",
+            "ดาวใสกำจร"
+          ],
+          "08256845": [
+            "Charoon",
+            "จรูญ",
+            "Sridaosai",
+            "ศรีดาวใส"
+          ],
+          "08750989": [
+            "Piyawat",
+            "ปิยวัฒน์",
+            "Suwananurak",
+            "สุวรรณอนุรักษ์"
+          ],
+          "08404794": [
+            "Kasem",
+            "เกษม",
+            "Boonmeecharoen",
+            "บุญมีเจริญ"
+          ],
+          "08289800": [
+            "Pensri",
+            "เพ็ญศรี",
+            "Chaideesathit",
+            "ชัยดีสถิต"
+          ],
+          "08411017": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Chancharoenphol",
+            "จันทเจริญผล"
+          ],
+          "08432186": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Anchalisawang",
+            "อัญชลีสว่าง"
+          ],
+          "08776918": [
+            "Kris",
+            "กฤษ",
+            "Rajchongrak",
+            "ราชจงรัก"
+          ],
+          "08408500": [
+            "Kanyalak",
+            "กัญญาลักษณ์",
+            "Amphomngam",
+            "อัมพรงาม"
+          ],
+          "08222582": [
+            "Ngamchit",
+            "งามจิตร",
+            "Kittibunjai",
+            "กิตติบุญใจ"
+          ],
+          "08635498": [
+            "Anchali",
+            "อัญชลี",
+            "Anchalisuk",
+            "อัญชลีสุข"
+          ],
+          "08564469": [
+            "Ananda",
+            "อนันดา",
+            "Kaewsaiwong",
+            "แก้วใสวงศ์"
+          ],
+          "08522123": [
+            "Saran",
+            "สรัล",
+            "Chokdeengam",
+            "โชคดีงาม"
+          ],
+          "08293308": [
+            "Kitti",
+            "กิตติ",
+            "Anumanmani",
+            "อนุมานมณี"
+          ],
+          "08176319": [
+            "Phueng",
+            "ผึ้ง",
+            "Manisuk",
+            "มณีสุข"
+          ],
+          "08532544": [
+            "Sanit",
+            "สนิท",
+            "Kasemprasert",
+            "เกษมประเสริฐ"
+          ],
+          "08148633": [
+            "Duanphen",
+            "ดวงเพ็ญ",
+            "Chankiaokaji",
+            "จันทเขียวขจี"
+          ],
+          "08602005": [
+            "Sap",
+            "ทรัพย์",
+            "Chaicharoensoem",
+            "ชัยเจริญเสริม"
+          ],
+          "08851273": [
+            "Kris",
+            "กฤษ",
+            "Phatanuman",
+            "ภัทรอนุมาน"
+          ],
+          "08481240": [
+            "Niran",
+            "นิรันดร์",
+            "Phatcharoen",
+            "ภัทรเจริญ"
+          ],
+          "08188925": [
+            "Ritthirong",
+            "ฤทธิรงค์",
+            "Saelau",
+            "แซ่เล่า"
+          ],
+          "08154769": [
+            "Kantima",
+            "กานติมา",
+            "Prawong",
+            "ประวงศ์"
+          ],
+          "08765108": [
+            "Wiphan",
+            "วิพันธ์",
+            "Chaisaiwongs",
+            "ชัยสัยวงษ์"
+          ],
+          "08189216": [
+            "Awut",
+            "อาวุธ",
+            "Chanphinyo",
+            "จันทภิญโญ"
+          ],
+          "08152634": [
+            "Pimchanok",
+            "พิมพ์ชนก",
+            "Sombun",
+            "สมบุญ"
+          ],
+          "08346808": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Chaiyawongmani",
+            "ไชยามณี"
+          ],
+          "08830524": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Manimani",
+            "มณีมณี"
+          ],
+          "08991913": [
+            "Arthit",
+            "อาทิตย์",
+            "Anongkunchaloem",
+            "อนงค์เฉลิม"
+          ],
+          "08479665": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Praboonya",
+            "ประบุญญา"
+          ],
+          "08626737": [
+            "Chantara",
+            "จันทรา",
+            "Kiatkarawek",
+            "เกียรติการเวก"
+          ],
+          "08177575": [
+            "Pravat",
+            "ประวัติ",
+            "Chakanjai",
+            "ชากัญญ์ใจ"
+          ],
+          "08147802": [
+            "Waen",
+            "แหวน",
+            "Chaikasemkit",
+            "ชัยเกษม"
+          ],
+          "08105249": [
+            "Mongkol",
+            "มงคล",
+            "Amonaree",
+            "อมรอารี"
+          ],
+          "08433957": [
+            "Vachir",
+            "วชิร",
+            "Anuboonrueng",
+            "อนุบุญเรือง"
+          ],
+          "08348015": [
+            "Kraisee",
+            "ไกรสร",
+            "Anumanphinyo",
+            "อนุมานภิญโญ"
+          ],
+          "08439226": [
+            "Thanachart",
+            "ธนชาติ",
+            "Wischaemchoi",
+            "วิศแช้มช้อย"
+          ],
+          "08487893": [
+            "Khamron",
+            "คำรณ",
+            "Busarakhamchaloem",
+            "บุษราคัมเฉลิม"
           ]
         }
       },
@@ -7419,7 +10498,87 @@
         "08811816",
         "08755968",
         "00003219",
-        "08825917"
+        "08825917",
+        "08122621",
+        "08493049",
+        "08469223",
+        "08745619",
+        "08693299",
+        "08510800",
+        "08478470",
+        "08882842",
+        "08622378",
+        "08579239",
+        "08210010",
+        "08625149",
+        "08494825",
+        "08673388",
+        "08457247",
+        "08557223",
+        "08461289",
+        "08816583",
+        "08632737",
+        "08636294",
+        "08913397",
+        "08188067",
+        "08644077",
+        "08419415",
+        "08780774",
+        "08796094",
+        "08939728",
+        "08625274",
+        "08200289",
+        "08254326",
+        "08131060",
+        "08183800",
+        "08639610",
+        "08165788",
+        "08454351",
+        "08591995",
+        "08743087",
+        "08685656",
+        "08241668",
+        "08369965",
+        "08960611",
+        "08553585",
+        "08485505",
+        "08855553",
+        "08256845",
+        "08750989",
+        "08404794",
+        "08289800",
+        "08411017",
+        "08432186",
+        "08776918",
+        "08408500",
+        "08222582",
+        "08635498",
+        "08564469",
+        "08522123",
+        "08293308",
+        "08176319",
+        "08532544",
+        "08148633",
+        "08602005",
+        "08851273",
+        "08481240",
+        "08188925",
+        "08154769",
+        "08765108",
+        "08189216",
+        "08152634",
+        "08346808",
+        "08830524",
+        "08991913",
+        "08479665",
+        "08626737",
+        "08177575",
+        "08147802",
+        "08105249",
+        "08433957",
+        "08348015",
+        "08439226",
+        "08487893"
       ],
       "rationale": "Informal 'คลื่นเสียง' = dept KS.",
       "tags": [
@@ -7429,7 +10588,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g255",
@@ -7502,6 +10662,426 @@
             "ไพฑูรย์",
             "Chaikaewsai",
             "ชัยแก้วใส"
+          ],
+          "08734570": [
+            "Phaibun",
+            "ไพบูลย์",
+            "Apinyawat",
+            "อภิญญาวัฒน์"
+          ],
+          "08716274": [
+            "Chantara",
+            "จันทรา",
+            "Aphikobsook",
+            "อภิกอบสุข"
+          ],
+          "08153080": [
+            "Phichai",
+            "พิชัย",
+            "Suwankiaokaji",
+            "สุวรรณเขียวขจี"
+          ],
+          "08744465": [
+            "Lalana",
+            "ลลนา",
+            "Asneewongs",
+            "อัสนีวงษ์"
+          ],
+          "08240710": [
+            "Hom",
+            "หอม",
+            "Suwanaree",
+            "สุวรรณอารี"
+          ],
+          "08768498": [
+            "Pannika",
+            "ปัณณิกา",
+            "Chaichaloem",
+            "ชัยเฉลิม"
+          ],
+          "08781971": [
+            "Thanaphon",
+            "ธนพล",
+            "Phiprasert",
+            "พิประเสริฐ"
+          ],
+          "08250913": [
+            "Busaba",
+            "บุษบา",
+            "Ratanafa",
+            "รัตนฟ้า"
+          ],
+          "08591185": [
+            "Taeng",
+            "แตง",
+            "Thanaaromdee",
+            "ธนอารมณ์ดี"
+          ],
+          "08462438": [
+            "Uma",
+            "อุมา",
+            "Kiaokajijai",
+            "เขียวขจีใจ"
+          ],
+          "08247087": [
+            "Sopa",
+            "โสภา",
+            "Manijai",
+            "มณีใจ"
+          ],
+          "08760685": [
+            "Teerapat",
+            "ธีรพัฒน์",
+            "Bunkhaengkad",
+            "บุญเก่งกาจ"
+          ],
+          "08685653": [
+            "Piti",
+            "ปิติ",
+            "Trakun",
+            "ตระกูล"
+          ],
+          "08783668": [
+            "Kanlaya",
+            "กัลยา",
+            "Chaideesuk",
+            "ชัยดีสุข"
+          ],
+          "08150064": [
+            "Phueng",
+            "ผึ้ง",
+            "Charoenpholchot",
+            "เจริญผลโชติ"
+          ],
+          "08678299": [
+            "Waan",
+            "หวาน",
+            "Homklinsuk",
+            "หอมกลิ่นสุข"
+          ],
+          "08930633": [
+            "Chada",
+            "ชฎา",
+            "Channarongphat",
+            "ชาญณรงค์พัฒน์"
+          ],
+          "08208692": [
+            "Phoom",
+            "ภูมิ",
+            "Amondaorueng",
+            "อมรดาวเรือง"
+          ],
+          "08263398": [
+            "Phonphai",
+            "พรไพร",
+            "Chindawat",
+            "จินดาวัฒน์"
+          ],
+          "08141646": [
+            "Apichai",
+            "อภิชัย",
+            "Maningam",
+            "มณีงาม"
+          ],
+          "08337060": [
+            "Sujinda",
+            "สุจินดา",
+            "Anuraksa",
+            "อนุรักษา"
+          ],
+          "08196894": [
+            "Kitti",
+            "กิตติ",
+            "Busarakhamphat",
+            "บุษราคัมพัฒน์"
+          ],
+          "08619537": [
+            "Aroon",
+            "อรุณ",
+            "Chongrakmani",
+            "จงรักมณี"
+          ],
+          "08184130": [
+            "Kasem",
+            "เกษม",
+            "Jitranonsi",
+            "จิตรานนท์ศรี"
+          ],
+          "08938458": [
+            "Orachon",
+            "อรชร",
+            "Aphidaosai",
+            "อภิดาวใส"
+          ],
+          "08845401": [
+            "Kanya",
+            "กัญญา",
+            "Phatprasert",
+            "ภัทรประเสริฐ"
+          ],
+          "08621402": [
+            "Sopa",
+            "โสภา",
+            "Kasemsin",
+            "เกษมสินธุ์"
+          ],
+          "08812884": [
+            "Sanit",
+            "สนิท",
+            "Chaideecharoen",
+            "ชัยดีเจริญ"
+          ],
+          "08788780": [
+            "Decha",
+            "เดชา",
+            "Thanachaiwat",
+            "ธนชัยวัฒน์"
+          ],
+          "08828531": [
+            "Kong",
+            "ก้อง",
+            "Chaiyawongkun",
+            "ไชยากุล"
+          ],
+          "08997392": [
+            "Usanee",
+            "อุษณี",
+            "Sukan",
+            "สุกาญจน์"
+          ],
+          "08297664": [
+            "Phoom",
+            "ภูมิ",
+            "Areekun",
+            "อารีกุล"
+          ],
+          "08739605": [
+            "Pongkan",
+            "พงษ์กานต์",
+            "Daosaichaloem",
+            "ดาวใสเฉลิม"
+          ],
+          "08589824": [
+            "Theeraphop",
+            "ธีรภพ",
+            "Daoruengjai",
+            "ดาวเรืองใจ"
+          ],
+          "08321275": [
+            "Thongchai",
+            "ธงชัย",
+            "Wiskraisee",
+            "วิศไกรศรี"
+          ],
+          "08778294": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Chaideedi",
+            "ชัยดีดี"
+          ],
+          "08533227": [
+            "Somyot",
+            "สมยศ",
+            "Chaisonthong",
+            "ชัยสนธิ์ทอง"
+          ],
+          "08922424": [
+            "Lawana",
+            "ลาวัณย์",
+            "Wischaidee",
+            "วิศชัยดี"
+          ],
+          "08758646": [
+            "Wat",
+            "วัฒน์",
+            "Prachaiwat",
+            "ประชัยวัฒน์"
+          ],
+          "08207370": [
+            "Phairoj",
+            "ไพโรจน์",
+            "Anantrat",
+            "อนันต์รัตน์"
+          ],
+          "08448618": [
+            "Apsara",
+            "อัปสร",
+            "Saelau",
+            "แซ่เล่า"
+          ],
+          "08508134": [
+            "Vichit",
+            "วิจิตร",
+            "Apinyafa",
+            "อภิญญาฟ้า"
+          ],
+          "08991640": [
+            "Ritthirong",
+            "ฤทธิรงค์",
+            "Amarinkamchon",
+            "อมรินทร์กำจร"
+          ],
+          "08132280": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Thepjaingam",
+            "เทพใจงาม"
+          ],
+          "08863834": [
+            "Sanit",
+            "สนิท",
+            "Fahsaikamchon",
+            "ฟ้าใสกำจร"
+          ],
+          "08168460": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Boonyawong",
+            "บุญญาวงศ์"
+          ],
+          "08163858": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Amonphong",
+            "อมรพงศ์"
+          ],
+          "08716718": [
+            "Ritthirong",
+            "ฤทธิรงค์",
+            "Awutchot",
+            "อาวุทธ์โชติ"
+          ],
+          "08939853": [
+            "Wat",
+            "วัฒน์",
+            "Boonmeewong",
+            "บุญมีวงศ์"
+          ],
+          "08866197": [
+            "Chantana",
+            "จันทนา",
+            "Inthrisawang",
+            "อินทรีย์สว่าง"
+          ],
+          "08417446": [
+            "Taeng",
+            "แตง",
+            "Chansoem",
+            "จันทเสริม"
+          ],
+          "08751277": [
+            "Chet",
+            "เชษฐ์",
+            "Wisdi",
+            "วิศดี"
+          ],
+          "08152375": [
+            "Theeraphop",
+            "ธีรภพ",
+            "Rajanongkun",
+            "ราชอนงค์"
+          ],
+          "08943619": [
+            "Waan",
+            "หวาน",
+            "Chaemchoiwat",
+            "แช้มช้อยวัฒน์"
+          ],
+          "08428192": [
+            "Pongkan",
+            "พงษ์กานต์",
+            "Wischaisai",
+            "วิศชัยสัย"
+          ],
+          "08166799": [
+            "Vanida",
+            "วนิดา",
+            "Wisdaosai",
+            "วิศดาวใส"
+          ],
+          "08966477": [
+            "Anurak",
+            "อนุรักษ์",
+            "Sujaidi",
+            "สุใจดี"
+          ],
+          "08516156": [
+            "Ratapon",
+            "รัตพร",
+            "Maniboonya",
+            "มณีบุญญา"
+          ],
+          "08268814": [
+            "Krittin",
+            "กฤติน",
+            "Mahabusarakham",
+            "มหาบุษราคัม"
+          ],
+          "08994685": [
+            "Sanit",
+            "สนิท",
+            "Chiraanongkun",
+            "จิรอนงค์"
+          ],
+          "08235397": [
+            "Preed",
+            "ปรีดา",
+            "Amonkun",
+            "อมรกุล"
+          ],
+          "08949622": [
+            "Wipha",
+            "วิภา",
+            "Maniapinya",
+            "มณีอภิญญา"
+          ],
+          "08171048": [
+            "Kantima",
+            "กานติมา",
+            "Amoncharoen",
+            "อมรเจริญ"
+          ],
+          "08530059": [
+            "Chonlathee",
+            "ชลธี",
+            "Anongkunsin",
+            "อนงค์สินธุ์"
+          ],
+          "08941160": [
+            "Som",
+            "ส้ม",
+            "Kasemchaidee",
+            "เกษมชัยดี"
+          ],
+          "08736672": [
+            "Phaibun",
+            "ไพบูลย์",
+            "Prakaewsai",
+            "ประแก้วใส"
+          ],
+          "08255086": [
+            "Sukrit",
+            "สุกฤต",
+            "Kanphinyo",
+            "กาญจน์ภิญโญ"
+          ],
+          "08368243": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Apinyaraksa",
+            "อภิญญารักษา"
+          ],
+          "08356078": [
+            "Nathamon",
+            "ณฐามน",
+            "Chaideewat",
+            "ชัยดีวัฒน์"
+          ],
+          "08584352": [
+            "Ying",
+            "หญิง",
+            "Jaingamsawang",
+            "ใจงามสว่าง"
           ]
         }
       },
@@ -7523,9 +11103,69 @@
         "08240710",
         "08768498",
         "08781971",
+        "08250913",
         "08591185",
         "08462438",
-        "08247087"
+        "08247087",
+        "08760685",
+        "08685653",
+        "08783668",
+        "08150064",
+        "08678299",
+        "08930633",
+        "08208692",
+        "08263398",
+        "08141646",
+        "08337060",
+        "08196894",
+        "08619537",
+        "08184130",
+        "08938458",
+        "08845401",
+        "08621402",
+        "08812884",
+        "08788780",
+        "08828531",
+        "08997392",
+        "08297664",
+        "08739605",
+        "08589824",
+        "08321275",
+        "08778294",
+        "08533227",
+        "08922424",
+        "08758646",
+        "08207370",
+        "08448618",
+        "08508134",
+        "08991640",
+        "08132280",
+        "08863834",
+        "08168460",
+        "08163858",
+        "08716718",
+        "08939853",
+        "08866197",
+        "08417446",
+        "08751277",
+        "08152375",
+        "08943619",
+        "08428192",
+        "08166799",
+        "08966477",
+        "08516156",
+        "08268814",
+        "08994685",
+        "08235397",
+        "08949622",
+        "08171048",
+        "08530059",
+        "08941160",
+        "08736672",
+        "08255086",
+        "08368243",
+        "08356078",
+        "08584352"
       ],
       "rationale": "Informal 'วงโคจร' = dept WK.",
       "tags": [
@@ -7535,7 +11175,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g258",
@@ -7608,6 +11249,786 @@
             "สรัญญา",
             "Mahaamarin",
             "มหาอมรินทร์"
+          ],
+          "08630029": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Kaewkanfa",
+            "แก้วกาญจน์ฟ้า"
+          ],
+          "08475074": [
+            "Prasert",
+            "ประเสริฐ",
+            "Kittipongprasert",
+            "กิตติประเสริฐ"
+          ],
+          "00009202": [
+            "Kitti",
+            "กิตติ",
+            "Anantphithak",
+            "อนันต์พิทักษ์"
+          ],
+          "08667641": [
+            "Boonchu",
+            "บุญชู",
+            "Boonyanam",
+            "บุญญานาม"
+          ],
+          "00007115": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Phikobsook",
+            "พิกอบสุข"
+          ],
+          "08958338": [
+            "Yadthip",
+            "หยาดทิพย์",
+            "Anumanwong",
+            "อนุมานวงศ์"
+          ],
+          "00003058": [
+            "Ruangsak",
+            "เรืองศักดิ์",
+            "Areeprasert",
+            "อารีประเสริฐ"
+          ],
+          "08981678": [
+            "Jirapat",
+            "จิรภัทร",
+            "Jaidiwong",
+            "ใจดีวงศ์"
+          ],
+          "08360264": [
+            "Direk",
+            "ดิเรก",
+            "Athichaidee",
+            "อธิชัยดี"
+          ],
+          "08451951": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Chankittipong",
+            "จันทกิตติ"
+          ],
+          "08713784": [
+            "Darika",
+            "ดาริกา",
+            "Chiraboonnam",
+            "จิรบุญนำ"
+          ],
+          "00005441": [
+            "Orachon",
+            "อรชร",
+            "Bunmakchai",
+            "บุญมาชัย"
+          ],
+          "08414525": [
+            "Aroon",
+            "อรุณ",
+            "Bunamarin",
+            "บุญอมรินทร์"
+          ],
+          "08459587": [
+            "Anurak",
+            "อนุรักษ์",
+            "Suwananant",
+            "สุวรรณอนันต์"
+          ],
+          "08608998": [
+            "Paitoon",
+            "ไพฑูรย์",
+            "Kiaokajisi",
+            "เขียวขจีศรี"
+          ],
+          "08651930": [
+            "Thanaphon",
+            "ธนพล",
+            "Bunmakphithak",
+            "บุญมาพิทักษ์"
+          ],
+          "08933787": [
+            "Saengdao",
+            "แสงดาว",
+            "Areephat",
+            "อารีพัฒน์"
+          ],
+          "08364560": [
+            "Issara",
+            "อิสระ",
+            "Phibuathong",
+            "พิบัวทอง"
+          ],
+          "08725292": [
+            "Ongart",
+            "องอาจ",
+            "Anongkunsuk",
+            "อนงค์สุข"
+          ],
+          "08676977": [
+            "Darika",
+            "ดาริกา",
+            "Bunfahsai",
+            "บุญฟ้าใส"
+          ],
+          "08755687": [
+            "Wichian",
+            "วิเชียร",
+            "Wisamphom",
+            "วิศอัมพร"
+          ],
+          "08622795": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Samdaosai",
+            "สัมดาวใส"
+          ],
+          "08821341": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Chaicharoenmani",
+            "ชัยเจริญมณี"
+          ],
+          "08191811": [
+            "Niran",
+            "นิรันดร์",
+            "Sriasnee",
+            "ศรีอัสนี"
+          ],
+          "08364650": [
+            "Koh",
+            "เกาะ",
+            "Kobsookkun",
+            "กอบสุขกุล"
+          ],
+          "08261211": [
+            "Kris",
+            "กฤษ",
+            "Srisi",
+            "ศรีศรี"
+          ],
+          "08284000": [
+            "Patcharee",
+            "พัชรี",
+            "Phongwong",
+            "พงวงศ์"
+          ],
+          "08788942": [
+            "Santichai",
+            "สันติชัย",
+            "Apinyasuk",
+            "อภิญญาสุข"
+          ],
+          "08784256": [
+            "Kanyalak",
+            "กัญญาลักษณ์",
+            "Anongkunnam",
+            "อนงค์นาม"
+          ],
+          "08762762": [
+            "Thanin",
+            "ทนิน",
+            "Bunkasemkit",
+            "บุญเกษม"
+          ],
+          "08256730": [
+            "Yu-Pha",
+            "ยุพา",
+            "Thepboonrueng",
+            "เทพบุญเรือง"
+          ],
+          "08541160": [
+            "Kanya",
+            "กัญญา",
+            "Athijaingam",
+            "อธิใจงาม"
+          ],
+          "08610107": [
+            "Ananda",
+            "อนันดา",
+            "Kiatsathit",
+            "เกียรติสถิต"
+          ],
+          "08559724": [
+            "Rattana",
+            "รัตตนา",
+            "Bunchot",
+            "บุญโชติ"
+          ],
+          "08721904": [
+            "Kong",
+            "ก้อง",
+            "Phromaree",
+            "พรหมอารี"
+          ],
+          "08171848": [
+            "Kantima",
+            "กานติมา",
+            "Karawekprasert",
+            "การเวกประเสริฐ"
+          ],
+          "08868260": [
+            "Chada",
+            "ชฎา",
+            "Boonruengwongs",
+            "บุญเรืองวงษ์"
+          ],
+          "08511102": [
+            "Kongphop",
+            "ก้องภพ",
+            "Phisi",
+            "พิศรี"
+          ],
+          "08530275": [
+            "Charoon",
+            "จรูญ",
+            "Jaingamjai",
+            "ใจงามใจ"
+          ],
+          "08433531": [
+            "Teerapat",
+            "ธีรพัฒน์",
+            "Boonnambun",
+            "บุญนำบุญ"
+          ],
+          "08748479": [
+            "Kongphop",
+            "ก้องภพ",
+            "Somkittipong",
+            "สมกิตติ"
+          ],
+          "08882143": [
+            "Anurak",
+            "อนุรักษ์",
+            "Athisathit",
+            "อธิสถิต"
+          ],
+          "08475616": [
+            "Sukhum",
+            "สุขุม",
+            "Jaikieowbun",
+            "ใจเขียวบุญ"
+          ],
+          "08795663": [
+            "Saengdao",
+            "แสงดาว",
+            "Athichai",
+            "อธิชัย"
+          ],
+          "08941624": [
+            "Piti",
+            "ปิติ",
+            "Boonruengngam",
+            "บุญเรืองงาม"
+          ],
+          "08187292": [
+            "Orachon",
+            "อรชร",
+            "Thepkraisee",
+            "เทพไกรศรี"
+          ],
+          "08336189": [
+            "Nattaphong",
+            "ณัฐพงษ์",
+            "Shinwara",
+            "ชินวรา"
+          ],
+          "08319363": [
+            "Anchali",
+            "อัญชลี",
+            "Jaidiphat",
+            "ใจดีพัฒน์"
+          ],
+          "08230856": [
+            "Lamai",
+            "ละไม",
+            "Thanarat",
+            "ธนรัตน์"
+          ],
+          "08782755": [
+            "Ravee",
+            "ระวี",
+            "Areewong",
+            "อารีวงศ์"
+          ],
+          "08211115": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Kiatchongrak",
+            "เกียรติจงรัก"
+          ],
+          "08425761": [
+            "Lalana",
+            "ลลนา",
+            "Awutsin",
+            "อาวุทธ์สินธุ์"
+          ],
+          "08586142": [
+            "Kanchana",
+            "กาญจนา",
+            "Kiaokajiwat",
+            "เขียวขจีวัฒน์"
+          ],
+          "08141477": [
+            "Prasert",
+            "ประเสริฐ",
+            "Asneesawang",
+            "อัสนีสว่าง"
+          ],
+          "08540258": [
+            "Ukrit",
+            "อุกฤษฎ์",
+            "Athiamarin",
+            "อธิอมรินทร์"
+          ],
+          "08730775": [
+            "Boonruang",
+            "บุญเรือง",
+            "Chaideejai",
+            "ชัยดีใจ"
+          ],
+          "08694505": [
+            "Rachata",
+            "ราชตะ",
+            "Anantngam",
+            "อนันต์งาม"
+          ],
+          "08717203": [
+            "Malee",
+            "มาลี",
+            "Prachai",
+            "ประชัย"
+          ],
+          "08283773": [
+            "Tawin",
+            "ถวิน",
+            "Chanwong",
+            "จันทวงศ์"
+          ],
+          "08368745": [
+            "Thinnakorn",
+            "ทินกร",
+            "Chiradaosai",
+            "จิรดาวใส"
+          ],
+          "08495796": [
+            "Isara",
+            "อิสรา",
+            "Bunsi",
+            "บุญศรี"
+          ],
+          "08121186": [
+            "Suppadet",
+            "ศุภเดช",
+            "Thepsin",
+            "เทพสินธุ์"
+          ],
+          "08878853": [
+            "Nim",
+            "นิ่ม",
+            "Chaisaisawang",
+            "ชัยสัยสว่าง"
+          ],
+          "08297735": [
+            "Kanchana",
+            "กาญจนา",
+            "Phatkiaokaji",
+            "ภัทรเขียวขจี"
+          ],
+          "08149105": [
+            "Phloi",
+            "พลอย",
+            "Daoruengchot",
+            "ดาวเรืองโชติ"
+          ],
+          "08370474": [
+            "Kitti",
+            "กิตติ",
+            "Rajfa",
+            "ราชฟ้า"
+          ],
+          "08137397": [
+            "Phussadee",
+            "พุสดี",
+            "Ratanafahsai",
+            "รัตนฟ้าใส"
+          ],
+          "08146329": [
+            "Phairoj",
+            "ไพโรจน์",
+            "Charoenphol",
+            "เจริญผล"
+          ],
+          "08476715": [
+            "Kamala",
+            "กมลา",
+            "Kraiseejai",
+            "ไกรศรีใจ"
+          ],
+          "08414062": [
+            "Usanee",
+            "อุษณี",
+            "Khaengkadmani",
+            "เก่งกาจมณี"
+          ],
+          "08137216": [
+            "Kovit",
+            "โกวิท",
+            "Karawekbun",
+            "การเวกบุญ"
+          ],
+          "08381947": [
+            "Tanthira",
+            "ธันทิรา",
+            "Chairat",
+            "ชัยรัตน์"
+          ],
+          "08847059": [
+            "Satja",
+            "สัจจะ",
+            "Samawut",
+            "สัมอาวุทธ์"
+          ],
+          "08985134": [
+            "Ratapon",
+            "รัตพร",
+            "Watcharacharoen",
+            "วัชรเจริญ"
+          ],
+          "08301094": [
+            "Awut",
+            "อาวุธ",
+            "Wiswong",
+            "วิศวงศ์"
+          ],
+          "08979536": [
+            "Sakchai",
+            "ศักดิ์ชัย",
+            "Athicharoen",
+            "อธิเจริญ"
+          ],
+          "08521819": [
+            "Kris",
+            "กฤษ",
+            "Theparthitkul",
+            "เทพอาทิตย์"
+          ],
+          "08121725": [
+            "Rai",
+            "รัศมี",
+            "Charoenphinyo",
+            "เจริญภิญโญ"
+          ],
+          "08476951": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Subusarakham",
+            "สุบุษราคัม"
+          ],
+          "08547269": [
+            "Malee",
+            "มาลี",
+            "Channgam",
+            "จันทงาม"
+          ],
+          "08114369": [
+            "Natthaphon",
+            "ณัฏฐพล",
+            "Kiataree",
+            "เกียรติอารี"
+          ],
+          "08198598": [
+            "Kantima",
+            "กานติมา",
+            "Chaithong",
+            "ชัยทอง"
+          ],
+          "08196867": [
+            "Orachon",
+            "อรชร",
+            "Maniphat",
+            "มณีพัฒน์"
+          ],
+          "08711577": [
+            "Mongkol",
+            "มงคล",
+            "Sukaewprasert",
+            "สุแก้วประเสริฐ"
+          ],
+          "08759175": [
+            "Phitsamai",
+            "พิศสมัย",
+            "Phromchakan",
+            "พรหมชากัญญ์"
+          ],
+          "08824002": [
+            "Ravee",
+            "ระวี",
+            "Sangthong",
+            "แสงทอง"
+          ],
+          "08678475": [
+            "Koh",
+            "เกาะ",
+            "Kaewsaingam",
+            "แก้วใสงาม"
+          ],
+          "08258331": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Anuchannarong",
+            "อนุชาญณรงค์"
+          ],
+          "08334094": [
+            "Santichai",
+            "สันติชัย",
+            "Buathongcharoen",
+            "บัวทองเจริญ"
+          ],
+          "08667070": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Akarachai",
+            "อัครชัย"
+          ],
+          "08481926": [
+            "Pim",
+            "พิม",
+            "Chaicharoenraksa",
+            "ชัยเจริญรักษา"
+          ],
+          "08390537": [
+            "Sap",
+            "ทรัพย์",
+            "Ratanasoem",
+            "รัตนเสริม"
+          ],
+          "08762330": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Chiraraksa",
+            "จิรรักษา"
+          ],
+          "08824868": [
+            "Kanyalak",
+            "กัญญาลักษณ์",
+            "Kaewsaisi",
+            "แก้วใสศรี"
+          ],
+          "08105750": [
+            "Sorapong",
+            "สรพงษ์",
+            "Akarachakan",
+            "อัครชากัญญ์"
+          ],
+          "08106724": [
+            "Ratanakorn",
+            "รัตนากร",
+            "Anantsoem",
+            "อนันต์เสริม"
+          ],
+          "08396280": [
+            "Nongyao",
+            "นงเยาว์",
+            "Watcharathong",
+            "วัชรทอง"
+          ],
+          "08188068": [
+            "Suppadet",
+            "ศุภเดช",
+            "Khaengkadfa",
+            "เก่งกาจฟ้า"
+          ],
+          "08508235": [
+            "Narong",
+            "ณรงค์",
+            "Areekamchon",
+            "อารีกำจร"
+          ],
+          "08433581": [
+            "Oranong",
+            "อรอนงค์",
+            "Chongrakphinyo",
+            "จงรักภิญโญ"
+          ],
+          "08728628": [
+            "Phuwadon",
+            "ภูวดล",
+            "Chaisaingam",
+            "ชัยสัยงาม"
+          ],
+          "08127728": [
+            "Phichai",
+            "พิชัย",
+            "Chakriibun",
+            "จักรีบุญ"
+          ],
+          "08647606": [
+            "Vanida",
+            "วนิดา",
+            "Chakriichaloem",
+            "จักรีเฉลิม"
+          ],
+          "08294843": [
+            "Lawana",
+            "ลาวัณย์",
+            "Manijaidi",
+            "มณีใจดี"
+          ],
+          "08796953": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Chindachaloem",
+            "จินดาเฉลิม"
+          ],
+          "08216299": [
+            "Wiphan",
+            "วิพันธ์",
+            "Anantraksa",
+            "อนันต์รักษา"
+          ],
+          "08988086": [
+            "Umporn",
+            "อัมพร",
+            "Anukaewkan",
+            "อนุแก้วกาญจน์"
+          ],
+          "08410853": [
+            "Jirapat",
+            "จิรภัทร",
+            "Phatphat",
+            "ภัทรพัฒน์"
+          ],
+          "08195011": [
+            "Anan",
+            "อนันต์",
+            "Chankaewkan",
+            "จันทแก้วกาญจน์"
+          ],
+          "08278236": [
+            "Adithep",
+            "อดิเทพ",
+            "Chaemchoikun",
+            "แช้มช้อยกุล"
+          ],
+          "08201332": [
+            "Phichai",
+            "พิชัย",
+            "Boonyabun",
+            "บุญญาบุญ"
+          ],
+          "08976113": [
+            "Prem",
+            "เปรม",
+            "Ratanaawut",
+            "รัตนอาวุทธ์"
+          ],
+          "08875136": [
+            "Usanee",
+            "อุษณี",
+            "Phikaewprasert",
+            "พิแก้วประเสริฐ"
+          ],
+          "08712397": [
+            "Waen",
+            "แหวน",
+            "Suwanwongs",
+            "สุวรรณวงษ์"
+          ],
+          "08474787": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Amphomsin",
+            "อัมพรสินธุ์"
+          ],
+          "08761183": [
+            "Yen",
+            "เย็น",
+            "Phatchokdee",
+            "ภัทรโชคดี"
+          ],
+          "08908550": [
+            "Panit",
+            "พาณิช",
+            "Anukittipong",
+            "อนุกิตติ"
+          ],
+          "08150886": [
+            "Chaiya",
+            "ไชยา",
+            "Anumanjai",
+            "อนุมานใจ"
+          ],
+          "08949234": [
+            "Sanit",
+            "สนิท",
+            "Kaewsaisin",
+            "แก้วใสสินธุ์"
+          ],
+          "08792049": [
+            "Yu-Pha",
+            "ยุพา",
+            "Boonnamsawang",
+            "บุญนำสว่าง"
+          ],
+          "08328319": [
+            "Rai",
+            "รัศมี",
+            "Phongkasemkit",
+            "พงเกษม"
+          ],
+          "08610260": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Akaraanchali",
+            "อัครอัญชลี"
+          ],
+          "08516322": [
+            "Klaharn",
+            "กล้าหาญ",
+            "Phasuk",
+            "ผาสุก"
+          ],
+          "08322432": [
+            "Veera",
+            "วีระ",
+            "Apinyasoem",
+            "อภิญญาเสริม"
+          ],
+          "08251652": [
+            "Wiriya",
+            "วิริยะ",
+            "Bunboonnam",
+            "บุญบุญนำ"
+          ],
+          "08474350": [
+            "Yu-Pha",
+            "ยุพา",
+            "Kraiseemani",
+            "ไกรศรีมณี"
+          ],
+          "08215868": [
+            "Yotthakarn",
+            "ยศกร",
+            "Watcharajai",
+            "วัชรใจ"
+          ],
+          "08744292": [
+            "Adithep",
+            "อดิเทพ",
+            "Anumansawang",
+            "อนุมานสว่าง"
+          ],
+          "08910063": [
+            "Som",
+            "ส้ม",
+            "Anchalicharoen",
+            "อัญชลีเจริญ"
+          ],
+          "08106099": [
+            "Nathamon",
+            "ณฐามน",
+            "Apinyachai",
+            "อภิญญาชัย"
           ]
         }
       },
@@ -7631,7 +12052,127 @@
         "00003058",
         "08981678",
         "08360264",
-        "08451951"
+        "08451951",
+        "08713784",
+        "00005441",
+        "08414525",
+        "08459587",
+        "08608998",
+        "08651930",
+        "08933787",
+        "08364560",
+        "08725292",
+        "08676977",
+        "08755687",
+        "08622795",
+        "08821341",
+        "08191811",
+        "08364650",
+        "08261211",
+        "08284000",
+        "08788942",
+        "08784256",
+        "08762762",
+        "08256730",
+        "08541160",
+        "08610107",
+        "08559724",
+        "08721904",
+        "08171848",
+        "08868260",
+        "08511102",
+        "08530275",
+        "08433531",
+        "08748479",
+        "08882143",
+        "08475616",
+        "08795663",
+        "08941624",
+        "08187292",
+        "08336189",
+        "08319363",
+        "08230856",
+        "08782755",
+        "08211115",
+        "08425761",
+        "08586142",
+        "08141477",
+        "08540258",
+        "08730775",
+        "08694505",
+        "08717203",
+        "08283773",
+        "08368745",
+        "08495796",
+        "08121186",
+        "08878853",
+        "08297735",
+        "08149105",
+        "08370474",
+        "08137397",
+        "08146329",
+        "08476715",
+        "08414062",
+        "08137216",
+        "08381947",
+        "08847059",
+        "08985134",
+        "08301094",
+        "08979536",
+        "08521819",
+        "08121725",
+        "08476951",
+        "08547269",
+        "08114369",
+        "08198598",
+        "08196867",
+        "08711577",
+        "08759175",
+        "08824002",
+        "08678475",
+        "08258331",
+        "08334094",
+        "08667070",
+        "08481926",
+        "08390537",
+        "08762330",
+        "08824868",
+        "08105750",
+        "08106724",
+        "08396280",
+        "08188068",
+        "08508235",
+        "08433581",
+        "08728628",
+        "08127728",
+        "08647606",
+        "08294843",
+        "08796953",
+        "08216299",
+        "08988086",
+        "08410853",
+        "08195011",
+        "08278236",
+        "08201332",
+        "08976113",
+        "08875136",
+        "08712397",
+        "08474787",
+        "08761183",
+        "08908550",
+        "08150886",
+        "08949234",
+        "08792049",
+        "08328319",
+        "08610260",
+        "08516322",
+        "08322432",
+        "08251652",
+        "08474350",
+        "08215868",
+        "08744292",
+        "08910063",
+        "08106099"
       ],
       "rationale": "Informal 'SaiFah' = dept SF.",
       "tags": [
@@ -7641,7 +12182,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g259",
@@ -7714,6 +12256,726 @@
             "ชาตรี",
             "Bunsoem",
             "บุญเสริม"
+          ],
+          "08321470": [
+            "Kovit",
+            "โกวิท",
+            "Mahamani",
+            "มหามณี"
+          ],
+          "08922977": [
+            "Nangnoi",
+            "นางน้อย",
+            "Phongdaosai",
+            "พงดาวใส"
+          ],
+          "08676180": [
+            "Kittichat",
+            "กิตติชาติ",
+            "Arthitkulchaloem",
+            "อาทิตย์เฉลิม"
+          ],
+          "08372403": [
+            "Sunee",
+            "สุณี",
+            "Sringam",
+            "ศรีงาม"
+          ],
+          "08232990": [
+            "Apichai",
+            "อภิชัย",
+            "Thanabun",
+            "ธนบุญ"
+          ],
+          "08224942": [
+            "Kanya",
+            "กัญญา",
+            "Apinyamani",
+            "อภิญญามณี"
+          ],
+          "08282649": [
+            "Thanaphon",
+            "ธนพล",
+            "Phichaiyawong",
+            "พิไชยา"
+          ],
+          "08547462": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Aromdeejai",
+            "อารมณ์ดีใจ"
+          ],
+          "08171530": [
+            "Krittin",
+            "กฤติน",
+            "Anucharoen",
+            "อนุเจริญ"
+          ],
+          "08936711": [
+            "Som",
+            "ส้ม",
+            "Phromkan",
+            "พรหมกาญจน์"
+          ],
+          "08187336": [
+            "Ram",
+            "ราม",
+            "Mahakittipong",
+            "มหากิตติ"
+          ],
+          "08727829": [
+            "Apsara",
+            "อัปสร",
+            "Anongkunphat",
+            "อนงค์พัฒน์"
+          ],
+          "08617677": [
+            "Kwang",
+            "คะวัง",
+            "Kiatkamjornngam",
+            "เกียรติกำจรงาม"
+          ],
+          "08774360": [
+            "Veera",
+            "วีระ",
+            "Chaichokdee",
+            "ชัยโชคดี"
+          ],
+          "08577531": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Fahsaithong",
+            "ฟ้าใสทอง"
+          ],
+          "08802681": [
+            "Tassanee",
+            "ทัศนีย์",
+            "Maniphong",
+            "มณีพงศ์"
+          ],
+          "08763218": [
+            "Vasin",
+            "วศิน",
+            "Amonanongkun",
+            "อมรอนงค์"
+          ],
+          "08770721": [
+            "Yut",
+            "ยุทธ",
+            "Kobsooksuk",
+            "กอบสุขสุข"
+          ],
+          "08611242": [
+            "Thanasak",
+            "ธนศักดิ์",
+            "Maniamarin",
+            "มณีอมรินทร์"
+          ],
+          "08127795": [
+            "Saengdao",
+            "แสงดาว",
+            "Tancharoen",
+            "ตันเจริญ"
+          ],
+          "08774991": [
+            "Chatri",
+            "ชาตรี",
+            "Boonyasoem",
+            "บุญญาเสริม"
+          ],
+          "08953181": [
+            "Atchara",
+            "อัจฉรา",
+            "Rajfahsai",
+            "ราชฟ้าใส"
+          ],
+          "08204886": [
+            "Ratanakorn",
+            "รัตนากร",
+            "Chaemchoirat",
+            "แช้มช้อยรัตน์"
+          ],
+          "08705502": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Akarasuk",
+            "อัครสุข"
+          ],
+          "08546336": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Manikan",
+            "มณีกาญจน์"
+          ],
+          "08980631": [
+            "Charoon",
+            "จรูญ",
+            "Aphiboonmee",
+            "อภิบุญมี"
+          ],
+          "08672743": [
+            "Laddawan",
+            "ลัดดาวรรณ",
+            "Kasembun",
+            "เกษมบุญ"
+          ],
+          "08804059": [
+            "Anchali",
+            "อัญชลี",
+            "Asneesi",
+            "อัสนีศรี"
+          ],
+          "08828691": [
+            "Thanida",
+            "ธนิดา",
+            "Amonapinya",
+            "อมรอภิญญา"
+          ],
+          "08540649": [
+            "Nim",
+            "นิ่ม",
+            "Amonkasemkit",
+            "อมรเกษม"
+          ],
+          "08954634": [
+            "Thanin",
+            "ทนิน",
+            "Aphiboonya",
+            "อภิบุญญา"
+          ],
+          "08564954": [
+            "Dokrak",
+            "ดอกรัก",
+            "Karaweksoem",
+            "การเวกเสริม"
+          ],
+          "08196783": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Chaisonkun",
+            "ชัยสนธิ์กุล"
+          ],
+          "08557406": [
+            "Kantima",
+            "กานติมา",
+            "Bunchaicharoen",
+            "บุญชัยเจริญ"
+          ],
+          "08431775": [
+            "Kanchana",
+            "กาญจนา",
+            "Sukamchon",
+            "สุกำจร"
+          ],
+          "08983740": [
+            "Phailin",
+            "ไพลิน",
+            "Chakriikamchon",
+            "จักรีกำจร"
+          ],
+          "08458672": [
+            "Montra",
+            "มนตรา",
+            "Buathongchaloem",
+            "บัวทองเฉลิม"
+          ],
+          "08144031": [
+            "Kraisee",
+            "ไกรสร",
+            "Chaiaromdee",
+            "ชัยอารมณ์ดี"
+          ],
+          "08778696": [
+            "Suphawadee",
+            "สุภาวดี",
+            "Phatfa",
+            "ภัทรฟ้า"
+          ],
+          "08673166": [
+            "Anchali",
+            "อัญชลี",
+            "Thepprasert",
+            "เทพประเสริฐ"
+          ],
+          "08101780": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Kandi",
+            "กาญจน์ดี"
+          ],
+          "08368029": [
+            "Thinnakorn",
+            "ทินกร",
+            "Narachannarong",
+            "นราชาญณรงค์"
+          ],
+          "08602547": [
+            "Ruangrit",
+            "เรืองฤทธิ์",
+            "Bunmakfa",
+            "บุญมาฟ้า"
+          ],
+          "08335708": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Amonduangkamol",
+            "อมรดวงกมล"
+          ],
+          "08193244": [
+            "Yothaka",
+            "โยธกา",
+            "Amphomsawang",
+            "อัมพรสว่าง"
+          ],
+          "08315414": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Amarinrat",
+            "อมรินทร์รัตน์"
+          ],
+          "08922316": [
+            "Vichit",
+            "วิจิตร",
+            "Thanachakrii",
+            "ธนจักรี"
+          ],
+          "08911722": [
+            "Veera",
+            "วีระ",
+            "Phongasnee",
+            "พงอัสนี"
+          ],
+          "08428798": [
+            "Kovit",
+            "โกวิท",
+            "Jaikieow",
+            "ใจเขียว"
+          ],
+          "08284808": [
+            "Badin",
+            "บดินทร์",
+            "Chaisuk",
+            "ชัยสุข"
+          ],
+          "08282432": [
+            "Prija",
+            "พฤกษา",
+            "Manifa",
+            "มณีฟ้า"
+          ],
+          "08256623": [
+            "Kongphop",
+            "ก้องภพ",
+            "Aromdee",
+            "อารมณ์ดี"
+          ],
+          "08712689": [
+            "Phichai",
+            "พิชัย",
+            "Phichakrii",
+            "พิจักรี"
+          ],
+          "08941913": [
+            "Kulap",
+            "กุหลาบ",
+            "Thepchaiwat",
+            "เทพชัยวัฒน์"
+          ],
+          "08215266": [
+            "Phuwadon",
+            "ภูวดล",
+            "Aphiarthitkul",
+            "อภิอาทิตย์"
+          ],
+          "08426204": [
+            "Wat",
+            "วัฒน์",
+            "Kannam",
+            "กาญจน์นาม"
+          ],
+          "08920068": [
+            "Kanlaya",
+            "กัลยา",
+            "Daosaisoem",
+            "ดาวใสเสริม"
+          ],
+          "08803357": [
+            "Orachon",
+            "อรชร",
+            "Praanuman",
+            "ประอนุมาน"
+          ],
+          "08614946": [
+            "Krairoek",
+            "ไกรฤกษ์",
+            "Bunmaksi",
+            "บุญมาศรี"
+          ],
+          "08777846": [
+            "Chakri",
+            "จักรี",
+            "Chaisonchot",
+            "ชัยสนธิ์โชติ"
+          ],
+          "08658071": [
+            "Phaibun",
+            "ไพบูลย์",
+            "Kasemkit",
+            "เกษม"
+          ],
+          "08718269": [
+            "Ying",
+            "หญิง",
+            "Anchaliwongs",
+            "อัญชลีวงษ์"
+          ],
+          "08307968": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Praasnee",
+            "ประอัสนี"
+          ],
+          "08779959": [
+            "Songpol",
+            "ทรงพล",
+            "Karaweksi",
+            "การเวกศรี"
+          ],
+          "08727620": [
+            "Kanok",
+            "กนก",
+            "Anuchai",
+            "อนุชัย"
+          ],
+          "08857331": [
+            "Yut",
+            "ยุทธ",
+            "Amonsawang",
+            "อมรสว่าง"
+          ],
+          "08852863": [
+            "Phueng",
+            "ผึ้ง",
+            "Kiatfa",
+            "เกียรติฟ้า"
+          ],
+          "08862251": [
+            "Darika",
+            "ดาริกา",
+            "Phongkan",
+            "พงกาญจน์"
+          ],
+          "08394580": [
+            "Kannika",
+            "กัณณิกา",
+            "Chanboonmee",
+            "จันทบุญมี"
+          ],
+          "08947835": [
+            "Kasem",
+            "เกษม",
+            "Chaemchoikamchon",
+            "แช้มช้อยกำจร"
+          ],
+          "08537453": [
+            "Chakri",
+            "จักรี",
+            "Mahaaromdee",
+            "มหาอารมณ์ดี"
+          ],
+          "08887711": [
+            "Ekkaluck",
+            "เอกลักษณ์",
+            "Charoenchaloem",
+            "เจริญเฉลิม"
+          ],
+          "08430403": [
+            "Sopa",
+            "โสภา",
+            "Chaison",
+            "ชัยสนธิ์"
+          ],
+          "08104815": [
+            "Sukrit",
+            "สุกฤต",
+            "Phromdaosai",
+            "พรหมดาวใส"
+          ],
+          "08414170": [
+            "Ngamchit",
+            "งามจิตร",
+            "Manichinda",
+            "มณีจินดา"
+          ],
+          "08985089": [
+            "Somta",
+            "สมตา",
+            "Watcharajaikieow",
+            "วัชรใจเขียว"
+          ],
+          "08183552": [
+            "Phonphai",
+            "พรไพร",
+            "Akarajai",
+            "อัครใจ"
+          ],
+          "08683397": [
+            "Darha",
+            "ดาหลา",
+            "Apinyasoem",
+            "อภิญญาเสริม"
+          ],
+          "08931784": [
+            "Prayut",
+            "ประยุทธ์",
+            "Homklinsawang",
+            "หอมกลิ่นสว่าง"
+          ],
+          "08557441": [
+            "Piyanan",
+            "ปิยนันท์",
+            "Phidi",
+            "พิดี"
+          ],
+          "08192229": [
+            "Songpol",
+            "ทรงพล",
+            "Amonfa",
+            "อมรฟ้า"
+          ],
+          "08948643": [
+            "Natthaphon",
+            "ณัฏฐพล",
+            "Apinyabun",
+            "อภิญญาบุญ"
+          ],
+          "08277836": [
+            "Yuthana",
+            "ยุทธนา",
+            "Akaraphithak",
+            "อัครพิทักษ์"
+          ],
+          "08615850": [
+            "Somta",
+            "สมตา",
+            "Suamarin",
+            "สุอมรินทร์"
+          ],
+          "08917332": [
+            "Thanya",
+            "ธัญญา",
+            "Watcharachaiyawong",
+            "วัชรไชยา"
+          ],
+          "08624491": [
+            "Yothaka",
+            "โยธกา",
+            "Wisduangkamol",
+            "วิศดวงกมล"
+          ],
+          "08982974": [
+            "Badin",
+            "บดินทร์",
+            "Karawekngam",
+            "การเวกงาม"
+          ],
+          "08969639": [
+            "Krid",
+            "กฤต",
+            "Daosaichot",
+            "ดาวใสโชติ"
+          ],
+          "08779993": [
+            "Phromphun",
+            "พรหมพร",
+            "Somapinya",
+            "สมอภิญญา"
+          ],
+          "08823476": [
+            "Aroon",
+            "อรุณ",
+            "Chokdeecharoen",
+            "โชคดีเจริญ"
+          ],
+          "08792376": [
+            "Kwang",
+            "คะวัง",
+            "Jaidicharoen",
+            "ใจดีเจริญ"
+          ],
+          "08113196": [
+            "Thawan",
+            "ถาวร",
+            "Bunchakrii",
+            "บุญจักรี"
+          ],
+          "08945000": [
+            "Veera",
+            "วีระ",
+            "Suwansuk",
+            "สุวรรณสุข"
+          ],
+          "08981742": [
+            "Chakri",
+            "จักรี",
+            "Phikiaokaji",
+            "พิเขียวขจี"
+          ],
+          "08320608": [
+            "Kasem",
+            "เกษม",
+            "Bunraksa",
+            "บุญรักษา"
+          ],
+          "08643748": [
+            "Anan",
+            "อนันต์",
+            "Naraphinyo",
+            "นราภิญโญ"
+          ],
+          "08595190": [
+            "Saksit",
+            "ศักดิ์สิทธิ์",
+            "Phromaromdee",
+            "พรหมอารมณ์ดี"
+          ],
+          "08875163": [
+            "Wiphan",
+            "วิพันธ์",
+            "Chaisaiphong",
+            "ชัยสัยพงศ์"
+          ],
+          "08195871": [
+            "Panit",
+            "พาณิช",
+            "Ratanaporn",
+            "รัตนพร"
+          ],
+          "08281053": [
+            "Uma",
+            "อุมา",
+            "Prachot",
+            "ประโชติ"
+          ],
+          "08819350": [
+            "Sopa",
+            "โสภา",
+            "Areesuk",
+            "อารีสุข"
+          ],
+          "08305373": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Kanngam",
+            "กาญจน์งาม"
+          ],
+          "08315950": [
+            "Wat",
+            "วัฒน์",
+            "Kobsookwongs",
+            "กอบสุขวงษ์"
+          ],
+          "08146687": [
+            "Chaiya",
+            "ไชยา",
+            "Kittibunmani",
+            "กิตติบุญมณี"
+          ],
+          "08296359": [
+            "Lamai",
+            "ละไม",
+            "Khaengkadchot",
+            "เก่งกาจโชติ"
+          ],
+          "08713916": [
+            "Saranya",
+            "สรัญญา",
+            "Phromkarawek",
+            "พรหมการเวก"
+          ],
+          "08688197": [
+            "Juthamas",
+            "จุฑามาศ",
+            "Chindarat",
+            "จินดารัตน์"
+          ],
+          "08861098": [
+            "Thanin",
+            "ทนิน",
+            "Chokdeekun",
+            "โชคดีกุล"
+          ],
+          "08497953": [
+            "Ying",
+            "หญิง",
+            "Prajaidi",
+            "ประใจดี"
+          ],
+          "08214549": [
+            "Somphong",
+            "สมพงษ์",
+            "Mahasi",
+            "มหาศรี"
+          ],
+          "08838302": [
+            "Yotthakarn",
+            "ยศกร",
+            "Kasemchannarong",
+            "เกษมชาญณรงค์"
+          ],
+          "08528919": [
+            "Taeng",
+            "แตง",
+            "Kittichatchaloem",
+            "กิตติชาติเฉลิม"
+          ],
+          "08534011": [
+            "Santichai",
+            "สันติชัย",
+            "Somjaingam",
+            "สมใจงาม"
+          ],
+          "08769425": [
+            "Malee",
+            "มาลี",
+            "Watcharachaloem",
+            "วัชรเฉลิม"
+          ],
+          "08139156": [
+            "Ngamchit",
+            "งามจิตร",
+            "Jitranonkamchon",
+            "จิตรานนท์กำจร"
+          ],
+          "08433942": [
+            "Arthit",
+            "อาทิตย์",
+            "Watcharachinda",
+            "วัชรจินดา"
+          ],
+          "08488024": [
+            "Kitti",
+            "กิตติ",
+            "Amonjaingam",
+            "อมรใจงาม"
+          ],
+          "08156231": [
+            "Veera",
+            "วีระ",
+            "Sambunmak",
+            "สัมบุญมา"
+          ],
+          "08691159": [
+            "Malai",
+            "มาลัย",
+            "Phromchaloem",
+            "พรหมเฉลิม"
+          ],
+          "08763937": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Buathongmani",
+            "บัวทองมณี"
           ]
         }
       },
@@ -7736,8 +12998,118 @@
         "08224942",
         "08282649",
         "08547462",
+        "08171530",
         "08936711",
-        "08187336"
+        "08187336",
+        "08727829",
+        "08617677",
+        "08774360",
+        "08577531",
+        "08802681",
+        "08763218",
+        "08770721",
+        "08611242",
+        "08127795",
+        "08774991",
+        "08953181",
+        "08204886",
+        "08705502",
+        "08546336",
+        "08980631",
+        "08672743",
+        "08804059",
+        "08828691",
+        "08540649",
+        "08954634",
+        "08564954",
+        "08196783",
+        "08557406",
+        "08431775",
+        "08983740",
+        "08458672",
+        "08144031",
+        "08778696",
+        "08673166",
+        "08101780",
+        "08368029",
+        "08602547",
+        "08335708",
+        "08193244",
+        "08315414",
+        "08922316",
+        "08911722",
+        "08428798",
+        "08284808",
+        "08282432",
+        "08256623",
+        "08712689",
+        "08941913",
+        "08215266",
+        "08426204",
+        "08920068",
+        "08803357",
+        "08614946",
+        "08777846",
+        "08658071",
+        "08718269",
+        "08307968",
+        "08779959",
+        "08727620",
+        "08857331",
+        "08852863",
+        "08862251",
+        "08394580",
+        "08947835",
+        "08537453",
+        "08887711",
+        "08430403",
+        "08104815",
+        "08414170",
+        "08985089",
+        "08183552",
+        "08683397",
+        "08931784",
+        "08557441",
+        "08192229",
+        "08948643",
+        "08277836",
+        "08615850",
+        "08917332",
+        "08624491",
+        "08982974",
+        "08969639",
+        "08779993",
+        "08823476",
+        "08792376",
+        "08113196",
+        "08945000",
+        "08981742",
+        "08320608",
+        "08643748",
+        "08595190",
+        "08875163",
+        "08195871",
+        "08281053",
+        "08819350",
+        "08305373",
+        "08315950",
+        "08146687",
+        "08296359",
+        "08713916",
+        "08688197",
+        "08861098",
+        "08497953",
+        "08214549",
+        "08838302",
+        "08528919",
+        "08534011",
+        "08769425",
+        "08139156",
+        "08433942",
+        "08488024",
+        "08156231",
+        "08691159",
+        "08763937"
       ],
       "rationale": "Informal 'DaoNuea' = dept DN.",
       "tags": [
@@ -7747,7 +13119,8 @@
       "v01_bucket": "org_informal_listing",
       "subtype": "C1",
       "group": "C",
-      "subtype_v0_2": "C1"
+      "subtype_v0_2": "C1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g260",
@@ -7850,6 +13223,60 @@
             "คึกฤทธิ์",
             "Akaracharoen",
             "อัครเจริญ"
+          ],
+          "00004661": [
+            "Rachini",
+            "ราชินี",
+            "Arthitkulsuk",
+            "อาทิตย์สุข"
+          ],
+          "00007854": [
+            "Rachata",
+            "ราชตะ",
+            "Samchannarong",
+            "สัมชาญณรงค์"
+          ],
+          "08765852": [
+            "Somphong",
+            "สมพงษ์",
+            "Kobsookprasert",
+            "กอบสุขประเสริฐ"
+          ],
+          "08683929": [
+            "Boonchu",
+            "บุญชู",
+            "Kraiseesawang",
+            "ไกรศรีสว่าง"
+          ],
+          "00002042": [
+            "Malee",
+            "มาลี",
+            "Amonthong",
+            "อมรทอง"
+          ],
+          "00007001": [
+            "Kanok",
+            "กนก",
+            "Khaengkadchai",
+            "เก่งกาจชัย"
+          ],
+          "08881508": [
+            "Phonphai",
+            "พรไพร",
+            "Mahasin",
+            "มหาสินธุ์"
+          ],
+          "08975797": [
+            "Santichai",
+            "สันติชัย",
+            "Boonmeephithak",
+            "บุญมีพิทักษ์"
+          ],
+          "00002706": [
+            "Thanya",
+            "ธัญญา",
+            "Charoenpholphinyo",
+            "เจริญผลภิญโญ"
           ]
         }
       },
@@ -7887,7 +13314,8 @@
       "subtype": "E3",
       "group": "E",
       "relabel_from": "C5",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g261",
@@ -7990,6 +13418,294 @@
             "วศิน",
             "Kiaokajijai",
             "เขียวขจีใจ"
+          ],
+          "00006424": [
+            "Vichit",
+            "วิจิตร",
+            "Phonganongkun",
+            "พงอนงค์"
+          ],
+          "08209143": [
+            "Prem",
+            "เปรม",
+            "Chakanbun",
+            "ชากัญญ์บุญ"
+          ],
+          "08333537": [
+            "Phonphai",
+            "พรไพร",
+            "Somchakan",
+            "สมชากัญญ์"
+          ],
+          "08210238": [
+            "Ravee",
+            "ระวี",
+            "Chindathong",
+            "จินดาทอง"
+          ],
+          "08475476": [
+            "Patcharee",
+            "พัชรี",
+            "Sucharoenphol",
+            "สุเจริญผล"
+          ],
+          "00002894": [
+            "Vachir",
+            "วชิร",
+            "Chiraasnee",
+            "จิรอัสนี"
+          ],
+          "08863943": [
+            "Waen",
+            "แหวน",
+            "Anantphat",
+            "อนันต์พัฒน์"
+          ],
+          "00007387": [
+            "Taksa-Orn",
+            "ทักษอร",
+            "Manichaiyawong",
+            "มณีไชยา"
+          ],
+          "08175733": [
+            "Mali",
+            "มะลิ",
+            "Bunbun",
+            "บุญบุญ"
+          ],
+          "08319686": [
+            "Lalana",
+            "ลลนา",
+            "Watcharakaewkan",
+            "วัชรแก้วกาญจน์"
+          ],
+          "08528217": [
+            "Krittin",
+            "กฤติน",
+            "Phongchaiyawong",
+            "พงไชยา"
+          ],
+          "00009706": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Boonnamraksa",
+            "บุญนำรักษา"
+          ],
+          "08279445": [
+            "Yadthip",
+            "หยาดทิพย์",
+            "Duangkamolchai",
+            "ดวงกมลชัย"
+          ],
+          "08769961": [
+            "Chayaphon",
+            "ชยพล",
+            "Bunmakdi",
+            "บุญมาดี"
+          ],
+          "00009111": [
+            "Thawan",
+            "ถาวร",
+            "Watcharakaewsai",
+            "วัชรแก้วใส"
+          ],
+          "08405188": [
+            "Thanin",
+            "ทนิน",
+            "Chaemchoisuk",
+            "แช้มช้อยสุข"
+          ],
+          "08744638": [
+            "Kittichai",
+            "กิตติชัย",
+            "Susi",
+            "สุศรี"
+          ],
+          "00001415": [
+            "Panit",
+            "พาณิช",
+            "Kittibunjai",
+            "กิตติบุญใจ"
+          ],
+          "00004314": [
+            "Direk",
+            "ดิเรก",
+            "Srikhaengkad",
+            "ศรีเก่งกาจ"
+          ],
+          "00003539": [
+            "Ratana",
+            "รัตนา",
+            "Samboonmee",
+            "สัมบุญมี"
+          ],
+          "00002138": [
+            "Yen",
+            "เย็น",
+            "Chanamphom",
+            "จันทอัมพร"
+          ],
+          "00007711": [
+            "Tarn",
+            "ทาน",
+            "Narajai",
+            "นราใจ"
+          ],
+          "08447769": [
+            "Phichit",
+            "พิชิต",
+            "Wisboonrueng",
+            "วิศบุญเรือง"
+          ],
+          "08506655": [
+            "Orachon",
+            "อรชร",
+            "Chaingam",
+            "ชัยงาม"
+          ],
+          "00004974": [
+            "Atchara",
+            "อัจฉรา",
+            "Kiaokajisi",
+            "เขียวขจีศรี"
+          ],
+          "00001100": [
+            "Narin",
+            "นรินทร์",
+            "Chakriithong",
+            "จักรีทอง"
+          ],
+          "00006919": [
+            "Kris",
+            "กฤษ",
+            "Kasemchot",
+            "เกษมโชติ"
+          ],
+          "08940594": [
+            "Yothaka",
+            "โยธกา",
+            "Mahajaidi",
+            "มหาใจดี"
+          ],
+          "08153694": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Phichot",
+            "พิโชติ"
+          ],
+          "08238033": [
+            "Saranya",
+            "สรัญญา",
+            "Mahaamarin",
+            "มหาอมรินทร์"
+          ],
+          "08821819": [
+            "Phussadee",
+            "พุสดี",
+            "Chaisaidi",
+            "ชัยสัยดี"
+          ],
+          "08719665": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Thanajaikieow",
+            "ธนใจเขียว"
+          ],
+          "00004766": [
+            "Phonphai",
+            "พรไพร",
+            "Arthitkulwongs",
+            "อาทิตย์วงษ์"
+          ],
+          "08255055": [
+            "Piti",
+            "ปิติ",
+            "Phatraksa",
+            "ภัทรรักษา"
+          ],
+          "00006856": [
+            "Ritthirong",
+            "ฤทธิรงค์",
+            "Kiatchakrii",
+            "เกียรติจักรี"
+          ],
+          "08881674": [
+            "Chayaphon",
+            "ชยพล",
+            "Anukraisee",
+            "อนุไกรศรี"
+          ],
+          "08155669": [
+            "Vasin",
+            "วศิน",
+            "Rajchaidee",
+            "ราชชัยดี"
+          ],
+          "08526617": [
+            "Thongchai",
+            "ธงชัย",
+            "Amphomsathit",
+            "อัมพรสถิต"
+          ],
+          "00002007": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Rajkarawek",
+            "ราชการเวก"
+          ],
+          "08612584": [
+            "Mekha",
+            "เมฆา",
+            "Phatjaikieow",
+            "ภัทรใจเขียว"
+          ],
+          "08815508": [
+            "Phichai",
+            "พิชัย",
+            "Amarinfa",
+            "อมรินทร์ฟ้า"
+          ],
+          "08597662": [
+            "Nangnoi",
+            "นางน้อย",
+            "Kanchai",
+            "กาญจน์ชัย"
+          ],
+          "08388313": [
+            "Sanouk",
+            "สนุก",
+            "Anuawut",
+            "อนุอาวุทธ์"
+          ],
+          "08153847": [
+            "Narong",
+            "ณรงค์",
+            "Kobsookbun",
+            "กอบสุขบุญ"
+          ],
+          "00002101": [
+            "Prayut",
+            "ประยุทธ์",
+            "Somchaiyawong",
+            "สมไชยา"
+          ],
+          "00007253": [
+            "Manit",
+            "มานิตย์",
+            "Amonsathit",
+            "อมรสถิต"
+          ],
+          "08775274": [
+            "Namthip",
+            "น้ำทิพย์",
+            "Samamphom",
+            "สัมอัมพร"
+          ],
+          "00002963": [
+            "Adithep",
+            "อดิเทพ",
+            "Anuanchali",
+            "อนุอัญชลี"
           ]
         }
       },
@@ -8066,7 +13782,8 @@
       "subtype": "E3",
       "group": "E",
       "relabel_from": "C5",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g262",
@@ -8169,6 +13886,60 @@
             "คึกฤทธิ์",
             "Akaracharoen",
             "อัครเจริญ"
+          ],
+          "00004661": [
+            "Rachini",
+            "ราชินี",
+            "Arthitkulsuk",
+            "อาทิตย์สุข"
+          ],
+          "00007854": [
+            "Rachata",
+            "ราชตะ",
+            "Samchannarong",
+            "สัมชาญณรงค์"
+          ],
+          "08765852": [
+            "Somphong",
+            "สมพงษ์",
+            "Kobsookprasert",
+            "กอบสุขประเสริฐ"
+          ],
+          "08683929": [
+            "Boonchu",
+            "บุญชู",
+            "Kraiseesawang",
+            "ไกรศรีสว่าง"
+          ],
+          "00002042": [
+            "Malee",
+            "มาลี",
+            "Amonthong",
+            "อมรทอง"
+          ],
+          "00007001": [
+            "Kanok",
+            "กนก",
+            "Khaengkadchai",
+            "เก่งกาจชัย"
+          ],
+          "08881508": [
+            "Phonphai",
+            "พรไพร",
+            "Mahasin",
+            "มหาสินธุ์"
+          ],
+          "08975797": [
+            "Santichai",
+            "สันติชัย",
+            "Boonmeephithak",
+            "บุญมีพิทักษ์"
+          ],
+          "00002706": [
+            "Thanya",
+            "ธัญญา",
+            "Charoenpholphinyo",
+            "เจริญผลภิญโญ"
           ]
         }
       },
@@ -8206,7 +13977,8 @@
       "subtype": "E3",
       "group": "E",
       "relabel_from": "C5",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g263",
@@ -8459,6 +14231,294 @@
             "วศิน",
             "Kiaokajijai",
             "เขียวขจีใจ"
+          ],
+          "00006424": [
+            "Vichit",
+            "วิจิตร",
+            "Phonganongkun",
+            "พงอนงค์"
+          ],
+          "08209143": [
+            "Prem",
+            "เปรม",
+            "Chakanbun",
+            "ชากัญญ์บุญ"
+          ],
+          "08333537": [
+            "Phonphai",
+            "พรไพร",
+            "Somchakan",
+            "สมชากัญญ์"
+          ],
+          "08210238": [
+            "Ravee",
+            "ระวี",
+            "Chindathong",
+            "จินดาทอง"
+          ],
+          "08475476": [
+            "Patcharee",
+            "พัชรี",
+            "Sucharoenphol",
+            "สุเจริญผล"
+          ],
+          "00002894": [
+            "Vachir",
+            "วชิร",
+            "Chiraasnee",
+            "จิรอัสนี"
+          ],
+          "08863943": [
+            "Waen",
+            "แหวน",
+            "Anantphat",
+            "อนันต์พัฒน์"
+          ],
+          "00007387": [
+            "Taksa-Orn",
+            "ทักษอร",
+            "Manichaiyawong",
+            "มณีไชยา"
+          ],
+          "08175733": [
+            "Mali",
+            "มะลิ",
+            "Bunbun",
+            "บุญบุญ"
+          ],
+          "08319686": [
+            "Lalana",
+            "ลลนา",
+            "Watcharakaewkan",
+            "วัชรแก้วกาญจน์"
+          ],
+          "08528217": [
+            "Krittin",
+            "กฤติน",
+            "Phongchaiyawong",
+            "พงไชยา"
+          ],
+          "00009706": [
+            "Thanakrit",
+            "ธนกฤต",
+            "Boonnamraksa",
+            "บุญนำรักษา"
+          ],
+          "08279445": [
+            "Yadthip",
+            "หยาดทิพย์",
+            "Duangkamolchai",
+            "ดวงกมลชัย"
+          ],
+          "08769961": [
+            "Chayaphon",
+            "ชยพล",
+            "Bunmakdi",
+            "บุญมาดี"
+          ],
+          "00009111": [
+            "Thawan",
+            "ถาวร",
+            "Watcharakaewsai",
+            "วัชรแก้วใส"
+          ],
+          "08405188": [
+            "Thanin",
+            "ทนิน",
+            "Chaemchoisuk",
+            "แช้มช้อยสุข"
+          ],
+          "08744638": [
+            "Kittichai",
+            "กิตติชัย",
+            "Susi",
+            "สุศรี"
+          ],
+          "00001415": [
+            "Panit",
+            "พาณิช",
+            "Kittibunjai",
+            "กิตติบุญใจ"
+          ],
+          "00004314": [
+            "Direk",
+            "ดิเรก",
+            "Srikhaengkad",
+            "ศรีเก่งกาจ"
+          ],
+          "00003539": [
+            "Ratana",
+            "รัตนา",
+            "Samboonmee",
+            "สัมบุญมี"
+          ],
+          "00002138": [
+            "Yen",
+            "เย็น",
+            "Chanamphom",
+            "จันทอัมพร"
+          ],
+          "00007711": [
+            "Tarn",
+            "ทาน",
+            "Narajai",
+            "นราใจ"
+          ],
+          "08447769": [
+            "Phichit",
+            "พิชิต",
+            "Wisboonrueng",
+            "วิศบุญเรือง"
+          ],
+          "08506655": [
+            "Orachon",
+            "อรชร",
+            "Chaingam",
+            "ชัยงาม"
+          ],
+          "00004974": [
+            "Atchara",
+            "อัจฉรา",
+            "Kiaokajisi",
+            "เขียวขจีศรี"
+          ],
+          "00001100": [
+            "Narin",
+            "นรินทร์",
+            "Chakriithong",
+            "จักรีทอง"
+          ],
+          "00006919": [
+            "Kris",
+            "กฤษ",
+            "Kasemchot",
+            "เกษมโชติ"
+          ],
+          "08940594": [
+            "Yothaka",
+            "โยธกา",
+            "Mahajaidi",
+            "มหาใจดี"
+          ],
+          "08153694": [
+            "Piyabutr",
+            "ปิยบุตร",
+            "Phichot",
+            "พิโชติ"
+          ],
+          "08238033": [
+            "Saranya",
+            "สรัญญา",
+            "Mahaamarin",
+            "มหาอมรินทร์"
+          ],
+          "08821819": [
+            "Phussadee",
+            "พุสดี",
+            "Chaisaidi",
+            "ชัยสัยดี"
+          ],
+          "08719665": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Thanajaikieow",
+            "ธนใจเขียว"
+          ],
+          "00004766": [
+            "Phonphai",
+            "พรไพร",
+            "Arthitkulwongs",
+            "อาทิตย์วงษ์"
+          ],
+          "08255055": [
+            "Piti",
+            "ปิติ",
+            "Phatraksa",
+            "ภัทรรักษา"
+          ],
+          "00006856": [
+            "Ritthirong",
+            "ฤทธิรงค์",
+            "Kiatchakrii",
+            "เกียรติจักรี"
+          ],
+          "08881674": [
+            "Chayaphon",
+            "ชยพล",
+            "Anukraisee",
+            "อนุไกรศรี"
+          ],
+          "08155669": [
+            "Vasin",
+            "วศิน",
+            "Rajchaidee",
+            "ราชชัยดี"
+          ],
+          "08526617": [
+            "Thongchai",
+            "ธงชัย",
+            "Amphomsathit",
+            "อัมพรสถิต"
+          ],
+          "00002007": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Rajkarawek",
+            "ราชการเวก"
+          ],
+          "08612584": [
+            "Mekha",
+            "เมฆา",
+            "Phatjaikieow",
+            "ภัทรใจเขียว"
+          ],
+          "08815508": [
+            "Phichai",
+            "พิชัย",
+            "Amarinfa",
+            "อมรินทร์ฟ้า"
+          ],
+          "08597662": [
+            "Nangnoi",
+            "นางน้อย",
+            "Kanchai",
+            "กาญจน์ชัย"
+          ],
+          "08388313": [
+            "Sanouk",
+            "สนุก",
+            "Anuawut",
+            "อนุอาวุทธ์"
+          ],
+          "08153847": [
+            "Narong",
+            "ณรงค์",
+            "Kobsookbun",
+            "กอบสุขบุญ"
+          ],
+          "00002101": [
+            "Prayut",
+            "ประยุทธ์",
+            "Somchaiyawong",
+            "สมไชยา"
+          ],
+          "00007253": [
+            "Manit",
+            "มานิตย์",
+            "Amonsathit",
+            "อมรสถิต"
+          ],
+          "08775274": [
+            "Namthip",
+            "น้ำทิพย์",
+            "Samamphom",
+            "สัมอัมพร"
+          ],
+          "00002963": [
+            "Adithep",
+            "อดิเทพ",
+            "Anuanchali",
+            "อนุอัญชลี"
           ]
         }
       },
@@ -8535,7 +14595,8 @@
       "subtype": "E3",
       "group": "E",
       "relabel_from": "C5",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g266",
@@ -8548,17 +14609,22 @@
         "must_contain_any_of": [
           [
             "Darika",
-            "ดาริกา"
+            "ดาริกา",
+            "Boonchu",
+            "บุญชู"
           ],
           [
             "Awutdi",
-            "อาวุทธ์ดี"
+            "อาวุทธ์ดี",
+            "Kraiseesawang",
+            "ไกรศรีสว่าง"
           ]
         ],
         "must_not_contain": []
       },
       "ground_truth_row_ids": [
-        "00008495"
+        "00008495",
+        "08683929"
       ],
       "rationale": "Combined org+role → SUPVP.",
       "tags": [
@@ -8568,7 +14634,8 @@
       "subtype": "A1",
       "group": "A",
       "relabel_from": "A4",
-      "subtype_v0_2": "A1"
+      "subtype_v0_2": "A1",
+      "revision_v1_0": "gold:accept-both-readings"
     },
     {
       "id": "g267",
@@ -11592,17 +17659,22 @@
         "must_contain_any_of": [
           [
             "Thawan",
-            "ถาวร"
+            "ถาวร",
+            "Wirat",
+            "วิรัตน์"
           ],
           [
             "Boonnamphong",
-            "บุญนำพงศ์"
+            "บุญนำพงศ์",
+            "Sombusarakham",
+            "สมบุษราคัม"
           ]
         ],
         "must_not_contain": []
       },
       "ground_truth_row_ids": [
-        "00005427"
+        "00005427",
+        "00001167"
       ],
       "rationale": "Cross-lang bridge: EN brand name 'SaiFah' → SF-GM.",
       "tags": [
@@ -11614,7 +17686,8 @@
       "v01_bucket": "hard_bridge_lookup",
       "subtype": "E2",
       "group": "E",
-      "subtype_v0_2": "E2"
+      "subtype_v0_2": "E2",
+      "revision_v1_0": "gold:accept-both-readings"
     },
     {
       "id": "g364",
@@ -11679,12 +17752,19 @@
             "ธนิดา",
             "Thanakobsook",
             "ธนกอบสุข"
+          ],
+          "00007001": [
+            "Kanok",
+            "กนก",
+            "Khaengkadchai",
+            "เก่งกาจชัย"
           ]
         }
       },
       "ground_truth_row_ids": [
         "00009282",
-        "00001544"
+        "00001544",
+        "00007001"
       ],
       "rationale": "Direct reports to COO: OPSVP + OPS-EA.",
       "tags": [
@@ -11694,7 +17774,8 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "subtype": "E3",
       "group": "E",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g371",
@@ -11725,13 +17806,20 @@
             "วชิร",
             "Chirabun",
             "จิรบุญ"
+          ],
+          "00007854": [
+            "Rachata",
+            "ราชตะ",
+            "Samchannarong",
+            "สัมชาญณรงค์"
           ]
         }
       },
       "ground_truth_row_ids": [
         "00001368",
         "00003437",
-        "00002699"
+        "00002699",
+        "00007854"
       ],
       "rationale": "TEC IC → TECVP → CTO → CEO.",
       "tags": [
@@ -11741,7 +17829,8 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "subtype": "E3",
       "group": "E",
-      "subtype_v0_2": "E3"
+      "subtype_v0_2": "E3",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g372",
@@ -11960,29 +18049,21 @@
         "must_not_contain": [],
         "min_items": 3,
         "all_items_tokens_per_id": {
-          "08896209": [
-            "Taksa-Orn",
-            "ทักษอร",
-            "Ratanathong",
-            "รัตนทอง",
-            "ส้ม",
-            "SOM"
+          "00002699": [
+            "Vachir",
+            "วชิร",
+            "Chirabun",
+            "จิรบุญ",
+            "เบอร์รี่",
+            "BERRY"
           ],
-          "08404529": [
-            "Duanphen",
-            "ดวงเพ็ญ",
-            "Phatchaiyawong",
-            "ภัทรไชยา",
-            "ส้ม",
-            "SOM"
-          ],
-          "08706425": [
-            "Waen",
-            "แหวน",
-            "Watcharabun",
-            "วัชรบุญ",
-            "ส้ม",
-            "SOM"
+          "08383935": [
+            "Tanthira",
+            "ธันทิรา",
+            "Chaiyawongsoem",
+            "ไชยาเสริม",
+            "กีวี่",
+            "KIWI"
           ],
           "08905998": [
             "Phussadee",
@@ -11992,37 +18073,61 @@
             "พีช",
             "PEACH"
           ],
-          "08695723": [
-            "Thanachart",
-            "ธนชาติ",
-            "Praaromdee",
-            "ประอารมณ์ดี",
-            "พีช",
-            "PEACH"
+          "08273558": [
+            "Chayaphon",
+            "ชยพล",
+            "Rajchot",
+            "ราชโชติ",
+            "มะม่วง",
+            "MANGO"
           ],
-          "08134217": [
-            "Juthamas",
-            "จุฑามาศ",
-            "Maniboonmee",
-            "มณีบุญมี",
-            "พีช",
-            "PEACH"
-          ],
-          "08941160": [
-            "Som",
+          "08896209": [
+            "Taksa-Orn",
+            "ทักษอร",
+            "Ratanathong",
+            "รัตนทอง",
             "ส้ม",
-            "Kasemchaidee",
-            "เกษมชัยดี",
-            "พีช",
-            "PEACH"
+            "SOM"
           ],
-          "08696099": [
-            "Phassakorn",
-            "ภาสกร",
-            "Apinyarat",
-            "อภิญญารัตน์",
-            "พีช",
-            "PEACH"
+          "08948800": [
+            "Nattanicha",
+            "ณัฎฐณิชา",
+            "Rajchaemchoi",
+            "ราชแช้มช้อย",
+            "กีวี่",
+            "KIWI"
+          ],
+          "08547903": [
+            "Sasi",
+            "ศศิ",
+            "Boonruengkun",
+            "บุญเรืองกุล",
+            "เบอร์รี่",
+            "BERRY"
+          ],
+          "08953104": [
+            "Ratana",
+            "รัตนา",
+            "Bunboonrueng",
+            "บุญบุญเรือง",
+            "กีวี่",
+            "KIWI"
+          ],
+          "08873386": [
+            "Chantara",
+            "จันทรา",
+            "Anubusarakham",
+            "อนุบุษราคัม",
+            "มะม่วง",
+            "MANGO"
+          ],
+          "08404529": [
+            "Duanphen",
+            "ดวงเพ็ญ",
+            "Phatchaiyawong",
+            "ภัทรไชยา",
+            "ส้ม",
+            "SOM"
           ],
           "08884978": [
             "Santichai",
@@ -12040,6 +18145,22 @@
             "เปิ้ล",
             "PLE"
           ],
+          "08695723": [
+            "Thanachart",
+            "ธนชาติ",
+            "Praaromdee",
+            "ประอารมณ์ดี",
+            "พีช",
+            "PEACH"
+          ],
+          "08723382": [
+            "Rochana",
+            "โรจนา",
+            "Kiatkamjornbun",
+            "เกียรติกำจรบุญ",
+            "กีวี่",
+            "KIWI"
+          ],
           "08546503": [
             "Somyot",
             "สมยศ",
@@ -12047,6 +18168,38 @@
             "แช้มช้อยภิญโญ",
             "เปิ้ล",
             "PLE"
+          ],
+          "08134217": [
+            "Juthamas",
+            "จุฑามาศ",
+            "Maniboonmee",
+            "มณีบุญมี",
+            "พีช",
+            "PEACH"
+          ],
+          "08494790": [
+            "Montra",
+            "มนตรา",
+            "Thanajai",
+            "ธนใจ",
+            "เบอร์รี่",
+            "BERRY"
+          ],
+          "08706425": [
+            "Waen",
+            "แหวน",
+            "Watcharabun",
+            "วัชรบุญ",
+            "ส้ม",
+            "SOM"
+          ],
+          "08359384": [
+            "Veera",
+            "วีระ",
+            "Chankittichat",
+            "จันทกิตติชาติ",
+            "ส้มโอ",
+            "SOMO"
           ],
           "08485289": [
             "Paitoon",
@@ -12056,6 +18209,22 @@
             "เปิ้ล",
             "PLE"
           ],
+          "08531893": [
+            "Somphong",
+            "สมพงษ์",
+            "Chansawang",
+            "จันทสว่าง",
+            "กีวี่",
+            "KIWI"
+          ],
+          "08816603": [
+            "Sukanya",
+            "สุกัญญา",
+            "Phiphinyo",
+            "พิภิญโญ",
+            "เบอร์รี่",
+            "BERRY"
+          ],
           "08878853": [
             "Nim",
             "นิ่ม",
@@ -12064,6 +18233,38 @@
             "เปิ้ล",
             "PLE"
           ],
+          "08322432": [
+            "Veera",
+            "วีระ",
+            "Apinyasoem",
+            "อภิญญาเสริม",
+            "เบอร์รี่",
+            "BERRY"
+          ],
+          "08911722": [
+            "Veera",
+            "วีระ",
+            "Phongasnee",
+            "พงอัสนี",
+            "มะม่วง",
+            "MANGO"
+          ],
+          "08680284": [
+            "Rachini",
+            "ราชินี",
+            "Jaidinam",
+            "ใจดีนาม",
+            "เชอร์รี่",
+            "CHERRY"
+          ],
+          "08685577": [
+            "Chet",
+            "เชษฐ์",
+            "Amphomphong",
+            "อัมพรพงศ์",
+            "เชอร์รี่",
+            "CHERRY"
+          ],
           "08404794": [
             "Kasem",
             "เกษม",
@@ -12071,6 +18272,62 @@
             "บุญมีเจริญ",
             "เปิ้ล",
             "PLE"
+          ],
+          "08760685": [
+            "Teerapat",
+            "ธีรพัฒน์",
+            "Bunkhaengkad",
+            "บุญเก่งกาจ",
+            "ส้มโอ",
+            "SOMO"
+          ],
+          "08132280": [
+            "Natthakan",
+            "ณัฐกานต์",
+            "Thepjaingam",
+            "เทพใจงาม",
+            "ส้มโอ",
+            "SOMO"
+          ],
+          "08941160": [
+            "Som",
+            "ส้ม",
+            "Kasemchaidee",
+            "เกษมชัยดี",
+            "พีช",
+            "PEACH"
+          ],
+          "08265720": [
+            "Yothaka",
+            "โยธกา",
+            "Rajboonmee",
+            "ราชบุญมี",
+            "ส้มโอ",
+            "SOMO"
+          ],
+          "08262740": [
+            "Boonchu",
+            "บุญชู",
+            "Sriphinyo",
+            "ศรีภิญโญ",
+            "ส้มโอ",
+            "SOMO"
+          ],
+          "08696099": [
+            "Phassakorn",
+            "ภาสกร",
+            "Apinyarat",
+            "อภิญญารัตน์",
+            "พีช",
+            "PEACH"
+          ],
+          "08820459": [
+            "Kong",
+            "ก้อง",
+            "Aphichai",
+            "อภิชัย",
+            "ส้มโอ",
+            "SOMO"
           ],
           "08982494": [
             "Phloi",
@@ -12083,20 +18340,41 @@
         }
       },
       "ground_truth_row_ids": [
-        "08896209",
-        "08404529",
-        "08706425",
+        "00002699",
+        "08383935",
         "08905998",
-        "08695723",
-        "08134217",
-        "08941160",
-        "08696099",
+        "08273558",
+        "08896209",
+        "08948800",
+        "08547903",
+        "08953104",
+        "08873386",
+        "08404529",
         "08884978",
         "08690122",
+        "08695723",
+        "08723382",
         "08546503",
+        "08134217",
+        "08494790",
+        "08706425",
+        "08359384",
         "08485289",
+        "08531893",
+        "08816603",
         "08878853",
+        "08322432",
+        "08911722",
+        "08680284",
+        "08685577",
         "08404794",
+        "08760685",
+        "08132280",
+        "08941160",
+        "08265720",
+        "08262740",
+        "08696099",
+        "08820459",
         "08982494"
       ],
       "rationale": "Nickname semantics: ส้ม/พีช/เปิ้ล = fruits.",
@@ -12107,7 +18385,8 @@
       "v01_bucket": "thai_knowledge",
       "subtype": "F1",
       "group": "F",
-      "subtype_v0_2": "F1"
+      "subtype_v0_2": "F1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g380",
@@ -12121,6 +18400,30 @@
         "must_not_contain": [],
         "min_items": 2,
         "all_items_tokens_per_id": {
+          "00001148": [
+            "Kukrit",
+            "คึกฤทธิ์",
+            "Akaracharoen",
+            "อัครเจริญ",
+            "ดำ",
+            "DUM"
+          ],
+          "08905163": [
+            "Eakphol",
+            "เอกพล",
+            "Sriphong",
+            "ศรีพงศ์",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08978788": [
+            "Kongphop",
+            "ก้องภพ",
+            "Chanthong",
+            "จันททอง",
+            "แดง",
+            "DAENG"
+          ],
           "08327722": [
             "Ritthirong",
             "ฤทธิรงค์",
@@ -12128,6 +18431,14 @@
             "พงเก่งกาจ",
             "ฟ้า",
             "FAH"
+          ],
+          "08591762": [
+            "Thanasak",
+            "ธนศักดิ์",
+            "Chaideesi",
+            "ชัยดีศรี",
+            "ชมพู",
+            "CHOMPOO"
           ],
           "08499723": [
             "Ratana",
@@ -12137,6 +18448,22 @@
             "ฟ้า",
             "FAH"
           ],
+          "08667585": [
+            "Yu-Pha",
+            "ยุพา",
+            "Duangkamolsawang",
+            "ดวงกมลสว่าง",
+            "ขาว",
+            "KHAOWHITE"
+          ],
+          "08896209": [
+            "Taksa-Orn",
+            "ทักษอร",
+            "Ratanathong",
+            "รัตนทอง",
+            "ส้ม",
+            "SOM"
+          ],
           "08484872": [
             "Anong",
             "อนงค์",
@@ -12144,6 +18471,70 @@
             "พิฟ้า",
             "ฟ้า",
             "FAH"
+          ],
+          "08503928": [
+            "Sombat",
+            "สมบัติ",
+            "Phromarthitkul",
+            "พรหมอาทิตย์",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08931956": [
+            "Kwang",
+            "คะวัง",
+            "Suwanchaisai",
+            "สุวรรณชัยสัย",
+            "แดง",
+            "DAENG"
+          ],
+          "08929613": [
+            "Ponnakrit",
+            "พรกฤต",
+            "Aphiamarin",
+            "อภิอมรินทร์",
+            "ทอง",
+            "THONG"
+          ],
+          "08496056": [
+            "Somta",
+            "สมตา",
+            "Chaiyawongthong",
+            "ไชยาทอง",
+            "น้ำตาล",
+            "NAMTAN"
+          ],
+          "08295886": [
+            "Chongrak",
+            "จงรัก",
+            "Duangkamolsin",
+            "ดวงกมลสินธุ์",
+            "ดำ",
+            "DUM"
+          ],
+          "08908236": [
+            "Sujira",
+            "สุจิรา",
+            "Anuchot",
+            "อนุโชติ",
+            "แดง",
+            "DAENG"
+          ],
+          "08404529": [
+            "Duanphen",
+            "ดวงเพ็ญ",
+            "Phatchaiyawong",
+            "ภัทรไชยา",
+            "ส้ม",
+            "SOM"
+          ],
+          "08863487": [
+            "Kittisak",
+            "กิตติศักดิ์",
+            "Chokdeefa",
+            "โชคดีฟ้า",
+            "เขียว",
+            "KIAW"
           ],
           "08497497": [
             "Yothaka",
@@ -12153,6 +18544,206 @@
             "ฟ้า",
             "FAH"
           ],
+          "08416114": [
+            "Pongkan",
+            "พงษ์กานต์",
+            "Bunaree",
+            "บุญอารี",
+            "เขียว",
+            "KIAW"
+          ],
+          "08272971": [
+            "Chakri",
+            "จักรี",
+            "Pitak",
+            "พิทักษ์",
+            "เขียว",
+            "KIAW"
+          ],
+          "08579039": [
+            "Prem",
+            "เปรม",
+            "Chaemchoichai",
+            "แช้มช้อยชัย",
+            "ดำ",
+            "DUM"
+          ],
+          "08355758": [
+            "Tanawat",
+            "ธนวัฒน์",
+            "Ratanakobsook",
+            "รัตนกอบสุข",
+            "น้ำตาล",
+            "NAMTAN"
+          ],
+          "08487029": [
+            "Sasi",
+            "ศศิ",
+            "Chaiyawongprasert",
+            "ไชยาประเสริฐ",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08889844": [
+            "Juthamas",
+            "จุฑามาศ",
+            "Homklinsi",
+            "หอมกลิ่นศรี",
+            "ดำ",
+            "DUM"
+          ],
+          "08410695": [
+            "Hom",
+            "หอม",
+            "Kiaokajisuk",
+            "เขียวขจีสุข",
+            "แดง",
+            "DAENG"
+          ],
+          "08706425": [
+            "Waen",
+            "แหวน",
+            "Watcharabun",
+            "วัชรบุญ",
+            "ส้ม",
+            "SOM"
+          ],
+          "08945342": [
+            "Vanida",
+            "วนิดา",
+            "Kittichatsuk",
+            "กิตติชาติสุข",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08361481": [
+            "Panya",
+            "ปัญญา",
+            "Sriamphom",
+            "ศรีอัมพร",
+            "ดำ",
+            "DUM"
+          ],
+          "08168791": [
+            "Chaiya",
+            "ไชยา",
+            "Maniwat",
+            "มณีวัฒน์",
+            "ขาว",
+            "KHAOWHITE"
+          ],
+          "08856927": [
+            "Thanya",
+            "ธัญญา",
+            "Manikamchon",
+            "มณีกำจร",
+            "ดำ",
+            "DUM"
+          ],
+          "08963914": [
+            "Phichit",
+            "พิชิต",
+            "Khaengkadkamchon",
+            "เก่งกาจกำจร",
+            "ทอง",
+            "THONG"
+          ],
+          "08792507": [
+            "Lamai",
+            "ละไม",
+            "Thepchaison",
+            "เทพชัยสนธิ์",
+            "แดง",
+            "DAENG"
+          ],
+          "08310944": [
+            "Chongrak",
+            "จงรัก",
+            "Channarong",
+            "ชาญณรงค์",
+            "แดง",
+            "DAENG"
+          ],
+          "08224424": [
+            "Thanida",
+            "ธนิดา",
+            "Chaideechaloem",
+            "ชัยดีเฉลิม",
+            "ดำ",
+            "DUM"
+          ],
+          "08476951": [
+            "Khemkhaeng",
+            "เข้มแข็ง",
+            "Subusarakham",
+            "สุบุษราคัม",
+            "เขียว",
+            "KIAW"
+          ],
+          "08949234": [
+            "Sanit",
+            "สนิท",
+            "Kaewsaisin",
+            "แก้วใสสินธุ์",
+            "แดง",
+            "DAENG"
+          ],
+          "08953181": [
+            "Atchara",
+            "อัจฉรา",
+            "Rajfahsai",
+            "ราชฟ้าใส",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08875163": [
+            "Wiphan",
+            "วิพันธ์",
+            "Chaisaiphong",
+            "ชัยสัยพงศ์",
+            "ดำ",
+            "DUM"
+          ],
+          "08336175": [
+            "Oranong",
+            "อรอนงค์",
+            "Akaraanurak",
+            "อัครอนุรักษ์",
+            "ดำ",
+            "DUM"
+          ],
+          "08478673": [
+            "Patcharee",
+            "พัชรี",
+            "Manikhaengkad",
+            "มณีเก่งกาจ",
+            "แดง",
+            "DAENG"
+          ],
+          "08485505": [
+            "Anong",
+            "อนงค์",
+            "Wiskan",
+            "วิศกาญจน์",
+            "แดง",
+            "DAENG"
+          ],
+          "08776918": [
+            "Kris",
+            "กฤษ",
+            "Rajchongrak",
+            "ราชจงรัก",
+            "แดง",
+            "DAENG"
+          ],
+          "08526855": [
+            "Rittichai",
+            "ฤทธิชัย",
+            "Anumansuk",
+            "อนุมานสุข",
+            "ดำ",
+            "DUM"
+          ],
           "08208692": [
             "Phoom",
             "ภูมิ",
@@ -12160,6 +18751,22 @@
             "อมรดาวเรือง",
             "ฟ้า",
             "FAH"
+          ],
+          "08922424": [
+            "Lawana",
+            "ลาวัณย์",
+            "Wischaidee",
+            "วิศชัยดี",
+            "ชมพู",
+            "CHOMPOO"
+          ],
+          "08686028": [
+            "Ratanakorn",
+            "รัตนากร",
+            "Jaidisawang",
+            "ใจดีสว่าง",
+            "ทอง",
+            "THONG"
           ],
           "08322506": [
             "Klaharn",
@@ -12177,61 +18784,13 @@
             "ฟ้า",
             "FAH"
           ],
-          "08905163": [
-            "Eakphol",
-            "เอกพล",
-            "Sriphong",
-            "ศรีพงศ์",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08591762": [
-            "Thanasak",
-            "ธนศักดิ์",
-            "Chaideesi",
-            "ชัยดีศรี",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08503928": [
-            "Sombat",
-            "สมบัติ",
-            "Phromarthitkul",
-            "พรหมอาทิตย์",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08487029": [
-            "Sasi",
-            "ศศิ",
-            "Chaiyawongprasert",
-            "ไชยาประเสริฐ",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08945342": [
-            "Vanida",
-            "วนิดา",
-            "Kittichatsuk",
-            "กิตติชาติสุข",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08953181": [
-            "Atchara",
-            "อัจฉรา",
-            "Rajfahsai",
-            "ราชฟ้าใส",
-            "ชมพู",
-            "CHOMPOO"
-          ],
-          "08922424": [
-            "Lawana",
-            "ลาวัณย์",
-            "Wischaidee",
-            "วิศชัยดี",
-            "ชมพู",
-            "CHOMPOO"
+          "08518604": [
+            "Anong",
+            "อนงค์",
+            "Kittibunsoem",
+            "กิตติบุญเสริม",
+            "ทอง",
+            "THONG"
           ],
           "08502562": [
             "Chantara",
@@ -12244,20 +18803,55 @@
         }
       },
       "ground_truth_row_ids": [
+        "00001148",
+        "08905163",
+        "08978788",
         "08327722",
+        "08591762",
         "08499723",
+        "08667585",
+        "08896209",
         "08484872",
+        "08503928",
+        "08931956",
+        "08929613",
+        "08496056",
+        "08295886",
+        "08908236",
+        "08404529",
+        "08863487",
         "08497497",
+        "08416114",
+        "08272971",
+        "08579039",
+        "08355758",
+        "08487029",
+        "08889844",
+        "08410695",
+        "08706425",
+        "08945342",
+        "08361481",
+        "08168791",
+        "08856927",
+        "08963914",
+        "08792507",
+        "08310944",
+        "08224424",
+        "08476951",
+        "08949234",
+        "08953181",
+        "08875163",
+        "08336175",
+        "08478673",
+        "08485505",
+        "08776918",
+        "08526855",
         "08208692",
+        "08922424",
+        "08686028",
         "08322506",
         "08101365",
-        "08905163",
-        "08591762",
-        "08503928",
-        "08487029",
-        "08945342",
-        "08953181",
-        "08922424",
+        "08518604",
         "08502562"
       ],
       "rationale": "Nickname semantics: ฟ้า/ชมพู = colors.",
@@ -12268,7 +18862,8 @@
       "v01_bucket": "thai_knowledge",
       "subtype": "F1",
       "group": "F",
-      "subtype_v0_2": "F1"
+      "subtype_v0_2": "F1",
+      "revision_v1_0": "gold:credit-all-members"
     },
     {
       "id": "g381",
@@ -14621,7 +21216,7 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "priority": "P1",
       "language": "en",
-      "question": "In the DN-ENG section, who is the most senior employee?",
+      "question": "In the DN-ENG section, who is the highest-ranking employee?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -14648,7 +21243,7 @@
       "authored": "2026-05-23",
       "src_id": "E3-07",
       "question_v0_2": "In the DN-ENG section, who is the most senior employee by position level?",
-      "revision_v1_0": "hint:method",
+      "revision_v1_0": "hint:method+ambiguity",
       "subtype_v0_2": "E3"
     },
     {
@@ -14695,7 +21290,7 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "priority": "P1",
       "language": "en",
-      "question": "In the FIN-AR section, who is the most senior employee?",
+      "question": "In the FIN-AR section, who is the highest-ranking employee?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -14722,7 +21317,7 @@
       "authored": "2026-05-23",
       "src_id": "E3-09",
       "question_v0_2": "In the FIN-AR section, who is the most senior employee by position level?",
-      "revision_v1_0": "hint:method",
+      "revision_v1_0": "hint:method+ambiguity",
       "subtype_v0_2": "E3"
     },
     {
@@ -14769,7 +21364,7 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "priority": "P1",
       "language": "en",
-      "question": "In the FIN-TR section, who is the most senior employee?",
+      "question": "In the FIN-TR section, who is the highest-ranking employee?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -14796,7 +21391,7 @@
       "authored": "2026-05-23",
       "src_id": "E3-11",
       "question_v0_2": "In the FIN-TR section, who is the most senior employee by position level?",
-      "revision_v1_0": "hint:method",
+      "revision_v1_0": "hint:method+ambiguity",
       "subtype_v0_2": "E3"
     },
     {
@@ -14843,7 +21438,7 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "priority": "P1",
       "language": "en",
-      "question": "In the JC-ENG section, who is the most senior employee?",
+      "question": "In the JC-ENG section, who is the highest-ranking employee?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -14870,7 +21465,7 @@
       "authored": "2026-05-23",
       "src_id": "E3-13",
       "question_v0_2": "In the JC-ENG section, who is the most senior employee by position level?",
-      "revision_v1_0": "hint:method",
+      "revision_v1_0": "hint:method+ambiguity",
       "subtype_v0_2": "E3"
     },
     {
@@ -14917,7 +21512,7 @@
       "v01_bucket": "hard_implicit_hierarchy",
       "priority": "P1",
       "language": "en",
-      "question": "In the KS-MKT section, who is the most senior employee?",
+      "question": "In the KS-MKT section, who is the highest-ranking employee?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -14944,7 +21539,7 @@
       "authored": "2026-05-23",
       "src_id": "E3-15",
       "question_v0_2": "In the KS-MKT section, who is the most senior employee by position level?",
-      "revision_v1_0": "hint:method",
+      "revision_v1_0": "hint:method+ambiguity",
       "subtype_v0_2": "E3"
     },
     {
@@ -16443,7 +23038,7 @@
       "expected_answer": {
         "must_contain_any_of": [],
         "must_not_contain": [],
-        "exact_count": 6
+        "exact_count": 7
       },
       "ground_truth_row_ids": [
         "08368029",
@@ -16451,7 +23046,8 @@
         "08911722",
         "08282432",
         "08557441",
-        "08195871"
+        "08195871",
+        "08497953"
       ],
       "rationale": "Compound count: DN ∧ IC ∧ start 2020 = 6.",
       "tags": [
@@ -16462,7 +23058,8 @@
       ],
       "authored": "2026-05-24",
       "src_id": "I4-06",
-      "subtype_v0_2": "C4"
+      "subtype_v0_2": "C4",
+      "revision_v1_0": "gold:recount"
     },
     {
       "id": "g534",
@@ -16507,11 +23104,12 @@
       "expected_answer": {
         "must_contain_any_of": [],
         "must_not_contain": [],
-        "exact_count": 5
+        "exact_count": 6
       },
       "ground_truth_row_ids": [
         "08232990",
         "08282649",
+        "08171530",
         "08187336",
         "08774360",
         "08577531"
@@ -16525,7 +23123,8 @@
       ],
       "authored": "2026-05-24",
       "src_id": "I4-08",
-      "subtype_v0_2": "C4"
+      "subtype_v0_2": "C4",
+      "revision_v1_0": "gold:recount"
     },
     {
       "id": "g536",
@@ -18291,7 +24890,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that ฤทธิชัย มณีกาญจน์ works in?",
+      "question": "What's the email of the highest-ranking person in the section that ฤทธิชัย มณีกาญจน์ works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18313,7 +24912,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S02",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that ฤทธิชัย มณีกาญจน์ works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g589",
@@ -18355,7 +24956,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?",
+      "question": "What's the email of the highest-ranking person in the section that ภูมิ กาญจน์เจริญ works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18377,7 +24978,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S04",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g591",
@@ -18419,7 +25022,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?",
+      "question": "What's the email of the highest-ranking person in the section that รุ่งนภา นราบุญเรือง works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18441,7 +25044,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S06",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g593",
@@ -18483,7 +25088,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that ปิติ พรหมใจ works in?",
+      "question": "What's the email of the highest-ranking person in the section that ปิติ พรหมใจ works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18505,7 +25110,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S08",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that ปิติ พรหมใจ works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g595",
@@ -18547,7 +25154,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that อัมพร ประฟ้า works in?",
+      "question": "What's the email of the highest-ranking person in the section that อัมพร ประฟ้า works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18569,7 +25176,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S10",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that อัมพร ประฟ้า works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g597",
@@ -18611,7 +25220,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?",
+      "question": "What's the email of the highest-ranking person in the section that ทรัพย์ อาวุทธ์กุล works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18633,7 +25242,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S12",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g599",
@@ -18675,7 +25286,7 @@
       "v01_bucket": "two_hop",
       "priority": "P1",
       "language": "en",
-      "question": "What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?",
+      "question": "What's the email of the highest-ranking person in the section that เกียรติ บุญแก้วใส works in?",
       "expected_behavior": "answer",
       "expected_answer": {
         "must_contain_any_of": [
@@ -18697,7 +25308,9 @@
       ],
       "authored": "2026-05-24",
       "src_id": "E1-S14",
-      "subtype_v0_2": "E1"
+      "subtype_v0_2": "E1",
+      "question_v0_2": "What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?",
+      "revision_v1_0": "ambiguity"
     },
     {
       "id": "g601",
@@ -18872,8 +25485,7 @@
             "พฤกษา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 3
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08990485",
@@ -18889,7 +25501,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L01",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g606",
@@ -18916,8 +25529,7 @@
             "ไพฑูรย์"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 3
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08960838",
@@ -18933,7 +25545,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L02",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g607",
@@ -18960,8 +25573,7 @@
             "อนุรักษ์"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 3
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08824002",
@@ -18977,7 +25589,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L03",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g608",
@@ -19004,8 +25617,7 @@
             "พาณิช"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 3
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08474350",
@@ -19021,7 +25633,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L04",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g609",
@@ -19044,8 +25657,7 @@
             "งามจิตร"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "00001415",
@@ -19060,7 +25672,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L05",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g610",
@@ -19083,8 +25696,7 @@
             "น้ำทิพย์"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08547903",
@@ -19099,7 +25711,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L06",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g611",
@@ -19122,8 +25735,7 @@
             "อุมา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08143319",
@@ -19138,7 +25750,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L07",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g612",
@@ -19161,8 +25774,7 @@
             "ประวัติ"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08303980",
@@ -19177,7 +25789,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L08",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g613",
@@ -19200,8 +25813,7 @@
             "พิมพ์ชนก"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08911722",
@@ -19216,7 +25828,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L09",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g614",
@@ -19239,8 +25852,7 @@
             "พิศสมัย"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08387207",
@@ -19255,7 +25867,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L10",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g615",
@@ -19278,8 +25891,7 @@
             "โยธกา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08435906",
@@ -19294,7 +25906,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L11",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g616",
@@ -19317,8 +25930,7 @@
             "สรพงษ์"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08102167",
@@ -19333,7 +25945,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L12",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g617",
@@ -19356,8 +25969,7 @@
             "รัตตนา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08238008",
@@ -19372,7 +25984,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L13",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g618",
@@ -19395,8 +26008,7 @@
             "จรูญ"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08461303",
@@ -19411,7 +26023,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L14",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g619",
@@ -19434,8 +26047,7 @@
             "ธนชาติ"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08347785",
@@ -19450,7 +26062,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L15",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g620",
@@ -19473,8 +26086,7 @@
             "ดารา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08653846",
@@ -19489,7 +26101,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L16",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g621",
@@ -19512,8 +26125,7 @@
             "แสงดาว"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08319443",
@@ -19528,7 +26140,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L17",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g622",
@@ -19551,8 +26164,7 @@
             "ดาหลา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08322432",
@@ -19567,7 +26179,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L18",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g623",
@@ -19590,8 +26203,7 @@
             "ปรีดา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08182575",
@@ -19606,7 +26218,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L19",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g624",
@@ -19629,8 +26242,7 @@
             "โยธกา"
           ]
         ],
-        "must_not_contain": [],
-        "exact_count": 2
+        "must_not_contain": []
       },
       "ground_truth_row_ids": [
         "08485593",
@@ -19645,7 +26257,8 @@
       "authored": "2026-05-24",
       "src_id": "E4-L20",
       "relabel_from": "E4",
-      "subtype_v0_2": "C5"
+      "subtype_v0_2": "C5",
+      "revision_v1_0": "gold:listing-no-count"
     },
     {
       "id": "g625",

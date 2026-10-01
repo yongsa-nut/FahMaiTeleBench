@@ -1,6 +1,6 @@
 # Run: `sonnet_search_L2_t2_search_v10full`
 
-**Overall: 586/626 pass (93.6%)**
+**Overall: 585/626 pass (93.5%)**
 
 ## By bucket
 
@@ -36,11 +36,11 @@
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | bilingual | 38/40 | 95.0% |
 | hard_multihop | 24/26 | 92.3% |
-| listing_count | 18/20 | 90.0% |
 | enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | hard_implicit_hierarchy | 17/19 | 89.5% |
 | dept_listing_small | 6/7 | 85.7% |
+| listing_count | 17/20 | 85.0% |
 | evp_secretary | 4/5 | 80.0% |
 | multi_hop | 11/18 | 61.1% |
 | noisy_name_form | 10/20 | 50.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 331/364 (90.9%)
+- P1: 330/364 (90.7%)
 - P2: 35/36 (97.2%)
 
-## Failures (40)
+## Failures (41)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -241,6 +241,27 @@ GM ของแบรนด์ดาวเหนือคือ **คุณว�
 | อรุณ สัมภิญโญ | B2B Sales Representative |
 | ไพบูลย์ บุญมางาม | Solutions Engineer |
 | ปิยะ ชัยอมรินทร์ | B2B
+```
+
+### g533 [listing_count] P1/en
+**Q:** How many employees are in the DN department at IC level who started in 2020?
+
+**Fails:** missing count 7
+
+**Response:**
+
+```
+I now have all 105 records. Let me count those with `start_year = "2020"`:
+
+From the full results, the employees with `start_year: 2020` in DN / IC level are:
+
+1. ทินกร นราชาญณรงค์ (DN-OPS-70)
+2. โยธกา อัมพรสว่าง (DN-ENG-71)
+3. วีระ พงอัสนี (DN-PD-18)
+4. บดินทร์ ชัยสุข (DN-ENG-...)
+5. + others from the truncated portion
+
+Let me tally carefully from the full dataset returned. After reviewing all 10
 ```
 
 ### g542 [listing_count] P1/th

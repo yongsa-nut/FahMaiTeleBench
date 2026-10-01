@@ -3,9 +3,9 @@
     "deepseekv4flash": {
       "n": 2504,
       "err": 13,
-      "tin": 29143647,
-      "tout": 1206552,
-      "cost": 3.1556751000000003,
+      "tin": 29113506,
+      "tout": 1188395,
+      "cost": 3.1490296000000004,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -13,9 +13,9 @@
     "deepseekv4pro": {
       "n": 2504,
       "err": 14,
-      "tin": 25859187,
-      "tout": 1133676,
-      "cost": 12.235044465,
+      "tin": 25802005,
+      "tout": 1123050,
+      "cost": 12.200925674999999,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -23,19 +23,19 @@
     "gemini30flash": {
       "n": 2504,
       "err": 5,
-      "tin": 15683893,
-      "tout": 493235,
-      "cost": 9.321651500000002,
+      "tin": 15645557,
+      "tout": 493085,
+      "cost": 9.302033499999999,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
     },
     "gemma4": {
       "n": 2504,
-      "err": 1,
-      "tin": 19893818,
-      "tout": 275327,
-      "cost": 2.4891291499999997,
+      "err": 2,
+      "tin": 19788965,
+      "tout": 276714,
+      "cost": 2.47705998,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -43,9 +43,9 @@
     "glm51": {
       "n": 2504,
       "err": 26,
-      "tin": 25736693,
-      "tout": 890065,
-      "cost": 27.96335934,
+      "tin": 25711106,
+      "tout": 882671,
+      "cost": 27.915510559999998,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -53,9 +53,9 @@
     "gpt54med": {
       "n": 2504,
       "err": 0,
-      "tin": 21579585,
-      "tout": 854509,
-      "cost": 62.49405250000001,
+      "tin": 21214372,
+      "tout": 852881,
+      "cost": 61.56474,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -63,29 +63,29 @@
     "gpt55low": {
       "n": 2504,
       "err": 143,
-      "tin": 27939020,
-      "tout": 788622,
-      "cost": 163.35375999999997,
+      "tin": 27906073,
+      "tout": 788541,
+      "cost": 163.186595,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
     },
     "gpt55med": {
       "n": 2504,
-      "err": 201,
-      "tin": 28579034,
-      "tout": 907066,
-      "cost": 170.10715,
+      "err": 205,
+      "tin": 28652929,
+      "tout": 911068,
+      "cost": 170.596685,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
     },
     "minimax": {
       "n": 2504,
-      "err": 29,
-      "tin": 28633206,
-      "tout": 1230909,
-      "cost": 9.465755274000001,
+      "err": 31,
+      "tin": 28925229,
+      "tout": 1234404,
+      "cost": 9.551423691,
       "lat_seq": 2504,
       "any_batch": false,
       "free": false
@@ -93,8 +93,8 @@
     "opentyphoon": {
       "n": 2504,
       "err": 7,
-      "tin": 6113771,
-      "tout": 57655,
+      "tin": 6556444,
+      "tout": 63804,
       "cost": 0.0,
       "lat_seq": 2504,
       "any_batch": false,
@@ -103,9 +103,9 @@
     "sonnet": {
       "n": 2504,
       "err": 1,
-      "tin": 13757421,
-      "tout": 781321,
-      "cost": 26.496039000000003,
+      "tin": 13835470,
+      "tout": 779372,
+      "cost": 26.598495,
       "lat_seq": 0,
       "any_batch": true,
       "free": false
@@ -113,8 +113,8 @@
     "typhoon8b": {
       "n": 2504,
       "err": 24,
-      "tin": 13542555,
-      "tout": 377961,
+      "tin": 13487503,
+      "tout": 372040,
       "cost": 0.0,
       "lat_seq": 2504,
       "any_batch": false,

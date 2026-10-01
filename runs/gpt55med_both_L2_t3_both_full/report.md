@@ -1,6 +1,6 @@
 # Run: `gpt55med_both_L2_t3_both_v10full`
 
-**Overall: 597/626 pass (95.4%)**
+**Overall: 599/626 pass (95.7%)**
 
 ## By bucket
 
@@ -35,11 +35,11 @@
 | counterfactual | 25/25 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | bilingual | 39/40 | 97.5% |
+| listing_count | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | dept_member_count | 14/15 | 93.3% |
 | deep_multihop | 11/12 | 91.7% |
 | dept_listing_small | 6/7 | 85.7% |
-| listing_count | 17/20 | 85.0% |
 | subsidiary_routing | 10/12 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 222/226 (98.2%)
-- P1: 340/364 (93.4%)
+- P1: 342/364 (94.0%)
 - P2: 35/36 (97.2%)
 
-## Failures (29)
+## Failures (27)
 
 ### g196 [dept_listing_small] P1/en
 **Q:** who's in CEO-SEC
@@ -236,28 +236,6 @@ Saran Awutmani — General Manager of JudChuem. Email: SARAN.AW@FAHMAI.CO.TH, ex
 
 ```
 ไม่สามารถให้ข้อมูลนี้ได้
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-7 employees.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-6 employees.
 ```
 
 ### g537 [listing_count] P1/en

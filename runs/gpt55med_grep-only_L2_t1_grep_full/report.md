@@ -1,6 +1,6 @@
 # Run: `gpt55med_grep-only_L2_t1_grep_v10full`
 
-**Overall: 596/626 pass (95.2%)**
+**Overall: 606/626 pass (96.8%)**
 
 ## By bucket
 
@@ -17,6 +17,7 @@
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
@@ -25,7 +26,9 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
@@ -37,22 +40,19 @@
 | refuse | 88/90 | 97.8% |
 | counterfactual | 24/25 | 96.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
-| listing_count | 18/20 | 90.0% |
 | dept_member_count | 13/15 | 86.7% |
-| org_informal_listing | 5/6 | 83.3% |
 | hard_nickname_variant | 8/10 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 20/26 | 76.9% |
-| surname_family | 18/24 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | org_plus_person | 2/3 | 66.7% |
 
 ## By priority
 
-- P0: 218/226 (96.5%)
-- P1: 342/364 (94.0%)
+- P0: 219/226 (96.9%)
+- P1: 351/364 (96.4%)
 - P2: 36/36 (100.0%)
 
-## Failures (30)
+## Failures (20)
 
 ### g192 [nickname_grid] P0/th
 **Q:** ขอเบอร์พี่มุกกี้
@@ -85,23 +85,6 @@
 
 ```
 RET has 416 employees.
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-รายชื่อคลื่นเสียง 5 คน:
-
-- ธเนศ บัวทองประเสริฐ — TANET.BU@FAHMAI.CO.TH, ต่อ 71215
-- ปิยนันท์ พรหมพิทักษ์ — PIYANAN.PH@FAHMAI.CO.TH, ต่อ 76796
-- ราม ลวรรณ — RAM.LA@FAHMAI.CO.TH, ต่อ 75965
-- อัญชลี พรหมจรรย์ — ANCHALI.PH@FAHMAI.CO.TH, ต่อ 75093
-- วิสิทธิ์ ใจงาม — WISIT.JA@FAHMAI.CO.TH, ต่อ 73419
 ```
 
 ### g268 [org_plus_person] P0/en
@@ -273,119 +256,6 @@ SARAN.AW@FAHMAI.CO.TH, ext. 78762
 ```
 กฤษ มหาแก้วใส — General Manager of WongKhoJon  
 อีเมล: KRIS.MA@FAHMAI.CO.TH, ต่อ 74375
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-Narong Kobsoookbun — Director, JC-ENG. Email: NARONG.KO@FAHMAI.CO.TH, ext. 75194
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-7 employees.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-6 employees.
-```
-
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-All employees with surname เขียวขจีศรี:
-
-- ปกรณ์ เขียวขจีศรี — DATA ENGINEER, TEC — PAKORN.KI@FAHMAI.CO.TH
-- อัจฉรา เขียวขจีศรี — DIRECTOR CRM SPECIALIST, MKT — ATCHARA.KI@FAHMAI.CO.TH, ext. 78341, 067-671-3743
-- ไพฑูรย์ เขียวขจีศรี — LEAD SAIFAH BRAND MARKETER, SF — PAITOON.KI@FAHMAI.CO.TH, ext. 74791
-```
-
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-Everyone with surname ไกรศรีมณี:
-
-- ยุพา ไกรศรีมณี — YU-PHA.KR@FAHMAI.CO.TH, ext. 77475, mobile 061-810-1278
-- วิภา ไกรศรีมณี — WIPHA.KR@FAHMAI.CO.TH, ext. 75335
-- พาณิช ไกรศรีมณี — PANIT.KR@FAHMAI.CO.TH, ext. 08109
-```
-
-### g610 [surname_family] P1/en
-**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ศศิ บุญเรืองกุล — PHONE SUPPORT AGENT, SASI.BO@FAHMAI.CO.TH, ext. 72832
-- น้ำทิพย์ บุญเรืองกุล — SALES ASSOCIATE SIAM, NAMTHIP.BO@FAHMAI.CO.TH, ext. 19234
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ปัญญา วัชรจงรัก — LEAD TECHNICAL SUPPORT AGENT, SUP — PANYA.WA@FAHMAI.CO.TH, ext. 72201, mobile 093-616-9898
-- จรูญ วัชรจงรัก — LEARNING & DEVELOPMENT SPECIALIST, HR — CHAROON.WA@FAHMAI.CO.TH, ext. 71981
-```
-
-### g620 [surname_family] P1/en
-**Q:** List everyone with the surname สมประเสริฐ (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-Everyone with surname สมประเสริฐ:
-
-- ส้ม สมประเสริฐ — SOM.SO@FAHMAI.CO.TH, ext. 29089, mobile 086-366-0302
-- ดารา สมประเสริฐ — DARA.SO@FAHMAI.CO.TH, ext. 78138, mobile 065-660-6196
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- วีระ อภิญญาเสริม — VEERA.AP@FAHMAI.CO.TH
-- ดาหลา อภิญญาเสริม — DARHA.AP@FAHMAI.CO.TH, ext. 75781
 ```
 
 ### g672 [enterprise_shorthand] P1/en

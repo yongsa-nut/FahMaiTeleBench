@@ -1,6 +1,6 @@
 # Run: `gpt55low_both_L2_t3_both_v10full`
 
-**Overall: 579/626 pass (92.5%)**
+**Overall: 587/626 pass (93.8%)**
 
 ## By bucket
 
@@ -24,14 +24,15 @@
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 60/61 | 98.4% |
 | counterfactual | 24/25 | 96.0% |
+| surname_family | 23/24 | 95.8% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | name_lookup | 18/20 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
@@ -41,7 +42,6 @@
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 20/26 | 76.9% |
 | subsidiary_routing | 9/12 | 75.0% |
-| surname_family | 17/24 | 70.8% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 12/18 | 66.7% |
 | email_mobile_lookup | 4/7 | 57.1% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 330/364 (90.7%)
+- P1: 338/364 (92.9%)
 - P2: 29/36 (80.6%)
 
-## Failures (47)
+## Failures (39)
 
 ### g114 [name_lookup] P1/th
 **Q:** ขอเบอร์ สมพงษ์ อินทรีย์นาม หน่อย
@@ -313,28 +313,6 @@ Email: SARAN.AW@FAHMAI.CO.TH | Ext: 78762 | Mobile: 064-655-7513
 อีเมล: KRIS.MA@FAHMAI.CO.TH | ต่อ: 74375
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-7 employees.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-6 employees.
-```
-
 ### g568 [noisy_name_form] P1/th
 **Q:** เบอร์ต่อของคุณ Jutamas ที่เป็น EA ของ CTO เบอร์อะไรคะ
 
@@ -424,91 +402,15 @@ no record found
 คนที่ตำแหน่งสูงสุดคือ **พงษ์กานต์ ราชชากัญญ์ (COO)** เบอร์ต่อ **75464**
 ```
 
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-- ปกรณ์ เขียวขจีศรี — PAKORN.KI@FAHMAI.CO.TH
-- อัจฉรา เขียวขจีศรี — ext. 78341, 067-671-3743, ATCHARA.KI@FAHMAI.CO.TH
-- ไพฑูรย์ เขียวขจีศรี — ext. 74791, PAITOON.KI@FAHMAI.CO.TH
-```
-
 ### g607 [surname_family] P1/th
 **Q:** พนักงานที่นามสกุล แสงทอง มีใครบ้าง ขอชื่อทุกคน
 
-**Fails:** missing any-of ['Ravee', 'ระวี']; missing any-of ['Dao', 'ดาว']; missing any-of ['Anurak', 'อนุรักษ์']; missing count 3
+**Fails:** missing any-of ['Ravee', 'ระวี']; missing any-of ['Dao', 'ดาว']; missing any-of ['Anurak', 'อนุรักษ์']
 
 **Response:**
 
 ```
 ไม่พบข้อมูล
-```
-
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-- ยุพา ไกรศรีมณี — YU-PHA.KR@FAHMAI.CO.TH, ext. 77475, mobile 061-810-1278
-- วิภา ไกรศรีมณี — WIPHA.KR@FAHMAI.CO.TH, ext. 75335
-- พาณิช ไกรศรีมณี — PANIT.KR@FAHMAI.CO.TH, ext. 08109
-```
-
-### g610 [surname_family] P1/en
-**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-Everyone with surname บุญเรืองกุล:
-
-- ศศิ บุญเรืองกุล — Phone Support Agent, SUP — SASI.BO@FAHMAI.CO.TH, ext. 72832
-- น้ำทิพย์ บุญเรืองกุล — Sales Associate Siam, RET — NAMTHIP.BO@FAHMAI.CO.TH, ext. 19234
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ปัญญา วัชรจงรัก (PANYA WATCHARACHONGRAK) — SUP, ext. 72201, 093-616-9898, PANYA.WA@FAHMAI.CO.TH
-- จรูญ วัชรจงรัก (CHAROON WATCHARACHONGRAK) — HR, ext. 71981, CHAROON.WA@FAHMAI.CO.TH
-```
-
-### g620 [surname_family] P1/en
-**Q:** List everyone with the surname สมประเสริฐ (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ส้ม สมประเสริฐ — Sales Associate Lad Phrao, ext. 29089, 086-366-0302, SOM.SO@FAHMAI.CO.TH
-- ดารา สมประเสริฐ — KluenSiang Brand Marketer, ext. 78138, 065-660-6196, DARA.SO@FAHMAI.CO.TH
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- วีระ อภิญญาเสริม — VEERA.AP@FAHMAI.CO.TH
-- ดาหลา อภิญญาเสริม — DARHA.AP@FAHMAI.CO.TH, ext. 75781
 ```
 
 ### g685 [enterprise_shorthand] P1/en

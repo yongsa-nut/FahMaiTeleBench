@@ -1,6 +1,6 @@
 # Run: `minimax_repl_L2_t4_repl_v10full`
 
-**Overall: 548/626 pass (87.5%)**
+**Overall: 553/626 pass (88.3%)**
 
 ## By bucket
 
@@ -19,6 +19,7 @@
 | email_mobile_lookup | 7/7 | 100.0% |
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | bilingual | 39/40 | 97.5% |
 | surname_family | 23/24 | 95.8% |
@@ -28,19 +29,18 @@
 | subsidiary_routing | 11/12 | 91.7% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_nickname_variant | 9/10 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | counterfactual | 22/25 | 88.0% |
 | dept_listing_medium | 7/8 | 87.5% |
+| casual_name_lookup | 13/15 | 86.7% |
 | retrieval | 12/14 | 85.7% |
 | nickname_grid | 50/61 | 82.0% |
-| casual_name_lookup | 12/15 | 80.0% |
 | noisy_name_form | 16/20 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | enterprise_shorthand | 15/20 | 75.0% |
 | deep_multihop | 9/12 | 75.0% |
 | dept_member_count | 11/15 | 73.3% |
 | hard_multihop | 19/26 | 73.1% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
 | multi_hop | 12/18 | 66.7% |
 | evp_secretary | 3/5 | 60.0% |
 | evp_identity_by_code | 2/4 | 50.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 200/226 (88.5%)
-- P1: 316/364 (86.8%)
+- P0: 201/226 (88.9%)
+- P1: 320/364 (87.9%)
 - P2: 32/36 (88.9%)
 
-## Failures (78)
+## Failures (73)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -197,22 +197,6 @@ The secretary for LOGVP is **ณัฐกานต์ ศรีอารมณ�
 ```
 **กัลยา พิพัฒน์ (ลาเต้)** — ฝ่าย WK  
 📱 095-494-6107
-```
-
-### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
-
-**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
-
-**Response:**
-
-```
-มี 2 คนใน TEC ที่ชื่อเล่น "ชมพู่" ค่ะ:
-
-1. **เอกพล ศรีพงศ์** — เบอร์: 065-972-4277
-2. **ธนศักดิ์ ชัยดีศรี** — เบอร์: 094-607-2297
-
-ต้องการติดต่อคนไหนคะ?
 ```
 
 ### g160 [nickname_grid] P0/th
@@ -660,30 +644,6 @@ The VP heading the DN (ดาวเหนือ) department is **วิเชี
 📧 KRIS.MA@FAHMAI.CO.TH | 📞 74375
 ```
 
-### g462 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-TR section, who is the most senior employee?
-
-**Fails:** missing any-of ['อมรอาทิตย์', 'Amonarthitkul']
-
-**Response:**
-
-```
-**อุกฤษฎ์** — Director Finance (FIN-TR), เริ่มงานปี 2016 เป็น Senior สุดในส่วนนี้ค่ะ
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-**สุขุม เกษมแช้มช้อย (ตะวัน)** — ผู้จัดการวิศวกรผลิตภัณฑ์จุดเชื่อม (Manager), เริ่มงานปี 2020
-
-📧 SUKHUM.KA@FAHMAI.CO.TH | 📞 74900
-```
-
 ### g471 [bilingual] P1/th
 **Q:** ขออีเมลของ COO หน่อยครับ
 
@@ -703,28 +663,6 @@ FahMai อาจไม่มีตำแหน่ง COO หรือใช้�
 ต้องการให้ค้นหาตำแหน่งอื่นแทนไหมครับ?
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7 employees** in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-6 employees.
-```
-
 ### g562 [retrieval] P1/en
 **Q:** What's DARIN's phone extension?
 
@@ -736,5 +674,72 @@ There are **7 employees** in the DN department at IC level who started in 2020.
 No record found.
 ```
 
+### g565 [retrieval] P1/th
+**Q:** ขอเบอร์ต่อของคุณ NERNER หน่อยครับ
 
-_+28 more failures — see results.jsonl_
+**Fails:** missing any-of ['14122']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+```
+
+### g570 [noisy_name_form] P1/th
+**Q:** ขอ email ของ Tanida เลขา COO หน่อยครับ
+
+**Fails:** missing any-of ['THANIDA.TH@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+
+ไม่มีรายชื่อ ธนิดา ที่ดำรงตำแหน่งเลขา COO ในระบบ หรือหน่วย COO-EA ไม่มีในไดเรกทอรีครับ
+```
+
+### g574 [noisy_name_form] P1/en
+**Q:** Where's Ladawan Samphat's office? She's the EA to our CHRO.
+
+**Fails:** missing any-of ['FahMai Tower 24F', 'ชั้น 24', 'ชั้น24']
+
+**Response:**
+
+```
+<minimax:tool_call>
+<invoke name="python_repl">
+<parameter name="code">df[df['First Name Thai'].str.contains('ลดา', na=False)]</parameter>
+</invoke>
+</minimax:tool_call>
+```
+
+### g579 [noisy_name_form] P1/th
+**Q:** ขอเบอร์ต่อของคุณ Vaen ที่เป็น Director ทีม Escalations หน่อยครับ
+
+**Fails:** missing any-of ['71471']
+
+**Response:**
+
+```
+ไม่พบข้อมูลครับ ไม่มีพนักงานชื่อ Vaen ในตำแหน่ง Director ทีม Escalations ในระบบครับ
+```
+
+### g581 [noisy_name_form] P1/th
+**Q:** คุณ Nattakan VP Logistics นั่งตึกไหนชั้นไหนคะ
+
+**Fails:** missing any-of ['FahMai Tower 16F', 'ชั้น 16', 'ชั้น16']; has forbidden 'สาขาบางนา'
+
+**Response:**
+
+```
+ไม่พบข้อมูลพนักงานชื่อ **ณัฐกานต์** ที่ดำรงตำแหน่ง **VP Logistics** ในระบบค่ะ
+
+ในแผนก LOG (Logistics) มีพนักงานชื่อ ณัฐกานต์ 2 คน แต่ไม่มีตำแหน่ง VP:
+- **ณัฐกานต์ ศรีอารมณ์ดี** — FahMai Tower **16F**
+- **ณัฐกานต์ สัมดาวเรือง** — สาขาบางนา
+
+ไม่ทราบว่าต้องการติดต่อ VP Logistics ท่านอื่น หรือต้องการข้อมูลเพิ่มเติมไหมคะ?
+```
+
+
+_+23 more failures — see results.jsonl_

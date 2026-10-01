@@ -1,6 +1,6 @@
 # Run: `deepseekv4pro_search_L2_t2_search_v10full`
 
-**Overall: 602/626 pass (96.2%)**
+**Overall: 603/626 pass (96.3%)**
 
 ## By bucket
 
@@ -28,6 +28,7 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -38,21 +39,20 @@
 | refuse | 87/90 | 96.7% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | hard_implicit_hierarchy | 18/19 | 94.7% |
-| listing_count | 18/20 | 90.0% |
-| casual_name_lookup | 13/15 | 86.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | multi_hop | 15/18 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
+| casual_name_lookup | 12/15 | 80.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | subsidiary_routing | 9/12 | 75.0% |
 
 ## By priority
 
-- P0: 218/226 (96.5%)
-- P1: 348/364 (95.6%)
+- P0: 217/226 (96.0%)
+- P1: 350/364 (96.2%)
 - P2: 36/36 (100.0%)
 
-## Failures (24)
+## Failures (23)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -69,6 +69,18 @@ Here's the tech leadership at FahMai:
 
 - **Nattaphong Athidi** — Vice President Technology  
   📧 NATTAPHONG.AT@FAHMAI.CO.TH | 📞 ext. 75793 | FahMai Tower 12F
+```
+
+### g135 [casual_name_lookup] P0/th
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
+
+**Fails:** missing any-of ['54337', 'SUNEE.SU']
+
+**Response:**
+
+```
+พี่นัต (คุณสุณี สุวรรณอนุมาน) ผู้จัดการพนักงานขายสาขาเชียงใหม่ ฝ่าย RET  
+เบอร์: 099-408-3592
 ```
 
 ### g143 [casual_name_lookup] P0/th
@@ -239,35 +251,6 @@ I can't recommend who should lead a project — that's a subjective decision bas
 
 ```
 สรัล อาวุทธ์มณี (SARAN AWUTMANI) — General Manager of Judchuem, ext. 78762, saran.aw@fahmai.co.th
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7** employees in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6 employees** in the DN (ดาวเหนือ) department at Lead level who started in 2022:
-
-- อภิชัย ธนบุญ (จุ๊บ) — Lead Brand Marketer
-- ธนพล พิไชยา (ไผ่) — Lead Product Manager
-- กฤติน อนุเจริญ — Lead Brand Operations
-- ราม มหากิตติ — Lead Brand Operations
-- วีระ ชัยโชคดี — Lead Product Manager
-- กิตติศักดิ์ ฟ้าใสทอง — Lead Brand Marketer
 ```
 
 ### g589 [multi_hop] P1/th

@@ -1,6 +1,6 @@
 # Run: `gemini30flash_search_L2_t2_search_v10full`
 
-**Overall: 543/626 pass (86.7%)**
+**Overall: 546/626 pass (87.2%)**
 
 ## By bucket
 
@@ -12,6 +12,7 @@
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
 | org_informal_listing | 6/6 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
@@ -21,6 +22,7 @@
 | hard_nickname_variant | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
+| surname_family | 23/24 | 95.8% |
 | dept_member_count | 14/15 | 93.3% |
 | counterfactual | 23/25 | 92.0% |
 | deep_multihop | 11/12 | 91.7% |
@@ -28,31 +30,29 @@
 | name_lookup | 18/20 | 90.0% |
 | brand_prior | 9/10 | 90.0% |
 | superlative | 9/10 | 90.0% |
-| surname_family | 21/24 | 87.5% |
 | extension_reverse | 6/7 | 85.7% |
 | retrieval | 12/14 | 85.7% |
 | enterprise_shorthand | 17/20 | 85.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
-| tier_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
+| listing_count | 16/20 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | ceo_president | 3/4 | 75.0% |
 | bilingual | 30/40 | 75.0% |
-| listing_count | 15/20 | 75.0% |
 | org_plus_person | 2/3 | 66.7% |
-| multi_hop | 12/18 | 66.7% |
+| multi_hop | 11/18 | 61.1% |
 | noisy_name_form | 10/20 | 50.0% |
 | dept_listing_small | 3/7 | 42.9% |
 | subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
-- P0: 211/226 (93.4%)
-- P1: 299/364 (82.1%)
+- P0: 212/226 (93.8%)
+- P1: 301/364 (82.7%)
 - P2: 33/36 (91.7%)
 
-## Failures (83)
+## Failures (80)
 
 ### g024 [evp_identity_by_description] P0/th
 **Q:** ใครดูแลด้าน tech สูงสุด
@@ -242,24 +242,6 @@ ORRAYA WATCHARAKAN (PE) is the Executive Assistant to the CEO (unit: CEO-EA).
 
 ```
 แผนก RET-CBI มีทั้งหมด 1 คนครับ
-```
-
-### g261 [tier_listing] P0/th
-**Q:** ขอรายชื่อ director ทั้งหมด
-
-**Fails:** min_items 10 not met (8)
-
-**Response:**
-
-```
-นี่คือรายชื่อ Director ของฟ้าใหม่ (บางส่วน) ครับ:
-
-* **ธนิดา อภิใจ** - ผู้อำนวยการฝ่ายการเงินและวางแผน (FIN)
-* **แสงดาว อาวุทธ์พัฒน์** - ผู้อำนวยการฝ่ายปฏิบัติการสายฟ้า (SF)
-* **อรอนงค์ วิศอนุมาน** - ผู้อำนวยการฝ่ายแบรนด์ (MKT)
-* **บุษบา อัครพัฒน์** - ผู้อำนวยการฝ่ายบัญชี (FIN)
-* **อุกฤษฎ์ อมรอาทิตย์ (เจลลี่)** - ผู้อำนวยการฝ่ายการเงิน (FIN)
-* **หวาน สุวรรณโชคดี (บอส)** - ผู้อำนวยการฝ่ายวิศวกรทดสอ
 ```
 
 ### g268 [org_plus_person] P0/en
@@ -541,28 +523,19 @@ According to the directory, the CEO is:
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
-**Fails:** missing count 6
+**Fails:** missing count 7
 
 **Response:**
 
 ```
-In the DN (DaoNuea) department, there are 4 employees at the IC level who started in 2020:
+There are 6 employees in the DN (DaoNuea) department at the IC level who started in 2020:
 
-*   **Thinnakorn Narachannarong (Kob)** – Daonuea Brand Operations
-*   **Yothaka Amphomsawang** – Daonuea Product Engineer
-*   **Veera Phongasnee (Mango)** – Daonuea Product Manager
-*   **Prija Manifa (Tawan)** – Daonuea Brand Operations
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are 6 employees in the DN (DaoNuea) department at the Lead level who started in 2022.
+*   **ทินกร นราชาญณรงค์ (กบ)** – เจ้าหน้าที่ปฏิบัติการแบรนด์ดาวเหนือ
+*   **โยธกา อัมพรสว่าง** – วิศวกรผลิตภัณฑ์ดาวเหนือ
+*   **วีระ พงอัสนี (มะม่วง)** – ผู้จัดการผลิตภัณฑ์ดาวเหนือ
+*   **พฤกษา มณีฟ้า (ตะวัน)** – เจ้าหน้าที่ปฏิบัติการแบรนด์ดาวเหนือ
+*   **ปิยนันท์ พิดี (โกโก้)** – นักการตลาดแบรนด์ดาวเหนือ
+*   **
 ```
 
 ### g545 [listing_count] P1/th
@@ -653,5 +626,27 @@ Kittikhun Phongchongrak (Boom) works on the **16th floor** of FahMai Tower (BKK-
 ไม่พบข้อมูล
 ```
 
+### g574 [noisy_name_form] P1/en
+**Q:** Where's Ladawan Samphat's office? She's the EA to our CHRO.
 
-_+33 more failures — see results.jsonl_
+**Fails:** missing any-of ['FahMai Tower 24F', 'ชั้น 24', 'ชั้น24']
+
+**Response:**
+
+```
+no record found
+```
+
+### g579 [noisy_name_form] P1/th
+**Q:** ขอเบอร์ต่อของคุณ Vaen ที่เป็น Director ทีม Escalations หน่อยครับ
+
+**Fails:** missing any-of ['71471']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+```
+
+
+_+30 more failures — see results.jsonl_

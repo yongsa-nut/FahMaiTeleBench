@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_repl_L2_t4_repl_v10full`
 
-**Overall: 597/626 pass (95.4%)**
+**Overall: 596/626 pass (95.2%)**
 
 ## By bucket
 
@@ -26,6 +26,7 @@
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -38,21 +39,20 @@
 | nickname_grid | 56/61 | 91.8% |
 | subsidiary_routing | 11/12 | 91.7% |
 | deep_multihop | 11/12 | 91.7% |
-| listing_count | 18/20 | 90.0% |
 | hard_multihop | 23/26 | 88.5% |
 | evp_vs_vp_disambig | 22/25 | 88.0% |
 | evp_secretary | 4/5 | 80.0% |
 | hard_nickname_variant | 8/10 | 80.0% |
-| hard_implicit_hierarchy | 15/19 | 78.9% |
 | evp_identity_by_code | 3/4 | 75.0% |
+| hard_implicit_hierarchy | 12/19 | 63.2% |
 
 ## By priority
 
 - P0: 215/226 (95.1%)
-- P1: 347/364 (95.3%)
+- P1: 346/364 (95.1%)
 - P2: 35/36 (97.2%)
 
-## Failures (29)
+## Failures (30)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -331,26 +331,44 @@ The head of Judchuem (JC) is **สรัล อาวุทธ์มณี (SARA
 📞 ต่อ 74375 | ✉️ KRIS.MA@FAHMAI.CO.TH
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
+### g460 [hard_implicit_hierarchy] P1/en
+**Q:** In the FIN-AR section, who is the highest-ranking employee?
 
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7** employees in the **DN (ดาวเหนือ / DaoNuea)** department at **IC** level who started in **2020**.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
+**Fails:** missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
 
 **Response:**
 
 ```
-มีพนักงาน 6 คนในฝ่าย DN ที่ระดับ Lead ที่เริ่มงานในปี 2022
+The highest-ranking employee in **FIN-AR** is:
+
+**Mekha** (Director level) — email `MEKHA.M@FAHMAI.CO.TH`, extension 72532, office at FahMai Tower 8F.
+```
+
+### g464 [hard_implicit_hierarchy] P1/en
+**Q:** In the JC-ENG section, who is the highest-ranking employee?
+
+**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+
+**Response:**
+
+```
+พนักงานที่มีตำแหน่งสูงสุดในแผนก JC-ENG คือ **NARONG** (Director) อีเมล **NARONG.***@fahmai.co.th** เบอร์ภายใน **.....** (สามารถดูข้อมูลเพิ่มเติมในระบบได้ครับ)
+```
+
+### g466 [hard_implicit_hierarchy] P1/en
+**Q:** In the KS-MKT section, who is the highest-ranking employee?
+
+**Fails:** missing any-of ['อัมพรสถิต', 'Amphomsathit']
+
+**Response:**
+
+```
+พนักงานที่มีตำแหน่งสูงที่สุดในแผนก KS-MKT คือ **Thongchai Amornthammasak (ธงชัย อมรธรรมศักดิ์)** ในตำแหน่ง **Director**  
+
+- อีเมล: THONGCHAI.AM@FAHMAI.CO.TH  
+- เบอร์ติดต่อภายใน: ไม่มีข้อมูลเบอร์สายตรงในระบบ
+
+ถ้าต้องการรายละเอียดเพิ่มเติม บอกได้เลยครับ
 ```
 
 ### g565 [retrieval] P1/th

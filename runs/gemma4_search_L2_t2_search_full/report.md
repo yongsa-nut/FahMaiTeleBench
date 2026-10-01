@@ -1,6 +1,6 @@
 # Run: `gemma4_search_L2_t2_search_v10full`
 
-**Overall: 558/626 pass (89.1%)**
+**Overall: 565/626 pass (90.3%)**
 
 ## By bucket
 
@@ -23,22 +23,22 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | nickname_grid | 58/61 | 95.1% |
 | multi_entity_turn | 19/20 | 95.0% |
-| casual_name_lookup | 14/15 | 93.3% |
 | bilingual | 37/40 | 92.5% |
 | thai_knowledge | 9/10 | 90.0% |
+| listing_count | 18/20 | 90.0% |
 | enterprise_shorthand | 18/20 | 90.0% |
+| casual_name_lookup | 13/15 | 86.7% |
 | hard_multihop | 22/26 | 84.6% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | deep_multihop | 10/12 | 83.3% |
-| listing_count | 16/20 | 80.0% |
 | superlative | 8/10 | 80.0% |
-| surname_family | 18/24 | 75.0% |
 | dept_listing_small | 5/7 | 71.4% |
 | counterfactual | 17/25 | 68.0% |
 | org_plus_person | 2/3 | 66.7% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 216/226 (95.6%)
-- P1: 310/364 (85.2%)
+- P0: 215/226 (95.1%)
+- P1: 318/364 (87.4%)
 - P2: 32/36 (88.9%)
 
-## Failures (68)
+## Failures (61)
 
 ### g077 [evp_vs_vp_disambig] P0/th
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
@@ -63,6 +63,17 @@
 
 ```
 ไม่พบข้อมูล
+```
+
+### g135 [casual_name_lookup] P0/th
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
+
+**Fails:** missing any-of ['54337', 'SUNEE.SU']
+
+**Response:**
+
+```
+คุณนัต (สุณี สุวรรณอนุมาน) เบอร์โทรศัพท์ 099-408-3592 ครับ
 ```
 
 ### g143 [casual_name_lookup] P0/th
@@ -283,36 +294,6 @@ GM ดาวเหนือ คือ คุณวิเชียร พงห�
 ไม่สามารถให้ข้อมูลนี้ได้
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are 7 employees in the DN department at the IC level who started in 2020:
-
-*   ทินกร นราชาญณรงค์ (THINNAKORN NARACHANNARONG)
-*   โยธกา อัมพรสว่าง (YOTHAKA AMPHOMSAWANG)
-*   วีระ พงอัสนี (VEERA PHONGASNEE)
-*   พฤกษา มณีฟ้า (PRIJA MANIFA)
-*   ปิยนันท์ พิดี (PIYANAN PHIDI)
-*   พาณิช รัตนพร (PANIT RATANAPORN)
-*   หญิง ประใจดี (YING PRAJAIDI)
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are 6 employees in the DN department at Lead level who started in 2022.
-```
-
 ### g540 [listing_count] P1/th
 **Q:** มีพนักงานกี่คนที่อยู่แผนก FIN ระดับ IC และเริ่มงานในปี 2020 ครับ
 
@@ -514,84 +495,6 @@ no record found
 เบอร์ต่อของคุณพงษ์กานต์ ราชชากัญญ์ (COO) คือ 75464 ครับ
 ```
 
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-Here are the employees with the surname เขียวขจีศรี:
-
-* **ปกรณ์ เขียวขจีศรี (Lom)** - DATA ENGINEER (TEC), Email: PAKORN.KI@FAHMAI.CO.TH
-* **อัจฉรา เขียวขจีศรี (Beam)** - DIRECTOR CRM SPECIALIST (MKT), Email: ATCHARA.KI@FAHMAI.CO.TH, Ext: 78341
-* **ไพฑูรย์ เขียวขจีศรี** - LEAD SAIFAH BRAND MARKETER (SF), Email: PAITOON.KI@FAHMAI.CO.TH, Ext: 74791
-```
-
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-Here are the employees with the surname ไกรศรีมณี:
-
-* **ยุพา ไกรศรีมณี** (YU-PHA KRAISEEMANI) - YU-PHA.KR@FAHMAI.CO.TH
-* **วิภา ไกรศรีมณี** (WIPHA KRAISEEMANI) - WIPHA.KR@FAHMAI.CO.TH
-* **พาณิช ไกรศรีมณี** (PANIT KRAISEEMANI) - PANIT.KR@FAHMAI.CO.TH
-```
-
-### g610 [surname_family] P1/en
-**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ศศิ บุญเรืองกุล (SASI BOONRUENGKUN) - SASI.BO@FAHMAI.CO.TH
-- น้ำทิพย์ บุญเรืองกุล (NAMTHIP BOONRUENGKUN) - NAMTHIP.BO@FAHMAI.CO.TH
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ปัญญา วัชรจงรัก (ไทเทิล): PANYA.WA@FAHMAI.CO.TH, Ext. 72201
-- จรูญ วัชรจงรัก (ไผ่): CHAROON.WA@FAHMAI.CO.TH, Ext. 71981
-```
-
-### g620 [surname_family] P1/en
-**Q:** List everyone with the surname สมประเสริฐ (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ส้ม สมประเสริฐ (SOM SOMPRASERT): SOM.SO@FAHMAI.CO.TH
-- ดารา สมประเสริฐ (DARA SOMPRASERT): DARA.SO@FAHMAI.CO.TH
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- วีระ อภิญญาเสริม (VEERA APINYASOEM) - VEERA.AP@FAHMAI.CO.TH
-- ดาหลา อภิญญาเสริม (DARHA APINYASOEM) - DARHA.AP@FAHMAI.CO.TH
-```
-
 ### g682 [enterprise_shorthand] P1/th
 **Q:** หัวหน้าทีมฟินฯ คือใคร
 
@@ -641,5 +544,82 @@ Here are the employees with the surname ไกรศรีมณี:
 Sumate Akarajaingam's extension is 72146.
 ```
 
+### g757 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณคะวัง กอบสุขรัตน์เป็น CMO ขอเบอร์ต่อหน่อยครับ
 
-_+18 more failures — see results.jsonl_
+**Fails:** missing any-of ['MKTVP', 'VP Marketing', 'ส้ม']
+
+**Response:**
+
+```
+คุณคะวัง กอบสุขรัตน์ เบอร์ต่อ 74711 ครับ
+```
+
+### g758 [counterfactual] P1/en
+**Q:** I heard ณัฐพงษ์ อธิดี is the CTO — can I get their extension?
+
+**Fails:** missing any-of ['TECVP', 'VP Technology', 'ฤทธิชัย']
+
+**Response:**
+
+```
+ณัฐพงษ์ อธิดี's extension is 75793.
+```
+
+### g759 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณคึกฤทธิ์ บุษราคัมวงศ์เป็น COO ขอเบอร์ต่อหน่อยครับ
+
+**Fails:** missing any-of ['OPSVP', 'VP Operations', 'พงษ์กานต์']
+
+**Response:**
+
+```
+คุณคึกฤทธิ์ บุษราคัมวงศ์ เบอร์ต่อ 77358 ครับ
+```
+
+### g761 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณวิริยะ จันทชัยเป็น CMO ขอเบอร์ต่อหน่อยครับ
+
+**Fails:** missing any-of ['RETVP', 'ส้ม', 'Som']
+
+**Response:**
+
+```
+คุณวิริยะ จันทชัย เบอร์ต่อ 79141 ครับ
+```
+
+### g763 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณวชิร จิรบุญเป็น COO ขอเบอร์ต่อหน่อยครับ
+
+**Fails:** missing any-of ['CEO', 'Chief Executive', 'บริหารสูงสุด']
+
+**Response:**
+
+```
+คุณวชิร จิรบุญ เบอร์ต่อ 73048 ครับ
+```
+
+### g769 [counterfactual] P1/th
+**Q:** ได้ยินว่าคุณดาริกา อาวุทธ์ดีเป็น COO ขอเบอร์ต่อหน่อยครับ
+
+**Fails:** missing any-of ['SUPVP', 'พงษ์กานต์', 'Pongkan']
+
+**Response:**
+
+```
+คุณดาริกา อาวุทธ์ดี เบอร์ต่อ 79070 ครับ
+```
+
+### g770 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายวิศวกรรมของแบรนด์ดาวเหนือ
+
+**Fails:** missing any-of ['Phonphai', 'พรไพร']; missing any-of ['Arthitkulwongs', 'อาทิตย์วงษ์']
+
+**Response:**
+
+```
+หัวหน้าฝ่าย (General Manager) ของแบรนด์ดาวเหนือคือ คุณวิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN) ติดต่อได้ที่เบอร์ภายใน 76999 หรืออีเมล WICHIAN.PH@FAHMAI.CO.TH ครับ
+```
+
+
+_+11 more failures — see results.jsonl_

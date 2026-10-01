@@ -1,6 +1,6 @@
 # Run: `glm51_repl_L2_t4_repl_v10full`
 
-**Overall: 597/626 pass (95.4%)**
+**Overall: 601/626 pass (96.0%)**
 
 ## By bucket
 
@@ -25,6 +25,7 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | surname_family | 24/24 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
@@ -34,14 +35,13 @@
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | nickname_grid | 58/61 | 95.1% |
 | enterprise_shorthand | 19/20 | 95.0% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
+| multi_hop | 17/18 | 94.4% |
 | casual_name_lookup | 14/15 | 93.3% |
 | dept_member_count | 14/15 | 93.3% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_nickname_variant | 9/10 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
-| hard_implicit_hierarchy | 17/19 | 89.5% |
-| multi_hop | 16/18 | 88.9% |
 | subsidiary_routing | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
 | deep_multihop | 9/12 | 75.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 216/226 (95.6%)
-- P1: 348/364 (95.6%)
+- P1: 352/364 (96.7%)
 - P2: 33/36 (91.7%)
 
-## Failures (29)
+## Failures (25)
 
 ### g072 [evp_vs_vp_disambig] P0/th
 **Q:** หา MKTBR หน่อย อย่าสับกับ MKTVP
@@ -236,31 +236,18 @@ Based on the directory, แตง บุญญาสินธุ์ is an HR-OPS
 📧 อีเมล: **RUENGSAK.TK@FAHMAI.CO.TH**
 ```
 
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The most senior employee in **FIN-AR** is **Sanit Athiboonnam** (สนิท อธิบุญนำ), Accounts Receivable Officer, who started in **2020**.
-
-- 📧 SANIT.AT@FAHMAI.CO.TH
-- 📞 Ext. 79860
-```
-
 ### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
+**Q:** In the JC-ENG section, who is the highest-ranking employee?
 
-**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
+**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
 
 **Response:**
 
 ```
-The most senior employee in JC-ENG is **Sukhum Kasemchaemchoi** (nickname: Tawan), Manager – JudChuem Product Engineer, who started in **2020**. 
+The highest-ranking employee in **JC-ENG** is:
 
-📧 SUKHUM.KA@FAHMAI.CO.TH · ext. 74900
+- **Narong Kobsbookbun** — Director (Director JudChuem Product Engineer)
+- 📞 Ext. 75194 | ✉️ NARONG.KO@FAHMAI.CO.TH
 ```
 
 ### g475 [bilingual] P1/th
@@ -272,28 +259,6 @@ The most senior employee in JC-ENG is **Sukhum Kasemchaemchoi** (nickname: Tawan
 
 ```
 รหัสหน่วยงานของ Chief of Staff คือ **CEO-OFF** ครับ (สังกัด Department CEO, Section CEO-OFF)
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7** employees in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6** employees in the DN department at Lead level who started in 2022.
 ```
 
 ### g585 [noisy_name_form] P1/en
@@ -316,17 +281,6 @@ No record found
 
 ```
 ไม่พบข้อมูล ไม่มีพนักงานชื่อ Natanicha ในระบบ directory ค่ะ
-```
-
-### g590 [multi_hop] P1/en
-**Q:** What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?
-
-**Fails:** missing any-of ['MEKHA.PH2@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-The most senior person in FIN-AR (ภูมิ กาญจน์เจริญ's section) is **สนิท อธิบุญนำ**, who started in 2020. Their email is **SANIT.AT@FAHMAI.CO.TH**.
 ```
 
 ### g603 [multi_hop] P1/en

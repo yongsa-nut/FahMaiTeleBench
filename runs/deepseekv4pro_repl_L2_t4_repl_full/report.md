@@ -1,6 +1,6 @@
 # Run: `deepseekv4pro_repl_L2_t4_repl_v10full`
 
-**Overall: 611/626 pass (97.6%)**
+**Overall: 615/626 pass (98.2%)**
 
 ## By bucket
 
@@ -17,6 +17,8 @@
 | dept_listing_medium | 8/8 | 100.0% |
 | dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
@@ -28,6 +30,7 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
 | enterprise_shorthand | 20/20 | 100.0% |
@@ -41,18 +44,15 @@
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | retrieval | 13/14 | 92.9% |
 | deep_multihop | 11/12 | 91.7% |
-| listing_count | 18/20 | 90.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
-| org_informal_listing | 5/6 | 83.3% |
-| tier_listing | 5/6 | 83.3% |
 
 ## By priority
 
-- P0: 220/226 (97.3%)
-- P1: 356/364 (97.8%)
+- P0: 222/226 (98.2%)
+- P1: 358/364 (98.4%)
 - P2: 35/36 (97.2%)
 
-## Failures (15)
+## Failures (11)
 
 ### g071 [evp_vs_vp_disambig] P0/en
 **Q:** MKTDG not MKTVP, who is it
@@ -79,48 +79,6 @@ MKTVP (คุณคะวัง) ดูแลภาพรวม Marketing ส่
 
 ```
 พบคุณ**จงรัก สัมโชติ** (ปุ๊ก) สังกัดฝ่าย JC ครับ แต่ในระบบไม่มีเบอร์โทรศัพท์ (ทั้งเบอร์ภายในและมือถือ) ระบุไว้ครับ
-```
-
-### g255 [org_informal_listing] P0/th
-**Q:** วงโคจร มีใครบ้าง
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-**วงโคจร (WK / WongKhoJon)** — มีพนักงานทั้งหมด **80 คน** แบ่งเป็น 4 ฝ่าย:
-
-| ฝ่าย | จำนวน |
-|---|---|
-| WK-PD (พัฒนาผลิตภัณฑ์) | 27 คน |
-| WK-ENG (วิศวกรรม) | 22 คน |
-| WK-MKT (การตลาด) | 21 คน |
-| WK-OPS (ปฏิบัติการ) | 10 คน |
-
-**ผู้บริหารหลัก:**
-- **คุณคึกฤทธิ์ อัครเจริญ** — VP วงโคจร (WKVP)
-- **คุณกฤษ มหาแก้วใส** — GM แบรนด์วงโคจร (WK-GM)
-- **คุณพิชัย อมรินทร์ฟ้า** — ผอ. วิศวกรผลิตภัณฑ์ (WK-EN
-```
-
-### g261 [tier_listing] P0/th
-**Q:** ขอรายชื่อ director ทั้งหมด
-
-**Fails:** min_items 10 not met (6)
-
-**Response:**
-
-```
-มี Director ทั้งหมด **63 คน** ในระบบ นี่คือตัวอย่าง 10 คนจากหลากหลายแผนก:
-
-| ชื่อ-นามสกุล | ตำแหน่ง | ฝ่าย | สาขา | อีเมล |
-|---|---|---|---|---|
-| ธนิดา อภิใจ | — | TEC | — | THANIDA.AP@FAHMAI.CO.TH |
-| แสงดาว อาวุทธ์พัฒน์ | — | TEC | — | SAENGDAO.AW@FAHMAI.CO.TH |
-| อรอนงค์ วิศอนุมาน | — | TEC | — | ORANONG.WI@FAHMAI.CO.TH |
-| บุษบา อัครพัฒน์ | — | FIN | — | BUSABA.AK@FAHMAI.CO.TH |
-| อุกฤษฎ์ อม
 ```
 
 ### g316 [refuse] P0/th
@@ -216,28 +174,6 @@ The most senior person heading the Judchuem department is **Saran Awutmani (ส�
 ผู้บริหารสูงสุดของแบรนด์วงโคจร (Wongkhojon / WK) คือ **คุณกฤษ มหาแก้วใส** ตำแหน่ง General Manager of Wongkhojon
 
 📧 KRIS.MA@FAHMAI.CO.TH | 📞 ต่อ 74375
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-มีพนักงานในแผนก DN ระดับ IC ที่เริ่มงานปี 2020 ทั้งหมด **7 คน** ครับ
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-6 employees in the DN department at Lead level started in 2022.
 ```
 
 ### g556 [retrieval] P1/en

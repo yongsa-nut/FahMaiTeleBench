@@ -1,6 +1,6 @@
 # Run: `glm51_search_L2_t2_search_v10full`
 
-**Overall: 602/626 pass (96.2%)**
+**Overall: 606/626 pass (96.8%)**
 
 ## By bucket
 
@@ -29,6 +29,7 @@
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -37,22 +38,21 @@
 | deep_multihop | 12/12 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | bilingual | 39/40 | 97.5% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
 | nickname_grid | 57/61 | 93.4% |
-| listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
 | dept_listing_small | 6/7 | 85.7% |
 | hard_multihop | 22/26 | 84.6% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | org_plus_person | 2/3 | 66.7% |
 | multi_hop | 12/18 | 66.7% |
 
 ## By priority
 
 - P0: 220/226 (97.3%)
-- P1: 346/364 (95.1%)
+- P1: 350/364 (96.2%)
 - P2: 36/36 (100.0%)
 
-## Failures (24)
+## Failures (20)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -200,39 +200,6 @@ The most senior person heading the **Judchuem (จุดเชื่อม)** de
 - 📍 FahMai Tower 24F, BKK-R9
 ```
 
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The most senior employees in FIN-AR both started in **2020** (the earliest year in the section):
-
-- **สนิท อธิบุญนำ** (SANIT ATHIBOONNAM) — AR Officer, ext 79860, mobile 082-744-7187
-- **ธนวัฒน์ อารีวัฒน์** (TANAWAT AREEWAT) — AR Officer, ext 74381, mobile 068-728-6438
-
-They share the longest tenure in the section at ~5 years.
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-The earliest start year in JC-ENG is **2020**, and three employees share it:
-
-- **สุขุม เกษมแช้มช้อย** (SUKHUM KASEMCHAEMCHOI) — Manager, ext. 74900, SUKHUM.KA@FAHMAI.CO.TH
-- **อุมา ประเกียรติกำจร** (UMA PRAKIATKAMJORN) — IC, ext. 78200, UMA.PR2@FAHMAI.CO.TH
-- **ฤทธิรงค์ ชาญณรงค์นาม** (RITTHIRONG CHANNARONGNAM) — IC, ext. 36615, RITTHIRONG.CH@FAHMAI.CO.TH
-
-All three started in 2020, making them th
-```
-
 ### g521 [bilingual] P1/th
 **Q:** Vice President Fleet เบอร์ extension อะไรครับ
 
@@ -242,28 +209,6 @@ All three started in 2020, making them th
 
 ```
 VP Logistics (Fleet) คือ **คุณณัฐกานต์ ศรีอารมณ์ดี (ติ๊ก)** — Extension: **75105** 📞
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-**7 employees** in the DN department at IC level started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-**6 employees** in the DN department are at Lead level and started in 2022.
 ```
 
 ### g568 [noisy_name_form] P1/th

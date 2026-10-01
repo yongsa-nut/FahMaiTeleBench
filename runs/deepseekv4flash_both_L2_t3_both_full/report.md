@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_both_L2_t3_both_v10full`
 
-**Overall: 609/626 pass (97.3%)**
+**Overall: 610/626 pass (97.4%)**
 
 ## By bucket
 
@@ -27,6 +27,7 @@
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | noisy_name_form | 20/20 | 100.0% |
 | multi_hop | 18/18 | 100.0% |
@@ -35,7 +36,6 @@
 | deep_multihop | 12/12 | 100.0% |
 | nickname_grid | 60/61 | 98.4% |
 | refuse | 88/90 | 97.8% |
-| listing_count | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | hard_implicit_hierarchy | 18/19 | 94.7% |
 | subsidiary_routing | 11/12 | 91.7% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 221/226 (97.8%)
-- P1: 353/364 (97.0%)
+- P1: 354/364 (97.3%)
 - P2: 35/36 (97.2%)
 
-## Failures (17)
+## Failures (16)
 
 ### g175 [nickname_grid] P0/th
 **Q:** ตะวัน ที่อยู่ DN คือใคร
@@ -230,26 +230,6 @@
 The head of Judchuem (จุดเชื่อม) is **SARAN AWUTMANI (สรัล อาวุทธ์มณี)**, General Manager of Judchuem (Director level).
 
 📞 Ext: 78762 | Mobile: 064-655-7513 | ✉️ SARAN.AW@FAHMAI.CO.TH | FahMai Tower 24F
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-มีพนักงานในแผนก **DN (ดาวเหนือ)** ที่มีตำแหน่งระดับ **Lead** และเริ่มงานในปี **2022** จำนวน **6 คน** ดังนี้
-
-| ชื่อ | นามสกุล | หน่วย |
-|---|---|---|
-| อภิชัย | ธนบุญ | DN-MKT-LEAD-4 |
-| ธนพล | พิไชยา | DN-PD-LEAD-9 |
-| กฤติน | อนุเจริญ | DN-OPS-LEAD-3 |
-| ราม | มหากิตติ | DN-OPS-LEAD-4 |
-| วีระ | ชัยโชคดี | DN-PD-LEAD-1 |
-| กิตติศักดิ์ | ฟ้าใสทอง | DN-MKT-LEAD-4 |
 ```
 
 ### g682 [enterprise_shorthand] P1/th

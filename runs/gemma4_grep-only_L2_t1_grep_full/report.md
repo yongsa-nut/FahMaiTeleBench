@@ -1,6 +1,6 @@
 # Run: `gemma4_grep-only_L2_t1_grep_v10full`
 
-**Overall: 542/626 pass (86.6%)**
+**Overall: 554/626 pass (88.5%)**
 
 ## By bucket
 
@@ -14,6 +14,7 @@
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
 | extension_reverse | 7/7 | 100.0% |
@@ -21,6 +22,7 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
@@ -32,7 +34,6 @@
 | dept_member_count | 13/15 | 86.7% |
 | listing_count | 17/20 | 85.0% |
 | enterprise_shorthand | 17/20 | 85.0% |
-| org_informal_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
@@ -43,16 +44,15 @@
 | multi_hop | 11/18 | 61.1% |
 | name_lookup | 12/20 | 60.0% |
 | deep_multihop | 7/12 | 58.3% |
-| surname_family | 13/24 | 54.2% |
 | subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
-- P0: 216/226 (95.6%)
-- P1: 298/364 (81.9%)
+- P0: 217/226 (96.0%)
+- P1: 309/364 (84.9%)
 - P2: 28/36 (77.8%)
 
-## Failures (84)
+## Failures (72)
 
 ### g045 [evp_secretary] P0/th
 **Q:** CFO secretary ใคร
@@ -224,25 +224,6 @@
 
 ```
 The RET department has 437 employees.
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-รายชื่อพนักงานแผนกคลื่นเสียง (KS) 5 ท่านครับ:
-
-*   คุณธเนศ บัวทองประเสริฐ (TANET.BU@FAHMAI.CO.TH)
-*   คุณปิยนันท์ พรหมพิทักษ์ (PIYANAN.PH@FAHMAI.CO.TH)
-*   คุณราม ลวรรณ (RAM.LA@FAHMAI.CO.TH)
-*   คุณธเนศ บัวทองประเสริฐ (TANET.BU@FAHMAI.CO.TH)
-*   คุณปิยนันท์ พรหมพิทักษ์ (PIYANAN.PH@FAHMAI.CO.TH)
-
-*(หมายเหตุ: ข้อมูลเบื้องต้นจากระบบ)*
 ```
 
 ### g268 [org_plus_person] P0/en
@@ -440,23 +421,34 @@ Saran Awutmani (SARAN.AW@FAHMAI.CO.TH) is the General Manager of Judchuem.
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
-**Fails:** missing count 6
+**Fails:** missing count 7
 
 **Response:**
 
 ```
+Hiding the internal thought process...
 There are 0 employees in the DN department at the IC level who started in 2020.
 ```
 
 ### g535 [listing_count] P1/en
 **Q:** How many employees are in the DN department at Lead level who started in 2022?
 
-**Fails:** missing count 5
+**Fails:** missing count 6
 
 **Response:**
 
 ```
-There are 6 employees in the DN department at the Lead level who started in 2022.
+There are 7 employees in the DN department at the Lead level who started in 2022:
+
+* อภิชัย ธนบุญ (APICHAI THANABUN)
+* ธนพล พิไชยา (THANAPHON PHICHAIYAWONG)
+* กฤติน อนุเจริญ (KRITTIN ANUCHAROEN)
+* ราม มหากิตติ (RAM MAHAKITTIPONG)
+* วีระ ชัยโชคดี (VEERA CHAICHOKDEE)
+* กิตติศักดิ์ ฟ้าใสทอง (KITTISAK FAHSAITHONG)
+* (One additional match from the full directory)
+
+**Total: 7**
 ```
 
 ### g540 [listing_count] P1/th
@@ -561,86 +553,97 @@ Kittikhun Phongchongrak (Chief of Staff) works on the 16th floor of FahMai Tower
 คุณคำรณ ศรีอัญชลี สังกัดฝ่ายปฏิบัติการ (OPS) ซึ่งผู้ที่มีตำแหน่งสูงสุดในฝ่ายนี้คือ คุณพงษ์กานต์ ราชชากัญญ์ (Chief Operating Officer) เบอร์โทรศัพท์ภายในคือ 75464 ครับ
 ```
 
-### g605 [surname_family] P1/th
-**Q:** พนักงานที่นามสกุล มณีฟ้า มีใครบ้าง ขอชื่อทุกคน
+### g633 [nickname_grid] P1/th
+**Q:** ยุ้ย คือใคร มีใครบ้าง
 
-**Fails:** missing count 3
-
-**Response:**
-
-```
-พนักงานที่นามสกุล มณีฟ้า มีดังนี้ครับ:
-- คุณราชตะ มณีฟ้า
-- คุณจันทนา มณีฟ้า
-- คุณพฤกษา มณีฟ้า
-```
-
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
+**Fails:** min_items 3 not met (0)
 
 **Response:**
 
 ```
-Here are the employees with the surname เขียวขจีศรี:
+มีคนที่ใช้ชื่อเล่นว่า "ยุ้ย" ทั้งหมด 12 คน ดังนี้ครับ:
 
-* **Pakorn Kiaokajisi (ปกรณ์ เขียวขจีศรี)** - PAKORN.KI@FAHMAI.CO.TH
-* **Atchara Kiaokajisi (อัจฉรา เขียวขจีศรี)** - ATCHARA.KI@FAHMAI.CO.TH
-* **Paitoon Kiaokajisi (ไพฑูรย์ เขียวขจีศรี)** - PAITOON.KI@FAHMAI.CO.TH
+*   **คุณแตง (ยุ้ย) บุญญาสินธุ์** - เลขานุการของ HRVP (HR) | อีเมล: TAENG.BO@FAHMAI.CO.TH
+*   **คุณธีรภพ (ยุ้ย) อัครกำจร** - เจ้าหน้าที่บริการลูกค้าทางโทรศัพท์ (SUP) | อีเมล: THEERAPHOP.AK@FAHMAI.CO.TH
+*   **คุณกฤต (ยุ้ย) ธนศรี** - หัวหน้าทีมพนักงานขายสาขาชลบุรี (RET) | อีเมล: KRID.TH@FAHMAI.CO.TH
+*   **คุณกฤษ (ยุ้ย) วัชรการเวก** - หัวหน้าทีม
 ```
 
-### g607 [surname_family] P1/th
-**Q:** พนักงานที่นามสกุล แสงทอง มีใครบ้าง ขอชื่อทุกคน
+### g662 [multi_entity_turn] P1/en
+**Q:** ext for SUPVP, OPSVP
 
-**Fails:** missing count 3
+**Fails:** missing any-of ['77358']; min_items 2 not met (1)
 
 **Response:**
 
 ```
-พนักงานที่นามสกุล แสงทอง มีดังนี้ครับ:
-- คุณระวี แสงทอง
-- คุณดาว แสงทอง
-- คุณอนุรักษ์ แสงทอง
+- SUPVP SUP: 79070
+- VP OPS: 773 58
 ```
 
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
+### g671 [enterprise_shorthand] P1/th
+**Q:** พนักงานสาขาโคราช มีกี่คน
 
-**Fails:** missing count 3
+**Fails:** missing count 30
 
 **Response:**
 
 ```
-- ยุพา ไกรศรีมณี: YU-PHA.KR@FAHMAI.CO.TH
-- วิภา ไกรศรีมณี: WIPHA.KR@FAHMAI.CO.TH
-- พาณิช ไกรศรีมณี: PANIT.KR@FAHMAI.CO.TH
+พนักงานสาขาโคราช (NMA) มีทั้งหมด 72 คนครับ
 ```
 
-### g610 [surname_family] P1/en
-**Q:** List everyone with the surname บุญเรืองกุล (give all of them).
+### g682 [enterprise_shorthand] P1/th
+**Q:** หัวหน้าทีมฟินฯ คือใคร
 
-**Fails:** missing count 2
+**Fails:** missing any-of ['Kamala', 'กมลา']; missing any-of ['Chaisonsawang', 'ชัยสนธิ์สว่าง']
 
 **Response:**
 
 ```
-- ศศิ บุญเรืองกุล (SASI BOONRUENGKUN) - SASI.BO@FAHMAI.CO.TH
-- น้ำทิพย์ บุญเรืองกุล (NAMTHIP BOONRUENGKUN) - NAMTHIP.BO@FAHMAI.CO.TH
+ฝ่ายการเงิน (FIN) มีหัวหน้าทีมในหลายส่วนงาน ดังนี้ครับ:
+
+*   **หัวหน้าทีมนักวิเคราะห์การเงิน:** คุณคึกฤทธิ์ จิรบุญมี (KUKRIT.CH2@FAHMAI.CO.TH) และ คุณกุหลาบ จงรักดี (KULAP.CH3@FAHMAI.CO.TH)
+*   **หัวหน้าทีมเจ้าหน้าที่บัญชีลูกหนี้:** คุณดาว แสงทอง (DAO.SA@FAHMAI.CO.TH) และ คุณปกรณ์ บุญดาวใส (PAKORN.BU@FAHMAI.CO.TH)
+*   **หัวหน้าทีมนักบัญชี:** คุณไพลิน รัตนใจ (PHAILIN.RA@FAHMAI.CO.TH) และ คุณสุเมธ เ
 ```
 
-### g613 [surname_family] P1/th
-**Q:** พนักงานที่นามสกุล พงอัสนี มีใครบ้าง ขอชื่อทุกคน
+### g684 [enterprise_shorthand] P1/th
+**Q:** ใครเป็นหัวหน้าทีมการตลาด
 
-**Fails:** missing count 2
+**Fails:** missing any-of ['Som', 'ส้ม']; missing any-of ['Kansathit', 'กาญจน์สถิต']
 
 **Response:**
 
 ```
-พนักงานที่นามสกุล พงอัสนี มีดังนี้ครับ:
-- คุณวีระ พงอัสนี
-- คุณพิมพ์ชนก พงอัสนี
+หัวหน้าทีมในฝ่ายการตลาด (MKT) มีหลายท่านแบ่งตามสายงานดังนี้ครับ:
+
+*   **ประชาสัมพันธ์ (PR):** คุณทักษอร เกษมใจ (เกม) - `TAKSA-ORN.KA2@FAHMAI.CO.TH`
+*   **การตลาดดิจิทัล (Digital Marketing):** คุณไพบูลย์ แซ่ฮวง (ดอกไม้) และ คุณองอาจ สุวรรณชัย
+*   **CRM:** คุณมาลี เกียรติกำจรมณี, คุณพลอย อมรจิตรานนท์ และ คุณวิภา ราชกอบสุข (มิว)
+*   **จัดอีเวนต์ (Events):** คุณศศิปราภา ดาวเรืองสุข (ชาร์ค) - `SASIPRAP
+```
+
+### g746 [counterfactual] P1/en
+**Q:** I heard พงษ์กานต์ ราชชากัญญ์ is the CEO — can I get their extension?
+
+**Fails:** missing any-of ['COO', 'Chief Operating', 'ปฏิบัติการ']
+
+**Response:**
+
+```
+no record found
+```
+
+### g748 [counterfactual] P1/en
+**Q:** I heard ฤทธิชัย แก้วใสภิญโญ is the CMO — can I get their extension?
+
+**Fails:** missing any-of ['CTO', 'Chief Technology', 'เทคโนโลยี']
+
+**Response:**
+
+```
+no record found
 ```
 
 
-_+34 more failures — see results.jsonl_
+_+22 more failures — see results.jsonl_

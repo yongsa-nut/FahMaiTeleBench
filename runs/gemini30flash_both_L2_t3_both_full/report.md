@@ -1,6 +1,6 @@
 # Run: `gemini30flash_both_L2_t3_both_v10full`
 
-**Overall: 569/626 pass (90.9%)**
+**Overall: 571/626 pass (91.2%)**
 
 ## By bucket
 
@@ -23,36 +23,36 @@
 | subsidiary_md | 8/8 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | refuse | 88/90 | 97.8% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
 | counterfactual | 24/25 | 96.0% |
 | retrieval | 13/14 | 92.9% |
-| surname_family | 22/24 | 91.7% |
 | deep_multihop | 11/12 | 91.7% |
 | nickname_grid | 55/61 | 90.2% |
 | thai_knowledge | 9/10 | 90.0% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | bilingual | 36/40 | 90.0% |
+| listing_count | 18/20 | 90.0% |
 | enterprise_shorthand | 18/20 | 90.0% |
 | brand_prior | 9/10 | 90.0% |
 | dept_listing_medium | 7/8 | 87.5% |
 | extension_reverse | 6/7 | 85.7% |
-| listing_count | 17/20 | 85.0% |
 | hard_multihop | 22/26 | 84.6% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | email_identity_lookup | 5/6 | 83.3% |
 | noisy_name_form | 16/20 | 80.0% |
 | superlative | 8/10 | 80.0% |
-| multi_hop | 11/18 | 61.1% |
+| multi_hop | 10/18 | 55.6% |
 | subsidiary_routing | 4/12 | 33.3% |
 
 ## By priority
 
 - P0: 216/226 (95.6%)
-- P1: 321/364 (88.2%)
+- P1: 323/364 (88.7%)
 - P2: 32/36 (88.9%)
 
-## Failures (57)
+## Failures (55)
 
 ### g174 [nickname_grid] P0/th
 **Q:** อรุณ ที่อยู่ SUP คือใคร
@@ -369,36 +369,17 @@ The most senior person heading the Judchuem (JC) department is **Saran Awutmani 
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
-**Fails:** missing count 6
+**Fails:** missing count 7
 
 **Response:**
 
 ```
-There are 5 employees in the DN (DaoNuea) department at the IC level who started in 2020:
+There are 4 employees in the DN department at the IC level who started in 2020:
 
-*   **ทินกร นราชาญณรงค์ (กบ)** – DAONUEA BRAND OPERATIONS
-*   **โยธกา อัมพรสว่าง** – DAONUEA PRODUCT ENGINEER
-*   **วีระ พงอัสนี (มะม่วง)** – DAONUEA PRODUCT MANAGER
-*   **พฤกษา มณีฟ้า (ตะวัน)** – DAONUEA BRAND OPERATIONS
-*   **ธนพล อัศนีสรี (มด)** – DAONUEA PRODUCT MANAGER
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6** employees in the DN department at the Lead level who started in 2022:
-
-*   **Apichai Thanabun (Jub)** – Lead Daonuea Brand Marketer
-*   **Thanaphon Phichaiyawong (Phai)** – Lead Daonuea Product Manager
-*   **Krittin Anucharoen** – Lead Daonuea Brand Operations
-*   **Ram Mahakittipong** – Lead Daonuea Brand Operations
-*   **Veera Chaichokdee** – Lead Daonuea Product Manager
-*   **Ki
+*   **ทินกร นราชาญณรงค์ (กบ)** - เจ้าหน้าที่ปฏิบัติการแบรนด์ดาวเหนือ
+*   **โยธกา อัมพรสว่าง** - วิศวกรผลิตภัณฑ์ดาวเหนือ
+*   **วีระ พงอัสนี (มะม่วง)** - ผู้จัดการผลิตภัณฑ์ดาวเหนือ
+*   **พฤกษา มณีฟ้า (ตะวัน)** - เจ้าหน้าที่ปฏิบัติการแบรนด์ดาวเหนือ
 ```
 
 ### g555 [retrieval] P1/th
@@ -503,6 +484,19 @@ no record found
 เบอร์ต่อของ คุณณฐามน อภิชัยดี (CHRO) ซึ่งเป็นตำแหน่งสูงสุดในแผนกทรัพยากรบุคคล (HR) คือ 79303 ครับ
 ```
 
+### g594 [multi_hop] P1/en
+**Q:** What's the email of the highest-ranking person in the section that ปิติ พรหมใจ works in?
+
+**Fails:** missing any-of ['NARONG.KO@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+The highest-ranking person in the **JC-ENG** section is **Sukhum Kasemchaemchoi (Tawan)**, who serves as the Manager.
+
+Email: **SUKHUM.KA@FAHMAI.CO.TH**
+```
+
 ### g595 [multi_hop] P1/th
 **Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
 
@@ -534,36 +528,6 @@ no record found
 
 ```
 เบอร์ต่อของคุณคึกฤทธิ์ บุษราคัมวงศ์ (VP ฝ่าย OPS) คือ 77358 ครับ
-```
-
-### g606 [surname_family] P1/en
-**Q:** List everyone with the surname เขียวขจีศรี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
--   **อัจฉรา เขียวขจีศรี (บีม)** - ผู้อำนวยการฝ่ายนักการตลาด CRM (MKT)
--   **ไพฑูรย์ เขียวขจีศรี** - หัวหน้าทีมนักการตลาดแบรนด์สายฟ้า (SF)
--   **ปกรณ์ เขียวขจีศรี (ลม)** - วิศวกรข้อมูล (TEC)
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-Here are the employees with the surname อภิญญาเสริม:
-
-*   **วีระ อภิญญาเสริม (เบอร์รี่)** - SAIFAH PRODUCT MANAGER (SF)
-    *   Email: VEERA.AP@FAHMAI.CO.TH
-*   **ดาหลา อภิญญาเสริม** - DAONUEA BRAND OPERATIONS (DN)
-    *   Email: DARHA.AP@FAHMAI.CO.TH
-    *   Extension: 75781
 ```
 
 ### g639 [nickname_grid] P1/th
@@ -700,5 +664,34 @@ The Judchuem brand is headed by Saran Awutmani (สรัล อาวุทธ�
 *   **Mobile:** 064-655-7513
 ```
 
+### g774 [subsidiary_routing] P1/th
+**Q:** ใครเป็นหัวหน้าฝ่ายการตลาดของแบรนด์คลื่นเสียง
 
-_+7 more failures — see results.jsonl_
+**Fails:** missing any-of ['Thongchai', 'ธงชัย']; missing any-of ['Amphomsathit', 'อัมพรสถิต']
+
+**Response:**
+
+```
+คุณราม ลวรรณ (จุ๊บ) เป็นหัวหน้าฝ่าย (General Manager) ของแบรนด์คลื่นเสียงครับ
+
+*   **ตำแหน่ง:** ผู้จัดการทั่วไปแบรนด์คลื่นเสียง (GENERAL MANAGER OF KLUENSIANG)
+*   **อีเมล:** RAM.LA@FAHMAI.CO.TH
+*   **เบอร์ภายใน:** 75965
+```
+
+### g775 [subsidiary_routing] P1/en
+**Q:** Who heads the operations unit of the Kluensiang brand?
+
+**Fails:** missing any-of ['Vasin', 'วศิน']; missing any-of ['Rajchaidee', 'ราชชัยดี']
+
+**Response:**
+
+```
+The General Manager (GM) of the KluenSiang brand is **Ram Lawan (Jub)**.
+
+*   **Email:** RAM.LA@FAHMAI.CO.TH
+*   **Extension:** 75965
+```
+
+
+_+5 more failures — see results.jsonl_

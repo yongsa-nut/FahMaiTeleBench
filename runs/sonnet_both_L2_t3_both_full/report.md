@@ -1,6 +1,6 @@
 # Run: `sonnet_both_L2_t3_both_v10full`
 
-**Overall: 596/626 pass (95.2%)**
+**Overall: 595/626 pass (95.0%)**
 
 ## By bucket
 
@@ -39,9 +39,9 @@
 | enterprise_shorthand | 19/20 | 95.0% |
 | hard_multihop | 24/26 | 92.3% |
 | dept_listing_small | 6/7 | 85.7% |
-| listing_count | 17/20 | 85.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
 | evp_secretary | 4/5 | 80.0% |
+| listing_count | 16/20 | 80.0% |
 | noisy_name_form | 14/20 | 70.0% |
 | subsidiary_routing | 8/12 | 66.7% |
 | multi_hop | 11/18 | 61.1% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 221/226 (97.8%)
-- P1: 339/364 (93.1%)
+- P1: 338/364 (92.9%)
 - P2: 36/36 (100.0%)
 
-## Failures (30)
+## Failures (31)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -219,18 +219,39 @@ GM ของแบรนด์ดาวเหนือ (DN) คือ **คุ�
 ### g533 [listing_count] P1/en
 **Q:** How many employees are in the DN department at IC level who started in 2020?
 
+**Fails:** missing count 7
+
+**Response:**
+
+```
+Now let me filter the results for those who started in 2020:
+
+From the full result of **105 IC-level DN employees**, let me count those with `start_year = 2020`:
+
+Looking through the results, the employees with `start_year: "2020"` are:
+1. ทินกร นราชาญณรงค์ (THINNAKORN NARACHANNARONG)
+2. โยธกา อัมพรสว่าง (YOTHAKA AMPHOMSAWANG)
+3. วีระ พงอัสนี (VEERA PHONGASNEE)
+
+Let me verify by scanning the full 
+```
+
+### g535 [listing_count] P1/en
+**Q:** How many employees are in the DN department at Lead level who started in 2022?
+
 **Fails:** missing count 6
 
 **Response:**
 
 ```
-Now I have all 131 DN department rows. Let me carefully count those with **Department = DN**, **Position Level = IC**, and **Start Year = 2020** from the full results of the first search (which returned all 105 DN IC employees without truncation).
+From the full list of 12 DN Leads, filtering for **Start Year = 2022**, there are **5 employees**:
 
-Going through the complete first query results for `start_year = 2020`:
-
-1. ทินกร นราชาญณรงค์ (DN-OPS-70)
-2. โยธกา อัมพรสว่าง (DN-ENG-71)
-3. วีระ พงอัส
+| # | Name | Position |
+|---|------|----------|
+| 1 | อภิชัย ธนบุญ (Apichai Thanabun) | Lead DaoNuea Brand Marketer |
+| 2 | ธนพล พิไชยา (Thanaphon Phichaiyawong) | Lead DaoNuea Product Manager |
+| 3 | กฤติน อนุเจริญ (Krittin Anucharoen) | Lead DaoNuea Brand Operations |
+| 4 | ราม มหากิตติ (Ram Mahak
 ```
 
 ### g540 [listing_count] P1/th

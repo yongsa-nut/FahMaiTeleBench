@@ -1,6 +1,6 @@
 # Run: `glm51_both_L2_t3_both_v10full`
 
-**Overall: 608/626 pass (97.1%)**
+**Overall: 612/626 pass (97.8%)**
 
 ## By bucket
 
@@ -31,6 +31,7 @@
 | surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | counterfactual | 25/25 | 100.0% |
 | deep_multihop | 12/12 | 100.0% |
@@ -38,21 +39,20 @@
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 60/61 | 98.4% |
 | enterprise_shorthand | 19/20 | 95.0% |
+| hard_implicit_hierarchy | 18/19 | 94.7% |
 | retrieval | 13/14 | 92.9% |
 | hard_multihop | 24/26 | 92.3% |
 | subsidiary_routing | 11/12 | 91.7% |
-| listing_count | 18/20 | 90.0% |
 | noisy_name_form | 18/20 | 90.0% |
-| hard_implicit_hierarchy | 16/19 | 84.2% |
 | multi_hop | 14/18 | 77.8% |
 
 ## By priority
 
 - P0: 223/226 (98.7%)
-- P1: 349/364 (95.9%)
+- P1: 353/364 (97.0%)
 - P2: 36/36 (100.0%)
 
-## Failures (18)
+## Failures (14)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -130,64 +130,6 @@ The most senior person heading the **Judchuem (จุดเชื่อม)** de
 **สรัล อาวุทธ์มณี (Saran Awutmani)** — General Manager of Judchuem  
 ✉️ SARAN.AW@FAHMAI.CO.TH | ☎️ Ext. 78762 | 📱 064-655-7513  
 📍 FahMai Tower 24F, BKK-R9
-```
-
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The most senior employees in **FIN-AR** both started in **2020** (the earliest year in that section):
-
-- **สนิท อธิบุญนำ (Sanit Athiboonnam)** — Accounts Receivable Officer, ext. 79860
-- **ธนวัฒน์ อารีวัฒน์ (Tanawat Areewat)** — Accounts Receivable Officer, ext. 74381
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-Three employees in **JC-ENG** share the earliest start year (2020):
-
-- **สุขุม เกษมแช้มช้อย** (SUKHUM KASEMCHAEMCHOI) — Manager, ext. 74900, SUKHUM.KA@FAHMAI.CO.TH
-- **อุมา ประเกียรติกำจร** (UMA PRAKIATKAMJORN) — IC, ext. 78200, UMA.PR2@FAHMAI.CO.TH
-- **ฤทธิรงค์ ชาญณรงค์นาม** (RITTHIRONG CHANNARONGNAM) — IC, ext. 36615, RITTHIRONG.CH@FAHMAI.CO.TH
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7** employees in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6** employees in the DN department at Lead level who started in 2022:
-
-- อภิชัย ธนบุญ (JUB) — DN-MKT
-- ธนพล พิไชยา (PHAI) — DN-PD
-- กฤติน อนุเจริญ — DN-OPS
-- ราม มหากิตติ — DN-OPS
-- วีระ ชัยโชคดี — DN-PD
-- กิตติศักดิ์ ฟ้าใสทอง — DN-MKT
 ```
 
 ### g556 [retrieval] P1/en

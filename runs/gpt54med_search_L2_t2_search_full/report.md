@@ -1,6 +1,6 @@
 # Run: `gpt54med_search_L2_t2_search_v10full`
 
-**Overall: 609/626 pass (97.3%)**
+**Overall: 610/626 pass (97.4%)**
 
 ## By bucket
 
@@ -38,9 +38,9 @@
 | superlative | 10/10 | 100.0% |
 | bilingual | 39/40 | 97.5% |
 | nickname_grid | 59/61 | 96.7% |
+| surname_family | 23/24 | 95.8% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
-| surname_family | 22/24 | 91.7% |
 | dept_listing_small | 6/7 | 85.7% |
 | hard_multihop | 22/26 | 84.6% |
 | hard_implicit_hierarchy | 15/19 | 78.9% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 219/226 (96.9%)
-- P1: 354/364 (97.3%)
+- P1: 355/364 (97.5%)
 - P2: 36/36 (100.0%)
 
-## Failures (17)
+## Failures (16)
 
 ### g160 [nickname_grid] P0/th
 **Q:** บอส มีใครบ้าง
@@ -231,20 +231,6 @@ Contact: **78762** · **SARAN.AW@FAHMAI.CO.TH**
 
 ```
 คุณศักดิ์สิทธิ์ สัมชากัญญ์ สังกัดส่วนงาน KS ครับ — ตำแหน่งสูงสุดในส่วนงานนี้คือ **ธเนศ บัวทองประเสริฐ (รองประธานฝ่ายคลื่นเสียง)** เบอร์ต่อ **71215** ครับ
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-Here are all employees with the surname วัชรจงรัก:
-
-- ปัญญา วัชรจงรัก (ไทเทิล) — Lead Technical Support Agent, ext. 72201, 093-616-9898, PANYA.WA@FAHMAI.CO.TH
-- จรูญ วัชรจงรัก (ไผ่) — Learning & Development Specialist, ext. 71981, CHAROON.WA@FAHMAI.CO.TH
 ```
 
 ### g684 [enterprise_shorthand] P1/th

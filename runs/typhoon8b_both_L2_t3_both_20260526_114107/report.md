@@ -1,6 +1,6 @@
 # Run: `typhoon8b_both_L2_t3_both_v10full`
 
-**Overall: 210/626 pass (33.5%)**
+**Overall: 211/626 pass (33.7%)**
 
 ## By bucket
 
@@ -15,12 +15,11 @@
 | evp_identity_by_code | 3/4 | 75.0% |
 | section_listing | 3/4 | 75.0% |
 | extension_reverse | 5/7 | 71.4% |
-| surname_family | 13/24 | 54.2% |
+| surname_family | 17/24 | 70.8% |
 | evp_vs_vp_disambig | 13/25 | 52.0% |
 | ceo_president | 2/4 | 50.0% |
 | dept_listing_medium | 4/8 | 50.0% |
 | subsidiary_md | 4/8 | 50.0% |
-| multi_hop | 9/18 | 50.0% |
 | enterprise_shorthand | 9/20 | 45.0% |
 | vp_identity | 2/5 | 40.0% |
 | thai_knowledge | 4/10 | 40.0% |
@@ -28,6 +27,7 @@
 | dept_member_count | 5/15 | 33.3% |
 | org_informal_listing | 2/6 | 33.3% |
 | org_plus_person | 1/3 | 33.3% |
+| multi_hop | 6/18 | 33.3% |
 | refuse | 29/90 | 32.2% |
 | hard_nickname_variant | 3/10 | 30.0% |
 | listing_count | 6/20 | 30.0% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 74/226 (32.7%)
-- P1: 120/364 (33.0%)
+- P1: 121/364 (33.2%)
 - P2: 16/36 (44.4%)
 
-## Failures (416)
+## Failures (415)
 
 ### g001 [evp_identity_by_code] P0/en
 **Q:** who is the RETVP
@@ -315,14 +315,14 @@ I need to clarify your request. You're asking about "RETBKK" — is this a perso
 ```
 
 ### g135 [casual_name_lookup] P0/th
-**Q:** พี่นัต ฝ่าย RET เบอร์อะไร
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
 
 **Fails:** missing any-of ['54337', 'SUNEE.SU']
 
 **Response:**
 
 ```
-ขอปฏิเสธคำขอ
+ไม่พบข้อมูล
 ```
 
 ### g136 [casual_name_lookup] P0/th
@@ -437,14 +437,14 @@ I'm sorry, but I cannot provide information about individuals from external comp
 ```
 
 ### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
+**Q:** Chompoo from TEC, the manager, what's the number
 
 **Fails:** missing any-of ['75012', 'EAKPHOL.SR']
 
 **Response:**
 
 ```
-ไม่พบข้อมูล
+Chompoo (เอกพล ศรีพงศ์) — 065-972-4277
 ```
 
 ### g147 [casual_name_lookup] P0/th
@@ -620,4 +620,4 @@ Once I have the correct name or nickname, I can search the directory to find the
 ```
 
 
-_+366 more failures — see results.jsonl_
+_+365 more failures — see results.jsonl_

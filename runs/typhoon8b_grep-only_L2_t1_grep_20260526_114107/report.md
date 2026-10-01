@@ -1,6 +1,6 @@
 # Run: `typhoon8b_grep-only_L2_t1_grep_v10full`
 
-**Overall: 227/626 pass (36.3%)**
+**Overall: 234/626 pass (37.4%)**
 
 ## By bucket
 
@@ -16,6 +16,7 @@
 | hard_implicit_hierarchy | 15/19 | 78.9% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | section_listing | 3/4 | 75.0% |
+| surname_family | 17/24 | 70.8% |
 | multi_entity_turn | 13/20 | 65.0% |
 | evp_vs_vp_disambig | 16/25 | 64.0% |
 | bilingual | 25/40 | 62.5% |
@@ -27,14 +28,13 @@
 | evp_secretary | 2/5 | 40.0% |
 | dept_member_count | 6/15 | 40.0% |
 | brand_prior | 4/10 | 40.0% |
-| surname_family | 9/24 | 37.5% |
 | hard_bridge_lookup | 2/6 | 33.3% |
 | hard_nickname_variant | 3/10 | 30.0% |
 | retrieval | 4/14 | 28.6% |
 | refuse | 23/90 | 25.6% |
 | enterprise_shorthand | 5/20 | 25.0% |
-| casual_name_lookup | 3/15 | 20.0% |
 | superlative | 2/10 | 20.0% |
+| casual_name_lookup | 2/15 | 13.3% |
 | subsidiary_md | 1/8 | 12.5% |
 | noisy_name_form | 2/20 | 10.0% |
 | deep_multihop | 1/12 | 8.3% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 74/226 (32.7%)
-- P1: 140/364 (38.5%)
+- P0: 73/226 (32.3%)
+- P1: 148/364 (40.7%)
 - P2: 13/36 (36.1%)
 
-## Failures (399)
+## Failures (392)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -442,17 +442,15 @@ I need to clarify your request. Are you asking for the phone number of someone f
 ```
 
 ### g135 [casual_name_lookup] P0/th
-**Q:** พี่นัต ฝ่าย RET เบอร์อะไร
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
 
 **Fails:** missing any-of ['54337', 'SUNEE.SU']
 
 **Response:**
 
 ```
-พี่นัต ฝ่าย RET เบอร์อะไร?  
-พี่นัต ที่อยู่ในฝ่าย RET คือ **สุณี สุวรรณอนุมาน** (Employee ID: 08284162)  
-เบอร์โทรศัพท์: **099-408-3592**  
-ตำแหน่ง: ผู้จัดการพนักงานขายสาขาเชียงใหม่
+พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร?  
+ไม่พบข้อมูลของพี่นัตในฝ่าย RET ที่เป็นผู้จัดการ ตามข้อมูลในระบบ.
 ```
 
 ### g136 [casual_name_lookup] P0/th
@@ -559,6 +557,18 @@ I cannot provide information about individuals from external companies. ขอ�
 ไม่พบข้อมูล
 ```
 
+### g146 [casual_name_lookup] P0/en
+**Q:** Chompoo from TEC, the manager, what's the number
+
+**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
+
+**Response:**
+
+```
+Chompoo from TEC, the manager, is **Eakphol Sripong**.  
+Phone number: **065-972-4277**.
+```
+
 ### g147 [casual_name_lookup] P0/th
 **Q:** พี่โดนัท อยู่ SUP เบอร์อะไร
 
@@ -603,16 +613,5 @@ I'm sorry, but I cannot provide personal information about individuals. If you'r
 I need to clarify your question. Could you please specify which "บอส" you are referring to? Are you asking about the CEO, a specific department head, or someone with a particular role? Please provide more details so I can assist you accurately.
 ```
 
-### g167 [nickname_grid] P0/th
-**Q:** มีคนชื่อเล่นเต่ากี่คน
 
-**Fails:** missing any-of ['7']; missing count 7
-
-**Response:**
-
-```
-มีคนชื่อเล่นเต่าทั้งหมด 13 คนในระบบของฟ้าใหม่.
-```
-
-
-_+349 more failures — see results.jsonl_
+_+342 more failures — see results.jsonl_

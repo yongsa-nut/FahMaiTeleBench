@@ -1,6 +1,6 @@
 # Run: `opentyphoon_grep-only_L2_t1_grep_v10full`
 
-**Overall: 344/626 pass (55.0%)**
+**Overall: 362/626 pass (57.8%)**
 
 ## By bucket
 
@@ -10,6 +10,7 @@
 | section_listing | 4/4 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
 | refuse | 88/90 | 97.8% |
+| surname_family | 23/24 | 95.8% |
 | brand_prior | 9/10 | 90.0% |
 | hard_implicit_hierarchy | 17/19 | 89.5% |
 | tier_listing | 5/6 | 83.3% |
@@ -17,24 +18,23 @@
 | evp_identity_by_code | 3/4 | 75.0% |
 | evp_identity_by_description | 3/4 | 75.0% |
 | dept_listing_medium | 6/8 | 75.0% |
+| casual_name_lookup | 11/15 | 73.3% |
 | dept_member_count | 11/15 | 73.3% |
 | multi_entity_turn | 14/20 | 70.0% |
 | hard_nickname_variant | 7/10 | 70.0% |
 | bilingual | 28/40 | 70.0% |
-| casual_name_lookup | 10/15 | 66.7% |
 | email_identity_lookup | 4/6 | 66.7% |
 | hard_bridge_lookup | 4/6 | 66.7% |
 | vp_identity | 3/5 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
 | extension_reverse | 4/7 | 57.1% |
 | retrieval | 8/14 | 57.1% |
+| org_informal_listing | 3/6 | 50.0% |
 | enterprise_shorthand | 9/20 | 45.0% |
 | evp_vs_vp_disambig | 10/25 | 40.0% |
 | subsidiary_md | 3/8 | 37.5% |
-| org_informal_listing | 2/6 | 33.3% |
 | subsidiary_routing | 4/12 | 33.3% |
 | listing_count | 6/20 | 30.0% |
-| surname_family | 7/24 | 29.2% |
 | evp_secretary | 1/5 | 20.0% |
 | multi_hop | 3/18 | 16.7% |
 | superlative | 1/10 | 10.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 166/226 (73.5%)
-- P1: 166/364 (45.6%)
+- P0: 168/226 (74.3%)
+- P1: 182/364 (50.0%)
 - P2: 12/36 (33.3%)
 
-## Failures (282)
+## Failures (264)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -496,23 +496,6 @@ The current CEO of FahMai is not listed in the directory.
 ไม่พบข้อมูล
 ```
 
-### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
-
-**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
-
-**Response:**
-
-```
-ชื่อจริง: สมบัติ พรหมอาทิตย์ (Nickname: ชมพู / CHOMPOO)  
-ตำแหน่ง: ผู้จัดการผู้ฝึกอบรมทีมซัพพอร์ต  
-แผนก: SUP  
-เบอร์ภายใน: 77703  
-เบอร์มือถือ: 065-918-0800  
-สำนักงาน: FahMai Tower 28F  
-สาขา: BKK-R9
-```
-
 ### g152 [casual_name_lookup] P0/en
 **Q:** Ploy from SF, what's the number
 
@@ -640,5 +623,22 @@ Apologies, but I cannot provide that information.
 อีเมล: RITTICHAI.KA@FAHMAI.CO.TH | โทร: 75477
 ```
 
+### g210 [dept_listing_medium] P1/th
+**Q:** แผนก WK-PD มีใครบ้าง
 
-_+232 more failures — see results.jsonl_
+**Fails:** min_items 5 not met (4)
+
+**Response:**
+
+```
+แผนก WK-PD มีพนักงานทั้งหมด 27 คน ตัวอย่างเช่น:
+
+- กฤษ มหาแก้วใส (ขิง) – ผู้จัดการทั่วไปแบรนด์วงโคจร (Email: KRIS.MA@FAHMAI.CO.TH)
+- พิชัย สุวรรณเขียวขจี (โฟล์ค) – หัวหน้าทีมผู้จัดการผลิตภัณฑ์วงโคจร (Email: PHICHAI.SU@FAHMAI.CO.TH)
+- ธีรพัฒน์ บุญเก่งกาจ (ส้มโอ) – ผู้จัดการผลิตภัณฑ์วงโคจร (Email: TEERAPAT.BU2@FAHMAI.CO.TH)
+
+(แสดงเฉพาะบางส่วนเนื่องจากมีจำนวนมาก)
+```
+
+
+_+214 more failures — see results.jsonl_

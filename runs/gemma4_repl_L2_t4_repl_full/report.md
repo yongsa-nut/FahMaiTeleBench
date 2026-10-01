@@ -1,6 +1,6 @@
 # Run: `gemma4_repl_L2_t4_repl_v10full`
 
-**Overall: 531/626 pass (84.8%)**
+**Overall: 554/626 pass (88.5%)**
 
 ## By bucket
 
@@ -14,6 +14,7 @@
 | name_lookup | 20/20 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
@@ -21,13 +22,14 @@
 | extension_reverse | 7/7 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 89/90 | 98.9% |
+| surname_family | 23/24 | 95.8% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | bilingual | 36/40 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | enterprise_shorthand | 18/20 | 90.0% |
 | superlative | 9/10 | 90.0% |
 | casual_name_lookup | 13/15 | 86.7% |
@@ -35,24 +37,22 @@
 | nickname_grid | 52/61 | 85.2% |
 | email_identity_lookup | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
+| hard_implicit_hierarchy | 15/19 | 78.9% |
 | hard_multihop | 19/26 | 73.1% |
 | counterfactual | 18/25 | 72.0% |
 | thai_knowledge | 7/10 | 70.0% |
 | noisy_name_form | 14/20 | 70.0% |
-| hard_implicit_hierarchy | 13/19 | 68.4% |
 | deep_multihop | 8/12 | 66.7% |
 | multi_hop | 11/18 | 61.1% |
-| org_informal_listing | 3/6 | 50.0% |
 | subsidiary_routing | 4/12 | 33.3% |
-| surname_family | 7/24 | 29.2% |
 
 ## By priority
 
-- P0: 203/226 (89.8%)
-- P1: 297/364 (81.6%)
+- P0: 206/226 (91.2%)
+- P1: 317/364 (87.1%)
 - P2: 31/36 (86.1%)
 
-## Failures (95)
+## Failures (72)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -220,57 +220,6 @@ Phloi Daoruengchot (SF): Ext. 79180
 
 ```
 KS-PD มีทั้งหมด 21 คนครับ
-```
-
-### g253 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ สายฟ้า สัก 5 คน
-
-**Fails:** min_items 5 not met (1)
-
-**Response:**
-
-```
-รายชื่อพนักงานแผนกสายฟ้า (SF) 5 ท่านครับ:
-
-* คุณกิตติชาติ ชัยเจริญมณี - KITTICHAT.CH2@FAHMAI.CO.TH
-* คุณพิศสมัย พรหมชากัญญ์ - PHITSAMAI.PH2@FAHMAI.CO.TH
-* คุณกิตติ ราชฟ้า - KITTI.RA2@FAHMAI.CO.TH
-* คุณเพ็ญศรี นราบุษราคัม - PENSRI.NA@FAHMAI.CO.TH
-* คุณอรชร บุญมาชัย - ORACHON.BU@FAHMAI.CO.TH
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (1)
-
-**Response:**
-
-```
-รายชื่อพนักงานจากแผนกคลื่นเสียง (KS) 5 ท่านครับ:
-
-* คุณพิศสมัย อัมพรมณี - PHITSAMAI.AM@FAHMAI.CO.TH
-* คุณเรืองฤทธิ์ นรากอบสุข - RUANGRIT.NA@FAHMAI.CO.TH
-* คุณตะวัน ราชบุญญา - TAWAN.RA@FAHMAI.CO.TH
-* คุณปิยนันท์ อัครกิตติ - PIYANAN.AK@FAHMAI.CO.TH
-* คุณคำรณ บุษราคัมเฉลิม - KHAMRON.BU@FAHMAI.CO.TH
-```
-
-### g258 [org_informal_listing] P0/en
-**Q:** give me 5 people from SaiFah
-
-**Fails:** min_items 5 not met (0)
-
-**Response:**
-
-```
-Here are 5 people from the SaiFah (SF) department:
-
-* SAKCHAI ATHICHAROEN - SAIFAH PRODUCT ENGINEER (SAKCHAI.AT@FAHMAI.CO.TH)
-* PHLOI DAORUENGCHOT - SAIFAH PRODUCT MANAGER (PHLOI.DA@FAHMAI.CO.TH)
-* SUKHUM JAIKIEOWBUN - SAIFAH BRAND MARKETER (SUKHUM.JA@FAHMAI.CO.TH)
-* SATJA SAMAWUT - SAIFAH BRAND MARKETER (SATJA.SA@FAHMAI.CO.TH)
-* ORACHON MANIPHAT - SAIFAH PRODUCT MANAGER (ORACHON.MA@FAHMAI.CO.TH)
 ```
 
 ### g310 [email_identity_lookup] P0/en
@@ -472,28 +421,6 @@ thought
 ผู้บริหารสูงสุดของแผนก Wongkhojon คือ คุณกฤษ มหาแก้วใส (KRIS.MA@FAHMAI.CO.TH) ครับ
 ```
 
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The most senior employee in the FIN-AR section is Sanit Athiboonnam (started in 2020).
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-The most senior employee in the JC-ENG section is Sukhum Kasemchaemchoi (Manager JudChuem Product Engineer), who started in 2020.
-```
-
 ### g470 [bilingual] P1/th
 **Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
@@ -536,28 +463,6 @@ The most senior employee in the JC-ENG section is Sukhum Kasemchaemchoi (Manager
 
 ```
 The Thai family name of the VP of Technology is แก้วใสภิญโญ.
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are 7 employees in the DN department at IC level who started in 2020.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are 6 employees in the DN department at Lead level who started in 2022.
 ```
 
 ### g556 [retrieval] P1/en
@@ -637,5 +542,85 @@ no record found
 ไม่พบข้อมูล
 ```
 
+### g587 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณจรูญ ชัยบุญสังกัดอยู่ หน่อยครับ
 
-_+45 more failures — see results.jsonl_
+**Fails:** missing any-of ['74877']
+
+**Response:**
+
+```
+คุณจรูญ ชัยบุญ สังกัดส่วนงาน B2B ซึ่งมีผู้ดำรงตำแหน่งสูงสุด (ระดับ VP) 2 ท่าน คือ:
+
+* คุณอุกฤษฎ์ วัชรเสริม: เบอร์ต่อ 79274
+* คุณธัญญา เจริญผลภิญโญ: เบอร์ต่อ 71547
+```
+
+### g589 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณทัศนีย์ มณีพงศ์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['76457']
+
+**Response:**
+
+```
+เบอร์ต่อของคุณเรืองศักดิ์ เทพเกียรติกำจร (VP ของแบรนด์ดาวเหนือ) คือ 72280 ครับ
+```
+
+### g591 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณอภิชัย จิตรานนท์เจริญสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['77404']
+
+**Response:**
+
+```
+เบอร์ต่อของคุณกมลา ชัยสนธิ์สว่าง (C-level ของแผนก FIN) คือ 74921 ครับ
+```
+
+### g593 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณมนตรา บุญเรืองโชติสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['74296']
+
+**Response:**
+
+```
+เบอร์ต่อของคุณณฐามน (C-level ของแผนก HR) คือ 79303 ครับ
+```
+
+### g595 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณวิโรจน์ มหาวัฒน์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['78017']
+
+**Response:**
+
+```
+คุณราชินี อาทิตย์สุข เบอร์ต่อ 75642 ครับ
+```
+
+### g597 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณศักดิ์สิทธิ์ สัมชากัญญ์สังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['76044']
+
+**Response:**
+
+```
+เบอร์ต่อของคุณธเนศ บัวทองประเสริฐ คือ 71215 ครับ
+```
+
+### g599 [multi_hop] P1/th
+**Q:** ขอเบอร์ต่อของคนที่ตำแหน่งสูงสุดในส่วนงานที่คุณคำรณ ศรีอัญชลีสังกัดอยู่ หน่อยครับ
+
+**Fails:** missing any-of ['73069']
+
+**Response:**
+
+```
+เบอร์ต่อของคุณพงษ์กานต์ ราชชากัญญ์ คือ 75464 ครับ
+```
+
+
+_+22 more failures — see results.jsonl_

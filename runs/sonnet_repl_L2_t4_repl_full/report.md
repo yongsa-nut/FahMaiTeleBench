@@ -1,6 +1,6 @@
 # Run: `sonnet_repl_L2_t4_repl_v10full`
 
-**Overall: 572/626 pass (91.4%)**
+**Overall: 576/626 pass (92.0%)**
 
 ## By bucket
 
@@ -26,6 +26,7 @@
 | refuse | 90/90 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | surname_family | 24/24 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | superlative | 10/10 | 100.0% |
@@ -34,14 +35,13 @@
 | hard_multihop | 24/26 | 92.3% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | bilingual | 36/40 | 90.0% |
-| listing_count | 18/20 | 90.0% |
 | evp_vs_vp_disambig | 22/25 | 88.0% |
 | counterfactual | 22/25 | 88.0% |
 | nickname_grid | 53/61 | 86.9% |
+| hard_implicit_hierarchy | 16/19 | 84.2% |
 | thai_knowledge | 8/10 | 80.0% |
 | evp_identity_by_code | 3/4 | 75.0% |
 | subsidiary_routing | 9/12 | 75.0% |
-| hard_implicit_hierarchy | 14/19 | 73.7% |
 | deep_multihop | 8/12 | 66.7% |
 | noisy_name_form | 13/20 | 65.0% |
 | multi_hop | 11/18 | 61.1% |
@@ -49,10 +49,10 @@
 ## By priority
 
 - P0: 209/226 (92.5%)
-- P1: 331/364 (90.9%)
+- P1: 335/364 (92.0%)
 - P2: 32/36 (88.9%)
 
-## Failures (54)
+## Failures (50)
 
 ### g003 [evp_identity_by_code] P0/th
 **Q:** OPSQA ชื่ออะไร
@@ -319,33 +319,6 @@ GM ของแบรนด์ **ดาวเหนือ (DN)** คือ
 📞 ต่อ 74375
 ```
 
-### g460 [hard_implicit_hierarchy] P1/en
-**Q:** In the FIN-AR section, who is the most senior employee?
-
-**Fails:** missing any-of ['เมฆา', 'Mekha']; missing any-of ['ภัทรใจเขียว', 'Phatjaikieow']
-
-**Response:**
-
-```
-The two most senior employees in **FIN-AR** both joined in **2020**:
-
-- **Sanit Athiboonnam** (IC)
-- **Tanawat Areewat** (IC)
-
-There is no further differentiator available in the directory (e.g., exact join date), so both are equally the most senior by start year.
-```
-
-### g464 [hard_implicit_hierarchy] P1/en
-**Q:** In the JC-ENG section, who is the most senior employee?
-
-**Fails:** missing any-of ['ณรงค์', 'Narong']; missing any-of ['กอบสุขบุญ', 'Kobsookbun']
-
-**Response:**
-
-```
-The most senior employee in the **JC-ENG** section is **SUKHUM KASEMCHAEMCHOI**, who has been with FahMai since **2020** and holds the position of **Manager**.
-```
-
 ### g470 [bilingual] P1/th
 **Q:** รหัสพนักงานของ CTO คือเลขอะไรครับ
 
@@ -394,28 +367,6 @@ The most senior employee in the **JC-ENG** section is **SUKHUM KASEMCHAEMCHOI**,
 
 ```
 ไม่พบข้อมูล — ในระบบไดเรกทอรีของฟ้าใหม่ไม่มีตำแหน่ง "Vice President Fleet" ครับ คุณอาจหมายถึง VP ตำแหน่งอื่นหรือเปล่า? เช่น VP Logistics, VP Operations, VP Retail Network หรืออื่น ๆ ลองระบุเพิ่มเติมได้เลยครับ 😊
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-There are **7** employees in the **DN (ดาวเหนือ)** department at **IC level** who started in **2020**.
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-There are **6 employees** in the **DN (ดาวเหนือ)** department at the **Lead** level who started in **2022**.
 ```
 
 ### g568 [noisy_name_form] P1/th
@@ -729,5 +680,58 @@ The **General Manager of the Wongkhojon (วงโคจร) brand** is:
 - ☎️ Ext. 74375
 ```
 
+### g821 [deep_multihop] P2/en
+**Q:** What's the email of the secretary of the VP who heads the department that ภูมิ กาญจน์เจริญ works in?
 
-_+4 more failures — see results.jsonl_
+**Fails:** missing any-of ['BUPPHA.AP@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+Here's the answer:
+
+- **ภูมิ กาญจน์เจริญ** is in the **FIN** (Finance) department.
+- The FIN VP is **แสงดาว พิดวงกมล**.
+- The VP's secretary (FIN-EA) is **เบญจวรรณ โชคดีกำจร**, and her email is:
+
+📧 **BENJAWAN.CH@FAHMAI.CO.TH**
+```
+
+### g822 [deep_multihop] P2/th
+**Q:** ขอชื่อเล่นของเลขานุการของรองประธานฝ่ายที่คุณปิยธิดา อนันต์เฉลิมสังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['ยุ้ย', 'Yui']
+
+**Response:**
+
+```
+เลขานุการของ VP ฝ่าย HR (HRVP) คือคุณลัดดาวรรณ แต่ **ไม่มีชื่อเล่นในระบบ** ครับ
+```
+
+### g827 [deep_multihop] P2/th
+**Q:** ในบรรดาแผนกที่มีรองประธานเป็นหัวหน้า แผนกที่มีพนักงานมากที่สุด ขอเบอร์ต่อของเลขานุการของรองประธานที่เป็นหัวหน้าแผนกนั้นหน่อยครับ
+
+**Fails:** missing any-of ['77495']
+
+**Response:**
+
+```
+Based on the directory data:
+
+- **แผนกที่มีพนักงานมากที่สุด** ในบรรดาแผนกที่มี VP เป็นหัวหน้า คือ **RET (Retail Network)** — 380 คน
+- RET มี VP หลายคน แต่ในระบบ **ไม่มี EA unit สำหรับ VP ของ RET** (ระบบมี EA เฉพาะสำหรับ C-level เท่านั้น เช่น CEO-EA, FIN-EA, TEC-EA ฯลฯ)
+
+ดังนั้น **ไม่พบข้อมูล** เลขานุการของ VP แผนก RET ในระบบ directory ครับ
+```
+
+### g828 [deep_multihop] P2/en
+**Q:** Among the departments headed by a VP, take the one with the most employees — what's the nickname of the secretary of the VP who heads that department?
+
+**Fails:** missing any-of ['มุก', 'Mook']
+
+**Response:**
+
+```
+Let me do one more quick lookup before concluding.
+```
+

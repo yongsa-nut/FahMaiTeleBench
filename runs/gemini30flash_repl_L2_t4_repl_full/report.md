@@ -1,15 +1,18 @@
 # Run: `gemini30flash_repl_L2_t4_repl_v10full`
 
-**Overall: 488/626 pass (78.0%)**
+**Overall: 508/626 pass (81.2%)**
 
 ## By bucket
 
 | Bucket | Pass/Total | Rate |
 |---|---|---|
+| dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
 | org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | superlative | 10/10 | 100.0% |
 | refuse | 87/90 | 96.7% |
@@ -18,41 +21,38 @@
 | bilingual | 38/40 | 95.0% |
 | dept_member_count | 14/15 | 93.3% |
 | retrieval | 13/14 | 92.9% |
-| listing_count | 18/20 | 90.0% |
 | subsidiary_md | 7/8 | 87.5% |
 | dept_listing_small | 6/7 | 85.7% |
 | extension_reverse | 6/7 | 85.7% |
 | email_identity_lookup | 5/6 | 83.3% |
 | hard_bridge_lookup | 5/6 | 83.3% |
+| multi_hop | 15/18 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | evp_vs_vp_disambig | 19/25 | 76.0% |
 | nickname_grid | 46/61 | 75.4% |
 | evp_identity_by_code | 3/4 | 75.0% |
-| dept_listing_medium | 6/8 | 75.0% |
 | noisy_name_form | 15/20 | 75.0% |
 | hard_multihop | 19/26 | 73.1% |
 | thai_knowledge | 7/10 | 70.0% |
 | counterfactual | 17/25 | 68.0% |
+| casual_name_lookup | 10/15 | 66.7% |
 | org_plus_person | 2/3 | 66.7% |
-| multi_hop | 12/18 | 66.7% |
 | vp_identity | 3/5 | 60.0% |
-| casual_name_lookup | 9/15 | 60.0% |
 | email_mobile_lookup | 4/7 | 57.1% |
-| surname_family | 13/24 | 54.2% |
 | evp_identity_by_description | 2/4 | 50.0% |
 | ceo_president | 2/4 | 50.0% |
 | enterprise_shorthand | 10/20 | 50.0% |
 | deep_multihop | 5/12 | 41.7% |
+| hard_implicit_hierarchy | 5/19 | 26.3% |
 | subsidiary_routing | 3/12 | 25.0% |
-| hard_implicit_hierarchy | 4/19 | 21.1% |
 
 ## By priority
 
-- P0: 194/226 (85.8%)
-- P1: 269/364 (73.9%)
+- P0: 195/226 (86.3%)
+- P1: 288/364 (79.1%)
 - P2: 25/36 (69.4%)
 
-## Failures (138)
+## Failures (118)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -284,17 +284,6 @@ Hook (Supachoke Kijbamrung): Ext. 38338, Mobile 089-583-3388
 คุณโกวิท (น้ำ) แผนก DN-MKT เบอร์ต่อ 79313 ครับ
 ```
 
-### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
-
-**Fails:** missing any-of ['75012', 'EAKPHOL.SR']
-
-**Response:**
-
-```
-no record found
-```
-
 ### g156 [nickname_grid] P0/th
 **Q:** มิ้น คือใคร
 
@@ -378,44 +367,6 @@ no record found
 
 ```
 no record found
-```
-
-### g211 [dept_listing_medium] P1/en
-**Q:** who's in WK-ENG
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-There are 22 employees in the **WK-ENG** (Product Engineering - WongKhoJon) section. Here are some of the team members:
-
-*   **PHICHAI CHANTHARA** (DR-5)
-*   **PHAIBUN PHROMMA** (LEAD-3)
-*   **HOM PHAEWPHLOI** (LEAD-8)
-*   **PHUENG SIRISAK** (WK-ENG-27)
-*   **THEERAPHOP SUPAMIT** (WK-ENG-34)
-*   **NATTANICHA PHICHAI** (WK-ENG-78)
-*   **EKKALUCK THONGKHAM** (WK-ENG-74)
-*   **RITTICHAI SAE-CHIN** (W
-```
-
-### g217 [dept_listing_medium] P1/th
-**Q:** JC-PD มีใครบ้าง
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-บุคลากรในส่วนงาน JC-PD (แผนกผลิตภัณฑ์จุดเชื่อม) มีทั้งหมด 27 ท่าน ตัวอย่างเช่น:
-
-* **ราชินี อาทิตย์สุข** - รองประธานฝ่ายจุดเชื่อม (JCVP)
-* **สรัล อาวุทธ์มณี** - ผู้จัดการทั่วไปแบรนด์จุดเชื่อม (GM)
-* **สนุก อนุอาวุทธ์** - ผู้อำนวยการฝ่ายผู้จัดการผลิตภัณฑ์จุดเชื่อม
-* **โยธกา ราชบุญมี (ส้มโอ)** - หัวหน้าทีมผู้จัดการผลิตภัณฑ์จุดเชื่อม
-* **รัตนา มหาการเวก (แมว)** - ผู้จัดการผลิตภัณฑ์จุดเชื่อม
-* **ศักดิ
 ```
 
 ### g228 [dept_member_count] P1/en
@@ -582,7 +533,7 @@ ARTHIT KLAHAN (DIRECTOR), Department: DN (ดาวเหนือ)
 ### g363 [hard_bridge_lookup] P0/en
 **Q:** who manages the SaiFah brand
 
-**Fails:** missing any-of ['Boonnamphong', 'บุญนำพงศ์']
+**Fails:** missing any-of ['Boonnamphong', 'บุญนำพงศ์', 'Sombusarakham']
 
 **Response:**
 
@@ -685,5 +636,46 @@ The email address of Tanet Sornpichai (Vice President of KluenSiang) is TANET.SO
 คุณอัมพร ประฟ้า สังกัดแผนกคลื่นเสียง (KS) ครับ โดยผู้บริหารสูงสุดของแผนก (Position Level: VP) คือ คุณเกริกพล สกุลพรหม อีเมล: KREUKPHON.SA@FAHMAI.CO.TH
 ```
 
+### g448 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณเกษม วิศอัญชลี สังกัดอยู่หน่อยครับ
 
-_+88 more failures — see results.jsonl_
+**Fails:** missing any-of ['PHAIROJ.MA@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+คุณเกษม วิศอัญชลี สังกัดแผนกกฎหมาย (LEG) ซึ่งผู้บริหารสูงสุดของแผนกนี้คือ:
+
+**ธิดา รัตนโชติ (THIDA RATTANACHOTE)**
+*   **ตำแหน่ง:** VICE PRESIDENT (VP)
+*   **อีเมล:** THIDA.RA@FAHMAI.CO.TH
+```
+
+### g450 [hard_multihop] P1/th
+**Q:** ขออีเมลของผู้บริหารสูงสุดของแผนกที่คุณธนพล พิประเสริฐ สังกัดอยู่หน่อยครับ
+
+**Fails:** missing any-of ['KUKRIT.AK@FAHMAI.CO.TH']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก WK (วงโคจร) คือ คุณกฤษ สกุลทองดี (General Manager)
+อีเมล: KRIT.SA@FAHMAI.CO.TH
+```
+
+### g452 [hard_implicit_hierarchy] P1/th
+**Q:** ใครเป็นผู้บริหารสูงสุดของแผนก Daonuea
+
+**Fails:** missing any-of ['เรืองศักดิ์', 'Ruangsak']; missing any-of ['เทพเกียรติกำจร', 'Thepkiatkamjorn']
+
+**Response:**
+
+```
+ผู้บริหารสูงสุดของแผนก DaoNuea (DN) คือ **คุณปรัชญา พึ่งพา (ปรัช)** 
+ตำแหน่ง: GENERAL MANAGER - DAONUEA (Director)
+อีเมล: PRACHYA.PH@FAHMAI.CO.TH
+เบอร์ต่อ: 82255
+```
+
+
+_+68 more failures — see results.jsonl_

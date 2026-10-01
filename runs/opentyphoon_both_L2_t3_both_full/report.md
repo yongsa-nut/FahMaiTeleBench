@@ -1,6 +1,6 @@
 # Run: `opentyphoon_both_L2_t3_both_v10full`
 
-**Overall: 446/626 pass (71.2%)**
+**Overall: 465/626 pass (74.3%)**
 
 ## By bucket
 
@@ -12,12 +12,14 @@
 | name_lookup | 20/20 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
 | extension_reverse | 7/7 | 100.0% |
 | email_mobile_lookup | 7/7 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 88/90 | 97.8% |
+| surname_family | 23/24 | 95.8% |
 | bilingual | 38/40 | 95.0% |
 | multi_entity_turn | 18/20 | 90.0% |
 | evp_vs_vp_disambig | 21/25 | 84.0% |
@@ -39,20 +41,18 @@
 | hard_multihop | 11/26 | 42.3% |
 | counterfactual | 10/25 | 40.0% |
 | retrieval | 5/14 | 35.7% |
-| org_informal_listing | 2/6 | 33.3% |
 | subsidiary_routing | 4/12 | 33.3% |
 | deep_multihop | 4/12 | 33.3% |
-| surname_family | 7/24 | 29.2% |
 | noisy_name_form | 5/20 | 25.0% |
-| casual_name_lookup | 2/15 | 13.3% |
+| casual_name_lookup | 1/15 | 6.7% |
 
 ## By priority
 
-- P0: 171/226 (75.7%)
-- P1: 252/364 (69.2%)
+- P0: 174/226 (77.0%)
+- P1: 268/364 (73.6%)
 - P2: 23/36 (63.9%)
 
-## Failures (180)
+## Failures (161)
 
 ### g030 [evp_identity_by_description] P0/en
 **Q:** who's in charge of tech
@@ -101,6 +101,17 @@ Location: FahMai Tower 10F, HQ
 **Q:** RETBKK ใคร — ไม่ใช่ RETVP
 
 **Fails:** missing any-of ['Phonphai', 'พรไพร']; missing any-of ['Mahasin', 'มหาสินธุ์']
+
+**Response:**
+
+```
+ไม่พบข้อมูล
+```
+
+### g135 [casual_name_lookup] P0/th
+**Q:** พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร
+
+**Fails:** missing any-of ['54337', 'SUNEE.SU']
 
 **Response:**
 
@@ -219,7 +230,7 @@ Location: FahMai Tower 10F, HQ
 ```
 
 ### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
+**Q:** Chompoo from TEC, the manager, what's the number
 
 **Fails:** missing any-of ['75012', 'EAKPHOL.SR']
 
@@ -493,80 +504,10 @@ Location: FahMai Tower 10F, HQ
 The WK-PD (วงโคจร - Product Division) team consists of 12 employees.
 ```
 
-### g252 [org_informal_listing] P0/th
-**Q:** คนใน ดาวเหนือ มีใคร
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-มีพนักงานใน ดาวเหนือ (DN) ทั้งหมด 118 คน ตัวอย่างเช่น:
-
-- **วิเชียร พงหอมกลิ่น** (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ, DN-GM, โทร. 76999)
-- **ส้ม ราชชัยเจริญ** (เลขานุการของ DNVP, DNVP-SEC, โทร. 78417)
-- **กิตติชาติ อาทิตย์เฉลิม** (หัวหน้าทีมนักการตลาดแบรนด์ดาวเหนือ, DN-MKT-LEAD-4, โทร. 71975)
-- **ธนศักดิ์ มณีอมรินทร์** (เจ้าหน้าที่ปฏิบัติการแบรนด์ดาวเหนือ, DN-OPS-14, โทร. 54496)
-
-หากต้องการรายชื่อเฉพาะ
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-- ราม ลวรรณ (จุ๊บ) – ram.la@fahmai.co.th  
-- ธงชัย อัมพรสถิต (ไม่มีชื่อเล่น) – thongchai.am@fahmai.co.th  
-- กัญญา เก่งกาจเฉลิม (เมญ่า) – kanya.kh@fahmai.co.th  
-- วิสิทธิ์ ใจงาม (บอส) – wisit.ja@fahmai.co.th  
-- ชลธี อนงค์วงศ์ (ไม่มีชื่อเล่น) – chonlathee.an2@fahmai.co.th
-```
-
-### g258 [org_informal_listing] P0/en
-**Q:** give me 5 people from SaiFah
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-Here are 5 people from SaiFah (สายฟ้า):
-
-- วิรัตน์ สมบุษราคัม (WIRAT SOMBUSARAKHAM), SFVP – Vice President of Saifah  
-- เพ็ญศรี นราบุษราคัม (PENSRI NARABUSARAKHAM), SF-GM – General Manager of Saifah  
-- สรัญญา มหาอมรินทร์ (SARANYA MAHAAMARIN), SF-MKT-DR-9 – Director Saifah Brand Marketer  
-- กฤษ เกษมโชติ (KRIS KASEMCHOT), SF-ENG-MGR-9 – Manager Saifah Product Engineer  
-- ณัฎฐณิชา พิกอบสุข (NATTA
-```
-
-### g259 [org_informal_listing] P0/en
-**Q:** who's on DaoNuea
-
-**Fails:** min_items 5 not met (4)
-
-**Response:**
-
-```
-ดาวเหนือ (DaoNuea) มีพนักงานทั้งหมด 118 คน แบ่งเป็น:
-
-- **ผู้บริหารระดับสูง**:  
-  - วิเชียร พงหอมกลิ่น (ผู้จัดการทั่วไปแบรนด์ดาวเหนือ) – โทร. 76999  
-  - เรืองศักดิ์ เทพเกียรติกำจร (รองประธานฝ่ายดาวเหนือ) – โทร. 72280  
-
-- **หัวหน้าทีม (Lead)**:  
-  - สุณี ศรีงาม (หัวหน้าทีมวิศวกรผลิตภัณฑ์ดาวเหนือ) – โทร. 71828  
-  - อภิชัย ธนบุญ (หัวหน้าทีมนักการตลาดแบรนด์ดาวเหนือ) – โทร. 72096  
-  - ธนพล พิไชยา
-```
-
 ### g261 [tier_listing] P0/th
 **Q:** ขอรายชื่อ director ทั้งหมด
 
-**Fails:** min_items 10 not met (6)
+**Fails:** min_items 10 not met (7)
 
 **Response:**
 
@@ -663,5 +604,41 @@ CEO-CoS คือ กิตติคุณ พงจงรัก (บูม) จ
 ไม่พบข้อมูล
 ```
 
+### g355 [hard_multihop] P0/th
+**Q:** หัวหน้า GM ดาวเหนือคือใคร
 
-_+130 more failures — see results.jsonl_
+**Fails:** missing any-of ['Ruangsak', 'เรืองศักดิ์']; missing any-of ['Thepkiatkamjorn', 'เทพเกียรติกำจร']
+
+**Response:**
+
+```
+หัวหน้า GM แบรนด์ดาวเหนือ (DN) คือ วิเชียร พงหอมกลิ่น (WICHIAN PHONGHOMKLIN)  
+อีเมล: WICHIAN.PH@FAHMAI.CO.TH | เบอร์ภายใน: 76999 | มือถือ: 064-902-5307
+```
+
+### g357 [hard_multihop] P0/en
+**Q:** who is SFVP's boss
+
+**Fails:** missing any-of ['Jirapat', 'จิรภัทร']; missing any-of ['Watcharajaingam', 'วัชรใจงาม']
+
+**Response:**
+
+```
+SFVP (วิรัตน์ สมบุษราคัม) reports directly to the CEO (วชิร จิรบุญ).
+```
+
+### g364 [hard_implicit_hierarchy] P0/th
+**Q:** ใต้ CFO มีใครรายงานตรงบ้าง
+
+**Fails:** min_items 1 not met (0)
+
+**Response:**
+
+```
+รายงานตรงถึง CFO มีเพียง คุณกมลา ชัยสนธิ์สว่าง เท่านั้น เพราะตำแหน่ง CFO เป็นระดับ C-level และไม่มีผู้บริหารระดับสูงกว่าในแผนกการเงินอีกแล้ว
+
+หากต้องการรายชื่อทีมงานภายใต้ CFO (เช่น หัวหน้าแผนกย่อย), กรุณาสอบถามเพิ่มเติมครับ
+```
+
+
+_+111 more failures — see results.jsonl_

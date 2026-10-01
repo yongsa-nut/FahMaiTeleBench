@@ -1,19 +1,20 @@
 # Run: `opentyphoon_repl_L2_t4_repl_v10full`
 
-**Overall: 362/626 pass (57.8%)**
+**Overall: 379/626 pass (60.5%)**
 
 ## By bucket
 
 | Bucket | Pass/Total | Rate |
 |---|---|---|
 | section_listing | 4/4 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | listing_count | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | refuse | 87/90 | 96.7% |
+| surname_family | 23/24 | 95.8% |
 | multi_entity_turn | 17/20 | 85.0% |
-| tier_listing | 5/6 | 83.3% |
 | email_identity_lookup | 5/6 | 83.3% |
 | nickname_grid | 48/61 | 78.7% |
 | evp_identity_by_code | 3/4 | 75.0% |
@@ -22,6 +23,7 @@
 | email_mobile_lookup | 5/7 | 71.4% |
 | hard_nickname_variant | 7/10 | 70.0% |
 | superlative | 7/10 | 70.0% |
+| org_informal_listing | 4/6 | 66.7% |
 | vp_identity | 3/5 | 60.0% |
 | thai_knowledge | 6/10 | 60.0% |
 | retrieval | 8/14 | 57.1% |
@@ -29,15 +31,13 @@
 | dept_listing_medium | 4/8 | 50.0% |
 | bilingual | 20/40 | 50.0% |
 | evp_vs_vp_disambig | 12/25 | 48.0% |
-| hard_implicit_hierarchy | 9/19 | 47.4% |
+| hard_implicit_hierarchy | 8/19 | 42.1% |
 | casual_name_lookup | 6/15 | 40.0% |
 | dept_member_count | 6/15 | 40.0% |
 | enterprise_shorthand | 8/20 | 40.0% |
-| surname_family | 9/24 | 37.5% |
 | org_plus_person | 1/3 | 33.3% |
 | evp_identity_by_description | 1/4 | 25.0% |
 | ceo_president | 1/4 | 25.0% |
-| org_informal_listing | 1/6 | 16.7% |
 | subsidiary_routing | 2/12 | 16.7% |
 | hard_multihop | 3/26 | 11.5% |
 | evp_secretary | 0/5 | 0.0% |
@@ -48,11 +48,11 @@
 
 ## By priority
 
-- P0: 162/226 (71.7%)
-- P1: 183/364 (50.3%)
+- P0: 166/226 (73.5%)
+- P1: 196/364 (53.8%)
 - P2: 17/36 (47.2%)
 
-## Failures (264)
+## Failures (247)
 
 ### g006 [evp_identity_by_code] P0/en
 **Q:** who's our SUPCX
@@ -447,7 +447,7 @@ The current CEO of FahMai is **สมชาย ฟ้าสว่าง**, who a
 ```
 
 ### g146 [casual_name_lookup] P0/en
-**Q:** Chompoo from TEC, what's the number
+**Q:** Chompoo from TEC, the manager, what's the number
 
 **Fails:** missing any-of ['75012', 'EAKPHOL.SR']
 
@@ -634,4 +634,4 @@ The current CEO of FahMai is **สมชาย ฟ้าสว่าง**, who a
 ```
 
 
-_+214 more failures — see results.jsonl_
+_+197 more failures — see results.jsonl_

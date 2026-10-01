@@ -1,6 +1,6 @@
 # Run: `gpt54med_grep-only_L2_t1_grep_v10full`
 
-**Overall: 606/626 pass (96.8%)**
+**Overall: 610/626 pass (97.4%)**
 
 ## By bucket
 
@@ -18,6 +18,7 @@
 | dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
 | org_informal_listing | 6/6 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
@@ -26,6 +27,7 @@
 | email_identity_lookup | 6/6 | 100.0% |
 | hard_bridge_lookup | 6/6 | 100.0% |
 | thai_knowledge | 10/10 | 100.0% |
+| surname_family | 24/24 | 100.0% |
 | hard_nickname_variant | 10/10 | 100.0% |
 | bilingual | 40/40 | 100.0% |
 | retrieval | 14/14 | 100.0% |
@@ -41,18 +43,16 @@
 | enterprise_shorthand | 19/20 | 95.0% |
 | hard_implicit_hierarchy | 18/19 | 94.7% |
 | superlative | 9/10 | 90.0% |
-| surname_family | 21/24 | 87.5% |
-| tier_listing | 5/6 | 83.3% |
 | deep_multihop | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
 
 ## By priority
 
-- P0: 220/226 (97.3%)
-- P1: 353/364 (97.0%)
+- P0: 221/226 (97.8%)
+- P1: 356/364 (97.8%)
 - P2: 33/36 (91.7%)
 
-## Failures (20)
+## Failures (16)
 
 ### g073 [evp_vs_vp_disambig] P0/th
 **Q:** ขอ LOGFL หน่อย ไม่เอา LOGVP
@@ -80,23 +80,6 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 
 ```
 จงรัก สัมโชติ (ปุ๊ก) — ไม่มีเบอร์ในระบบ
-```
-
-### g265 [tier_listing] P0/th
-**Q:** ขอรายชื่อ director สัก 10 คน
-
-**Fails:** min_items 10 not met (9)
-
-**Response:**
-
-```
-ได้ครับ ตัวอย่าง Director 10 คน:
-
-- ธนิดา อภิใจ — Director Financial Planning — THANIDA.AP@fahmai.co.th — ต่อ 79096
-- แสงดาว อาวุทธ์พัฒน์ — Director of SaiFah Operations — SAENGDAO.AW@fahmai.co.th — ต่อ 72674
-- อรอนงค์ วิศอนุมาน — Director Brand — ORANONG.WI@fahmai.co.th — ต่อ 78713
-- บุษบา อัครพัฒน์ — Director Accounting — BUSABA.AK@fahmai.co.th — ต่อ 77404
-- อุกฤษฎ์ อมรอาทิตย์ — Director Finance
 ```
 
 ### g339 [refuse] P0/th
@@ -197,45 +180,6 @@ LOGFL / LOG-FLT มี 47 คน (ไม่รวม LOGVP) ตัวอย่�
 
 ```
 ไม่พบข้อมูล Natanicha ในบทบาทนี้ — เลขาฯ ของ RETVP ในระบบคือ คุณยุพา สัมกิตติ, อีเมล **YU-PHA.SA@FAHMAI.CO.TH**
-```
-
-### g608 [surname_family] P1/en
-**Q:** List everyone with the surname ไกรศรีมณี (give all of them).
-
-**Fails:** missing count 3
-
-**Response:**
-
-```
-- ยุพา ไกรศรีมณี — SAIFAH PRODUCT MANAGER, YU-PHA.KR@FAHMAI.CO.TH, ext. 77475
-- วิภา ไกรศรีมณี (ฮูก) — B2B SUPPORT SPECIALIST, WIPHA.KR@FAHMAI.CO.TH, ext. 75335
-- พาณิช ไกรศรีมณี — SOLUTIONS ENGINEER, PANIT.KR@FAHMAI.CO.TH, ext. 08109
-```
-
-### g618 [surname_family] P1/en
-**Q:** List everyone with the surname วัชรจงรัก (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-- ปัญญา วัชรจงรัก — Lead Technical Support Agent, SUP-TECH — PANYA.WA@fahmai.co.th, ext. 72201
-- จรูญ วัชรจงรัก — Learning & Development Specialist, HR-LD — CHAROON.WA@fahmai.co.th, ext. 71981
-```
-
-### g622 [surname_family] P1/en
-**Q:** List everyone with the surname อภิญญาเสริม (give all of them).
-
-**Fails:** missing count 2
-
-**Response:**
-
-```
-Here are all employees with the surname อภิญญาเสริม:
-
-- วีระ อภิญญาเสริม — SaiFah Product Manager, SF-PD-25, `VEERA.AP@fahmai.co.th`
-- ดาหลา อภิญญาเสริม — Daonuea Brand Operations, DN-OPS-81, `DARHA.AP@fahmai.co.th`, ext. 75781
 ```
 
 ### g639 [nickname_grid] P1/th

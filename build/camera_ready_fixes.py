@@ -11,7 +11,17 @@ current text so the script is idempotent-safe (it refuses to run on an unexpecte
      a base nickname that is a substring of the queried variant; they now require the resolved
      person(s) or the not-found phrase. g193 is re-targeted: the directory has an employee whose
      nickname is exactly the queried form.
-  3. Gold repairs. g171/g172/g396 ask for a phone number but did not accept it.
+  3. Gold repairs. g171/g172/g396 ask for a phone number but did not accept it. g533/g535 are
+     compound counts whose golds were computed before 99 rows received their Section/Department;
+     they are recomputed on the released directory.
+  3b. Ambiguity. g135/g146 named a nickname + department that three and two employees share; they
+     now add the target's level (manager), which identifies one employee. The English section items
+     asked for the "most senior" person, which can also mean longest tenure; they now ask for the
+     "highest-ranking" person, as the Thai items do (ตำแหน่งสูงสุด). g363 and g266 fit two people;
+     both are accepted.
+  3c. Listing golds. Surname listings (g605-g624) ask for the names, so the family size is no longer
+     required; unit and level listings (g206, g210-g215, g217, g218, g247-g249, g252-g255, g258-g262, g265), nickname-category listings
+     (g379, g380) and reporting-line items (g367, g371) credit every employee who fits, not a subset.
   4. Contiguous subtype codes (B5->B4, C3..C6->C2..C5, D4->D3, E5->E4, G3->G2, H7->H5); the v0.2 code
      is kept in `subtype_v0_2`.
 
@@ -58,11 +68,6 @@ REWRITES = {
     "g454": ("ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang (KS)", "ใครเป็นผู้บริหารสูงสุดของแผนก Kluensiang", "hint:code"),
     "g455": ("Who is the most senior person heading the Legal (LEG) department?", "Who is the most senior person heading the Legal department?", "hint:code"),
     "g456": ("ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon (WK)", "ใครเป็นผู้บริหารสูงสุดของแผนก Wongkhojon", "hint:code"),
-    "g458": ("In the DN-ENG section, who is the most senior employee by position level?", "In the DN-ENG section, who is the most senior employee?", "hint:method"),
-    "g460": ("In the FIN-AR section, who is the most senior employee by position level?", "In the FIN-AR section, who is the most senior employee?", "hint:method"),
-    "g462": ("In the FIN-TR section, who is the most senior employee by position level?", "In the FIN-TR section, who is the most senior employee?", "hint:method"),
-    "g464": ("In the JC-ENG section, who is the most senior employee by position level?", "In the JC-ENG section, who is the most senior employee?", "hint:method"),
-    "g466": ("In the KS-MKT section, who is the most senior employee by position level?", "In the KS-MKT section, who is the most senior employee?", "hint:method"),
     # --- C6: department code / level value glossed; tenure defined ---
     "g832": ("ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ (เริ่มงานก่อนใครเพื่อน) ครับ", "ใครเป็นพนักงานที่อายุงานยาวนานที่สุดในฟ้าใหม่ครับ", "hint:method"),
     "g833": ("ในบรรดาผู้อำนวยการ (Director) ของฝ่ายการเงิน (FIN) ใครที่อายุงานยาวนานที่สุดครับ", "ในบรรดาผู้อำนวยการของฝ่ายการเงิน ใครที่อายุงานยาวนานที่สุดครับ", "hint:code"),
@@ -110,6 +115,34 @@ REWRITES = {
     "g354": ("เลขา CEO อยู่แผนกไหน", "เลขาของประธานเจ้าหน้าที่บริหารอยู่แผนกไหน", "echo"),
     # --- naturalness (human-validation style notes) ---
     "g272": ("ขอ ext ของ HRVP กับ LEGVP, FINVP", "ขอ ext ของ HRVP, LEGVP กับ FINVP", "naturalness"),
+    # --- ambiguity: nickname + department matched more than one employee ---
+    "g135": ("พี่นัต ฝ่าย RET เบอร์อะไร", "พี่นัต ฝ่าย RET ที่เป็นผู้จัดการ เบอร์อะไร", "ambiguity"),
+    "g146": ("Chompoo from TEC, what's the number", "Chompoo from TEC, the manager, what's the number", "ambiguity"),
+    # "most senior" also reads as longest tenure; the Thai items say highest position
+    "g458": ("In the DN-ENG section, who is the most senior employee by position level?",
+             "In the DN-ENG section, who is the highest-ranking employee?", "hint:method+ambiguity"),
+    "g460": ("In the FIN-AR section, who is the most senior employee by position level?",
+             "In the FIN-AR section, who is the highest-ranking employee?", "hint:method+ambiguity"),
+    "g462": ("In the FIN-TR section, who is the most senior employee by position level?",
+             "In the FIN-TR section, who is the highest-ranking employee?", "hint:method+ambiguity"),
+    "g464": ("In the JC-ENG section, who is the most senior employee by position level?",
+             "In the JC-ENG section, who is the highest-ranking employee?", "hint:method+ambiguity"),
+    "g466": ("In the KS-MKT section, who is the most senior employee by position level?",
+             "In the KS-MKT section, who is the highest-ranking employee?", "hint:method+ambiguity"),
+    "g588": ("What's the email of the most senior person in the section that ฤทธิชัย มณีกาญจน์ works in?",
+             "What's the email of the highest-ranking person in the section that ฤทธิชัย มณีกาญจน์ works in?", "ambiguity"),
+    "g590": ("What's the email of the most senior person in the section that ภูมิ กาญจน์เจริญ works in?",
+             "What's the email of the highest-ranking person in the section that ภูมิ กาญจน์เจริญ works in?", "ambiguity"),
+    "g592": ("What's the email of the most senior person in the section that รุ่งนภา นราบุญเรือง works in?",
+             "What's the email of the highest-ranking person in the section that รุ่งนภา นราบุญเรือง works in?", "ambiguity"),
+    "g594": ("What's the email of the most senior person in the section that ปิติ พรหมใจ works in?",
+             "What's the email of the highest-ranking person in the section that ปิติ พรหมใจ works in?", "ambiguity"),
+    "g596": ("What's the email of the most senior person in the section that อัมพร ประฟ้า works in?",
+             "What's the email of the highest-ranking person in the section that อัมพร ประฟ้า works in?", "ambiguity"),
+    "g598": ("What's the email of the most senior person in the section that ทรัพย์ อาวุทธ์กุล works in?",
+             "What's the email of the highest-ranking person in the section that ทรัพย์ อาวุทธ์กุล works in?", "ambiguity"),
+    "g600": ("What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?",
+             "What's the email of the highest-ranking person in the section that เกียรติ บุญแก้วใส works in?", "ambiguity"),
 }
 
 NOT_FOUND = ["ไม่พบข้อมูล", "no record found"]
@@ -173,6 +206,88 @@ def main() -> None:
         if ext not in g:
             g.append(ext)
         it["revision_v1_0"] = "gold:accept-extension"
+    # compound counts: recompute on the released directory
+    for iid, dept, level, year in [("g533", "DN", "IC", "2020"), ("g535", "DN", "Lead", "2022")]:
+        hit = [r["Employee ID"] for r in rows
+               if r["Department"] == dept and r["Position Level"] == level and r["Start Year"] == year]
+        it = items[iid]
+        it["expected_answer"]["exact_count"] = len(hit)
+        it["ground_truth_row_ids"] = hit
+        it["revision_v1_0"] = "gold:recount"
+    # listings: credit every employee who fits; surname listings ask for names, not the count
+    def toks(r, nick=False):
+        t = [r["First Name English"].title(), r["First Name Thai"], r["Last Name English"].title(), r["Last Name Thai"]]
+        return t + [r["Nickname Thai"], r["Nickname English"]] if nick else t
+    for n in range(605, 625):
+        it = items[f"g{n}"]
+        assert len(it["expected_answer"]["must_contain_any_of"]) == len(it["ground_truth_row_ids"])
+        it["expected_answer"].pop("exact_count", None)
+        it["revision_v1_0"] = "gold:listing-no-count"
+    fruit = {"พีช", "ส้ม", "เปิ้ล", "กีวี่", "มะม่วง", "ส้มโอ", "เชอร์รี่", "เบอร์รี่"}
+    colour = {"ฟ้า", "ชมพู", "ดำ", "แดง", "ขาว", "เขียว", "ทอง", "น้ำตาล", "ส้ม"}
+    for iid, keep, nick in [("g253", lambda r: r["Department"] == "SF", False),
+                            ("g254", lambda r: r["Department"] == "KS", False),
+                            ("g258", lambda r: r["Department"] == "SF", False),
+                            ("g265", lambda r: r["Position Level"] == "Director", False),
+                            ("g379", lambda r: r["Nickname Thai"] in fruit, True),
+                            ("g380", lambda r: r["Nickname Thai"] in colour, True)]:
+        hit = [r for r in rows if keep(r)]
+        ea = items[iid]["expected_answer"]
+        assert set(ea["all_items_tokens_per_id"]) <= {r["Employee ID"] for r in hit}, iid
+        ea["all_items_tokens_per_id"] = {r["Employee ID"]: toks(r, nick) for r in hit}
+        items[iid]["ground_truth_row_ids"] = [r["Employee ID"] for r in hit]
+        items[iid]["revision_v1_0"] = "gold:credit-all-members"
+    # unit and level listings ("who's in X", "list all VPs"): credit every member, not only the first
+    # ten or fifteen rows the generator kept
+    def credit_all(iid, keep):
+        ea = items[iid]["expected_answer"]
+        hit = [r for r in rows if keep(r)]
+        assert set(ea["all_items_tokens_per_id"]) <= {r["Employee ID"] for r in hit}, iid
+        ea["all_items_tokens_per_id"] = {r["Employee ID"]: toks(r) for r in hit}
+        items[iid]["ground_truth_row_ids"] = [r["Employee ID"] for r in hit]
+        items[iid]["revision_v1_0"] = "gold:credit-all-members"
+    for iid in ["g206", "g210", "g211", "g212", "g213", "g214", "g215", "g217", "g218", "g247", "g248", "g249"]:
+        sec = {by_id[e]["Section"] for e in items[iid]["expected_answer"]["all_items_tokens_per_id"]}
+        assert len(sec) == 1, iid
+        sec = sec.pop()
+        assert sec in items[iid]["question"], iid
+        credit_all(iid, lambda r, sec=sec: r["Section"] == sec)
+    for iid in ["g252", "g255", "g259"]:  # brand names (ดาวเหนือ, วงโคจร, DaoNuea) -> department
+        dept = {by_id[e]["Department"] for e in items[iid]["expected_answer"]["all_items_tokens_per_id"]}
+        assert len(dept) == 1, iid
+        dept = dept.pop()
+        credit_all(iid, lambda r, dept=dept: r["Department"] == dept)
+    for iid, level in [("g260", "VP"), ("g261", "Director"), ("g262", "VP")]:
+        credit_all(iid, lambda r, level=level: r["Position Level"] == level)
+    # g371 (reporting chain from a TEC engineer to the CEO): TEC has two VPs; credit both
+    tpi = items["g371"]["expected_answer"]["all_items_tokens_per_id"]
+    for r in rows:
+        if r["Department"] == "TEC" and r["Position Level"] == "VP" and r["Employee ID"] not in tpi:
+            tpi[r["Employee ID"]] = toks(r)
+            items["g371"]["ground_truth_row_ids"].append(r["Employee ID"])
+    items["g371"]["revision_v1_0"] = "gold:credit-all-members"
+    # g367 (who reports to the COO): credit both VPs of the COO's department (OPSVP and OPSQA)
+    tpi = items["g367"]["expected_answer"]["all_items_tokens_per_id"]
+    for r in rows:
+        if r["Department"] == "OPS" and r["Position Level"] == "VP" and r["Employee ID"] not in tpi:
+            tpi[r["Employee ID"]] = toks(r)
+            items["g367"]["ground_truth_row_ids"].append(r["Employee ID"])
+    items["g367"]["revision_v1_0"] = "gold:credit-all-members"
+    # two people fit: g363 (SaiFah's GM and its VP), g266 (the two VPs in SUP)
+    for iid, extra in [("g363", "00001167"), ("g266", "08683929")]:
+        r = by_id[extra]
+        g = items[iid]["expected_answer"]["must_contain_any_of"]
+        for grp, new in ((g[0], [r["First Name English"].title(), r["First Name Thai"]]),
+                         (g[1], [r["Last Name English"].title(), r["Last Name Thai"]])):
+            grp += [t for t in new if t not in grp]
+        if extra not in items[iid]["ground_truth_row_ids"]:
+            items[iid]["ground_truth_row_ids"].append(extra)
+        items[iid]["revision_v1_0"] = "gold:accept-both-readings"
+    # g135/g146: the added level must identify exactly one employee
+    for iid, nick, dept in [("g135", "นัต", "RET"), ("g146", "ชมพู", "TEC")]:
+        hit = [r["Employee ID"] for r in rows if r["Nickname Thai"] == nick and r["Department"] == dept
+               and r["Position Level"] == "Manager"]
+        assert hit == items[iid]["ground_truth_row_ids"], (iid, hit)
 
     # 4. contiguous subtype codes (the v0.2 code is kept in subtype_v0_2)
     for it in data["questions"]:
@@ -182,7 +297,9 @@ def main() -> None:
 
     data["meta"]["version"] = "1.0"
     data["meta"]["revision_note"] = ("v1.0: question-side hints removed (63 items), answer-echo golds "
-                                     "tightened (9 items), phone-number golds repaired (3 items), subtype codes made contiguous "
+                                     "tightened (9 items), phone-number golds repaired (3 items), two counts recomputed, 16 "
+                                     "ambiguous questions disambiguated or given both readings, 46 listing golds "
+                                     "credit every valid member, subtype codes made contiguous "
                                      "(v0.2 code in subtype_v0_2). "
                                      "Previous wording kept in question_v0_2; see questions/CHANGELOG.md.")
     QJSON.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

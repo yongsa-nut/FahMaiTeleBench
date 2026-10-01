@@ -1,6 +1,6 @@
 # Run: `deepseekv4flash_grep-only_L2_t1_grep_v10full`
 
-**Overall: 601/626 pass (96.0%)**
+**Overall: 605/626 pass (96.6%)**
 
 ## By bucket
 
@@ -17,6 +17,8 @@
 | dept_listing_medium | 8/8 | 100.0% |
 | dept_member_count | 15/15 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
+| tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
 | subsidiary_md | 8/8 | 100.0% |
@@ -28,31 +30,29 @@
 | thai_knowledge | 10/10 | 100.0% |
 | surname_family | 24/24 | 100.0% |
 | bilingual | 40/40 | 100.0% |
+| listing_count | 20/20 | 100.0% |
 | retrieval | 14/14 | 100.0% |
 | enterprise_shorthand | 20/20 | 100.0% |
 | brand_prior | 10/10 | 100.0% |
 | subsidiary_routing | 12/12 | 100.0% |
 | refuse | 89/90 | 98.9% |
 | counterfactual | 24/25 | 96.0% |
-| listing_count | 19/20 | 95.0% |
 | noisy_name_form | 19/20 | 95.0% |
 | multi_hop | 17/18 | 94.4% |
 | nickname_grid | 57/61 | 93.4% |
 | hard_nickname_variant | 9/10 | 90.0% |
 | name_lookup | 17/20 | 85.0% |
-| tier_listing | 5/6 | 83.3% |
 | deep_multihop | 10/12 | 83.3% |
 | hard_multihop | 21/26 | 80.8% |
 | superlative | 8/10 | 80.0% |
-| org_informal_listing | 4/6 | 66.7% |
 
 ## By priority
 
-- P0: 217/226 (96.0%)
-- P1: 352/364 (96.7%)
+- P0: 220/226 (97.3%)
+- P1: 353/364 (97.0%)
 - P2: 32/36 (88.9%)
 
-## Failures (25)
+## Failures (21)
 
 ### g120 [name_lookup] P1/th
 **Q:** ขอเบอร์ ณัฏฐพล ชากัญญ์รักษา หน่อย
@@ -114,62 +114,6 @@
 
 ```
 ไม่พบข้อมูลเบอร์โทรของ **ปุ๊ก (จงรัก สัมโชติ)** ในระบบ — ทั้งเบอร์มือถือและเบอร์ภายในว่างอยู่ครับ
-```
-
-### g253 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ สายฟ้า สัก 5 คน
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-นี่คือพนักงานของ **สายฟ้า (SF)** จำนวน 5 คนครับ:
-
-1. **จิรภัทร วัชรใจงาม** (คุณจิรภัทร) — CPO (ประธานเจ้าหน้าที่ฝ่ายผลิตภัณฑ์) C-level  
-   📧 JIRAPAT.WA@FAHMAI.CO.TH | ต่อ 78052 | 096-557-6834
-
-2. **วิรัตน์ สมบุษราคัม** (คุณดอกไม้ / DOKMAI) — รองประธานฝ่ายสายฟ้า (VP)  
-   📧 WIRAT.SO@FAHMAI.CO.TH | ต่อ 72402 | 064-970-0992
-
-3. **ถาวร บุญนำพงศ์** (คุณถาวร) — GM แบรนด์สายฟ้า (Director)  
-   📧 THAWAN.
-```
-
-### g258 [org_informal_listing] P0/en
-**Q:** give me 5 people from SaiFah
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-Here are 5 people from **SaiFah (สายฟ้า / SF)**:
-
-1. **จิรภัทร วัชรใจงาม** (Jirapat Watcharajingam) — CPO (Chief Product Officer), C-level  
-   📧 JIRAPAT.WA@FAHMAI.CO.TH | 📞 096-557-6834 | FahMai Tower 25F
-
-2. **วิรัตน์ สมบุษราคัม** (Wirat Sombusarakham) — VP of SaiFah  
-   📧 WIRAT.SO@FAHMAI.CO.TH | 📞 064-970-0992 | FahMai Tower 18F
-
-3. **แสงดาว อาวุทธ์พัฒน์** (Saengdao Awutphat) — Director of Sai
-```
-
-### g265 [tier_listing] P0/th
-**Q:** ขอรายชื่อ director สัก 10 คน
-
-**Fails:** min_items 10 not met (9)
-
-**Response:**
-
-```
-นี่คือตัวอย่าง Director จำนวน 10 คนจาก FahMai:
-
-1. **ธนิดา อภิใจ** (THANIDA APHIJAI) — Director Financial Planning (FIN) | โทร. 79096
-2. **แสงดาว อาวุทธ์พัฒน์** (SAENGDAO AWUTPHAT) — Director of SaiFah Operations (SF) | โทร. 72674
-3. **อรอนงค์ วิศอนุมาน** (ORANONG WISANUMAN) — Director Brand (MKT) | โทร. 78713
-4. **บุษบา อัครพัฒน์** (BUSABA AKARAPHAT) — Director Accounting (FIN) | โทร. 77404
-5. **
 ```
 
 ### g317 [refuse] P0/th
@@ -271,17 +215,6 @@ Here are 5 people from **SaiFah (สายฟ้า / SF)**:
 **คุณธนพล พิประเสริฐ** สังกัดอยู่แผนก **WK (วงโคจร)** ซึ่งผู้บริหารสูงสุดของแผนกนี้คือ **ผู้จัดการทั่วไปแบรนด์วงโคจร (GM of WongKhoJon)**
 
 👉 **คุณกฤษ มหาแก้วใส (KRIS MAHAKAEWSAI)** — อีเมล: **KRIS.MA@FAHMAI.CO.TH**
-```
-
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-ในแผนก **DN (ดาวเหนือ)** มีพนักงานระดับ **IC** ที่เริ่มงานในปี **2020** จำนวน **7 คน** ค่ะ ✅
 ```
 
 ### g585 [noisy_name_form] P1/en

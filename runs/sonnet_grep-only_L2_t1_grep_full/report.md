@@ -1,6 +1,6 @@
 # Run: `sonnet_grep-only_L2_t1_grep_v10full`
 
-**Overall: 584/626 pass (93.3%)**
+**Overall: 588/626 pass (93.9%)**
 
 ## By bucket
 
@@ -15,6 +15,7 @@
 | dept_listing_small | 7/7 | 100.0% |
 | dept_listing_medium | 8/8 | 100.0% |
 | section_listing | 4/4 | 100.0% |
+| org_informal_listing | 6/6 | 100.0% |
 | tier_listing | 6/6 | 100.0% |
 | org_plus_person | 3/3 | 100.0% |
 | multi_entity_turn | 20/20 | 100.0% |
@@ -32,27 +33,26 @@
 | refuse | 89/90 | 98.9% |
 | nickname_grid | 59/61 | 96.7% |
 | evp_vs_vp_disambig | 24/25 | 96.0% |
+| listing_count | 19/20 | 95.0% |
 | enterprise_shorthand | 19/20 | 95.0% |
 | bilingual | 37/40 | 92.5% |
 | noisy_name_form | 18/20 | 90.0% |
 | dept_member_count | 13/15 | 86.7% |
-| listing_count | 17/20 | 85.0% |
 | hard_implicit_hierarchy | 16/19 | 84.2% |
-| org_informal_listing | 5/6 | 83.3% |
 | evp_secretary | 4/5 | 80.0% |
 | thai_knowledge | 8/10 | 80.0% |
 | hard_multihop | 20/26 | 76.9% |
 | subsidiary_routing | 9/12 | 75.0% |
-| multi_hop | 11/18 | 61.1% |
+| multi_hop | 12/18 | 66.7% |
 | superlative | 6/10 | 60.0% |
 
 ## By priority
 
-- P0: 217/226 (96.0%)
-- P1: 335/364 (92.0%)
+- P0: 218/226 (96.5%)
+- P1: 338/364 (92.9%)
 - P2: 32/36 (88.9%)
 
-## Failures (42)
+## Failures (38)
 
 ### g053 [evp_secretary] P0/en
 **Q:** EA of TECPM
@@ -118,25 +118,6 @@ Could you clarify what "TECPM" refers to? If you meant the **CTO's EA**, that's 
 
 ```
 The **RET (Retail)** department has **437 employees** in total.
-```
-
-### g254 [org_informal_listing] P0/th
-**Q:** ขอรายชื่อ คลื่นเสียง สัก 5 คน
-
-**Fails:** min_items 5 not met (3)
-
-**Response:**
-
-```
-นี่คือรายชื่อพนักงานแผนก **คลื่นเสียง (KS)** 5 คนครับ:
-
-| # | ชื่อ-นามสกุล | ตำแหน่ง | อีเมล |
-|---|---|---|---|
-| 1 | ธเนศ บัวทองประเสริฐ | VP of KluenSiang | TANET.BU@FAHMAI.CO.TH |
-| 2 | ปิยนันท์ พรหมพิทักษ์ | Secretary of KSVP | PIYANAN.PH@FAHMAI.CO.TH |
-| 3 | ราม ลวรรณ | General Manager of KluenSiang | RAM.LA@FAHMAI.CO.TH |
-
-ผลการค้นหาพบพนักงาน KS ทั้งหมด **165 คน** ครับ หากต้องการดูเพิ่มเติม
 ```
 
 ### g321 [refuse] P0/th
@@ -379,47 +360,6 @@ Let me do one more quick search to find the top executive of the LEG department.
 **มีพนักงานแผนก B2B ระดับ IC ที่เริ่มงา
 ```
 
-### g533 [listing_count] P1/en
-**Q:** How many employees are in the DN department at IC level who started in 2020?
-
-**Fails:** missing count 6
-
-**Response:**
-
-```
-Now I have complete data for all DN sections. Let me tally up all DN employees with **Position Level = IC** and **Start Year = 2020**:
-
-**DN-MKT (IC, 2020):**
-- Row 1374 – PIYANAN PHIDI (DN-MKT-30) ✓
-- Row 1393 – PANIT RATANAPORN (DN-MKT-42) ✓
-- Row 1403 – YING PRAJAIDI (DN-MKT-44) ✓
-
-**DN-ENG (IC, 2020):**
-- Row 1339 – YOTHAKA AMPHOMSAWANG (DN-ENG-71) ✓
-
-**DN-OPS (IC, 2020):**
-- Row 1336 – THINNA
-```
-
-### g535 [listing_count] P1/en
-**Q:** How many employees are in the DN department at Lead level who started in 2022?
-
-**Fails:** missing count 5
-
-**Response:**
-
-```
-I now have all 131 DN department records. Let me filter for **Department = DN**, **Position Level = Lead**, and **Start Year = 2022** from the results.
-
-From the data, the DN + Lead + 2022 employees are:
-
-| Row | Name | Start Year | Level |
-|-----|------|------------|-------|
-| 1299 | APICHAI THANABUN | 2022 | Lead |
-| 1301 | THANAPHON PHICHAIYAWONG | 2022 | Lead |
-| 1303 | KRITTIN ANUCHAROEN | 20
-```
-
 ### g570 [noisy_name_form] P1/th
 **Q:** ขอ email ของ Tanida เลขา COO หน่อยครับ
 
@@ -543,21 +483,6 @@ I couldn't find anyone named Ravi in the FahMai employee directory. Please doubl
 **คุณธเนศ บัวทองประเสริฐ**
 ตำแหน่ง: รองประธานฝ่ายคลื่นเสียง (Vice President of KluenSiang)
 📞 เบอร์ต่อ: **71215**
-```
-
-### g600 [multi_hop] P1/en
-**Q:** What's the email of the most senior person in the section that เกียรติ บุญแก้วใส works in?
-
-**Fails:** missing any-of ['CHAYAPHON.AN@FAHMAI.CO.TH']
-
-**Response:**
-
-```
-I can see the most senior person in section **RET-BKK-LP** is **ชยพล บุญมาดี (Chayaphon Bunmakdi)** at the **Director** level — the highest position level found in that section.
-
-The email of the most senior person in section RET-BKK-LP is:
-
-📧 **CHAYAPHON.BU@FAHMAI.CO.TH** — ชยพล บุญมาดี, Director of Sales Associate Lad Phrao.
 ```
 
 ### g639 [nickname_grid] P1/th
